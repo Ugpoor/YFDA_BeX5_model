@@ -1,0 +1,39 @@
+/**
+	@name $UI/system/components/justep/blob/blobImage
+	@component 
+	@extends $UI/system/components/justep/blob/blob
+	@model UI2
+	@description BlobImage
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blobImage#imageType
+	@attribute
+	@property 
+	@type string
+	@description 可以选择的image类型，使用','分隔，如：.jpg,.png
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blobImage#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : 禁用，
+		"limitSize" : 上传文件限制大小，支持格式：1024,25B,100KB,390M,34G，单位支持：B、KB、M、G，默认单位是B，不设置标示不限制大小
+		"imageType" : 可以选择的image类型，使用','分隔，如：.jpg,.png
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blobImage#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"、"limitSize"、"imageType"
+	@return {Object} 
+*/

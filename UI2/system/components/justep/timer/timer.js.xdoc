@@ -1,0 +1,112 @@
+/**
+	@name $UI/system/components/justep/timer/timer
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description Dialog
+*/
+
+/**
+	@name $UI/system/components/justep/timer/timer#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/timer/timer#enabled
+	@attribute
+	@property 
+	@type boolean
+	@description 启用timer，默认：true
+*/
+
+/**
+	@name $UI/system/components/justep/timer/timer#interval
+	@attribute
+	@property 
+	@type integer
+	@description 触发间隔，单位为毫秒，默认：1000
+*/
+
+/**
+	@name $UI/system/components/justep/timer/timer#times
+	@attribute
+	@property 
+	@type integer
+	@description 触发次数，0：无限，默认：0
+*/
+
+/**
+	@name $UI/system/components/justep/timer/timer#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"enabled" : {boolean} 启用timer
+		"interval" : {integer} 触发间隔，单位为毫秒
+		"times" : {integer} 触发次数，0：无限
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/timer/timer#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："enabled"、"interval"、"times"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/timer/timer#start
+	@function
+	@description 开始，等同于timer.set('enabeld',true)
+*/
+
+/**
+	@name $UI/system/components/justep/timer/timer#pause
+	@function
+	@description 暂停，调用timer.start()后可继续
+*/
+
+/**
+	@name $UI/system/components/justep/timer/timer#stop
+	@function
+	@description 停止，等同于timer.set('enabeld',false)
+*/
+
+/**
+@name $UI/system/components/justep/timer/timer#timerEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description timer触发事件
+*/
+
+/**
+ @name $UI/system/components/justep/timer/timer#timerEvent.times
+ @property
+ @type {integer}
+ @description 触发次数
+*/ 
+
+/**
+	@name $UI/system/components/justep/timer/timer#onTimer
+	@event
+	@description <b>[回调型事件]</b>timer触发事件
+	@param {$UI/system/components/justep/timer/timer#timerEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"times" : 触发次数
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+

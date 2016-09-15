@@ -1,0 +1,47 @@
+/**
+	@name phonegap-plugin-barcodescanner
+	@class 
+	@description 二维码/条形码扫描插件
+	@model Native
+	@category plugin
+	@declareVar cordova.plugins.barcodeScanner
+*/
+
+/**
+	@name phonegap-plugin-barcodescanner.scan
+ 	@function
+ 	@param {Function} successCallback 执行成功的回调函数，回调给出参数event
+ 	<br/><b>event参数结构如下</b>
+ 	<xmp>
+ 		{
+ 			"text" : - String 扫描到的编码,
+ 			"format" : - String编码格式,
+ 			"cancelled" : - Boolean 是否取消当前扫描,
+ 		}
+ 	</xmp>
+ 	@param {Function} errorCallback 执行失败的回调函数
+ 	@param {Function} options 请求参数
+ 	@returns {void}
+ 	@description 扫描二维码/条形码
+*/
+
+/**
+	@name phonegap-plugin-barcodescanner.encode
+ 	@function
+ 	@param {String} type 编码类型
+ 	@param {String} data 数据
+ 	@param {Function} successCallback 执行成功的回调函数，回调给出参数event
+ 	@param {Function} errorCallback 执行失败的回调函数
+ 	@param {Function} options 请求参数
+ 	@returns {void}
+ 	@description 生成条形码
+*/
+
+/**
+	@name phonegap-plugin-barcodescanner.Encode
+	@property
+	@type object 
+	@description barcodescanner的类型常量
+	@example
+	  包括：plugins.barcodeScanner.Encode.TEXT_TYPE、plugins.barcodeScanner.Encode.EMAIL_TYPE、plugins.barcodeScanner.Encode.PHONE_TYPE、plugins.barcodeScanner.Encode.SMS_TYPE
+ */

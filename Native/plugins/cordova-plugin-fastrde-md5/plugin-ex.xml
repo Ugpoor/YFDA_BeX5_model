@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-fastrde-md5">
+	<name>md5插件</name>
+	<description>根据一个文件生成对应的md5值</description>
+	
+</plugin>

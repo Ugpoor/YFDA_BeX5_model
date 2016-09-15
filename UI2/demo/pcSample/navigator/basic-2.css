@@ -1,0 +1,32 @@
+.blue{
+	background-color:#3C3CFF;
+}
+/*buttongroup组件*/
+.btn-group .btn.active{ background-color: #3C3CFF; color: white;}
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: black;
+    background-color: #dff378;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+	 background-color: #dff378;
+	 color:black;
+	}
+.btn.active {
+     background-color: #dff378;
+	 color: black;
+}
+/*tabs组件*/
+.x-panel .x-panel-top {
+	background-color: #0065CA;
+}
+a {
+	color: white;
+}
+.x-panel.c3yIbeq .x-panel-top.c3yIbeq {
+    background-color: rgb(0, 101, 202);
+    height: 40px;
+}
+.btn {
+    margin-top: 0px;
+}
+.nav>li>a:hover,.nav>li>a:focus { background-color: #0065CA;border:0px;}

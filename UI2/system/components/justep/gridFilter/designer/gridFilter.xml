@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/gridFilter/gridFilter" tag-name="div" icon="gridFilter.gif"  
+	    binding-component="$UI/system/components/justep/gridFilter/gridFilter"
+		is-complex-component="true"
+		design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" /> 
+			<property name="filterData" text="过滤数据" is-id-ref="true" required="true" editor-ref="contextComponent" editor-parameter="data"/>        
+			<property name="filterCol" text="过滤列" required="true" editor-ref="relationDlg" editor-parameter="filterData"/>
+			<property name="defaultValue" text="默认值，当选择数据为空时，用默认值过滤"  editor-ref="jSExpressionEditor"/>
+			<property name="autoRefresh" text="是否自动刷新数据" default-value="true" editor-ref="booleanList" data-type="boolean"/>        
+			<property name="class"  text="class" />
+			<property name="style" text="样式" />
+		</properties>
+
+		<inner-component-config>
+			<item name="$UI/system/components/justep/gridSelect/gridSelect" 
+				exclude-properties="bind-ref,bind-labelRef,bind-extRef,extSeparator,ext">
+			</item>	
+			<item name="$UI/system/components/justep/gridSelect/gridSelect#option" 
+				exclude-properties="ext">
+			</item>	
+		</inner-component-config>
+
+		<events>
+			<event name="onFilter" text="过滤事件"/>
+        </events>
+        
+		<toolbar>			
+		</toolbar>
+
+		<templates>
+		   <template name="default"><![CDATA[ 
+			  <div class="x-control" component="$UI/system/components/justep/gridFilter/gridFilter">
+			    <div class="x-gridSelect" component="$UI/system/components/justep/gridSelect/gridSelect">
+		      		<option></option> 
+		      	</div>
+		      </div>  
+			]]></template>
+		</templates>
+	</element>
+</elements>

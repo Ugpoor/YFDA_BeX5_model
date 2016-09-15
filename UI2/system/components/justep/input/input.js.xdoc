@@ -1,0 +1,267 @@
+/**
+	@name $UI/system/components/justep/input/input
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description Input
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: form-control(必须),
+		尺寸样式: input-lg、input-sm
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/input/input.mobileDatePickerType
+	@property 
+	@type string
+	@description input组件mobile下时间选择器模式，当='mobiscroll'时使用原旧选择器，否则使用$UI/system/components/justep/datePicker/datePicker组件，默认使用$UI/system/components/justep/datePicker/datePicker组件
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#disabled
+	@attribute
+	@property 
+	@type boolean
+	@description 禁用
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#valueUpdateMode
+	@attribute
+	@property 
+	@type string
+	@description 数据更新模式，目前支持input/keyup/keypress，注意：此属性在组件创建后修改无效
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#readonly
+	@attribute 
+	@property
+	@type boolean
+	@description 只读
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#bind-ref
+	@attribute 
+	@type string
+	@description input组件引用的数据，input组件感知绑定数据的数据类型，当为Date、Time、Datetime时提供时间选择器
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#dataType
+	@attribute 
+	@property
+	@type string
+	@description 指定数据类型，当bind-ref没有定义时有效
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#format
+	@attribute
+	@property 
+	@type string
+	@description 格式化，当绑定数据类型为Date、DateTime、Time时的显示格式
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#min
+	@attribute
+	@property 
+	@type string
+	@description 最小值表达式，当绑定数据类型为Date、DateTime、Time时控制选择时间
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#max
+	@attribute
+	@property 
+	@type string
+	@description 最大值表达式，当绑定数据类型为Date、DateTime、Time时控制选择时间
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#maxLength
+	@attribute
+	@property 
+	@type integer
+	@description 字符串类型时限制输入长度，当ref关联列中有长度定义时以ref关联列定义为准
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#placeHolder
+	@attribute
+	@property 
+	@type string
+	@description 提示信息，html5特性
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#pattern
+	@attribute
+	@property 
+	@type string
+	@description 规定输入字段的值的模式或格式，html5特性，例如 pattern="[0-9]" 表示输入值必须是 0 与 9 之间的数字
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#autoComplete
+	@attribute
+	@property 
+	@type boolean
+	@description 使用输入字段的自动完成功能，html5特性
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : {boolean} 禁用，
+		"dataType: {string}	指定数据类型，当bind-ref没有定义时有效		
+		"placeHolder: {string} 提示信息，html5特性
+		"format: {string} 格式化，当绑定数据类型为Date、DateTime、Time时的显示格式
+		"min: {string} 最小值表达式，当绑定数据类型为Date、DateTime、Time时控制选择时间
+		"max: {string} 最大值表达式，当绑定数据类型为Date、DateTime、Time时控制选择时间
+		"pattern: {string} 规定输入字段的值的模式或格式，html5特性，例如 pattern="[0-9]" 表示输入值必须是 0 与 9 之间的数字
+		"autoFocus: {boolean} 在页面加载时是否获得焦点，html5特性
+		"autoComplete: {boolean} 使用输入字段的自动完成功能，html5特性
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"、"dataType"、"placeHolder"、"pattern"、"format"、"min"、"max"、"autoFocus"、"autoComplete"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#val
+	@function
+	@description 给input赋值或者取值
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#clear
+	@function
+	@description 清空input数据
+*/
+
+/**
+@name $UI/system/components/justep/input/input#ValueChangeEvent
+@extends $UI/system/components/justep/common/event#ChangeEvent
+@category eventclass
+@class
+@model UI2
+@description 值变化事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/input/input#ValueChangeEvent.originalValue
+ @property
+ @type {object}
+ @description 原值
+*/ 
+
+/**
+	@name $UI/system/components/justep/input/input#onChange
+	@event
+	@description <b>[回调型事件]</b>值变化事件
+	@param {$UI/system/components/justep/input/input#ValueChangeEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"originalValue" : 原值,
+		"value" : 新值
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/input/input#InputRenderEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description Input渲染事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/input/input#InputRenderEvent.text
+ @property
+ @type {object}
+ @description input显示文本，可以通过修改此域修改input显示
+*/ 
+
+/**
+ @name $UI/system/components/justep/input/input#InputRenderEvent.value
+ @property
+ @type {object}
+ @description input的值
+*/ 
+
+/**
+	@name $UI/system/components/justep/input/input#onRender
+	@event
+	@description <b>[回调型事件]</b>显示渲染事件
+	@param {$UI/system/components/justep/input/input#InputRenderEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"value" : input的值,
+		"text" : input显示文本，可以通过修改此域修改input显示
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#onFocus
+	@event
+	@description <b>[回调型事件]</b>焦点进入事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/input/input#onBlur
+	@event
+	@description <b>[回调型事件]</b>焦点移出事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+	}
+	</xmp>	
+*/

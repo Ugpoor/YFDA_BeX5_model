@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-whitelist" hide="true">
+	<name>网络白名单</name>
+	<description>网络白名单插件</description>
+
+	<!-- common -->
+	<platform name="common">
+	</platform>
+
+	<!-- ios -->
+	<platform name="ios">
+	</platform>
+
+	<!-- android -->
+	<platform name="android">
+	</platform>
+
+</plugin>

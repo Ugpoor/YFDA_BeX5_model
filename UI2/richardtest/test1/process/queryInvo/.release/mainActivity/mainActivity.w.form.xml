@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" xid="window" design="device:pc;" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cVNrmuq" class="cVNrmuq" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/pagerBar/pagerBar,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/menu/menu,$model/UI2/system/components/bootstrap/pagination/pagination,$model/UI2/system/components/justep/smartFilter/smartFilter,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/toolBar/toolBar,$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect,$model/UI2/system/components/justep/select/select,$model/UI2/system/components/justep/grid/grid,$model/UI2/system/components/justep/popMenu/popMenu,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/bizFilter/bizFilter,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cVNrmuq" class="cVNrmuq"></div>  
+  <div xid="view" __cid="cVNrmuq" class="cVNrmuq"> 
+    <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar x-toolbar-spliter form-inline cVNrmuq" xid="bar" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cVNrmuq"> 
+      <div component="$model/UI2/system/components/justep/smartFilter/smartFilter" xid="smartFilter1" class="pull-right cVNrmuq" data-bind="component:{name:'$model/UI2/system/components/justep/smartFilter/smartFilter'}" data-config="{&quot;filterCols&quot;:&quot;fMZ,fXB&quot;,&quot;filterData&quot;:&quot;mainData&quot;}" __cid="cVNrmuq"> 
+        <input type="text" class="form-control cVNrmuq" placeholder="搜索" data-bind="valueUpdate: ['input', 'afterkeydown']" bind-value="$model.comp($element.parentElement).searchText" bind-change="$model.comp($element.parentElement).onInputChange.bind($model.comp($element.parentElement))" xid="input1" __cid="cVNrmuq"/> 
+      </div>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cVNrmuq" xid="newBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{&quot;operation&quot;:&quot;mainData.new&quot;, args:{index:'js:0'}}" data-config="{&quot;icon&quot;:&quot;icon-plus&quot;,&quot;label&quot;:&quot; 新建&quot;}" __cid="cVNrmuq"> 
+        <i class="icon-plus cVNrmuq" __cid="cVNrmuq"/>  
+        <span __cid="cVNrmuq" class="cVNrmuq">新建</span> 
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cVNrmuq" xid="saveBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{&quot;operation&quot;:&quot;mainData.save&quot;}" data-config="{&quot;label&quot;:&quot;保存&quot;}" __cid="cVNrmuq"> 
+        <i xid="i3" __cid="cVNrmuq" class="cVNrmuq"/>  
+        <span xid="label7" __cid="cVNrmuq" class="cVNrmuq">保存</span> 
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cVNrmuq" xid="deleteBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{&quot;operation&quot;:&quot;mainData.delete&quot;}" data-config="{&quot;label&quot;:&quot;删除&quot;}" __cid="cVNrmuq"> 
+        <i xid="i4" __cid="cVNrmuq" class="cVNrmuq"/>  
+        <span xid="span7" __cid="cVNrmuq" class="cVNrmuq">删除</span> 
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cVNrmuq" xid="refreshBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{&quot;operation&quot;:&quot;mainData.refresh&quot;}" data-config="{&quot;label&quot;:&quot;刷新&quot;}" __cid="cVNrmuq"> 
+        <i xid="i2" __cid="cVNrmuq" class="cVNrmuq"/>  
+        <span xid="span2" __cid="cVNrmuq" class="cVNrmuq">刷新</span> 
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cVNrmuq" xid="filterBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'bizFilter.menu'}" data-config="{&quot;icon&quot;:&quot;icon-android-search&quot;,&quot;label&quot;:&quot;查询&quot;}" __cid="cVNrmuq"> 
+        <i xid="i5" class="icon-android-search cVNrmuq" __cid="cVNrmuq"/>  
+        <span xid="span8" __cid="cVNrmuq" class="cVNrmuq">查询</span> 
+      </a> 
+    </div>  
+    <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" xid="mainGrid" data="mainData" hiddenCaptionbar="true" class="x-grid-no-bordered cVNrmuq" data-config="{&quot;colModel&quot;:[{&quot;editable&quot;:true,&quot;name&quot;:&quot;fMZ&quot;},{&quot;editable&quot;:true,&quot;name&quot;:&quot;fXB&quot;}],&quot;data&quot;:&quot;mainData&quot;,&quot;editors&quot;:&quot;E8282E1A7CB449F8843AFDC562683198&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;hiddenCaptionbar&quot;:true,&quot;width&quot;:&quot;100%&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cVNrmuq"/>  
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" xid="E8282E1A7CB449F8843AFDC562683198" class="x-grid-editors cVNrmuq" bind-with="comp('mainGrid').getCellEditorsBindingObject()" __cid="cVNrmuq">
+      <xhtml:div col="fMZ" __cid="cVNrmuq" class="cVNrmuq"> 
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control cVNrmuq" data-bind="component:{ref:ref('fMZ'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cVNrmuq"/> 
+      </xhtml:div>
+      <xhtml:div col="fXB" __cid="cVNrmuq" class="cVNrmuq"> 
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control cVNrmuq" data-bind="component:{ref:ref('fXB'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cVNrmuq"/> 
+      </xhtml:div>
+    </xhtml:div>
+  </div>  
+  <span component="$model/UI2/system/components/justep/bizFilter/bizFilter" xid="bizFilter" style="left:28px;top:290px;" data-bind="component:{name:'$model/UI2/system/components/justep/bizFilter/bizFilter'}" data-config="{&quot;filterData&quot;:&quot;mainData&quot;}" __cid="cVNrmuq" class="cVNrmuq">
+    <div xmlns="" component="$model/UI2/system/components/justep/popMenu/popMenu" class="x-popMenu cVNrmuq" xid="bizFilter_pop_menu" data-bind="component:{name:'$model/UI2/system/components/justep/popMenu/popMenu'}" data-config="{&quot;direction&quot;:&quot;left-bottom&quot;,&quot;opacity&quot;:0}" __cid="cVNrmuq"> 
+      <div class="x-popMenu-overlay cVNrmuq" __cid="cVNrmuq"/>  
+      <ul component="$model/UI2/system/components/justep/menu/menu" class="x-menu dropdown-menu x-popMenu-content cVNrmuq" xid="bizFilter_menu" data-bind="component:{name:'$model/UI2/system/components/justep/menu/menu'}" __cid="cVNrmuq"></ul> 
+    </div>
+  </span>  
+  <div component="$model/UI2/system/components/justep/pagerBar/pagerBar" class="x-pagerbar container-fluid cVNrmuq" xid="pagerBar" data-bind="component:{name:'$model/UI2/system/components/justep/pagerBar/pagerBar'}" data-config="{&quot;data&quot;:&quot;mainData&quot;}" __cid="cVNrmuq"> 
+    <div class="row cVNrmuq" xid="div1" __cid="cVNrmuq"> 
+      <div class="col-sm-3 cVNrmuq" xid="div2" __cid="cVNrmuq"> 
+        <div class="x-pagerbar-length cVNrmuq" xid="div3" __cid="cVNrmuq"> 
+          <label component="$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect" class="x-pagerlimitselect cVNrmuq" xid="pagerLimitSelect1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect'}" data-config="{&quot;data&quot;:&quot;mainData&quot;}" __cid="cVNrmuq"> 
+            <span xid="span1" __cid="cVNrmuq" class="cVNrmuq">显示</span>  
+            <select component="$model/UI2/system/components/justep/select/select" class="form-control input-sm cVNrmuq" xid="select1" data-bind="component:{name:'$model/UI2/system/components/justep/select/select'}" __cid="cVNrmuq"> 
+              <option value="10" xid="default2" __cid="cVNrmuq" class="cVNrmuq">10</option>  
+              <option value="20" xid="default3" __cid="cVNrmuq" class="cVNrmuq">20</option>  
+              <option value="50" xid="default4" __cid="cVNrmuq" class="cVNrmuq">50</option>  
+              <option value="100" xid="default5" __cid="cVNrmuq" class="cVNrmuq">100</option> 
+            </select>  
+            <span xid="span3" __cid="cVNrmuq" class="cVNrmuq">条</span> 
+          </label> 
+        </div> 
+      </div>  
+      <div class="col-sm-3 cVNrmuq" xid="div4" __cid="cVNrmuq"> 
+        <div class="x-pagerbar-info cVNrmuq" xid="div5" __cid="cVNrmuq">当前显示1-10条，共16条</div> 
+      </div>  
+      <div class="col-sm-6 cVNrmuq" xid="div6" __cid="cVNrmuq"> 
+        <div class="x-pagerbar-pagination cVNrmuq" xid="div7" __cid="cVNrmuq"> 
+          <ul class="pagination cVNrmuq" component="$model/UI2/system/components/bootstrap/pagination/pagination" xid="pagination1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/pagination/pagination'}" data-config="{&quot;data&quot;:&quot;mainData&quot;}" __cid="cVNrmuq"> 
+            <li class="prev cVNrmuq" xid="li1" __cid="cVNrmuq"> 
+              <a href="#" xid="a1" __cid="cVNrmuq" class="cVNrmuq"> 
+                <span aria-hidden="true" xid="span4" __cid="cVNrmuq" class="cVNrmuq">«</span>  
+                <span class="sr-only cVNrmuq" xid="span5" __cid="cVNrmuq">Previous</span> 
+              </a> 
+            </li>  
+            <li class="next cVNrmuq" xid="li2" __cid="cVNrmuq"> 
+              <a href="#" xid="a2" __cid="cVNrmuq" class="cVNrmuq"> 
+                <span aria-hidden="true" xid="span6" __cid="cVNrmuq" class="cVNrmuq">»</span>  
+                <span class="sr-only cVNrmuq" xid="span9" __cid="cVNrmuq">Next</span> 
+              </a> 
+            </li> 
+          </ul> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>

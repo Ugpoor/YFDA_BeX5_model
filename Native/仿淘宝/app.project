@@ -1,0 +1,33 @@
+{
+	"androidPassword":"123456",
+	"appID":"C6DC500D6C400001DCDB1550E7B01989",
+	"area":"丰台区",
+	"author":"北京起步科技有限公司",
+	"autoSelectPlugins":true,
+	"company":"北京起步科技有限公司",
+	"email":"x5@justep.com",
+	"extBrowser":false,
+	"genAndroid":true,
+	"genIOSDev":false,
+	"genIOSDis":false,
+	"homePage":"http://www.justep.com",
+	"indexURL":"/demo/taobao/index.w",
+	"iosDevloperPassword":"",
+	"iosDistributionPassword":"",
+	"mode":"1",
+	"plugins":"",
+	"pluginsConfig":[{
+		"common":{
+			"weixin_api_key":"1",
+			"weixin_appid":"wx446deb233028960a",
+			"weixin_partner_id":"1"
+		},
+		"id":"com.justep.cordova.plugin.weixin.v3"
+	}],
+	"province":"北京市",
+	"resEncryption":false,
+	"serverURL":"http://demo.wex5.com",
+	"sourceMode":false,
+	"uiResDirs":"demo/taobao",
+	"webPath":"/taobao"
+}

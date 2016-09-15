@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/excel/exportExcel" tag-name="div" icon="iconExport.gif" text="data数据excel导出"
+		binding-component="$UI/system/components/justep/excel/exportExcel"
+		display-property="xid" component-type="formControl" parent-range="$UI/system/components/justep/window/window" resizable="false">
+
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="data" text="导出data" required="true" is-id-ref="true" editor-ref="bizDatalist"/>
+			<property name="from" text="导出的数据来源方式" readonly="true" default-value="DB" editor-ref="fromList" enum-values=""/>
+			<property name="relations" text="导出列，格式(列:宽)，如:sName:300,sLock:400" readonly="true" default-value="全部" editor-ref="widthByRelationDlg"/>
+			<property name="downloadFilename" text="导出的文件名，默认为download.xls"/>
+			<property name="exportKey" text="导出主键" default-value="false" editor-ref="booleanList" data-type="boolean"/>
+			<property name="exportCalculate" enabled-condition="@from='UI'" text="导出前端计算列" default-value="false" editor-ref="booleanList" data-type="boolean"/>
+			<property name="useConfigDlg" text="使用导出参数配置" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="action" text="指定导出excel的action" editor-ref="actionDlg" default-value="exportExcel"/>
+			<property name="labelRelations" visible="false" text="列显示名定义"/>
+		</properties>
+
+		<property-editors>
+			<property-editor name="widthByRelationDlg" type="dialog">
+				<dialog-page class-name="com.justep.studio.ui.editors.propertypage.BizDataRelationWidthPage"/>				
+			</property-editor>
+
+			<property-editor name="bizDatalist" type="list">
+						<dynamic-data xpath="//*[@component='$UI/system/components/justep/data/bizData']/@xid"/>								
+			</property-editor>
+			
+			<property-editor name="fromList" type="list" > 
+				<static-data value="UI,DB" /> 
+			</property-editor>		
+		</property-editors>		
+	
+		<events>  <!--组件事件-->			
+			<event name="onExportCreateParam"  text="创建导出参数"/>
+			<event name="onBeforeExport"  text="导出前"/>
+			<event name="onSuccess"  text="导出成功"/>
+			<event name="onError"  text="导出失败"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/excel/exportExcel"/>
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

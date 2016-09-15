@@ -1,0 +1,122 @@
+/**
+	@name de.appplant.cordova.plugin.badge
+	@class 
+	@description应用图标数字提醒插件
+	@category plugin
+	@model Native
+	@declareVar plugin.notification.badge
+*/
+
+/**
+	@name de.appplant.cordova.plugin.badge.clear
+	@function
+ 	@returns {void}
+ 	@description 清除消息通知的图标
+*/
+
+/**
+	@name de.appplant.cordova.plugin.badge.set
+	@function
+	@param {Number} badge 
+ 	@returns {void}
+ 	@description 设置信息条目
+*/
+
+/**
+	@name de.appplant.cordova.plugin.badge.get
+	@function
+	@param {Function} callback 回调函数
+	@param {Object?} scope 执行范围
+ 	@returns {void}
+ 	@description 获取信息条目
+*/
+
+/**
+	@name de.appplant.cordova.plugin.badge.increase
+	@function
+	@param {Number} count 增加的条目数
+ 	@returns {void}
+ 	@description 消息条目的增加
+*/
+
+/**
+	@name de.appplant.cordova.plugin.badge.decrease
+	@function
+	@param {Number} count 减少的条目数
+ 	@returns {void}
+ 	@description 消息条目的减少
+*/
+
+/**
+	@name de.appplant.cordova.plugin.badge.hasPermission
+	@function
+	@param {Function} callback 回调函数
+	@param {Object?} scope 执行范围
+ 	@returns {void}
+ 	@description 判断本地app是否有执行本地消息通知的权限
+*/
+
+/**
+	@name de.appplant.cordova.plugin.badge.registerPermission
+	@function
+	@param {Function} callback 回调函数
+	@param {Object?} scope 执行范围
+ 	@returns {void}
+ 	@description 设置app执行本地消息通知的权限
+*/
+
+/**
+	@name de.appplant.cordova.plugin.badge.configure
+	@function
+	@param {Object} config 设置参数
+ 	@returns {Object} 当前的设置
+ 	@description 配置插件的平台选项
+*/
+
+/**
+	@name de.appplant.cordova.plugin.badge.setTitle
+	@function
+	@param {String} title 标题
+ 	@return {void}
+ 	@description 设置标题
+*/
+
+/**
+	@name de.appplant.cordova.plugin.badge.setClearOnTap
+	@function
+	@param {Boolean} clearOnTap
+ 	@return {void}
+ 	@description 设置用户点击图标清除消息提醒
+*/
+
+/**
+	@name de.appplant.cordova.plugin.badge.promptForPermission
+	@function
+	@return {void}
+ 	@description 注册允许显示通知
+*/
+
+/**
+	@name de.appplant.cordova.plugin.badge.createCallbackFn
+	@function
+	@param {Function} callbackFn 回调函数
+ 	@param {Object} scope 执行范围
+ 	@return {Function} 返回一个回调函数
+ 	@description 创建指定范围执行的回调函数
+*/
+
+/**
+	@name de.appplant.cordova.plugin.badge#notification
+	@class 
+	@description 通知栏消息插件
+	@model Native
+	@category EventClass
+	@declareVar plugin.notification
+*/
+
+/**
+   @name de.appplant.cordova.plugin.badge#notification.badge
+   @property
+   @type de.appplant.cordova.plugin.badge
+   @description 通知消息
+*/

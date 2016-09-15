@@ -1,0 +1,1018 @@
+/**
+	@name $UI/system/lib/base/request
+	@class 
+	@category javascript
+	@model UI2
+	@description 请求相关
+*/
+ 
+/**
+	@name $UI/system/lib/base/request.SESSION_TIMEOUT
+	@property
+	@type string 
+	@description <b>[filed]</b>BizServer session超时标志常量
+ */ 
+
+/**
+	@name $UI/system/lib/base/request.bizExecuteUrl
+	@property
+	@type string 
+	@description <b>[filed]</b>biz action请求的url，$UI/system/service/common/bizAction.j
+ */ 
+
+/**
+	@name $UI/system/lib/base/request.setBizParams
+	@function 
+	@description URL上增加Bsessionid,process,activity,executor,executeContext等
+	@param {string} url <b>[required]</b>URL
+	@param {string} bsessionid <b>[required]</b>bsessionid
+	@param {string} process 
+	@param {string} activity 
+	@param {string} executor 执行者
+	@param {string} executeContext 执行环境
+	@returns {string}
+ */
+
+/**
+	@name $UI/system/lib/base/request.sendHttpRequest
+	@function 
+	@description 向服务端发送同步post请求,使用json格式
+	@param {object} options <b>[required]</b>请求属性
+	<br/><b>参数说明：</b>
+	<xmp>
+	url : string URL
+	postData : object 向服务端post的数据
+	process : string process
+	activity : string activity
+	executor : 执行者
+	executeContext : 执行环境
+	context : 当前的上下文
+	callback : 请求回调函数，callback(XHR, TS),XHR : XMLHttpRequest 对象,	TS : 描述成功请求类型的字符串，参考jquery的ajax
+	</xmp>
+	@returns {XMLHttpRequest} 
+	@see $UI/system/lib/base/request.setBizParams
+	@example
+	<xmp> 
+	var param ={
+		url: require.toUrl('$UI/OA/test.j'), 
+		postData: {
+			param1 : 'beijing',
+			param2 : 1
+			},
+		callback: function(xhr, ts){
+			if(Request.isSuccess(xhr)) alert('ok');
+			else alert('error');
+		}	
+	};
+	Request.sendHttpRequest(param);
+	</xmp>
+ */
+
+/**
+	@name $UI/system/lib/base/request.sendAsyncHttpRequest
+	@function 
+	@description 向服务端发送异步post请求,使用json格式
+	@param {object} options <b>[required]</b>请求属性
+	<br/><b>参数说明：</b>
+	<xmp>
+	url : string URL
+	postData : object 向服务端post的数据
+	process : string process
+	activity : string activity
+	executor : 执行者
+	executeContext : 执行环境
+	context : 当前的上下文，当process，activity，executor，executeContext没有给出时使用context中的相关参数
+	callback : 请求回调函数，callback(XHR, TS),XHR : XMLHttpRequest 对象,	TS : 描述成功请求类型的字符串，参考jquery的ajax
+	</xmp>
+	@returns {XMLHttpRequest} 
+	@see $UI/system/lib/base/request.setBizParams
+	@example
+	<xmp> 
+	var param ={
+		url: require.toUrl(('$UI/OA/test.j'), 
+		postData: {
+			param1 : 'beijing',
+			param2 : 1
+			},
+		callback = function(xhr, ts){
+			if(Request.isSuccess(xhr)) alert('ok');
+			else alert('error');
+		}	
+	};
+	Request.sendAsyncHttpRequest(param);
+	</xmp>
+ */
+ 
+/**
+	@name $UI/system/lib/base/request.isSuccess
+	@function 
+	@description 判断向服务端发送请求是否成功，代码示例参见：{@link $UI/system/lib/base/request.sendHttpRequest}
+	@param {XMLHttpRequest} XMLHttpRequest <b>[required]</b>Request.sendHttpRequest返回对象
+	@returns {boolean}
+	@see $UI/system/lib/base/request.sendHttpRequest
+	@see $UI/system/lib/base/request.isBizSuccess
+ */
+
+/**
+	@name $UI/system/lib/base/request.createBizParam
+	@function 
+	@see $UI/system/lib/base/request.sendBizRequest
+	@see $UI/system/lib/base/request#ActionParam
+	@see $UI/system/lib/base/request#TranslateParam
+	@see $UI/system/lib/base/request#RequestCallbackData
+	@description 创建向Biz服务端发送Action请求的data，通常情况下不需主动调用此方法构造参数，直接使用{@link $UI/system/lib/base/request.sendBizRequest}发送请求
+	@param {object} options <b>[required]</b>请求属性
+	<br/><b>参数说明：</b>
+	<xmp>
+	action：{string} [required] 执行的action;
+	parameters：{$UI/system/lib/base/request#ActionParam} required Action参数对象
+	translateParam：{$UI/system/lib/base/request#TranslateParam} Action数据格式转换参数对象
+	callback：function 请求完成后的回调，function(RCD)，RCD为：RequestCallbackData
+	directExecute：boolean 在批事务中是否立即执行
+	process：string 缺省取当前环境的
+	activity：string 缺省取当前环境的
+	executor： 执行者，缺省取当前环境里的
+	executeContext： 执行环境，缺省取环境里的
+	context: 当前的上下文，当process，activity，executor，executeContext没有给出时使用context中的相关参数
+	</xmp>
+	@returns {string}
+	@example 
+	<xmp>
+	var options = {};
+	var param = new Request.ActionParam();
+	param.setString('para_string', '');
+	param.setInteger('para_integer', 11);
+	param.setFloat('para_float', 1.345);
+	param.setDateTime('para_datetime', new Data());
+	var process = "/demo/misc/process/simpleAction/simpleActionProcess";
+	var activity = "mainActivity";
+	options.process = process;
+	options.activity = activity;
+	options.parameters = param;
+	options.action = "demoparaAction";
+	options.callback = function(data){
+		...
+	};	
+	var result = Request.createBizParam(options);
+	</xmp>
+ */
+
+/**
+	@name $UI/system/lib/base/request.sendBizRequest
+	@function 
+	@description <b>[推荐使用]</b>向Biz服务端发送同步Action请求,使用json格式
+	@see $UI/system/lib/base/request.createBizParam
+	@see $UI/system/lib/base/request#ActionParam
+	@see $UI/system/lib/base/request#TranslateParam
+	@see $UI/system/lib/base/request#RequestCallbackData
+	@param {object} options <b>[required]</b>请求参数
+	<br/><b>参数说明：</b>
+	<xmp>
+	options参数说明：	
+	action：{string} [required] 执行的action;
+	parameters：{$UI/system/lib/base/request#ActionParam} required Action参数对象
+	translateParam：{$UI/system/lib/base/request#TranslateParam} Action数据格式转换参数对象
+	callback：function 请求完成后的回调，function(RCD)，RCD为：RequestCallbackData，当设置了这个参数默认RequestCallbackData.ignoreError=true，即需要开发者处理错误；如果需要继续使用平台错误提示将RequestCallbackData.ignoreError=false;
+	directExecute：boolean 在批事务中是否立即执行
+	process：string 缺省取当前环境的
+	activity：string 缺省取当前环境的
+	executor： 执行者，缺省取当前环境里的
+	executeContext： 执行环境，缺省取环境里的
+	context: 当前的上下文，当process，activity，executor，executeContext没有给出时使用context中的相关参数
+	</xmp>
+	@returns {XMLHttpRequest}
+	@example 
+	<xmp>
+	var options = {};
+	var param = new Request.ActionParam();
+	param.setString('para_string', '');
+	param.setInteger('para_integer', 11);
+	param.setFloat('para_float', 1.345);
+	param.setDateTime('para_datetime', new Data());
+	var process = "/demo/misc/process/simpleAction/simpleActionProcess";
+	var activity = "mainActivity";
+	options.contentType = 'application/json';
+	options.process = process;
+	options.activity = activity;
+	options.dataType = "json";
+	options.parameters = param;
+	options.action = "demoparaAction";
+	options.callback = function(data){
+		if(data.state){
+			//成功
+		}else{
+			//失败
+			Request.errorMessage(resultData, "执行失败！", null, null);
+		}			
+	};	
+	var result = Request.sendBizRequest(options);
+	</xmp>
+ */
+
+/**
+	@name $UI/system/lib/base/request.sendAsyncBizRequest
+	@function 
+	@description <b>[推荐使用]</b>向Biz服务端发送异步Action请求,使用json格式
+	@see $UI/system/lib/base/request.createBizParam
+	@see $UI/system/lib/base/request#ActionParam
+	@see $UI/system/lib/base/request#TranslateParam
+	@see $UI/system/lib/base/request#RequestCallbackData
+	@param {object} options <b>[required]</b>请求参数
+	<br/><b>参数说明：</b>
+	<xmp>
+	options参数说明：	
+	action：{string} [required] 执行的action;
+	parameters：{$UI/system/lib/base/request#ActionParam} required Action参数对象
+	translateParam：{$UI/system/lib/base/request#TranslateParam} Action数据格式转换参数对象
+	callback：function 请求完成后的回调，function(RCD)，RCD为：RequestCallbackData，当设置了这个参数默认RequestCallbackData.ignoreError=true，即需要开发者处理错误；如果需要继续使用平台错误提示将RequestCallbackData.ignoreError=false;
+	directExecute：boolean 在批事务中是否立即执行
+	process：string 缺省取当前环境的
+	activity：string 缺省取当前环境的
+	executor： 执行者，缺省取当前环境里的
+	executeContext： 执行环境，缺省取环境里的
+	context: 当前的上下文，当process，activity，executor，executeContext没有给出时使用context中的相关参数
+	</xmp>
+	@returns {XMLHttpRequest}
+	@example 
+	<xmp>
+	var options = {};
+	var param = new Request.ActionParam();
+	param.setString('para_string', '');
+	param.setInteger('para_integer', 11);
+	param.setFloat('para_float', 1.345);
+	param.setDateTime('para_datetime', new Data());
+	var process = "/demo/misc/process/simpleAction/simpleActionProcess";
+	var activity = "mainActivity";
+	options.contentType = 'application/json';
+	options.process = process;
+	options.activity = activity;
+	options.dataType = "json";
+	options.parameters = param;
+	options.action = "demoparaAction";
+	options.callback = function(data){
+		if(data.state){
+			//成功
+		}else{
+			//失败
+			Request.errorMessage(resultData, "执行失败！", null, null);
+		}			
+	};	
+	var result = Request.sendAsyncBizRequest(options);
+	</xmp>
+ */
+
+/**
+	@name $UI/system/lib/base/request#RequestCallbackData
+	@class  
+	@category javascript
+	@model UI2
+	@description  Request.sendBizRequest中callback函数的返回参数对象
+	@see $UI/system/lib/base/request.sendBizRequest
+*/	
+
+/**
+	@name $UI/system/lib/base/request#RequestCallbackData#httpResponse
+	@property
+	@type object 
+	@description <b>[filed]</b>浏览器ajax请求返回的对象
+*/
+
+/**
+	@name $UI/system/lib/base/request#RequestCallbackData#response
+	@property
+	@type object 
+	@description <b>[filed]</b>请求返回的XML或者json对象
+*/
+
+/**
+	@name $UI/system/lib/base/request#RequestCallbackData#state
+	@property
+	@type boolean 
+	@description <b>[filed]</b>Biz Action请求状态
+*/
+
+/**
+	@name $UI/system/lib/base/request#RequestCallbackData#httpState
+	@property
+	@type string 
+	@description <b>[filed]</b>Http请求返回Code
+*/
+
+/**
+	@name $UI/system/lib/base/request#RequestCallbackData#httpError
+	@property
+	@type boolean 
+	@description <b>[filed]</b>Http请求失败
+*/
+
+/**
+	@name $UI/system/lib/base/request#RequestCallbackData#param
+	@property
+	@type string 
+	@description <b>[filed]</b>请求post的数据
+*/
+
+/**
+	@name $UI/system/lib/base/request#RequestCallbackData#url
+	@property
+	@type string 
+	@description <b>[filed]</b>请求url
+*/
+
+/**
+	@name $UI/system/lib/base/request#RequestCallbackData#ignoreError
+	@property
+	@type boolean 
+	@description <b>[filed]</b>是否让请求函数忽略请求错误处理，默认值为true，可以赋值为false让请求函数继续处理请求错误
+	@example
+	<xmp>
+	当设置了这个参数默认RequestCallbackData.ignoreError=true，即需要开发者处理错误；
+	如果需要继续使用平台错误提示将RequestCallbackData.ignoreError=false;
+	</xmp>
+*/
+
+/**
+	@name $UI/system/lib/base/request.isBizSuccess
+	@function 
+	@description 判断向Biz服务端发送Action请求是否成功，这是业务成功判断，也就是说http请求成功并且biz action成功返回
+	@see $UI/system/lib/base/request.isSuccess
+	@param {XMLHttpRequest} XMLHttpRequest <b>[required]</b>Request.sendBizRequest返回对象
+	@returns {boolean}
+ */
+
+/**
+	@name $UI/system/lib/base/request.bizSessionOverdue
+	@function 
+	@description 业务服务器请求的超时处理
+	@param {XMLHttpRequest} XMLHttpRequest <b>[required]</b>Request.sendBizRequest返回对象, 或bizAction返回的数据
+	@returns {void}
+ */
+
+/**
+	@name $UI/system/lib/base/request.getServerError
+	@function 
+	@description 获取Biz Action请求失败错误信息
+	@param {Object} responseData <b>[required]</b>请求返回对象或者回调参数
+	@param {string} msg 错误提示
+	@param {string} url 请求的url
+	@param {string} requestParam 请求的参数
+	@returns {string}
+	@example
+	<xmp>
+	var msg = Request.getServerError(resultData, "加载数据失败！");
+	</xmp>
+ */
+
+/**
+	@name $UI/system/lib/base/request.errorMessage
+	@function 
+	@description Biz Action请求失败错误信息提示，可以在请求后的回调中处理请求错误
+	@param {object} responseData <b>[required]</b>请求返回对象或者回调参数
+	@param {string} msg 错误提示
+	@param {string} url 请求的url
+	@param {string} requestParam 请求的参数
+	@see $UI/system/lib/base/request.sendBizRequest
+	@example
+	<xmp>
+	Request.errorMessage(resultData, "加载数据失败！");
+	</xmp>
+ */
+
+/**
+	@name $UI/system/lib/base/request.beginBatch
+	@function 
+	@param {string} context 当前的上下文
+	@description 启动批提交，支持嵌套
+	@returns {XMLHttpRequest}
+	@see $UI/system/lib/base/request.endBatch
+	@see $UI/system/lib/base/request.cancelBatch
+	@example
+	<xmp>
+	//批提交
+	Request.beginBatch();
+	try{
+		//发送biz请求
+	 	...
+	} catch (e) {
+		Request.cancelBatch();
+	 	...提示出错
+	} 
+	Request.endBatch();
+	</xmp> 
+ */
+
+/**
+	@name $UI/system/lib/base/request.endBatch
+	@function 
+	@see $UI/system/lib/base/request.beginBatch
+	@see $UI/system/lib/base/request.cancelBatch
+	@description 执行批提交，支持嵌套，当执行了和Request.beginBatch对应次数才正式执行biz请求，案例参考：{@link $UI/system/lib/base/request.beginBatch}
+	@returns {XMLHttpRequest}
+ */
+
+/**
+	@name $UI/system/lib/base/request.cancelBatch
+	@function 
+	@see $UI/system/lib/base/request.beginBatch
+	@see $UI/system/lib/base/request.endBatch
+	@description 取消当前的批提交，所有批提交全部取消，案例参考：{@link $UI/system/lib/base/request.beginBatch}
+	@returns {XMLHttpRequest}
+ */
+
+/**
+	@name $UI/system/lib/base/request.ActionParam
+	@type $UI/system/lib/base/request#ActionParam
+	@property  
+	@category javascript
+	@model UI2
+	@description  bizAction请求参对象
+*/	
+
+/**
+	@name $UI/system/lib/base/request#ActionParam
+	@class  
+	@category javascript
+	@model UI2
+	@description  bizAction请求参数类
+*/	
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#deleteParam
+ @function
+ @description 删除biz action请求参数
+ @param	{string} name action参数名称
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setNULL
+ @function
+ @description action请求参数赋值成NULL
+ @param	{string} name action参数名称
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#getParam
+ @function
+ @description 获取biz action请求参数
+ @param	{string} name action参数名称
+ @returns {object}
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setParam
+ @function
+ @description 设置biz action请求参数，如果value不是Request.SimpleParam、Request.ListParam、Request.MapParam、Request.XMLParam、Request.TableParam会自动进行转换
+ @param	{string} name action参数名称
+ @param	{object} value action参数值
+ @see $UI/system/lib/base/request#ActionParam#setNULL
+ @see $UI/system/lib/base/request#ActionParam#deleteParam
+ @example
+ <xmp>
+	如果设置必填的参数为NULL时请使用setNULL方法；
+ 	JS中的Number类型将按Long和Double处理，
+ 	JS中Date按DateTime处理
+ 
+ 	var param = new Request.ActionParam();
+ 	//设置list参数
+ 	param.setParam('list',[12,'abc']);
+ 	等价于
+ 	var list = new Request.ListParam();
+ 	list.add(new Request.SimpleParam(12,
+						XML.Namespaces.XMLSCHEMA_LONG));
+ 	list.add(new Request.SimpleParam('abc',
+						XML.Namespaces.XMLSCHEMA_STRING));
+	param.setList('list', list);						
+ 	//设置map参数
+ 	param.setParam('map',{int:12,str:'abc'});
+ 	等价于
+ 	var map = new Request.MapParam();
+ 	list.put('int', new Request.SimpleParam(12,
+						XML.Namespaces.XMLSCHEMA_LONG));
+ 	list.put('str', new Request.SimpleParam('abc',
+						XML.Namespaces.XMLSCHEMA_STRING));
+	param.setMap('map', map);						
+ 	//设置简单参数
+ 	param.setParam('string','abc'); 等价于 param.setString('string','abc');
+ 	param.setParam('long',123); 等价于 param.setLong('long',123);
+ </xmp>
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#toString
+ @function
+ @description biz action请求参数转换成String
+ @returns {string}
+ @example
+ <xmp>
+ 	通常情况不需要使用，Request.sendBizRequest会主动调用这个方法进行参数序列化
+ </xmp>
+ */
+ 
+/**
+ @name $UI/system/lib/base/request#ActionParam#setString
+ @function
+ @description 设置String类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	{string} value action参数值
+ @see $UI/system/lib/base/request#ActionParam#setParam
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setBoolean
+ @function
+ @description 设置String类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	value action参数值
+ @see $UI/system/lib/base/request#ActionParam#setParam
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setInteger
+ @function
+ @description 设置Integer类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	value action参数值
+ @see $UI/system/lib/base/request#ActionParam#setParam
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setLong
+ @function
+ @description 设置Long类型biz action请求参数，
+ @param	{string} name action参数名称
+ @param	value action参数值
+ @see $UI/system/lib/base/request#ActionParam#setParam
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setFloat
+ @function
+ @description 设置Float类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	value action参数值
+ @see $UI/system/lib/base/request#ActionParam#setParam
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setDouble
+ @function
+ @description 设置Double类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	value action参数值
+ @see $UI/system/lib/base/request#ActionParam#setParam
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setDecimal
+ @function
+ @description 设置Decimal类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	value action参数值
+ @see $UI/system/lib/base/request#ActionParam#setParam
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setDate
+ @function
+ @description 设置Date类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	value action参数值
+ @see $UI/system/lib/base/request#ActionParam#setParam
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setTime
+ @function
+ @description 设置Time类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	value action参数值
+ @see $UI/system/lib/base/request#ActionParam#setParam
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setDateTime
+ @function
+ @description 设置DateTime类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	value action参数值
+ @see $UI/system/lib/base/request#ActionParam#setParam
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setList
+ @function
+ @description 设置List类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	value {$UI/system/lib/base/request#ListParam} action参数值
+ @see $UI/system/lib/base/request#ActionParam#setParam
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setMap
+ @function
+ @description 设置Map类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	{$UI/system/lib/base/request#MapParam} value action参数值
+ @see $UI/system/lib/base/request#ActionParam#setParam
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setXml
+ @function
+ @description 设置Xml类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	{$UI/system/lib/base/request#XMLParam} value action参数值
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setTable
+ @function
+ @description 设置Table类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	{$UI/system/lib/base/request#TableParam} value action参数值
+ @example
+ <xmp>
+	table主要来源于data，可以使用toJson()获取序列化内容
+	注意：Request.TableParam不会处理data序列化结果
+   
+	//biz data使用json格式
+	var params = new Request.ActionParam();
+	var bData = this.comp("mainData");
+	var t = bData.toJson();//序列化成json格式
+	var tableParam = new Request.TableParam(t);
+	params.setTable("param_table", tableParam);
+	...  
+	var options = {};
+	options.parameters = params;
+	...
+	Request.sendBizRequest(options);
+ </xmp> 
+ */
+
+/**
+ @name $UI/system/lib/base/request#ActionParam#setObject
+ @function
+ @description 设置java 对象类型biz action请求参数
+ @param	{string} name action参数名称
+ @param	{$UI/system/lib/base/request#ObjectParam} value action参数值
+ @example
+ <xmp>
+ java的对象需要实现转换层接口:
+ com.justep.system.transform.XMLSerialization，完成xml的对象序列化；
+ com.justep.system.transform.JSONSerialization，完成json的对象序列化
+ </xmp>
+ */
+
+/**
+	@name $UI/system/lib/base/request.TranslateParam
+	@type $UI/system/lib/base/request#TranslateParam  
+	@category javascript
+	@model UI2
+	@property
+	@description  数据格式转换参数对象，主要用于table返回时，返回序列化的格式指定，主要bizData的newData、refreshData中使用
+*/	
+
+
+/**
+	@name $UI/system/lib/base/request#TranslateParam
+	@category javascript
+	@model UI2
+	@class  
+	@description  数据格式转换参数对象，主要用于table返回时，返回序列化的格式指定，主要bizData的newData、refreshData中使用
+*/	
+
+/**
+	@name $UI/system/lib/base/request#TranslateParam#dataType
+	@property
+	@type string 
+	@description <b>[filed]</b>转化数据类型，<br/>可以赋值:Request.TranslateParam.DATATYPE_ROW_LIST，Request.TranslateParam.DATATYPE_ROW_TREE<br/>默认：Request.TranslateParam.DATATYPE_ROW_LIST
+ */ 
+
+/**
+	@name $UI/system/lib/base/request#TranslateParam#rowOption
+	@property
+	@description <b>[filed]</b>行相关参数<br/>
+	<b>格式:</b>
+	<xmp>
+	{
+		concept : 概念,
+		sequence : 返回值列顺序，使用','分隔的字符串
+	}
+	</xmp>
+	@example 
+  <xmp>
+	bizData中的实现：
+			var translateParam = new justep.Request.TranslateParam();
+			translateParam.rowOption.concept = this.idColumn;
+			translateParam.rowOption.sequence = this.getColumnIDs();
+  </xmp>
+ */ 
+
+/**
+	@name $UI/system/lib/base/request#TranslateParam#setTreeOption
+	@function
+	@param	{string} name 参数名称，<br/>取值范围：parent（父节点ID）、tree-parent-relation（构成父子树的关系）
+	@param	value 参数值
+	@description <b>[filed]</b>设置树相关参数，包括tree-parent-relation等
+	@example 
+  <xmp>
+  	bizData中的实现：
+  	var translateParam = new justep.Request.TranslateParam();
+  	...
+	if(parent)
+		translateParam.setTreeOption('parent',parent);
+	if(spreadRelation)
+		translateParam.setTreeOption('tree-parent-relation',parentRelation);
+  </xmp>
+ */ 
+
+/**
+	@name $UI/system/lib/base/request#TranslateParam#getTreeOption
+	@function
+	@param	{string} name 参数名称，<br/>取值范围：parent（父节点ID）、tree-parent-relation（构成父子树的关系）
+	@returns {object}
+	@description <b>[filed]</b>获取树相关参数，包括tree-parent-relation等
+	@see $UI/system/lib/base/request#TranslateParam#setTreeOption
+ */ 
+	
+/**
+ @name $UI/system/lib/base/request#TranslateParam#toString
+ @function
+ @description biz action请求数据格式转换参数转换成String
+ @returns {string}
+*/
+
+/**
+ @name $UI/system/lib/base/request#TranslateParam#isCellNameByRelation
+ @property
+ @description 转换table时是否用relation别名代替cell，针对转换xml格式有效，默认为false
+ @example 
+ <xmp>
+ 	为false时：
+ 	<row>
+ 		<cell>1</cell>
+ 		<cell>beijing</cell>
+ 		...
+ 	</row>
+ 	
+ 	为true时：
+ 	<row>
+ 		<fNO>1</fNO>
+ 		<fName>beijing</fName>
+ 		...
+ 	</row>
+ </xmp>
+*/
+
+/**
+ @name $UI/system/lib/base/request#TranslateParam.DATATYPE_ROW_LIST
+ @constant
+ @description list型数据
+*/
+
+/**
+ @name $UI/system/lib/base/request#TranslateParam.DATATYPE_ROW_TREE
+ @constant
+ @description tree型数据
+*/
+
+/**
+	@name $UI/system/lib/base/request.SimpleParam
+	@type $UI/system/lib/base/request#SimpleParam
+	@property
+	@category javascript
+	@model UI2
+	@description 简单参数对象
+*/	
+
+/**
+	@name $UI/system/lib/base/request#SimpleParam
+	@category javascript
+	@model UI2
+	@class 
+	@description 简单参数类
+	@see $UI/system/lib/base/request#ActionParam#setParam 
+*/	
+
+/**
+ @name $UI/system/lib/base/request#SimpleParam#setValue
+ @function
+ @param	value 值
+ @param	{string} type 参数类型 {@link $UI/system/lib/base/xml#Namespaces} 
+ @description 设置简单参数值
+*/
+
+/**
+	@name $UI/system/lib/base/request.ListParam
+	@type $UI/system/lib/base/request#ListParam
+	@category javascript
+	@property
+	@model UI2
+	@description List参数对象
+*/	
+
+/**
+	@name $UI/system/lib/base/request#ListParam
+	@category javascript
+	@model UI2
+	@class 
+	@description List参数类
+	@see $UI/system/lib/base/request#ActionParam#setParam
+*/	
+
+/**
+ @name $UI/system/lib/base/request#ListParam#add
+ @function
+ @param	{object} value 值,这里value是一种参数对象,如：SimpleParam，ListParam等
+ @description 增加List参数值
+*/
+
+/**
+ @name $UI/system/lib/base/request#ListParam#get
+ @function
+ @param	{integer} index 索引
+ @description 根据索引获取List参数值
+*/
+
+/**
+ @name $UI/system/lib/base/request#ListParam#remove
+ @function
+ @param	{integer} index 索引
+ @description 根据索引删除List参数值
+*/
+
+/**
+ @name $UI/system/lib/base/request#ListParam#length
+ @function
+ @return {integer}
+ @description 返回参数个数
+*/
+
+/**
+	@name $UI/system/lib/base/request.MapParam
+	@type $UI/system/lib/base/request#MapParam
+	@category javascript
+	@model UI2
+	@property 
+	@description Map参数对象
+*/	
+
+/**
+	@name $UI/system/lib/base/request#MapParam
+	@category javascript
+	@model UI2
+	@class 
+	@description Map参数类
+	@see $UI/system/lib/base/request#ActionParam#setParam
+*/	
+
+/**
+ @name $UI/system/lib/base/request#MapParam#put
+ @function
+ @param	{string} name 参数名称
+ @param	{object} value 值,这里value是一种参数对象,如：SimpleParam，ListParam等
+ @description 设置Map参数值
+*/
+
+/**
+ @name $UI/system/lib/base/request#MapParam#get
+ @function
+ @param	{string} key 键值
+ @description 根据键值获取Map参数值
+*/
+
+/**
+ @name $UI/system/lib/base/request#MapParam#remove
+ @function
+ @param	{string} key 键值
+ @description 根据键值删除Map参数值
+*/
+
+/**
+ @name $UI/system/lib/base/request#MapParam#clear
+ @function
+ @description 清除
+*/
+
+/**
+ @name $UI/system/lib/base/request#MapParam#each
+ @function
+ @param	{function} callback 回调函数,参数给出key(map的键值),如:function(key)
+ @description 遍历
+*/
+
+/**
+	@name $UI/system/lib/base/request.XMLParam
+	@type $UI/system/lib/base/request#XMLParam
+	@category javascript
+	@model UI2
+	@property 
+	@description XML参数对象
+*/
+
+/**
+	@name $UI/system/lib/base/request#XMLParam
+	@category javascript
+	@model UI2
+	@class 
+    @param	XML XML对象
+	@description XML参数类
+	@see $UI/system/lib/base/request#ActionParam#setParam
+*/	
+
+/**
+	@name $UI/system/lib/base/request.TableParam
+	@type $UI/system/lib/base/request#TableParam
+	@category javascript
+	@model UI2
+	@property 
+	@description Table参数对象
+*/
+
+/**
+	@name $UI/system/lib/base/request#TableParam
+	@class 
+	@category javascript
+	@model UI2
+    @param	{string} TableString Table的字符串，可以使用data的editDataSerialize方法获取
+	@description Table参数类
+	@see $UI/system/lib/base/request#ActionParam#setTable
+*/	
+
+/**
+	@name $UI/system/lib/base/request.ObjectParam
+	@type $UI/system/lib/base/request#ObjectParam
+	@property 
+	@category javascript
+	@model UI2
+	@description Object参数对象
+*/
+
+/**
+	@name $UI/system/lib/base/request#ObjectParam
+	@class 
+	@category javascript
+	@model UI2
+    @param	{object} obj 对象的序列化XML字符串，或者json对象
+    @param	{string} javaClass 对应的java对象class 
+	@description Object参数类
+	@see $UI/system/lib/base/request#ActionParam#setObject
+*/	
+
+/**
+	@name $UI/system/lib/base/request.getParamsFromURL
+	@function 
+	@description 获取url中的参数，并返回对象
+	@param {string} url <b>[required]</b>URL
+	@returns {object}
+	<br/><b>格式：</b>
+	<xmp>
+	{
+		参数名: 值,
+		参数名: 值,
+		...
+	}
+	</xmp>
+*/	
+
+/**
+	@name $UI/system/lib/base/request.getMessage
+	@function 
+	@description 获取响应的message信息
+	@param {XMLHttpRequest} XMLHttpRequest <b>[required]</b>Request.sendBizRequest返回对象						
+	@return	{string}
+**/
+
+/**
+	@name $UI/system/lib/base/request.getCode
+	@function 
+	@description 获取响应的code
+	@param {XMLHttpRequest} XMLHttpRequest <b>[required]</b>Request.sendBizRequest返回对象						
+	@return	{string}
+**/
+
+/**
+	@name $UI/system/lib/base/request.getReason
+	@function 
+	@description 获取响应的reason
+	@param {XMLHttpRequest} XMLHttpRequest <b>[required]</b>Request.sendBizRequest返回对象						
+	@return	{string}
+**/
+
+
+/**
+	@name $UI/system/lib/base/request.getFlag
+	@function 
+	@description 获取响应的flag信息
+	@param {XMLHttpRequest} XMLHttpRequest <b>[required]</b>Request.sendBizRequest返回对象						
+	@return	{string}
+**/
+
+/**
+	@name $UI/system/lib/base/request.getData
+	@function 
+	@description 获取响应的data数据
+	@param {XMLHttpRequest} XMLHttpRequest <b>[required]</b>Request.sendBizRequest返回对象						
+	@return	{object} 返回请求的数据对象
+**/
+

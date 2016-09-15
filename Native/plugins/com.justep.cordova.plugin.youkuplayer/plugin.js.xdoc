@@ -1,0 +1,54 @@
+/**
+	@name com.justep.cordova.plugin.youkuplayer
+	@class 
+	@model Native
+	@category EventClass
+	@description 播放优酷视频，登陆，注销，查询登陆状态
+	@declareVar navigator.youkuplayer
+*/
+/**
+	@name com.justep.cordova.plugin.youkuplayer.go2Player
+	@function
+	@param {Object} 视频信息
+	<br/><b>参数格式：</b>
+	<xmp>
+		{
+			"vid" : "XODQwMTY4NDg0",    --优酷视频vid可以是"XODQwMTY4NDg0"或者"http://v.youku.com/v_show/id_XMTUxMDY5ODE5Mg==.html?from=y1.2-1-91.3.2-1.1-1-1-1-0"
+										      链接形式也是可以的，要保证链接中有"id_XMTUxMDY5ODE5Mg==.html"，" id_"和".html"之间的是vid，程序会截取这一部分作为vid。
+			
+			"videoquality" : youkuplayer.videoquality.HIGHT  --切换不同的分辨率只需要替换 "youkuplayer.videoquality."
+															          后面的值： STANDARD：标清,HIGHT:高清,SUPER:超清,P1080:1080p
+		}
+	</xmp>	
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description 优酷视频播放：传入vid或者视频地址链接和清晰度即可播放，不传清晰度就按默认清晰度（标清播放），如果所选清晰度不支持，会提示不支持该清晰度
+*/
+/**
+	@name com.justep.cordova.plugin.youkuplayer.doLogin
+	@function
+	@param {void}
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description 优酷登陆功能可以用优酷账号登陆，也可以用qq账号或者新浪微博账号登陆；登陆框右上角的菜单栏提供注册和扫一扫功能。
+*/
+/**
+	@name com.justep.cordova.plugin.youkuplayer.doLogout
+	@function
+	@param {void} 
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description 注销登陆状态
+*/
+/**
+	@name com.justep.cordova.plugin.youkuplayer.getLoginState
+	@function
+	@param {void} 
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description 获取当前登陆的用户名
+*/

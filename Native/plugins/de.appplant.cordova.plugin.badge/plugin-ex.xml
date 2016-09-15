@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="de.appplant.cordova.plugin.badge">
+	<name>数字标签</name>
+	<description>应用图标数字提醒。iOS通过应用图标数字进行提醒；Android系统由于系统限制，通过状态栏进行提醒</description>
+	
+</plugin>

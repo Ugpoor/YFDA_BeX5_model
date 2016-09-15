@@ -1,0 +1,12 @@
+<template text="通用" desc="列表页4" custom="false">
+	<images>
+		<image src="template.png"/>
+	</images>
+
+	<items>
+		<item file="template/index.w"></item>
+		<item file="template/index.css" />
+		<item file="template/index.js" />
+	</items>
+
+</template>

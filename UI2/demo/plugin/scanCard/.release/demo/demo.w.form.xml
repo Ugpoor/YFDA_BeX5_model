@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" component="$model/UI2/system/components/justep/window/window" xid="window" extends="$UI/demo/plugin/template/demo.w" __id="id_1" design="device:m;" class="window window cquqeAz" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cquqeAz" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/buttonGroup,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style>null</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onModelConstructDone:modelModelConstructDone" __cid="cquqeAz" class="cquqeAz"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p5bbaafe3b40244378fba514471efaf8f-iosstatusbar cquqeAz" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cquqeAz"> 
+    <div class="x-panel-top cquqeAz" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cquqeAz"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cquqeAz" xid="titleBar" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;scanCard&quot;}" __cid="cquqeAz"> 
+        <div class="x-titlebar-left cquqeAz" __cid="cquqeAz"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cquqeAz" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;}" __cid="cquqeAz"> 
+            <i xid="i6" class="icon-chevron-left cquqeAz" __cid="cquqeAz"/>  
+            <span xid="span6" __cid="cquqeAz" class="cquqeAz"/>
+          </a>
+        </div>  
+        <div class="x-titlebar-title cquqeAz" __cid="cquqeAz">插件的名字</div>  
+        <div class="x-titlebar-right  cquqeAz" __cid="cquqeAz">
+          <div class="empty cquqeAz" __cid="cquqeAz"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cquqeAz" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cquqeAz">
+      <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cquqeAz" xid="contents1" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0}" __cid="cquqeAz"> 
+        <div class="x-contents-content active cquqeAz" xid="infoContent" style="padding:10px;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cquqeAz">
+          <h3 xid="h31" style="text-align:center;" __cid="cquqeAz" class="cquqeAz">插件概述</h3>
+          <h4 xid="h41" __cid="cquqeAz" class="cquqeAz">介绍：</h4>
+          <p xid="p1" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cquqeAz" class="cquqeAz">ID：com.justep.cordova.plugin.scanCard</p>
+          <p xid="introduceP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cquqeAz" class="cquqeAz">名片识别插件，集成了脉可寻的SDK，免去自行录入名片或纠正识别结果的烦恼，开发者需要先申请key和secure才可以使用，本demo使用的是脉可寻提供的测试的一套参数。您只需要打开摄像头，拍取名片的照片，即可识别名片中的信息并将其上传至脉可寻的服务器，提供查询客户信息的接口，方便以后查询使用。脉可寻识别服务的流程为：认证-&gt;打开SDK相机页面-&gt;拍摄名片-&gt;确认上传成功-&gt;获取数据。</p>
+          <div xid="div4" style="height:30px;" __cid="cquqeAz" class="cquqeAz"/>  
+          <h4 xid="h42" __cid="cquqeAz" class="cquqeAz">适用平台：</h4>  
+          <p xid="platformP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cquqeAz" class="cquqeAz">iOS，Android</p>  
+          <div style="height:30px;" xid="div2_1" xmlns:xui="http://www.justep.com/xui" xui:parent="infoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"/>
+          <h4 xid="h41_1" xmlns:xui="http://www.justep.com/xui" xui:parent="infoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz">注意事项：</h4>
+          <p xid="p5_1" xmlns:xui="http://www.justep.com/xui" xui:parent="infoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz">本demo使用的是脉可寻提供的一套公共测试的参数，拍照后会将数据上传至脉可寻的服务器，凡是用这套参数的测试者均可获取该数据，故如涉及个人隐私，请谨慎拍照上传。</p>
+        </div>  
+        <div class="x-contents-content cquqeAz" xid="demoContent" style="padding:10px;width:100%;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cquqeAz">
+          <div xid="div2" style="height:15px;" __cid="cquqeAz" class="cquqeAz"/>  
+          <div style="height:70px;padding:0px 20px 20px 20px;" xid="div1_6" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"> 
+            <p xid="p1_8" __cid="cquqeAz" class="cquqeAz">授权相关接口：根据脉可寻的规范使用脉可寻的SDK，首先要授权。提供三个接口，分别为授权，检查是否授权，清除授权。&lt;br/&gt;授权接口需要传入一个合作伙伴客户标识，在此传入“12345”</p> 
+          </div>
+          <div style="height:50px;padding:40px" xid="div2_6" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"> 
+            <a class="btn btn-default cquqeAz" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="aouth" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:aouthClick" data-config="{&quot;label&quot;:&quot;授权&quot;}" __cid="cquqeAz"> 
+              <i xid="i1_8" __cid="cquqeAz" class="cquqeAz"/>  
+              <span xid="span1_8" __cid="cquqeAz" class="cquqeAz">授权</span> 
+            </a> 
+          </div>
+          <div style="height:50px;padding:40px" xid="div3_6" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"> 
+            <a class="btn btn-default cquqeAz" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="check" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:checkClick" data-config="{&quot;label&quot;:&quot;检查是否授权&quot;}" __cid="cquqeAz"> 
+              <i xid="i3_8" __cid="cquqeAz" class="cquqeAz"/>  
+              <span xid="span3_8" __cid="cquqeAz" class="cquqeAz">检查是否授权</span> 
+            </a> 
+          </div>
+          <div style="height:50px;padding:40px" xid="div4_6" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"> 
+            <a class="btn btn-default cquqeAz" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="clear" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:clearClick" data-config="{&quot;label&quot;:&quot;清除授权&quot;}" __cid="cquqeAz"> 
+              <i xid="i2_8" __cid="cquqeAz" class="cquqeAz"/>  
+              <span xid="span2_8" __cid="cquqeAz" class="cquqeAz">清除授权</span> 
+            </a> 
+          </div>
+          <div xid="div5_6" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"/>
+          <div xid="div6_6" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"/>
+          <div xid="div7_6" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"/>
+          <div style="height:50px;padding:40px 20px 40px 20px;" xid="div8_6" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"> 
+            <p xid="p3_1" __cid="cquqeAz" class="cquqeAz">拍照上传相关接口：默认拍照后直接将照片上传，如果上传失败，可以调用重新上传接口。</p> 
+          </div>
+          <div style="height:50px;padding:40px" xid="div9_6" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"> 
+            <a class="btn btn-default cquqeAz" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="takePicture" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:takePictureClick" data-config="{&quot;label&quot;:&quot;拍照&quot;}" __cid="cquqeAz"> 
+              <i xid="i4_1" __cid="cquqeAz" class="cquqeAz"/>  
+              <span xid="span4_1" __cid="cquqeAz" class="cquqeAz">拍照</span> 
+            </a> 
+          </div>
+          <div style="height:50px;padding:40px" xid="div10_6" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"> 
+            <a class="btn btn-default cquqeAz" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="upload" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:uploadClick" data-config="{&quot;label&quot;:&quot;重新上传照片&quot;}" __cid="cquqeAz"> 
+              <i xid="i5_1" __cid="cquqeAz" class="cquqeAz"/>  
+              <span xid="span5_1" __cid="cquqeAz" class="cquqeAz">重新上传照片</span> 
+            </a> 
+          </div>
+          <div style="height:60px;padding:40px 20px 40px 20px;" xid="div11_6" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"> 
+            <p xid="p4_1" __cid="cquqeAz" class="cquqeAz">获取名片信息相关接口：本插件提供了两个接口，一个是根据UUID来获取数据，一个是根据时间来获取数据，在此展示其中一个。</p> 
+          </div>
+          <div style="height:50px;padding:40px" xid="div1_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"> 
+            <a class="btn btn-default cquqeAz" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="getByUUID" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:getByUUIDClick" data-config="{&quot;label&quot;:&quot;根据UUID获取数据&quot;}" __cid="cquqeAz"> 
+              <i xid="i6_1" __cid="cquqeAz" class="cquqeAz"/>  
+              <span xid="span6_1" __cid="cquqeAz" class="cquqeAz">根据UUID获取数据</span> 
+            </a> 
+          </div>
+        </div>  
+        <div class="x-contents-content cquqeAz" xid="codeContent" style="padding:10px" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cquqeAz">
+          <p xid="p2_8" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz">回调方法</p>
+          <div xid="callBack" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"/>
+          <div xid="div19_6" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"/>
+          <p xid="p1_6" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz">授权</p>
+          <div xid="aouthClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"/>
+          <p xid="p2_6" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz">检查是否授权</p>
+          <div xid="checkClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"/>
+          <p xid="p3_6" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz">清除授权</p>
+          <div xid="clearClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"/>
+          <p xid="p4_6" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz">拍照</p>
+          <div xid="takePictureClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"/>
+          <p xid="p5_6" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz">重新上传图片</p>
+          <div xid="uploadClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"/>
+          <p xid="p6_6" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz">根据UUID获取数据</p>
+          <div xid="getByUUIDClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cquqeAz" class="cquqeAz"/>
+        </div>
+      </div>
+    </div>  
+    <div class="x-panel-bottom cquqeAz" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cquqeAz">
+      <div component="$model/UI2/system/components/justep/button/buttonGroup" class="btn-group btn-group-justified x-card  cquqeAz" xid="buttonGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/button/buttonGroup'}" data-config="{&quot;tabbed&quot;:true}" __cid="cquqeAz">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cquqeAz" xid="info" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;info&quot;,&quot;target&quot;:&quot;infoContent&quot;}" __cid="cquqeAz"> 
+          <i xid="i1" __cid="cquqeAz" class="cquqeAz"/>  
+          <span xid="span1" __cid="cquqeAz" class="cquqeAz">info</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cquqeAz" xid="demo" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;demo&quot;,&quot;target&quot;:&quot;demoContent&quot;}" __cid="cquqeAz"> 
+          <i xid="i2" __cid="cquqeAz" class="cquqeAz"/>  
+          <span xid="span2" __cid="cquqeAz" class="cquqeAz">demo</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cquqeAz" xid="code" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;code&quot;,&quot;target&quot;:&quot;codeContent&quot;}" __cid="cquqeAz"> 
+          <i xid="i3" __cid="cquqeAz" class="cquqeAz"/>  
+          <span xid="span3" __cid="cquqeAz" class="cquqeAz">code</span>
+        </a>
+      </div>
+    </div>
+    <style __cid="cquqeAz" class="cquqeAz">.x-panel.p5bbaafe3b40244378fba514471efaf8f-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.p5bbaafe3b40244378fba514471efaf8f-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.p5bbaafe3b40244378fba514471efaf8f-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p5bbaafe3b40244378fba514471efaf8f-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p5bbaafe3b40244378fba514471efaf8f-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.p5bbaafe3b40244378fba514471efaf8f-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p5bbaafe3b40244378fba514471efaf8f-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p5bbaafe3b40244378fba514471efaf8f-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p5bbaafe3b40244378fba514471efaf8f-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div>  
+</div>

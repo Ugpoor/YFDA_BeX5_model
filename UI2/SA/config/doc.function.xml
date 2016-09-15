@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root> 
+  <item label="协同办公" iconClass="icon-android-note"> 
+    <item label="文档管理"> 
+      <item label="文档中心" process="/SA/doc/docCenter/docCenterProcess" activity="mainActivity"
+        url="$UI/SA/doc/docCenter/docCenter.a" device="pc"/>
+      <!-- <item label="attachnmentDemo" process="/SA/doc/docSetting/docSettingProcess" activity="mainActivity"
+        url="/system/components/justep/attachment/demo/demo.a"/> --> 
+      <item label="文档检索" process="/SA/doc/docSearch/docSearchProcess" activity="mainActivity"
+        url="/SA/doc/docSearch/docSearch.a" device="pc"/>  
+      <item label="文档关联" process="/SA/doc/docPermission/docPermissionProcess"
+        activity="mainActivity" url="/SA/doc/docPermission/docPermission.a"  device="pc"/>  
+      <item label="文档配置" process="/SA/doc/docSetting/docSettingProcess" activity="mainActivity"
+        url="/SA/doc/docSetting/docSetting.a" device="pc"/>
+    </item>
+  </item>
+</root>
+

@@ -1,0 +1,17 @@
+/**
+	@name com.phonegap.plugins.videoplayer
+	@class 
+	@description 视频播放插件
+	@model Native
+	@category plugin
+	@declareVar cordova.plugins.videoPlayer
+*/
+
+/**
+	@name com.phonegap.plugins.videoplayer.play
+	@function
+	@param {String} url 播放视频的路径，支持本地绝对路径和http://的路径
+ 	@returns {void}
+ 	@description 播放视频
+*/
+

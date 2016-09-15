@@ -1,0 +1,177 @@
+/**
+	@name $UI/system/components/justep/dialog/dialog
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description Dialog
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#title
+	@attribute
+	@property 
+	@type string
+	@description 对话框标题，当showTitle=true时有效
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#showTitle
+	@attribute
+	@property 
+	@type boolean
+	@description 是否显示标题栏，缺省：flase
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#status
+	@attribute
+	@property 
+	@type string
+	@description 对话框显示状态，取值范围：normal,maximize
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#width
+	@attribute
+	@property 
+	@type string
+	@description 对话框宽，支持css中所有的长度单位，如：200px、80%，缺省：80%
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#height
+	@attribute
+	@property 
+	@type string
+	@description 对话框高，支持css中所有的长度单位，如：200px、80%，缺省：80%
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#top
+	@attribute
+	@property 
+	@type string
+	@description 对话框上偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#left
+	@attribute
+	@property 
+	@type string
+	@description 对话框左偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#routable
+	@attribute
+	@property 
+	@type boolean
+	@description 是否开启路由
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#resizable
+	@attribute
+	@property 
+	@type boolean
+	@description 是否允许改变大小
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"title" : {string} 对话框标题
+		"showTitle" : {boolean} 是否显示标题
+		"resizable" : {boolean} 是否允许改变大小
+		"status": {string} 对话框显示状态，取值范围：normal,maximize
+		"width": {string} 对话框宽，支持css中所有的长度单位，如：200px、80%，缺省：80%		
+		"height": {string} 对话框高，支持css中所有的长度单位，如：200px、80%，缺省：80%		
+		"top": {string} 对话框上偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中		
+		"left": {string} 对话框左偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中	
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："title"、"showTitle"、"resizable"、"status"、 "width"、"height"、"top"、"left"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#open
+	@function
+	@description 打开对话框
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#close
+	@function
+	@description 关闭对话框
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#setContent
+	@function
+	@param	{string} content 对话框的内容
+	@description 设置对话框显示的html内容
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#onOpen
+	@event
+	@description <b>[回调型事件]</b>打开事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/dialog/dialog#onClose
+	@event
+	@description <b>[回调型事件]</b>关闭事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+ @name $UI/system/components/justep/dialog/dialog#open
+ @operation
+ @see $UI/system/components/justep/dialog/dialog#open
+ @description 打开对话框
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/dialog/dialog#close
+ @operation
+ @description 关闭对话框
+ @returns {void}
+*/

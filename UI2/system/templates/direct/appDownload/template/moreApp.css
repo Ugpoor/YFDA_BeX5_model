@@ -1,0 +1,12 @@
+.topbtngroup{
+	margin-top:8px;
+	margin-bottom:8px;
+}
+.img-app{
+	width:70px;
+	height:70px;
+}
+.x-list-template li:first-child{
+	border-top:1px solid #eee;
+}
+

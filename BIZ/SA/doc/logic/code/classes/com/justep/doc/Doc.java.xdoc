@@ -1,0 +1,18 @@
+/**
+	@name com.justep.doc.Doc
+	@model BIZ
+	@category java
+	@class
+	@extends com.justep.doc.AbstractDoc
+	@description  
+		基本文档类
+*/
+
+
+/**
+	@name com.justep.doc.Doc#getDocs
+	@function
+	@description 获取包含当前文档的父容器对象
+	@returns {Docs}
+*/
+

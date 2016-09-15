@@ -1,0 +1,50 @@
+/**
+	@name $UI/system/api/native/wxPay
+	@class
+	@category javascript
+	@model UI2
+	@description 微信支付
+	@example 
+	<xmp> 
+			var wxPay = require('$UI/system/api/native/wxPay');
+			var tradeNo = justep.UUID.createUUID();
+			var notifyUrl = location.origin + "/baas/weixin/weixin/notify";
+			wxPay.pay({
+				body : "x5外卖",
+				mchId : "1305137601",
+				notifyUrl : notifyUrl,
+				outTradeNo : tradeNo,
+				totalFee : "1",
+				success : function(e) {
+					alert(JSON.stringify(e))
+				},
+				cancel : function(e) {
+					alert(JSON.stringify(e))
+				},
+				fail : function(e) {
+					alert(JSON.stringify(e))
+				}
+			});
+	</xmp>
+*/
+
+/**
+	@name $UI/system/api/native/wxPay.pay
+	@function
+	@description 发起支付
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+			"body" : {string} 标题,
+	                "mchId" : {string} 合作商户ID,
+			"notifyUrl" : {string} 成功通知url,
+			"outTradeNo" : {string} 订单号,
+			"totalFee" : {string} 金额（分）,
+			"success" : {function} success 回调函数
+			"cancel" : {function} cancel 回调函数
+			"fail" :  {function} fail 回调函数
+	}
+	</xmp>
+	@return {void}
+*/

@@ -1,0 +1,37 @@
+/**
+	@name com.justep.doc.attachment.Attachment
+	@model BIZ
+	@category java
+	@class
+	@extends com.justep.doc.AbstractDoc
+	@description 附件类
+	<xmp>
+		和文档类基本实现一致，扩展了和业务数据数据的关联信息(billID)
+	</xmp>
+*/
+
+/**
+	@name com.justep.doc.attachment.Attachment#toJsonString
+	@function
+	@description 转化成json字符串
+	<xmp>
+		与附件组件关联的业务字段中存储的内容有关系
+		业务字段中存的是个json的数组
+		其中的每一项就是一个Attachment对象toJsonString的结果
+	</xmp>
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.attachment.Attachment#getAttachments
+	@function
+	@description 获取包含当前附件的父容器Attachments对象
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.Attachment#toTable
+	@function
+	@description 转换成Table
+	@returns {Table}
+*/

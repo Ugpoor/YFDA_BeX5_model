@@ -1,0 +1,26 @@
+/**
+	@name com.plugins.shortcut
+	@class 
+	@description  
+	@model Native
+	@category plugin
+	@declareVar ShortcutPlugin
+*/
+/**
+	@name com.plugins.shortcut.CreateShortcut
+ 	@function
+ 	@param {String} 创建快捷方式的名字
+ 	@param {Function} successCallback 执行成功回调函数
+ 	@param {Function} errorCallback 执行失败回调函数
+ 	@returns {void}
+ 	@description 创建一个快捷方式
+*/
+/**
+	@name com.plugins.shortcut.RemoveShortcut
+ 	@function
+ 	@param {String} 快捷方式的名字
+ 	@param {Function} successCallback 执行成功回调函数
+ 	@param {Function} errorCallback 执行失败回调函数
+ 	@returns {void}
+ 	@description 移除一个快捷方式
+*/

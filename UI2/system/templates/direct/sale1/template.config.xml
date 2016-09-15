@@ -1,0 +1,11 @@
+<template text="通用" desc="向导完成打开页为门户页，目录下的main.w为首页" custom="false">
+	<images>
+	<image src="template.png"/>
+	</images>
+
+	<items>
+		<item file="template/index.w"></item>
+		<item file="template/index.js" />
+	</items>
+
+</template>

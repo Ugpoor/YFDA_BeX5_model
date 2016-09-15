@@ -1,0 +1,116 @@
+/**
+	@name $UI/system/components/justep/gridFilter/gridFilter
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description 选择过滤组件
+	@example
+	<xmp>
+		GridFilter组件通过简单的属性设置就可以给数据增加选择过滤的能力，关键属性有：
+			filterData: 过滤数据
+			filterCol: 过滤列
+		GridFilter是组合组件，内置gridSelect，它自动将用户从gridSelect中选择的数据构造成数据集的过滤条件
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/gridFilter/gridFilter#xid
+	@attribute 
+	@type string
+	@description 组件标识
+*/
+
+/**
+	@name $UI/system/components/justep/gridFilter/gridFilter#filterData
+	@attribute 
+	@type string
+	@description 过滤数据集ID，必须是bizData
+*/
+
+/**
+	@name $UI/system/components/justep/gridFilter/gridFilter#filterCol
+	@attribute 
+	@type string
+	@description 过滤列
+*/
+
+/**
+	@name $UI/system/components/justep/gridFilter/gridFilter#autoRefresh
+	@attribute 
+	@type boolean
+	@description 是否自动刷新 - 默认是true，用户输入后不仅设置数据的过滤条件，同时自动刷新数据。
+*/
+
+/**
+	@name $UI/system/components/justep/gridFilter/gridFilter#defaultValue
+	@attribute 
+	@type string
+	@description 默认值，当选择数据为空时，用默认值过滤；与内置gridSelect组件的defaultLabel属性配合使用。
+*/
+
+/**
+	@name $UI/system/components/justep/gridFilter/gridFilter#selectedValue
+	@property 
+	@type observable
+	@description 选中数据，可以通过set和get方法存取。
+*/
+
+/**
+	@name $UI/system/components/justep/gridFilter/gridFilter#selectedLabel
+	@property 
+	@type observable
+	@description 选中数据的显示值，可以通过set和get方法存取。
+*/
+
+/**
+	@name $UI/system/components/justep/gridFilter/gridFilter#getFilterData
+	@function
+	@returns {$UI/system/components/justep/data/data}	 
+	@description 获取过滤数据集对象
+*/
+
+/**
+	@name $UI/system/components/justep/gridFilter/gridFilter#getFilterFlag
+	@function
+	@returns {string}	 
+	@description 获取过滤条件标识
+*/
+
+/**
+	@name $UI/system/components/justep/gridFilter/gridFilter#getFilterStr
+	@function
+	@returns {string}	 
+	@description 获取过滤条件字符串
+*/
+
+/**
+	@name $UI/system/components/justep/gridFilter/gridFilter#filter
+	@function
+	@description 设置数据的过滤条件，如果“自动刷新”则刷新数据；开发者可以通过onFilter事件接管。
+*/
+
+/**
+	@name $UI/system/components/justep/gridFilter/gridFilter#onFilter
+	@event
+	@description 过滤事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+	@example
+	<xmp>
+		var value = event.source.selectedValue.get();
+		...
+		if (event.source.autoRefresh) {
+			event.source.getFilterData().refreshData();
+		}
+	</xmp> 
+*/
+
+
+
+

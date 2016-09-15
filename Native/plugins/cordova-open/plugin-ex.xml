@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-open">
+	<name>文件打开插件</name>
+	<description>在app中用打开音频，视频，图片或其他格式的文件等，支持本地文件和远程文件</description>
+	
+</plugin>

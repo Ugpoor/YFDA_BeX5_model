@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--js源码压缩混淆处理器 ,obscure-str:混淆字符串，obscure-excluder：混淆被排除不压缩的的方法，keep-original-method-name：压缩后保留原始方法-->
+<compressor class="com.justep.compressor.CommonJsCompressor" obscure-str="true" obscure-excluder="true" keep-original-method-name="false">
+	<!-- 源码文件 -->
+	<source-files>
+	    <item path="base.js"/>
+		<item path="../common/baseShapeSVG.js"/>
+<!-- 		<item path="../common/baseShapeVML.js"/> -->
+		<item path="graphics.js"/>
+		<item path="ontologyDesigner.js"/>
+	</source-files>
+	
+	<!--目标输出文件 -->
+	<target-files>
+		<item path="ontologyAll.js"/>
+	</target-files>
+	
+	<!--指定要处理的js类 -->
+	<js-classes>
+		<item name="justep.svg.Shape"/>
+		<item name="justep.svg.Rect"/>
+		<item name="justep.svg.Triangular"/>
+		<item name="justep.svg.Rhombus"/>
+		<item name="justep.svg.Circle"/>
+		<item name="justep.svg.Trapezoid"/>
+		<item name="justep.svg.Path"/>
+		<item name="justep.vml.Shape"/>
+		<item name="justep.vml.Rect"/>
+		<item name="justep.vml.Triangular"/>
+		<item name="justep.vml.Rhombus"/>
+		<item name="justep.vml.Circle"/>
+		<item name="justep.vml.Trapezoid"/>
+		<item name="justep.vml.Path"/>
+		<item name="justep.graphics.Box"/>
+		<item name="justep.graphics.Concept"/>
+		<item name="justep.graphics.HasRelation"/>
+		<item name="justep.graphics.HasRelationConnection"/>
+		<item name="justep.graphics.Rectangle"/>
+		<item name="justep.graphics.Figure"/>
+		<item name="justep.graphics.Canvas"/>
+	</js-classes>
+	
+	<!-- 排除哪些方法不处理 -->
+	<exclude>
+ 		<item name="onblur"/>
+		<item name="dispatchEvent"/>
+		<item name="keyDown2"/>
+		<item name="selectProcessItemType"/>
+		<item name="selectProcessRoot"/>
+		<item name="clearSelection"/>
+		<item name="clearSelection"/>
+ 		<item name="setProcessFile"/>
+		<item name="loadData"/>
+ 		<item name="fireFigureStyleChanged"/>
+		<item name="savePicture"/>
+ 		<item name="getFigureStyles"/>
+  		<item name="selectAll"/>
+  	    <item name="removeSelections"/>
+  		<item name="alignFigures"/>
+ 		<item name="setText"/>
+ 		<item name="execute"/>
+ 		<item name="initToolbox"/>
+ 		<item name="setData"/>
+ 		<item name="NewAction"/>
+ 		<item name="initData"/>
+ 		<item name="getEventData"/>
+ 		<item name="getGraphicsStyle"/>
+ 		<item name="getSelections"/>
+ 		<item name="setSelections"/>
+ 		<item name="addFigure"/>
+ 		<item name="deleteFigures"/>
+ 		<item name="repaintConcept"/>
+ 		<item name="inverseSelectedRelationConnection"/>
+ 		<item name="add"/>
+ 		<item name="mouseDown"/>
+ 		<item name="mouseUp"/>
+ 		<item name="dbclick"/>
+ 		<item name="mouseMove"/>
+ 		<item name="keyDown"/>
+ 		<item name="containerScroll"/>
+ 		<item name="contextMenu"/>
+	</exclude>
+    
+    <!-- 包含哪些变量或者方法 ,item 中type有method，var两种，默认是var-->
+	<include>
+	 
+  		<!--<item name="halignLine"/>-->
+  		
+  		<!--//同名的字符串和变量都会替换-->
+  		<!--<item name="svg" replace-range="symbol,str"/>-->
+  		 
+	</include>
+</compressor>

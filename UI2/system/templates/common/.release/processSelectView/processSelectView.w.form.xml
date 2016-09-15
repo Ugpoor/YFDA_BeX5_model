@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window cfm2mei" component="$model/UI2/system/components/justep/window/window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cfm2mei" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/designerCommon/grid/grid,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cfm2mei" class="cfm2mei"></div>  
+  <div style="margin-left:12px;margin-right:12px;" __cid="cfm2mei" class="cfm2mei"> 
+    <div class="row file-select-navbar cfm2mei" style="margin-top:12px;" __cid="cfm2mei"> 
+      <div class="col-xs-4 cfm2mei" __cid="cfm2mei"> 
+        <h3 __cid="cfm2mei" class="cfm2mei">请选择对应process</h3> 
+      </div> 
+    </div>  
+    <div xid="grids" __cid="cfm2mei" class="cfm2mei"> 
+      <div component="$model/UI2/system/components/designerCommon/grid/grid" data="fileSelectData" editable="false" xid="grid" style="margin:12px 0px 12px 0px;display:none;" config="{&quot;altrows&quot;:true,&quot;columns&quot;:[{&quot;columntype&quot;:&quot;textbox&quot;,&quot;dataField&quot;:&quot;colValue&quot;,&quot;text&quot;:&quot;查询结果&quot;}],&quot;dataXID&quot;:&quot;fileSelectData&quot;,&quot;editable&quot;:false,&quot;enabletooltips&quot;:true,&quot;selectionmode&quot;:&quot;singlerow&quot;}" data-bind="component:{name:'$model/UI2/system/components/designerCommon/grid/grid'}" __cid="cfm2mei" class="cfm2mei"></div> 
+    </div>  
+    <div class="box cfm2mei" style="overflow:auto;margin:12px 0px 12px 0px;height:383px" xid="jqxTreeFile" __cid="cfm2mei"/> 
+  </div> 
+</div>

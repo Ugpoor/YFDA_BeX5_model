@@ -1,0 +1,51 @@
+.div{
+	margin:10px;
+	margin-left:20px;
+	background-image: url(./img/1.jpg);
+}
+.li{
+	margin-left: 10px;
+}
+.btn{
+	margin-top0;
+	margin-left: 10px;
+}
+.x-label-edit{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+.x-control-group{
+	padding: 0;
+	margin: 10px;
+}
+.icon-android-close{
+	font-size: 150%;
+}
+.x-dialog.x-dialog-normal .x-dialog-body {
+    padding: 0;
+}
+.x-control-group{
+	margin: 0;
+	padding: 0;
+}
+.icon-android-close{
+	color: white;
+}
+.btn-group{
+	padding-left: 15px;
+	margin: 0;
+	border: 1px solid #40A4CA;
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+}
+thead{
+	background-color: #77BBE3;
+}
+.x-control-group-title{
+	margin: 0;
+}
+table.dataTable {
+    margin-top: 0 !important; 
+    margin-bottom: 0 !important;
+}

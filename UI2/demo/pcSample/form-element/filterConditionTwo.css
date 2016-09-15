@@ -1,0 +1,30 @@
+.pass:HOVER {
+	color:red;
+}
+.radio{
+	padding-left: 3px;
+	margin-left:30px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.none{
+	display: none;	
+}
+.padd{padding-right: 39px;}
+.css{
+	padding-top: 4px;
+	margin-right: 30px;
+}
+.labe{
+	padding-top: 20px;
+}
+.color{
+	color:green;
+}
+.li{
+	width:45px;
+	text-overflow :ellipsis; 
+	white-space : nowrap;
+	overflow : hidden;
+	 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<item display="solid" label="协同办公" iconClass="icon-android-note"> 
+    <item display="solid" label="系统工具"> 
+       <item label="微信企业号配置" device="pc" process="/SA/weixin/process/weixin/weixinProcess" activity="mainActivity"
+        url="$UI/SA/weixin/process/weixin/mainActivity.a"/>
+    </item>  
+     
+  </item> 
+</root>

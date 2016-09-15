@@ -1,0 +1,10 @@
+.title{
+	border-bottom:thin solid #eee;
+}
+.media-body h5{
+	margin-top:0;
+	margin-bottom:5px;
+}
+.list-group-item:first-child{
+	border-top:1px solid #eee;
+}

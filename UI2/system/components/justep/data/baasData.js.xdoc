@@ -1,0 +1,299 @@
+/**
+	@name $UI/system/components/justep/data/baasData
+	@component 
+	@category component
+	@extends $UI/system/components/justep/data/data
+	@model UI2
+	@description <b>[rich]</b>BaaS绑定data，继承Data的所有属性和方法
+*/
+
+/**
+	@name $UI/system/components/justep/data/baasData#isTree
+	@attribute 
+	@type boolean
+	@description 是否树形数据
+*/
+
+/**
+	@name $UI/system/components/justep/data/baasData#orderBy
+	@attribute 
+	@type string
+	@description 数据查询排序，如：sLastModifyTime:desc;sName:asc
+*/
+
+/**
+	@name $UI/system/components/justep/data/baasData#queryAction
+	@attribute 
+	@type string
+	@required
+	@description 获取数据的action，通常指定概念的queryAction
+*/
+
+/**
+	@name $UI/system/components/justep/data/baasData#filters
+	@property
+	@type {$UI/system/components/justep/data/js/filter}
+	@description 数据过滤条件控制对象
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/baasData#saveAction
+	@attribute 
+	@type string
+	@description 保存数据的action，当保存或者删除数据提交时执行的action，通常指定概念的saveAction，当data数据不需要保存时可以不指定
+*/
+				
+/**
+	@name $UI/system/components/justep/data/baasData#filter                                                                                   
+	@attribute 
+	@description 过滤
+	@example
+	<b>包括属性：</b>
+		name <b>[attribute]</b> 过滤名称
+		
+		filter <b>[attribute]</b> 过滤表达式
+	
+	<b>xml格式：</b>
+	<xmp>
+		<filter name="filter1">sName="aaa"</filter>
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/data/baasData#calculateRelation                                                                                   
+	@attribute 
+	@description <b>[attribute]</b>计算关系
+	@example
+	包括属性：
+		relation <b>[attribute]</b> 关系名</p>
+		type <b>[attribute]</b> 数据类型</p>
+	<xmp>
+		xml格式:
+		<calculateRelation relation="calculateRelation" type="string"/>
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/data/baasData#treeOption                                                                                   
+	@attribute 
+	@description 树参数
+	@see $UI/system/components/justep/data/data#getTreeOption
+	@example
+	<b>包括属性：</b>
+		parentRelation <b>[attribute]</b> 父关系，形成父子树的父关系
+		rootFilter <b>[attribute]</b> 根过滤条件，当设置时树形数据将按节点加载数据
+		delayLoad <b>[attribute]</b> 延迟数据加载，默认值为true
+		nodeKindRelation <b>[attribute]</b> 节点类型关系，data操作时使用指定relation自动记录是否叶子节点信息
+	<b>xml格式：</b>
+	<xmp>
+		<treeOption parentRelation="" delayLoad="" rootFilter=""
+			nodeKindRelation=""
+			nodeLevelRelation="" />
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/data/baasData#queryParam                                                                                   
+	@property 
+	@type {Object}
+	@description <b>[readonly]</b>data的刷新参数，为queryAction准备的action请求参数
+*/
+
+/**
+	@name $UI/system/components/justep/data/baasData#saveParam                                                                                   
+	@property 
+	@type {Object}
+	@description <b>[readonly]</b>data的保存参数，为saveAction准备的action请求参数
+*/
+
+/**
+ @name $UI/system/components/justep/data/baasData#getQueryAction
+ @function
+ @returns {string}
+ @description 获取查询baas action 名，对应reader属性
+ @see $UI/system/components/justep/data/baasData#queryAction
+*/
+
+/**
+ @name $UI/system/components/justep/data/baasData#getSaveAction
+ @function
+ @returns {string}
+ @description 获取保存baas action 名，对应writer属性
+ @see $UI/system/components/justep/data/baasData#saveAction
+*/
+
+/**
+@name $UI/system/components/justep/data/baasData#ErrorEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 新增数据失败事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/baasData#ErrorEvent.errorType
+ @property
+ @type {string}
+ @description 错误类型
+ @default server
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/baasData#ErrorEvent.errorNode
+ @property
+ @type {string}
+ @description 错误信息
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/baasData#ErrorEvent.httpError
+ @property
+ @type {boolean}
+ @description http请求失败(true/false)
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/baasData#ErrorEvent.httpState
+ @property
+ @type {string}
+ @description http请求返回码
+*/ 
+
+/**
+@name $UI/system/components/justep/data/baasData#RefreshCreateParamEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 业务刷新数据创建刷新参数事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/baasData#RefreshCreateParamEvent.param
+ @property
+ @type {Object}
+ @description 刷新参数对象
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/baasData#RefreshCreateParamEvent.options
+ @property
+ @type {object}
+ @description 新增传入的参数,如果是tree时可以使用options.parent获取父行对象
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/baasData#RefreshCreateParamEvent.offset
+ @property
+ @type {integer}
+ @description 取数据的偏移
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/baasData#RefreshCreateParamEvent.limit
+ @property
+ @type {integer}
+ @description 取数据的条数
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/baasData#onRefreshCreateParam
+	@event
+	@description <b>[回调型事件]</b>业务刷新数据创建刷新参数事件，可以增加和修改用户自定义的参数
+	@param {$UI/system/components/justep/data/baasData#RefreshCreateParamEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"options" {Object} 新增传入的参数,如果是tree时可以使用options.parent获取父行对象
+		"param" : {Object} 刷新参数对象
+		"offset" : 取数据的偏移
+		"limit" : 取数据的条数
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/data/baasData#onRefreshError
+	@event
+	@description <b>[回调型事件]</b>刷新数据失败
+	@param {$UI/system/components/justep/data/data#ErrorEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"errorType" : 'server',
+		"errorNode" : 错误信息,
+		"httpError" : http请求失败(true/false),
+		"httpState" : http请求返回码
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/data/baasData#SaveCreateParamEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 业务数据保存创建保存参数事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/baasData#SaveCreateParamEvent.param
+ @property
+ @type {Object}
+ @description 保存参数对象
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/baasData#onSaveCreateParam
+	@event
+	@description <b>[回调型事件]</b>业务数据保存创建保存参数事件，可以增加和修改用户自定义的参数
+	@param {$UI/system/components/justep/data/baasData#SaveCreateParamEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"param" : {Object} 保存参数对象
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/data/baasData#onSaveError
+	@event
+	@description <b>[回调型事件]</b>保存数据失败
+	@param {$UI/system/components/justep/data/data#ErrorEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"errorType" : 'server',
+		"errorNode" : 错误信息,
+		"httpError" : http请求失败(true/false),
+		"httpState" : http请求返回码
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/data/baasData#onDeleteError
+	@event
+	@description <b>[回调型事件]</b>直接删除数据失败
+	@param {$UI/system/components/justep/data/data#ErrorEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"errorType" : 'server',
+		"errorNode" : 错误信息,
+		"httpError" : http请求失败(true/false),
+		"httpState" : http请求返回码
+	}
+	</xmp>	
+*/
+
+
+

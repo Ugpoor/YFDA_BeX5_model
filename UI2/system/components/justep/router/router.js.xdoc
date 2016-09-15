@@ -1,0 +1,110 @@
+/**
+	@name $UI/system/components/justep/router/router
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@description Router组件
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/router/router#xid
+	@attribute 
+	@type string
+	@description 
+*/	
+
+/**
+ @name $UI/system/components/justep/router/router#addRouteItem
+ @function
+ @param {string} name 路由项名字
+ @param {integer} param 路由项参数 
+ @description 添加路由项
+*/
+
+/**
+ @name $UI/system/components/justep/router/router#removeRouteItem
+ @function
+ @param {string} name 路由项名字
+ @description 删除路由项
+*/
+
+/**
+ @name $UI/system/components/justep/router/router#addRouteInnerItem
+ @function
+ @param {string} name 路由项名字
+ @param {integer} hashbang 子路由hashbang
+ @description 添加子路由项
+*/
+
+/**
+ @name $UI/system/components/justep/router/router#publishState
+ @function
+ @param {boolean} isReplace 是否替换
+ @description 提交路由变动信息
+*/
+
+/**
+	@name $UI/system/components/justep/router/router#onRoute
+	@event 
+	@type string
+	@description 路由变动事件 
+	@param {$UI/system/components/justep/router/router#RouteEvent} event 它的结构如下:
+	<xmp>
+	{	"source":"当前组件",
+		"cancel":false,
+		"xid":"xid",
+		"name":"name",
+		"param":"param",
+		"routeState":"routeState",
+		"async":false,
+		"dtd":"dtd"
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/router/router#RouteEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 路由变动事件 
+	@see $UI/system/components/justep/router/router#onRoute
+*/
+
+/**
+	@name $UI/system/components/justep/router/router#RouteEvent#source
+	@property 
+	@type $UI/system/components/justep/router/router
+	@description Route组件js对象
+*/
+
+/**
+	@name $UI/system/components/justep/router/router#RouteEvent#cancel
+	@property 
+	@type Boolean
+	@description 是否取消对当前路由变动的标准路由调度。
+*/
+
+/**
+	@name $UI/system/components/justep/router/router#RouteEvent#routeState
+	@property 
+	@type String
+	@description 路由变动状态
+*/
+
+/**
+	@name $UI/system/components/justep/router/router#RouteEvent#async
+	@property 
+	@type Boolean
+	@description 是否是异步处理
+*/
+
+/**
+	@name $UI/system/components/justep/router/router#RouteEvent#dtd
+	@property 
+	@type Promise
+	@description 路由引擎继续执行的promise
+*/

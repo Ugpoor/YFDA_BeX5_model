@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model>
+	<Resource name="system" auth="Container" type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/x5sys"
+		username="root" password="x5" maxActive="10" maxIdle="5" />
+	<Resource name="demo" auth="Container" type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/demo"
+		username="root" password="x5" maxActive="10" maxIdle="5" />
+	<Resource name="doc" auth="Container" type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/x5doc"
+		username="root" password="x5" maxActive="10" maxIdle="5" />
+	<Resource name="takeout" auth="Container" type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/takeout"
+		username="root" password="x5" maxActive="10" maxIdle="5" />
+	<Resource name="account" auth="Container" type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/account"
+		username="root" password="x5" maxActive="10" maxIdle="5" />
+	<Resource name="takeoutOne" auth="Container" type="javax.sql.DataSource" driverClassName="net.sourceforge.jtds.jdbc.Driver" url="jdbc:jtds:sqlserver://192.168.1.160:1433/takeout" username="sa" password="123" maxActive="10" maxIdle="5"/>
+</model>

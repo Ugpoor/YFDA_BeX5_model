@@ -1,0 +1,902 @@
+/**
+	@name $UI/system/lib/base/context#getSystemParameter
+	@function
+ 	@description 获取系统参数
+ 	@param name <b>[required]</b>参数名称
+	@returns {String} 参数的值
+	@example
+	参数名称的取值范围是：
+<xmp>
+  		language: 语言;
+  		loginDate: 登录日期;
+ 		process: 当前Process;
+ 		activity: 当前Activity;
+  		currentProcessLabel: 当前process显示名称;
+  		currentActivityLabel: 当前activity显示名称;
+  		allPersonMemberFIDs: 当前人员的所有组织的FID;
+  		currentPersonMemberNameWithAgent: 代理人显示名称;
+  		currentPersonMemberFNameWithAgent: 代理人的FName;
+  		operatorID: 操作者的ID;
+  		operatorCode: 操作者的Code;
+  		operatorName: 操作者的Name;
+  		currentDeptID: 当前部门的ID;
+  		currentDeptCode: 当前部门的Code;
+  		currentDeptName: 当前部门的Name;
+ 	 	currentDeptFID: 当前部门的FID;
+  		currentDeptFCode: 当前部门的FCode;
+  		currentDeptFName: 当前部门的FName;
+  		currentOgnID：当前机构的ID;
+  		currentOgnCode: 当前机构的Code;
+  		currentOgnName: 当前机构的Name;
+  		currentOgnFID: 当前机构的FID;
+ 	 	currentOgnFCode: 当前机构的FCode;
+  		currentOgnFName: 当前机构的FName;
+  		currentOrgID: 当前组织的ID;
+  		currentOrgCode: 当前组织的Code;
+  		currentOrgName: 当前组织的Name;
+  		currentOrgFID: 当前组织的FID;
+  		currentOrgFCode: 当前组织的FCode;
+  		currentOrgFName: 当前组织的FName;
+  		currentPersonID: 当前人员成员关联的人的ID;
+  		currentPersonCode: 当前人员成员关联的人的Code;
+  		currentPersonName: 当前人员成员关联的人的Name;
+  		currentPersonMemberID: 当前PersonMember的ID;
+  		currentPersonMemberCode: 当前PersonMember的Code;
+  		currentPersonMemberName: 当前PersonMember的Name;
+  		currentPersonMemberFID: 当前PersonMember的FID;
+  		currentPersonMemberFCode: 当前PersonMember的FCode;
+  		currentPersonMemberFName: 当前PersonMember的FName;
+  		currentPosID: 当前岗位的ID;
+  		currentPosCode: 当前岗位的Code;
+  		currentPosName: 当前岗位的Name;
+  		currentPosFID: 当前岗位的FID;
+  		currentPosFCode: 当前岗位的FCode;
+  		currentPosFName: 当前岗位的FName;
+ 		task: 当前任务;
+ 		sData1: 任务关联的sData1;
+ 		sData2: 任务关联的sData2;
+ 		sData3: 任务关联的sData3;
+ 		sData4: 任务关联的sData4;
+  		mainPersonMemberID: 主人员成员的ID;
+  		mainPersonMemberCode: 主人员成员的Code;
+  		mainPersonMemberName: 主人员成员的Name;
+  		mainPersonMemberFID: 主人员成员的FID;
+  		mainPersonMemberFCode: 主人员成员的FCode;
+  		mainPersonMemberFName: 主人员成员的FName;
+  		mainOrgID: 主人员成员的父节点ID;
+  		mainOrgCode: 主人员成员的父节点Code;
+  		mainOrgName: 主人员成员的父节点Name;
+  		mainOrgFID: 主人员成员的父节点FID;
+  		mainOrgFCode: 主人员成员的父节点FCode;
+  		mainOrgFName: 主人员成员的父节点FName;
+  		mainPosID: 主岗ID;
+  		mainPosCode: 主岗Code;
+  		mainPosName: 主岗Name;
+  		mainPosFID: 主岗FID;
+  		mainPosFCode: 主岗FCode;
+  		mainPosFName: 主岗FName;
+  		mainDeptID: 主部门ID;
+  		mainDeptCode: 主部门Code;
+  		mainDeptName: 主部门Name;
+  		mainDeptFID: 主部门FID;
+  		mainDeptFCode: 主部门FCode;
+  		mainDeptFName: 主部门FName;
+  		mainOgnID: 主机构ID;
+  		mainOgnCode: 主机构Code;
+  		mainOgnName: 主机构Name;
+  		mainOgnFID: 主机构FID;
+  		mainOgnFCode: 主机构FCode;
+  		mainOgnFName: 主机构FName;
+</xmp>	
+*/
+
+
+/**
+	@name $UI/system/lib/base/context#getBSessionID
+	@function
+	@description 获取bsession id
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getProcess
+	@function
+	@description 获取当前Process
+	@returns {String}
+*/
+	
+/**
+	@name $UI/system/lib/base/context#getActivity
+	@function
+	@description 获取当前Activity
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getProcessLabel
+	@function
+	@description 获取当前process显示名称
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getActivityLabel
+	@function
+	@description 当前activity显示名称
+	@returns {String}
+*/
+
+
+/**
+	@name $UI/system/lib/base/context#getCurrentProcess
+	@function
+	@deprecated 5.3版本后，不推荐使用
+	@description 获取当前Process
+	@returns {String}
+*/
+	
+/**
+	@name $UI/system/lib/base/context#getCurrentActivity
+	@function
+	@deprecated 5.3版本后，不推荐使用
+	@description 获取当前Activity
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentProcessLabel
+	@function
+	@deprecated 5.3版本后，不推荐使用
+	@description 获取当前process显示名称
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentActivityLabel
+	@function
+	@deprecated 5.3版本后，不推荐使用
+	@description 当前activity显示名称
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getTask
+	@function
+	@description  获取当前task
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#setTask
+	@function
+	@description  获取当前task
+	@param {String} task
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getLanguage
+	@function
+	@description 获取登录语言
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getExecutor
+	@function
+	@description 获取当前功能的执行者
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getExecuteContext
+	@function
+	@description 获取当前功能的执行上下文
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#isLog
+	@function
+	@description 判断是否记录功能打开的日志
+	@returns {Boolean}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getLoginDate
+	@function
+	@description 获取登录日期
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getProcessData1
+	@function
+	@deprecated 5.3版本后，不推荐使用 
+	@description  获取当前流程关联的sData1
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getProcessData2
+	@function
+	@deprecated 5.3版本后，不推荐使用 
+	@description  获取当前流程关联的sData2
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getProcessData3
+	@function
+	@deprecated 5.3版本后，不推荐使用 
+	@description  获取当前流程关联的sData3
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getProcessData4
+	@function
+	@deprecated 5.3版本后，不推荐使用 
+	@description  获取当前流程关联的sData4
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getData1
+	@function
+	@description  获取当前流程关联的sData1
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getData2
+	@function
+	@description  获取当前流程关联的sData2
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getData3
+	@function
+	@description  获取当前流程关联的sData3
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getData4
+	@function
+	@description  获取当前流程关联的sData4
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#setData1
+	@function
+	@description 设置当前的sData1
+	@param {String} value
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/lib/base/context#setData2
+	@function
+	@description 设置当前的sData2
+	@param {String} value
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/lib/base/context#setData3
+	@function
+	@description 设置当前的sData3
+	@param {String} value
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/lib/base/context#setData4
+	@function
+	@description 设置当前的sData4
+	@param {String} value
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/lib/base/context#setProcessData1
+	@function
+	@deprecated 5.3版本后，不推荐使用 
+	@description 设置当前的sData1
+	@param {String} value
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/lib/base/context#setProcessData2
+	@function
+	@deprecated 5.3版本后，不推荐使用 
+	@description 设置当前的sData2
+	@param {String} value
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/lib/base/context#setProcessData3
+	@function
+	@deprecated 5.3版本后，不推荐使用 
+	@description 设置当前的sData3
+	@param {String} value
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/lib/base/context#setProcessData4
+	@function
+	@deprecated 5.3版本后，不推荐使用 
+	@description 设置当前的sData4
+	@param {String} value
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getExecutorPerson
+	@function
+	@description 获取当前功能的执行者所代表的人
+	@returns {String}
+*/
+
+
+/**
+	@name $UI/system/lib/base/context#getAllPersonMemberFIDs
+	@function
+	@description 获取操作者的所有人员成员
+	@returns {String[]}
+*/
+
+
+/**
+	@name $UI/system/lib/base/context#getAllRoles
+	@function
+	@description 获取操作者的所有角色
+	@returns {String[]}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getAllRoleCodes
+	@function
+	@description 获取操作者的所有角色的编码
+	@returns {String[]}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getAllRoleNames
+	@function
+	@description 获取操作者的所有角色的名称
+	@returns {String[]}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPersonMemberNameWithAgent
+	@function
+	@description 获取当前人员成员的名称, 包含代理人的名称
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPersonMemberFNameWithAgent
+	@function
+	@description  获取当前人员成员的全名称, 包含代理人的名称
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getOperatorID
+	@function
+	@description  获取操作者的ID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getOperatorCode
+	@function
+	@description  获取操作者的Code
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getOperatorName
+	@function
+	@description  获取操作的Name
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentDeptID
+	@function
+	@description  获取当前部门的ID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentDeptCode
+	@function
+	@description  获取当前部门的Code
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentDeptName
+	@function
+	@description  获取当前部门的Name
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentDeptFID
+	@function
+	@description  获取当前部门的FID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentDeptFCode
+	@function
+	@description  获取当前部门的FCode
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentDeptFName
+	@function
+	@description  获取当前部门的FName
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentOgnID
+	@function
+	@description  获取当前机构的ID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentOgnCode
+	@function
+	@description  获取当前机构的Code
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentOgnName
+	@function
+	@description 获取当前机构的Name
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentOgnFID
+	@function
+	@description 获取当前机构的FID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentOgnFCode
+	@function
+	@description 获取当前机构的FCode
+	@returns {String}
+*/
+
+
+/**
+	@name $UI/system/lib/base/context#getCurrentOgnFName
+	@function
+	@description 获取当前机构的FName
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentOrgID
+	@function
+	@description 获取当前组织的ID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentOrgCode
+	@function
+	@description 获取当前组织的Code
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentOrgName
+	@function
+	@description 获取当前组织的Name
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentOrgFID
+	@function
+	@description 获取当前组织的FID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentOrgFCode
+	@function
+	@description 获取当前组织的FCode
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentOrgFName
+	@function
+	@description  获取当前组织的FName
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPersonID
+	@function
+	@description  获取当前人员成员关联的人的ID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPersonCode
+	@function
+	@description  获取当前人员成员关联的人的Code
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPersonName
+	@function
+	@description  获取当前人员成员关联的人的Name
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPersonMemberID
+	@function
+	@description  获取当前人员成员的ID
+	@returns {String}
+*/
+
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPersonMemberCode
+	@function
+	@description  获取当前人员成员的Code
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPersonMemberName
+	@function
+	@description  获取当前人员成员的Name
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPersonMemberFID
+	@function
+	@description  获取当前人员成员的FID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPersonMemberFCode
+	@function
+	@description  获取当前人员成员的FCode
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPersonMemberFName
+	@function
+	@description  获取当前人员成员的FName
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPosID
+	@function
+	@description  获取当前岗位的ID
+	@returns {String}
+*/
+
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPosCode
+	@function
+	@description  获取当前岗位的Code
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPosName
+	@function
+	@description  获取当前岗位的Name
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPosFID
+	@function
+	@description  获取当前岗位的FID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPosFCode
+	@function
+	@description  获取当前岗位的FCode
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getCurrentPosFName
+	@function
+	@description  获取当前岗位的FName
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainPersonMemberID
+	@function
+	@description  获取主人员成员的ID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainPersonMemberName
+	@function
+	@description  获取主人员成员的Name
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainPersonMemberCode
+	@function
+	@description  获取主人员成员的Code
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainPersonMemberFID
+	@function
+	@description  获取主人员成员的FID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainPersonMemberFName
+	@function
+	@description  获取主人员成员的FName
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainPersonMemberFCode
+	@function
+	@description  获取主人员成员的FCode
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainOrgID
+	@function
+	@description  获取主人员成员的父节点ID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainOrgName
+	@function
+	@description  获取主人员成员的父节点Name
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainOrgCode
+	@function
+	@description  获取主人员成员的父节点Code
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainOrgFID
+	@function
+	@description  获取主人员成员的父节点FID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainOrgFName
+	@function
+	@description  获取主人员成员的父节点FName
+	@returns {String}
+*/
+
+
+/**
+	@name $UI/system/lib/base/context#getMainOrgFCode
+	@function
+	@description  获取主人员成员的父节点FCode
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainPosID
+	@function
+	@description  获取主岗ID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainPosName
+	@function
+	@description  获取主岗Name
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainPosCode
+	@function
+	@description  获取主岗Code
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainPosFID
+	@function
+	@description  获取主岗FID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainPosFName
+	@function
+	@description  获取主岗FName
+	@returns {String}
+*/
+
+
+/**
+	@name $UI/system/lib/base/context#getMainPosFCode
+	@function
+	@description  获取主岗FCode
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainDeptID
+	@function
+	@description  获取主部门ID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainDeptName
+	@function
+	@description  获取主部门Name
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainDeptCode
+	@function
+	@description  获取主部门Code
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainDeptFID
+	@function
+	@description  获取主部门FID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainDeptFName
+	@function
+	@description  获取主部门FName
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainDeptFCode
+	@function
+	@description  获取主部门FCode
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainOgnID
+	@function
+	@description  获取主机构ID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainOgnName
+	@function
+	@description  获取主机构Name
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainOgnCode
+	@function
+	@description  获取主机构Code
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainOgnFID
+	@function
+	@description  获取主机构FID
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getMainOgnFName
+	@function
+	@description  获取主机构FName
+	@returns {String}
+*/
+
+
+/**
+	@name $UI/system/lib/base/context#getMainOgnFCode
+	@function
+	@description  获取主机构FCode
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/base/context#getClient
+ 	@function
+ 	@description 获取租户编码
+	@returns {String} 
+*/
+
+/**
+	@name $UI/system/lib/base/context#getClientValue
+ 	@function
+ 	@description 获取租户标识
+	@returns {String} 
+*/
+
+/**
+	@name $UI/system/lib/base/context#enabledClient
+ 	@function
+ 	@description 判断是否使用多租户模式
+	@returns {Boolean} 
+*/
+
+/**
+	@name $UI/system/lib/base/context#isRequestUseBase64
+	@function
+	@description  请求是否使用base64编码，受UIServer justep.xml中request-use-base64设置影响
+	@returns {boolean}
+*/
+
+/**
+	@name $UI/system/lib/base/context#isReadonlyMode
+ 	@function
+ 	@description 判断页面是否是只读模式
+	@returns {Boolean} 
+*/
+
+
+
+
+
+
+
+
+
+

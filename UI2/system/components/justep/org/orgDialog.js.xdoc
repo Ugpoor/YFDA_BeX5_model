@@ -1,0 +1,194 @@
+/**
+	@name $UI/system/components/justep/org/orgDialog
+	@component 
+	@extends $UI/system/components/justep/windowDialog/windowDialog
+	@model UI2
+	@description OrgDialog
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#title
+	@attribute
+	@property 
+	@type string
+	@description 显示的标题
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#showCommonGroup
+	@attribute
+	@property 
+	@type boolean
+	@description 显示常用组，缺省：true
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#showFilter
+	@attribute
+	@property 
+	@type string
+	@description 组织显示节点过滤表达式
+	<xmp>
+	表达式执行的this是行，即$row
+	当前表达式中可使用变量: 
+		"$model" : 当前的model,
+		"$row" : {$UI/system/components/justep/org/orgDialog#OrgRow} 当前过滤执行的行
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#selectFilter
+	@attribute
+	@property 
+	@type string
+	@description 选中过滤表达式
+	<xmp>
+	表达式执行的this是行，即$row
+	当前表达式中可使用变量: 
+		"$model" : 当前的model,
+		"$row" : {$UI/system/components/justep/org/orgDialog#OrgRow} 当前过滤执行的行
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#multiSelection
+	@attribute
+	@property 
+	@type boolean
+	@description 是否多选
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#cascade
+	@attribute
+	@property 
+	@type boolean
+	@description 多选时是否级联选择
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#includeOrgKind
+	@attribute
+	@property 
+	@type string
+	@description 显示的组织类型，组织扩展名使用","分隔的字符串类型，如：.psm,.dpt
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#includeDisabled
+	@attribute
+	@property 
+	@type boolean
+	@description 包含禁用组织，缺省：false
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#limit
+	@attribute
+	@property 
+	@type integer
+	@description 加载数据的list一页的记录数,>0的数，默认12
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#open
+	@function
+	@param {object} option
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"data" : {
+			selected : {
+				kind : 作为选中的数据的列
+				value: [...] 选择的数据
+			}
+		}
+	}
+	</xmp>	
+	@description 打开对话框
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"title" : {string} 显示的标题
+		"limit" : {number} 加载数据的list一页的记录数,>0的数，默认12
+		"cascade": {boolean} 多选时是否级联选择
+		"showFilter": {string} 组织显示节点过滤表达式
+		"selectFilter": {string} 选中过滤表达式
+		"multiSelection": {boolean} 是否多选
+		"includeOrgKind": {string} 显示的组织类型，组织扩展名使用","分隔的字符串类型，如：.psm,.dpt
+		"process": {string}
+		"activity": {string}
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："title"、"limit"、"cascade"、"showFilter"、"selectFilter"、"multiSelection"、"includeOrgKind"、"process"、"activity"
+	@return {Object} 
+*/
+
+/**
+@name $UI/system/components/justep/org/orgDialog#ReceiveEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 组织选择返回事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/org/orgDialog#ReceiveEvent.data
+ @property
+ @type {list<$UI/system/components/justep/org/orgDialog#OrgRow>}
+ @description 返回的组织对象数组
+*/ 
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#onReceive
+	@event
+	@description <b>[回调型事件]</b>.w返回数据事件
+	@param {$UI/system/components/justep/org/orgDialog#ReceiveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"data" :　{List<OrgRow>} 返回的数据
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialog#OrgRow
+	@class 
+	@extends $UI/system/lib/base/object
+	@category javascript
+	@description org的行数据对象
+	@model UI2
+**/
+
+/**
+ @name $UI/system/components/justep/org/orgDialog#OrgRow#ref
+ @function
+ @param	{String} col 列名
+ @description 返回对应列的观察对象，主要用于感知组件的bind
+*/
+
+/**
+ @name $UI/system/components/justep/org/orgDialog#OrgRow#val
+ @function
+ @param	{String} col 列名
+ @description 对应列取值
+*/

@@ -1,0 +1,51 @@
+/**
+	@name $UI/system/components/justep/org/orgTreePC
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description OrgTreePC
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgTreePC#manageCodes
+	@attribute 
+	@type string
+	@description 业务管理权限编码，多个业务管理权限用逗号分隔
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgTreePC#includeOrgKind
+	@attribute
+	@property 
+	@type string
+	@description 包含的机构类型，缺省：全部类型
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgTreePC#includeDisabled
+	@attribute
+	@property 
+	@type boolean
+	@description 包含禁用组织，缺省：false
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgTreePC#getSelected
+	@function
+	@returns {List<$UI/system/components/justep/data/data#Row>} 返回选中的行数组
+	@description 获取选中的数据
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgTreePC#getData
+	@function
+	@returns {$UI/system/components/justep/data/data} data组件
+	@description 获取data组件
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgTreePC#getTree
+	@function
+	@returns {$UI/system/components/justep/grid/grid} grid组件
+	@description 获取展示org的tree组件
+*/

@@ -1,0 +1,51 @@
+/**
+	@name com.brodysoft.sqlitePlugin
+	@class 
+	@description SQLite插件，提供本地数据库的存储
+	@model Native
+	@category plugin
+	@declareVar window.SQLitePlugin
+*/
+
+/**
+	@name com.brodysoft.sqlitePlugin.openDatabase
+	@function
+	@param {Object} args 数据库信息
+	<br/><b>args参数结构如下</b>
+	<xmp>
+		{
+			"name":-String- 数据库名,
+			"location":-Number- 用于选择数据库的子目录，仅适用于IOS，取值范围0(default),1(Library),2(Library/LocalDatabase)
+		}
+	</xmp>
+ 	@returns {void}
+ 	@description 打开数据库
+*/
+
+/**
+	@name com.brodysoft.sqlitePlugin.transaction
+	@function
+	@param {Function} callback 回调函数，该回调返回SQLTransaction对象
+ 	@returns {void}
+ 	@description 创建一个新的SQL事务数据库
+*/
+
+/**
+	@name com.brodysoft.sqlitePlugin.executeSql
+	@function
+	@param {String} statement 要执行的sql语句
+	@param {Array} paramas 参数
+	@param {Function} success 执行成功的回调
+	@param {Function} error 执行失败的回调
+ 	@returns {void}
+ 	@description 执行sql语句
+*/
+
+/**
+	@name com.brodysoft.sqlitePlugin.close
+	@function
+	@param {Function} success 执行成功的回调
+	@param {Function} error 执行失败的回调
+ 	@returns {void}
+ 	@description 关闭数据库
+*/

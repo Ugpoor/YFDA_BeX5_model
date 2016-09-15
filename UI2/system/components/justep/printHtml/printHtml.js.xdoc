@@ -1,0 +1,97 @@
+/**
+	@name $UI/system/components/justep/printHtml/printHtml
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description printHtml
+*/
+
+/**
+	@name $UI/system/components/justep/printHtml/printHtml#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/printHtml/printHtml#target
+	@attribute
+	@property 
+	@type string
+	@description 需要打印节点的xid
+*/
+
+/**
+	@name $UI/system/components/justep/printHtml/printHtml#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"target" : {string} 需要打印节点的xid
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/printHtml/printHtml#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："target"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/printHtml/printHtml#print
+	@function
+	@description 打印
+	@param {String} target 需要打印节点的xid，没有给出时使用属性target指定
+	@param {object} option 扩展参数
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"appendHtml" : {String} 增加的html字符串,
+		"closeWin" : {boolean} 操作完成关闭窗口，默认：true
+		"width" : 弹出窗口宽
+		"height" : 弹出窗口高
+		"screenX" : 弹出窗口位置X
+		"screenY" : 弹出窗口位置Y
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/printHtml/printHtml#preview
+	@function
+	@description 预览
+	@param {String} target 需要预览节点的xid，没有给出时使用属性target指定
+	@param {object} option 扩展参数
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"appendHtml" : {String} 增加的html字符串,
+		"closeWin" : {boolean} 操作完成关闭窗口，默认：true
+		"width" : 弹出窗口宽
+		"height" : 弹出窗口高
+		"screenX" : 弹出窗口位置X
+		"screenY" : 弹出窗口位置Y
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/printHtml/printHtml#print
+ 	@operation
+	@description 打印
+	@param {String} target 需要打印节点的xid，没有给出时使用属性target指定
+*/
+
+/**
+	@name $UI/system/components/justep/printHtml/printHtml#preview
+ 	@operation
+	@description 预览
+	@param {String} target 需要预览节点的xid，没有给出时使用属性target指定
+*/
+

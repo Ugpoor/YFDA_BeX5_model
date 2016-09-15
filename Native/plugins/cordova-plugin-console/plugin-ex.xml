@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-console">
+	<name>Console</name>
+	<description>提供全局对象console，通过console.log()记录日志</description>
+	
+</plugin>

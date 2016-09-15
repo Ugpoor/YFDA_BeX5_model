@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/social/relativeOrg/relativeOrg"
+		tag-name="div" icon="psm.gif" text="相关人"
+		binding-component="$UI/system/components/justep/social/relativeOrg/relativeOrg"
+		component-type="formControl" design-view="web-designer">
+
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="data" text="主数据" is-id-ref="true"
+				editor-ref="contextComponent" editor-parameter="data" />
+			<property name="bind-nameRef" text="name引用" editor-ref="dataRef" />
+			<property name="groupName" text="分组名称" default-value=""
+				data-type="string" />
+			<property name="groupID" text="分组编码" default-value=""
+				data-type="string" />
+			<property name="filter" text="过虑条件" default-value=""
+				data-type="string" />
+			<property name="multiSelection" text="是否多选" default-value="false"
+				editor-ref="booleanList" data-type="boolean" />
+			<property name="readonly" text="只读条件" default-value=""
+				data-type="string" />
+			<property name="multiValue" text="是否多值" default-value="false"
+				editor-ref="booleanList" data-type="boolean" />
+			<property name="statusEnabled" text="是否显示状态" default-value="true"
+				editor-ref="booleanList" data-type="boolean" />
+			<property name="socialData" text="社交数据" is-id-ref="true"
+				editor-ref="contextComponent" editor-parameter="data" />
+			<property name="process" text="相关人的process，默认使用当前环境中的process" />
+			<property name="activity" text="相关人的activity，默认使用当前环境中的activity" />
+			<property name="url" text="相关人的url，默认使用当前环境中的activity对应的.a" />
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-ro"
+					},	 
+					"2border": {
+						label: "边框",
+						value: "x-ro-border",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include
+				path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']" />
+		</properties>
+		<toolbar>
+		</toolbar>
+
+		<operations>
+		</operations>
+
+		<templates>
+			<template name="default"><![CDATA[ 
+				<div class='x-ro x-ro-border' component='$UI/system/components/justep/social/relativeOrg/relativeOrg'>
+					<div component='$UI/system/components/justep/data/bizData' concept='SA_Social'/>
+				</div>
+		   ]]></template>
+		</templates>
+		<events>
+			<event name="onChange" text="相关人修改后" parameters="event" />
+			<include
+				path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*" />
+		</events>
+	</element>
+
+	<element name="$UI/system/components/justep/social/relativeOrg/relativeOrgs"
+		tag-name="div" icon="group.gif" text="相关人组"
+		binding-component="$UI/system/components/justep/social/relativeOrg/relativeOrgs"
+		component-type="formControl" design-view="web-designer">
+
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="data" text="主数据" is-id-ref="true"
+				editor-ref="contextComponent" editor-parameter="data" />
+			<property name="bind-nameRef" text="name引用" editor-ref="dataRef" />
+			<property name="socialData" text="社交数据" is-id-ref="true"
+				editor-ref="contextComponent" editor-parameter="data" />
+			<property name="process" text="相关人的process，默认使用当前环境中的process" />
+			<property name="activity" text="相关人的activity，默认使用当前环境中的activity" />
+			<property name="url" text="相关人的url，默认使用当前环境中的activity对应的.a" />
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-ros"
+					},	 
+					"2border": {
+						label: "边框",
+						value: "x-ros-border",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include
+				path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']" />
+		</properties>
+		<toolbar>
+			<item text="添加项" method="add" />
+		</toolbar>
+
+		<operations>
+
+		</operations>
+
+		<templates>
+			<template name="default"><![CDATA[ 
+				<div class='x-ros x-ros-border' component='$UI/system/components/justep/social/relativeOrg/relativeOrgs'>
+					<div component='$UI/system/components/justep/data/bizData' concept='SA_Social'/>
+				</div>
+		   ]]></template>
+		</templates>
+		<events>
+			<include
+				path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*" />
+		</events>
+	</element>
+
+	<element
+		name="$UI/system/components/justep/social/relativeOrg/relativeOrg#item"
+		tag-name="div" icon="psn.gif" text="相关人项"
+		discriminate-condition="executeXpath(../@component='$UI/system/components/justep/social/relativeOrg/relativeOrgs')"
+		component-type="formControl" design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号1" required="true" />
+			<property name="groupName" text="分组名称" default-value=""
+				data-type="string" />
+			<property name="groupID" text="分组编码" default-value=""
+				data-type="string" />
+			<property name="filter" text="过虑条件" default-value=""
+				data-type="string" />
+			<property name="readonly" text="只读条件" default-value=""
+				data-type="string" />
+			<property name="limit" text="显示数目" default-value="20"
+				data-type="integer" />
+			<property name="multiSelection" text="是否多选" default-value="false"
+				editor-ref="booleanList" data-type="boolean" />
+			<property name="multiValue" text="是否多值" default-value="false"
+				editor-ref="booleanList" data-type="boolean" />
+			<property name="statusEnabled" text="是否显示状态" default-value="true"
+				editor-ref="booleanList" data-type="boolean" />
+			<property name="class" text="class" />
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include
+				path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']" />
+		</properties>
+		<toolbar>
+		</toolbar>
+
+		<operations>
+
+		</operations>
+
+		<templates>
+			<template name="default"><![CDATA[ 
+				<div class="x-ros-item" groupName="" groupID="" limit="20" 
+					filter="" multiSelection="false" statusEnabled="true" readonly=""/>
+		   ]]></template>
+		</templates>
+		<events>
+			<include
+				path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*" />
+		</events>
+	</element>
+
+</elements>

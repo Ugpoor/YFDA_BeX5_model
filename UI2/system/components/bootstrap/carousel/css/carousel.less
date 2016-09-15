@@ -1,0 +1,24 @@
+@import '../../lib/css/flexbox.less.mixins';
+
+.x-carousel {
+	.image-wall {
+		width:100%;
+	}
+}
+
+.x-carousel>.x-contents>.x-contents-content {
+	overflow: hidden;
+}
+
+.x-carousel>.x-contents>.x-contents-content>img{
+	position:relative;
+}
+
+.x-carousel {
+	.x-contents-content{
+		.flexbox();
+
+    	.align-items(center);
+	}	
+}
+

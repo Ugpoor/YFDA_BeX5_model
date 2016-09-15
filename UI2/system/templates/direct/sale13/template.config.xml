@@ -1,0 +1,12 @@
+<template text="通用" desc="店商首页" custom="false">
+	<images>
+		<image src="template.png"/>
+	</images>
+
+	<items>
+		<item file="template/main.w"></item>
+		<item file="template/main.js" />
+		<item file="template/main.css" />
+	</items>
+
+</template>

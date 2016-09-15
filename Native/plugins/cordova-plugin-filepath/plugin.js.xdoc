@@ -1,0 +1,18 @@
+/**
+	@name 	cordova-plugin-filepath
+	@class 
+	@description 路径转换
+	@model Native
+	@category plugin
+	@declareVar window.FilePath
+*/
+
+/**
+	@name cordova-plugin-filepath.resolveNativePath
+	@function
+	@param {String} content路径
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description 将指定的“content://”路径转换成“file://”格式的路径。
+*/

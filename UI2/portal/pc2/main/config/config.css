@@ -1,0 +1,27 @@
+.portal-main-config .item {
+	border: 4px dashed white;
+	border-radius: 7px;
+}
+
+.portal-main-config .item.selected,
+.portal-main-config .item.selected:hover {
+	border-color: #aaa;
+}
+
+.portal-main-config .item:hover {
+	cursor: handle;
+	border-color: #ccc;
+	cursor: pointer;
+}
+[xid="widgetsList"] .x-toggle {
+	padding: 3px;
+}
+
+[xid="widgetsList"] li {
+	border: none;
+	border-top: 1px solid #ddd
+}
+
+[xid="widgetsList"] li:first-child {
+	border: none;
+}

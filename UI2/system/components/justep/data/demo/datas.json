@@ -1,0 +1,8 @@
+{
+	"rows":[
+		{"FID":"aaa","fString":"第一行","fInteger":233,"fFloat":29.6},
+		{"FID":"bbb","fString":"第二行","fInteger":11,"fFloat":33.7},
+		{"FID":"ccc","fString":"第三行","fInteger":19,"fFloat":97.9},
+		{"FID":"ddd","fString":"第四行","fInteger":48,"fFloat":23.6}
+	]
+}

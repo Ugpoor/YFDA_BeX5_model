@@ -1,0 +1,108 @@
+/**
+	@name com.justep.cordova.plugin.qq
+	@class 
+	@description QQ登录
+	@model Native
+	@category plugin
+	@declareVar navigator.QQ
+*/
+
+/**
+	@name com.justep.cordova.plugin.qq.ssoLogin
+ 	@function
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description QQ登录
+*/
+
+/**
+	@name com.justep.cordova.plugin.qq.getUserInfo
+ 	@function
+ 	@param {Function} success 成功回调函数
+ 	@param {Function} fail 失败回调函数
+ 	@returns {void}
+ 	@description 获取用户信息。需要在ssoLogin用户登录之后。
+*/
+
+
+/**
+	@name com.justep.cordova.plugin.qq.logout
+ 	@function
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description  QQ注销
+*/ 
+
+/**
+	@name com.justep.cordova.plugin.qq.checkClientInstalled
+ 	@function
+ 	@param {Function} onSuccess 执行成功回调函数（qq已安装）
+ 	@param {Function} onError 执行失败回调函数 （qq未安装）
+ 	@returns {void}
+ 	@description  检查QQ是否在本机安装
+*/
+
+/**
+	@name com.justep.cordova.plugin.qq.shareToQQ
+ 	@function
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数 
+ 	@param {Object} args 分享的相关内容，包括标题，url，描述，应用名等。（详情参考qq开放平台文档）
+ 	<br/><b>参数格式：</b>
+	<xmp>
+		{
+			"url":String - 分享的url地址,
+			"title":String - 分享的标题,
+ 	 		"description":String - 分享描述,
+ 	 		"imageUrl"String - 分享图片的url地址,
+ 	 		"appName":String - 应用的名称,
+ 	 		
+		}
+	</xmp>	
+ 	@returns {void}
+ 	@description  分享到qq
+*/
+
+/**
+	@name com.justep.cordova.plugin.qq.shareToQzone
+ 	@function
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数 
+ 	@param {Object} args 分享的相关内容，包括标题，url，描述，应用名等。（详情参考qq开放平台文档）
+ 	<br/><b>参数格式：</b>
+	<xmp>
+		{
+			"url":String - 分享的url地址,
+			"title":String - 分享的标题,
+ 	 		"description":String - 分享描述,
+ 	 		"imageUrl"String - 分享图片的url地址,
+ 	 		
+		}
+	</xmp>	
+ 	@returns {void}
+ 	@description  分享到qq空间
+*/
+
+/**
+	@name com.justep.cordova.plugin.qq.addToQQFavorites
+ 	@function
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数 
+ 	@param {Object} args 分享的相关内容，包括标题，url，描述，应用名等。（详情参考qq开放平台文档）
+ 	<br/><b>参数格式：</b>
+	<xmp>
+		{
+			"url":String - 分享的url地址,
+			"title":String - 分享的标题,
+ 	 		"description":String - 分享描述,
+ 	 		"imageUrl"String - 分享图片的url地址,
+ 	 		"appName":String - 应用的名称,
+ 	 		
+		}
+	</xmp>	
+ 	@returns {void}
+ 	@description  添加到收藏
+*/
+

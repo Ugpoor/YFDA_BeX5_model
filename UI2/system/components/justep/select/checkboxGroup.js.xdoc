@@ -1,0 +1,28 @@
+/**
+	@name $UI/system/components/justep/select/checkboxGroup
+	@component 
+	@extends $UI/system/components/justep/select/radioGroup
+	@model UI2
+	@description CheckboxGroup
+*/
+
+/**
+	@name $UI/system/components/justep/select/checkboxGroup#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/select/checkboxGroup#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-checkbox-group(必须),
+		尺寸样式: x-checkbox-group-lg、x-checkbox-group-sm、x-checkbox-group-xs
+		排列方式：x-checkbox-group-vertical
+	</xmp>
+*/
+

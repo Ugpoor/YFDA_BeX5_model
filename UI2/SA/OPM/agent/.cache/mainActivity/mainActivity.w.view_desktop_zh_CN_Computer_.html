@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window cmyqa2u" component="$model/UI2/system/components/justep/window/window" design="device:pc" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cmyqa2u" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/pagerBar/pagerBar,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/bootstrap/pagination/pagination,$model/UI2/system/components/justep/smartFilter/smartFilter,$model/UI2/system/components/justep/windowDialog/windowDialog,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/toolBar/toolBar,$model/UI2/system/components/justep/dataTables/dataTables,$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect,$model/UI2/system/components/justep/select/select,$model/UI2/system/components/justep/window/window,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cmyqa2u" class="cmyqa2u"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter cmyqa2u" xid="toolBar1" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cmyqa2u"> 
+    <div class="input-group cmyqa2u" component="$model/UI2/system/components/justep/smartFilter/smartFilter" xid="smartFilter1" style="float: right;" data-bind="component:{name:'$model/UI2/system/components/justep/smartFilter/smartFilter'}" data-config="{&quot;filterCols&quot;:&quot;sOrgFName,sStartTime,sFinishTime,processLabel,agentPersonName&quot;,&quot;filterData&quot;:&quot;agentData&quot;}" __cid="cmyqa2u"> 
+      <input type="text" class="form-control cmyqa2u" placeholder="搜索" data-bind="valueUpdate: ['input', 'afterkeydown'],value:$model.comp($element.parentElement).searchText,event:{change:$model.comp($element.parentElement).onInputChange.bind($model.comp($element.parentElement))}" xid="input1" __cid="cmyqa2u"/> 
+    </div>  
+    <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left dropdown-toggle cmyqa2u" xid="newBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:newBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-add&quot;,&quot;label&quot;:&quot;新建&quot;}" __cid="cmyqa2u"> 
+      <i class="icon-android-add cmyqa2u" xid="i2" __cid="cmyqa2u"/>  
+      <span xid="span7" __cid="cmyqa2u" class="cmyqa2u"/> 
+    </a>  
+    <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left dropdown-toggle cmyqa2u" xid="editBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:editBtnClick" data-config="{&quot;icon&quot;:&quot;icon-edit&quot;,&quot;label&quot;:&quot;编辑&quot;}" __cid="cmyqa2u"> 
+      <i class="icon-edit cmyqa2u" xid="i1" __cid="cmyqa2u"/>  
+      <span xid="span8" __cid="cmyqa2u" class="cmyqa2u">编辑</span> 
+    </a>  
+    <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left dropdown-toggle cmyqa2u" xid="deleteBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:deleteBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-remove&quot;,&quot;label&quot;:&quot;删除&quot;}" __cid="cmyqa2u"> 
+      <i class="icon-android-remove cmyqa2u" xid="i3" __cid="cmyqa2u"/>  
+      <span xid="span9" __cid="cmyqa2u" class="cmyqa2u">删除</span> 
+    </a> 
+  </div>  
+  <table xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" rowActiveClass="active" class="table table-hover cmyqa2u" xid="agentTable" data="agentData" multiSelect="true" data-config="{&quot;columns&quot;:[{&quot;sName&quot;:&quot;sOrgFName&quot;,&quot;title&quot;:&quot;委托人&quot;,&quot;xid&quot;:&quot;column3&quot;},{&quot;sName&quot;:&quot;agentPersonName&quot;,&quot;title&quot;:&quot;代理人&quot;,&quot;xid&quot;:&quot;column2&quot;},{&quot;sName&quot;:&quot;processLabel&quot;,&quot;title&quot;:&quot;委托权限&quot;,&quot;xid&quot;:&quot;column9&quot;},{&quot;sName&quot;:&quot;sStartTime&quot;,&quot;title&quot;:&quot;开始时间&quot;,&quot;xid&quot;:&quot;column4&quot;},{&quot;sName&quot;:&quot;sFinishTime&quot;,&quot;title&quot;:&quot;结束时间&quot;,&quot;xid&quot;:&quot;column5&quot;},{&quot;sName&quot;:&quot;sCreatorName&quot;,&quot;title&quot;:&quot;创建人&quot;,&quot;xid&quot;:&quot;column6&quot;},{&quot;sName&quot;:&quot;sCreateTime&quot;,&quot;title&quot;:&quot;创建时间&quot;,&quot;xid&quot;:&quot;column7&quot;}],&quot;data&quot;:&quot;agentData&quot;,&quot;flexibleWidth&quot;:true,&quot;multiSelect&quot;:true,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" data-events="onCellRender:agentTableCellRender;onRowDblClick:editBtnClick" __cid="cmyqa2u"></table>  
+  <div xmlns="" component="$model/UI2/system/components/justep/pagerBar/pagerBar" class="x-pagerbar container-fluid cmyqa2u" xid="pagerBar1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerBar/pagerBar'}" __cid="cmyqa2u"> 
+    <div class="row cmyqa2u" xid="div1" __cid="cmyqa2u"> 
+      <div class="col-sm-3 cmyqa2u" xid="div2" __cid="cmyqa2u"> 
+        <div class="x-pagerbar-length cmyqa2u" xid="div3" __cid="cmyqa2u"> 
+          <label component="$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect" class="x-pagerlimitselect cmyqa2u" xid="pagerLimitSelect1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect'}" __cid="cmyqa2u"> 
+            <span xid="span1" __cid="cmyqa2u" class="cmyqa2u">显示</span>  
+            <select component="$model/UI2/system/components/justep/select/select" class="form-control input-sm cmyqa2u" xid="select1" data-bind="component:{name:'$model/UI2/system/components/justep/select/select'}" __cid="cmyqa2u"> 
+              <option value="10" xid="default3" __cid="cmyqa2u" class="cmyqa2u">10</option>  
+              <option value="20" xid="default4" __cid="cmyqa2u" class="cmyqa2u">20</option>  
+              <option value="50" xid="default5" __cid="cmyqa2u" class="cmyqa2u">50</option>  
+              <option value="100" xid="default6" __cid="cmyqa2u" class="cmyqa2u">100</option> 
+            </select>  
+            <span xid="span2" __cid="cmyqa2u" class="cmyqa2u">条</span> 
+          </label> 
+        </div> 
+      </div>  
+      <div class="col-sm-3 cmyqa2u" xid="div4" __cid="cmyqa2u"> 
+        <div class="x-pagerbar-info cmyqa2u" xid="div5" __cid="cmyqa2u">当前显示0条，共0条</div> 
+      </div>  
+      <div class="col-sm-6 cmyqa2u" xid="div6" __cid="cmyqa2u"> 
+        <div class="x-pagerbar-pagination cmyqa2u" xid="div7" __cid="cmyqa2u"> 
+          <ul class="pagination cmyqa2u" component="$model/UI2/system/components/bootstrap/pagination/pagination" xid="pagination1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/pagination/pagination'}" __cid="cmyqa2u"> 
+            <li class="prev cmyqa2u" xid="li1" __cid="cmyqa2u"> 
+              <a href="#" xid="a1" __cid="cmyqa2u" class="cmyqa2u"> 
+                <span aria-hidden="true" xid="span3" __cid="cmyqa2u" class="cmyqa2u">«</span>  
+                <span class="sr-only cmyqa2u" xid="span4" __cid="cmyqa2u">Previous</span> 
+              </a> 
+            </li>  
+            <li class="next cmyqa2u" xid="li2" __cid="cmyqa2u"> 
+              <a href="#" xid="a2" __cid="cmyqa2u" class="cmyqa2u"> 
+                <span aria-hidden="true" xid="span5" __cid="cmyqa2u" class="cmyqa2u">»</span>  
+                <span class="sr-only cmyqa2u" xid="span6" __cid="cmyqa2u">Next</span> 
+              </a> 
+            </li> 
+          </ul> 
+        </div> 
+      </div> 
+    </div> 
+  </div>  
+  <span xmlns="" component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="agentDetailDialog" style="left:186px;top:308px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-events="onReceive:agentDetailDialogReceive" data-config="{&quot;height&quot;:&quot;60%&quot;,&quot;showTitle&quot;:true,&quot;src&quot;:&quot;$model/UI2/SA/OPM/dialogs/showAgent/agentDetail.w&quot;,&quot;status&quot;:&quot;normal&quot;,&quot;title&quot;:&quot;委托代理&quot;}" __cid="cmyqa2u" class="cmyqa2u"> 
+    <div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog-overlay cmyqa2u" __cid="cmyqa2u"></div>  
+    <div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog cmyqa2u" style="display:none;" showTitle="true" __cid="cmyqa2u">  
+      <div class="x-dialog-title cmyqa2u" __cid="cmyqa2u"> 
+        <button class="close cmyqa2u" __cid="cmyqa2u"> 
+          <span __cid="cmyqa2u" class="cmyqa2u">×</span> 
+        </button>  
+        <div class="x-dialog-title-text cmyqa2u" __cid="cmyqa2u">委托代理</div> 
+      </div>  
+      <div class="x-dialog-body cmyqa2u" __cid="cmyqa2u"/> 
+    </div> 
+  </span> 
+</div>

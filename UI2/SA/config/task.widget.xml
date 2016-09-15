@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>  
+  <item label="任务相关"> 
+    <item id="TaskWaiting" title="待办任务" type="func" thumbnail="../UI/portal/x5/css/d/options/widgets/taskWaiting.png"
+       refresh="true" url="$UI/SA/task/taskView/waitActivity.a" process="/SA/task/taskView/taskViewProcess"
+      activity="mainActivity" height="auto">  
+       <more  title="任务中心" url="$UI/SA/task/taskCenter/mainActivity.a" process="/SA/task/taskCenter/taskCenterProcess"
+        activity="mainActivity" params="&amp;parameter=waiting"/> 
+    </item>
+    <item id="TaskSubmit" title="提交任务" type="func" url="$UI/SA/task/taskView/submitActivity.a"
+      process="/SA/task/taskView/taskViewProcess" activity="mainActivity" height="auto" refresh="true"> 
+      <more  title="任务中心" url="$UI/SA/task/taskCenter/mainActivity.a" process="/SA/task/taskCenter/taskCenterProcess"
+        activity="mainActivity" params="&amp;parameter=submited"/> 
+    </item> 
+  </item> 
+</root>

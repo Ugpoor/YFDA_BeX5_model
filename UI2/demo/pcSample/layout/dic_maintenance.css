@@ -1,0 +1,35 @@
+.x-control-group{
+	padding: 0;
+}
+.icon-android-close{
+	color: white;
+}
+.btn-group{
+	padding-left: 15px;
+	margin: 0;
+	border: 1px solid #40A4CA;
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+}
+.btn1{
+	border: 1px solid #40A4CA;
+	color: #4669AA;
+	font-weight: 150%;
+}
+thead{
+	background-color: #77BBE3;
+}
+.x-control-group-title{
+	margin: 0;
+}
+.btn{
+	padding: 8px 8px 0 8px;
+}
+table.dataTable {
+    margin-top: 0 !important; 
+    margin-bottom: 0 !important;
+}
+thead.cvA32Un{
+	background-color:rgb(196, 220, 234);
+}

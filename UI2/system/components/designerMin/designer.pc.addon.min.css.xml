@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <config>
+    <depend config="../pc.addon.min.css.xml">../pc.addon.min.css</depend>
+    
+    <file>../justep/widgets/designer/css/widgets.css</file>
+    <component>../justep/widgets/designer/widgets</component>
+
+    <file>../justep/cellLayout/designer/css/cellLayout.css</file>
+    <component>../justep/cellLayout/cellLayout</component>
+
+    <file>../justep/absoluteLayout/designer/css/absoluteLayout.css</file>
+    <component>../justep/absoluteLayout/absoluteLayout</component>
+
+
+
+    <output name="designer.pc.addon.min.css"  skin="desktop,superhero,slate,united,yeti,flatly" />
+</config>
+</root>

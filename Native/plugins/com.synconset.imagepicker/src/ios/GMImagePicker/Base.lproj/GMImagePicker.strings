@@ -1,0 +1,33 @@
+/* Cancel */
+"picker.navigation.cancel-button" = "取消";
+
+/* Done */
+"picker.navigation.done-button" = "确定";
+
+/* Navigation bar default title */
+"picker.navigation.title" = "图片选择";//GMImagePicker
+
+/* %@ Items Selected */
+"picker.selection.multiple-items" = "%@ 条被选择";//Items Selected
+
+/* %@ Photos Selected */
+"picker.selection.multiple-photos" = "%@ 张照片被选择";//Photos Selected
+
+/* %@ Videos Selected */
+"picker.selection.multiple-videos" = "%@ 条视频被选择";//Videos Selected
+
+/* 1 Photo Selected */
+"picker.selection.single-photo" = "1 图片被选择";//Photo Selected
+
+/* 1 Video Selected */
+"picker.selection.single-video" = "1 条视频被选择";//Video Selected
+
+/* All photos */
+"picker.table.all-photos-label" = "相册胶卷";//Camera Roll
+
+/* Smart Albums */
+"picker.table.smart-albums-header" = "智能相册";//SMART COLLECTIONS
+
+/* Albums */
+"picker.table.user-albums-header" = "相册";//COLLECTIONS
+

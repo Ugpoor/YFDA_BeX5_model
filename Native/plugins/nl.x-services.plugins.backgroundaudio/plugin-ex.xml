@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="nl.x-services.plugins.backgroundaudio">
+	<name>后台音乐播放</name>
+	<description>允许app进入后台后保持音频播放</description>
+	
+</plugin>

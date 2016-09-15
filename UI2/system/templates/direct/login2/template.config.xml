@@ -1,0 +1,12 @@
+<template text="通用" desc="登录页2" custom="false">
+	<images>
+		<image src="template.png"/>
+	</images>
+
+	<items>
+		<item file="template/login.w"></item>
+		<item file="template/login.js" />
+		<item file="template/login.css" />
+	</items>
+
+</template>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="plugin.http.request">
+	<name>Http请求</name>
+	<description>Http请求插件，使用本地接口发送http请求，这将提供跨域的ajax调用</description>
+
+</plugin>

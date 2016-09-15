@@ -1,0 +1,58 @@
+@import '../../popOver/css/pop.less.part';
+
+.x-popPicker {
+	display: none;
+	.x-popPicker-overlay {
+		.x-overlay;
+	}
+	&.x-active{
+		.x-popPicker-content {
+			-webkit-transform: translateY(0px);
+		}
+	}
+	.x-popPicker-content {
+		.x-overlay-on;
+		display: block;
+		width: 100%;
+		background-color: #eee;
+    	border-top: solid 1px #ccc;
+    	box-shadow: 0px -5px 7px 0px rgba(0, 0, 0, 0.1);
+	    -webkit-transition: .3s;
+	    -webkit-transform: translateY(300px);
+    	.x-poppicker-header {
+			padding: 6px;
+			.x-btn-ok{
+				float:right;
+				padding-top: 6px;
+			    padding-bottom: 6px;
+			}
+			.x-poppicker-clear {
+			    clear: both;
+			    height: 0px;
+			    line-height: 0px;
+			    font-size: 0px;
+			    overflow: hidden;
+			}
+		}
+		.x-picker{
+			border: none;
+			float: left;
+			width: 100%;
+		}
+		.x-picker-2{
+			width: 50%;
+		}
+		.x-picker-3{
+			width: 33.33333%;
+		}
+		.x-picker-4{
+			width: 25%;
+		}
+		.x-picker-5{
+			width: 20%;
+		}
+		.x-picker-6{
+			width: 16.66666%;
+		}
+	}
+}

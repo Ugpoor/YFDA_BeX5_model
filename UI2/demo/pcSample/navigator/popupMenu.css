@@ -1,0 +1,13 @@
+/*dropdown组件*/
+.dropdown-hover:hover .dropdown-menu {
+ display: block;
+}
+.dropdown-menu {
+	margin: 0px;
+}
+.x-col {
+	padding: 0px;
+}
+.x-row {
+	padding: 0px;
+}

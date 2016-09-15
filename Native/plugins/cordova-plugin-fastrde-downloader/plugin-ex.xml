@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-fastrde-downloader">
+	<name>文件下载插件</name>
+	<description>下载多个或单个文件，可以进行校验的一致性或下载完成自动解压文件</description>
+	
+</plugin>

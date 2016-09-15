@@ -1,0 +1,10 @@
+.x-panel-opm-pc.x-panel .x-panel-top {
+  height: 32px;
+}
+.x-panel-opm-pc.x-panel .x-panel-bottom {
+  height: 42px;
+}
+.x-panel-opm-pc.x-panel .x-panel-content {
+  top: 32px;
+  bottom: 42px;
+}

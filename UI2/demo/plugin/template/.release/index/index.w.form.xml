@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" design="device:m;" xid="window" class="window cq67nya" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cq67nya" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/buttonGroup,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style xmlns:xhtml="http://www.w3.org/1999/xhtml">.x-bottom.btn-group.cq67nya{background-color: rgb(255, 255, 255)} .x-bottom.btn-group.cq67nya .btn.cq67nya{border-top: 0} .x-bottom.btn-group.cq67nya .btn.cq67nya span.cq67nya{font-size: 12px; font-weight: normal} .x-card.btn-group.cq67nya .btn.active.cq67nya{color: rgb(50, 189, 96); padding: 0; border-top: 0} .x-bottom.panel.cq67nya{margin-bottom: 10px} .x-bottom.panel.cq67nya &gt; .panel-heading.cq67nya .panel-title.cq67nya{color: rgb(51, 51, 51)} .x-bottom.cq67nya .panel-heading.cq67nya, .x-bottom.cq67nya ul.cq67nya{border-bottom: 0} .x-bottom.cq67nya .list-group-item.cq67nya{border-radius: 0} .x-bottom.cq67nya .list-group-item.cq67nya:last-child{border-bottom: 0} .x-bottom.cq67nya .x-nobarder.cq67nya{border: 0} .x-card.btn-group.cq67nya .btn.active.cq67nya{color: rgb(50, 189, 96); padding: 0; border-top: 0}</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cq67nya" class="cq67nya"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p693cb3a0f9f449d6871cffef74126b47-iosstatusbar cq67nya" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cq67nya"> 
+    <div class="x-panel-top cq67nya" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cq67nya"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cq67nya" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;插件的名字&quot;}" __cid="cq67nya"> 
+        <div class="x-titlebar-left cq67nya" __cid="cq67nya"></div>  
+        <div class="x-titlebar-title cq67nya" __cid="cq67nya">插件的名字</div>  
+        <div class="x-titlebar-right  cq67nya" __cid="cq67nya">
+          <div class="empty cq67nya" __cid="cq67nya"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cq67nya" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cq67nya">
+      <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cq67nya" xid="contents1" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0}" __cid="cq67nya"> 
+        <div class="x-contents-content active cq67nya" xid="infoContent" style="padding:10px;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cq67nya">
+          <h3 xid="h31" style="text-align:center;" __cid="cq67nya" class="cq67nya">插件概述</h3>
+          <h4 xid="h41" __cid="cq67nya" class="cq67nya">介绍：</h4>
+          <p __cid="cq67nya" class="cq67nya">在这里添加插件的描述。。。。。。</p>
+          <div xid="div4" style="height:30px;" __cid="cq67nya" class="cq67nya"/>  
+          <h4 xid="h42" __cid="cq67nya" class="cq67nya">适用平台：</h4>  
+          <p __cid="cq67nya" class="cq67nya">在这里添加插件试用的平台</p> 
+        </div>  
+        <div class="x-contents-content cq67nya" xid="demoContent" style="padding:10px;width:100%;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cq67nya">
+          <div xid="div2" style="height:15px;" __cid="cq67nya" class="cq67nya"/>
+          <div xid="div3" __cid="cq67nya" class="cq67nya">
+            <p __cid="cq67nya" class="cq67nya">在这里做简单地接口的叙述。。。。。</p>
+          </div>  
+          <div xid="div6" style="height:50px;padding:40px" __cid="cq67nya" class="cq67nya">
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cq67nya" xid="button1" style="width:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:button1Click" data-config="{&quot;label&quot;:&quot;接口1&quot;}" __cid="cq67nya"> 
+              <i xid="i4" __cid="cq67nya" class="cq67nya"/>  
+              <span xid="span4" __cid="cq67nya" class="cq67nya">接口1</span>
+            </a>
+          </div>  
+          <div xid="div7" style="height:50px;padding:40px" __cid="cq67nya" class="cq67nya">
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cq67nya" xid="button2" style="width:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:button2Click" data-config="{&quot;label&quot;:&quot;接口2&quot;}" __cid="cq67nya"> 
+              <i xid="i5" __cid="cq67nya" class="cq67nya"/>  
+              <span xid="span5" __cid="cq67nya" class="cq67nya">接口2</span>
+            </a>
+          </div> 
+        </div>  
+        <div class="x-contents-content cq67nya" xid="codeContent" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cq67nya"/>
+      </div>
+    </div>  
+    <div class="x-panel-bottom cq67nya" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cq67nya">
+      <div component="$model/UI2/system/components/justep/button/buttonGroup" class="btn-group btn-group-justified x-card x-bottom cq67nya" xid="buttonGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/button/buttonGroup'}" data-config="{&quot;tabbed&quot;:true}" __cid="cq67nya">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cq67nya" xid="info" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;info&quot;,&quot;target&quot;:&quot;infoContent&quot;}" __cid="cq67nya"> 
+          <i xid="i1" __cid="cq67nya" class="cq67nya"/>  
+          <span xid="span1" __cid="cq67nya" class="cq67nya">info</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cq67nya" xid="demo" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;demo&quot;,&quot;target&quot;:&quot;demoContent&quot;}" __cid="cq67nya"> 
+          <i xid="i2" __cid="cq67nya" class="cq67nya"/>  
+          <span xid="span2" __cid="cq67nya" class="cq67nya">demo</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cq67nya" xid="code" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;code&quot;,&quot;target&quot;:&quot;codeContent&quot;}" __cid="cq67nya"> 
+          <i xid="i3" __cid="cq67nya" class="cq67nya"/>  
+          <span xid="span3" __cid="cq67nya" class="cq67nya">code</span>
+        </a>
+      </div>
+    </div>
+    <style __cid="cq67nya" class="cq67nya">.x-panel.p693cb3a0f9f449d6871cffef74126b47-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.p693cb3a0f9f449d6871cffef74126b47-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.p693cb3a0f9f449d6871cffef74126b47-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p693cb3a0f9f449d6871cffef74126b47-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p693cb3a0f9f449d6871cffef74126b47-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.p693cb3a0f9f449d6871cffef74126b47-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p693cb3a0f9f449d6871cffef74126b47-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p693cb3a0f9f449d6871cffef74126b47-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p693cb3a0f9f449d6871cffef74126b47-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div> 
+</div>

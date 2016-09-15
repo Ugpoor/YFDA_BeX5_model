@@ -1,0 +1,21 @@
+table.dataTable {
+    margin-top: 0 !important;
+}
+.x-control-group{
+	padding: 0;
+}
+.div3{
+	padding: 10px;
+}
+.checked{
+	background-color: #C4DBFB;
+}
+hr{
+	margin:2px 0 ; 
+}
+.x-pagerbar {
+    margin:0;
+}
+.x-control-group-title{
+	background-color:#8ED8EA;
+}

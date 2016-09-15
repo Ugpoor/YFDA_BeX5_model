@@ -1,0 +1,617 @@
+/**
+	@name 流程函数
+	@fn
+	@model BIZ
+	@category fn
+	@description 流程函数
+	@example
+	流程函数的定义模块是“/system/logic/fn”，使用流程函数时，需要先引用（use或include）模块“/system/logic/fn”。
+*/
+
+/**
+	@name 流程函数.findActivityCreator
+	@function
+	@description 获取指定环节的创建者
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.process.ProcessUtils.findActivityCreator
+	@example 
+		findActivityCreator('START') //获取首环节的创建者
+		findActivityCreator('ALL') //获取所有环节的创建者
+		findActivityCreator('bizActivity') //获取环节bizActivity的创建者
+*/
+
+/**
+	@name 流程函数.findActivityFirstCreatorFID
+	@function
+	@description 获取指定环节的第一个创建者的FID
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityCreator
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFID
+	@example
+		findActivityFirstCreatorFID('START')
+		findActivityFirstCreatorFID('ALL')
+		findActivityFirstCreatorFID('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstCreatorFName
+	@function
+	@description 获取指定环节的第一个创建者的FName
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityCreator
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFName
+	@example 
+			findActivityFirstCreatorFName('START')
+			findActivityFirstCreatorFName('ALL')
+			findActivityFirstCreatorFName('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityCreatorOrg
+	@function
+	@description 获取指定环节的创建者所在的组织
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.process.ProcessUtils.findActivityCreatorOrg
+	@example 
+			findActivityCreatorOrg('START')
+			findActivityCreatorOrg('ALL')
+			findActivityCreatorOrg('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstCreatorOrgFID
+	@function
+	@description 获取指定环节的第一个创建者所在的组织的FID
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityCreatorOrg
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFID
+	@example 
+			findActivityFirstCreatorOrgFID('START')
+			findActivityFirstCreatorOrgFID('ALL')
+			findActivityFirstCreatorOrgFID('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstCreatorOrgFName
+	@function
+	@description 获取指定环节的第一个创建者所在的组织的FName
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityCreatorOrg
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFName
+	@example 
+			findActivityFirstCreatorOrgFName('START')
+			findActivityFirstCreatorOrgFName('ALL')
+			findActivityFirstCreatorOrgFName('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityCreatorDept
+	@function
+	@description 获取指定环节的创建者所在的部门
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.process.ProcessUtils.findActivityCreatorDept
+	@example 
+			findActivityCreatorDept('START')
+			findActivityCreatorDept('ALL')
+			findActivityCreatorDept('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstCreatorDeptFID
+	@function
+	@description 获取指定环节的第一个创建者所在的部门的FID
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityCreatorDept
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFID
+	@example 
+			findActivityFirstCreatorDeptFID('START')
+			findActivityFirstCreatorDeptFID('ALL')
+			findActivityFirstCreatorDeptFID('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstCreatorDeptFName
+	@function
+	@description 获取指定环节的第一个创建者所在的部门的FName
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityCreatorDept
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFName
+	@example 
+			findActivityFirstCreatorDeptFName('START')
+			findActivityFirstCreatorDeptFName('ALL')
+			findActivityFirstCreatorDeptFName('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityCreatorOgn
+	@function
+	@description 获取指定环节的创建者所在的机构
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.process.ProcessUtils.findActivityCreatorOgn
+	@example 
+			findActivityCreatorOgn('START')
+			findActivityCreatorOgn('ALL')
+			findActivityCreatorOgn('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstCreatorOgnFID
+	@function
+	@description 获取指定环节的第一个创建者所在的机构的FID
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityCreatorOgn
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFID
+	@example 
+			findActivityFirstCreatorOgnFID('START')
+			findActivityFirstCreatorOgnFID('ALL')
+			findActivityFirstCreatorOgnFID('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstCreatorOgnFName
+	@function
+	@description 获取指定环节的第一个创建者所在的机构的FName
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityCreatorOgn
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFName
+	@example 
+			findActivityFirstCreatorOgnFName('START')
+			findActivityFirstCreatorOgnFName('ALL')
+			findActivityFirstCreatorOgnFName('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityExecutor
+	@function
+	@description 获取指定环节的执行者
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.process.ProcessUtils.findActivityExecutor
+	@example 
+			findActivityExecutor('START')
+			findActivityExecutor('ALL')
+			findActivityExecutor('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstExecutorFID
+	@function
+	@description 获取指定环节的第一个执行者的FID
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityExecutor
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFID
+	@example 
+			findActivityFirstExecutorFID('START')
+			findActivityFirstExecutorFID('ALL')
+			findActivityFirstExecutorFID('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstExecutorFName
+	@function
+	@description 获取指定环节的第一个执行者的FName
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityExecutor
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFName
+	@example 
+			findActivityFirstExecutorFName('START')
+			findActivityFirstExecutorFName('ALL')
+			findActivityFirstExecutorFName('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityExecutorOrg
+	@function
+	@description 获取指定环节的执行者所在的组织
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.process.ProcessUtils.findActivityExecutorOrg
+	@example 
+			findActivityExecutorOrg('START')
+			findActivityExecutorOrg('ALL')
+			findActivityExecutorOrg('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstExecutorOrgFID
+	@function
+	@description 获取指定环节的第一个执行者所在的组织的FID
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityExecutorOrg
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFID
+	@example 
+			findActivityFirstExecutorOrgFID('START')
+			findActivityFirstExecutorOrgFID('ALL')
+			findActivityFirstExecutorOrgFID('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstExecutorOrgFName
+	@function
+	@description 获取指定环节的第一个执行者所在的组织的FName
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityExecutorOrg
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFName
+	@example 
+			findActivityFirstExecutorOrgFName('START')
+			findActivityFirstExecutorOrgFName('ALL')
+			findActivityFirstExecutorOrgFName('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityExecutorDept
+	@function
+	@description 获取指定环节的执行者所在的部门
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.process.ProcessUtils.findActivityExecutorDept
+	@example 
+			findActivityExecutorDept('START')
+			findActivityExecutorDept('ALL')
+			findActivityExecutorDept('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstExecutorDeptFID
+	@function
+	@description 获取指定环节的第一个执行者所在的部门的FID
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityExecutorDept
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFID
+	@example 
+			findActivityFirstExecutorDeptFID('START')
+			findActivityFirstExecutorDeptFID('ALL')
+			findActivityFirstExecutorDeptFID('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstExecutorDeptFName
+	@function
+	@description 获取指定环节的第一个执行者所在的部门的FName
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityExecutorDept
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFName
+	@example 
+			findActivityFirstExecutorDeptFName('START')
+			findActivityFirstExecutorDeptFName('ALL')
+			findActivityFirstExecutorDeptFName('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityExecutorOgn
+	@function
+	@description 获取指定环节的执行者所在的机构
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.process.ProcessUtils.findActivityExecutorOgn
+	@example 
+			findActivityExecutorOgn('START')
+			findActivityExecutorOgn('ALL')
+			findActivityExecutorOgn('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstExecutorOgnFID
+	@function
+	@description 获取指定环节的第一个执行者所在的机构的FID
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityExecutorOgn
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFID
+	@example 
+			findActivityFirstExecutorOgnFID('START')
+			findActivityFirstExecutorOgnFID('ALL')
+			findActivityFirstExecutorOgnFID('bizActivity')
+*/
+
+/**
+	@name 流程函数.findActivityFirstExecutorOgnFName
+	@function
+	@description 获取指定环节的第一个执行者所在的机构的FName
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.findActivityExecutorOgn
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFName
+	@example 
+			findActivityFirstExecutorOgnFName('START')
+			findActivityFirstExecutorOgnFName('ALL')
+			findActivityFirstExecutorOgnFName('bizActivity')
+*/
+
+/**
+	@name 流程函数.findOrgUnitsHasActivity
+	@function
+	@description 获取拥有指定环节权限的组织单元
+	@param {String} activity 环节标识
+	@param {Object} inOrg 组织范围
+<xmp>
+	返回的组织单元必须在组织范围内; 允许三种情况: 
+	空值, 表示不限制范围;
+	单个组织单元ID或FID(String类型); 
+	多个组织单元ID或FID(String类型)形成的List;
+</xmp>		
+	@param {Boolean} isPersonMember 是否取到人员成员
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.opm.OrgUtils.findOrgUnitsHasActivity
+	@example 
+			findOrgUnitsHasActivity('bizActivity', '', true);
+			findOrgUnitsHasActivity('bizActivity', '组织单元ID', false);
+			findOrgUnitsHasActivity('bizActivity', '组织单元FID', true);
+			findOrgUnitsHasActivity('bizActivity', list('组织单元ID', '组织单元FID'), true);
+*/
+
+/**
+	@name 流程函数.findOrgUnitsHasCActivity
+	@function
+	@description 获取拥有当前环节权限的组织单元
+	@param {Object} inOrg 组织范围
+<xmp>
+	返回的组织单元必须在组织范围内; 允许三种情况: 
+	空值, 表示不限制范围;
+	单个组织单元ID或FID(String类型); 
+	多个组织单元ID或FID(String类型)形成的List;
+</xmp>		
+	@param {Boolean} isPersonMember 是否取到人员成员
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.process.ProcessUtils.findOrgUnitsHasCActivity
+	@example 
+			findOrgUnitsHasCActivity('', true);
+			findOrgUnitsHasCActivity('组织单元ID', false);
+			findOrgUnitsHasCActivity('组织单元FID', true);
+			findOrgUnitsHasCActivity(list('组织单元ID', '组织单元FID'), true);
+*/
+
+/**
+	@name 流程函数.findOrgUnitsHasCActivityInACDept
+	@function
+	@description 获取和指定环节创建者在同一部门下, 拥有当前环节权限的组织单元
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@param {Boolean} isPersonMember 是否取到人员成员
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.process.ProcessUtils.findOrgUnitsHasCActivityInACDept
+	@example 
+			findOrgUnitsHasCActivityInACDept('START', true);
+			findOrgUnitsHasCActivityInACDept('ALL', false);
+			findOrgUnitsHasCActivityInACDept('bizActivity', true);
+*/
+
+/**
+	@name 流程函数.findOrgUnitsHasCActivityInACOgn
+	@function
+	@description 获取和指定环节创建者在同一机构下, 拥有当前环节权限的组织单元
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@param {Boolean} isPersonMember 是否取到人员成员
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.process.ProcessUtils.findOrgUnitsHasCActivityInACOgn
+	@example 
+			findOrgUnitsHasCActivityInACOgn('START', true);
+			findOrgUnitsHasCActivityInACOgn('ALL', false);
+			findOrgUnitsHasCActivityInACOgn('bizActivity', true);
+*/
+
+/**
+	@name 流程函数.findOrgUnitsHasCActivityInAEDept
+	@function
+	@description 获取和指定环节处理者在同一部门下, 拥有当前环节权限的组织单元
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@param {Boolean} isPersonMember 是否取到人员成员
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.process.ProcessUtils.findOrgUnitsHasCActivityInAEDept
+	@example 
+			findOrgUnitsHasCActivityInAEDept('START', true);
+			findOrgUnitsHasCActivityInAEDept('ALL', false);
+			findOrgUnitsHasCActivityInAEDept('bizActivity', true);
+*/
+	
+/**
+	@name 流程函数.findOrgUnitsHasCActivityInAEOgn
+	@function
+	@description 获取和指定环节处理者在同一机构下, 拥有当前环节权限的组织单元
+	@param {String} activity 环节标识或'START'(表示首环节)或'ALL'(表示所有环节) 
+	@param {Boolean} isPersonMember 是否取到人员成员
+	@returns {List<com.justep.system.opm.OrgUnit>} 
+	@see com.justep.system.process.ProcessUtils.findOrgUnitsHasCActivityInAEOgn
+	@example 
+			findOrgUnitsHasCActivityInAEOgn('START', true);
+			findOrgUnitsHasCActivityInAEOgn('ALL', false);
+			findOrgUnitsHasCActivityInAEOgn('bizActivity', true);
+*/
+	
+/**
+	@name 流程函数.getProcessData1
+	@function
+	@description 获取当前流程实例关联的业务数据1
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.getProcessData1
+*/
+	
+/**
+	@name 流程函数.getProcessData2
+	@function
+	@description 获取当前流程实例关联的业务数据2
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.getProcessData2
+*/
+
+/**
+	@name 流程函数.getProcessData3
+	@function
+	@description 获取当前流程实例关联的业务数据3
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.getProcessData3
+*/
+
+/**
+	@name 流程函数.getProcessData4
+	@function
+	@description 获取当前流程实例关联的业务数据4
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.getProcessData4
+*/
+
+/**
+	@name 流程函数.isExecutingAction
+	@function
+	@description 判断是否正在执行指定的动作
+	@param {String} action 动作标识
+	@returns {Boolean} 
+	@see com.justep.system.process.ProcessUtils.isExecutingAction
+*/
+
+/**
+	@name 流程函数.isProcessFinished
+	@function
+	@description 判断当前流程实例是否已经结束
+	@returns {Boolean} 
+	@see com.justep.system.process.ProcessUtils.isProcessFinished
+*/
+
+/**
+	@name 流程函数.isStartingProcess
+	@function
+	@description 判断是否正在启动流程
+	@returns {Boolean} 
+	@see com.justep.system.process.ProcessUtils.isStartingProcess
+*/
+
+
+/**
+	@name 流程函数.processFinishable
+	@function
+	@description 判断当前流程实例是否可以结束
+	@returns {Boolean} 
+	@see com.justep.system.process.ProcessUtils.processFinishable
+*/
+	
+/**
+	@name 流程函数.isFlowTo
+	@function
+	@description 判断是否流转到指定的环节
+	@param {String} activity 环节标识
+	@returns {Boolean} 
+	@see com.justep.system.process.ProcessUtils.isFlowTo
+	@example isFlowTo('bizActivity')
+*/
+
+/**
+	@name 流程函数.isFlowToEnd
+	@function
+	@description 判断是否流转到结束
+	@returns {Boolean} 
+	@see com.justep.system.process.ProcessUtils.isFlowToEnd
+*/
+
+/**
+	@name 流程函数.currentPIName
+	@function
+	@description 获取当前流程实例的标题
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.getPINameInProcessContext
+*/
+
+/**
+	@name 流程函数.currentProcess
+	@function
+	@description 获取动作上下文中，当前流程的全路径
+	@returns {String} 
+*/
+
+/**
+	@name 流程函数.currentActivity
+	@function
+	@description  获取动作上下文中，当前环节的全路径
+	@returns {String} 
+*/
+	
+
+/**
+	@name 流程函数.currentProcessLabel
+	@function
+	@description 获取动作上下文中，当前流程的label
+	@returns {String} 
+*/
+
+/**
+	@name 流程函数.currentActivityLabel
+	@function
+	@description  获取动作上下文中，当前环节的label
+	@returns {String} 
+*/
+
+/**
+	@name 流程函数.currentProcessOfProcessContext
+	@function
+	@description 获取流程上下文中，当前流程的全路径
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.getProcessInProcessContext
+*/
+
+/**
+	@name 流程函数.currentActivityOfProcessContext
+	@function
+	@description  获取流程上下文中，当前环节的全路径
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.getActivityInProcessContext
+*/
+
+	
+/**
+	@name 流程函数.currentProcessLabelOfProcessContext
+	@function
+	@description 获取流程上下文中，当前流程的label
+	@returns {String} 
+	@see com.justep.system.process.ProcessUtils.getProcessLabelInProcessContext
+*/
+
+/**
+	@name 流程函数.currentActivityLabelOfProcessContext
+	@function
+	@description  获取流程上下文中，当前环节的label
+	@returns {String}
+	@see com.justep.system.process.ProcessUtils.getActivityLabelInProcessContext 
+*/
+	
+	
+/**
+	@name 流程函数.inputFromActivity
+	@function
+	@description 判断前续环节是否包含指定的环节
+	@param {String} activity 环节标识
+	@returns {Boolean} 
+	@see com.justep.system.process.ProcessUtils.inputFromActivity
+*/
+
+/**
+	@name 流程函数.currentTaskExecutorNumber
+	@function
+	@description 当前任务执行者个数
+	@returns {Integer} 
+	@see com.justep.system.process.ProcessUtils.currentTaskExecutorNumber
+*/
+
+/**
+	@name 流程函数.currentTaskExecutorFinishedNumber
+	@function
+	@description 当前任务有多少个执行者已经处理完成
+	@returns {Integer} 
+	@see com.justep.system.process.ProcessUtils.currentTaskExecutorFinishedNumber
+*/
+	

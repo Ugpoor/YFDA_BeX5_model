@@ -1,0 +1,277 @@
+--清空系统数据
+delete from SA_OrgLevel t;
+delete from SA_TaskPreemptMode t;
+delete from SA_TaskExecuteMode t;
+delete from SA_TaskKind t;
+delete from SA_TaskScope t;
+delete from SA_TaskStatus t;
+delete from SA_Emergency t;
+delete from SA_Importance t;
+
+delete from SA_TaskType t;
+delete from SA_OPOrg t;
+delete from SA_OPPerson t;
+delete from SA_OPPermission t;
+delete from SA_OPRole t ;
+delete from SA_OPAuthorize t;
+delete from SA_OPManageType t;
+delete from SA_DocNameSpace t;
+delete from SA_DocNode t;
+
+
+
+--初始化编码表-------------------------------------------------------------------------------------
+--insert into SA_Code ($clientName, sID, sType, sCode, sName, version) values($clientValue, 'org.psm','org','psm','人员成员',0);
+--insert into SA_Code ($clientName, sID, sType, sCode, sName, version) values($clientValue, 'org.psn','org','psn','人员',0);
+--insert into SA_Code ($clientName, sID, sType, sCode, sName, version) values($clientValue, 'org.ogn','org','ogn','机构',0);
+--insert into SA_Code ($clientName, sID, sType, sCode, sName, version) values($clientValue, 'org.dpt','org','dpt','部门',0);
+--insert into SA_Code ($clientName, sID, sType, sCode, sName, version) values($clientValue, 'org.grp','org','grp','工作组',0);
+--insert into SA_Code ($clientName, sID, sType, sCode, sName, version) values($clientValue, 'org.pos','org','pos','岗位',0);
+
+insert into SA_TerminalType t (t, t.sName, t.sCode, t.version) values('mobile','手机','mobile',0);
+insert into SA_TerminalType t (t, t.sName, t.sCode, t.version) values('pad','平板','pad',0);
+
+
+insert into SA_Importance t (t, t.sName, t.sCode, t.version) values('tiHighest','最高','tiHighest',0);
+insert into SA_Importance t (t, t.sName, t.sCode, t.version) values('tiHigh','高','tiHigh',0);
+insert into SA_Importance t (t, t.sName, t.sCode, t.version) values('tiMiddle','中','tiMiddle',0);
+insert into SA_Importance t (t, t.sName, t.sCode, t.version) values('tiLower','低','tiLower',0);
+
+
+
+insert into SA_Emergency t (t, t.sName, t.sCode, t.version) values('teHighest','紧急','teHighest',0);
+insert into SA_Emergency t (t, t.sName, t.sCode, t.version) values('teHigh','急迫','teHigh',0);
+insert into SA_Emergency t (t, t.sName, t.sCode, t.version) values('teMiddle','一般','teMiddle',0);
+insert into SA_Emergency t (t, t.sName, t.sCode, t.version) values('teLower','较低','teLower',0);
+
+insert into SA_TaskStatus t (t, t.sName, t.sCode, t.version) values ('tesFinished', '已完成', 'tesFinished', 0);
+insert into SA_TaskStatus t (t, t.sName, t.sCode, t.version) values ('tesReady', '尚未处理', 'tesReady', 0);
+insert into SA_TaskStatus t (t, t.sName, t.sCode, t.version) values ('tesExecuting', '正在处理', 'tesExecuting',0);
+insert into SA_TaskStatus t (t, t.sName, t.sCode, t.version) values ('tesSleeping','暂缓处理', 'tesSleeping',0);
+insert into SA_TaskStatus t (t, t.sName, t.sCode, t.version) values ('tesCanceled','已取消','tesCanceled',0);
+insert into SA_TaskStatus t (t, t.sName, t.sCode, t.version) values ('tesAborted', '已终止', 'tesAborted', 0);
+insert into SA_TaskStatus t (t, t.sName, t.sCode, t.version) values ('tesReturned', '已经回退', 'tesReturned', 0);
+
+insert into SA_TaskScope t (t, t.sName, t.sCode, t.version) values('tsProcess', '流程', 'tsProcess', 0);
+insert into SA_TaskScope t (t, t.sName, t.sCode, t.version) values('tsTask', '任务', 'tsTask', 0);
+
+
+insert into SA_TaskKind t (t, t.sName, t.sCode, t.version) values('tkProcessInstance', '流程', 'tkProcessInstance', 0);
+insert into SA_TaskKind t (t, t.sName, t.sCode, t.version) values('tkTask', '活动', 'tkTask', 0);
+insert into SA_TaskKind t (t, t.sName, t.sCode, t.version) values('tkExecutor', '任务', 'tkExecutor', 0);
+insert into SA_TaskKind t (t, t.sName, t.sCode, t.version) values('tkNotice', '通知', 'tkNotice',0);
+
+
+insert into SA_TaskExecuteMode t (t, t.sName, t.sCode, t.version) values ('temPreempt', '抢占', 'temPreempt', 0);
+insert into SA_TaskExecuteMode t (t, t.sName, t.sCode, t.version) values ('temSequential', '顺序', 'temSequential', 0);
+insert into SA_TaskExecuteMode t (t, t.sName, t.sCode, t.version) values ('temSimultaneous', '同时', 'temSimultaneous', 0);
+
+
+insert into SA_TaskPreemptMode t (t, t.sName, t.sCode, t.version) values('tpmOpen', '打开', 'tpmOpen', 0);
+insert into SA_TaskPreemptMode t (t, t.sName, t.sCode, t.version) values('tpmExecute', '执行', 'tpmExecute', 0);
+
+
+--insert into SA_Code ($clientName, sID, sType, sCode, sName, version) values($clientValue, 'safeLevel.0','safeLevel','0','普通',0);
+--insert into SA_Code ($clientName, sID, sType, sCode, sName, version) values($clientValue, 'safeLevel.1','safeLevel','1','秘密',0);
+--insert into SA_Code ($clientName, sID, sType, sCode, sName, version) values($clientValue, 'safeLevel.2','safeLevel','2','绝密',0);
+
+insert into SA_OrgLevel t (t, t.sName, t.sCode, t.version) values ('orgLevel.1', '一级部门', '1', 0);
+insert into SA_OrgLevel t (t, t.sName, t.sCode, t.version) values ('orgLevel.2', '二级部门', '2', 0);
+
+
+
+--初始化任务类型-------------------------------------------------------------------------------------
+insert into SA_TaskType t (t, t.sName, t.sConcept, t.sNewActivity, t.sExecuteActivity, t.sKind, t.version, t.sProcess, t.sActivity) 
+values('WORKADVICE', '工作建议', null, '/SA/task/workAdvice/useActivity.w', '/SA/task/workAdvice/useActivity.w', 'task', 0, '/SA/task/workAdvice/workAdviceProcess', 'useActivity');
+insert into SA_TaskType t (t, t.sName, t.sConcept, t.sNewActivity, t.sExecuteActivity, t.sKind, t.version, t.sProcess, t.sActivity) 
+values ('WORKLOG', '工作日志', null, '/SA/task/workLog/useActivity.w', '/SA/task/workLog/useActivity.w', 'task', 0, '/SA/task/workLog/workLogProcess', 'useActivity');
+insert into SA_TaskType t (t, t.sName, t.sConcept, t.sNewActivity, t.sExecuteActivity, t.sKind, t.version, t.sProcess, t.sActivity) 
+values ('WORKWEEKPLAN', '个人周工作计划', null, '/SA/task/workWeekPlan/useActivity.w', '/SA/task/workWeekPlan/useActivity.w', 'task', 0, '/SA/task/workWeekPlan/workWeekPlanProcess', 'useActivity');
+insert into SA_TaskType t (t, t.sName, t.sConcept, t.sNewActivity, t.sExecuteActivity, t.sKind, t.version, t.sProcess, t.sActivity) 
+values ('WORKWEEKREPORT', '工作周报', null, '/SA/task/workWeekReport/useActivity.w', '/SA/task/workWeekReport/useActivity.w', 'task', 0, '/SA/task/workWeekReport/workWeekReportProcess', 'useActivity');
+insert into SA_TaskType t (t, t.sName, t.sConcept, t.sNewActivity, t.sExecuteActivity, t.sKind, t.version, t.sProcess, t.sActivity) 
+values('FLOWTASK', '工作流任务', null, null, null, null, 0, null, null);
+insert into SA_TaskType t (t, t.sName, t.sConcept, t.sNewActivity, t.sExecuteActivity, t.sKind, t.version, t.sProcess, t.sActivity) 
+values('REMINDTASK', '提醒任务', null, null, null, null, 0, null, null);
+insert into SA_TaskType t (t, t.sName, t.sConcept, t.sNewActivity, t.sExecuteActivity, t.sKind, t.version, t.sProcess, t.sActivity) 
+values('TASK', '普通任务', null, null, null, null, 0, null, null);
+insert into SA_TaskType t (t, t.sName, t.sConcept, t.sNewActivity, t.sExecuteActivity, t.sKind, t.version, t.sProcess, t.sActivity) 
+values('WORKRECORD', '工作记录', null, '/SA/task/workRecord/useActivity.w', '/SA/task/workRecord/useActivity.w', 'task', 0, '/SA/task/workRecord/workRecordProcess', 'useActivity');
+insert into SA_TaskType t (t, t.sName, t.sConcept, t.sNewActivity, t.sExecuteActivity, t.sKind, t.version, t.sProcess, t.sActivity) 
+values('WORKREMIND', '工作提醒', null, '/SA/task/workRemind/useActivity.w', '/SA/task/workRemind/useActivity.w', 'task', 0, '/SA/task/workRemind/workRemindProcess', 'useActivity');
+insert into SA_TaskType t (t, t.sName, t.sConcept, t.sNewActivity, t.sExecuteActivity, t.sKind, t.version, t.sProcess, t.sActivity) 
+values('WORKTASK', '工作任务', null, '/SA/task/workTask/useActivity.w', '/SA/task/workTask/useActivity.w', 'task', 0, '/SA/task/workTask/workTaskProcess', 'useActivity');
+
+
+-----普通用户-----
+insert into SA_OPPermission t (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values ('USER-WORK-01', 'RL-USER', '/SA/task/workAdvice/workAdviceProcess', '/协同办公/任务管理/工作建议', 'mainActivity', null, null, null, 0, null, 31, 1, 0);
+insert into SA_OPPermission t (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values ('USER-WORK-02', 'RL-USER', '/SA/task/workAdvice/workAdviceProcess', '/协同办公/任务管理/工作建议', 'useActivity', null, null, null, 0, null, 32, 1, 0);
+insert into SA_OPPermission t (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values ('USER-WORK-03', 'RL-USER', '/SA/task/workLog/workLogProcess', '/协同办公/任务管理/工作日志', 'mainActivity', null, null, null, 0, null, 33, 1, 0);
+insert into SA_OPPermission t (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values ('USER-WORK-04', 'RL-USER', '/SA/task/workLog/workLogProcess', '/协同办公/任务管理/工作日志', 'useActivity', null, null, null, 0, null, 34, 1, 0);
+insert into SA_OPPermission t (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values ('USER-WORK-07', 'RL-USER', '/SA/task/workRemind/workRemindProcess', '/协同办公/任务管理/工作提醒', 'mainActivity', null, null, null, 0, null, 37, 1, 0);
+insert into SA_OPPermission t (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values ('USER-WORK-08', 'RL-USER', '/SA/task/workRemind/workRemindProcess', '/协同办公/任务管理/工作提醒', 'useActivity', null, null, null, 0, null, 38, 1, 0);
+insert into SA_OPPermission t (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values ('USER-WORK-11', 'RL-USER', '/SA/task/workWeekPlan/workWeekPlanProcess', '/协同办公/任务管理/个人周工作计划', 'mainActivity', null, null, null, 0, null, 41, 1, 0);
+insert into SA_OPPermission t (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values ('USER-WORK-12', 'RL-USER', '/SA/task/workWeekPlan/workWeekPlanProcess', '/协同办公/任务管理/个人周工作计划', 'useActivity', null, null, null, 0, null, 42, 1, 0);
+insert into SA_OPPermission t (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values ('USER-WORK-13', 'RL-USER', '/SA/task/workWeekReport/workWeekReportProcess', '/协同办公/任务管理/工作周报', 'mainActivity', null, null, null, 0, null, 43, 1, 0);
+insert into SA_OPPermission t (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values ('USER-WORK-14', 'RL-USER', '/SA/task/workWeekReport/workWeekReportProcess', '/协同办公/任务管理/工作周报', 'useActivity', null, null, null, 0, null, 44, 1, 0);
+
+
+
+
+
+
+--初始化组织结构---------------------------------------------------------------------------------
+insert into SA_OPOrg t  (t, t.sName, t.sCode, t.sLongName, t.sFName, t.sFCode, t.sFID, t.sOrgKindID, t.sSequence, t.sValidState, t.sParent, t.sLevel, t.sPhone, t.sFax, t.sAddress, t.sZip, t.sDescription, t.version)
+values('ORG01', '起步软件', 'JUSTEP', '北京起步科技有限公司', '/起步软件', '/JUSTEP', '/ORG01.ogn', 'ogn', '/001', 1, null, 1, '59798677', '010-67678151', '北京方庄芳群园四区22号金城中心10层', '100078', '北京起步科技有限公司', 0);
+insert into SA_OPPerson t (t, t.sName, t.sCode, t.sNumb, t.sLoginName, t.sPassword, t.sMainOrgID, t.sSafeLevelID, t.sSequence, t.sValidState, t.sDescription, t.sSex, t.sBirthday, t.sJoinDate, t.sHomePlace, t.sDegree, t.sGraduateSchool, t.sSpeciality, t.sSchoolLength, t.sTitle, t.sMarriage, t.sCardNO, t.sCardKind, t.sFamilyAddress, t.sZip, t.sMsn, t.sQQ, t.sMail, t.sMobilePhone, t.sFamilyPhone, t.sOfficePhone, t.version, t.sPhoto)
+values('PSN01', 'system', 'SYSTEM', 1, 'SYSTEM', :encryptPassword('123456'), 'ORG01', null, 1, 1, null, '男', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null);
+insert into SA_OPOrg t (t, t.sName, t.sCode, t.sLongName, t.sFName, t.sFCode, t.sFID, t.sOrgKindID, t.sSequence, t.sValidState, t.sParent, t.sLevel, t.sPhone, t.sFax, t.sAddress, t.sZip, t.sDescription, t.sPersonID, t.version, t.sNodeKind)
+values('PSN01@ORG01', 'system', 'SYSTEM', null, '/起步软件/system', '/JUSTEP/SYSTEM', '/ORG01.ogn/PSN01@ORG01.psm', 'psm', '/001/001', 1, 'ORG01', 1, null, null, null, null, null, 'PSN01', 0, 'nkLeaf');
+
+--初始化角色和权限---------------------------------------------------------------------------------
+
+-----系统管理员-----
+insert into SA_OPRole t  (t, t.sName, t.sCode, t.sCatalog, t.sRoleKind, t.sParentRolesNames, t.sDescription, t.sSequence, t.sValidState, t.version)
+values('RL-SYSTEM', '系统管理员', 'system', '管理员', 'fun', null, null, 0, 1, 0);
+
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-OPM-01', 'RL-SYSTEM', '/SA/OPM/organization/organizationProcess', '/组织权限/组织管理', 'mainActivity', null, null, null, 0, null, 1, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-OPM-02', 'RL-SYSTEM', '/SA/OPM/role/roleProcess', '/组织权限/角色管理', 'mainActivity', null, null, null, 0, null, 2, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-OPM-03', 'RL-SYSTEM', '/SA/OPM/authorization/authorizationProcess', '/组织权限/按组织授权', 'mainActivity', null, null, null, 0, null, 3, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-OPM-04', 'RL-SYSTEM', '/SA/OPM/management/managementProcess', '/组织权限/业务管理权限', 'mainActivity', null, null, null, 0, null, 4, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-OPM-05', 'RL-SYSTEM', '/SA/OPM/recycled/recycledProcess', '/组织权限/回收站', 'mainActivity', null, null, null, 0, null, 5, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-OPM-06', 'RL-SYSTEM', '/SA/OPM/grade/gradeProcess', '/组织权限/分级管理', 'mainActivity', null, null, null, 0, null, 6, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-OPM-07', 'RL-SYSTEM', '/SA/OPM/log/logProcess', '/组织权限/组织机构日志', 'mainActivity', null, null, null, 0, null, 7, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-OPM-08', 'RL-SYSTEM', '/SA/OPM/authorizationByRole/authorizationByRoleProcess', '/组织权限/按角色授权', 'mainActivity', null, null, null, 0, null, 8, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-OPM-09', 'RL-SYSTEM', '/SA/OPM/authorizationQuery/authorizationQueryProcess', '/组织权限/权限查询', 'mainActivity', null, null, null, 0, null, 9, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-OPM-10', 'RL-SYSTEM', '/SA/OPM/organization/organizationProcess', '/组织权限/组织级别设置', 'orgLevelSetting', null, null, null, 0, null, 10, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-OPM-11', 'RL-SYSTEM', '/SA/OPM/management/managementProcess', '/组织权限/基础设置/业务管理类型设置', 'manageTypeSetting', null, null, null, 0, null, 11, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-OPM-12', 'RL-SYSTEM', '/SA/OPM/customGroup/customGroupProcess', '/组织权限/设置公共常用组', 'publicGroup', null, null, null, 0, null, 12, 1, 0);
+
+
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-TASK-01', 'RL-SYSTEM', '/SA/process/monitor/monitorProcess', '/协同办公/任务管理/流程监控', 'mainActivity', null, null, null, 0, null, 11, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-TASK-02', 'RL-SYSTEM', '/SA/process/template/templateProcess', '/协同办公/任务管理/定制流程模板', 'mainActivity', null, null, null, 0, null, 12, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-TASK-03', 'RL-SYSTEM', '/SA/process/template/templateProcess', '/协同办公/任务管理/流程模板管理', 'mainActivity2', null, null, null, 0, null, 13, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-TASK-04', 'RL-SYSTEM', '/SA/task/taskArchive/taskArchiveProcess', '/协同办公/任务管理/任务归档/任务归档', 'publicGroup', null, null, null, 0, null, 14, 1, 0);
+
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-DOC-01', 'RL-SYSTEM', '/SA/doc/docSetting/docSettingProcess', '/协同办公/文档管理/文档配置', 'mainActivity', NULL, NULL, NULL, 0, NULL, 21, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-DOC-02', 'RL-SYSTEM', '/SA/doc/docPermission/docPermissionProcess', '/协同办公/文档管理/文档关联', 'mainActivity', NULL, NULL, NULL, 0, NULL, 22, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-DOC-03', 'RL-SYSTEM', '/SA/doc/docCenter/docCenterProcess', '/协同办公/文档管理/文档中心', 'mainActivity', NULL, NULL, NULL, 0, NULL, 23, 1, 0);
+
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-PORTAL-01', 'RL-SYSTEM', '/SA/theme/themeDefine/themeDefineProcess', '/协同办公/门户管理/门户默认布局配置', 'mainActivity', NULL, NULL, NULL, 0, NULL, 31, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-PORTAL-02', 'RL-SYSTEM', '/SA/theme/themeManager/themeManagerProcess', '/协同办公/门户管理/门户默认布局分配', 'mainActivity', NULL, NULL, NULL, 0, NULL, 32, 1, 0);
+
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-TOOLS-01', 'RL-SYSTEM', '/SA/log/logProcess', '/协同办公/系统工具/操作日志', 'mainActivity', NULL, NULL, NULL, 0, NULL, 41, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-TOOLS-02', 'RL-SYSTEM', '/SA/online/onlineProcess', '/协同办公/系统工具/在线用户', 'mainActivity', NULL, NULL, NULL, 0, NULL, 42, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-TOOLS-03', 'RL-SYSTEM', '/SA/license/licenseProcess', '/协同办公/系统工具/license工具', 'mainActivity', NULL, NULL, NULL, 0, NULL, 43, 1, 0);
+
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-TOOLS-04', 'RL-SYSTEM', '/SA/tools/process/exportData/exportDataProcess', '/协同办公/系统工具/导出初始化数据', 'mainActivity', NULL, NULL, NULL, 0, NULL, 44, 1, 0);
+
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-TOOLS-05', 'RL-SYSTEM', '/SA/weixin/process/weixin/weixinProcess', '微信企业号配置', 'mainActivity', NULL, NULL, NULL, 0, NULL, 45, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'SYS-TOOLS-06', 'RL-SYSTEM', '/SA/code/codeManager/codeManagerProcess', '通用编码管理', 'mainActivity', NULL, NULL, NULL, 0, NULL, 46, 1, 0);
+
+-----分级管理员-----
+insert into SA_OPRole  t (t, t.sName, t.sCode, t.sCatalog, t.sRoleKind, t.sParentRolesNames, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'RL-SYSTEM-GRADE', '分级管理员', 'system-grade', '管理员', 'fun', null, null, 0, 1, 0);
+
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'GRADE-OPM-01', 'RL-SYSTEM-GRADE', '/SA/OPM/grade/gradeProcess', '/组织权限/分级管理-分级', 'gradeActivity', null, null, null, 0, null, 1, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'GRADE-OPM-02', 'RL-SYSTEM-GRADE', '/SA/OPM/organization/organizationProcess', '/组织权限/组织管理-分级', 'gradeActivity', null, null, null, 0, null, 2, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'GRADE-OPM-03', 'RL-SYSTEM-GRADE', '/SA/OPM/authorization/authorizationProcess', '/组织权限/按组织授权-分级', 'gradeActivity', null, null, null, 0, null, 3, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'GRADE-OPM-04', 'RL-SYSTEM-GRADE', '/SA/OPM/management/managementProcess', '/组织权限/业务管理权限-分级', 'gradeActivity', null, null, null, 0, null, 4, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'GRADE-OPM-05', 'RL-SYSTEM-GRADE', '/SA/OPM/recycled/recycledProcess', '/组织权限/回收站-分级', 'gradeActivity', null, null, null, 0, null, 5, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'GRADE-OPM-06', 'RL-SYSTEM-GRADE', '/SA/OPM/authorizationByRole/authorizationByRoleProcess', '/组织权限/按角色授权-分级', 'gradeActivity', null, null, null, 0, null, 6, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'GRADE-OPM-07', 'RL-SYSTEM-GRADE', '/SA/OPM/authorizationQuery/authorizationQueryProcess', '/组织权限/权限查询-分级', 'gradeActivity', null, null, null, 0, null, 7, 1, 0);
+
+-----普通用户-----
+insert into SA_OPRole t  (t, t.sName, t.sCode, t.sCatalog, t.sRoleKind, t.sParentRolesNames, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'RL-USER', '普通用户', 'user', '普通用户', 'fun', null, null, 0, 1, 0);
+
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'USER-TASK-01', 'RL-USER', '/SA/task/taskCenter/taskCenterProcess', '/协同办公/任务管理/任务中心', 'mainActivity', null, null, null, 0, null, 1, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'USER-TASK-02', 'RL-USER', '/SA/task/taskView/taskViewProcess', '/协同办公/任务管理/待办和提交', 'mainActivity', null, null, null, 0, null, 2, 1, 0);
+
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'USER-OPM-01', 'RL-USER', '/SA/OPM/agent/agentProcess', '/组织权限/代理设置', 'mainActivity', null, null, null, 0, null, 11, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'USER-OPM-02', 'RL-USER', '/SA/OPM/customGroup/customGroupProcess', '/组织权限/设置个人常用组', 'privateGroup', null, null, null, 0, null, 12, 1, 0);
+
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'USER-DOC-01', 'RL-USER', '/SA/doc/docCenter/docCenterProcess', '/协同办公/文档管理/文档中心', 'mainActivity', NULL, NULL, NULL, 0, NULL, 21, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'USER-DOC-02', 'RL-USER', '/SA/doc/docSearch/docSearchProcess', '/协同办公/文档管理/文档检索', 'mainActivity', NULL, NULL, NULL, 0, NULL, 22, 1, 0);
+
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'USER-WORK-05', 'RL-USER', '/SA/task/workRecord/workRecordProcess', '/协同办公/任务管理/工作记录', 'mainActivity', null, null, null, 0, null, 35, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'USER-WORK-06', 'RL-USER', '/SA/task/workRecord/workRecordProcess', '/协同办公/任务管理/工作记录', 'useActivity', null, null, null, 0, null, 36, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'USER-WORK-09', 'RL-USER', '/SA/task/workTask/workTaskProcess', '/协同办公/任务管理/工作任务', 'mainActivity', null, null, null, 0, null, 39, 1, 0);
+insert into SA_OPPermission t  (t, t.sPermissionRoleID, t.sProcess, t.sActivityFName, t.sActivity, t.sActionsNames, t.sActions, t.sSemanticDP, t.sPermissionKind, t.sDescription, t.sSequence, t.sValidState, t.version)
+values( 'USER-WORK-10', 'RL-USER', '/SA/task/workTask/workTaskProcess', '/协同办公/任务管理/工作任务', 'useActivity', null, null, null, 0, null, 40, 1, 0);
+
+--初始化组织授权------------------------------------------------------------------------
+insert into SA_OPAuthorize t (t, t.sOrgFID, t.sOrgFName, t.sOrgID, t.sOrgName, t.sAuthorizeRoleID, t.sDescription, t.sCreatorFID, t.sCreatorFName, t.sCreateTime, t.version)
+values( 'AHR01', '/ORG01.ogn', '/起步软件', 'ORG01', '起步软件', 'RL-USER', null, '/ORG01.ogn/PSN01@ORG01.psm', '/起步软件/system', :currentDate(), 0);
+insert into SA_OPAuthorize t (t, t.sOrgFID, t.sOrgFName, t.sOrgID, t.sOrgName, t.sAuthorizeRoleID, t.sDescription, t.sCreatorFID, t.sCreatorFName, t.sCreateTime, t.version)
+values( 'AHR02', '/ORG01.ogn/PSN01@ORG01.psm', '/起步软件/system', 'PSN01@ORG01', 'system', 'RL-SYSTEM', null, '/ORG01.ogn/PSN01@ORG01.psm', '/起步软件/system', :currentDate(), 0);
+
+--初始化业务管理类型--------------------------------------------------------------------
+insert into SA_OPManageType t  (t, t.sName, t.sCode, t.sManageOrgKind, t.sManageOrgKindName, t.sLeaderNumber, t.sIsSystem, t.version)
+values( 'systemManagement', '系统管理', 'systemManagement', 'ogn dpt pos grp', '机构 部门 岗位 工作组', 0, 1, 0);
+insert into SA_OPManageType t  (t, t.sName, t.sCode, t.sManageOrgKind, t.sManageOrgKindName, t.sLeaderNumber, t.sIsSystem, t.version)
+values( 'businessManagement', '业务管理', 'businessManagement', 'ogn dpt pos grp', '机构 部门 岗位 工作组', 0, 1, 0);
+
+--初始化文档----------------------------------------------------------------------------
+insert into SA_DocAuth t  (t, t.sDocPath,t.sAuthorizerFID,t.sAuthorizerName,t.sAuthorizerDeptName,t.sAuthorizeeFID,t.sAuthorizeeName,t.sAuthorizeeDeptName,t.sGrantTime,t.sAccess,t.sScope,t.version) 
+values( 'doc-system', '/', '/ORG01.ogn/PSN01@ORG01.psm', 'system', null, '/ORG01.ogn/PSN01@ORG01.psm', 'system', null, :currentDate(), 32767, null, 0);
+
+insert into SA_DocNameSpace  SA_DocNameSpace (SA_DocNameSpace, SA_DocNameSpace.version, SA_DocNameSpace.sDisplayName, SA_DocNameSpace.sHost, SA_DocNameSpace.sPort,SA_DocNameSpace.sUrl, SA_DocNameSpace.sFlag, SA_DocNameSpace.sAccessMode) 
+values(:iff(:enabledClient(),:clientValue(),'defaultDocNameSpace'), 0, '文档中心', 'localhost', 8080, 'http://localhost:8080/DocServer', 1, '1' );
+
+insert into SA_DocNode SA_DocNode (SA_DocNode, SA_DocNode.version, SA_DocNode.sDocName, SA_DocNode.sParentID, SA_DocNode.sSequence, SA_DocNode.sSize, SA_DocNode.sKind, SA_DocNode.sDocPath, SA_DocNode.sDocDisplayPath, SA_DocNode.sCreatorFID, SA_DocNode.sCreatorName, SA_DocNode.sCreatorDeptName, SA_DocNode.sCreateTime, SA_DocNode.sEditorFID, SA_DocNode.sEditorName, SA_DocNode.sEditorDeptName, SA_DocNode.sLastWriterFID, SA_DocNode.sLastWriterName, SA_DocNode.sLastWriterDeptName, SA_DocNode.sLastWriteTime, SA_DocNode.sFileID, SA_DocNode.sDescription, SA_DocNode.sDocLiveVersionID, SA_DocNode.sDocSerialNumber, SA_DocNode.sKeywords, SA_DocNode.sClassification, SA_DocNode.sFinishTime, SA_DocNode.sNameSpace, SA_DocNode.sFlag, SA_DocNode.sCacheName, SA_DocNode.sRevisionCacheName) 
+values('defaultDocNameSpace', 0, '文档中心', null, null, null, 'dir', '/', '/', '/ORG01.ogn/PSN01@ORG01.psm', 'system', null, :currentDate(), null, null, null, 'system', null, null, :currentDate(), null, null, null, null, null, null, null, :iff(:enabledClient(),:clientValue(),'defaultDocNameSpace'), 1, null, null );
+

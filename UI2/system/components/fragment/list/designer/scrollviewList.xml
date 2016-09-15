@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<!-- 先导型组件 -->
+	<element name="$UI/system/components/fragment/list/scrollviewList"
+		binding-component="$UI/system/components/fragment/list/scrollviewList"
+		tag-name="div" icon="scrollviewList.png" text="scrollviewList" 
+		resizable="false" component-type="fragmentWizard" width="480" height="300"
+		builder-url="$UI/system/components/fragment/list/designer/builder/scrollviewList.w" 
+		design-view="web-designer">
+		<properties>
+		</properties>
+
+		<templates>
+		   <template name="default"><![CDATA[
+		   ]]></template>
+		</templates>
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+        </events>
+		<toolbar>			
+		</toolbar>
+	</element>
+</elements>

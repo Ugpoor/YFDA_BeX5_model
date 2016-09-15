@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" design="device:m;" xid="window" class="window cRfqMzu" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cRfqMzu" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style xmlns:xhtml="http://www.w3.org/1999/xhtml">null</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cRfqMzu" class="cRfqMzu"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pfc93395049884f36a72a77c9f45256ed-iosstatusbar cRfqMzu" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cRfqMzu"> 
+    <div class="x-panel-top cRfqMzu" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cRfqMzu"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cRfqMzu" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;测试&quot;}" __cid="cRfqMzu"> 
+        <div class="x-titlebar-left cRfqMzu" __cid="cRfqMzu"></div>  
+        <div class="x-titlebar-title cRfqMzu" __cid="cRfqMzu">测试</div>  
+        <div class="x-titlebar-right  cRfqMzu" __cid="cRfqMzu">
+          <div class="empty cRfqMzu" __cid="cRfqMzu"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cRfqMzu" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cRfqMzu">
+      <div xid="div1" style="height:35px;" __cid="cRfqMzu" class="cRfqMzu"/>  
+      <div xid="div2" style="height:52px;" __cid="cRfqMzu" class="cRfqMzu">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cRfqMzu" xid="post" style="width:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:postClick" data-config="{&quot;label&quot;:&quot;发送post请求&quot;}" __cid="cRfqMzu"> 
+          <i xid="i1" __cid="cRfqMzu" class="cRfqMzu"/>  
+          <span xid="span1" __cid="cRfqMzu" class="cRfqMzu">发送post请求</span>
+        </a>
+      </div>  
+      <div xid="div3" style="height:59px;" __cid="cRfqMzu" class="cRfqMzu">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cRfqMzu" xid="get" style="width:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:getClick" data-config="{&quot;label&quot;:&quot;发送get请求&quot;}" __cid="cRfqMzu"> 
+          <i xid="i2" __cid="cRfqMzu" class="cRfqMzu"/>  
+          <span xid="span2" __cid="cRfqMzu" class="cRfqMzu">发送get请求</span>
+        </a>
+      </div> 
+    </div>  
+    <style __cid="cRfqMzu" class="cRfqMzu">.x-panel.pfc93395049884f36a72a77c9f45256ed-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pfc93395049884f36a72a77c9f45256ed-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pfc93395049884f36a72a77c9f45256ed-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pfc93395049884f36a72a77c9f45256ed-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pfc93395049884f36a72a77c9f45256ed-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pfc93395049884f36a72a77c9f45256ed-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pfc93395049884f36a72a77c9f45256ed-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pfc93395049884f36a72a77c9f45256ed-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pfc93395049884f36a72a77c9f45256ed-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div> 
+</div>

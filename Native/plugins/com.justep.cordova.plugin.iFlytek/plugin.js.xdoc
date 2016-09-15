@@ -1,0 +1,57 @@
+/**
+	@name com.justep.cordova.plugin.iFlytek
+	@class 
+	@description 科大讯飞插件 语音听写 语音合成 
+	@model Native
+	@category plugin
+	@declareVar navigator.speech
+*/
+/**
+	@name com.justep.cordova.plugin.iFlytek.startListening
+ 	@function
+ 	@param {Object} options 听写的需要设置的参数，若为空，则为默认设置（详情参考讯飞官方文档）
+ 	@param {Function} func 回调函数
+ 	@returns {void}
+ 	@description 开始录音
+*/
+/**
+	@name com.justep.cordova.plugin.iFlytek.stopListening
+ 	@function
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {String} text 由声音转换得到的文本
+ 	@description 停止录音，并将录音解析后以文本的形式返回
+*/
+/**
+	@name com.justep.cordova.plugin.iFlytek.cancelListening
+ 	@function
+ 	@returns {void}
+ 	@description 取消录音
+*/
+/**
+	@name com.justep.cordova.plugin.iFlytek.startSpeaking
+ 	@function
+ 	@param {String} text 需要转换的文本
+ 	@param {Object} options 合成语音的相关设置参数，如合成语速，音量，发音人等。若为空，则为默认设置（详情参考讯飞官网文档）
+ 	@returns {void}
+ 	@description 开始语音合成，将文本读出来
+*/
+/**
+	@name com.justep.cordova.plugin.iFlytek.pauseSpeaking
+ 	@function
+ 	@returns {void}
+ 	@description 暂停语音合成
+*/
+/**
+	@name com.justep.cordova.plugin.iFlytek.resumeSpeaking
+ 	@function
+ 	@returns {void}
+ 	@description 继续语音合成
+*/
+/**
+	@name com.justep.cordova.plugin.iFlytek.stopSpeaking
+ 	@function
+ 	@returns {void}
+ 	@description 停止语音合成
+*/
+

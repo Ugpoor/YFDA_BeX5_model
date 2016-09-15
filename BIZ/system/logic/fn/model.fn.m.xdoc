@@ -1,0 +1,32 @@
+/**
+	@name 模型函数
+	@fn
+	@model BIZ
+	@category fn
+	@description 模型函数
+	@example
+	定义模块是“/system/logic/fn”，使用模型函数时，需要先引用（use或include）模块“/system/logic/fn”。
+*/
+
+/**
+	@name 模型函数.labelOf
+	@function
+	@description 获取模型要素的label
+	@param {String} thing 模型要素的全路径
+	@param {String} type 模型要素有类型
+	@returns {String} 
+	@see com.justep.model.ModelUtils.getLabel
+	@example labelOf('/system/ontology/SA_OPPerson', 'Concept')
+*/
+
+/**
+	@name 模型函数.labelOf2
+	@function
+	@description 获取模型要素的label
+	@param {String} thing 模型要素的全路径
+	@param {String} type 模型要素有类型
+	@param {String} language 语言
+	@returns {String} 
+	@see com.justep.model.ModelUtils.getLabel
+	@example labelOf('/system/ontology/SA_OPPerson', 'Concept', 'zh_CN')
+*/

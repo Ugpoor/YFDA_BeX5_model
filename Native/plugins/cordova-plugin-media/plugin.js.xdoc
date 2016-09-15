@@ -1,0 +1,82 @@
+/**
+	@name cordova-plugin-media
+	@class 
+	@description 媒体文件处理插件
+	@model Native
+	@category plugin
+	@declareVar window.Media
+*/
+
+/**
+	@name cordova-plugin-media#getCurrentPosition
+	@function
+	@param {Function} success 请求成功的回调
+	@param {Function} fail 请求失败的回调
+	@returns {void}
+	@description 返回音频文件的当前路径
+*/
+
+/**
+	@name cordova-plugin-media#getDuration
+	@function
+	@returns {Number}
+	@description 返回音频的播放时间，没有值返回，则返回-1
+*/
+
+/**
+	@name cordova-plugin-media#pause
+	@function
+	@returns {void}
+	@description 暂停
+*/
+
+/**
+	@name cordova-plugin-media#play
+	@function
+	@returns {void}
+	@description 播放
+*/
+
+/**
+	@name cordova-plugin-media#release
+	@function
+	@returns {void}
+	@description 释放底层操作系统的音频资源
+*/
+
+/**
+	@name cordova-plugin-media#seekTo
+	@function
+	@param {integer} milliseconds 重新播放位置的毫秒数
+	@returns {void}
+	@description 设置重新播放的位置
+*/
+
+/**
+	@name cordova-plugin-media#setVolume
+	@function
+	@param {decimal}音量大小，取值范围：0.0-1.0
+	@returns {void}
+	@description 设置音量
+*/
+
+/**
+	@name cordova-plugin-media#startRecord
+	@function
+	@returns {void}
+	@description 录制音频文件
+*/
+
+/**
+	@name cordova-plugin-media#stop
+	@function
+	@returns {void}
+	@description 停止播放音频文件
+*/
+
+/**
+	@name cordova-plugin-media#stopRecord
+ 	@function
+ 	@returns {void}
+ 	@description 停止录制音频文件
+*/

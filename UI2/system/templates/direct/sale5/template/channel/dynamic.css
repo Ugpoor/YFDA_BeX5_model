@@ -1,0 +1,8 @@
+.text-black{ color:#212121;}
+.x-titlebar{ background-color:#ed4846;}
+
+.btn-group .active{ color:#ed4846;}
+.x-card.btn-group .btn, .x-card.btn-group .btn:hover, .x-card.btn-group .btn:active, .x-card.btn-group .btn:focus{ border-top:0;}
+.x-cards{ padding-top:0;}
+.media{ margin-top:10px;}
+

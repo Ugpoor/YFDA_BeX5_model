@@ -1,0 +1,218 @@
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description richTextarea
+*/
+
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-richTextarea(必须)
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea#bind-ref
+	@attribute 
+	@type string
+	@description 数据感知的绑定表达式
+*/
+
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea#disabled
+	@attribute
+	@property 
+	@type boolean
+	@description 禁用
+*/
+
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : {boolean} 禁用
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea#val
+	@function
+	@description 给richTextarea赋值或者取值
+*/
+
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea#clear
+	@function
+	@description 清空richTextarea数据
+*/
+
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea#resize
+	@function
+	@description 重新计算高宽，一般用于父容器变化后重新计算
+*/
+
+/**
+@name $UI/system/components/justep/richTextarea/richTextarea#InitEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 初始化editor事件，可以通过event.option设置editor的初始参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/richTextarea/richTextarea#InitEvent.option
+ @property
+ @type {object}
+ @description 初始创建Editor对象参数，如：可设置toolbar,fontfamily,fontsize参数
+	<br/><b>参数：</b>
+	<xmp> 
+		工具条按钮定义
+		toolbar:[
+            'source | undo redo | bold italic underline strikethrough | superscript subscript | forecolor backcolor | removeformat |',
+            'insertorderedlist insertunorderedlist | selectall cleardoc paragraph | fontfamily fontsize' ,
+            '| justifyleft justifycenter justifyright justifyjustify |',
+            'link unlink | emotion image video  | map',
+            '| horizontal print preview fullscreen', 'drafts', 'formula'
+        ]
+		
+		字体
+        'fontfamily': [
+            { name: 'songti', val: '宋体,SimSun'},
+            { name: 'yahei', val: '微软雅黑,Microsoft YaHei'},
+            { name: 'kaiti', val: '楷体,楷体_GB2312, SimKai'},
+            { name: 'heiti', val: '黑体, SimHei'},
+            { name: 'lishu', val: '隶书, SimLi'},
+            { name: 'andaleMono', val: 'andale mono'},
+            { name: 'arial', val: 'arial, helvetica,sans-serif'},
+            { name: 'arialBlack', val: 'arial black,avant garde'},
+            { name: 'comicSansMs', val: 'comic sans ms'},
+            { name: 'impact', val: 'impact,chicago'},
+            { name: 'timesNewRoman', val: 'times new roman'},
+            { name: 'sans-serif',val:'sans-serif'}
+        ],
+        
+		字号
+		'fontsize': [10, 12,  16, 18,24, 32,48]
+
+		段落格式 值留空时支持多语言自动识别，若配置，则以配置值为准
+        'paragraph':{'p':'', 'h1':'', 'h2':'', 'h3':'', 'h4':'', 'h5':'', 'h6':''}		
+	</xmp>	
+*/ 
+
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea#onInit
+	@event
+	@description <b>[回调型事件]</b>初始化editor事件，可以通过event.option设置editor的初始参数
+	@param {$UI/system/components/justep/richTextarea/richTextarea#InitEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"option" : 初始创建Editor对象参数，如：可设置toolbar,fontfamily,fontsize参数
+		工具条按钮定义
+		toolbar:[
+            'source | undo redo | bold italic underline strikethrough | superscript subscript | forecolor backcolor | removeformat |',
+            'insertorderedlist insertunorderedlist | selectall cleardoc paragraph | fontfamily fontsize' ,
+            '| justifyleft justifycenter justifyright justifyjustify |',
+            'link unlink | emotion image video  | map',
+            '| horizontal print preview fullscreen', 'drafts', 'formula'
+        ]
+		
+		字体
+        'fontfamily': [
+            { name: 'songti', val: '宋体,SimSun'},
+            { name: 'yahei', val: '微软雅黑,Microsoft YaHei'},
+            { name: 'kaiti', val: '楷体,楷体_GB2312, SimKai'},
+            { name: 'heiti', val: '黑体, SimHei'},
+            { name: 'lishu', val: '隶书, SimLi'},
+            { name: 'andaleMono', val: 'andale mono'},
+            { name: 'arial', val: 'arial, helvetica,sans-serif'},
+            { name: 'arialBlack', val: 'arial black,avant garde'},
+            { name: 'comicSansMs', val: 'comic sans ms'},
+            { name: 'impact', val: 'impact,chicago'},
+            { name: 'timesNewRoman', val: 'times new roman'},
+            { name: 'sans-serif',val:'sans-serif'}
+        ],
+        
+		字号
+		'fontsize': [10, 12,  16, 18,24, 32,48]
+
+		段落格式 值留空时支持多语言自动识别，若配置，则以配置值为准
+        'paragraph':{'p':'', 'h1':'', 'h2':'', 'h3':'', 'h4':'', 'h5':'', 'h6':''}		
+        		
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea#onInited
+	@event
+	@description <b>[回调型事件]</b>初始化editor完成事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea#onFocus
+	@event
+	@description <b>[回调型事件]</b>焦点进入事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/richTextarea/richTextarea#onChange
+	@event
+	@description <b>[回调型事件]</b>数据修改触发事件
+	@param {$UI/system/components/justep/common/event#ChangeEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"value" : 值,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/

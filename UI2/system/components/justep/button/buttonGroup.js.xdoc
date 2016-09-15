@@ -1,0 +1,115 @@
+/**
+	@name $UI/system/components/justep/button/buttonGroup
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description 按钮组
+*/
+
+/**
+	@name $UI/system/components/justep/button/buttonGroup#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/button/buttonGroup#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: btn-group(必须),
+		尺寸样式: btn-group-lg、btn-group-sm、btn-group-xs
+		排列方式: btn-group-vertical、btn-group-justified
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/button/buttonGroup#disabled
+	@attribute
+	@property 
+	@type boolean
+	@description 禁用
+*/
+
+/**
+	@name $UI/system/components/justep/button/buttonGroup#tabbed
+	@attribute
+	@property 
+	@type boolean
+	@description 可切换组，按钮激活状态互斥
+*/
+
+/**
+	@name $UI/system/components/justep/button/buttonGroup#selected
+	@attribute
+	@property 
+	@type string
+	@description 激活的按钮xid
+*/
+
+/**
+	@name $UI/system/components/justep/button/buttonGroup#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : 禁用，
+		"tabbed" : 可切换组，按钮激活状态互斥
+		"selected" : 激活的按钮xid
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/button/buttonGroup#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"、"tabbed"、"selected"
+	@return {Object} 
+*/
+
+/**
+@name $UI/system/components/justep/button/buttonGroup#ButtonGroupSelectEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 切换激活按钮触发事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/button/buttonGroup#ButtonGroupSelectEvent.item
+ @property
+ @type {Button}
+ @typeUrl $UI/system/components/justep/button/button
+ @description 按钮对象
+*/ 
+
+/**
+ @name $UI/system/components/justep/button/buttonGroup#ButtonGroupSelectEvent.cancel
+ @property
+ @type {boolean}
+ @description 取消激活
+*/ 
+
+/**
+	@name $UI/system/components/justep/button/buttonGroup#onSelect
+	@event
+	@description <b>[回调型事件]</b>切换激活按钮触发事件，当tabbed=true时有效
+	@param {$UI/system/components/justep/button/buttonGroup#ButtonGroupSelectEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+        "item" : 按钮对象,
+        "cancel" : 取消激活
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/

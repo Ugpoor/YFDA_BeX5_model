@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-ble-central">
+	<name>蓝牙</name>
+	<description>蓝牙插件，提供对蓝牙设备的监听和使用</description>
+
+</plugin>

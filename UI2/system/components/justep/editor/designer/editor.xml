@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/editor/editor"  tag-name="span" icon="editor.gif"
+		binding-component="$UI/system/components/justep/editor/editor" resizable="false"
+		component-type="formControl" parent-range="$UI/system/components/justep/window/window"
+		design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号" required="true" />
+		</properties>
+		
+		<property-editors>
+		</property-editors>
+		
+		<events>
+		</events>
+		<templates>
+			<template name="default"><![CDATA[ 
+				<span component="$UI/system/components/justep/editor/editor"/> 
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

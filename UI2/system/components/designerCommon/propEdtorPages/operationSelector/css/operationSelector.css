@@ -1,0 +1,18 @@
+.x-op-item {
+	height: 28px;
+	line-height: 28px;
+	display: inline-block;
+	padding:4px 8px;
+	width: 33.3333%;
+}
+
+.x-ops {
+	padding-left: 10px;
+	border-top: 1px solid gray;
+	margin-bottom: 5px;
+}
+
+.operatonItemArgs{
+	padding:0 4px;
+	font-size:16px;
+}

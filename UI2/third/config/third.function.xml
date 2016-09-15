@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root> 
+  <item display="solid" label="第三方组件案例">
+	<item label="bootstrap-switch" process="/demo/components/process/ui2/ui2Process"
+	  activity="mainActivity" url="$UI/third/bootstrap-switch/demo/demo.w" display="solid"/>  
+	<item label="bootstrap-slider" process="/demo/components/process/ui2/ui2Process"
+	  activity="mainActivity" url="$UI/third/bootstrap-slider/demo/demo.w" display="solid"/>  
+	<item label="bootstrap-select" process="/demo/components/process/ui2/ui2Process"
+	  activity="mainActivity" url="$UI/third/bootstrap-select/demo/demo.w" display="solid"/>  
+	<item label="summernote" process="/demo/components/process/ui2/ui2Process"
+	  activity="mainActivity" url="$UI/third/summernote/demo/demo.w" display="solid"/>  
+	<item label="bootstrap-datepicker" process="/demo/components/process/ui2/ui2Process"
+	  activity="mainActivity" url="$UI/third/bootstrap-datepicker/demo/demo.w" display="solid"/> 
+	<item label="bootstrap-notify" process="/demo/components/process/ui2/ui2Process"
+	  activity="mainActivity" url="$UI/third/bootstrap-notify/demo/demo.w" display="solid"/>	   
+	<item label="bootstrap-tagsinput" process="/demo/components/process/ui2/ui2Process"
+	  activity="mainActivity" url="$UI/third/bootstrap-tagsinput/demo/demo.w" display="solid"/>	   
+	<item label="ekko-lightbox" process="/demo/components/process/ui2/ui2Process"
+	  activity="mainActivity" url="$UI/third/ekko-lightbox/demo/demo.w" display="solid"/>	   
+	<item label="bootstrap-treeview" process="/demo/components/process/ui2/ui2Process"
+	  activity="mainActivity" url="$UI/third/bootstrap-treeview/demo/demo.w" display="solid"/>	   
+	<item label="bootstrap-contextmenu" process="/demo/components/process/ui2/ui2Process"
+	  activity="mainActivity" url="$UI/third/bootstrap-contextmenu/demo/demo.w" display="solid"/>	   
+  </item> 
+</root>

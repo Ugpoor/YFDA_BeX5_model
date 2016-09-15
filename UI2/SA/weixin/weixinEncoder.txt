@@ -1,0 +1,44 @@
+/**
+ *   次文档只是文档性质 不应该被作为代码使用 建议引用WxCpUtils模块
+ *   微信url生成函数pageUrlEncoded中不能编码
+ 	企业号中
+ */
+var appid = "wxd869657006aa364d";
+var configKey = "wxd869657006aa364d1";
+var contextPath = "http://i.justep.com/x5";
+var url = "../../portal/index.w?process=/SA/OPM/system/systemProcess&activity=mainActivity";
+var weixinEncoder = function(url,appid,configKey,contextPath){
+	// ../../portal/index.w?process=/SA/OPM/system/systemProcess&activity=mainActivity
+	var base64Url = btoa(url);
+	var pageUrlEncoded = 'pageURL=' + base64Url;
+	var x5Oauth2CallbackUrlPrefix = contextPath + "/UI2/SA/weixin/Oauth2Callback.j?configKey="+configKey +"&";
+	var x5Oauth2CallbackUrl = x5Oauth2CallbackUrlPrefix + pageUrlEncoded;
+	var weixinRedictUrl = encodeURIComponent(x5Oauth2CallbackUrl);
+	var weixinRedictUrlPrefix = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+appid+"&redirect_uri="
+	var weixinRedictUrlSuffix = "&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect";
+	return weixinRedictUrlPrefix + weixinRedictUrl + weixinRedictUrlSuffix;
+};
+
+/**
+微信公众号的逻辑中pageUrlEncoded 必须编码
+**/
+var weixinMpEncoder = function(url,appid,configKey,contextPath){
+	// ../../portal/index.w?process=/SA/OPM/system/systemProcess&activity=mainActivity
+	var base64Url = btoa(url);
+	var pageUrlEncoded = encodeURIComponent('pageURL=' + base64Url);
+	var x5Oauth2CallbackUrlPrefix = contextPath + "/UI2/SA/weixin/Oauth2Callback.j?configKey="+configKey +"&";
+	var x5Oauth2CallbackUrl = x5Oauth2CallbackUrlPrefix + pageUrlEncoded;
+	var weixinRedictUrl = encodeURIComponent(x5Oauth2CallbackUrl);
+	var weixinRedictUrlPrefix = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+appid+"&redirect_uri="
+	var weixinRedictUrlSuffix = "&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect";
+	return weixinRedictUrlPrefix + weixinRedictUrl + weixinRedictUrlSuffix;
+};
+/**
+	微信回调地址 configKey 是企业号加应用ID
+	http://x5.justep.net/x5/UI2/SA/weixin/weixinCallback.j?configKey=wxd869657006aa364d1
+	
+	菜单中可以添加注销项(防止x5在线用户超限)
+	http://x5.justep.net/x5/UI2/SA/weixin/logout.w?
+	process=/SA/weixin/process/weixinProcess/weixinProcess&activity=mainActivity&
+	configKey=wxd869657006aa364d1
+ */

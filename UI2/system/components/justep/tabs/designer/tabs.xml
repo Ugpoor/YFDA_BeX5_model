@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/tabs/tabs" tag-type="rich" tag-name="div" icon="tabs.png" text="页签"  
+	    binding-component="$UI/system/components/justep/tabs/tabs" display-property="xid" 
+		component-type="layout-container" validator="ViewValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+			<property name="class"  text="class"/>
+			<property name="style" text="样式" editor-ref="styleDialog" use-default="true"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>
+		<toolbar>
+			<item text="添加tab" method="addTab"/>
+		</toolbar>
+		
+		<events>
+			<event name="onSelect" type="event" text="页签显示" parameters="event" is-script="true"/>
+			<event name="onBeforeSelect" type="event" text="业签显示前" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/tabs/tabs" class="x-tabs">
+			      <div component="$UI/system/components/justep/panel/panel" class="x-panel"> 
+			        <div class="x-panel-top">
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a content="tabContent_1">tab1</a>
+							</li>
+						</ul>
+			        </div>  
+			        <div class="x-panel-content">
+					    <div component="$UI/system/components/justep/contents/contents" class="x-contents" active="0">
+				    		<div class="x-contents-content active" xid="content1"></div>
+					    </div>	 
+			        </div>  
+			      </div>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="$UI/system/components/justep/tabs/tabs#navs" tag-name="ul" icon="a.gif" text="navs"  
+		discriminate-condition="executeXpath(../../../@component='$UI/system/components/justep/tabs/tabs')" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "nav"
+					},	 
+					"1type": {
+						label: "类型",
+						value: "nav-tabs|nav-pills",
+						require: true
+					},
+					"2options": {
+						label: "可选",
+						value: "nav-justified",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+	</element>
+		
+	<element name="$UI/system/components/justep/tabs/tabs#tabItem" tag-name="a" icon="a.gif" text="tab"  
+		discriminate-condition="executeXpath(../../../../../@component='$UI/system/components/justep/tabs/tabs')" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+			<property name="label" text="label" path="text()" />  
+			<property name="content" text="内容xid" is-id-ref="true" />  
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<property-editors>
+		</property-editors>		
+		
+		<events>
+<!-- 			<event name="onDeselect" type="event" text="隐藏" parameters="event" is-script="true"/> -->
+<!-- 			<event name="onSelect" type="event" text="显示" parameters="event" is-script="true"/> -->
+			
+<!-- 			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/> -->
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<li>
+					<a>tab1</a>
+				</li>
+		   ]]></template>
+		</templates>
+	</element>	
+	
+</elements>

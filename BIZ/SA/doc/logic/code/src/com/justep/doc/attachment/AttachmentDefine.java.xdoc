@@ -1,0 +1,112 @@
+/**
+	@name com.justep.doc.attachment.AttachmentDefine
+	@model BIZ
+	@category java
+	@class
+	@description
+		<span style="font-size:1.2em;font-weight:bold;">
+		文档关联类(由2个概念构成)
+		</span>
+	<ul style="font-size:1.1em;font-weight:bold;line-height:1.2em;">
+		<li>
+		linkDefine:根据process，activity 定位到的文档关联记录</li>
+		<li>
+		defineItem:每个文档关联(linkDefine)中设置的文档关联信息,比如附件大小，权限，模版，keyID等</li>
+</ul>
+*/
+
+/**
+	@name com.justep.doc.attachment.AttachmentDefine#AttachmentDefine
+	@function
+	@description 根据指定的process和activity获取文档关联对象。
+	@param String process 
+	@param String activity 可以传 null，获取process上的文档关联
+	@returns {AttachmentDefine} 
+*/
+
+/**
+	@name com.justep.doc.attachment.AttachmentDefine#getMerged
+	@function
+	@description 得到通过process和activity计算后的文档关联信息
+	<xmp>
+		因为文档关联是可以继承的，
+		比如在process上配置的文档关联，这个process下的activity是可以继承到的
+		如果在activity上配置的文档关联优先
+		这个合并后的结果一般用来做读取信息
+		如果需要修改某个文档关联的信息 需要修改process或者activity的配置
+	</xmp>
+	@see com.justep.doc.attachment.AttachmentDefine#getMerged
+	@see com.justep.doc.attachment.AttachmentDefine#getparentDefine
+
+	@returns {Document}
+*/
+
+/**
+	@name com.justep.doc.attachment.AttachmentDefine#get
+	@function
+	@description 得到process和activity上配置的文档关联信息，没有经过合并 
+	@see com.justep.doc.attachment.AttachmentDefine#getMerged
+	@see com.justep.doc.attachment.AttachmentDefine#getparentDefine
+	<xmp>
+		一般用来作为修改文档关联时候使用
+	</xmp>
+	@returns {Document} 
+*/
+
+/**
+	@name com.justep.doc.attachment.AttachmentDefine#getparentDefine
+	@function
+	@description 得到process和activity上父节点配置的文档关联信息，没有经过合并 
+	@see com.justep.doc.attachment.AttachmentDefine#getMerged
+	@see com.justep.doc.attachment.AttachmentDefine#get
+	<xmp>
+		一般用来作为修改文档关联时候使用
+	</xmp>
+	@returns {Document}
+*/
+
+/**
+	@name com.justep.doc.attachment.AttachmentDefine#save
+	@function
+	@description 保存文档关联
+	<xmp>
+		如果要保存文档关联，必须通过get/getparentDefine函数获取后修改，
+		不能修改getMerged的结果，因为getMerged是根据父节点和当前节点计算后得到的
+		文档关联，对应数据库中多条记录，不能保存到数据库。
+	</xmp>
+
+**/
+
+/**
+	@name com.justep.doc.attachment.AttachmentDefine#addActivityLinkDefine
+	@function
+	@param {String} rootName rootPath 对应的名字
+	@param {String} rootPath 上传的文件要存储的父目录的对应的sid （必须是已经存在的目录）
+	@param {String} subPath  如果有需要动态的子目录，这里就写要创建的子目录的表达式（如果有无法识别的表达式会作为字符串采用）<br/>
+	<div style="padding: 10px;margin: 10px;border:1px solid black;font-size:1em;line-height:1em;">
+	特别注意:subPath 是目录的名字的路径，每个目录名字对应的sid系统会自动创建，rootPath中是一个sid，代表的是已经存在的父目录的sid。
+	</div>
+	比如： \a\b\c  这个时候会按照层次结构创建目录 a ，b , c
+	@param {int} access  文档权限
+	@param {Float} limitSize  文档大小
+	@function
+	@description 增加文档关联
+	@returns {void}
+*/
+
+/**
+	@name com.justep.doc.attachment.AttachmentDefine#addActivityTemplate
+	@function 
+	@param {String} docId 模版的sId
+	@param {String} fileID 模版的fileID
+	@param {String} docName 模版的名字
+	@param {String} docPath 模版的路径
+	<div style="padding: 10px;margin: 10px;border:1px solid black;font-size:1em;font-weight:bold;line-height:1em;">
+	特别注意:docPath 是文档的路径，这个路径不包含当前文档的sid
+	</div>
+	@description 给当前文档关联增加一个模版
+	@returns {void}
+*/
+
+
+

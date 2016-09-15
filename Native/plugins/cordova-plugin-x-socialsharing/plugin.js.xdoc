@@ -1,0 +1,173 @@
+/**
+	@name cordova-plugin-x-socialsharing
+	@class 
+	@description 社交分享插件
+	@model Native
+	@category plugin
+	@declareVar window.plugins.socialsharing
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.iPadPopupCoordinates
+	@function
+	@returns {void}
+	@description 重写此方法用于在ipad中指定弹出箭头出现的位置
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.setIPadPopupCoordinates
+	@function
+	@param {String} coords 位置参数，参数结构："-1,-1,-1,-1"// left,top,width,height
+	@returns {void}
+	@description 在wkwebview polyfill的ipadpopupcoordinates不生效的时候调用的替代方法。分享前的弹出位置
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.available
+	@function
+	@param {Function} callback ,回调函数，回调函数给出参数isAvailable，取值范围"true"，"false"，在IOS6一下，只返回false
+	@returns {void}
+	@description 检查插件是否支持IOS5
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.share
+	@function
+	@param {String} message 文本信息，允许超链接，缺省为null
+	@param {String} subject 主题，在WP8中用于电子邮件主题或标题，缺省为null
+	@param {Array} fileOrFileArray 分享资源，支持路径:www文件路径：www/manual.pdf，网络路径：https://ima.ge/img.gif，本地路径：file:///Users/.../img.gif，缺省为null
+	@param {String} url url链接，自己定义，缺省为null
+	@param {Function} successCallback 可选参数  分享成功的回调，在IOS回调返回boolean值
+	@param {Function} errorCallback 可选参数  分享失败的回调
+	@returns {void}
+	@description 分享
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.shareViaTwitter
+	@function
+	@param {String} message 文本信息，允许超链接，缺省为null
+	@param {String} file 文件，缺省为null
+	@param {String} url url链接，自己定义，缺省为null
+	@param {Function} successCallback 可选参数  分享成功的回调
+	@param {Function} errorCallback 可选参数  分享失败的回调
+	@returns {void}
+	@description Twitter分享
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.shareViaFacebook
+	@function
+	@param {String} message 文本信息，允许超链接，缺省为null
+	@param {String} fileOrFileArray 文件，缺省为null
+	@param {String} url url链接，自己定义，缺省为null
+	@param {Function} successCallback 可选参数  分享成功的回调
+	@param {Function} errorCallback 可选参数  分享失败的回调
+	@returns {void}
+	@description Facebook分享
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.shareViaFacebookWithPasteMessageHint
+	@function
+	@param {String} message 文本信息，允许超链接，缺省为null
+	@param {String} fileOrFileArray 文件，缺省为null
+	@param {String} url url链接，自己定义，缺省为null
+	@param {String} pasteMessageHint 粘贴信息提示
+	@param {Function} successCallback 可选参数  分享成功的回调
+	@param {Function} errorCallback 可选参数  分享失败的回调
+	@returns {void}
+	@description Facebook分享，带粘贴信息提示，适用于4.3.4之后的版本
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.shareViaWhatsApp
+	@function
+	@param {String} message 文本信息，允许超链接，缺省为null
+	@param {String} fileOrFileArray 文件，缺省为null
+	@param {String} url url链接，自己定义，缺省为null
+	@param {Function} successCallback 可选参数  分享成功的回调
+	@param {Function} errorCallback 可选参数  分享失败的回调
+	@returns {void}
+	@description WhatsApp分享
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.shareViaSMS
+	@function
+	@param {String} options 选项
+	<br/><b>参数结构如下</b>
+				<xmp>
+					{
+						"message":-String 文本信息,
+						"subject": -String 主题，用于电子邮件主题或标题,
+						"image"：-String 图片url
+					}
+				</xmp>
+	@param {String} phonenumbers 分享的手机号，多个手机号 用，分隔
+	@param {Function} successCallback 可选参数  分享成功的回调
+	@param {Function} errorCallback 可选参数  分享失败的回调
+	@returns {void}
+	@description SMS分享
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.shareViaEmail
+	@function
+	@param {String} message 文本信息，允许超链接，缺省为null
+	@param {String} subject 主题，在WP8中用于电子邮件主题或标题，缺省为null
+	@param {Array} toArray TO字段的邮箱地址数组
+	@param {Array} ccArray  CC字段的邮箱地址数组
+	@param {Array} bccArray BCC字段的邮箱地址数组
+	@param {Array} fileOrFileArray 文件
+	@param {String} url url链接，自己定义，缺省为null
+	@param {Function} successCallback 可选参数  分享成功的回调，在IOS回调返回boolean值
+	@param {Function} errorCallback 可选参数  分享失败的回调
+	@returns {void}
+	@description  Email分享
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.canShareVia
+	@function
+	@param {String} via 应用程序的包名或类名
+	@param {String} subject 主题
+	@param {Array} fileOrFileArray 文件数组
+	@param {String} url url链接，自己定义，缺省为null
+	@param {Function} successCallback 可选参数  分享成功的回调，在IOS回调返回boolean值
+	@param {Function} errorCallback 可选参数  分享失败的回调
+	@returns {void}
+	@description 判断分享是否有效
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.canShareViaEmail
+	@function
+	@param {Function} successCallback 请求成功的返回
+	@param {Function} errorCallback 请求失败的回调
+	@returns {void}
+	@description 检查email客户端的配置
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.shareVia
+	@function
+	@param {String} via 应用程序的包名或类名
+	@param {String} subject 主题
+	@param {Array} fileOrFileArray 文件数组
+	@param {String} url url链接，自己定义，缺省为null
+	@param {Function} successCallback 可选参数  执行成功的回调
+	@param {Function} errorCallback 可选参数  执行失败的回调
+	@returns {void}
+	@description 启动应用程序
+*/
+
+/**
+	@name cordova-plugin-x-socialsharing.saveToPhotoAlbum
+	@function
+	@param {Array} fileOrFileArray 文件数组
+	@param {Function} successCallback 保存成功的回调
+	@param {Function} errorCallback 保存失败的回调 
+	@returns {void}
+	@description 保存图片到相册
+*/

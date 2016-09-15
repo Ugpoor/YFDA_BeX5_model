@@ -1,0 +1,18 @@
+
+.x-titlebar{ background-color:rgba(0, 0, 0, 0.3);}
+
+.top-trans .x-panel-top {
+	z-index : 100;
+}
+.top-trans.x-panel >.x-panel-content{
+	top:0 !important;
+	bottom:0 !important;
+}
+.top-trans.x-panel .no-iosstatusbar  >.x-panel-content{
+	top:-20px!important;
+}
+.x-panel-bottom{
+	background-color:rgba(0, 0, 0, 0.3);
+	z-index : 100;
+	
+}

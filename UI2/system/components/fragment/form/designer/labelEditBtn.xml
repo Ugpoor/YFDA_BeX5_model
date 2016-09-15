@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+
+	<element name="$UI/system/components/fragment/form/labelEditBtn"
+		tag-type="rich" tag-name="div" icon="form.png" text="模板"
+		binding-component="$UI/system/components/fragment/form/labelEditBtn"
+		resizable="false" component-type="fragment" design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号" required="false"
+				editor-discriptor-ref="" />
+			<property name="style" text="样式" editor-ref="styleDialog" />
+		</properties>
+		<templates>
+		<template name="default">
+		   <![CDATA[
+		      <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit"> 
+			      <label class="x-label" style="width:100px;"></label>  
+			      <div class="x-edit"> 
+			        <div class="input-group"> 
+			          <input component="$UI/system/components/justep/input/input" class="form-control"/>  
+			          <span class="input-group-btn"> 
+			            <a component="$UI/system/components/justep/button/button" class="btn btn-default"
+			              icon="icon-android-search"> 
+			              <i class="icon-android-search"/> 
+			            </a> 
+			          </span> 
+			        </div> 
+			      </div> 
+			    </div>
+		   ]]></template>
+	</templates>
+	</element>
+
+</elements>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" __id="id_1" component="$model/UI2/system/components/justep/window/window" extends="$UI/demo/plugin/template/demo.w" xid="window" class="window window cRvEfiy" design="device:m;" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cRvEfiy" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/buttonGroup,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style>null</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onModelConstructDone:modelModelConstructDone" __cid="cRvEfiy" class="cRvEfiy"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pf69477390b4a4c93b5b91814d3f371d9-iosstatusbar cRvEfiy" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cRvEfiy"> 
+    <div class="x-panel-top cRvEfiy" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cRvEfiy"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cRvEfiy" xid="titleBar" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;statusbar&quot;}" __cid="cRvEfiy"> 
+        <div class="x-titlebar-left cRvEfiy" __cid="cRvEfiy"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cRvEfiy" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;}" __cid="cRvEfiy"> 
+            <i xid="i6" class="icon-chevron-left cRvEfiy" __cid="cRvEfiy"/>  
+            <span xid="span6" __cid="cRvEfiy" class="cRvEfiy"/>
+          </a>
+        </div>  
+        <div class="x-titlebar-title cRvEfiy" __cid="cRvEfiy">插件的名字</div>  
+        <div class="x-titlebar-right  cRvEfiy" __cid="cRvEfiy">
+          <div class="empty cRvEfiy" __cid="cRvEfiy"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cRvEfiy" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cRvEfiy">
+      <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cRvEfiy" xid="contents1" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0}" __cid="cRvEfiy"> 
+        <div class="x-contents-content active cRvEfiy" xid="infoContent" style="padding:10px;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cRvEfiy">
+          <h3 xid="h31" style="text-align:center;" __cid="cRvEfiy" class="cRvEfiy">插件概述</h3>
+          <h4 xid="h41" __cid="cRvEfiy" class="cRvEfiy">介绍：</h4>
+          <p xid="p1" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cRvEfiy" class="cRvEfiy">ID：cordova-plugin-statusbar</p>
+          <p xid="introduceP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cRvEfiy" class="cRvEfiy">状态栏插件：控制状态栏的显示方式和样式。</p>
+          <div xid="div4" style="height:30px;" __cid="cRvEfiy" class="cRvEfiy"/>  
+          <h4 xid="h42" __cid="cRvEfiy" class="cRvEfiy">适用平台：</h4>  
+          <p xid="platformP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cRvEfiy" class="cRvEfiy">Android、IOS</p> 
+        </div>  
+        <div class="x-contents-content cRvEfiy" xid="demoContent" style="padding:10px;width:100%;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cRvEfiy">
+          <div xid="div2" style="height:15px;" __cid="cRvEfiy" class="cRvEfiy"/>
+          <div xid="div3" __cid="cRvEfiy" class="cRvEfiy"/>  
+          <p style="font-size:medium;font-weight:bolder;" xid="p111_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">Android显示状态栏</p>
+          <p xid="p31_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">显示状态栏</p>
+          <div style="padding:10px;" xid="div1_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy"> 
+            <a class="btn btn-default cRvEfiy" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="show" xui:parent="demoContent" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:showClick" data-config="{&quot;label&quot;:&quot;显示状态栏&quot;}" __cid="cRvEfiy"> 
+              <i xid="i121_3" __cid="cRvEfiy" class="cRvEfiy"/>  
+              <span xid="span121_3" __cid="cRvEfiy" class="cRvEfiy">显示状态栏</span> 
+            </a> 
+          </div>
+          <p style="font-size:medium;font-weight:bolder;" xid="p11_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">Android隐藏状态栏</p>
+          <p xid="p21_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">隐藏状态栏</p>
+          <div style="padding:10px;" xid="div5_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy"> 
+            <a class="btn btn-default cRvEfiy" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="hide" xui:parent="demoContent" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:hideClick" data-config="{&quot;label&quot;:&quot;隐藏状态栏&quot;}" __cid="cRvEfiy"> 
+              <i xid="i21_3" __cid="cRvEfiy" class="cRvEfiy"/>  
+              <span xid="span21_3" __cid="cRvEfiy" class="cRvEfiy">隐藏状态栏</span> 
+            </a> 
+          </div>
+          <p style="font-size:medium;font-weight:bolder;" xid="p21_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">(Android、IOS)设置背景颜色</p>
+          <p xid="p11_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">设置状态栏的背景颜色，取值范围：black, darkGray, lightGray, white, gray, red, green, blue, cyan, yellow, magenta, orange, purple, brown。注意：Android5.0系统以上支持设置状态栏颜色。</p>
+          <div style="padding:10px;" xid="div4_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy"> 
+            <a class="btn btn-default cRvEfiy" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="setBackBroundColor" xui:parent="demoContent" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:setBackBroundColorClick" data-config="{&quot;label&quot;:&quot;设置背景颜色&quot;}" __cid="cRvEfiy"> 
+              <i xid="i11_1" __cid="cRvEfiy" class="cRvEfiy"/>  
+              <span xid="span11_1" __cid="cRvEfiy" class="cRvEfiy">设置背景颜色</span> 
+            </a> 
+          </div>
+          <p style="font-size:medium;font-weight:bolder;" xid="p31_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">IOS状态栏设置(True)</p>
+          <p xid="p41_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">设置状态栏是否重叠，在IOS7中，设为false，状态栏的风格接近于IOS6</p>
+          <div style="padding:10px;" xid="div3_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy"> 
+            <a class="btn btn-default cRvEfiy" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="showWebView" xui:parent="demoContent" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:showWebViewClick" data-config="{&quot;label&quot;:&quot;状态栏浮动模式(是)&quot;}" __cid="cRvEfiy"> 
+              <i xid="i21_1" __cid="cRvEfiy" class="cRvEfiy"/>  
+              <span xid="span21_1" __cid="cRvEfiy" class="cRvEfiy">状态栏浮动模式(是)</span> 
+            </a> 
+          </div>
+          <p style="font-size:medium;font-weight:bolder;" xid="p51_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">IOS状态栏设置(False)</p>
+          <p xid="p61_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">设置状态栏是否重叠，在IOS7中，设为false，状态栏的风格接近于IOS6</p>
+          <div style="padding:10px;" xid="div2_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy"> 
+            <a class="btn btn-default cRvEfiy" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="hideWebView" xui:parent="demoContent" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:hideWebViewClick" data-config="{&quot;label&quot;:&quot;状态栏浮动模式(否)&quot;}" __cid="cRvEfiy"> 
+              <i xid="i31_1" __cid="cRvEfiy" class="cRvEfiy"/>  
+              <span xid="span31_1" __cid="cRvEfiy" class="cRvEfiy">状态栏浮动模式(否)</span> 
+            </a> 
+          </div>
+        </div>  
+        <div class="x-contents-content cRvEfiy" xid="codeContent" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cRvEfiy">
+          <p xid="p111_1" xmlns:xui="http://www.justep.com/xui" xui:parent="codeContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">显示状态栏</p>
+          <div xid="showClick" xmlns:xui="http://www.justep.com/xui" xui:parent="codeContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy"/>
+          <p xid="p12_1" xmlns:xui="http://www.justep.com/xui" xui:parent="codeContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">隐藏状态栏</p>
+          <div xid="hideClick" xmlns:xui="http://www.justep.com/xui" xui:parent="codeContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy"/>
+          <p xid="p22_1" xmlns:xui="http://www.justep.com/xui" xui:parent="codeContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">设置背景颜色</p>
+          <div xid="setBackBroundColorClick" xmlns:xui="http://www.justep.com/xui" xui:parent="codeContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy"/>
+          <p xid="p32_1" xmlns:xui="http://www.justep.com/xui" xui:parent="codeContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">状态栏浮动模式(是)</p>
+          <div xid="showWebViewClick" xmlns:xui="http://www.justep.com/xui" xui:parent="codeContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy"/>
+          <p xid="p42_1" xmlns:xui="http://www.justep.com/xui" xui:parent="codeContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy">状态栏浮动模式(否)</p>
+          <div xid="hideWebViewClick" xmlns:xui="http://www.justep.com/xui" xui:parent="codeContent" xui:update-mode="insert" __cid="cRvEfiy" class="cRvEfiy"/>
+        </div>
+      </div>
+    </div>  
+    <div class="x-panel-bottom cRvEfiy" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cRvEfiy">
+      <div component="$model/UI2/system/components/justep/button/buttonGroup" class="btn-group btn-group-justified x-card  cRvEfiy" xid="buttonGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/button/buttonGroup'}" data-config="{&quot;tabbed&quot;:true}" __cid="cRvEfiy">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cRvEfiy" xid="info" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;info&quot;,&quot;target&quot;:&quot;infoContent&quot;}" __cid="cRvEfiy"> 
+          <i xid="i1" __cid="cRvEfiy" class="cRvEfiy"/>  
+          <span xid="span1" __cid="cRvEfiy" class="cRvEfiy">info</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cRvEfiy" xid="demo" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;demo&quot;,&quot;target&quot;:&quot;demoContent&quot;}" __cid="cRvEfiy"> 
+          <i xid="i2" __cid="cRvEfiy" class="cRvEfiy"/>  
+          <span xid="span2" __cid="cRvEfiy" class="cRvEfiy">demo</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cRvEfiy" xid="code" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;code&quot;,&quot;target&quot;:&quot;codeContent&quot;}" __cid="cRvEfiy"> 
+          <i xid="i3" __cid="cRvEfiy" class="cRvEfiy"/>  
+          <span xid="span3" __cid="cRvEfiy" class="cRvEfiy">code</span>
+        </a>
+      </div>
+    </div>
+    <style __cid="cRvEfiy" class="cRvEfiy">.x-panel.pf69477390b4a4c93b5b91814d3f371d9-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pf69477390b4a4c93b5b91814d3f371d9-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pf69477390b4a4c93b5b91814d3f371d9-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pf69477390b4a4c93b5b91814d3f371d9-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pf69477390b4a4c93b5b91814d3f371d9-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pf69477390b4a4c93b5b91814d3f371d9-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pf69477390b4a4c93b5b91814d3f371d9-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pf69477390b4a4c93b5b91814d3f371d9-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pf69477390b4a4c93b5b91814d3f371d9-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div>  
+</div>

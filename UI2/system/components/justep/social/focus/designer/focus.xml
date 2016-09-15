@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/social/focus/focus" tag-name="div" icon="../../img/focus.gif" text="关注" 
+		binding-component="$UI/system/components/justep/social/focus/focus"
+		component-type="formControl" design-view="web-designer" >
+			
+		<properties>
+			<property name="xid" text="编号" required="true"/>
+			<property name="data" text="主数据" is-id-ref="true"  editor-ref="contextComponent" editor-parameter="data"/>    
+			<property name="bind-ref" text="引用" editor-ref="dataRef" />	
+			<property name="bind-nameRef" text="name引用" editor-ref="dataRef" />
+			<property name="process" text="关注的process，默认使用当前环境中的process"/>
+			<property name="activity" text="关注的activity，默认使用当前环境中的activity"/>
+			<property name="url" text="关注的url，默认使用当前环境中的activity对应的.a"/>
+			<property name="class"  text="class" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+	 	<toolbar>			
+		</toolbar>
+		
+		<operations>
+		</operations>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<span component='$UI/system/components/justep/social/focus/focus'/>
+		   ]]></template>
+		</templates>
+		<events>
+			 <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+	</element>
+	
+</elements>

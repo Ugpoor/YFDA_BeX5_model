@@ -1,0 +1,106 @@
+/**
+	@name $UI/system/components/boostrap/accordion/accordion
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@description Accordion组件, 多区域可折叠组件
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/boostrap/accordion/accordion#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+@name $UI/system/components/boostrap/accordion/accordion#ShowEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 当显示时候
+*/
+ 
+/**
+ @name $UI/system/components/boostrap/accordion/accordion#ShowEvent.index
+ @property
+ @type {integer}
+ @description 区域索引
+*/ 
+
+/**
+	@name $UI/system/components/boostrap/accordion/accordion#onShow
+	@event
+	@description <b>[回调型事件]</b>当显示时候
+	@param {$UI/system/components/boostrap/accordion/accordion#ShowEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"index": 显示的区域索引
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/boostrap/accordion/accordion#HideEvent
+@extends $UI/system/components/boostrap/accordion/accordion#ShowEvent
+@category eventclass
+@class
+@model UI2
+@description 当隐藏时候
+*/
+ 
+/**
+	@name $UI/system/components/boostrap/accordion/accordion#onHide
+	@event
+	@description <b>[回调型事件]</b>当隐藏时候
+	@param {$UI/system/components/boostrap/accordion/accordion#HideEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"index": 隐藏的区域索引
+	}
+	</xmp>
+*/
+
+/**
+ @name $UI/system/components/boostrap/accordion/accordion#show
+ @function
+ @param {Integer} index 区域索引
+ @returns {void}
+ @description 显示特定的区域
+*/
+
+/**
+ @name $UI/system/components/boostrap/accordion/accordion#hide
+ @function
+ @param {Integer} index 区域索引
+ @returns {void}
+ @description 隐藏特定的区域
+*/
+
+/**
+ @name $UI/system/components/boostrap/accordion/accordion#show
+ @operation
+ @see $UI/system/components/boostrap/accordion/accordion#show
+ @param {Integer} index
+ @description 显示特定的区域
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/boostrap/accordion/accordion#hide
+ @operation
+ @see $UI/system/components/boostrap/accordion/accordion#hide
+ @param {Integer} index
+ @description 隐藏特定的区域
+ @returns {void}
+*/

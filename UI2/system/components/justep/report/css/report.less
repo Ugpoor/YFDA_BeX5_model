@@ -1,0 +1,21 @@
+.x-report{
+	.x-report-content *{
+		box-sizing: content-box;
+	}
+}
+.x-report-frame{
+	position:absolute;
+	top:-1000px;
+	left:-1000px;
+	width:1px;
+	height:1px;
+}
+
+@media screen and (-ms-high-contrast:none){
+	.x-report table{
+		border-collapse: separate!important;
+	} 
+	*::-ms-backdrop, .x-report table{
+		border-collapse: collapse!important;
+	} 
+}

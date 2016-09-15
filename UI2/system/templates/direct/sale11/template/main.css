@@ -1,0 +1,7 @@
+.o-nopadding{ padding:0;}
+
+.o-navList{ background-color:#5fc7d5; color:#fff;}
+.o-navList ul li{ border-right:1px solid #fff; padding:8px;}
+.o-navList ul li i{ font-size:22px; }
+
+.o-imgList ul li.col-xs-6{ padding-left:3px; padding-right:3px;}

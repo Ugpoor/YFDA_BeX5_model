@@ -1,0 +1,229 @@
+/**
+	@name 流程动作
+	@action
+	@model BIZ
+	@category action
+	@description 流程动作
+	@see com.justep.system.process.ProcessUtils
+	@example
+	流程的各种操作，一般都由查询和实际做两大类业务动作构成，只有个别操作没有提供关于查询的动作。所有查询动作
+都只是基于内存的推导和运算，把相关需要计算的规则，环节和执行者都计算完毕后生成流程控制信息（ProcessControl），
+而不留下任何痕迹。实际做的业务动作都是根据传入的流程控制信息（ProcessControl）完成实际的操作，并且把结果存入
+数据库。
+	大部分流程操作都是两个动作一起组合起来实现的，例如流转操作是由流转查询（externalAdvanceProcessQueryAction）
+动作先查出流程控制信息（ProcessControl），然后流程流转（externalAdvanceProcessAction）动作根据流程控制信息
+（ProcessControl）进行流转。
+	默认提供的业务动作都是全局的，只需要流程的定义模块引用（use或include）系统动作模块“/system/logic/code”之
+后，不需要在流程或环节主动引用就可以直接调用的。
+*/
+
+/**
+	@name 流程动作.externalStartProcessQueryAction
+	@function
+	@description 流程启动查询
+	@param {String} process 被启动的流程的全路径
+	@param {Map<String, Object>} attributes 流程实例的属性值 
+	@param {List<String>} tokens 初始token
+	@param {String} executor 首环节的执行者，允许值为空，默认是当前人员成员
+	@param {String} creator 首环节的创建者，允许值为空，默认是当前人员成员        
+	@returns {com.justep.system.process.ProcessControl}
+	@see com.justep.system.process.ProcessUtils.startProcessQuery
+*/
+
+/**
+	@name 流程动作.externalStartProcessAction
+	@function
+	@description 流程启动
+	@param {String} process 被启动的流程的全路径
+	@param {Map<String, Object>} attributes 流程实例的属性值 
+	@param {List<String>} tokens 初始token
+	@param {String} executor 首环节的执行者，可选参数，默认是当前人员成员
+	@param {String} creator 首环节的创建者，可选参数，默认是当前人员成员        
+	@returns {List<Map<String, String>>} 返回所有待办任务的信息，包括process、activity和task
+	@see com.justep.system.process.ProcessUtils.startProcess
+*/
+
+/**
+	@name 流程动作.externalAdvanceProcessQueryAction
+	@function
+	@description 流程流转查询
+	@param {String} task 任务标识
+	@returns {com.justep.system.process.ProcessControl}
+	@see com.justep.system.process.ProcessUtils.advanceProcessQuery
+*/
+
+/**
+	@name 流程动作.externalAdvanceProcessAction
+	@function
+	@description 流程流转
+	@param {String} task 任务标识
+	@param {com.justep.system.process.ProcessControl} control 流程控制信息，值允许为null
+	@returns {List<Map<String, String>>} 返回所有待办任务的信息，包括process、activity和task
+	@see com.justep.system.process.ProcessUtils.advanceProcess
+*/
+
+
+/**
+	@name 流程动作.externalBackProcessQueryAction
+	@function
+	@description 流程回退查询
+	@param {String} task 任务标识
+	@returns {com.justep.system.process.ProcessControl}
+	@see com.justep.system.process.ProcessUtils.backProcessQuery
+*/
+
+/**
+	@name 流程动作.externalBackProcessAction
+	@function
+	@description 流程回退
+	@param {String} task 任务标识
+	@param {com.justep.system.process.ProcessControl} control 流程控制信息，值允许为null
+	@returns {List<Map<String, String>>} 返回所有待办任务的信息，包括process、activity和task
+	@see com.justep.system.process.ProcessUtils.backProcess
+*/
+
+/**
+	@name 流程动作.externalAbortProcessQueryAction
+	@function
+	@description 流程终止查询
+	@param {String} task 任务标识
+	@returns {com.justep.system.process.ProcessControl}
+	@see com.justep.system.process.ProcessUtils.abortProcessQuery
+*/
+
+/**
+	@name 流程动作.externalAbortProcessAction
+	@function
+	@description 流程终止
+	@param {String} task 任务标识
+	@param {com.justep.system.process.ProcessControl} control 流程控制信息，值允许为null
+	@returns {void}
+	@see com.justep.system.process.ProcessUtils.abortProcess
+*/
+
+/**
+	@name 流程动作.externalSuspendProcessQueryAction
+	@function
+	@description 流程暂停查询
+	@param {String} task 任务标识
+	@returns {com.justep.system.process.ProcessControl}
+	@see com.justep.system.process.ProcessUtils.suspendProcessQuery
+*/
+
+/**
+	@name 流程动作.externalSuspendProcessAction
+	@function
+	@description 流程暂停
+	@param {String} task 任务标识
+	@param {com.justep.system.process.ProcessControl} control 流程控制信息，值允许为null
+	@returns {void}
+	@see com.justep.system.process.ProcessUtils.suspendProcess
+*/
+
+/**
+	@name 流程动作.externalSpecialProcessQueryAction
+	@function
+	@description 流程特送查询
+	@param {String} task 任务标识
+	@returns {com.justep.system.process.ProcessControl}
+	@see com.justep.system.process.ProcessUtils.specialProcessQuery
+*/
+
+/**
+	@name 流程动作.externalSpecialProcessAction
+	@function
+	@description 流程特送
+	@param {String} task 任务标识
+	@param {com.justep.system.process.ProcessControl} control 流程控制信息，值允许为null
+	@returns {void}
+	@see com.justep.system.process.ProcessUtils.specialProcess
+*/
+
+/**
+	@name 流程动作.externalTransferTaskQueryAction
+	@function
+	@description 任务转发查询
+	@param {String} task 任务标识
+	@returns {com.justep.system.process.ProcessControl}
+	@see com.justep.system.process.ProcessUtils.transferTaskQuery
+*/
+
+/**
+	@name 流程动作.externalTransferTaskAction
+	@function
+	@description 任务转发
+	@param {String} task 任务标识
+	@param {com.justep.system.process.ProcessControl} control 流程控制信息，值允许为null
+	@returns {void}
+	@see com.justep.system.process.ProcessUtils.transferTask
+*/
+
+/**
+	@name 流程动作.externalFinishProcessAction
+	@function
+	@description 结束流程
+	@param {String} task 任务标识
+	@returns {void}
+	@see com.justep.system.process.ProcessUtils.finishProcess
+*/
+
+/**
+	@name 流程动作.externalResumeProcessAction
+	@function
+	@description 唤醒流程
+	@param {String} task 任务标识
+	@returns {void}
+	@see com.justep.system.process.ProcessUtils.resumeProcess
+*/
+
+/**
+	@name 流程动作.externalWithdrawTaskAction
+	@function
+	@description 回收任务
+	@param {String} task 任务标识
+	@returns {void}
+*/
+
+/**
+	@name 流程动作.externalStartCustomizedProcessQueryAction
+	@function
+	@description 启动流程定制查询
+	@param {String} task 任务标识
+	@returns {Map<String, String>} 流程定制信息 
+<xmp>	
+	返回的流程定制信息包括以下：
+	enabled: 是否允许定制;
+	template: 当前使用的流程模板实例;
+	templateType: 当前使用的模板类型, 取值范围{"grid", "graph", "graph2"};
+	templateItemSequence: 当前所在的序号, 当templateType="grid"时有效;
+	process: 当前流程;
+	processName: 当前流程名称;
+	activity: 当前环节;
+	activityName: 当前环节名称;
+	activeActivities: 当活动的环节;
+	finishedActivities: 已经结束的环节;
+</xmp>	
+	@see com.justep.system.process.ProcessUtils.startCustomizedProcessQuery
+*/
+
+
+/**
+	@name 流程动作.externalStartCustomizedProcessAction
+	@function
+	@description 启动流程定制
+	@param {String} task 任务标识
+	@param {String} template 流程模板标识
+	@returns {void}
+	@see com.justep.system.process.ProcessUtils.startCustomizedProcess
+*/
+
+/**
+	@name 流程动作.externalCancelCustomizedProcessAction
+	@function
+	@description 取消流程定制
+	@param {String} task 任务标识
+	@returns {void}
+	@see com.justep.system.process.ProcessUtils.cancelCustomizedProcess
+*/
+
+

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+   version="2.5"> 
+
+	<display-name></display-name>
+	<description></description>
+	<mime-mapping>
+		<extension>w</extension>
+		<mime-type>text/html</mime-type>
+	</mime-mapping>
+	<filter>
+		<filter-name>imagesCache</filter-name>
+		<filter-class>com.samaxes.filter.CacheFilter</filter-class>
+		<init-param>
+			<param-name>static</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>expirationTime</param-name>
+			<param-value>2592000</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>htmlCache</filter-name>
+		<filter-class>com.samaxes.filter.CacheFilter</filter-class>
+		<init-param>
+			<param-name>expirationTime</param-name>
+			<param-value>604800</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>cssCache</filter-name>
+		<filter-class>com.samaxes.filter.CacheFilter</filter-class>
+		<init-param>
+			<param-name>expirationTime</param-name>
+			<param-value>604800</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>jsCache</filter-name>
+		<filter-class>com.samaxes.filter.CacheFilter</filter-class>
+		<init-param>
+			<param-name>private</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>expirationTime</param-name>
+			<param-value>216000</param-value>
+		</init-param>
+	</filter>	
+	<filter>
+		<filter-name>resourceFilter</filter-name>
+		<filter-class>com.justep.resource.filter.ResourceFilter</filter-class>
+		<init-param>
+			<param-name>path</param-name>
+			<!-- where is app.json, example: /hello/UI2 -->
+			<param-value>@path@</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>resourceFilter</filter-name>
+		<url-pattern>*.w</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>htmlCache</filter-name>
+		<url-pattern>*.w</url-pattern>
+		<url-pattern>*.html</url-pattern>
+		<url-pattern>*.xml</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>cssCache</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	 
+	<filter-mapping>
+		<filter-name>jsCache</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	 
+	<filter-mapping>
+		<filter-name>imagesCache</filter-name>
+		<url-pattern>*.png</url-pattern>
+		<url-pattern>*.gif</url-pattern>
+		<url-pattern>*.jpg</url-pattern>
+	</filter-mapping>
+	
+</web-app>

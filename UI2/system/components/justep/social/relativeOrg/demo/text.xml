@@ -1,0 +1,46 @@
+<div xmlns="http://www.w3.org/1999/xhtml" class="x-ro"
+	component="$model/UI2/system/components/justep/social/relativeOrg/relativeOrg"
+	bind-ref="" groupName="负责人" groupID="master" multiSelection="true"
+	showStatus="true" xid="122fd1dff9c94515a567d1c0b6f686f3" data="C653F7E6379D41F2A7C5B530B9996BC8">
+	<div component="$model/UI2/system/components/justep/data/bizData"
+		concept="SA_Social" autoLoad="true" limit="-1"
+		xid="C653F7E6379D41F2A7C5B530B9996BC8">
+		<rule>
+			<readonly />
+		</rule>
+		<xhtml:reader xmlns:xhtml="http://www.w3.org/1999/xhtml"
+			action="/system/logic/action/querySocialAction" />
+	</div>
+	<div class="x-ro-title">
+		<span class="pull-left">负责人</span>
+		<span class="pull-left"
+			bind-text="getStatusSummary(\&quot;C653F7E6379D41F2A7C5B530B9996BC8\&quot;)"
+			bind-visible="statusEnabled" />
+		<a class="x-ro-clear-all" style="display:none">清空所有</a>
+		<div style="clear:both;" />
+	</div>
+	<div class="x-ro-content x-ro-border" component="$UI/system/components/justep/list/list"
+		data="C653F7E6379D41F2A7C5B530B9996BC8" limit="20">
+		<ul class="x-list-template">
+			<div class="x-ro-item">
+				<div class="x-ro-item-img-content">
+					<img src="./img/1.jpg" class="x-ro-item-img" />
+					<div class="x-ro-readed"
+						bind-visible="(val(\&quot;sMessageNumber\&quot;)==0) and statusEnabled" />
+				</div>
+				<span class="x-ro-item-name" bind-text="val(\&quot;sOrgName\&quot;)" />
+			</div>
+		</ul>
+		<div class="x-ro-item">
+			<div class="x-ro-item-img-content">
+				<img src="./img/add.png" class="x-ro-item-img" />
+			</div>
+		</div>
+		<div class="x-ro-item">
+			<div class="x-ro-item-img-content">
+				<img src="./img/rempve.png" class="x-ro-item-img" />
+			</div>
+		</div>
+		<div style="clear:both;" />
+	</div>
+</div>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-sim">
+	<name>获取SIM卡信息</name>
+	<description>获取SIM卡的信息，如运行商的名字,mcc,mnc和国家代码等通讯相关信息。</description>
+
+</plugin>

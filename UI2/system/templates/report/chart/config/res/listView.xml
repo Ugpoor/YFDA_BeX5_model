@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements-config>
+	<elements label="饼图" type='piechart'>
+		<element label="饼图" value="piechart_$UI/system/templates/report/chart/config/private/chart.w"></element>
+	</elements>
+	<elements label="柱形图" type='verticalbarchart'>
+		<element label="分类轴" value="verticalbarlinechart_$UI/system/templates/report/chart/config/private/verticalbarchart/type.w"></element>
+		<element label="数据轴" value="dataAxis_$UI/system/templates/report/chart/config/private/dataAxis.w"></element>
+		<element label="警戒线" value="cordon_$UI/system/templates/report/chart/config/private/cordon.w"></element>
+		<element label="热点" value="hotspot_$UI/system/templates/report/chart/config/private/hotspot.w"></element>
+		<element label="其他" value="other_$UI/system/templates/report/chart/config/private/other.w"></element>
+	</elements>
+	<elements label="折线图" type='verticallinechart'>
+		<element label="分类轴" value="verticalbarlinechart_$UI/system/templates/report/chart/config/private/verticallinechart/type.w"></element>
+		<element label="数据轴" value="dataAxis_$UI/system/templates/report/chart/config/private/dataAxis.w"></element>
+		<element label="警戒线" value="cordon_$UI/system/templates/report/chart/config/private/cordon.w"></element>
+		<element label="热点" value="hotspot_$UI/system/templates/report/chart/config/private/hotspot.w"></element>
+		<element label="其他" value="other_$UI/system/templates/report/chart/config/private/other.w"></element>
+	</elements>
+	<elements label="XY线图" type='verticalxylinechart'>
+		<element label="分类轴" value="verticalxylinechart_$UI/system/templates/report/chart/config/private/verticalxylinechart/type.w"></element>
+		<element label="数据轴" value="dataAxis_$UI/system/templates/report/chart/config/private/dataAxis.w"></element>
+		<element label="警戒线" value="cordon_$UI/system/templates/report/chart/config/private/cordon.w"></element>
+		<element label="热点" value="verticalxylinechart_$UI/system/templates/report/chart/config/private/verticalxylinechart/hotspot.w"></element>
+		<element label="其他" value="other_$UI/system/templates/report/chart/config/private/other.w"></element>
+	</elements>
+	<elements label="面积图" type='verticalareachart'>
+		<element label="分类轴" value="verticalxylinechart_$UI/system/templates/report/chart/config/private/verticalxylinechart/type.w"></element>
+		<element label="数据轴" value="dataAxis_$UI/system/templates/report/chart/config/private/dataAxis.w"></element>
+		<element label="警戒线" value="cordon_$UI/system/templates/report/chart/config/private/cordon.w"></element>
+		<element label="热点" value="hotspot_$UI/system/templates/report/chart/config/private/hotspot.w"></element>
+		<element label="其他" value="other_$UI/system/templates/report/chart/config/private/other.w"></element>
+	</elements>
+	<elements label="时序图" type='timeserieschart'>
+		<element label="分类轴" value="verticalbarlinechart_$UI/system/templates/report/chart/config/private/timeserieschart/type.w"></element>
+		<element label="数据轴" value="dataAxis_$UI/system/templates/report/chart/config/private/dataAxis.w"></element>
+		<element label="警戒线" value="cordon_$UI/system/templates/report/chart/config/private/cordon.w"></element>
+		<element label="热点" value="verticalxylinechart_$UI/system/templates/report/chart/config/private/verticalxylinechart/hotspot.w"></element>
+		<element label="其他" value="other_$UI/system/templates/report/chart/config/private/other.w"></element>
+	</elements>
+	<elements label="仪表盘" type='simplemeterchart'>
+		<element label="简单仪盘表" value="simplemeterchart_$UI/system/templates/report/chart/config/private/meter/simplemeterchart/type.w"></element>
+		<element label="其他" value="other_$UI/system/templates/report/chart/config/private/other.w"></element>
+	</elements>
+	<elements label="仪表盘" type='dialmeterchart'>
+		<element label="刻度盘设置" value="dialmeterchart_$UI/system/templates/report/chart/config/private/meter/dialmeterchart/type.w"></element>
+		<element label="刻度区域与指针" value="dialmeterchartdata_$UI/system/templates/report/chart/config/private/meter/dialmeterchart/data.w"></element>
+		<element label="其他" value="other_$UI/system/templates/report/chart/config/private/other.w"></element>
+	</elements>
+	<elements label="仪表盘" type='arcdialmeterchart'>
+		<element label="弧度刻度盘" value="arcdialmeterchart_$UI/system/templates/report/chart/config/private/meter/arcdialmeterchart/data.w"></element>
+		<element label="其他" value="other_$UI/system/templates/report/chart/config/private/other.w"></element>
+	</elements>
+	<elements label="仪表盘" type='thermometermeterchart'>
+		<element label="温度计" value="thermometermeterchart_$UI/system/templates/report/chart/config/private/meter/thermometermeterchart/type.w"></element>
+		<element label="其他" value="other_$UI/system/templates/report/chart/config/private/other.w"></element>
+	</elements>
+	<elements label="甘特图" type='horizontalganttchart'>
+		<element label="分类轴" value="horizontalganttchart_$UI/system/templates/report/chart/config/private/horizontalganttchart/type.w"></element>
+		<element label="数据轴" value="horizontalganttchartdata_$UI/system/templates/report/chart/config/private/horizontalganttchart/dataAxis.w"></element>
+		<element label="热点" value="hotspot_$UI/system/templates/report/chart/config/private/horizontalganttchart/hotspot.w"></element>
+		<element label="其他" value="other_$UI/system/templates/report/chart/config/private/other.w"></element>
+	</elements>
+	<elements label="雷达图" type='radarchart'>
+		<element label="雷达图" value="radarchart_$UI/system/templates/report/chart/config/private/radarchart/type.w"></element>
+		<element label="热点" value="hotspot_$UI/system/templates/report/chart/config/private/hotspot.w"></element>
+		<element label="其他" value="other_$UI/system/templates/report/chart/config/private/other.w"></element>
+	</elements>
+</elements-config>

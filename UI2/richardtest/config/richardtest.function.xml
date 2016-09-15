@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root><item display="solid" label="richardtest"><item label="queryInvo" process="/richardtest/test1/process/queryInvo/queryInvoProcess" activity="mainActivity" url="$UI/richardtest/test1/process/queryInvo/mainActivity.a"></item></item></root>

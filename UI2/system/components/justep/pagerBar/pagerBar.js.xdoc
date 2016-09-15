@@ -1,0 +1,17 @@
+/**
+	@name $UI/system/components/justep/pagerBar/pagerBar
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@description pagerBar
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/	
+
+/**
+	@name $UI/system/components/justep/pagerBar/pagerBar#xid
+	@attribute 
+	@type string
+	@description 
+*/

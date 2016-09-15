@@ -1,0 +1,466 @@
+/**
+	@name cordova-plugin-contacts
+	@class
+	@description 通讯录插件
+	@model Native
+	@category plugin
+	@declareVar navigator.contacts
+*/
+
+/**
+	@name cordova-plugin-contacts.create
+	@function
+	@see cordova-plugin-contacts.Contact
+	@param {Object} properties 创建联系人所必须的属性,cordova-plugin-contacts.Contact结构参数
+	@returns {Contact} 返回联系人对象
+	@description 创建新的联系人
+*/
+
+/**
+	@name cordova-plugin-contacts.find
+	@function
+	@see cordova-plugin-contacts.Contact
+	@see cordova-plugin-contacts.ContactFindOptions
+	@param {String[]} fields 检索的值
+	@param {Function} successCB 请求成功的回调，返回cordova-plugin-contacts.Contact对象
+	@param {Function} errorCB 可选参数  请求失败的回调
+	@param {ContactFindOptions} options 可选参数  应用于接触搜索的参数
+	@returns {Array}返回联系人数组
+	@description 根据条件进行数据查找
+*/
+
+/**
+	@name cordova-plugin-contacts.pickContact
+	@function
+	@see cordova-plugin-contacts.Contact
+	@param {Function} successCB 请求成功的回调，返回cordova-plugin-contacts.Contact对象
+	@param {Function} errorCB  可选参数  请求失败的回调
+	@returns {Contact} 返回联系人对象
+	@description 选择联系人
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactFindOptions
+	@class
+	@description 联系人查找参数
+	@model Native
+	@category EventClass
+	@declareVar ContactFindOptions
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactFindOptions.filter
+	@property
+	@type String
+	@description 过滤条件，缺省为""
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactFindOptions.multiple
+	@property
+	@type Boolean
+	@description 是否返回多值，缺省为false
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactFindOptions.desiredFields
+	@property
+	@type String[]
+	@description 返回指定的字段信息
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact
+	@class
+	@description 联系人
+	@model Native
+	@category EventClass
+	@declareVar Contact
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.id
+	@property
+	@type String
+	@description 全局唯一标识符
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.displayName
+	@property
+	@type String
+	@description 联系人名称
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.name
+	@property
+	@type ContactName
+	@description 联系人名称类
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.nickname
+	@property
+	@type String
+	@description 联系人昵称
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.phoneNumbers
+	@property
+	@see cordova-plugin-contacts.ContactField
+	@type ContactField[]
+	@description 联系人的电话号码数组
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.emails
+	@property
+	@see cordova-plugin-contacts.ContactField
+	@type ContactField[]
+	@description 联系人的email数组
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.addresses
+	@property
+	@see cordova-plugin-contacts.ContactAddress
+	@type ContactAddress[]
+	@description 联系人的地址数组
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.ims
+	@property
+	@see cordova-plugin-contacts.ContactField
+	@type ContactField[]
+	@description 联系人IM的数组
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.organizations
+	@property
+	@see cordova-plugin-contacts.ContactOrganization
+	@type ContactOrganization[]
+	@description 联系人组织的数组
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.birthday
+	@property
+	@type Date
+	@description 联系人 生日日期
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.note
+	@property
+	@type String
+	@description 关于联系人的便笺
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.photos
+	@property
+	@see cordova-plugin-contacts.ContactField
+	@type ContactField[]
+	@description 联系人电话的数组
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.categories
+	@property
+	@see cordova-plugin-contacts.ContactField
+	@type ContactField[]
+	@description 用户自定义类别的数组
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.urls
+	@property
+	@see cordova-plugin-contacts.ContactField
+	@type ContactField[]
+	@description 与联系人相关网站的数组
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.clone
+	@function
+	@returns {Contact} 
+	@description 克隆id为空的联系人
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.remove
+	@function
+	@see cordova-plugin-contacts.ContactError
+	@param {Function} successCB 移除成功的回调
+	@param {Function} errorCB 移除异常的回调，返回cordova-plugin-contacts.ContactError对象
+	@returns {Contact} 
+	@description 移除联系人
+*/
+
+/**
+	@name cordova-plugin-contacts.Contact.save
+	@function
+	@param {Function} successCB 保存成功的回调
+	@param {Function} errorCB 保存异常的回调
+	@returns {Contact} 
+	@description 保存联系人，如果当前联系人id存在，将更新已有的联系人信息
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactError
+	@class
+	@description 联系人删除异常类
+	@model Native
+	@category EventClass
+	@declareVar ContactError
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactError.code
+	@property
+	@type String
+	@description 错误编码
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactError.UNKNOWN_ERROR
+	@constant
+	@type Number
+	@description 常量值 0
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactError.INVALID_ARGUMENT_ERROR
+	@constant
+	@type Number
+	@description 常量值 1
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactError.TIMEOUT_ERROR
+	@constant
+	@type Number
+	@description 常量值 2
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactError.PENDING_OPERATION_ERROR
+	@constant
+	@type Number
+	@description 常量值 3
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactError.IO_ERROR
+	@constant
+	@type Number
+	@description 常量值 4
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactError.NOT_SUPPORTED_ERROR
+	@constant
+	@type Number
+	@description 常量值 5
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactError.PERMISSION_DENIED_ERROR
+	@constant
+	@type Number
+	@description 常量值 20
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactField
+	@class
+	@description 联系人字段类
+	@model Native
+	@category EventClass
+	@declareVar ContactField
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactField.type
+	@property
+	@type String
+	@description 字段类型
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactField.value
+	@property
+	@type String
+	@description 字段值
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactField.pref
+	@property
+	@type Boolean
+	@description 是否使用用户的优选值
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactAddress
+	@class
+	@description 联系人地址类
+	@model Native
+	@category EventClass
+	@declareVar ContactAddress
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactAddress.pref
+	@property
+	@type Boolean
+	@description 是否使用用户的优选值 
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactAddress.type
+	@property
+	@type String
+	@description 字段类型 
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactAddress.formatted
+	@property
+	@type String
+	@description 地址显示格式
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactAddress.streetAddress
+	@property
+	@type String
+	@description 街道地址 
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactAddress.locality
+	@property
+	@type String
+	@description 城市或地区 
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactAddress.region
+	@property
+	@type String
+	@description 国家或区域
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactAddress.postalCode
+	@property
+	@type String
+	@description 邮政编码
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactAddress.country
+	@property
+	@type String
+	@description 国家名
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactOrganization
+	@class
+	@description 联系人组织属性类
+	@model Native
+	@category EventClass
+	@declareVar ContactOrganization
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactOrganization.pref
+	@property
+	@type Boolean
+	@description 是否使用用户的优选值
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactOrganization.type
+	@property
+	@type String
+	@description 字段类型
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactOrganization.name
+	@property
+	@type String
+	@description 组织名称
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactOrganization.department
+	@property
+	@type String
+	@description 联系人的工作部门
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactOrganization.title
+	@property
+	@type String
+	@description 联系人的组织标题
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactName
+	@class
+	@description 联系人名称属性类
+	@model Native
+	@category EventClass
+	@declareVar ContactName
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactName.formatted
+	@property
+	@type String
+	@description 联系人名称
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactName.familyName
+	@property
+	@type String
+	@description 联系人的姓
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactName.givenName
+	@property
+	@type String
+	@description 联系人的名
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactName.middleName
+	@property
+	@type String
+	@description 联系人的中名
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactName.honorificPrefix
+	@property
+	@type String
+	@description 联系人的前缀
+*/
+
+/**
+	@name cordova-plugin-contacts.ContactName.honorificSuffix
+	@property
+	@type String
+	@description 联系人的后缀
+*/

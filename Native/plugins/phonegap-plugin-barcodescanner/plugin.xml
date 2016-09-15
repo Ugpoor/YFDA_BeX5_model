@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    id="phonegap-plugin-barcodescanner"
+    version="4.1.0">
+
+    <name>BarcodeScanner</name>
+    <description>You can use the BarcodeScanner plugin to scan different types of barcodes (using the device's camera) and get the metadata encoded in them for processing within your application.</description>
+    <license>MIT</license>
+
+    <repo>https://github.com/wildabeast/BarcodeScanner</repo>
+    <issue>https://github.com/wildabeast/BarcodeScanner/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/barcodescanner.js" name="BarcodeScanner">
+        <clobbers target="cordova.plugins.barcodeScanner" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <!-- Cordova >= 2.8 -->
+        <config-file target="config.xml" parent="/*">
+            <feature name="BarcodeScanner">
+                <param name="ios-package" value="CDVBarcodeScanner" />
+            </feature>
+        </config-file>
+
+        <resource-file src="src/ios/scannerOverlay.xib" />
+        <resource-file src="src/ios/CDVBarcodeScanner.bundle" />
+        <header-file src="src/ios/zxing-all-in-one.h" />
+         <!-- ZXingObjC -->
+        <header-file src="src/ios/ZXingObjC/ZXWriter.h" />
+        <header-file src="src/ios/ZXingObjC/ZXingObjC.h" />
+        <header-file src="src/ios/ZXingObjC/ZXingObjCAztec.h" />
+        <header-file src="src/ios/ZXingObjC/ZXingObjCCore.h" />
+        <header-file src="src/ios/ZXingObjC/ZXingObjCDataMatrix.h" />
+        <header-file src="src/ios/ZXingObjC/ZXingObjCMaxiCode.h" />
+        <header-file src="src/ios/ZXingObjC/ZXingObjCOneD.h" />
+        <header-file src="src/ios/ZXingObjC/ZXingObjCPDF417.h" />
+        <header-file src="src/ios/ZXingObjC/ZXingObjCQRCode.h" />
+        <header-file src="src/ios/ZXingObjC/ZXBarcodeFormat.h" />
+        <header-file src="src/ios/ZXingObjC/ZXCaptureDelegate.h" />
+        <header-file src="src/ios/ZXingObjC/ZXMultipleBarcodeReader.h" />
+        <header-file src="src/ios/ZXingObjC/ZXParsedResultType.h" />
+        <header-file src="src/ios/ZXingObjC/ZXReader.h" />
+        <header-file src="src/ios/ZXingObjC/ZXResultMetadataType.h" />
+        <header-file src="src/ios/ZXingObjC/ZXResultPointCallback.h" />    
+        
+        
+        <header-file src="src/ios/ZXingObjC/ZXAI013103decoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAI013103decoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAI01320xDecoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAI01320xDecoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAI01392xDecoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAI01392xDecoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAI01393xDecoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAI01393xDecoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAI013x0x1xDecoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAI013x0x1xDecoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAI013x0xDecoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAI013x0xDecoder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXAI01AndOtherAIs.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAI01AndOtherAIs.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAI01decoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAI01decoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAI01weightDecoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAI01weightDecoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAbstractDoCoMoResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAbstractDoCoMoResultParser.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAbstractExpandedDecoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAbstractExpandedDecoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAbstractRSSReader.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAbstractRSSReader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXAddressBookAUResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAddressBookAUResultParser.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAddressBookDoCoMoResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAddressBookDoCoMoResultParser.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAddressBookParsedResult.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAddressBookParsedResult.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAnyAIDecoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAnyAIDecoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAztecBinaryShiftToken.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAztecBinaryShiftToken.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAztecCode.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAztecCode.m" />
+        <header-file src="src/ios/ZXingObjC/ZXAztecDecoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAztecDecoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAztecDetector.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAztecDetector.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAztecDetectorResult.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAztecDetectorResult.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAztecEncoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAztecEncoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAztecHighLevelEncoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAztecHighLevelEncoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAztecReader.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAztecReader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXAztecSimpleToken.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAztecSimpleToken.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAztecState.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAztecState.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAztecToken.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAztecToken.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXAztecWriter.h" />
+        <source-file src="src/ios/ZXingObjC/ZXAztecWriter.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXBinarizer.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXBinarizer.m" />
+        <header-file src="src/ios/ZXingObjC/ZXBinaryBitmap.h" />
+        <source-file src="src/ios/ZXingObjC/ZXBinaryBitmap.m" />
+        <header-file src="src/ios/ZXingObjC/ZXBitArray.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXBitArray.m" />
+        <header-file src="src/ios/ZXingObjC/ZXBitArrayBuilder.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXBitArrayBuilder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXBitMatrix.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXBitMatrix.m" />
+        <header-file src="src/ios/ZXingObjC/ZXBitSource.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXBitSource.m" />
+        <header-file src="src/ios/ZXingObjC/ZXBizcardResultParser.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXBizcardResultParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXBookmarkDoCoMoResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXBookmarkDoCoMoResultParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXBoolArray.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXBoolArray.m" />
+        <header-file src="src/ios/ZXingObjC/ZXByQuadrantReader.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXByQuadrantReader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXByteArray.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXByteArray.m" />
+        <header-file src="src/ios/ZXingObjC/ZXByteMatrix.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXByteMatrix.m" />
+        <header-file src="src/ios/ZXingObjC/ZXCGImageLuminanceSource.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXCGImageLuminanceSource.m" />
+        <header-file src="src/ios/ZXingObjC/ZXCalendarParsedResult.h" />
+        <source-file src="src/ios/ZXingObjC/ZXCalendarParsedResult.m" />
+        <header-file src="src/ios/ZXingObjC/ZXCapture.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXCapture.m" />       
+        <header-file src="src/ios/ZXingObjC/ZXCharacterSetECI.h" />
+        <source-file src="src/ios/ZXingObjC/ZXCharacterSetECI.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXCodaBarReader.h" />
+        <source-file src="src/ios/ZXingObjC/ZXCodaBarReader.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXCodaBarWriter.h" />
+        <source-file src="src/ios/ZXingObjC/ZXCodaBarWriter.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXCode128Reader.h" />
+        <source-file src="src/ios/ZXingObjC/ZXCode128Reader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXCode128Writer.h" />
+        <source-file src="src/ios/ZXingObjC/ZXCode128Writer.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXCode39Reader.h" />
+        <source-file src="src/ios/ZXingObjC/ZXCode39Reader.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXCode39Writer.h" />
+        <source-file src="src/ios/ZXingObjC/ZXCode39Writer.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXCode93Reader.h" />
+        <source-file src="src/ios/ZXingObjC/ZXCode93Reader.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixASCIIEncoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixASCIIEncoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixBase256Encoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixBase256Encoder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixBitMatrixParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixBitMatrixParser.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixC40Encoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixC40Encoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixDataBlock.h" />
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixDataBlock.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixDecodedBitStreamParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixDecodedBitStreamParser.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixDecoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixDecoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixDefaultPlacement.h" />
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixDefaultPlacement.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixDetector.h" />
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixDetector.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixEdifactEncoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixEdifactEncoder.m" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixEncoder.h" />
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixEncoderContext.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixEncoderContext.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixErrorCorrection.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixErrorCorrection.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixHighLevelEncoder.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixHighLevelEncoder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixReader.h" />
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixReader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixSymbolInfo.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixSymbolInfo.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixSymbolInfo144.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixSymbolInfo144.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixTextEncoder.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixTextEncoder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixVersion.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixVersion.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixWriter.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixWriter.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDataMatrixX12Encoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXDataMatrixX12Encoder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDecodeHints.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDecodeHints.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDecoderResult.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDecoderResult.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDefaultGridSampler.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDefaultGridSampler.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDetectorResult.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDetectorResult.m" />
+        <header-file src="src/ios/ZXingObjC/ZXDimension.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXDimension.m" />
+        <header-file src="src/ios/ZXingObjC/ZXEAN13Reader.h" />
+        <source-file src="src/ios/ZXingObjC/ZXEAN13Reader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXEAN13Writer.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXEAN13Writer.m" />
+        <header-file src="src/ios/ZXingObjC/ZXEAN8Reader.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXEAN8Reader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXEAN8Writer.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXEAN8Writer.m" />
+        <header-file src="src/ios/ZXingObjC/ZXEANManufacturerOrgSupport.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXEANManufacturerOrgSupport.m" />
+        <header-file src="src/ios/ZXingObjC/ZXEmailAddressParsedResult.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXEmailAddressParsedResult.m" />
+        <header-file src="src/ios/ZXingObjC/ZXEmailAddressResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXEmailAddressResultParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXEmailDoCoMoResultParser.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXEmailDoCoMoResultParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXEncodeHints.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXEncodeHints.m" />
+        <header-file src="src/ios/ZXingObjC/ZXErrors.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXErrors.m" />
+        <header-file src="src/ios/ZXingObjC/ZXExpandedProductParsedResult.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXExpandedProductParsedResult.m" />
+        <header-file src="src/ios/ZXingObjC/ZXExpandedProductResultParser.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXExpandedProductResultParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXGenericGF.h" />
+        <source-file src="src/ios/ZXingObjC/ZXGenericGF.m" />
+        <header-file src="src/ios/ZXingObjC/ZXGenericGFPoly.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXGenericGFPoly.m" />
+        <header-file src="src/ios/ZXingObjC/ZXGenericMultipleBarcodeReader.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXGenericMultipleBarcodeReader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXGeoParsedResult.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXGeoParsedResult.m" />
+        <header-file src="src/ios/ZXingObjC/ZXGeoResultParser.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXGeoResultParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXGlobalHistogramBinarizer.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXGlobalHistogramBinarizer.m" />
+        <header-file src="src/ios/ZXingObjC/ZXGridSampler.h" />
+        <source-file src="src/ios/ZXingObjC/ZXGridSampler.m" />
+        <header-file src="src/ios/ZXingObjC/ZXHybridBinarizer.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXHybridBinarizer.m" />
+        <header-file src="src/ios/ZXingObjC/ZXISBNParsedResult.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXISBNParsedResult.m" />
+        <header-file src="src/ios/ZXingObjC/ZXISBNResultParser.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXISBNResultParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXITFReader.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXITFReader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXITFWriter.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXITFWriter.m" />
+        <header-file src="src/ios/ZXingObjC/ZXImage.h" />
+        <source-file src="src/ios/ZXingObjC/ZXImage.m" />
+        <header-file src="src/ios/ZXingObjC/ZXIntArray.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXIntArray.m" />
+        <header-file src="src/ios/ZXingObjC/ZXInvertedLuminanceSource.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXInvertedLuminanceSource.m" />
+        <header-file src="src/ios/ZXingObjC/ZXLuminanceSource.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXLuminanceSource.m" />
+        <header-file src="src/ios/ZXingObjC/ZXMathUtils.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXMathUtils.m" />
+        <header-file src="src/ios/ZXingObjC/ZXMaxiCodeBitMatrixParser.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXMaxiCodeBitMatrixParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXMaxiCodeDecodedBitStreamParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXMaxiCodeDecodedBitStreamParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXMaxiCodeDecoder.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXMaxiCodeDecoder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXMaxiCodeReader.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXMaxiCodeReader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXModulusGF.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXModulusGF.m" />
+        <header-file src="src/ios/ZXingObjC/ZXModulusPoly.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXModulusPoly.m" />
+        <header-file src="src/ios/ZXingObjC/ZXMonochromeRectangleDetector.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXMonochromeRectangleDetector.m" />
+        <header-file src="src/ios/ZXingObjC/ZXMultiDetector.h" />
+        <source-file src="src/ios/ZXingObjC/ZXMultiDetector.m" />
+        <header-file src="src/ios/ZXingObjC/ZXMultiFinderPatternFinder.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXMultiFinderPatternFinder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXMultiFormatOneDReader.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXMultiFormatOneDReader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXMultiFormatReader.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXMultiFormatReader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXMultiFormatUPCEANReader.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXMultiFormatUPCEANReader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXMultiFormatWriter.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXMultiFormatWriter.m" />
+        <header-file src="src/ios/ZXingObjC/ZXOneDReader.h" />
+        <source-file src="src/ios/ZXingObjC/ZXOneDReader.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXOneDimensionalCodeWriter.h" />
+        <source-file src="src/ios/ZXingObjC/ZXOneDimensionalCodeWriter.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417BarcodeMatrix.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417BarcodeMatrix.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417BarcodeMetadata.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417BarcodeMetadata.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417BarcodeRow.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417BarcodeRow.m" />
+        <header-file src="src/ios/ZXingObjC/ZXPDF417BarcodeValue.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417BarcodeValue.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417BoundingBox.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417BoundingBox.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417Codeword.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417Codeword.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417CodewordDecoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417CodewordDecoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417Common.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417Common.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417DecodedBitStreamParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417DecodedBitStreamParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXPDF417DetectionResult.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417DetectionResult.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417DetectionResultColumn.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417DetectionResultColumn.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417DetectionResultRowIndicatorColumn.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417DetectionResultRowIndicatorColumn.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417Detector.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417Detector.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417DetectorResult.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417DetectorResult.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417Dimensions.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417Dimensions.m" />
+        <header-file src="src/ios/ZXingObjC/ZXPDF417ECErrorCorrection.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417ECErrorCorrection.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417ErrorCorrection.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417ErrorCorrection.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417HighLevelEncoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417HighLevelEncoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417Reader.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417Reader.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417ResultMetadata.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417ResultMetadata.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXPDF417ScanningDecoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417ScanningDecoder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXPDF417Writer.h" />
+        <source-file src="src/ios/ZXingObjC/ZXPDF417Writer.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXParsedResult.h" />
+        <source-file src="src/ios/ZXingObjC/ZXParsedResult.m" />    
+        <header-file src="src/ios/ZXingObjC/ZXPerspectiveTransform.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXPerspectiveTransform.m" />
+        <header-file src="src/ios/ZXingObjC/ZXPlanarYUVLuminanceSource.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXPlanarYUVLuminanceSource.m" />
+        <header-file src="src/ios/ZXingObjC/ZXProductParsedResult.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXProductParsedResult.m" />
+        <header-file src="src/ios/ZXingObjC/ZXProductResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXProductResultParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCode.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCode.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeAlignmentPattern.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeAlignmentPattern.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeAlignmentPatternFinder.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeAlignmentPatternFinder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeBitMatrixParser.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeBitMatrixParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeBlockPair.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeBlockPair.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeDataBlock.h" />
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeDataBlock.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeDataMask.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeDataMask.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeDecodedBitStreamParser.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeDecodedBitStreamParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeDecoder.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeDecoder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeDecoderMetaData.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeDecoderMetaData.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeDetector.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeDetector.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeEncoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeEncoder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeErrorCorrectionLevel.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeErrorCorrectionLevel.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeFinderPattern.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeFinderPattern.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeFinderPatternFinder.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeFinderPatternFinder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeFinderPatternInfo.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeFinderPatternInfo.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeFormatInformation.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeFormatInformation.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeMaskUtil.h" />
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeMaskUtil.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeMatrixUtil.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeMatrixUtil.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeMode.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeMode.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeMultiReader.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeMultiReader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeReader.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeReader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeVersion.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeVersion.m" />
+        <header-file src="src/ios/ZXingObjC/ZXQRCodeWriter.h" />
+        <source-file src="src/ios/ZXingObjC/ZXQRCodeWriter.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRGBLuminanceSource.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRGBLuminanceSource.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSS14Reader.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSS14Reader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSDataCharacter.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSSDataCharacter.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSExpandedBlockParsedResult.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSSExpandedBlockParsedResult.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSExpandedCurrentParsingState.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSSExpandedCurrentParsingState.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSExpandedDecodedChar.h" />
+        <source-file src="src/ios/ZXingObjC/ZXRSSExpandedDecodedChar.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSExpandedDecodedInformation.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSSExpandedDecodedInformation.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSExpandedDecodedNumeric.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSSExpandedDecodedNumeric.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSExpandedDecodedObject.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSSExpandedDecodedObject.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSExpandedFieldParser.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSSExpandedFieldParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSExpandedGeneralAppIdDecoder.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSSExpandedGeneralAppIdDecoder.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSExpandedPair.h" />
+        <source-file src="src/ios/ZXingObjC/ZXRSSExpandedPair.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSExpandedReader.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSSExpandedReader.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSExpandedRow.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSSExpandedRow.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSFinderPattern.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSSFinderPattern.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSPair.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSSPair.m" />
+        <header-file src="src/ios/ZXingObjC/ZXRSSUtils.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXRSSUtils.m" />    
+        <header-file src="src/ios/ZXingObjC/ZXReedSolomonDecoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXReedSolomonDecoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXReedSolomonEncoder.h" />
+        <source-file src="src/ios/ZXingObjC/ZXReedSolomonEncoder.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXResult.h" />
+        <source-file src="src/ios/ZXingObjC/ZXResult.m" />    
+        <header-file src="src/ios/ZXingObjC/ZXResultParser.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXResultParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXResultPoint.h" /> 
+        <source-file src="src/ios/ZXingObjC/ZXResultPoint.m" />
+        <header-file src="src/ios/ZXingObjC/ZXSMSMMSResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXSMSMMSResultParser.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXSMSParsedResult.h" />
+        <source-file src="src/ios/ZXingObjC/ZXSMSParsedResult.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXSMSTOMMSTOResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXSMSTOMMSTOResultParser.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXSMTPResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXSMTPResultParser.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXStringUtils.h" />
+        <source-file src="src/ios/ZXingObjC/ZXStringUtils.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXTelParsedResult.h" />
+        <source-file src="src/ios/ZXingObjC/ZXTelParsedResult.m" />
+        <header-file src="src/ios/ZXingObjC/ZXTelResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXTelResultParser.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXTextParsedResult.h" />    
+        <source-file src="src/ios/ZXingObjC/ZXTextParsedResult.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXUPCAReader.h" />
+        <source-file src="src/ios/ZXingObjC/ZXUPCAReader.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXUPCAWriter.h" />
+        <source-file src="src/ios/ZXingObjC/ZXUPCAWriter.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXUPCEANExtension2Support.h" />
+        <source-file src="src/ios/ZXingObjC/ZXUPCEANExtension2Support.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXUPCEANExtension5Support.h" />
+        <source-file src="src/ios/ZXingObjC/ZXUPCEANExtension5Support.m" />
+        <header-file src="src/ios/ZXingObjC/ZXUPCEANExtensionSupport.h" />
+        <source-file src="src/ios/ZXingObjC/ZXUPCEANExtensionSupport.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXUPCEANReader.h" />
+        <source-file src="src/ios/ZXingObjC/ZXUPCEANReader.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXUPCEANWriter.h" />
+        <source-file src="src/ios/ZXingObjC/ZXUPCEANWriter.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXUPCEReader.h" />
+        <source-file src="src/ios/ZXingObjC/ZXUPCEReader.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXURIParsedResult.h" />
+        <source-file src="src/ios/ZXingObjC/ZXURIParsedResult.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXURIResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXURIResultParser.m" />
+        <header-file src="src/ios/ZXingObjC/ZXURLTOResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXURLTOResultParser.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXVCardResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXVCardResultParser.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXVEventResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXVEventResultParser.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXVINParsedResult.h" />
+        <source-file src="src/ios/ZXingObjC/ZXVINParsedResult.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXVINResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXVINResultParser.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXWhiteRectangleDetector.h" />
+        <source-file src="src/ios/ZXingObjC/ZXWhiteRectangleDetector.m" />
+        <header-file src="src/ios/ZXingObjC/ZXWifiParsedResult.h" />
+        <source-file src="src/ios/ZXingObjC/ZXWifiParsedResult.m" /> 
+        <header-file src="src/ios/ZXingObjC/ZXWifiResultParser.h" />
+        <source-file src="src/ios/ZXingObjC/ZXWifiResultParser.m" /> 
+  
+        
+        <source-file src="src/ios/CDVBarcodeScanner.mm" compiler-flags="-fno-objc-arc" />
+        <source-file src="src/ios/zxing-all-in-one.cpp" />
+        
+		
+		
+        <framework src="libiconv.dylib" />
+        <framework src="AVFoundation.framework" />
+        <framework src="AssetsLibrary.framework" />
+        <framework src="CoreVideo.framework" />
+        <framework src="QuartzCore.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="CoreImage.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="ImageIO.framework" />
+        
+        
+        
+        
+        
+        
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+
+        <source-file src="src/android/com/phonegap/plugins/barcodescanner/BarcodeScanner.java" target-dir="src/com/phonegap/plugins/barcodescanner" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BarcodeScanner">
+                <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+		        <activity
+		            android:name="com.google.zxing.client.android.CaptureActivity"
+		            android:configChanges="orientation|keyboardHidden"
+		            android:screenOrientation="portrait"
+		            android:windowSoftInputMode="stateAlwaysHidden" 
+		            android:theme="@android:style/Theme.Light.NoTitleBar">
+				      <intent-filter>
+				        <action android:name="com.google.zxing.client.android.SCAN"/>
+				        <category android:name="android.intent.category.DEFAULT"/>
+				      </intent-filter>
+		        </activity>
+				<activity android:label="@string/share_name" android:name="com.google.zxing.client.android.encode.EncodeActivity">
+		            <intent-filter>
+		                <action android:name="com.phonegap.plugins.barcodescanner.ENCODE" />
+		                <category android:name="android.intent.category.DEFAULT" />
+		            </intent-filter>
+		        </activity>
+		        <activity android:label="@string/share_name" android:name="com.google.zxing.client.android.HelpActivity">
+		            <intent-filter>
+		                <action android:name="android.intent.action.VIEW" />
+		                <category android:name="android.intent.category.DEFAULT" />
+		            </intent-filter>
+		        </activity>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+				    <uses-permission android:name="android.permission.VIBRATE" />
+				    <uses-permission android:name="android.permission.CAMERA" />
+				    <uses-permission android:name="android.permission.FLASHLIGHT" /> 
+				    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /> 
+				    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+            <!-- Not required to allow users to work around this -->
+				    <uses-feature android:name="android.hardware.camera" />
+        </config-file>
+
+        <source-file src="src/android/com.google.zxing.client.android.captureactivity.jar" target-dir="libs"/>
+<!--
+        
+            LibraryProject/res/*.*
+            search: (src/android/LibraryProject/(.+?)/[^/]+)$
+            replace: <source-file src="$1" target-dir="$2"/>
+        -->
+
+        <source-file src="src/android/LibraryProject/res/drawable/flashlight_off.png" target-dir="res/drawable"/>
+        <source-file src="src/android/LibraryProject/res/drawable/flashlight_on.png" target-dir="res/drawable"/>
+        <source-file src="src/android/LibraryProject/res/drawable/gallery.png" target-dir="res/drawable"/>
+        <source-file src="src/android/LibraryProject/res/drawable/share_via_barcode.png" target-dir="res/drawable"/>
+        <source-file src="src/android/LibraryProject/res/drawable/mm_title_back_btn.xml" target-dir="res/drawable"/>  
+              
+        <source-file src="src/android/LibraryProject/res/drawable-hdpi/ic_launcher.png" target-dir="res/drawable-hdpi"/>
+        <source-file src="src/android/LibraryProject/res/drawable-hdpi/mm_title_back_focused.9.png" target-dir="res/drawable-hdpi"/>
+        <source-file src="src/android/LibraryProject/res/drawable-hdpi/mm_title_back_normal.9.png" target-dir="res/drawable-hdpi"/>
+        <source-file src="src/android/LibraryProject/res/drawable-hdpi/mm_title_back_pressed.9.png" target-dir="res/drawable-hdpi"/>      
+        <source-file src="src/android/LibraryProject/res/drawable-hdpi/mmtitle_bg_alpha.9.png" target-dir="res/drawable-hdpi"/>   
+
+        <source-file src="src/android/LibraryProject/res/drawable-hdpi/ic_launcher.png" target-dir="res/drawable-ldpi"/> 
+        
+        <source-file src="src/android/LibraryProject/res/drawable-hdpi/ic_launcher.png" target-dir="res/drawable-mdpi"/> 
+        
+        <source-file src="src/android/LibraryProject/res/drawable-hdpi/ic_launcher.png" target-dir="res/drawable-xhdpi"/> 
+        
+
+        <source-file src="src/android/LibraryProject/res/layout/activity_capture.xml" target-dir="res/layout"/>
+        <source-file src="src/android/LibraryProject/res/layout/activity_title.xml" target-dir="res/layout"/>
+        <source-file src="src/android/LibraryProject/res/layout/encode.xml" target-dir="res/layout"/>
+        <source-file src="src/android/LibraryProject/res/layout/help.xml" target-dir="res/layout"/>
+
+        <source-file src="src/android/LibraryProject/res/raw/beep.ogg" target-dir="res/raw"/>
+        <source-file src="src/android/LibraryProject/res/raw/realm_properties" target-dir="res/raw"/>
+        
+
+        
+        <source-file src="src/android/LibraryProject/res/values/ids.xml" target-dir="res/values"/>
+        
+
+		<source-file src="src/android/LibraryProject/res/values/color.xml" target-dir="res/values"/>
+        <source-file src="src/android/LibraryProject/res/values/styles.xml" target-dir="res/values"/>    
+        <source-file src="src/android/LibraryProject/res/values/dimens.xml" target-dir="res/values"/>  
+        <source-file src="src/android/LibraryProject/res/menu/encode.xml" target-dir="res/menu"/> 
+        <source-file src="src/android/LibraryProject/res/layout-land/encode.xml" target-dir="res/layout-land"/> 
+        <source-file src="src/android/LibraryProject/res/layout-land/share.xml" target-dir="res/layout-land"/> 
+        <source-file src="src/android/LibraryProject/res/values/styles.xml" target-dir="res/values-v11"/>
+        
+        <source-file src="src/android/LibraryProject/res/values/styles.xml" target-dir="res/values-v14"/>
+		<source-file src="src/android/LibraryProject/libs/zxing.jar" target-dir="libs"/>
+
+        <!-- plugman cannot merge - prepare manual merge -->
+        <config-file target="res/values/strings.xml" parent="/resources">
+		    <string name="app_name1">扫描二维码</string>
+		    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+		    <string name="app_picker_name">应用</string>
+		    <string name="bookmark_picker_name">书签</string>
+		    <string name="button_add_calendar">添加事件至日历</string>
+		    <string name="button_add_contact">添加联系人</string>
+		    <string name="button_back">返回</string>
+		    <string name="button_book_search">打开图书搜索</string>
+		    <string name="button_cancel">取消</string>
+		    <string name="button_custom_product_search">自定义搜索</string>
+		    <string name="button_dial">拨号</string>
+		    <string name="button_done">完成</string>
+		    <string name="button_email">发送email</string>
+		    <string name="button_get_directions">获取地址</string>
+		    <string name="button_google_shopper">谷歌购物</string>
+		    <string name="button_mms">发送彩信</string>
+		    <string name="button_ok">确定</string>
+		    <string name="button_open_browser">打开浏览器</string>
+		    <string name="button_product_search">打开产品搜索</string>
+		    <string name="button_search_book_contents">搜索图书内容</string>
+		    <string name="button_share_app">共享应用</string>
+		    <string name="button_share_bookmark">分享书签</string>
+		    <string name="button_share_by_email">通过email分享</string>
+		    <string name="button_share_by_sms">通过短信分享</string>
+		    <string name="button_share_clipboard">分享剪切板</string>
+		    <string name="button_share_contact">分享联系人</string>
+		    <string name="button_show_map">显示地图</string>
+		    <string name="button_sms">发送短信</string>
+		    <string name="button_web_search">网页搜索</string>
+		    <string name="button_wifi">连接到网络</string>
+		    <string name="contents_contact">联系人信息</string>
+		    <string name="contents_email">Email地址</string>
+		    <string name="contents_location">地理坐标</string>
+		    <string name="contents_phone">电话号码</string>
+		    <string name="contents_sms">短信地址</string>
+		    <string name="contents_text">纯文本</string>
+		    <string name="history_clear_one_history_text">删除</string>
+		    <string name="history_clear_text">删除历史</string>
+		    <string name="history_email_title">条码扫描器历史</string>
+		    <string name="history_empty">空的</string>
+		    <string name="history_empty_detail">没有条码扫描已记录</string>
+		    <string name="history_send">发送历史</string>
+		    <string name="history_title">历史</string>
+		    <string name="menu_encode_mecard">使用MECARD</string>
+		    <string name="menu_encode_vcard">使用vCard</string>
+		    <string name="menu_help">帮助</string>
+		    <string name="menu_history">历史</string>
+		    <string name="menu_settings">设置</string>
+		    <string name="menu_share">分享</string>
+		    <string name="msg_bulk_mode_scanned">批量扫描：找到条码，已保存</string>
+		    <string name="msg_camera_framework_bug">抱歉，Android相机出现问题。您可能需要重启设备。</string>
+		    <string name="msg_default_format">格式</string>
+		    <string name="msg_default_meta">元数据</string>
+		    <string name="msg_default_mms_subject">Hi</string>
+		    <string name="msg_default_status">请将条码置于取景框内扫描。  </string>
+		    <string name="msg_default_time">时间</string>
+		    <string name="msg_default_type">类型</string>
+		    <string name="msg_encode_contents_failed">无法根据已有数据生成条码。   </string>
+		    <string name="msg_google_books">谷歌图书</string>
+		    <string name="msg_google_product">谷歌购物</string>
+		    <string name="msg_google_shopper_missing">谷歌购物未安装</string>
+		    <string name="msg_install_google_shopper">谷歌购物是一款将条码扫描和商品比价相结合的应用，谷歌购物不使用浏览器，您想尝试吗？</string>
+		    <string name="msg_intent_failed">抱歉，无法打开所需软件。 条码内容可能无效。</string>
+		    <string name="msg_redirect">重定向</string>
+		    <string name="msg_sbc_book_not_searchable">抱歉，无法找到此图书。</string>
+		    <string name="msg_sbc_failed">抱歉，搜索时遇到错误。</string>
+		    <string name="msg_sbc_no_page_returned">无页面返回</string>
+		    <string name="msg_sbc_page">页面</string>
+		    <string name="msg_sbc_results">结果</string>
+		    <string name="msg_sbc_searching_book">搜索图书…</string>
+		    <string name="msg_sbc_snippet_unavailable">摘录不可用</string>
+		    <string name="msg_sbc_unknown_page">未知页面</string>
+		    <string name="msg_share_explanation">您可以通过在自己的手机上显示条码，并使用其它手机扫描此条码的方式进行分享</string>
+		    <string name="msg_share_subject_line">这是我所扫描条码的内容</string>
+		    <string name="msg_share_text">或键入一些文字</string>
+		    <string name="msg_sure">你肯定吗？</string>
+		    <string name="msg_unmount_usb">抱歉，SD卡不可访问。</string>
+		    <string name="preferences_actions_title">找到条码时</string>
+		    <string name="preferences_auto_focus_title">使用自动对焦</string>
+		    <string name="preferences_bulk_mode_summary">连续扫描并保存多个条形码</string>
+		    <string name="preferences_bulk_mode_title">批量扫描模式</string>
+		    <string name="preferences_copy_to_clipboard_title">复制到剪切板</string>
+		    <string name="preferences_custom_product_search_summary" formatted="false">替换：％s=内容，％f=格式，％t=类型</string>
+		    <string name="preferences_custom_product_search_title">自定义搜索网址</string>
+		    <string name="preferences_decode_1D_title">扫描 一维条码</string>
+		    <string name="preferences_decode_Data_Matrix_title">扫描 DM码</string>
+		    <string name="preferences_decode_QR_title">扫描 QR码</string>
+		    <string name="preferences_device_bug_workarounds_title">设备问题解决办法</string>
+		    <string name="preferences_disable_continuous_focus_summary">只使用标准对焦模式</string>
+		    <string name="preferences_disable_continuous_focus_title">没有持续关注</string>
+		    <string name="preferences_disable_exposure_title">无曝光</string>
+		    <string name="preferences_front_light_summary">前灯可用时，打开前灯</string>
+		    <string name="preferences_front_light_title">前灯</string>
+		    <string name="preferences_general_title">一般设置</string>
+		    <string name="preferences_name">设置</string>
+		    <string name="preferences_play_beep_title">提示音</string>
+		    <string name="preferences_remember_duplicates_summary">在历史记录中保存重复记录</string>
+		    <string name="preferences_remember_duplicates_title">记住重复</string>
+		    <string name="preferences_result_title">结果设置</string>
+		    <string name="preferences_scanning_title">条码类型选择</string>
+		    <string name="preferences_search_country">搜索国家</string>
+		    <string name="preferences_supplemental_summary">尝试检索关于条码内容的更多信息</string>
+		    <string name="preferences_supplemental_title">检索更多信息</string>
+		    <string name="preferences_try_bsplus">尝试条码扫描器+</string>
+		    <string name="preferences_try_bsplus_summary">增强新的功能和接口</string>
+		    <string name="preferences_vibrate_title">振动</string>
+		    <string name="result_address_book">找到联系人信息</string>
+		    <string name="result_calendar">找到日历事件</string>
+		    <string name="result_email_address">找到email地址</string>
+		    <string name="result_geo">找到地理坐标</string>
+		    <string name="result_isbn">找到图书</string>
+		    <string name="result_product">找到产品</string>
+		    <string name="result_sms">找到短信地址</string>
+		    <string name="result_tel">找到电话号码</string>
+		    <string name="result_text">找到纯文本</string>
+		    <string name="result_uri">找到URL</string>
+		    <string name="result_wifi">发现网络配置</string>
+		    <string name="sbc_name">Google图书搜索</string>
+		    <string name="share_name">通过条码分享</string>
+		    <string name="wifi_changing_network">请求连接到网络\u2026</string>
+		    <string name="wifi_ssid_label">网络SSID</string>
+		    <string name="wifi_type_label">类型</string>
+        </config-file>
+    </platform>
+
+    <platform name="windows8">
+        <js-module src="src/windows/BarcodeScannerProxy.js" name="BarcodeScannerProxy">
+            <merges target="" />
+        </js-module>
+
+        <config-file target="package.appxmanifest" parent="/Package/Capabilities">
+            <DeviceCapability Name="webcam" />
+        </config-file>
+
+        <framework src="src/windows/lib/WinRTBarcodeReader.csproj" custom="true" type="projectReference"/>
+    </platform>
+
+    <platform name="windows">
+        <js-module src="src/windows/BarcodeScannerProxy.js" name="BarcodeScannerProxy">
+            <merges target="" />
+        </js-module>
+
+        <config-file target="package.appxmanifest" parent="/Package/Capabilities">
+            <DeviceCapability Name="webcam" />
+        </config-file>
+
+        <framework src="src/windows/lib/WinRTBarcodeReader.csproj" custom="true" type="projectReference"/>
+    </platform>
+
+    <!-- Windows Phone 8 -->
+    <platform name="wp8">
+        <config-file target="config.xml" parent="/*">
+            <feature name="BarcodeScanner">
+                <param name="wp-package" value="BarcodeScanner"/>
+            </feature>
+        </config-file>
+
+        <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
+            <Capability Name="ID_CAP_ISV_CAMERA" />
+        </config-file>
+
+        <framework src="src/wp8/lib/zxing.wp8.0.dll" custom="true" />
+
+        <asset src="src/wp8/assets/cancel.png" target="Images/appbar.cancel.png" />
+
+        <source-file src="src/wp8/BarcodeScanner.cs" />
+        <source-file src="src/wp8/BarcodeScannerTask.cs" />
+        <source-file src="src/wp8/BarcodeScannerUI.xaml" />
+        <source-file src="src/wp8/BarcodeScannerUI.xaml.cs" />
+    </platform>
+
+    <!-- browser -->
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+            <feature name="BarcodeScanner">
+                <param name="browser-package" value="BarcodeScanner" />
+            </feature>
+        </config-file>
+
+        <js-module src="src/browser/BarcodeScannerProxy.js" name="BarcodeScannerProxy">
+            <runs />
+        </js-module>
+    </platform>
+    
+    <!-- BlackBerry 10 -->
+    <platform name="blackberry10">
+        <source-file src="src/blackberry10/index.js" target-dir="BarcodeScanner" />
+        <lib-file src="src/blackberry10/native/device/libBarcodeScanner.so" arch="device"/>
+        <lib-file src="src/blackberry10/native/simulator/libBarcodeScanner.so" arch="simulator"/>
+        <config-file target="www/config.xml" parent="/widget">
+            <feature name="BarcodeScanner">
+		<param name="blackberry-package" value="phonegap-plugin-barcodescanner" />
+	    </feature>
+        </config-file>
+        <config-file target="www/config.xml" parent="/widget/rim:permissions">
+            <rim:permit>use_camera</rim:permit>
+        </config-file>
+        <dependency id="cordova-plugin-bb-app" />
+    </platform>
+</plugin>

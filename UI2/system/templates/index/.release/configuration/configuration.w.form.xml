@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" class="window cvUNzUv" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cvUNzUv" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,">
+  <xhtml:style xmlns:xhtml="http://www.w3.org/1999/xhtml">@import url($model/UI2/system/components/designerCommon/css/common.css);</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cvUNzUv" class="cvUNzUv"></div>  
+  <div class="row cvUNzUv" __cid="cvUNzUv"> 
+    <div class="col-xs-2 scroll nav-container cvUNzUv" __cid="cvUNzUv"> 
+      <ul class="nav cfg-nav cvUNzUv" id="sidebar" bind-foreach="data.datas" __cid="cvUNzUv"> 
+        <li bind-css="{active: $model.data.currentRow.get() == $object}" __cid="cvUNzUv" class="cvUNzUv"> 
+          <a href="#" bind-text="ref('setting')" bind-click="pageClick" __cid="cvUNzUv" class="cvUNzUv"/> 
+        </li> 
+      </ul> 
+    </div>  
+    <div class="col-xs-10 cvUNzUv" __cid="cvUNzUv"> 
+      <div xid="composeParent" __cid="cvUNzUv" class="cvUNzUv"/> 
+    </div> 
+  </div> 
+</div>

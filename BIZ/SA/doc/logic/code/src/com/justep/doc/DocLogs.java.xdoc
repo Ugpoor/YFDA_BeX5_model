@@ -1,0 +1,92 @@
+/**
+	@name com.justep.doc.DocLogs
+	@model BIZ
+	@category java
+	@class
+	@description 文档日志容器类
+
+		记录的是一个文档的多个操作(基于 @see com.justep.system.data.Table 实现)
+*/
+
+/**
+	@name com.justep.doc.DocLogs#getsDocId
+	@function
+	@description 获取文档id
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.DocLogs#refresh
+	@function
+	@description 重新获取当前文档的所有日志
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.DocLogs#getHistorys
+	@function
+	@description 获取历史记录
+	@returns {List<DocLog>} 
+*/
+
+/**
+	@name com.justep.doc.DocLogs#getHistorysTable
+	@function
+	@description 获取历史记录
+	@returns {Table} 
+*/
+
+/**
+	@name com.justep.doc.DocLogs#getDownloads
+	@function
+	@description 获取下载记录
+	@returns {List<DocLog>} 
+*/
+
+/**
+	@name com.justep.doc.DocLogs#getDownloadsTable
+	@function
+	@description 获取下载记录
+	@returns {Table} 
+*/
+
+/**
+	@name com.justep.doc.DocLogs#size
+	@function
+	@description 获取日志的数量
+	@returns {Table} 
+*/
+
+/**
+	@name com.justep.doc.DocLogs#getDocLogsIterator
+	@function
+	@description 返回所有日志的迭代器。
+	@returns {Iterator<DocLog>} 
+*/
+
+/**
+	@name com.justep.doc.DocLogs#getLog
+	@function
+	@description 获取与指定索引关联的日志。
+	@param {int} index 日志的位置 
+	@returns {DocLog} 
+*/
+
+/**
+	@name com.justep.doc.DocLogs#addLog
+	@function
+	@description 增加日志
+	@param {String} sID 日志id 
+	@param {String} sAccessType 日志类型
+	@param {String} sDocName 日志名称
+	@param {Integer} sDocVersionID 日志版本号
+	@param {Float} sSize 日志大小
+	@returns {DocLog} 
+*/
+
+/**
+	@name com.justep.doc.DocLogs#save
+	@function
+	@description 保存
+	@returns {void} 
+*/

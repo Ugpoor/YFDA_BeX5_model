@@ -1,0 +1,16 @@
+.x-col {
+	border: 1px #ccc solid;
+	
+}
+.form-control{
+	width:50%;
+}
+.x-output{
+	width: 200px;
+}
+.spans{
+	width: 47%;
+	float: right;
+	margin-top: 8px;
+	color:red;
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div level="error" error-info="节点不存在">
+	<attribute name="component" level="error" error-info="属性不存在" />
+	<attribute name="xid" level="error" error-info="属性不存在" />
+	<attribute name="chartName" level="error" error-info="属性不存在" />
+	<attribute name="autoLoad" level="error" error-info="属性不存在" />
+	<attribute name="dataList" level="error" error-info="属性不存在" />
+	<chart level="error" error-info="节点不存在">
+		<config level="error" error-info="节点不存在" />
+		<series-set level="error" error-info="节点不存在">
+			<series allow-repeat="true" level="error" error-info="节点不存在">
+				<attribute name="chart-type" level="error" error-info="属性不存在" />
+				<!--
+					<attribute name="ref" level="error" error-info="属性不存在" />
+					决策图表data节点动态生成  
+					<data level="error" error-info="节点不存在" />
+					<config level="error" error-info="节点不存在" />
+				-->
+				
+			</series>
+		</series-set>
+	</chart>
+</div>

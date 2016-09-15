@@ -1,0 +1,15 @@
+.x-export-excel-designer,.x-import-excel-designer{
+	z-index:1000;
+	width:24px;
+	height:24px;
+	display: block;
+	position: absolute;
+}
+
+.x-export-excel-designer{
+	background: transparent url(../img/export.gif);
+}
+
+.x-import-excel-designer{
+	background: transparent url(../img/import.gif);
+}

@@ -1,0 +1,29 @@
+.x-state-default, .x-grid-widget-content .x-state-default, .x-grid-widget-header .x-state-default {
+    background-image: linear-gradient(to bottom, #2C90E6 0%, #ffffff 100%);
+    display: none;
+}
+.x-control-group{
+	padding: 0;
+}
+.icon-chevron-left{
+	margin-right: 8px;
+}
+.btn1{
+	margin-top: 60px;
+}
+.x-output{
+	padding-left: 35px;
+}
+.list-group-item{
+	padding: 2px;
+}
+.div3{
+	overflow: scroll;
+	overflow-x:hidden; 
+}
+.div6{
+	overflow: hidden;
+}
+.x-row{
+	padding: 0;
+}

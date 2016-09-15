@@ -1,0 +1,49 @@
+<!--
+	http://x5.justep.net/x5/UI2/SA/weixin/weixinCallback.j
+	wxd869657006aa364d
+	tHT5rb-Hj7hgEereBnludJDkg-jrwEt6JidHLIo9FLKKdWZjlDVsCbBAMhZlXaqg
+	
+	https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd869657006aa364d&redirect_uri=http%3A%2F%2Fx5.justep.net%2Fx5%2FUI2%2FSA%2Fweixin%2FOauth2Callback.j%3FpageURL%253DLi4vLi4vcG9ydGFsL2luZGV4Lnc%252FcHJvY2Vzcz0vU0EvT1BNL3N5c3RlbS9zeXN0ZW1Qcm9jZXNzJmFjdGl2aXR5PW1haW5BY3Rpdml0eQ%253D%253D&response_type=code&scope=snsapi_base&state=STATE&connect_redirect=1#wechat_redirect 
+ -->
+
+<xml>
+	<corps>
+	    <corpId>wxd869657006aa364d</corpId>
+	    <corpSecret>tHT5rb-Hj7hgEereBnludJDkg-jrwEt6JidHLIo9FLKKdWZjlDVsCbBAMhZlXaqg</corpSecret>
+	    <agentId>1</agentId>
+	    <token>chJY</token>
+	    <aesKey>ewx7yEOFP97pqImLcg9plXEA9BvbGo85oixy3eXtoih</aesKey>
+	    <accessToken></accessToken>
+	    <expiresIn></expiresIn>
+	    <userId>system</userId>
+	    <departmentId></departmentId>
+	    <tagId></tagId>
+	    <callbackDomain>http://x5.justep.net</callbackDomain>
+    </corps>
+    <corps>
+	    <corpId>1</corpId>
+	    <corpSecret>tHT5rb-Hj7hgEereBnludJDkg-jrwEt6JidHLIo9FLKKdWZjlDVsCbBAMhZlXaqg</corpSecret>
+	    <agentId>2</agentId>
+	    <token>chJY</token>
+	    <aesKey>ewx7yEOFP97pqImLcg9plXEA9BvbGo85oixy3eXtoih</aesKey>
+	    <accessToken></accessToken>
+	    <expiresIn></expiresIn>
+	    <userId>system</userId>
+	    <departmentId></departmentId>
+	    <tagId></tagId>
+	    <callbackDomain>http://x5.justep.net</callbackDomain>
+    </corps>
+    <corps>
+	    <corpId>2</corpId>
+	    <corpSecret>tHT5rb-Hj7hgEereBnludJDkg-jrwEt6JidHLIo9FLKKdWZjlDVsCbBAMhZlXaqg</corpSecret>
+	    <agentId>3</agentId>
+	    <token>chJY</token>
+	    <aesKey>ewx7yEOFP97pqImLcg9plXEA9BvbGo85oixy3eXtoih</aesKey>
+	    <accessToken></accessToken>
+	    <expiresIn></expiresIn>
+	    <userId>system</userId>
+	    <departmentId></departmentId>
+	    <tagId></tagId>
+	    <callbackDomain>http://x5.justep.net</callbackDomain>
+    </corps>
+</xml>

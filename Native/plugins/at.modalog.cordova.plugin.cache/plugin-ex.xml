@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="at.modalog.cordova.plugin.cache">
+	<name>清除缓存</name>
+	<description>清除应用缓存数据</description>
+</plugin>

@@ -1,0 +1,160 @@
+#x-default-loadingbar{
+	background-color:#1caf9a !important;
+}
+
+.x-portal-task-wait .badge{
+	background-color: #999999;
+}
+
+/*menu toggle*/
+.page-header.navbar .menu-toggler.sidebar-toggler {
+	color: white;
+	font-size: 24px;
+}
+
+.page-header.navbar .page-logo .logo-default {
+	margin: 10px 0 0 0;
+}
+.page-content-close {
+	float: right;
+}
+
+.page-content-close a{
+	margin: 15px;
+}
+.page-content-close a i{
+	font-size: 24px;
+}
+#portal-opened .dropdown-menu li a i {
+	display: none;
+}
+#portal-opened .dropdown-menu li a.on i {
+	display: inline-block;
+}
+
+.nav.pull-right > li > .dropdown-menu, .nav > li > .dropdown-menu.pull-right {
+	right: 0;
+	left: auto;
+}
+
+.page-header.navbar .top-menu .navbar-nav {
+	font-size: 13px;
+}
+
+.page-sidebar-menu a {
+	cursor: pointer;
+}
+
+.page-sidebar .page-sidebar-menu li > a > .arrow:before, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu li > a > .arrow:before {
+	font-family: Ionicons;
+	content: "\f153";
+}
+
+.page-sidebar .page-sidebar-menu li > a > .arrow.open:before, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu li > a > .arrow.open:before {
+    content: "\f107";
+}
+
+.page-header.navbar .page-logo .logo-default {
+	margin-top: 13px;
+}
+
+[xid=login] .x-dialog-overlay {
+	background: white;
+}
+
+.portal-login-page .x-checkbox input[type="checkbox"]:checked + label:before {
+	background-color: white;color: black;
+}
+
+#portal-opened .dropdown-menu li a{
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	overflow: hidden; 
+}
+
+.dropdown-menu >.external {
+  display: block;
+  overflow: hidden;
+  padding: 15px 15px;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #ddd;
+}
+
+#portal-opened .dropdown-menu .dropdown-menu-content {
+  padding-right: 0 !important;
+  padding-left: 0;
+  list-style: none;
+}
+
+#portal-opened .dropdown-menu .dropdown-menu-content > li:first-child a {
+  border-top: none;
+}
+
+#portal-opened .dropdown-menu .dropdown-menu-content > li > a {
+  border-bottom: 1px solid #EFF2F6 !important;
+  color: #888888;
+  display: block;
+  clear: both;
+  font-weight: 300;
+  line-height: 20px;
+  white-space: normal;
+  font-size: 13px;
+  padding: 8px 15px 8px;
+  text-shadow: none;
+  text-decoration: none;
+}
+
+#portal-opened .dropdown-menu .dropdown-menu-content > li > a > i {
+	margin-top: 5px;	
+}
+
+.dropdown-menu >.external >h3 {
+  margin: 0;
+  padding: 0;
+  float: left;
+  font-size: 13px;
+  display: inline-block;
+}
+.page-header.navbar .top-menu .navbar-nav > li.dropdown-user .dropdown-menu >.external .closeAll {
+  color: #5b9bd1;
+  display: inline-block;
+  padding: 0;
+  background: none;
+  clear: inherit;
+  font-size: 13px;
+  font-weight: 300;
+  position: absolute;
+  right: 10px;
+  border: 0;
+  margin-top: -1px;
+}
+
+.page-sidebar .page-sidebar-menu li.psm > a > .icon-person-stalker:before, 
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu li.psm > a > .icon-person-stalker:before {
+  float: right;
+  width: 14px;
+  text-align: center;
+  margin-top: -1px;
+  margin-right: 5px;
+  margin-left: 5px;
+  display: inline;
+  font-size: 16px;
+  height: auto;
+  font-weight: 300;
+  text-shadow: none;
+}
+
+.page-sidebar .psm >a >span {
+	display: inline;
+	color: #AAAAAA;
+}
+	
+.page-sidebar .psm .sub-menu a {
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space: nowrap;
+}
+
+.page-title {
+	height: 24px;
+}

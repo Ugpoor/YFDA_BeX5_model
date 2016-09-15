@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-device-orientation">
+	<name>电子罗盘</name>
+	<description>电子罗盘本地插件，获取设备方向信息</description>
+	
+</plugin>

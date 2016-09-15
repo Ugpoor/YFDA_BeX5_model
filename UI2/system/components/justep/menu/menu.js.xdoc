@@ -1,0 +1,48 @@
+/**
+	@name $UI/system/components/justep/menu/menu
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description 上下文菜单
+*/
+
+/**
+	@name $UI/system/components/justep/menu/menu#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+	@name $UI/system/components/justep/menu/menu#addItem
+	@function
+	@description 创建项
+	@param {Object} config 创建项的选项, 可以参考Button的选项
+	@return {Object} Button 
+*/
+
+/**
+	@name $UI/system/components/justep/menu/menu#removeItem
+	@function
+	@description 删除项
+	@param {Integer} index 删除项的索引
+*/
+
+/**
+	@name $UI/system/components/justep/menu/menu#itemSize
+	@function
+	@description 获取菜单项个数
+	@return {Integer} 菜单项个数 
+*/
+
+/**
+	@name $UI/system/components/justep/menu/menu#clear
+	@function
+	@description 清除所有菜单项
+*/
+
+/**
+	@name $UI/system/components/justep/menu/menu#addDivider
+	@function
+	@description 创建分隔线
+*/

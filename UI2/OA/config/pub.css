@@ -1,0 +1,282 @@
+/*未读数样式 */
+.message-count{
+	position: absolute;
+	padding-top: 0;
+	top: 3px;
+	left: 40px;
+	font-weight:bold; 
+	border-radius: 12px;
+	font-size:9px;
+	background: #ee3e23; 
+	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+	display: block;
+	min-width: 22px;
+	line-height: 20px;
+	height: 20px;
+}
+
+/* 相关人组件的样式 */
+ .x-ro-title{
+	font-size:13px;
+	color:#778c99 ;
+	background: #f3f3f3;
+	height: 20px;
+	line-height: 20px;
+	padding-left:10px;
+	vertical-align: center;
+}
+
+.x-ro-title-content{
+	padding-top:3px;
+}
+
+.x-ros-border, .x-ro-border .x-img-list-border{
+	border:none !important;
+}
+
+.x-ro,
+.x-ros {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+/* 附件组件的样式 */
+.x-attachment-content{
+	border-top: none !important;
+}
+
+.x-card-border{
+	border-bottom: 1px solid #f3f3f3 !important;
+}
+
+/*Bootstrap的输入框组样式 */	
+.input-group-addon {
+	//background-color: transparent;
+	background-color: white;
+	border: none;
+	font-size:14px;
+	font-weight: bold;
+}
+
+/*Bootstrap的媒体样式 */	
+.media-body{
+	//padding-right: 10px;	
+}
+
+
+body{
+	font: 14px/1.5 Helvetica,"微软雅黑","",Arial,Tahoma;
+}
+
+/*Bootstrap组件相关样式 */	
+ .oa .form-control{
+	border: none;
+	box-shadow: none;
+	font-size:14px;
+	padding:8px 0px;
+}
+
+.oa .datetime.form-control,
+.oa .date.form-control,
+.oa .time.form-control {
+	padding-right: 22px;
+}
+
+.oa .has-error.form-control{
+	border: none;
+	box-shadow: none;
+}
+
+/* 搜索框样式 */
+.smart-filter{
+	padding: 8px;
+	background: #e5e5e5;
+}
+
+.smart-filter .input-group-addon{
+	font-size: 13px;
+}
+
+.smart-filter .form-control{
+	height:32px;
+	padding:8px 0px;
+}
+
+/*列表、详情相关样式 */	
+ .title-row {
+	font-size:13px;
+	color:#778c99 ;
+	background: #f3f3f3;
+	height: 20px;
+	line-height: 20px;
+	padding-left:10px;
+	vertical-align: center;
+}
+
+ .title-row .x-output {
+  padding: 0px;
+}
+
+.list-row {
+	border-bottom: 1px solid #f3f3f3;
+	height: 64px;
+	padding-right: 10px;
+}
+
+.close-list-row {
+	border-bottom: 1px solid #f3f3f3;
+	height: 64px;
+	padding-right: 10px;
+	background: #e5e5e5;
+}
+
+
+.input-group-row {
+	border-bottom: 1px solid #f3f3f3;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.input-row {
+	border-bottom: 1px solid #f3f3f3 !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+
+.input-row40 {
+	border-bottom: 1px solid #f3f3f3;
+	padding: 13px 10px !important;
+	height: 40px;
+}
+
+.input-row50 {
+	border-bottom: 1px solid #f3f3f3;
+	padding: 14px 12px !important;
+	min-height: 48px;
+	margin-top: 0px !important;
+}
+
+.content-first-row {
+	height: 32px;
+	padding-left:10px;
+}
+
+.content-row {
+	border-bottom: 1px solid #f3f3f3;
+	padding-left:10px;
+}
+
+.title-data{
+	padding-top:10px;
+	font-size:15px;
+	float:left;
+	color: black;
+	font-weight: bold;
+}
+
+.content-data{
+	padding-top: 4px;
+	color:#909090;
+	font-size:14px;
+	overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+}
+
+.right-content-data{
+	font-size:14px;
+	color:#909090;
+	text-align:right;
+	padding-top:10px;
+	//padding-right:10px;
+}
+
+.right-content-data2{
+	font-size:14px;
+	color:#909090;
+	text-align:right;
+	padding-top:2px;
+	//padding-right:10px;
+}
+
+.star-data{
+	height: 25px !important;
+	padding-left:10px;
+	float:right;
+}
+
+.head-pic-data {
+    height:64px;
+    width:64px;
+	padding:10px;
+	position:relative;
+}
+
+.content-head-pic {
+    height:64px;
+    width:54px;
+	padding-left:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	position:relative;
+	margin-right:0px !important;
+}
+
+/*使用row，重新设置padding*/
+.innerRow1{
+	padding: 0px !important;
+	color: #909090;
+}
+
+.innerRow1 .x-col{
+	padding: 0px;
+}
+
+.innerRow2{
+	padding: 4px 0px 0px 0px !important;
+	margin-top: 0px !important;
+	color: #909090;
+}
+
+.innerRow2 .x-col{
+	padding: 0px;
+}
+
+.head-pic-data2{
+	width:44px;
+	height:44px;
+}
+
+.title-data2{
+	font-size: 15px;
+	color: black;
+	font-weight: bold;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;}
+
+.content-data2{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.list-row2 {
+	border-bottom: 1px solid #f3f3f3;
+}
+
+.row-line {
+	border-bottom: 1px solid #f3f3f3;
+}
+
+/*右侧箭头样式 */
+.right-open {
+	padding-right: 0px;
+}
+
+ul, ol {
+  margin-top: 0;
+  margin-bottom: 0px;
+}
+

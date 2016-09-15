@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-calendar">
+	<name>本地日历插件</name>
+	<description>用于调用本地日历，设置活动相关操作</description>
+
+</plugin>

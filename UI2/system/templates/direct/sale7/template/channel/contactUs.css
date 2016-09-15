@@ -1,0 +1,7 @@
+.x-titlebar{ background-color:#0177b5;}
+.text-black{ color:#212121;}
+
+/*类型*/
+.o-class{ height:40px; background-color:#0177b5;}
+.o-class .btn{ color:#98bdd8; border-bottom:1px solid #005f91;}
+.o-class .btn.active{ color:#fff; font-weight:bold; border-bottom:2px solid #005f91;}

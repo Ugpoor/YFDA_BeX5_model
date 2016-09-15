@@ -1,0 +1,14 @@
+.x-panel-top-bottom-height(@topH,@bottomH){
+	.x-panel-top {
+		height: @topH;
+	}
+			
+	.x-panel-bottom {
+		height: @bottomH;
+	}
+		
+	.x-panel-content {
+		top: @topH;
+		bottom: @bottomH;
+	}	
+}

@@ -1,0 +1,17 @@
+/**
+	@name com.justep.cordova.plugin.voiceManager
+	@class 
+	@model Native
+	@category plugin
+	@description 选择设备音频的播放模式，可选听筒模式和外放模式
+	@declareVar navigator.voiceManager
+*/
+/**
+	@name com.justep.cordova.plugin.voiceManager.setPlayMode
+	@function
+	@param {Int} mode 参数
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description 当设置mode为“CALL”时，则为听筒模式，如果为“NORMAL”时，则为外放模式
+*/

@@ -1,0 +1,47 @@
+/**
+  @name com.justep.doc.exception.DocRTException
+  @model BIZ
+  @category java
+  @class
+  @extends {com.justep.exception.BaseRuntimeException}
+  @see com.justep.exception.BaseRuntimeException
+  @description 文档异常类(RuntimeException)
+  
+	基于BaseRuntimeException实现的DocRTException
+	所有biz中doc相关api都应该抛出DocRTException，
+	如果有需要扩展doc相关api 推荐抛出的异常应该是
+	DocRTException的子类。
+  
+  */
+
+/**
+  @name com.justep.doc.exception.DocRTException#DocRTException
+  @function
+  @description
+  @param {String} message 异常提示信息编号(参考Justep异常信息编号规范)	
+  @param {List<Object>} params 异常信息中的动态替换信息参数
+  @param {Throwable} cause   原始异常
+*/
+
+/**
+  @name com.justep.doc.exception.DocRTException#DocRTException
+  @function
+  @description
+  @param {String} message 异常提示信息
+  @param {Throwable} cause   原始异常
+*/
+
+/**
+  @name com.justep.doc.exception.DocRTException#DocRTException
+  @function
+  @description
+  @param {String} message 异常提示信息
+*/
+
+/**
+  @name com.justep.doc.exception.DocRTException#DocRTException
+  @function
+  @param {String} message 异常提示信息编号(参考Justep异常信息编号规范)
+  @param {List<Object>} params 异常信息中的动态替换信息参数
+  @description
+*/

@@ -1,0 +1,38 @@
+.fieldset1{
+	margin-top: 20px;
+}
+
+.fieldset1 a{
+	margin-left:20px;
+}
+.form{
+	border:1px #ccc solid;
+	width: 300px;
+}
+.x-row{
+	width: 60%;
+}
+.form-control{
+	width: 60%;
+}
+.form-horizontal{
+	margin-top: 20px;
+}
+
+.btn-group a{
+	margin-left: 8px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.div{
+	border: 1px #ccc solid;
+	width: 200px;
+	
+}
+.btns{
+	margin-left: 50px;
+}
+.emp{
+	cursor: pointer;
+	margin-top: -15px;
+}

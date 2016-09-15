@@ -1,0 +1,328 @@
+/**
+	@name com.justep.doc.AbstractDoc
+	@model BIZ
+	@category java
+	@class
+	@description 
+	<xmp>
+        文档抽象类，所有和文档相关的类的父类
+        数据存储部分 依赖com.justep.system.data.Row实现
+        提供了和文档服务器交互的基本逻辑
+		这里面有几个关键字段名字：
+		fileID ： 对应文档服务器上每个文件的唯一标识符
+		docID ：这个文档对应系统数据库SA_DocNode中的的sid
+	</xmp>	
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getState
+	@function
+	@description 获取文档类的当前状态
+	@returns {ModifyState} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#setState
+	@function
+	@description 设置文档类的当前状态
+	@returns {ModifyState}
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getDocFullPath
+	@function
+	@description 获取文档对应的全路径 
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#isPublicDoc
+	@function
+	@description 是否是公共目录下的文件或者公共目录 
+	@returns {boolean} 
+*/
+
+
+/**
+	@name com.justep.doc.AbstractDoc#download
+	@function
+	@description 下载文档
+	@param {OutputStream} outputStream 下载文档的输出流
+	@param {String} versionID 文档的版本号，与文档服务器相对应
+	@param {String} partType 文档的类型，与文档服务器相对应('content'|'revision'|'comment')
+    @throws {com.justep.doc.exception.DocRTException} 连接文档服务器出错 
+	@returns {void}
+		   	
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#download
+	@function
+	@description 下载最新版本的文档正文
+	@param {OutputStream} outputStream 下载文档的输出流
+	@throws {com.justep.doc.exception.DocRTException} 连接文档服务器出错
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getViewUrl
+	@function
+	@description 获取查看文件的url
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getViewUrl
+	@function
+    @param versionID 文档版本ID
+	@param partType 文档类型
+	@description 获取查看文件的url
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#upload
+	@function
+	@description 上传文档
+	@param {InputStream} inputStream 上传文档的输入流
+	@throws {com.justep.doc.exception.DocRTException} 连接文档服务器出错
+	@returns {void} 
+*/
+
+
+/**
+	@name com.justep.doc.AbstractDoc#upload
+	
+	@function
+	@description 上传文档
+	@param {File} file 上传的文件
+	@throws {com.justep.doc.exception.DocRTException} 连接文档服务器出错
+	@returns {void} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getsID
+	@function
+	@description 获取ID
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#setsID
+	@function
+	@description 设置ID
+	@param {String} sID id的值
+	@returns {void} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getsParentID
+	@function
+	@description 获取父ID
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#setsParentID
+	
+	@function
+	@description 设置父ID
+	@param {String} sParentID 父id的值
+	@returns {void} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getsDocName
+	
+	@function
+	@description 获取文档名称
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#setsDocName
+	
+	@function
+	@description 设置文档名称
+	@param {String} sDocName 文档的名称
+	@returns {void} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getsSize
+	
+	@function
+	@description 获取文档大小
+	@returns {Float} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#setsSize
+	
+	@function
+	@description 设置文档大小
+	@param {Float} sSize 文档的大小
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getsKind
+	
+	@function
+	@description 获取文档类型
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#setsKind
+	
+	@function
+	@description 设置文档类型
+	@param {String} sKind 文档的类型
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getsDocPath
+	
+	@function
+	@description 获取文档路径(不包含当前文档)
+	<xmp>
+       	比如：/a/b/c/d.doc
+		当我获取d.doc的docPath的时候结果是/a/b/c对应的sid组成的路径
+
+        所以根目录的docPath是/
+        根目录下的第一级目录的docPath是/defaultDocNameSpace(默认文档服务器下第一级目录的docPath)
+	</xmp>	
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#setsDocPath
+	@function
+	@description 设置文档路径
+	@param {String} sDocPath 文档的路径
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getsFileID
+	
+	@function
+	@description 获取文档服务器对应的id
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#setsFileID
+	
+	@function
+	@description 设置文档服务器对应的id
+	@param {String} sFileID 文档服务器对应的id
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getsDocLiveVersionID
+	
+	@function
+	@description 获取文档的当前版本号
+	@returns {Integer} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#setsDocLiveVersionID
+	
+	@function
+	@description 设置文档的当前版本号
+	@param {Integer} sDocLiveVersionID 文档版本号
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getCacheName
+	
+	@function
+	@description 获取文档在文档服务器上修订文档的临时文件的正文的fileID
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#setCacheName
+	
+	@function
+	@description 设置文档在文档服务器上修订文档的临时文件的正式版的fileID
+	@param {String} cacheName 
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getRevisionCacheName
+	
+	@function
+	@description 获取文档在文档服务器上缓存的临时文件的修订版fileID
+	
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#setSrevisionCacheName
+	
+	@function
+	@description 设置文档在文档服务器上缓存的临时文件的修订版fileID
+	@param {String} cacheName 
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#setsFlag
+	
+	@function
+	@description 设置flag标识
+	@param {int}  sFlag
+	@returns {void}  
+*/
+/**
+	@name com.justep.doc.AbstractDoc#getsFlag
+	@function
+	@description 获取flag标识  
+	<xmp>
+		flag 为0代表被逻辑删除的文件
+		flag 为1代表正常存在的文件
+		物理删除的文件在数据库中记录也会被删除
+	</xmp>	
+	@returns {int} 
+*/
+
+
+/**
+	@name com.justep.doc.AbstractDoc#getCommentFileContent
+	@function
+	@description 获取修订内容
+	@param {String} cacheName 
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#getRow
+	@function
+	@description 获取当前文档对应的数据映射对象Row
+	@returns {Row}  
+*/
+
+
+/**
+	@name com.justep.doc.AbstractDoc#getHistorysTable
+	@function
+	@description 获取当前文档的历史版本
+	@returns {Table}
+*/
+
+/**
+	@name com.justep.doc.AbstractDoc#deleteHistoryVersion
+	@function
+	@description 删除当前文档的某个历史版本
+	@param docVersionID 要删除的文档版本ID
+    @throws {com.justep.doc.exception.DocRTException}
+	@returns {Table}
+*/

@@ -1,0 +1,12 @@
+<template text="通用" desc="问题反馈" custom="false">
+	<images>
+		<image src="template.png"/>
+	</images>
+
+	<items>
+		<item file="template/feedback.w"></item>
+		<item file="template/feedback.js" />
+		<item file="template/feedback.css" />
+	</items>
+
+</template>

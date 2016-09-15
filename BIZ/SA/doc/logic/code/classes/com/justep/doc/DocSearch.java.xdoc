@@ -1,0 +1,92 @@
+/**
+	@name com.justep.doc.DocSearch
+	@model BIZ
+	@category java
+	@class
+	@description 文档检索类
+*/
+
+/**
+	@name com.justep.doc.DocSearch#performQuery
+	
+	@function
+	@description 查询文档服务器中文档信息
+	@param {String} url 文档服务地址
+	@param {String} query 查询的字段信息
+	@returns {Document}
+*/
+
+/**
+	@name com.justep.doc.DocSearch#performQuery
+	
+	@function
+	@description 获查询文档服务器中文档信息
+	@param {String} url 文档服务地址
+	@param {String} query 查询的字段信息
+	@param {String} extraCond 查询的where条件
+	@returns {Document}
+*/
+
+/**
+	@name com.justep.doc.DocSearch#performQuery
+	
+	@function
+	@description 查询文档服务器中文档信息
+	@param {String} url 文档服务地址
+	@param {String} query 查询的字段信息
+	@param {String} extraCond 查询的where条件
+	@param {String} extraOrderBy 排序条件	
+	@returns {Document}
+*/
+
+/**
+	@name com.justep.doc.DocSearch#performQuery
+	
+	@function
+	@description 查询文档服务器中文档信息
+	@param {String} url 文档服务地址
+	@param {String} query 查询的字段信息
+	@param {String} extraCond 查询的where条件
+	@param {String} extraOrderBy 排序条件	
+	@returns {Document}
+*/
+
+/**
+	@name com.justep.doc.DocSearch#performQuery
+	
+	@function
+	@description 查询文档服务器中文档信息
+	@param {String} url 文档服务地址
+	@param {String} query 查询的字段信息
+	@param {String} extraCond 查询的where条件
+	@param {String} extraOrderBy 排序条件
+	@param {String} chunkOffset 查询结果中的起始位置
+	@param {String} chunkLength 查询结果的长度	
+	@returns {Document}
+*/
+
+/**
+	@name com.justep.doc.DocSearch#performAllQuery
+	
+	@function
+	@description 查询多个文档服务器中全部文档信息
+	@param {String} List<String> urls 文档服务地址列表
+	@param {String} query 查询的字段信息
+	@param {String} extraCond 查询的where条件
+	@param {String} extraOrderBy 排序条件
+	@param {String} chunkOffset 查询结果中的起始位置
+	@param {String} chunkLength 查询结果的长度	
+	@returns {Document}
+*/
+
+/**
+	@name com.justep.doc.DocSearch#queryPages
+	
+	@function
+	@description 通过全文检索进行分页查询
+	@param {String} keyWord 查询的关键字
+	@param {String} pageSize 分页的大小
+	@param {String} currentPage 当前页码
+	@param {String} isHttps 是否以https方式发请求到文档服务
+	@returns {Document}
+*/

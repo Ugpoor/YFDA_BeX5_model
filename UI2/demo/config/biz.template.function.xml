@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root> 
+  <item display="solid" label="演示案例">
+    <item label="列表" device="pc"> 
+	    <item label="单列表" process="/SA/task/workTask/workTaskProcess" activity="mainActivity"
+	      url="$UI/demo/list/list.a"/> 
+	    <item label="列表详细(tab)" process="/SA/task/workTask/workTaskProcess" activity="mainActivity"
+	      url="/SA/task/workTask/mainActivity.a"/> 
+	    <item label="列表详细(dialog)" process="/SA/task/workTask/workTaskProcess" activity="mainActivity"
+	      url="$UI/demo/list/listDetailDialog.a"/> 
+      <item label="主从列表"  process="/demo/misc/process/order/orderProcess"
+        activity="mainActivity" url="$UI/demo/list/msListDetail.a"/>
+      <item label="主从列表详细(Tab)"  process="/demo/misc/process/order/orderProcess"
+        activity="mainActivity" url="$UI/demo/list/msListDetailTab.a"/>
+        
+    </item>
+  </item> 
+</root>

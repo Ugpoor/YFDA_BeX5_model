@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <item display="solid" label="演示案例">
+    <!-- <item display="solid" label="相册管理" device="m" process="/demo/components/process/ui2/ui2Process"
+    activity="mainActivity" url="$UI/demo/album/mainActivity.w"/>
+    <item display="solid" label="用户登录" device="m" process="/demo/components/process/ui2/ui2Process"
+    activity="mainActivity" url="$UI/demo/register/indexActivity.w"/>
+	-->
+  </item>
+</root>

@@ -1,0 +1,143 @@
+/**
+	@name 数据函数
+	@fn
+	@model BIZ
+	@category fn
+	@description 数据函数
+	@example
+	数据函数定义，定义模块是“/system/logic/fn”，使用数据函数时，需要先引用（use或include）模块“/system/logic/fn”。
+*/
+
+/**
+	@name 数据函数.nextSeq
+	@function
+	@description 根据key获取下一个流水号
+	@param {String} key 流水号的key值
+	@returns {Integer} 
+	@see com.justep.system.util.BizUtils.getNextSequence
+	@example 
+	数据库中，key值的流水号会更新。
+	示例:
+		nextSeq('20101010')
+	
+*/
+
+/**
+	@name 数据函数.nextSeqString
+	@function
+	@description 根据格式串格式化下一个流水号 ，等价于 key + decimalFormat(nextSeq(key), format)
+	@param {String} key 流水号的key值
+	@param {String} format 补零格式串
+	@returns {String} 格式化的流水号下一个值 
+	@see com.justep.system.util.BizUtils.createNextSequenceString
+	@example 
+	数据库中，key值的流水号会更新。
+	示例:
+		nextSeqString('ORDER', '000') //结果 'ORDER001'
+*/
+
+/**
+	@name 数据函数.tempNextSeq
+	@function
+	@description 获取当前流水号 +1
+	@param {String} key 流水号的key值
+	@returns {Integer}
+	@example
+	数据库中，key值的流水号不会更新。
+*/
+
+/**
+	@name 数据函数.tempNextSeqString
+	@function
+	@description 根据格式串格式化“当前流水号+1” ，等价于 key + decimalFormat(tempNextSeq(key), format)
+	@param {String} key 流水号的key值
+	@param {String} format 补零格式串
+	@returns {String} 格式化的当前值+1 
+	@see com.justep.system.util.BizUtils.createTempNextSeqenceString
+	@example
+	数据库中，key值的流水号不会更新。
+*/
+
+/**
+	@name 数据函数.normalizeKey
+	@function
+	@description 格式化主键值，主要用于合并联合主键 
+	@param {Object} values 需要合并的主键值, 变参
+	@returns {String}  
+	@see com.justep.system.util.BizUtils.normalizeKey
+	@example 
+	格式化的规则: 字段与字段之间使用":"相连。例如：
+		normalizeKey(1, 2, 'abc') //结果 '1:2:abc'
+*/
+
+/**
+	@name 数据函数.relationValue
+	@function
+	@description 查询某个关系的值 
+	@param {String} cocnept 概念标识
+	@param {String} id 主键值
+	@param {String} condition 过虑条件, 过虑条件中，使用概念名代表概念的主键，使用'概念.关系名'表示一个关系, 
+	例如: SA_OPPerson.sName = 'X5' or SA_OPPerson='XXX' and SA_OPPerson.sAge > 20
+	@param {String} orderRelation 排序关系
+	@param {String} returnRelation 返回关系
+	@param {String} dataModel 数据模块
+	@returns {Object}  
+	@see com.justep.system.util.BizUtils.getRelationValue
+	@example 
+	如果返回的关系有多个值时，默认返回第一个。例如：
+		relationValue('SA_OPPerson', 'PSN01', 'SA_OPPerson.sSequence > 2', 'sCode', 'sName', '/system/data')
+*/
+
+/**
+	@name 数据函数.relationValues
+	@function
+	@description 查询某个关系的所有值 
+	@param {String} cocnept 概念名
+	@param {String} id 主键值
+	@param {String} condition 过虑条件, 过虑条件中，使用概念名代表概念的主键，使用'概念.关系名'表示一个关系, 
+	例如: SA_OPPerson.sName = 'X5' or SA_OPPerson='XXX' and SA_OPPerson.sAge > 20
+	@param {String} orderRelation 排序关系
+	@param {String} returnRelation 返回关系
+	@param {String} dataModel 数据模块
+	@returns {Object}  
+	@see com.justep.system.util.BizUtils.getRelationValues
+	@example relationValues('SA_OPPerson', 'PSN01', 'SA_OPPerson.sSequence > 2', 'sCode', 'sName', '/system/data')
+*/
+
+/**
+	@name 数据函数.createSerialNumberByCurrentDate
+	@function
+	@description 根据当前日期获取格式化的序号
+	@returns {String} 
+	@example createSerialNumberByCurrentDate()
+*/
+
+/**
+	@name 数据函数.createSerialNumber
+	@function
+	@description 根据指定的key创建固定格式的下一个序列号(实际的序号状态修改)
+	@param {String} key 序列号的key
+	@param {String} keyFormat 补零格式串
+	@param {String} dateFormat 日期格式
+	@param {String} separator 分隔符
+	@returns {String} 下一个序列号
+	@see com.justep.system.util.BizUtils.createSerialNumber
+	@example
+	生成规则：key + separator + date + separator + sequence, 例如:
+		createSerialNumber('ORDER', '000', 'yyyyMMdd', '-') //结果 'ORDER-20120630-001'
+*/
+
+/**
+	@name 数据函数.createTmpSerialNumber
+	@function
+	@description 根据指定的key创建固定格式的下一个序列号(实际的序号状态不变)
+	@param {String} key 序列号的key
+	@param {String} keyFormat 补零格式串
+	@param {String} dateFormat 日期格式
+	@param {String} separator 分隔符
+	@returns {String} 下一个序列号
+	@see com.justep.system.util.BizUtils.createTmpSerialNumber
+	@example
+	生成规则：key + separator + date + separator + sequence, 例如:
+		createSerialNumber('ORDER', '000', 'yyyyMMdd', '-') //结果 'ORDER-20120630-001'
+*/

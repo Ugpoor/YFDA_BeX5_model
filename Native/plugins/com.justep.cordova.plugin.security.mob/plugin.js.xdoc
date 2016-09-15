@@ -1,0 +1,61 @@
+/**
+	@name com.justep.cordova.plugin.security.mob
+	@class 
+	@description MOB 短信验证
+	@model Native
+	@category plugin
+	@declareVar window.navigator.mobsms
+*/
+
+/**
+	@name com.justep.cordova.plugin.security.mob.init
+ 	@function
+ 	@param {Object} appInfo：mob应用信息
+  	<br/><b>参数格式：</b>
+	<xmp>
+		{
+			"appKey":String - mob注册的app id  ,
+			"appSecret":String - app secret  ,
+		}
+	</xmp>	
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description 初始化
+*/
+
+
+/**
+	@name com.justep.cordova.plugin.security.mob.send
+ 	@function
+ 	@param {Object}　 phone：手机号码
+  	<br/><b>参数格式：</b>
+	<xmp>
+		{
+			"zone":String - 国家代码，中国为86  ,
+			"phoneNumber":String - 手机号码  ,
+		}
+	</xmp>	
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description 发送短信
+*/
+
+/**
+	@name com.justep.cordova.plugin.security.mob.verify
+ 	@function
+ 	@param {Object}　 phoneCode：验证信息
+  	<br/><b>参数格式：</b>
+	<xmp>
+	    {
+			"zone":String - 国家代码，中国为86  ,
+			"phoneNumber":String - 手机号码  ,
+            "verificationCode":String - 验证码
+		}
+	</xmp>	
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description 验证
+*/

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/bolb/blob" tag-name="div" icon="blob.gif" 
+		binding-component="$UI/system/components/justep/blob/blob" 
+        component-type="formControl" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref"  text="绑定数据" editor-ref="dataRef" editor-parameter='{"hasLabel":"false"}'/>
+			<property name="blobDataModel"  text="绑定数据" editor-ref="dataRef" editor-parameter='{"hasLabel":"false"}'/>
+			<property name="blobConcept"  text="Blob数据对应概念" editor-ref="dataRef" editor-parameter='{"isRelation":"true","hasLabel":"false"}'/>
+			<property name="blobRelation"  text="Blob数据存放关系" editor-ref="dataRef" editor-parameter='{"isRelation":"true","hasLabel":"false"}'/>
+			<property name="blobLastModifiedRelation"  text="Blob数据最后修改时间关系" editor-ref="dataRef" editor-parameter='{"isRelation":"true","hasLabel":"false"}'/>
+			<property name="limitSize"  text="限制大小，支持格式：1024,25B,100KB,390M,34G"/>
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-blob"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+			<event name="onCreateURL" type="event" text="生成Blob url" parameters="event" is-script="true"/>
+			<event name="onRefresh" type="event" text="刷新Blob" parameters="event" is-script="true"/>
+			<event name="onUploadStart" type="event" text="提交Blob数据开始，可以增加提交的其他数据" parameters="event" is-script="true"/>
+			<event name="onUploadFileSelected" type="event" text="选择文件后，可以做文件有效检查" parameters="event" is-script="true"/>
+			<event name="onUploadSuccess" type="event" text="提交Blob数据成功" parameters="event" is-script="true"/>
+			<event name="onDeleteSuccess" type="event" text="清除blob数据成功" parameters="event" is-script="true"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+                  <div class="x-blob" component="$UI/system/components/justep/blob/blob"
+                     style="height:80px;"> 
+                    <div class="x-blob-bar"> 
+                        <i class="x-blob-edit icon-compose"/> 
+                        <i class="x-blob-del icon-close-round"/> 
+                    </div>  
+                  </div> 
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/bolb/blobImage" tag-name="div" icon="img.gif" 
+		binding-component="$UI/system/components/justep/blob/blobImage" 
+        component-type="formControl" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref"  text="绑定数据" editor-ref="dataRef" editor-parameter='{"hasLabel":"false"}'/>
+			<property name="blobDataModel"  text="绑定数据" editor-ref="dataRef" editor-parameter='{"hasLabel":"false"}'/>
+			<property name="blobConcept"  text="Blob数据对应概念" editor-ref="dataRef" editor-parameter='{"isRelation":"true","hasLabel":"false"}'/>
+			<property name="blobRelation"  text="Blob数据存放关系" editor-ref="dataRef" editor-parameter='{"isRelation":"true","hasLabel":"false"}'/>
+			<property name="blobLastModifiedRelation"  text="Blob数据最后修改时间关系" editor-ref="dataRef" editor-parameter='{"isRelation":"true","hasLabel":"false"}'/>
+			<property name="limitSize"  text="限制大小，支持格式：1024,25B,100KB,390M,34G"/>
+			<property name="imageType"  text="支持的图片类型" editor-ref="imageTypeList" default-value=".gif,.jpg,.png,.bmp,.jpeg"/>
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-blob"
+					},
+					"1exp": {
+						label: "扩展样式",
+						value: "x-blob-radius",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+			<property-editor name="imageTypeList" type="list" mutil-selection='true'>
+				<static-data value=".gif:gif,.jpg:jpg,.png:png,.bmp:bmp,.jpeg:jpeg"></static-data>
+			</property-editor>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+			<event name="onCreateURL" type="event" text="生成Blob url" parameters="event" is-script="true"/>
+			<event name="onRefresh" type="event" text="刷新Blob" parameters="event" is-script="true"/>
+			<event name="onUploadStart" type="event" text="提交Blob数据开始，可以增加提交的其他数据" parameters="event" is-script="true"/>
+			<event name="onUploadFileSelected" type="event" text="选择文件后，可以做文件有效检查" parameters="event" is-script="true"/>
+			<event name="onUploadSuccess" type="event" text="提交Blob数据成功" parameters="event" is-script="true"/>
+			<event name="onDeleteSuccess" type="event" text="清除blob数据成功" parameters="event" is-script="true"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+                  <div class="x-blob" component="$UI/system/components/justep/blob/blobImage"
+                     style="height:80px;"> 
+                    <div class="x-blob-bar"> 
+                        <i class="x-blob-edit icon-compose"/> 
+                        <i class="x-blob-del icon-close-round"/> 
+                    </div>
+                    <img class="x-blob-img x-autofill"/>  
+                  </div> 
+		   ]]></template>
+		</templates>
+	</element>
+	
+</elements>

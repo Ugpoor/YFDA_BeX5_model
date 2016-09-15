@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules>
+
+	<rule path="/div/chart/series-set/series"></rule>
+	<rule path="/div/chart/series-set/series/@chart-type">
+		<validate level="error" rule="regexp" scope="^(pie|pie-3d){1}$" error-info="属性值不合法,请选择正确的图表类型" />
+	</rule>
+	<rule allow-empty="true" path="/div/chart/series-set/series/@ref">
+		<validate level="error" rule="regexp" scope="^[A-Za-z_]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/data"></rule>
+	<rule path="/div/chart/series-set/series/data/@categoryAxis">
+		<validate level="error" rule="regexp" scope="^[A-Za-z_]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	<rule path="/div/chart/series-set/series/data/@numberAxis">
+		<validate level="error" rule="regexp" scope="^[A-Za-z_()]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	<rule path="/div/chart/series-set/series/data/@ref">
+		<validate level="error" rule="regexp" scope="^[A-Za-z_]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+
+	<rule path="/div/chart/series-set/series/data/href">
+	</rule>
+	<rule path="/div/chart/series-set/series/data/href/@model">
+		<validate level="error" rule="regexp" scope="^(window|dialog|replace){1}$" error-info="属性值不合法,必须是(window/dialog/replace)之一" />
+	</rule>
+	<rule path="/div/chart/series-set/series/data/href/@title">
+	</rule>
+
+	<rule path="/div/chart/series-set/series/config"></rule>
+	<rule path="/div/chart/series-set/series/config/background-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/background-alpha">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}f?$" error-info="属性值不合法,取值范围(0.1f ~ 1.0f)" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/foreground-alpha">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}f?$" error-info="属性值不合法,取值范围(0.1f ~ 1.0f)" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/label-gap">
+		<validate level="error" rule="regexp" scope="^0.0[0-9]+$" error-info="属性值不合法,取值范围(0.0 ~ 0.1)" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/label-font"></rule>
+	<rule path="/div/chart/series-set/series/config/label-font/@name"></rule>
+	<rule path="/div/chart/series-set/series/config/label-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/label-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/pie-label-style"></rule>
+	<rule path="/div/chart/series-set/series/config/pie-label-number-format">
+		<validate level="error" rule="regexp" scope="^[#0]+.?[#0]*$" error-info="属性值不合法,合法的数据格式占位符(#/0)" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/pie-label-percent-format">
+		<validate level="error" rule="regexp" scope="^[#0]+.?[#0]*%$" error-info="属性值不合法,合法的百分比格式占位符(#/0/%)" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/no-data-message"></rule>
+	<rule path="/div/chart/series-set/series/config/is-circular">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/explode-all-percent"></rule>
+	<rule path="/div/chart/series-set/series/config/explode-all-percent/@range">
+		<validate level="error" rule="regexp" scope="^[0-9]+$" error-info="属性值不合法,必须大于等于0" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/explode-all-percent/@value">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/explode-percent"></rule>
+	<rule path="/div/chart/series-set/series/config/explode-percent/@index">
+		<validate level="error" rule="regexp" scope="^[0-9]+$" error-info="属性值不合法,必须大于等于0" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/explode-percent/@value">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/map-tool-tip-label-style"></rule>
+	<rule path="/div/chart/series-set/series/config/map-tool-tip-number-format">
+		<validate level="error" rule="regexp" scope="^[#0]+.?[#0]*$" error-info="属性值不合法,合法的数据格式占位符(#/0)" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/map-tool-tip-percent-format">
+		<validate level="error" rule="regexp" scope="^[#0]+.?[#0]*%$" error-info="属性值不合法,合法的百分比格式占位符(#/0/%)" />
+	</rule>
+	
+</rules>

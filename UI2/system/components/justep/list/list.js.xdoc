@@ -1,0 +1,143 @@
+/**
+	@name $UI/system/components/justep/list/list
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@extendurl 
+	@model UI2
+	@description List
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-list(必须)
+		扩展: x-cards卡片式风格
+		
+		内部其他class说明：
+		x-list-template：标示对应节点下的内容是模板，会根据data数据进行生成显示
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#data
+	@attribute 
+	@type string
+	@description 关联的data组件xid
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#limit
+	@attribute
+	@property 
+	@type integer
+	@description 一次显示数据条数，==-1时感知data数据，data有多少数据显示多少数据，默认：-1
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#filter
+	@attribute
+	@property 
+	@type string
+	@description 过滤条件表达式，表达式中可以使用$model,$object,$parent,$row(执行过滤的数据行对象)变量
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#autoLoad
+	@attribute 
+	@type boolean
+	@description 自动加载list数据，如果==false时需要显示调用refresh方法才行显示list数据
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#disablePullToRefresh
+	@attribute
+	@property 
+	@type boolean
+	@description 禁止下拉刷新
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#disableInfiniteLoad
+	@attribute
+	@property 
+	@type boolean
+	@description 禁止上划加载数据
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"limit" : {integer} 一次显示数据条数，==-1时感知data数据，data有多少数据显示多少数据，默认：-1
+		"filter: {string}	过滤条件表达式，表达式中可以使用$model,$object,$parent,$row(执行过滤的数据行对象)变量
+		"disablePullToRefresh": {boolean} 禁止下拉刷新
+		"disableInfiniteLoad": {boolean} 禁止上划加载数据 		
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："limit"、"filter"、"disablePullToRefresh"、"disableInfiniteLoad"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#getData
+	@function
+	@returns {$UI/system/components/justep/data/data}
+	@description 获取绑定的Data组件
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#refresh
+	@function
+	@param {boolean} refreshData 是否刷新data
+	@description 刷新list组件
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#loadNextPage
+	@function
+	@description 加载下页数据
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#getBindingObjects
+	@function
+	@returns {List<$UI/system/components/justep/data/data#Row>}
+	@description list组件绑定的数据行
+*/
+
+/**
+	@name $UI/system/components/justep/list/list#onAfterRender
+	@event
+	@description <b>[回调型事件]</b>List组件刷新渲染后
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象，
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+

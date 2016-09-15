@@ -1,0 +1,168 @@
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description NumberSelect
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: form-control(必须),
+		尺寸样式: input-lg、input-sm
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#disabled
+	@attribute
+	@property 
+	@type boolean
+	@description 禁用
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#readonly
+	@attribute 
+	@type boolean
+	@description 只读
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#bind-ref
+	@attribute 
+	@type string
+	@description NumberSelect组件引用的数据
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#min
+	@attribute
+	@property 
+	@type integer
+	@description 最小值
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#max
+	@attribute
+	@property 
+	@type integer
+	@description 最大值
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#showItemSize
+	@attribute
+	@property 
+	@type integer
+	@description 下拉选择项显示数
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#showCharSize
+	@attribute
+	@property 
+	@type integer
+	@description 下拉选择项显示字符数，不够时左补'0'
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#placeHolder
+	@attribute
+	@property 
+	@type string
+	@description 提示信息，html5特性
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#autoFocus
+	@attribute
+	@property 
+	@type boolean
+	@description 在页面加载时是否获得焦点，html5特性
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#autoComplete
+	@attribute
+	@property 
+	@type boolean
+	@description 使用输入字段的自动完成功能，html5特性
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : {boolean} 禁用，
+		"placeHolder: {string} 提示信息，html5特性
+		"min: {integer} 最小值
+		"max: {integer} 最大值
+		"showItemSize": {integer} 下拉选择项显示数
+		"showCharSize": {integer} 下拉选择项显示字符数，不够时左补'0'
+		"autoFocus: {boolean} 在页面加载时是否获得焦点，html5特性
+		"autoComplete: {boolean} 使用输入字段的自动完成功能，html5特性
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"、"placeHolder"、"min"、"max"、"showItemSize"、"showCharSize"、"autoFocus"、"autoComplete"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#val
+	@function
+	@description 给NumberSelect赋值或者取值
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#showList
+	@function
+	@description 显示选择列表
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#hideList
+	@function
+	@description 隐藏选择列表
+*/
+
+/**
+	@name $UI/system/components/justep/numberSelect/numberSelect#onChange
+	@event
+	@description <b>[回调型事件]</b>值变化事件
+	@param {$UI/system/components/justep/input/input#ValueChangeEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"originalValue" : 原值,
+		"value" : 新值
+	}
+	</xmp>	
+*/
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style>
+		.btn {
+			display: inline-block;
+			margin-bottom: 0;
+			font-weight: normal;
+			text-align: center;
+			vertical-align: middle;
+			cursor: pointer;
+			background-image: none;
+			border: 1px solid transparent;
+			white-space: nowrap;
+			padding: 8px 12px;
+			font-size: 14px;
+			line-height: 1.42857143;
+			border-radius: 4px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			color: #ffffff;
+			background-color: #3399f3;
+			border-color: #3399f3;
+		}
+		
+	</style>
+	<body style="background-color: #F6F6F6;color: rgb(84, 84, 84);">
+	<br />
+		<span style="font-size: 150%;">模式4打包非WeX5开发网站，使用插件案例（以扫描二维码插件为例）</span><br /><br />
+		<p style="text-indent: 1em;line-height: 28px;margin: 0;">1、打包时把需要的插件选择上</p>
+		<p style="text-indent: 1em;line-height: 28px;margin: 0;">2、在自己网站需要调用的页面中用script引用cordova.js</p>
+		<p style="text-indent: 2em;line-height: 28px;margin: 0;color: #cc0000;">注意：引用js，路径必须写/cordova.js。</p>
+		<p style="text-indent: 1em;line-height: 28px;margin: 0;">3、在js中正确使用cordova插件</p>
+
+	<script type="text/javascript" src="/cordova.js"></script>
+	<script type="text/javascript">
+		var deviceready = false;
+		document.addEventListener('deviceready', function() {
+			deviceready = true;
+			setTimeout(function() {
+				navigator.splashscreen.hide();
+			}, 2000)
+		}, false);
+
+		function scan() {
+			if (!deviceready) {
+				alert("扫描失败，cordova尚未初始化完成");
+				return;
+			}
+
+			cordova.plugins.barcodeScanner.scan(function(result) {
+				document.getElementById('url').value = result.text;
+				window.location.href = result.text;
+			}, function(error) {
+				alert("扫描失败：" + error);
+			});
+		};
+	</script>
+
+	<div
+		style="padding-top: 20px; padding-bottom: 20px; background-color: #3399f3">
+		<div style="padding: 8px; height: 40px">
+			<div style="width: 100%; margin: 0; margin-left: -45px; float: left;">
+				<div style="margin-right: 25px; margin-left: 45px;">
+					<input
+						style="width: 100%; height: 42px; font-size: 20px; border: 0; padding-left: 4px; padding-right: 4px"
+						id="url" placeHolder="输入URL（http://ip:port）或者点下方按钮扫描输入"
+						value="http://x5.justep.com" />
+				</div>
+			</div>
+			<div style="width: 45px; margin: 0; float: left;">
+				<button class="btn" style="width: 45px; font-size: 20px"
+					onclick="window.location.href=document.getElementById('url').value">></button>
+			</div>
+		</div>
+	</div>
+
+	<div style="padding-top: 20px; height: 80px">
+		<button class="btn" style="width: 100%; height: 100%; font-size: 20px"
+			onclick="scan()">扫描输入URL</button>
+	</div>
+		
+	</body>
+</html>

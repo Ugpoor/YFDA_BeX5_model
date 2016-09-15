@@ -1,0 +1,39 @@
+<xhtml:div xmlns=""
+	component="$UI/system/components/justep/chart/chart"
+	id="vertical_chart_bar" chartName="垂直柱图" width="600" height="400" autoLoad="true">
+	<mapping>
+		<data xmlns="" id="s2" path="record">
+			<city path="CITY" />
+			<sum96 path="SUM96" />
+			<sum97 path="SUM97" />
+			<sum98 path="SUM98" />
+		</data>
+	</mapping>
+	<chart>
+		<config>
+			<title visible="true" position="TOP">96-98年各城市销售额
+			</title>
+			<map>v_bar_map</map>
+			<x-size>800</x-size>
+			<y-size>500</y-size>
+		</config>
+		<series-set>
+			<series chart-type="vertical-bar" ref="s2">
+				<data title="96年" categoryAxis="city" numberAxis="sum96" id="reportData_1"/>
+				<data title="97年" categoryAxis="city" numberAxis="sum97" id="reportData_2"/>
+				<data title="98年" categoryAxis="city" numberAxis="sum98" id="reportData_3"/>
+				<config>
+					<category-title>城市</category-title>
+					<serie-title>销售额</serie-title>
+					<category-item-label-visible>true
+					</category-item-label-visible>
+					<serie-number visible="true" auto="false" start="0"
+						end="20000" step="2000" />
+					<category-item-label-angle>30</category-item-label-angle>
+					<category-item-label-number-format>###.00
+					</category-item-label-number-format>
+				</config>
+			</series>
+		</series-set>
+	</chart>
+</xhtml:div>

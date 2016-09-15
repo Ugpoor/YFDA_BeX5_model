@@ -1,0 +1,87 @@
+/**
+	@name com.justep.doc.DocHelper
+	@model BIZ
+	@category java
+	@class
+	@description 
+	<xmp>
+        文档帮助类，提供常用api
+	</xmp>	
+*/
+
+/**
+	@name com.justep.doc.DocHelper.queryDocInfo
+	@function
+	@param {String} docID
+	@description 获取文档基本信息
+	@returns {Doc}
+*/
+
+/**
+	@name com.justep.doc.DocHelper.getDocUrl
+	@function
+	@param {String} docID
+	@param {String} docPath
+	@param {String} urlType
+	@param {String} versionID
+	@param {String} partType
+	@param {String} resultID
+	@description 获取文档操作url
+	@returns {String}
+*/
+
+/**
+	@name com.justep.doc.DocHelper.getDocPath
+	@function
+	@param {String} displayPath
+	@description 根据docDisplayPath获取docPath
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.DocHelper.deleteDoc
+	@function
+	@param {String} docID
+	@param {String} versionID
+	@param {String} isLogicDelete 是否逻辑删除
+	@description 删除文档
+	@returns {void} 
+*/
+
+
+/**
+	@name com.justep.doc.DocHelper.reverseDoc
+	@function
+	@description 恢复删除的文档
+	@param {String} docID
+	@returns {void}
+		   	
+*/
+
+/**
+	@name com.justep.doc.DocHelper.changeDocName
+	@function
+	@description 修改文件名
+	@param {String} docID
+	@param {String} docName
+	@returns {void}
+*/
+
+/**
+	@name com.justep.doc.DocHelper.uploadDoc
+	@function
+	@param {String} docName 文档的名字
+	@param {InputStream} in 要上传文件流
+	@param {String} docDisplayPath 
+	@description 上传文件
+	@returns {String}
+*/
+
+/**
+	@name com.justep.doc.DocHelper.downloadDoc
+	@function
+    @param docID 
+    @param OutputStream out
+	@description 下载指定文件到输入流中
+	@returns {String} 
+*/

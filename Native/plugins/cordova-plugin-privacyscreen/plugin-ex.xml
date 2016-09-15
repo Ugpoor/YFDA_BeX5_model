@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-privacyscreen">
+	<name>隐私屏幕</name>
+	<description>隐私屏幕插件。本插件无调用接口，包含即可。包含后，如果用应用管理程序切换应用时将不会看到当前应用的屏幕快照</description>
+
+</plugin>

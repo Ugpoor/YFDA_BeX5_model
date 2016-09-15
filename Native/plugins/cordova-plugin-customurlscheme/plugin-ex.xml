@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-customurlscheme">
+	<name>自定义URL协议</name>
+	<description>自定义指定的协议类型URL_SCHEME，并通过handleOpenURL回调进行接管。例如指定协议wex5app，则将接管wex5app://xxx</description>
+
+
+	<!-- common -->
+	<platform name="common">
+		<param name="URL_SCHEME" displayName="协议" />
+	</platform>
+	
+</plugin>

@@ -1,0 +1,99 @@
+/**
+	@name com.justep.doc.attachment.DefineItems
+	@model BIZ
+	@category java
+	@class
+	@description 文档关联类
+*/
+
+/**
+	@name com.justep.doc.attachment.DefineItems#getUploadDir
+	@function
+	@description 获取上传文件的信息		
+	@returns {Doc} 
+*/
+
+/**
+	@name com.justep.doc.attachment.DefineItems#getRootName
+	
+	@function
+	@description 获取根文件夹名称
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.attachment.DefineItems#setRootName
+	
+	@function
+	@description 设置根文件夹名称
+	@param {String} rootName 根文件夹名称	
+	@returns {void} 
+*/
+
+/**
+	@name com.justep.doc.attachment.DefineItems#getRootPath
+	
+	@function
+	@description 获取根文件夹路径
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.attachment.DefineItems#setRootPath
+	
+	@function
+	@description 设置根文件夹路径
+	@param {String} rootName 根文件夹路径	
+	@returns {void} 
+*/
+
+/**
+	@name com.justep.doc.attachment.DefineItems#getSubPath
+	
+	@function
+	@description 获取子文件夹路径
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.attachment.DefineItems#setSubPath
+	
+	@function
+	@description 设置根子文件夹路径
+	@param {String} rootName 子文件夹路径	
+	@returns {void} 
+*/
+
+/**
+	@name com.justep.doc.attachment.DefineItems#getAccess
+	
+	@function
+	@description 获取权限
+	@returns {Integer} 
+*/
+
+/**
+	@name com.justep.doc.attachment.DefineItems#setAccess
+	
+	@function
+	@description 设置权限
+	@param {String} rootName 子文件夹路径	
+	@returns {void} 
+*/
+
+/**
+	@name com.justep.doc.attachment.DefineItems#getLimitSize
+	
+	@function
+	@description 获取允许上传文件的大小
+	@returns {Integer} 
+*/
+
+/**
+	@name com.justep.doc.attachment.DefineItems#setLimitSize
+	
+	@function
+	@description 设置允许上传文件的大小
+	@param {String} limitSize 允许上传文件的大小	
+	@returns {void} 
+*/

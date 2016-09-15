@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" design="device:m;" xid="window" class="window cv6vIjm" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cv6vIjm" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style xmlns:xhtml="http://www.w3.org/1999/xhtml">null</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cv6vIjm" class="cv6vIjm"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pe4e6b760ee724e4f802061b2a3c73801-iosstatusbar cv6vIjm" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cv6vIjm"> 
+    <div class="x-panel-top cv6vIjm" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cv6vIjm"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cv6vIjm" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;测试&quot;}" __cid="cv6vIjm"> 
+        <div class="x-titlebar-left cv6vIjm" __cid="cv6vIjm"></div>  
+        <div class="x-titlebar-title cv6vIjm" __cid="cv6vIjm">测试</div>  
+        <div class="x-titlebar-right  cv6vIjm" __cid="cv6vIjm">
+          <div class="empty cv6vIjm" __cid="cv6vIjm"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cv6vIjm" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cv6vIjm">
+      <div xid="div1" style="padding:10px 20px 20px 20px;" __cid="cv6vIjm" class="cv6vIjm">
+        <p xid="p1" __cid="cv6vIjm" class="cv6vIjm">当前网页在手机系统浏览器中打开，点击下面的按钮即可回到原应用中去，应当注意的是跳转的URL必须是在插件中配置的URL，默认为“wex5app”，如果开发者修改了默认值，就需要在按钮的点击事件中修改URL，否则将无法跳转。</p>
+        <div xid="div3" __cid="cv6vIjm" class="cv6vIjm"/>
+      </div>  
+      <div xid="div2" style="padding:40px;height:50px;" __cid="cv6vIjm" class="cv6vIjm">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cv6vIjm" xid="button1" style="width:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:button1Click" data-config="{&quot;label&quot;:&quot;回到原应用&quot;}" __cid="cv6vIjm"> 
+          <i xid="i1" __cid="cv6vIjm" class="cv6vIjm"/>  
+          <span xid="span1" __cid="cv6vIjm" class="cv6vIjm">回到原应用</span>
+        </a>
+      </div> 
+    </div>  
+    <style __cid="cv6vIjm" class="cv6vIjm">.x-panel.pe4e6b760ee724e4f802061b2a3c73801-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pe4e6b760ee724e4f802061b2a3c73801-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pe4e6b760ee724e4f802061b2a3c73801-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pe4e6b760ee724e4f802061b2a3c73801-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pe4e6b760ee724e4f802061b2a3c73801-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pe4e6b760ee724e4f802061b2a3c73801-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pe4e6b760ee724e4f802061b2a3c73801-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pe4e6b760ee724e4f802061b2a3c73801-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pe4e6b760ee724e4f802061b2a3c73801-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div> 
+</div>

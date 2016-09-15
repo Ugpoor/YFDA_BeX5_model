@@ -1,0 +1,28 @@
+/**
+	@name $UI/system/components/justep/org/orgSelectPC
+	@component 
+	@extends $UI/system/components/justep/gridSelect/gridSelect
+	@model UI2
+	@description OrgSelectPC
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelectPC#manageCodes
+	@attribute 
+	@type string
+	@description 业务管理权限编码，多个业务管理权限用逗号分隔
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelectPC#includeOrgKind
+	@attribute 
+	@type string
+	@description 包含的机构类型，缺省：全部类型
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelectPC#includeDisabled
+	@attribute 
+	@type boolean
+	@description 包含禁用组织，缺省：false
+*/

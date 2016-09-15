@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-statusbar">
+	<name>状态栏</name>
+	<description>状态栏本地插件，用来控制状态栏的显示方式</description>
+
+	<!-- common -->
+	<platform name="common">
+	</platform>
+
+	<!-- ios -->
+	<platform name="ios">
+		<param name="StatusBarOverlaysWebView" displayName="状态栏浮动模式" defaultValue="true" type="boolean" />
+		<param name="StatusBarStyle" displayName="状态栏风格" defaultValue="default" type="enumerate" values="default,lightcontent,blacktranslucent,blackopaque" />
+	</platform>
+
+	<!-- android -->
+	<platform name="android">
+	</platform>
+
+</plugin>

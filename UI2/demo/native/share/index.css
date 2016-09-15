@@ -1,0 +1,29 @@
+div.x-panel-bottom{
+	border-top:1px solid #CCDAE7;
+}
+.share_detail img{
+	width:35px;
+	height:35px;
+	margin-top:5px;
+	border:1px solid transparent;
+	border-radius:7px;
+}
+.share_detail{
+	width:75%;
+	margin:0 auto;
+	position:relative;
+	float:right;
+}
+.share_detail li{
+	width:20%;
+	float:right;
+}
+.x-titlebar{ background-color:#fff; color:#777; border-bottom:1px solid #CCDAE7;}
+.share_btn{
+	text-align:center;
+	margin-top:10px;
+	position:relative;
+}
+.x-panel-bottom{
+	background-color:#EAF3F7;
+}

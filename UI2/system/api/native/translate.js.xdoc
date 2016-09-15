@@ -1,0 +1,36 @@
+/**
+	@name $UI/system/api/native/translate
+	@class
+	@category javascript
+	@model UI2
+	@description 语音识别
+	@example 
+	<xmp> 
+	 	var translate = require('$UI/system/api/native/translate');
+	        translate.translateVoice({
+			localId : voices.localId,
+			complete : function(res) {
+				if (res.hasOwnProperty('translateResult')) {
+					alert('识别结果：' + res.translateResult);
+				} else {
+					alert('无法识别');
+				}
+			}
+		});
+	</xmp>
+*/
+
+/**
+	@name $UI/system/api/native/translate.translateVoice
+	@function
+	@description  语音转文字
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		localId : 本地音频文件
+		complete : 完成后的回调,结果在此获取
+	}
+	</xmp>
+	@return {void}
+*/

@@ -1,0 +1,46 @@
+/**
+	@name Blob动作
+	@action
+	@model BIZ
+	@category action
+	@description Blob动作
+	@see com.justep.system.data.BlobUtils
+*/
+
+/**
+	@name Blob动作.blobDownloadAction
+	@function
+	@description blob数据下载
+	@param {String} blobDataModel 数据模块
+	@param {String} blobConcept blob所在概念
+	@param {String} blobRelation blob对应的关系
+	@param {String} blobConceptValue  概念的唯一标示
+	@returns {java.io.InputStream}
+	@see com.justep.system.data.BlobUtils.query
+*/
+
+/**
+	@name Blob动作.blobUpdateAction
+	@function
+	@description blob数据更新
+	@param {String} blobDataModel 数据模块
+	@param {String} blobConcept blob所在概念
+	@param {String} blobRelation blob对应的关系
+	@param {String} blobLastModifiedRelation blob最后更新记录的关系
+	@param {String} blobConceptValue  概念的唯一标示
+	@param {String} limitSize blob大小限制，支持格式：1024,25B,100KB,390M,34G，单位支持：B、KB、M、G，默认单位是B
+	@param {java.io.InputStream} blobData blob数据流
+	@see com.justep.system.data.BlobUtils.update
+*/
+
+/**
+	@name Blob动作.blobDeleteAction
+	@function
+	@description blob数据清除
+	@param {String} blobDataModel 数据模块
+	@param {String} blobConcept blob所在概念
+	@param {String} blobRelation blob对应的关系
+	@param {String} blobLastModifiedRelation blob最后更新记录的关系
+	@param {String} blobConceptValue  概念的唯一标示
+	@see com.justep.system.data.BlobUtils.delete
+*/

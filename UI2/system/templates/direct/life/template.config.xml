@@ -1,0 +1,13 @@
+<template text="通用" desc="生活服务" custom="false">
+	<images>
+		<image src="template1.png"/>
+		<image src="template2.png"/>
+		<image src="template3.png"/>
+	</images>
+
+	<items>
+		<item file="template/index.w"></item>
+		<item file="template/index.js"/>
+	</items>
+
+</template>

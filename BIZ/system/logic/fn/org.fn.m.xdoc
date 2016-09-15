@@ -1,0 +1,832 @@
+/**
+	@name 组织机构函数
+	@fn
+	@model BIZ
+	@category fn
+	@description 组织机构函数
+	@example
+	定义模块是“/system/logic/fn”，使用组织机构函数时，需要先引用（use或include）模块“/system/logic/fn”。
+*/
+
+/**
+	@name 组织机构函数.defaultEncryptPassword
+	@function
+	@description  获取加密后的默认密码
+	@returns {String}
+	@see com.justep.system.opm.OrgUtils.getDefaultEncryptPassword
+	@example defaultEncryptPassword()
+	
+*/	
+	
+/**
+	@name 组织机构函数.loginDate
+	@function
+	@description  获取登录日期
+	@returns {java.sql.Date}  
+	@example loginDate()
+*/	
+	
+/**
+	@name 组织机构函数.currentLanguage
+	@function
+	@description  获取当前语言
+	@returns {String}  
+	@example currentLanguage()
+*/	
+	
+/**
+	@name 组织机构函数.firstOrgUnitFID
+	@function
+	@description 获取组织单元列表中第一个组织单元的FID
+	@param {List<com.justep.system.opm.OrgUnit>} items 组织单元列表
+	@returns {String}  
+	@example firstOrgUnitFID(findOrgUnitsHasCActivity('', true))
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFID
+*/	
+
+/**
+	@name 组织机构函数.firstOrgUnitFName
+	@label 获取组织单元列表中第一个组织单元的FName
+	@function
+	@description 获取组织单元列表中第一个组织单元的FName
+	@param {List<com.justep.system.opm.OrgUnit>} items 组织单元列表
+	@returns {String}  
+	@example firstOrgUnitFName(findOrgUnitsHasCActivity('', true))
+	@see com.justep.system.opm.OrgUtils.firstOrgUnitFName
+*/	
+
+/**
+	@name 组织机构函数.operatorID
+
+	@label 操作者ID
+	@function
+	@description 操作者ID
+	@returns {String}  
+	@example operatorID()
+*/	
+
+/**
+	@name 组织机构函数.operatorCode
+
+	@label 操作者Code
+	@function
+	@description 操作者Code
+	@returns {String}  
+	@example operatorCode()
+*/	
+
+/**
+	@name 组织机构函数.operatorName
+	@function
+	@description 操作者Name
+	@returns {String}  
+	@example operatorName()
+*/	
+
+/**
+	@name 组织机构函数.currentPersonID
+	@function
+	@description 当前人的ID, 当前人是currentPersonMember关联的人
+	@returns {String}   
+*/	
+
+/**
+	@name 组织机构函数.currentPersonName
+	@function
+	@description 当前人的Name, 当前人是currentPersonMember关联的人
+	@returns {String}   
+*/	
+
+/**
+	@name 组织机构函数.currentPersonCode
+	@function
+	@description 当前人的Code, 当前人是currentPersonMember关联的人
+	@returns {String}   
+*/	
+
+/**
+	@name 组织机构函数.currentPersonMemberNameWithAgent
+	@function
+	@description 当前人的名称，带上代理者, 例如: 张三(李四 代)
+	@returns {String}   
+*/	
+
+/**
+	@name 组织机构函数.currentPersonMemberFNameWithAgent
+	@function
+	@description 当前人的FName，带上代理者, 例如: /起步软件/开发部/张三(李四 代)
+	@returns {String}   
+*/	
+
+/**
+	@name 组织机构函数.currentPersonMember
+	@function
+	@description 当前人员成员
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example currentPersonMember()
+*/	
+
+/**
+	@name 组织机构函数.currentPersonMember2
+	@function
+	@description 当前函数只用在流程的首环节的执行规则里，如果启动流程时给定了执行者，返回那个执行者，否则返回当前人员成员
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example currentPersonMember2()
+*/	
+
+/**
+	@name 组织机构函数.currentPersonMemberID
+	@function
+	@description 当前人员成员ID
+	@returns {String}   
+	@example currentPersonMemberID()
+*/	
+
+/**
+	@name 组织机构函数.currentPersonMemberName
+	@function
+	@description 当前人员成员Name
+	@returns {String}   
+	@example currentPersonMemberName()
+*/	
+
+/**
+	@name 组织机构函数.currentPersonMemberCode
+	@function
+	@description 当前人员成员Code
+	@returns {String}   
+	@example currentPersonMemberCode()
+*/	
+	
+/**
+	@name 组织机构函数.currentPersonMemberFID
+	@function
+	@description 当前人员成员FID
+	@returns {String}   
+	@example currentPersonMemberFID()
+*/	
+	
+/**
+	@name 组织机构函数.currentPersonMemberFName
+	@function
+	@description 当前人员成员FName
+	@returns {String}   
+	@example currentPersonMemberFName()
+*/	
+	
+/**
+	@name 组织机构函数.currentOrgID
+	@function
+	@description 当前组织ID
+	@returns {String}   
+	@example currentOrgID()
+*/	
+
+/**
+	@name 组织机构函数.currentOrgName
+	@function
+	@description 当前组织Name
+	@returns {String}   
+	@example currentOrgName()
+*/	
+
+/**
+	@name 组织机构函数.currentOrgCode
+	@function
+	@description 当前组织Code
+	@returns {String}   
+	@example currentOrgCode()
+*/	
+
+/**
+	@name 组织机构函数.currentOrgFID
+	@function
+	@description 当前组织FID
+	@returns {String}   
+	@example currentOrgFID()
+*/	
+
+/**
+	@name 组织机构函数.currentOrgFName
+	@function
+	@description 当前组织FName
+	@returns {String}   
+	@example currentOrgFName()
+*/	
+
+/**
+	@name 组织机构函数.currentPosID
+	@function
+	@description 当前岗位ID
+	@returns {String}   
+	@example currentPosID()
+*/	
+
+/**
+	@name 组织机构函数.currentPosName
+	@function
+	@description 当前岗位Name
+	@returns {String}   
+	@example currentPosName()
+*/	
+
+/**
+	@name 组织机构函数.currentPosCode
+	@function
+	@description 当前岗位Code
+	@returns {String}   
+	@example currentPosCode()
+*/	
+
+/**
+	@name 组织机构函数.currentPosFID
+	@function
+	@description 当前岗位FID
+	@returns {String}   
+	@example currentPosFID()
+*/	
+
+/**
+	@name 组织机构函数.currentPosFName
+	@function
+	@description 当前岗位FName
+	@returns {String}   
+	@example currentPosFName()
+*/	
+
+/**
+	@name 组织机构函数.currentDeptID
+	@function
+	@description 当前部门ID
+	@returns {String}   
+	@example currentDeptID()
+*/	
+
+/**
+	@name 组织机构函数.currentDeptName
+	@function
+	@description 当前部门Name
+	@returns {String}   
+	@example currentDeptName()
+*/	
+
+/**
+	@name 组织机构函数.currentDeptCode
+	@function
+	@description 当前部门Code
+	@returns {String}   
+	@example currentDeptCode()
+*/	
+
+/**
+	@name 组织机构函数.currentDeptFID
+	@function
+	@description 当前部门FID
+	@returns {String}   
+	@example currentDeptFID()
+*/	
+
+/**
+	@name 组织机构函数.currentDeptFName
+	@function
+	@description 当前部门FName
+	@returns {String}   
+	@example currentDeptFName()
+*/	
+	
+/**
+	@name 组织机构函数.currentOgnID
+	@function
+	@description 当前机构ID
+	@returns {String}   
+	@example currentOgnID()
+*/	
+
+/**
+	@name 组织机构函数.currentOgnName
+	@function
+	@description 当前机构Name
+	@returns {String}   
+	@example currentOgnName()
+*/	
+
+/**
+	@name 组织机构函数.currentOgnCode
+	@function
+	@description 当前机构Code
+	@returns {String}   
+	@example currentOgnCode()
+*/	
+
+/**
+	@name 组织机构函数.currentOgnFID
+	@function
+	@description 当前机构FID
+	@returns {String}   
+	@example currentOgnFID()
+*/	
+
+/**
+	@name 组织机构函数.currentOgnFName
+	@function
+	@description 当前机构FName
+	@returns {String}   
+	@example currentOgnFName()
+*/	
+
+/**
+	@name 组织机构函数.findManagers
+	@function
+	@description 获取指定组织单元的管理者
+	@param {Object} org 组织单元; 
+			允许两种情况: 
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {String} manageType 管理类型的Code,空表示所有管理类型
+	@param {Boolean} includeAllParent 是否包括所有父的管理者
+	@param {Object} inOrg 返回值必须在指定组织范围内, 
+			允许三种情况: 
+				空值, 表示不限制范围;
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example findManagers(currentDeptID(), 'SYSTEM', true, '')
+	@see com.justep.system.opm.OrgUtils.findManagers
+*/	
+
+/**
+	@name 组织机构函数.findManagersOfCurrentDept
+	@function
+	@description 获取当前部门的管理者
+	@param {Boolean} includeAllParent 是否包括所有父的管理者
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example findManagersOfCurrentDept(true)
+	@see com.justep.system.opm.OrgUtils.findManagersOfCurrentDept
+*/	
+
+/**
+	@name 组织机构函数.findSubordinations
+	@function
+	@description 获取指定组织单元的下属
+	@param {Object} org 组织单元; 
+			允许两种情况: 
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {String} manageType 管理类型的CODE,空表示所有管理类型
+	@param {Object} inOrg 返回值必须在指定组织范围内 
+			允许三种情况: 
+				空值, 表示不限制范围;
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {Boolean} isPersonMember 是否取到人员成员	
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example findSubordinations(currentPersonID(), '', '', true)
+	@see com.justep.system.opm.OrgUtils.findSubordinations
+*/	
+
+/**
+	@name 组织机构函数.findOrgChildren
+	@function
+	@description 获取指定组织单元的子(不包括人员成员)
+	@param {Object} org 组织单元; 
+			允许两种情况: 
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {String} childCondition 子节点的约束条件; 
+			可以使用变量，变量的值在后一个参数中指定; 
+			在条件中, 使用"org"表示子节点本身, 'org.属性名称'表示子节点的属性, 
+	 		例如: org.sName='X5开发部'
+	@param {Map} params childCondition中使用的变量的值, 可以为null
+	@param {Boolean} includeSelf 是否包含自己
+	@param {Boolean} includeAllChildren 是否包含所有子孙
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOrgChildren(currentDeptID(), '', null, true, true)
+	@see com.justep.system.opm.OrgUtils.findOrgChildren	
+*/	
+
+
+/**
+	@name 组织机构函数.findOrgChildren2
+	@function
+	@description 获取指定组织的子
+	@param {Object} org 组织单元; 
+			允许两种情况: 
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {String} childCondition 子节点的约束条件; 
+			可以使用变量，变量的值在后一个参数中指定; 
+			在条件中, 使用"org"表示子节点本身, 'org.属性名称'表示子节点的属性, 
+	 		例如: org.sName='X5开发部'
+	@param {Map} params childCondition中使用的变量的值, 可以为null
+	@param {Boolean} includeSelf 是否包含自己
+	@param {Boolean} includeAllChildren 是否包含所有子孙
+	@param {Boolean} includePersonMember 是否取到人员成员
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOrgChildren2(currentDeptID(), '', null, true, true, true)
+	@see com.justep.system.opm.OrgUtils.findOrgChildren2	
+*/	
+
+/**
+	@name 组织机构函数.findOrgChildrenByLevel
+	@function
+	@description 获取属于指定组织单元的指定级别的子(不包括人员成员)
+	@param {Object} org 组织单元; 
+			允许两种情况: 
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {int} level 组织单元的级别
+	@param {String} operation 运算符, 取值范围=,>,<,>=,<=,空; 其中空表示=
+	@param {Boolean} includeSelf 是否包含自己
+	@param {Boolean} includeAllChildren 是否包含所有子孙
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOrgChildrenByLevel(currentDeptFID(), 3, '=', true, true)
+	@see com.justep.system.opm.OrgUtils.findOrgChildrenByLevel	
+*/	
+
+/**
+	@name 组织机构函数.findOrgChildrenByCode
+	@function
+	@description 获取指定组织单元下, 编码为某个指定值的组织单元(不包括人员成员)
+	@param {Object} org 组织单元; 
+			允许两种情况: 
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {String} code 组织单元的编码
+	@param {Boolean} includeSelf 是否包含自己
+	@param {Boolean} includeAllChildren 是否包含所有子孙
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOrgChildrenByCode(currentDeptFID(), '组织单元的code', true, true)
+	@see com.justep.system.opm.OrgUtils.findOrgChildrenByCode	
+*/	
+
+/**
+	@name 组织机构函数.findOrgParents
+	@function
+	@description 获取属于指定组织单元的父
+	@param {Object} org 组织单元; 
+			允许两种情况: 
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {String} parentCondition 父节点的约束条件;
+			可以使用变量，变量的值在后一个参数中指定; 
+			在条件中, 使用'org'表示父节点本身, 'org.属性名称'表示父节点的属性, 
+			例如: org.sName='X5开发部'
+	@param {Map} params parentCondition中使用的变量的值, 可以为null
+	@param {Boolean} includeSelf 是否包含自己
+	@param {Boolean} includeAllParent 是否包含所有父
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOrgParents(currentDeptID(), '', null, true, true)
+	@see com.justep.system.opm.OrgUtils.findOrgParents	
+*/	
+
+/**
+	@name 组织机构函数.findOrgParentsByLevel
+	@function
+	@description 获取属于指定组织单元的指定级别的父
+	@param {Object} org 组织单元; 
+			允许两种情况: 
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {int} level 组织单元的级别
+	@param {String} operation 运算符, 取值范围=,>,<,>=,<=,空; 其中空表示=
+	@param {Boolean} includeSelf 是否包含自己
+	@param {Boolean} includeAllParent 是否包含所有父
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOrgParentsByLevel(currentDeptFID(), 3, '=', true, true)
+	@see com.justep.system.opm.OrgUtils.findOrgParentsByLevel	
+*/	
+
+/**
+	@name 组织机构函数.findOrgParentsByCode
+	@function
+	@description 获取属于指定组织单元的指定编码的父
+	@param {Object} org 组织单元; 
+			允许两种情况: 
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {String} code 组织单元的编码
+	@param {Boolean} includeSelf 是否包含自己
+	@param {Boolean} includeAllParent 是否包含所有父
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOrgParentsByCode(currentDeptFID(), '组织单元编码', true, true)
+	@see com.justep.system.opm.OrgUtils.findOrgParentsByCode	
+*/	
+
+
+		
+/**
+	@name 组织机构函数.findOnePersonMemberByID
+	@function
+	@description 根据人的ID获取人员成员(对于同一个人，只返回一个人员成员)
+	@param {String} orgIDorFID 组织的ID或FID, 可以为''或null, 表示不限制部门
+	@param {String} personID 人的ID
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOnePersonMemberByID('', currentPersonID())
+		findOnePersonMemberByID(currentOgnFID(), currentPersonID())
+	@see com.justep.system.opm.OrgUtils.findOnePersonMemberByID	
+*/	
+
+/**
+	@name 组织机构函数.findPersonMembersByID
+	@function
+	@description 根据人的ID获取人员成员
+	@param {String} orgIDorFID 组织的ID或FID, 可以为''或null, 表示不限制部门
+	@param {String} personID 人的ID
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findPersonMembersByID('', currentPersonID())
+		findPersonMembersByID(currentOgnFID(), currentPersonID())
+	@see com.justep.system.opm.OrgUtils.findPersonMembersByID	
+*/	
+	
+/**
+	@name 组织机构函数.findPersonMembersByCode
+	@function
+	@description 根据人的编码获取人员成员
+	@param {String} orgIDorFID 组织的ID或FID, 可以为''或null, 表示不限制部门
+	@param {String} personCode 人的编码
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findPersonMembersByCode('', currentPersonCode())
+	@see com.justep.system.opm.OrgUtils.findPersonMembersByCode	
+*/	
+
+/**
+	@name 组织机构函数.findPersonMembersByIDList
+	@function
+	@description 根据人的ID指定的人员成员
+	@param {List<List<String>>} orgIDandPersonID 由组织ID和人的ID形成的列表, 
+		例如list(list('组织ID', '人ID'), list('组织ID', '人ID'))
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findPersonMembersByIDList(list(list('组织ID', '人ID'), list('组织ID', '人ID')))
+	@see com.justep.system.opm.OrgUtils.findPersonMembersByIDList	
+*/	
+	
+/**
+	@name 组织机构函数.findPersonMembersByCodeList
+	@function
+	@description 根据人的编码获取人员成员
+	@param {List<List<String>>} orgIDandPersonCode 由组织ID和人的code形成的列表, 
+		例如list(list('组织ID', currentPersonCode()), list('组织ID', '人的code'))
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findPersonMembersByCodeList(list(list('组织ID', currentPersonCode()), list('组织ID', '人的code')))
+	@see com.justep.system.opm.OrgUtils.findPersonMembersByCodeList	
+*/	
+
+/**
+	@name 组织机构函数.findPersonMembersInOrg
+	@function
+	@description 获取指定部门下的人员成员
+	@param {Object} org 组织单元; 
+			允许两种情况: 
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {Boolean} includeAllChildren 是否包括所有的子孙
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example findPersonMembersInOrg(currentDeptID(), false)
+	@see com.justep.system.opm.OrgUtils.findPersonMembersInOrg
+*/	
+
+/**
+	@name 组织机构函数.findOrgUnitsHasRole
+	@function
+	@description 获取拥有某个角色的组织单元
+	@param {String} roldID 角色ID
+	@param {Object} inOrg 组织单元所在的组织, 
+			允许三种情况: 
+				空值, 表示不限制范围;
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {Boolean} isPersonMember 是否取到人员成员
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOrgUnitsHasRole('角色ID', '', true)
+		findOrgUnitsHasRole('角色ID', currentOgnID(), false)
+	@see com.justep.system.opm.OrgUtils.findOrgUnitsHasRole	
+*/	
+
+/**
+	@name 组织机构函数.findOrgUnitsHasRoleByCode
+	@function
+	@description 获取拥有某个角色的组织单元
+	@param {String} roldCode 角色的code
+	@param {Object} inOrg 组织单元所在的组织, 
+			允许三种情况: 
+				空值, 表示不限制范围;
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {Boolean} isPersonMember 是否取到人员成员
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOrgUnitsHasRoleByCode('角色code', '', true)
+		findOrgUnitsHasRoleByCode('角色code', currentOgnID(), false)
+	@see com.justep.system.opm.OrgUtils.findOrgUnitsHasRoleByCode	
+*/	
+
+/**
+	@name 组织机构函数.findOrgUnitsByID
+	@function
+	@description 根据组织单元ID获取指定的组织单元
+	@param {Object} ids 组织单元的ID, 
+			允许两种情况: 
+				单个组织单元的ID; 
+				多个组织单元的ID形成的List
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOrgUnitsByID(currentDeptID())
+		findOrgUnitsByID(list('组织ID', '组织ID'))
+	@see com.justep.system.opm.OrgUtils.findOrgUnitsByID	
+*/	
+
+/**
+	@name 组织机构函数.findOrgUnitsByFID
+	@function
+	@description 根据组织单元的FID获取指定的组织单元
+	@param {Object} fids 组织单元的FID, 
+			允许两种情况: 
+				单个组织单元的FID; 
+				多个组织单元的FID形成的List
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOrgUnitsByFID(currentDeptFID())
+	@see com.justep.system.opm.OrgUtils.findOrgUnitsByFID	
+*/	
+
+/**
+	@name 组织机构函数.findOrgUnitsByCode
+	@function
+	@description 根据组织单元Code获取指定的组织单元
+	@param {Object} codes 组织单元的Code, 
+			允许两种情况: 
+				单个组织单元的Code; 
+				多个组织单元的Code形成的List
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOrgUnitsByCode(currentDeptCode())
+		findOrgUnitsByCode(list('组织code', '组织code'))
+	@see com.justep.system.opm.OrgUtils.findOrgUnitsByCode	
+*/	
+
+/**
+	@name 组织机构函数.distinctOrgUnitsByFID
+	@function
+	@description 根据FID对组织单元列表执行distinct操作
+	@param {List<com.justep.system.opm.OrgUnit>} items 组织单元列表
+	@returns {List<com.justep.system.opm.OrgUnit>}  
+	@see com.justep.system.opm.OrgUtils.distinctOrgUnitsByFID 
+*/	
+
+/**
+	@name 组织机构函数.distinctOrgUnitsByID
+	@function
+	@description 根据ID对组织单元列表执行distinct操作
+	@param {List<com.justep.system.opm.OrgUnit>} items 组织单元列表
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@see com.justep.system.opm.OrgUtils.distinctOrgUnitsByID
+*/	
+
+/**
+	@name 组织机构函数.orgUnitsEq
+	@function
+	@description 判断两个组织单元列表是否相等
+	@param {List<com.justep.system.opm.OrgUnit>} items1  组织单元列表1
+	@param {List<com.justep.system.opm.OrgUnit>} items2  组织单元列表2
+	@returns {Boolean}   
+	@see com.justep.system.opm.OrgUtils.orgUnitsEq
+*/	
+
+/**
+	@name 组织机构函数.orgUnitsAnd
+	@function
+	@description 两个组织单元列表做交集操作
+	@param {List<com.justep.system.opm.OrgUnit>} items1  组织单元列表1
+	@param {List<com.justep.system.opm.OrgUnit>} items2  组织单元列表2
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@see com.justep.system.opm.OrgUtils.orgUnitsAnd
+*/	
+	
+/**
+	@name 组织机构函数.orgUnitsOr
+	@function
+	@description 两个组织单元列表做并集操作
+	@param {List<com.justep.system.opm.OrgUnit>} items1  组织单元列表1
+	@param {List<com.justep.system.opm.OrgUnit>} items2  组织单元列表2
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@see com.justep.system.opm.OrgUtils.orgUnitsOr
+*/	
+
+/**
+	@name 组织机构函数.orgUnitsSub
+	@function
+	@description 两个组织单元列表做差集操作
+	@param {List<com.justep.system.opm.OrgUnit>} items1  组织单元列表1
+	@param {List<com.justep.system.opm.OrgUnit>} items2  组织单元列表2
+	@returns {List<com.justep.system.opm.OrgUnit>}  
+	@see com.justep.system.opm.OrgUtils.orgUnitsSub 
+*/	
+
+/**
+	@name 组织机构函数.inOrgUnits
+	@function
+	@description 判断某个组织单元是否在某个组织单元列表中
+	@param {String} orgFID  组织单元的FID
+	@param {List<com.justep.system.opm.OrgUnit>} items  组织单元列表
+	@returns {Boolean}   
+	@see com.justep.system.opm.OrgUtils.inOrgUnits
+*/	
+
+/**
+	@name 组织机构函数.orgUnitsByIndex
+	@function
+	@description 从组织单元列表中获取指定序号的组织单元
+	@param {List<com.justep.system.opm.OrgUnit>} items  组织单元列表
+	@param {Integer} index 序号
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@see com.justep.system.opm.OrgUtils.orgUnitsByIndex
+*/	
+
+/**
+	@name 组织机构函数.orgUnitsByKind
+	@function
+	@description 组织单元转换成指定类型的组织单元
+	@param {List<com.justep.system.opm.OrgUnit>} items  组织单元列表
+	@param {String} kind 组织单元类型
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@see com.justep.system.opm.OrgUtils.orgUnitsByKind
+*/	
+
+
+/**
+	@name 组织机构函数.orgUnitsToPoss
+	@function
+	@description 组织单元转换成相应的岗位
+	@param {List<com.justep.system.opm.OrgUnit>} items  组织单元列表
+	@returns {List<com.justep.system.opm.OrgUnit>}  
+	@see com.justep.system.opm.OrgUtils.orgUnitsToPoss 
+*/	
+
+/**
+	@name 组织机构函数.orgUnitsToDepts
+	@function
+	@description 组织单元转换成相应的部门
+	@param {List<com.justep.system.opm.OrgUnit>} items  组织单元列表
+	@returns {List<com.justep.system.opm.OrgUnit>}
+	@see com.justep.system.opm.OrgUtils.orgUnitsToDepts   
+*/	
+
+/**
+	@name 组织机构函数.orgUnitsToOgns
+	@function
+	@description 组织单元转换成相应的机构
+	@param {List<com.justep.system.opm.OrgUnit>} items  组织单元列表
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@see com.justep.system.opm.OrgUtils.orgUnitsToOgns   
+*/	
+
+/**
+	@name 组织机构函数.orgUnitsToOrgs
+	@function
+	@description 组织单元转换成相应的组织
+	@param {List<com.justep.system.opm.OrgUnit>} items  组织单元列表
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@see com.justep.system.opm.OrgUtils.orgUnitsToOrgs   
+*/	
+
+/**
+	@name 组织机构函数.orgUnitsToOrgFIDs
+	@function
+	@description 获取组织单元列表中的FID
+	@param {List<com.justep.system.opm.OrgUnit>} items  组织单元列表
+	@returns {List<String>} 组织FID形成的List   
+	@see com.justep.system.opm.OrgUtils.orgUnitsToOrgFIDs
+*/	
+
+/**
+	@name 组织机构函数.removeOrgUnitByFID
+	@function
+	@description 从组织单元列表中删除指定的组织单元
+	@param {List<com.justep.system.opm.OrgUnit>} container  组织单元列表
+	@param {String} orgFID  被删除组织单元的FID
+	@returns {List<com.justep.system.opm.OrgUnit>}    
+*/	
+
+/**
+	@name 组织机构函数.getOrgRealFName
+	@function
+	@description 获取组织真实路径Name（从组织路径中排除虚拟组织节点）
+	@param {String} orgFID  组织单元的FID
+	@param {String} orgFName  组织单元的FName
+	@returns {String}    
+	@see com.justep.system.opm.OrgUtils.getRealFName
+*/	

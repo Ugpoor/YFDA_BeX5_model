@@ -1,0 +1,4 @@
+.x-processChart .x-contents>.x-contents-content {
+	overflow: auto;
+	top: 0px; 
+}	

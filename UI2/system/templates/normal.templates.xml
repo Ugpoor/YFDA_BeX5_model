@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template-config>
+	<catalog name="mobile" text="移动" icon="img/mobile.png" order="2">
+		<catalog name="normal" text="标准" order="100">
+			<template path="$UI/system/templates/normal/empty" text="空白" />
+			<template path="$UI/system/templates/normal/emptyWithBar" text="标准页面" />
+			<template path="$UI/system/templates/normal/emptyWithBarMultiPage" text="多页面" />
+			<template path="$UI/system/templates/normal/extends" configPage="$UI/system/templates/index/extension.w?checkType=*.w" text="继承" />
+			<template path="$UI/system/templates/normal/homePage1" configPage="$UI/system/templates/common/homePageKind.w" text="首页" />
+			<template path="$UI/system/templates/direct/updateApp" configPage="$UI/system/templates/common/updateApp.w" text="推广下载页" />
+		</catalog>
+		<catalog name="simple" text="简单页面(baas)" order="5">
+			<template path="$UI/system/templates/simpleBaas/form1" text="表单(baas)" />
+			<template path="$UI/system/templates/simpleBaas/list1" text="列表(baas)" />
+			<template path="$UI/system/templates/simpleBaas/tree" text="树形视图(baas)" />
+
+		</catalog>
+		<catalog name="direct" text="应用页面" order="1">
+			<template path="$UI/system/templates/direct/sale13" text="电商首页" />
+			<template path="$UI/system/templates/direct/sale18" text="新闻首页" />
+			<template path="$UI/system/templates/direct/sale14" text="商品分类页" />
+			<template path="$UI/system/templates/direct/sale15" text="商品列表页" />
+			<template path="$UI/system/templates/direct/sale16" text="商品详情页" />
+			<template path="$UI/system/templates/direct/sale17" text="购物车" />
+			<template path="$UI/system/templates/direct/login1" text="登录页1" />
+			<template path="$UI/system/templates/direct/login2" text="登录页2" />
+			<template path="$UI/system/templates/direct/login3" text="登录页3" />
+			<template path="$UI/system/templates/direct/register1" text="注册页1" />
+			<template path="$UI/system/templates/direct/register2" text="注册页2" />
+			<template path="$UI/system/templates/direct/search1" text="搜索页1" />
+			<template path="$UI/system/templates/direct/search2" text="搜索页2" />
+			<template path="$UI/system/templates/direct/list1" text="列表页1" />
+			<template path="$UI/system/templates/direct/list2" text="列表页2" />
+			<template path="$UI/system/templates/direct/list3" text="列表页3" />
+			<template path="$UI/system/templates/direct/list4" text="列表页4" />
+			<template path="$UI/system/templates/direct/list5" text="列表页5" />
+			<template path="$UI/system/templates/direct/list6" text="列表页6" />
+			<template path="$UI/system/templates/direct/list7" text="列表页7" />
+			<template path="$UI/system/templates/direct/list8" text="列表页8" />
+			<template path="$UI/system/templates/direct/list9" text="列表页9" />
+			<template path="$UI/system/templates/direct/list10" text="列表页10" />
+			<template path="$UI/system/templates/direct/list11" text="列表页11" />
+			<template path="$UI/system/templates/direct/list12" text="瀑布流图片" />
+			<template path="$UI/system/templates/direct/setting" text="设置页" />
+			<template path="$UI/system/templates/direct/feedback" text="问题反馈" />
+			<template path="$UI/system/templates/direct/enroll" text="活动报名" />
+			<template path="$UI/system/templates/direct/service" text="服务预约" />
+			<template path="$UI/system/templates/direct/activityFeedback" text="活动反馈" />
+			<template path="$UI/system/templates/direct/messageBoard" text="留言板" />
+			
+		</catalog>
+		<catalog name="direct" text="微网" order="1">
+			<template path="$UI/system/templates/direct/sale1" text="微网模板1" />
+			<template path="$UI/system/templates/direct/sale2" text="微网模板2" />
+			<template path="$UI/system/templates/direct/sale3" text="微网模板3" />
+			<template path="$UI/system/templates/direct/sale4" text="微网模板4" />
+			<template path="$UI/system/templates/direct/sale5" text="微网模板5" />
+			<template path="$UI/system/templates/direct/sale6" text="微网模板6" />
+			<template path="$UI/system/templates/direct/sale7" text="微网模板7" />
+			<template path="$UI/system/templates/direct/sale8" text="微网模板8" />
+			<template path="$UI/system/templates/direct/sale9" text="微网模板9" />
+			<template path="$UI/system/templates/direct/sale10" text="微网模板10" />
+			<template path="$UI/system/templates/direct/sale11" text="微网模板11" />
+			<template path="$UI/system/templates/direct/sale12" text="微网模板12" />
+		</catalog>
+		<catalog name="direct" text="应用" order="1">
+			<template path="$UI/system/templates/direct/taobao" text="仿淘宝" />
+			<template path="$UI/system/templates/direct/netease" text="仿网易新闻" />
+			<template path="$UI/system/templates/direct/appDownload" text="应用下载" />
+			<template path="$UI/system/templates/direct/jewelry" text="饰品电商" />
+			<template path="$UI/system/templates/direct/furniture" text="家居电商" />
+			<template path="$UI/system/templates/direct/train" text="教育培训1" />
+			<template path="$UI/system/templates/direct/english" text="教育培训2" />
+			<template path="$UI/system/templates/direct/life" text="生活服务" />
+
+
+		</catalog>
+	</catalog>
+	
+	<catalog name="pc" text="桌面" icon="img/pc.png" order="1">
+		<catalog name="normalPC" text="标准" order="6">
+			<template path="$UI/system/templates/normalPC/empty" text="空白" />
+			<template path="$UI/system/templates/normalPC/extends" configPage="$UI/system/templates/index/extension.w?checkType=*.w" text="继承" />
+		</catalog>
+		<catalog name="simple" text="简单页面(baas)" order="5">
+			<template path="$UI/system/templates/simpleBaasPC/list1" text="列表(baas)" />
+		</catalog>
+	</catalog>
+</template-config>

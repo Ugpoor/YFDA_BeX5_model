@@ -1,0 +1,11 @@
+.x-tabs,
+.x-tabs >.x-panel,
+.x-tabs >.x-panel>.x-panel-content>.x-contents,
+.x-tabs >.x-panel>.x-panel-content>.x-contents>.x-contents-content {
+	height: 100%;
+}
+
+.x-tabs >.x-panel >.x-panel-top >.nav-justified > li {
+	display: table-cell; 
+	width: 1%; 
+}

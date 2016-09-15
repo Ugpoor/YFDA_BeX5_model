@@ -1,0 +1,44 @@
+/**
+	@name cordova-plugin-file-opener2
+	@class 
+	@description 文件打开插件
+	@model Native
+	@category plugin
+	@declareVar cordova.plugins.fileOpener2
+*/
+
+/**
+	@name cordova-plugin-file-opener2#cordova.fileOpener2
+	@property
+	@type cordova-plugin-file-opener2
+	@description 文件打开插件
+*/
+
+
+/**
+	@name cordova-plugin-file-opener2.open
+	@function
+	@param {String} fileName 文件名，带文件路径
+	@param {String} contentType 文件MIME类型
+	@param {Function} callbackContext 回调函数
+	@returns {void}
+	@description 打开文件
+*/
+
+/**
+	@name cordova-plugin-file-opener2.uninstall
+	@function
+	@param {String} packageId 应用包名
+	@param {Function} callbackContext 回调函数
+	@returns {void}
+	@description 卸载应用，适用于android
+*/
+
+/**
+	@name cordova-plugin-file-opener2.appIsInstalled
+	@function
+	@param {String} packageId 应用包名
+	@param {Function} callbackContext 回调函数
+	@returns {void}
+	@description 检查应用是否存在，，适用于android
+*/

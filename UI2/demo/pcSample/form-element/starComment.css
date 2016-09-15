@@ -1,0 +1,15 @@
+.div{
+	margin-left: 40px;
+}
+.img{
+	background-image: url("$UI/demo/sample/form-element/img/1.gif");
+}
+.imgs{
+	background-image:  url("$UI/demo/sample/form-element/img/2.gif");
+}
+.imgss{
+	background-image:  url("$UI/demo/sample/form-element/img/2.gif");
+}
+.padd{
+	margin-left: 3px;
+}

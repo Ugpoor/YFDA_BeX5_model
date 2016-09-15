@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\iconnull.png",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\iconnull.png"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\icon.png",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\icon.png"
+    }
+]

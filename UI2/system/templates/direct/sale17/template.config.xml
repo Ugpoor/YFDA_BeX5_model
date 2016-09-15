@@ -1,0 +1,12 @@
+﻿<template text="通用" desc="购物车" custom="false">
+	<images>
+		<image src="template.png"/>
+	</images>
+
+	<items>
+		<item file="template/cart.w"></item>
+		<item file="template/cart.js" />
+		<item file="template/cart.css" />
+	</items>
+
+</template>

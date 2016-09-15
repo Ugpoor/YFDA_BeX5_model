@@ -1,0 +1,16 @@
+.hr{
+	margin: 0;
+	border-top: 5px solid #32ABF3;
+}
+.btn{
+	border: 0;
+	margin: 0;
+}
+.btn-group{
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.btn-group .btn.active{
+	background-color: #32ABF3;
+	color: black;
+}

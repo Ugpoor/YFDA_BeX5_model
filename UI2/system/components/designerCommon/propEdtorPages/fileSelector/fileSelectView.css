@@ -1,0 +1,7 @@
+@import url("../../tree/css/jqx.base.css");
+
+@import url("../../css/common.css");
+
+.x-dialog-button{
+	margin-top:0;
+}

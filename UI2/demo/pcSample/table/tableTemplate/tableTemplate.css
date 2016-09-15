@@ -1,0 +1,9 @@
+/*附件上传*/
+.o-uploadFile .x-attachment-content{ min-height:32px; min-height:32px; border-top:0; background:none; margin-top:0px;}
+.o-uploadFile .x-item-upload{ width:80px; height:32px; line-height:32px; background:none;}
+.o-uploadFile .x-attachment{ min-height:32px; padding:0;}
+.o-uploadFile .x-attachment .x-attachment-cell{ float:none; margin:0; height:32px; display:block;}
+
+.o-link{ padding:0 10px;}
+
+.x-popOver-content{ width:400px;}

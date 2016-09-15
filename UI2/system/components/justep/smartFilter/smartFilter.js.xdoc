@@ -1,0 +1,120 @@
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description 智能过滤组件
+	@example
+	<xmp>
+		SmartFilter组件通过简单的属性设置就可以给数据增加动态过滤的能力，关键属性有：
+			filterData: 过滤数据
+			filterCols: 过滤列
+		SmartFilter会将用户输入的字符串构造成LIKE过滤条件，自动设置到数据上，同时如果autoRefresh属性为true则自动刷新数据
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#xid
+	@attribute 
+	@type string
+	@description 组件标识
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#filterData
+	@attribute 
+	@type string
+	@description 过滤数据，必须是bizData
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#filterCols
+	@attribute 
+	@type string
+	@description 过滤列，多个用逗号分隔
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#caseSensitive
+	@attribute 
+	@type boolean
+	@description 是否大小写敏感 - true：敏感；false：不敏感，默认是false。注意：设置为true时不一定就真的大小写敏感，因为大多数数据库默认LIKE是大小写不敏感的。
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#autoRefresh
+	@attribute 
+	@type boolean
+	@description 是否自动刷新 - 默认是true，用户输入后不仅设置数据的过滤条件，同时自动刷新数据。
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#autoRefreshMode
+	@attribute 
+	@type string
+	@description 自动刷新模式 - input:输入停顿500毫秒后刷新,change:焦点移出或回车确认后刷新。
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#searchText
+	@property 
+	@type observable
+	@description 搜索文字，可以通过set和get方法存取。
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#refresh
+	@function
+	@description 刷新过滤条件
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#clear
+	@function
+	@description 清除过滤条件
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#getFilterData
+	@function
+	@returns {$UI/system/components/justep/data/data}	 
+	@description 获取过滤数据集对象
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#getFilterFlag
+	@function
+	@returns {string}	 
+	@description 获取过滤条件标识
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#getFilterStr
+	@function
+	@returns {string}	 
+	@description 获取过滤条件字符串
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#filter
+	@function
+	@description 设置数据的过滤条件，如果“自动刷新”则刷新数据；开发者可以通过onFilter事件接管。
+*/
+
+/**
+	@name $UI/system/components/justep/smartFilter/smartFilter#onFilter
+	@event
+	@description 过滤事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+
+
+

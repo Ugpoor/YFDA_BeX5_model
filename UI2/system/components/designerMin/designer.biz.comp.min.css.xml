@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <config ignoreFileNotFound="true">
+  	<depend config="../biz.comp.min.css.xml">../biz.comp.min.css</depend>
+  	
+    <file>../justep/social/relativeOrg/designer/css/relativeOrg.css</file>
+    <component>../justep/social/relativeOrg/designer/relativeOrg</component>
+
+    <file>../justep/excel/designer/css/excel.css</file>
+    <component>../justep/excel/designer/export</component>
+    <component>../justep/excel/designer/import</component>
+
+    <file>../justep/org/designer/css/orgDialog.css</file>
+    <component>../justep/org/designer/orgDialog</component>
+ 
+   <file>../justep/data/designer/css/data.css</file>
+   <component>../justep/data/designer/bizData.js</component>
+	    
+    <output name="designer.biz.comp.min.css"  skin="desktop,superhero,slate,united,yeti,flatly" />
+</config>
+</root>

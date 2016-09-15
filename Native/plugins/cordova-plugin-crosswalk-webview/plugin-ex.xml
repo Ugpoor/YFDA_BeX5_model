@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-crosswalk-webview" hide="true">
+	<name>增强型浏览器</name>
+	<description>基于Crosswalk引擎的浏览器，能力比自带webview更，但会增大apk体积，只针对于安卓</description>
+
+	<!-- common -->
+	<platform name="common">
+	</platform>
+
+	<!-- ios -->
+	<platform name="ios">
+	</platform>
+
+	<!-- android -->
+	<platform name="android">
+	</platform>
+
+</plugin>

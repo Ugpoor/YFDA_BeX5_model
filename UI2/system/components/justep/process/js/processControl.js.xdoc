@@ -1,0 +1,432 @@
+/**
+	@name $UI/system/components/justep/process/js/processControl
+	@class 流转信息
+	@model UI2
+	@category javascript
+	@description 流转信息，只支持JSON格式
+	@example
+	ProcessControl的JSON格式
+<xmp>
+{
+	"@@tag": "process-control",
+	"status": "",
+	"message": "",
+	"dialog-enabled": "",
+	"save-history": "",
+	"task-join": "",
+	"task-join-mode": "",
+	"customized-enabled": "",
+	"jump-enabled": "", 
+	"exts": {
+		"扩展属性名": "扩展属性值",
+		"扩展属性名": "扩展属性值"
+	},
+	"runnable-activities": [
+		{
+			"@@tag": "环节标识",
+			"@selectable": "",
+			"@optional": "",
+			"@label": "",
+			"@id": "",
+			"@@children": [] //子环节
+		}
+		//其它环节
+	],
+	
+	"to": [
+		{
+			"@id": "",
+			"@activity-id": "",
+			"@selected": "",
+			"@readonly": "",
+			"@is-end": "",
+			"process": "",
+			"template": "",
+			"unit": "",
+			"task-assign-mode": "",
+			"executor-kinds", "",
+			"exts": {
+				"扩展属性名": "扩展属性值",
+				"扩展属性名": "扩展属性值"
+			},
+			"executor-range": [
+				{
+					"@@tag": "org-unit",
+					"fid": "",
+					"fname": "",
+					"responsible": ""
+				}
+				//其它组件节点
+			],
+			
+			"executors": [], //结构与executor-range一致
+			"task-relation-value":{
+				"@@tag": "task-relation-value",
+				"SA_Task": "任务主键值",
+				"属性名": 属性值,
+				"属性名": 属性值
+				//其它属性值对
+			}
+		}
+	],
+	
+	"notice": [] //结构与to一致
+}
+</xmp>	
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#getData
+	@function
+	@description 获取ProcessControl的内容
+	@returns {Object}
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#enableDialog
+	@function
+	@description 判断是否需要弹出对话框
+	@returns {boolean}
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#hasProcessData
+	@function
+	@description [兼容保留]判断是否有process data
+	@returns {boolean}
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#getMessage
+	@function
+	@description 获取提示信息
+	@returns {boolean}
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#getActivities
+	@function
+	@description 获取环节列表，
+	@returns {Array} 返回的是ProcessControl.Activity形成的数组
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#getToItems
+	@function
+	@description 获取环节相应的流转信息
+	@returns {Array} 返回的是{@link $UI/system/components/justep/process/js/processControl#Item}形成的Array
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#getToItemByID
+	@function
+	@description 根据ID获取环节相应的流转信息
+	@returns {$UI/system/components/justep/process/js/processControl#Item} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#setSelectedToItems
+	@function
+	@description 设置选中的环节相应的流转信息
+	@param {Array} ids 由id形成的数组 
+	@returns {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#getNoticeItems
+	@function
+	@description 获取通知相应的流转信息
+	@returns {Array} 返回的是{@link $UI/system/components/justep/process/js/processControl#Item}形成的Array
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#getNoticeItemByID
+	@function
+	@description 根据ID获取通知相应的流转信息
+	@returns {$UI/system/components/justep/process/js/processControl#Item} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#setSelectedNoticeItems
+	@function
+	@description 设置选中的通知
+	@param {Array} ids 由id形成的数组 
+	@returns {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#getExts
+	@function
+	@description 获取扩展数据
+	@returns {Object} json
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#clearExts
+	@function
+	@description 清除扩展数据
+	@returns {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#getExt
+	@function
+	@description 获取扩展数据的值
+	@param {String} name 扩展数据的名称 
+	@returns {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#setExt
+	@function
+	@description 设置扩展数据的值
+	@param {String} name 扩展数据的名称 
+	@param {Object} value 扩展数据的值 
+	@returns {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl.Activity
+	@type $UI/system/components/justep/process/js/processControl#Activity
+	@property
+	@model UI2
+	@category javascript
+	@description 环节
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Activity
+	@class 环节
+	@model UI2
+	@category javascript
+	@description 环节
+	@param {Object} activityData 环节数据
+	@param {Array} children 子环节列表
+	@param {$UI/system/components/justep/process/js/processControl#Item} toItem 相应的流程信息
+*/	
+
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Activity#getID
+	@function
+	@description 获取环节的ID
+	@returns {String} 
+*/
+	
+/**
+	@name $UI/system/components/justep/process/js/processControl#Activity#getName
+	@function
+	@description 获取环节的名称
+	@returns {String} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Activity#getChildren
+	@function
+	@description 获取子环节列表
+	@returns {Array} ProcessControl.Activity形成的列表 
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Activity#getLable
+	@function
+	@description 获取环节的显示名称
+	@returns {String}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Activity#isSelectable
+	@function
+	@description 是否允许被选中
+	@returns {Boolean}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Activity#isOptional
+	@function
+	@description 是否可选
+	@returns {Boolean}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl.Item
+	@type $UI/system/components/justep/process/js/processControl#Item
+	@property
+	@model UI2
+	@category javascript
+	@description 流转信息或通知信息
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item
+	@class 流转信息或通知信息
+	@model UI2
+	@category javascript
+	@description 流转信息或通知信息
+	@param {Object} itemData json格式的内容
+*/	
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#getID
+	@function
+	@description 获取ID
+	@returns {String}  
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#getActivityID
+	@function
+	@description 获取相应的环节ID
+	@returns {String}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#isEnd
+	@function
+	@description 是否是结束环节
+	@returns {Boolean}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#isReadonly
+	@function
+	@description 是否只读
+	@returns {Boolean}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#isSelected
+	@function
+	@description 是否被选中
+	@returns {Boolean}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#setSelected
+	@function
+	@description 设置选中状态
+	@param {Boolean}
+	@returns {void}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#getProcess
+	@function
+	@description 获取Process
+	@returns {String}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#getUnit
+	@function
+	@description 获取环节
+	@returns {String}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#getTaskAssignMode
+	@function
+	@description 获取任务合并模式
+	@returns {String}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#getExecutorKinds
+	@function
+	@description 获取执行者类型
+	@returns {String}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#getExecutorRange
+	@function
+	@description 获取执行者范围
+	@returns {Object} json格式  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#getExecutors
+	@function
+	@description 获取默认执行者
+	@returns {Object} json格式  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#clearExecutors
+	@function
+	@description 清空默认执行者
+	@returns {void}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#addExecutor
+	@function
+	@description 添加执行者
+	@param {String} fid 执行者的FID
+	@param {String} fname 执行者的FName
+	@param {Boolean} responsible 是否是管理者
+	@returns {void}  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#getTaskRelationValues
+	@function
+	@description 获取所有的任务关系
+	@returns {Object} json格式的数据  
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#getTaskRelationValue
+	@function
+	@description 获取任务关系的值
+	@param {String} name 关系名称
+	@returns {Object}   
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#setTaskRelationValue
+	@function
+	@description 设置任务关系的值
+	@param {String} name 关系名称
+	@param {Object} value 值
+	@returns {void}   
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#getExts
+	@function
+	@description 获取扩展数据
+	@returns {Object} json
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#clearExts
+	@function
+	@description 清除扩展数据
+	@returns {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#getExt
+	@function
+	@description 获取扩展数据的值
+	@param {String} name 扩展数据的名称 
+	@returns {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/js/processControl#Item#setExt
+	@function
+	@description 设置扩展数据的值
+	@param {String} name 扩展数据的名称 
+	@param {Object} value 扩展数据的值 
+	@returns {void} 
+*/
+
+

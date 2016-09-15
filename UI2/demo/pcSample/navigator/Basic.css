@@ -1,0 +1,16 @@
+.blue{
+	background-color:#3C3CFF;
+}
+/*buttongroup组件*/
+.btn-group .btn.active{ background-color: #3C3CFF; color: white;}
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: #fff;
+    background-color: #3C3CFF;
+}
+/*tabs组件*/
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+	 background-color: #3C3CFF;
+	 color: #fff;
+	}
+	/*button组件*/
+	.btn.active{ background-color: #3C3CFF; color: white;}

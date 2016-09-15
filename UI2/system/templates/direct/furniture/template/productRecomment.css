@@ -1,0 +1,40 @@
+.sTitle{
+	padding-left:19px;
+	position: relative;
+}
+.sTitle h4{
+	padding-right:13px;
+	display: inline-block;
+	position: relative;
+}
+.sTitle:before{
+	content: "●";
+    position: absolute;
+    display: inline-block;
+    width: 19px;
+    text-align: center;
+    font-size: 18px;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+    color: #1a93df;
+}
+.sTitle h4:after{
+	content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    height: 0;
+    width: 1000px;
+    border-top: 1px solid #1a93df;
+    border-bottom: 1px solid #1a93df;
+}
+.media-body h4{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.list-group{
+	margin-bottom:0px;
+}

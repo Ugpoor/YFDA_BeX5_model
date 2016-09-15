@@ -1,0 +1,58 @@
+.padd{
+	padding-left: 3px;
+	margin-left: 5px;
+	padding-top: 2px;
+}
+.css{
+	overflow:hidden;
+	width:150px;
+	height: 100px;
+	
+}
+.button{
+	margin-top:3px;
+	margin-left:5px;
+	height: 25px;
+}
+.pass:HOVER {
+	color:red;
+}
+.li{
+	width:45px;
+	text-overflow :ellipsis; 
+	white-space : nowrap;
+	overflow : hidden; }
+.style{
+	clear: both; /* 清除左右浮动 */ 
+	width: 150px; /* 必须定义宽度 */ 
+	height:45px;
+	word-break: break-word; /* 文本行的任意字内断开 */ 
+	word-wrap: break-word; /* IE */ 
+	white-space: -hp-pre-wrap; /* HP printers */ 
+	white-space: -o-pre-wrap; 
+	}
+.nature{
+	clear: both; /* 清除左右浮动 */ 
+	width: 150px; /* 必须定义宽度 */ 
+	height:30px;
+	word-break: break-word; /* 文本行的任意字内断开 */ 
+	word-wrap: break-word; /* IE */ 
+	white-space: -hp-pre-wrap; /* HP printers */ 
+	white-space: -o-pre-wrap; 
+	}
+.big{ 
+	clear: both; /* 清除左右浮动 */ 
+	width: 500px; /* 必须定义宽度 */ 
+	height:100px;
+	word-break: break-word; /* 文本行的任意字内断开 */ 
+	word-wrap: break-word; /* IE */ 
+	white-space: -hp-pre-wrap; /* HP printers */ 
+	white-space: -o-pre-wrap; /* Opera 7 */ 
+}
+.checked{
+	background-color: yellow;
+}
+.mar{margin-left: 2px;
+	
+	}
+.padding{padding-left: 92px}

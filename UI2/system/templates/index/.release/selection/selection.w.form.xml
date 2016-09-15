@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" class="window c3YfMrm" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="c3YfMrm" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/window/window,">
+  <xhtml:style xmlns:xhtml="http://www.w3.org/1999/xhtml">@import url($model/UI2/system/components/designerCommon/tree/css/jqx.base.css); @import url($model/UI2/system/components/designerCommon/css/common.css); #imgWindow.c3YfMrm{background: rgb(255, 255, 255); overflow: hidden} #imgWindow.c3YfMrm img.c3YfMrm{border: 3px solid rgb(242, 242, 242); margin-right: 5px} #container.c3YfMrm{float: left; width: 800%} #imgContainer.c3YfMrm{float: left} .lr-btn.c3YfMrm{width: 0; height: 0; border-top: 40px dashed transparent; border-bottom: 40px dashed transparent; font-sie: 0; position: absolute; display: none; cursor: pointer; filter: alpha(opacity = 50); -moz-opacity: 0.5; opacity: 0.5} .arrow-left.c3YfMrm{border-right: 30px solid rgb(68, 68, 68)} .arrow-right.c3YfMrm{border-left: 30px solid rgb(68, 68, 68)}</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="c3YfMrm" class="c3YfMrm"/>  
+  <div xid="index" __cid="c3YfMrm" class="c3YfMrm"> 
+    <div class="row c3YfMrm" __cid="c3YfMrm"> 
+      <div class="col-xs-4 c3YfMrm" __cid="c3YfMrm"> 
+        <div class="nav-container c3YfMrm" style="border: none;overflow: auto;" id="jqxTree" __cid="c3YfMrm"/> 
+      </div>  
+      <div class="col-xs-8 c3YfMrm" id="descriptionDiv" style="padding-left:0" __cid="c3YfMrm"> 
+        <div bind-css="{hide: $model.templateSelected.get()}" style="margin-top:12px;font-size:x-large;" __cid="c3YfMrm" class="c3YfMrm">请选择一个模版</div>  
+        <div bind-css="{hide: !$model.templateSelected.get()}" style="padding-right:12px" __cid="c3YfMrm" class="c3YfMrm"> 
+          <h4 id="templateDesc" style="margin-top:12px;" __cid="c3YfMrm" class="c3YfMrm"/>  
+          <div id="imgWindow" style="margin-top:12px;" __cid="c3YfMrm" class="c3YfMrm"> 
+            <div id="container" __cid="c3YfMrm" class="c3YfMrm"> 
+              <div id="imgContainer" __cid="c3YfMrm" class="c3YfMrm"/> 
+            </div> 
+          </div>  
+          <a class="lr-btn arrow-left c3YfMrm" bind-mousedown="leftMousedown" __cid="c3YfMrm"/>  
+          <a class="lr-btn arrow-right c3YfMrm" bind-mousedown="rightMousedown" __cid="c3YfMrm"/> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>

@@ -1,0 +1,27 @@
+/**
+	@name $UI/system/components/justep/code/code
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description code,代码逻辑组件
+*/
+
+/**
+	@name $UI/system/components/justep/code/code#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/code/code#exec
+	@function
+	@description 执行代码逻辑,参数按code定义顺序给出
+*/
+
+/**
+ @name $UI/system/components/justep/code/code#exec
+ @operation
+ @description 执行代码逻辑,参数按code定义
+ @returns {void}
+*/

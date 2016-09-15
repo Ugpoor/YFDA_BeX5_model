@@ -1,0 +1,114 @@
+/**
+	@name cordova-plugin-device-orientation
+	@class 
+	@description 指南针插件
+	@model Native
+	@category plugin
+	@declareVar navigator.compass
+*/
+
+/**
+	@name cordova-plugin-device-orientation.getCurrentHeading
+	@function
+	@see cordova-plugin-device-orientation.CompassHeading
+	@see cordova-plugin-device-orientation.CompassError
+	@param {Function} successCallback 请求成功的回调，返回cordova-plugin-device-orientation.CompassHeading对象
+    @param {Function} errorCallback 请求失败的回调，返回cordova-plugin-device-orientation.CompassError对象
+    @param {CompassOptions} options 请求数据的参数(not use)
+	@returns {void}
+	@description 获取当前的指南针
+*/
+
+/**
+	@name cordova-plugin-device-orientation.watchHeading
+	@function
+	@see cordova-plugin-device-orientation.CompassHeading
+	@see cordova-plugin-device-orientation.CompassError
+	@param {Function} successCallback 请求成功的回调，返回cordova-plugin-device-orientation.CompassHeading对象
+    @param {Function} errorCallback 请求失败的回调，返回cordova-plugin-device-orientation.CompassError对象
+    @param {HeadingOptions} options 请求数据的参数
+    <br/><b>参数结构</b>
+    <xmp>
+    	{
+    		"frequency":{Number} 频率，单位毫秒,缺省为100
+    		"filter":{Number} 筛选器，当设置此值时，frequency不起作用
+    	}
+    </xmp>
+	@returns {String}指南针区域标识，作为Compass.clearWatch的参数
+	@description 监听指南针方向
+*/
+
+/**
+	@name cordova-plugin-device-orientation.clearWatch
+	@function
+	@param {String} watchId Compass.watchHeading返回的指南针区域标识
+	@returns {void}
+	@description 停止监听
+*/
+
+/**
+	@name cordova-plugin-device-orientation.CompassHeading
+	@class 
+	@description 请求成功的回调
+	@model Native
+	@category EventClass
+	@declareVar CompassHeading
+*/
+
+/**
+	@name cordova-plugin-device-orientation.CompassHeading.magneticHeading
+	@property
+	@type Number
+	@description 度数，范围0-359.99
+*/
+
+/**
+	@name cordova-plugin-device-orientation.CompassHeading.trueHeading
+	@property
+	@type Number
+	@description 实际方位度数，范围0-359.99，负数表示无效
+*/
+
+/**
+	@name cordova-plugin-device-orientation.CompassHeading.headingAccuracy
+	@property
+	@type Number
+	@description 偏差
+*/
+
+/**
+	@name cordova-plugin-device-orientation.CompassHeading.timestamp
+	@property
+	@type Date
+	@description 时间戳
+*/
+
+/**
+	@name cordova-plugin-device-orientation.CompassError
+	@class 
+	@description 错误异常的回调
+	@model Native
+	@category EventClass
+	@declareVar CompassError
+*/
+
+/**
+	@name cordova-plugin-device-orientation.CompassError.code
+	@property
+	@type String
+	@description 错误编码
+*/
+
+/**
+	@name cordova-plugin-device-orientation.CompassError.COMPASS_INTERNAL_ERR
+	@constant
+	@type Number
+	@description 常量值 0
+*/
+
+/**
+	@name cordova-plugin-device-orientation.CompassError.COMPASS_NOT_SUPPORTED
+	@constant
+	@type Number
+	@description 常量值 20
+*/

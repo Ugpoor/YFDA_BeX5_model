@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/windowRunner/windowRunner" tag-name="span" icon="windowRunner.gif"
+		binding-component="$UI/system/components/justep/windowRunner/windowRunner"
+		parent-range="$UI/system/components/justep/window/window" resizable="false"
+		design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="src" text="页面文件" editor-ref="fileDialog" editor-parameter="*.w"/>
+			<property name="title" text="对话框标题"/>
+			<property name="process" text="打开窗口的process，默认使用当前环境中的process"/>
+			<property name="activity" text="打开窗口的activity，默认使用当前环境中的activity"/>
+		</properties>
+		
+		<property-editors>
+		</property-editors>
+		
+		<events>
+			<event name="onSend" parameters="event"/>
+			<event name="onReceive" parameters="event"/>
+			<event name="onOpen" parameters="event"/>
+			<event name="onClose" parameters="event"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+			<span component="$UI/system/components/justep/windowRunner/windowRunner"/>
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

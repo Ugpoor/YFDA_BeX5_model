@@ -1,0 +1,54 @@
+/**
+	@name $UI/system/api/native/wxShop
+	@class
+	@category javascript
+	@model UI2
+	@description 微信小店，仅在微信公众号中有效。
+	@example 
+	<xmp> 
+	  var shop = require('$UI/system/api/native/wxShop');
+	  shop.openProductSpecificView({
+		  productId : 'pDF3iY_m2M7EQ5EKKKWd95kAxfNw',
+		  extInfo : '123'
+	  });
+	</xmp>
+*/
+
+/**
+	@name $UI/system/api/native/wxShop.openProductSpecificView
+	@function
+	@description  打开产品详情页
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		productId : {string} 商品id,
+		viewType: {string}   0.默认值，普通商品详情页1.扫一扫商品详情页2.小店商品详情页
+	} 
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/wxShop.addCard
+	@function
+	@description  批量添加卡券接口 see: http://mp.weixin.qq.com/wiki/home/index.html
+	@param {Object} options 选项 
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/wxShop.chooseCard
+	@function
+	@description  拉取适用卡券列表并获取用户选择信息  see: http://mp.weixin.qq.com/wiki/home/index.html
+	@param {Object} options 选项 
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/wxShop.openCard
+	@function
+	@description 查看微信卡包中的卡券接口  see: http://mp.weixin.qq.com/wiki/home/index.html
+	@param {Object} options 选项 
+	@return {void}
+*/

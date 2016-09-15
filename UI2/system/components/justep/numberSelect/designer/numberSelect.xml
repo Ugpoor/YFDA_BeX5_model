@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/numberSelect/numberSelect" tag-name="input" icon="numberSelect.gif" 
+		binding-component="$UI/system/components/justep/numberSelect/numberSelect" 
+        component-type="formControl" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" text="引用" editor-ref="dataRef" editor-parameter='{"hasLabel":"false"}'/>	
+			<property name="min" text="最小值" default-value="0" data-type="integer"  readonly="false"/>
+			<property name="max" text="最大值" default-value="100" data-type="integer"  readonly="false"/>
+			<property name="showItemSize" text="下拉选择项显示数" default-value="7" data-type="integer"  readonly="false"/>
+			<property name="showCharSize" text="下拉选择项显示字符数，不够时左补'0'" data-type="integer"  readonly="false"/>
+			<property name="placeHolder" text="提示信息"/>
+			<property name="autoFocus" text="在页面加载时是否获得焦点" default-value="false" data-type="boolean"/>
+			<property name="autoComplete" text="使用输入字段的自动完成功能" default-value="false" data-type="boolean"/>
+			
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "form-control x-numberSelect"
+					},	 
+					"2size": {
+						label: "尺寸样式",
+						value: "input-lg|input-sm",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" default-value="false" data-type="boolean"/>
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+			<event name="onChange" text="值改变事件"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<input component="$UI/system/components/justep/numberSelect/numberSelect" class="form-control x-numberSelect"/>
+		   ]]></template>
+		</templates>
+	</element>
+	
+</elements>

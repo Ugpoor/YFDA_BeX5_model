@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.justep.cordova.plugin.youkuplayer">
+	<name>优酷播放插件</name>
+	<description>优酷视频播放，登陆，注销，查询登陆状态</description>
+		<!-- common -->
+	<platform name="common">
+	    <!-- client_id及client_secret配置  这里需要切换为自己的id和secret -->
+	    <param name="client_id" displayName="优酷APP KEY" />
+		<param name="client_secret" displayName="优酷APP Secret" />
+	</platform>
+</plugin>

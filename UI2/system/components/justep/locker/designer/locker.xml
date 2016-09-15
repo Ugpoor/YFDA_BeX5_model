@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/locker/locker" tag-name="canvas" icon="locker.png" text="手势密码" 
+		binding-component="$UI/system/components/justep/locker/locker" 
+		component-type="formControl"
+		design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="mode" text="模式" editor-ref="locker-mode" readonly="true"/>	
+			<property name="password" text="用于检验模式的密码" editor-ref="locker-password" />	
+			<property name="R" text="圆半径" default-value="26" data-type="integer"/>	
+			
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-locker"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		 
+		<toolbar>	
+		</toolbar>
+
+		<property-editors>
+			<property-editor name="locker-mode" type="list">
+				<static-data value="1:校验密码模式,2:设置密码模式,0:通用模式" />
+			</property-editor>
+			<property-editor name="locker-password" type="dialog" 
+				url="$UI/system/components/justep/locker/designer/setPassword.w"
+				editor-parameter="{width:600,height:500}" >
+			</property-editor>
+		</property-editors>
+
+		<events>  <!--组件事件-->
+			<group name="check">		
+				<event name="onCheckSuccess"  text="校验密码成功"/>
+				<event name="onCheckError"  text="校验密码失败"/>
+			</group>	
+			<group name="password">		
+				<event name="onPasswordFirstSuccess"  text="首次输入密码成功"/>
+				<event name="onPasswordSuccess"  text="设置密码成功"/>
+				<event name="onPasswordError"  text="设置密码失败"/>
+			</group>	
+			<event name="onInput"  text="普通模式输入事件"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+				<canvas component="$UI/system/components/justep/locker/locker" class="x-locker" mode="1" style="width:320px;height:320px;"/> 
+		   ]]></template>
+		</templates>
+	</element>
+
+		
+</elements>

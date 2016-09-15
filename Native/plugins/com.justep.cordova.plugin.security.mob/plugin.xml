@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android" id="com.justep.cordova.plugin.security.mob"
+	version="5.3.0">
+	<name>MOB_SMS</name>
+	<engines>
+		<engine name="cordova" version=">=3.0.0" />
+	</engines>
+
+	<js-module src="www/sms.js" name="mobsms">
+		<clobbers target="window.navigator.mobsms" />
+	</js-module>
+
+	<!-- android -->
+	<platform name="android">
+		<source-file
+			src="src/android/com/justep/cordova/plugin/security/mob/PluginSMSSDK.java"
+			target-dir="src/com/justep/cordova/plugin/security/mob" />
+
+		<source-file src="src/android/MobTools.jar" target-dir="libs" />
+		<source-file src="src/android/MobCommons.jar" target-dir="libs" />
+		<source-file src="src/android/SMSSDK-2.0.0.jar"
+			target-dir="libs" />
+
+		<!-- <source-file src="src/android/arm64-v8a/libsmssdk.so" -->
+		<!-- target-dir="libs/arm64-v8a" /> -->
+		<source-file src="src/android/armeabi/libsmssdk.so"
+			target-dir="libs/armeabi" />
+		<source-file src="src/android/armeabi-v7a/libsmssdk.so"
+			target-dir="libs/armeabi-v7a" />
+		<source-file src="src/android/mips/libsmssdk.so"
+			target-dir="libs/mips" />
+		<source-file src="src/android/x86/libsmssdk.so"
+			target-dir="libs/x86" />
+		<!-- <source-file src="src/android/x86_64/libsmssdk.so" -->
+		<!-- target-dir="libs/x86_64" /> -->
+
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.RECEIVE_SMS" />
+			<uses-permission android:name="android.permission.GET_TASKS" />
+			<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+		</config-file>
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<preference name="mobsms_mMode" value="$mobsms_mMode" />
+			<preference name="mobsms_appKey" value="$mobsms_appKey" />
+			<preference name="mobsms_appSecret" value="$mobsms_appSecret" />
+			<feature name="PluginSMSSDK">
+				<param name="android-package"
+					value="com.justep.cordova.plugin.security.mob.PluginSMSSDK" />
+			</feature>
+		</config-file>
+	</platform>
+
+	<!-- ios -->
+	<platform name="ios">
+		<allow-intent href="itms:*" />
+		<allow-intent href="itms-apps:*" />
+		<config-file target="config.xml" parent="/*">
+			<feature name="PluginSMSSDK">
+				<param name="ios-package" value="PluginSMSSDK" />
+				<param name="onload" value="true" />
+			</feature>
+			<preference name="mobsms_mMode" value="$mobsms_mMode" />
+			<preference name="mobsms_appKey" value="$mobsms_appKey" />
+			<preference name="mobsms_appSecret" value="$mobsms_appSecret" />
+		</config-file>
+
+		<header-file src="src/ios/PluginSMSSDK.h" />
+		<source-file src="src/ios/PluginSMSSDK.m" />
+		
+		<!-- SMS_SDK依赖库 -->
+		<framework src="libicucore.dylib"/>
+		<framework src="JavaScriptCore.framework" />
+		<framework src="MessageUI.framework" />
+		<framework src="libstdc++.dylib"/>
+		<framework src="AddressBook.framework" />
+		<framework src="AddressBookUI.framework" />
+		<framework src="libz.dylib" weak="true" />
+		<framework src="AddressBook.framework" />
+		<framework src="src/ios/SMS_SDK/MOBFoundation.framework"
+			custom="true" />
+		<framework src="src/ios/SMS_SDK/SMS_SDK.framework" custom="true" />
+
+	
+	</platform>
+</plugin>

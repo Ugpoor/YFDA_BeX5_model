@@ -1,0 +1,31 @@
+/**
+	@name com.justep.cordova.plugin.push
+	@class 
+	@description 消息推送 
+	@model Native
+	@category plugin
+	@declareVar navigator.push
+*/
+/**
+	@name com.justep.cordova.plugin.push.connect
+ 	@function
+ 	@param {Function} successCB 执行成功回调函数
+ 	@param {Function} errorCB 执行失败回调函数
+ 	@param {Object} options 相关参数
+ 	@returns {void}
+ 	@description 连接后台
+*/
+/**
+	@name com.justep.cordova.plugin.push.onMessage
+ 	@function
+ 	@param {Object} msg 消息体
+ 	@returns {void}
+ 	@description 收到消息的回调
+*/
+/**
+	@name com.justep.cordova.plugin.push.disConnect
+ 	@function
+ 	@param {Object} options 相关参数
+ 	@returns {void}
+ 	@description 断开连接
+*/

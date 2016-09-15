@@ -1,0 +1,7 @@
+[
+	{"name":"图标展示","src":"./text/articleList.w"},
+	{"name":"动态显示字体颜色","src":"./text/changeColor.w"},
+	{"name":"文本截取","src":"./text/cutout.w"},
+	{"name":"监听文本输入","src":"./text/listeningTextChange.w"},
+	{"name":"滚动文字","src":"./text/roll.w"}
+]

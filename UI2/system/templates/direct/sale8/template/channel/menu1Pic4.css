@@ -1,0 +1,5 @@
+.o-note{ display:block; height:24px; text-overflow:ellipsis; white-space: nowrap; overflow: hidden;}
+h5{ margin-top:0;}
+
+.x-row{ padding-left:0px; padding-right:0px;}
+.btn-group .active{ color:#333;}

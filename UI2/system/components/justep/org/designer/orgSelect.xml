@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/org/orgSelect" tag-name="div" icon="orgSelect.png"
+		binding-component="$UI/system/components/justep/org/orgSelect"
+		component-type="formControl"   
+		design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="bind-ref" text="引用" editor-ref="dataRef" />	
+			<property name="bind-labelRef" text="label引用" editor-ref="dataRef" />	
+			
+			<property name="title" text="对话框标题" default-value='选择组织机构'/>
+			<property name="multiSelection" text="多选" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="cascade" text="级联选择，多选时有效" enabled-condition="@multiSelection='true'" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="includeOrgKind" readonly="true" text="包含的机构类型" editor-ref="orgKindsList"/>
+			<property name="includeDisabled" readonly="true" text="包含禁用" editor-ref="booleanList"/>
+
+			<property name="showFilter" text="显示过滤表达式" editor-ref="jSExpressionEditor"/>
+			<property name="selectFilter" text="选中过滤表达式" editor-ref="jSExpressionEditor"/>
+			<property name="orgDialog" path="@orgDlgXID" text="选择组织机构使用的对话框" is-id-ref="true" editor-ref="contextComponent" editor-parameter="orgDialog"/>
+    		<property name="itemValue" default-value="SA_OPOrg" editor-ref="orgRelationSelect"/>
+    		<property name="itemLabel" default-value="sName" editor-ref="orgRelationSelect"/>
+
+			<property name="process" text="打开组织选择对话框的process，默认使用当前环境中的process"/>
+			<property name="activity" text="打开组织选择对话框的activity，默认使用当前环境中的activity"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="orgRelationSelect" type="list">
+				<static-data value="SA_OPOrg,sName,sCode,sLongName,sFID,sFName,sFCode" />
+			</property-editor>
+		</property-editors>
+		
+		<events>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+		      <div class="input-group" component="$UI/system/components/justep/org/orgSelect"> 
+		        <input component="$UI/system/components/justep/input/input" class="form-control"
+		          readonly="true"/>  
+		        <span class="input-group-btn"> 
+					<a component="$UI/system/components/justep/button/button" class='btn btn-default' icon="icon-android-search"><i class="icon-android-search"/><span></span></a>
+		        </span> 
+		      </div> 
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/org/orgSelectPC" tag-name="div" icon="orgSelect.png" text="org下拉选择"
+		binding-component="$UI/system/components/justep/org/orgSelectPC"
+		component-type="formControl" 
+		is-complex-component="true" 
+		design-view="web-designer">
+		<inner-component-config>
+			<item name="$UI/system/components/justep/data/bizData" exclude-properties="writer,creator,columns,updateMode,directDelete,confirmDelete,relation,data,confirmDeleteText,confirmRefresh,confirmRefreshText,autoNew,nodeLevelRelation">
+				<properties>
+					<property name="reader" readonly="true" editor-ref="" default-value="/system/logic/action/queryOrgAction"/>
+					
+					<property name="concept" readonly="true" editor-ref="" default-value="SA_OPOrg"/>
+					<property name="offset" readonly="true" editor-ref="" default-value="0"/>
+					<property name="limit" readonly="false" />
+					<property name="isTree" readonly="true" editor-ref="" default-value="true"/>			        
+		
+					<property name="parentRelation" readonly="true" editor-ref="" default-value="sParent"/>
+					<property name="nodeKindRelation" readonly="true" editor-ref="" default-value="sNodeKind"/>
+					<property name="rootFilter" readonly="false"/>
+					<property name="delayLoad" readonly="false"/>      
+				</properties>
+			</item>
+		</inner-component-config>
+
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" text="引用" editor-ref="dataRef" />	
+			<property name="bind-labelRef" text="label引用" editor-ref="dataRef" />	
+			<property name="bind-extRef" text="ext引用" editor-ref="dataRef" />	
+			<property name="defaultLabel" text="空值显示表达式，当空值时，用此表达式计算结果显示" editor-ref="jSExpressionEditor"/>
+			<property name="valueSeparator" text="多选值分隔符" default-value="," />	
+			<property name="labelSeparator" text="多选label值分隔符" default-value="," />	
+			<property name="extSeparator" text="多选ext值分隔符" default-value="," />
+			<property name="multiselect" text="多选" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="clearButton" text="使用清除数据按钮" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="optionHeight" text="下拉部分高度" default-value="300" data-type="integer"/>
+			<property name="autoOptionWidth" text="下拉部分宽度根据内容自适应" default-value="false" editor-ref="booleanList" readonly="true" data-type="boolean"/>
+			<property name="manageCodes" text="业务管理权限编码，多个业务管理权限用逗号分隔"/>
+			<property name="includeOrgKind" readonly="true" text="包含的机构类型" editor-ref="orgKindsList"/>
+			<property name="includeDisabled" readonly="true" text="包含禁用" editor-ref="booleanList"/>
+			<property name="selectFilter" text="选中过滤表达式" editor-ref="jSExpressionEditor"/>
+			
+			<group name="option">
+				<property name="value" path="option/@value" editor-ref="orgRelationSelect" required="true" text="与bind-ref对应的列" />
+				<property name="label" path="option/@label" editor-ref="orgRelationSelect"  text="与bind-labelRef对应的列" />
+				<property name="ext" path="option/@ext" editor-ref="orgRelationSelect" text="与bind-extRef对应的列" />
+				<property name="multikey" path="option/@multikey" text="多选辅助键" editor-ref="multikeyList" readonly="true"/>
+				<property name="multiboxonly" path="option/@multiboxonly" text="仅使用checkBox多选" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+				<property name="multiselectWidth" path="option/@multiselectWidth" text="多选列宽" default-value="20"/>
+				<property name="appearance" path="option/@appearance"  text="显示样式"  editor-ref="appearanceTreeList" readonly="true" default-value="true" />
+				<property name="expandColumn" path="option/@expandColumn" text="树形的展开列" readonly="true" default-value="sName" enabled--condition="option/@appearance='treeGrid' or option/@appearance='tree'" checkup--condition="option/@appearance='treeGrid' or option/@appearance='tree'"/>
+				<property name="useVirtualRoot" path="option/@useVirtualRoot" text="使用虚根" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean" enabled-condition="option/@appearance='treeGrid' or option/@appearance='tree'" checkup-condition="option/@appearance='treeGrid' or option/@appearance='tree'"/>
+				<property name="virtualRootLabel" path="option/@virtualRootLabel" text="虚根名称" enabled--condition="option/@appearance='treeGrid' or option/@appearance='tree'" checkup-condition="option/@appearance='treeGrid' or option/@appearance='tree'"/>
+			</group>	
+
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-gridSelect"
+					},	 
+					"2size": {
+						label: "尺寸样式",
+						value: "x-gridSelect-lg|x-gridSelect-sm",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" default-value="false" data-type="boolean"/>
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="orgRelationSelect" type="list">
+				<static-data value="SA_OPOrg,sName,sCode,sLongName,sFID,sFName,sFCode" />
+			</property-editor>
+			<property-editor name="appearanceTreeList" type="list">
+				<static-data value=":grid,treeGrid:treeGrid,tree:tree"></static-data>
+			</property-editor>
+			<property-editor name="multikeyList" type="list">
+				<static-data value=",shiftKey,altKey,ctrlKey"></static-data>
+			</property-editor>
+		</property-editors>
+		
+		<events>
+			<event name="onShowOption"  text="显示下拉"/>
+			<event name="onHideOption"  text="关闭下拉"/>
+			<event name="onTreeIconRender"  text="树形图标渲染"/>
+			<event name="onUpdateValue"  text="把选择的值更新到ref"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+		      <div class="x-gridSelect" component="$UI/system/components/justep/org/orgSelectPC">
+			    <div component="$UI/system/components/justep/data/bizData" autoLoad="false">
+			    </div>
+		      	<option>
+		            <columns> 
+		              <column name="sName"/>  
+		            </columns> 
+		      	</option> 
+		      </div> 
+		   ]]></template>
+		</templates>
+	</element>
+	
+ <element name="$UI/system/components/justep/org/orgSelectPC#option" 
+ 	component-type="foreach" 
+ 	discriminate-condition="parent()/@component='$UI/system/components/justep/org/orgSelectPC'"
+ 	tag-name="option" icon="option.gif" text="orgSelectPC参数">
+		<properties>
+			<property name="xid" text="编号" required="true"/>
+			<property name="value" editor-ref="orgRelationSelect" required="true" text="与bind-ref对应的列" />
+			<property name="label" editor-ref="orgRelationSelect"  text="与bind-labelRef对应的列" />
+			<property name="ext" editor-ref="orgRelationSelect" text="与bind-extRef对应的列" />
+			<property name="multikey" text="多选辅助键" editor-ref="multikeyList" readonly="true"/>
+			<property name="multiboxonly" text="仅使用checkBox多选" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="multiselectWidth" text="多选列宽" default-value="20"/>
+			<property name="appearance"  text="显示样式"  editor-ref="appearanceTreeList" readonly="true" default-value="true" />
+			<property name="expandColumn" text="树形的展开列" readonly="true" default-value="sName"/>
+			<property name="useVirtualRoot" text="使用虚根" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean" enabled-condition="@appearance='treeGrid' or @appearance='tree'" checkup-condition="@appearance='treeGrid' or @appearance='tree'"/>
+			<property name="virtualRootLabel" text="虚根名称" enabled-condition="@appearance='treeGrid' or @appearance='tree'" checkup-condition="@appearance='treeGrid' or @appearance='tree'"/>
+			<property name="class" text="class"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="orgRelationSelect" type="list">
+				<static-data value="SA_OPOrg,sName,sCode,sLongName,sFID,sFName,sFCode" />
+			</property-editor>
+			<property-editor name="appearanceTreeList" type="list">
+				<static-data value=":grid,treeGrid:treeGrid,tree:tree"></static-data>
+			</property-editor>
+			<property-editor name="multikeyList" type="list">
+				<static-data value=",shiftKey,altKey,ctrlKey"></static-data>
+			</property-editor>
+		</property-editors>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+			<option>
+			</option>
+			]]></template>
+		</templates>
+		<events>  <!--组件事件-->
+		</events>
+
+		<toolbar>		
+		</toolbar>
+ </element> 
+
+	<element name="$UI/system/components/justep/org/orgSelectPC#column" tag-name="column" icon="column.gif" text="column" display-property="ref"
+		     discriminate-condition="parent()/parent()/parent()/@component='$UI/system/components/justep/org/orgSelectPC'" parent-range="$UI/system/components/justep/org/orgSelectPC#columns" d_resiable="false" resizable="false"
+		     design-view="web-designer" extend="$UI/system/components/justep/gridSelect/gridSelect#column">
+	</element>	
+	
+	<element name="$UI/system/components/justep/org/orgSelectPC#columns" tag-name="columns" icon="columns.gif" text="columns"
+		     discriminate-condition="parent()/parent()/@component='$UI/system/components/justep/org/orgSelectPC'" d_resiable="false" resizable="false"
+		     design-view="web-designer"
+  			extend="$UI/system/components/justep/gridSelect/gridSelect#columns">
+ </element> 	
+</elements>

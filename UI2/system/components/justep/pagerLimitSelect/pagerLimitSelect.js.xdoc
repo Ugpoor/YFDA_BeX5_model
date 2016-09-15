@@ -1,0 +1,14 @@
+/**
+	@name $UI/system/components/justep/pagerLimitSelect/pagerLimitSelect
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description pagerLimitSelect
+*/
+
+/**
+	@name $UI/system/components/justep/pagerLimitSelect/pagerLimitSelect#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/

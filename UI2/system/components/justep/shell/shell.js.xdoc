@@ -1,0 +1,122 @@
+/**
+	@name $UI/system/components/justep/shell/shell
+	@component 
+	@extends $UI/system/lib/portal/shell
+	@model UI2
+	@description shell组件
+*/
+
+/**
+	@name $UI/system/components/justep/shell/shell#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/shell/shell#receiveMessageType
+	@attribute 
+	@type string
+	@description 接收消息类型，缺省接收全部的sendMessage的消息，否则只接收匹配类型的消息
+*/
+
+/**
+	@name $UI/system/components/justep/shell/shell#sendMessage
+	@function
+ 	@param {object} msg <b>[required]</b>消息
+ 	@param {string} type 消息类型,指定发送给和messageFlag属性匹配的shell组件
+	@description 发送消息
+*/
+
+/**
+	@name $UI/system/components/justep/shell/shell#onMessage
+	@event
+	@description <b>[回调型事件]</b>接收消息事件
+	@param {$UI/system/components/justep/shell/shell#MessageEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"message" : 传送的消息,
+		"type" : 消息类型
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/shell/shell#MessageEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 接收消息事件
+*/
+ 
+/**
+ @name $UI/system/components/justep/shell/shell#MessageEvent.message
+ @property
+ @type {object}
+ @description 传送的消息
+*/ 
+
+/**
+ @name $UI/system/components/justep/shell/shell#MessageEvent.type
+ @property
+ @type {string}
+ @description 消息类型
+*/ 
+
+/**
+ @name $UI/system/components/justep/shell/shell#sendMessage
+ @operation
+ @description 发送消息
+ @param {object} msg <b>[required]</b>消息
+ @param {string} type 消息标识,指定发送给和messageFlag属性匹配的shell组件
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/shell/shell#loadPage
+ @operation
+ @description 加载页
+ @param {object} url <b>[required]</b>加载页url,类似  {url:"$UI/portal/index.w"} 或者 "$UI/portal/index.w"
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/shell/shell#showPage
+ @operation
+ @description 显示页
+ @param {object} url <b>[required]</b>打开的页Url,类似  {url:"$UI/portal/index.w"} 或者 "$UI/portal/index.w"
+ @param {object} data 传递到页面的参数
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/shell/shell#showLeft
+ @operation
+ @description 显示左边栏
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/shell/shell#showRight
+ @operation
+ @description 显示右边栏
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/shell/shell#showMainPage
+ @operation
+ @description 显示首页
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/shell/shell#closePage
+ @operation
+ @description 关闭页面
+ @param {object} url 关闭页Url,类似  {url:"$UI/portal/index.w"} 或者 "$UI/portal/index.w",缺省关闭当前页
+ @returns {void}
+*/

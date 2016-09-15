@@ -1,0 +1,175 @@
+/**
+	@name $UI/system/components/justep/org/orgDialogPC
+	@component 
+	@extends $UI/system/components/justep/windowDialog/windowDialog
+	@model UI2
+	@description OrgDialogPC
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#title
+	@attribute
+	@property 
+	@type string
+	@description 显示的标题
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#selectFilter
+	@attribute
+	@property 
+	@type string
+	@description 选中过滤表达式
+	<xmp>
+	表达式执行的this是行，即$row
+	当前表达式中可使用变量: 
+		"$model" : 当前的model,
+		"$row" : {$UI/system/components/justep/data/data#Row} 当前过滤执行的行
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#multiSelection
+	@attribute
+	@property 
+	@type boolean
+	@description 是否多选
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#cascade
+	@attribute
+	@property 
+	@type boolean
+	@description 多选时是否级联选择
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#manageCodes
+	@attribute
+	@property 
+	@type string
+	@description 业务管理权限编码，多个业务管理权限用逗号分隔
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#includeOrgKind
+	@attribute
+	@property 
+	@type string
+	@description 包含的机构类型，缺省：全部类型
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#includeDisabled
+	@attribute
+	@property 
+	@type boolean
+	@description 包含禁用组织，缺省：false
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#showCommonGroup
+	@attribute
+	@property 
+	@type boolean
+	@description 显示常用组，缺省：true
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#rootFilter
+	@attribute
+	@property 
+	@type string
+	@description 组织根数据KSQL过滤表达式
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#filter
+	@attribute
+	@property 
+	@type string
+	@description 组织数据KSQL过滤表达式
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#open
+	@function
+	@param {object} option
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"reload" : 重新加载对话框,
+		"data" : {
+			selected : {List<$UI/system/components/justep/data/data#Row>} 选中的行
+		},
+		其他set可以设置的属性
+	}
+	</xmp>	
+	@description 打开对话框
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"title" : {string} 显示的标题
+		"limit" : {number} 加载数据的list一页的记录数,>0的数，默认12
+		"cascade": {boolean} 多选时是否级联选择
+		"selectFilter": {string} 选中过滤表达式
+		"multiSelection": {boolean} 是否多选
+		"includeOrgKind": {string} 显示的组织类型，组织扩展名使用","分隔的字符串类型，如：.psm,.dpt
+		"includeDisabled": {boolean} 是否显示禁用
+		"manageCodes": {string} 业务管理权限编码，多个业务管理权限用逗号分隔
+		"rootFilter": {string} 组织根数据KSQL过滤表达式
+		"filter": {string} 组织数据KSQL过滤表达式
+		"process": {string}
+		"activity": {string}
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："title"、"limit"、"cascade"、"showFilter"、"selectFilter"、"multiSelection"、"manageCodes"、"includeDisabled"、"includeOrgKind"、"process"、"activity"
+	@return {Object} 
+*/
+
+/**
+@name $UI/system/components/justep/org/orgDialogPC#ReceiveEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 组织选择返回事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/org/orgDialogPC#ReceiveEvent.data
+ @property
+ @type {List<$UI/system/components/justep/data/data#Row>}
+ @description 返回的组织对象数组
+*/ 
+
+/**
+	@name $UI/system/components/justep/org/orgDialogPC#onReceive
+	@event
+	@description <b>[回调型事件]</b>.w返回数据事件
+	@param {$UI/system/components/justep/org/orgDialogPC#ReceiveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"data" :　{List<$UI/system/components/justep/data/data#Row>} 返回的数据
+	}
+	</xmp>	
+*/
+

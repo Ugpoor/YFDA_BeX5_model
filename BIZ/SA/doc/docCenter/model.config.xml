@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><model xmlns="http://www.justep.com/model">
+	
+	<use>/SA/doc/logic/action</use>
+	<use>/system/ontology</use>
+	<use>/system/logic/action</use>
+	<use>/system/logic/fn</use>
+</model>

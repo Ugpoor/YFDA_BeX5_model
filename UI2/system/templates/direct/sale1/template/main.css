@@ -1,0 +1,39 @@
+.x-titlebar{ background-color:#170153;}
+.x-cards{ background-color:#170153;}
+
+.text-white{ color:#fff;}
+
+.bg-blue{ background-color:#0086cf;}/*蓝*/
+.bg-orange{ background-color:#db532d;}/*桔*/
+.bg-purple{ background-color:#623dbe;}/*紫*/
+.bg-cyan{ background-color:#00bef2;}/*青*/
+.bg-green{ background-color:#009a00;}/*绿*/
+.bg-meired{ background-color:#b41c43;}/*枚红*/
+
+.x-img1{ width:40px; height:28px;}
+
+.x-menu.x-row{ margin-bottom:5px;}
+.x-menu.x-row .col{ padding:0;}
+
+.x-menu1{ height:169px;}
+.x-menu1 .col:nth-child(1){ height:159px; padding-top:15%;}
+.x-menu1 .col:nth-child(2){ padding-left:5px;}
+.x-menu1 .media, .x-menu1 .media>div{ height:77px; line-height:77px; padding-left:5%;}
+.x-menu1 .media:nth-child(1){ margin-bottom:5px;}
+.x-menu1 .media:nth-child(2){ margin-top:0;}
+
+.x-menu2{ height:100px;}
+.x-menu2 .col:nth-child(1){ height:95px; padding-right:5px; overflow:hidden;}
+.x-menu2 .col:nth-child(1) .img-responsive{ width:100%; height:100px;}
+.x-menu2 .col:nth-child(2){ height:95px; padding-top:20px;}
+
+.x-menu3{ height:100px;}
+.x-menu3 .col:nth-child(1),.x-menu3 .col:nth-child(3){ height:95px; padding-top:20px;}
+.x-menu3 .col:nth-child(2){ height:95px; padding:0 5px; overflow:hidden;}
+.x-menu3 .col:nth-child(2) img{ width:100%; height:95px;}
+
+.x-menu4{ height:100px;}
+.x-menu4 .col:nth-child(1){ height:95px; padding-top:20px;}
+.x-menu4 .col:nth-child(2){ padding-left:5px;}
+.x-menu4 .col:nth-child(2)>div{ height:95px; padding-top:20px;}
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.justep.cordova.plugin.qq">
+	<name>QQ插件</name>
+	<description>集成了QQSDK，提供QQ授权登录，分享等功能</description>
+	<!-- common -->
+	<platform name="common">
+		<param name="qq_app_id" displayName="qq app id" />
+	</platform>
+</plugin>
+
+

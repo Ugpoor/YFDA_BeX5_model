@@ -1,0 +1,142 @@
+/**
+	@name $UI/system/components/justep/windowRunner/windowRunner
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description windowRunner
+*/
+
+/**
+	@name $UI/system/components/justep/windowRunner/windowRunner#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/windowRunner/windowRunner#src
+	@attribute
+	@property  
+	@type string
+	@description .w的url，需要使用require.toUrl(...)处理
+*/
+
+/**
+	@name $UI/system/components/justep/windowRunner/windowRunner#process
+	@attribute
+	@property  
+	@type string
+	@description 打开.w使用的process，缺省使用当前环境的
+*/
+
+/**
+	@name $UI/system/components/justep/windowRunner/windowRunner#activity
+	@attribute
+	@property  
+	@type string
+	@description 打开.w使用的activity，缺省使用当前环境的
+*/
+
+/**
+	@name $UI/system/components/justep/windowRunner/windowRunner#title
+	@attribute
+	@property  
+	@type string
+	@description 标题
+*/
+
+/**
+	@name $UI/system/components/justep/windowRunner/windowRunner#open
+	@function
+	@param {object} option
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"src" :.w的url
+		"data" : 传入.w的数据部分
+	}
+	</xmp>	
+	@description 打开
+*/
+
+/**
+	@name $UI/system/components/justep/windowRunner/windowRunner#close
+	@function
+	@description 关闭
+*/
+
+/**
+	@name $UI/system/components/justep/windowRunner/windowRunner#onReceive
+	@event
+	@description <b>[回调型事件]</b>.w返回数据事件
+	@param {$UI/system/components/justep/windowDialog/windowDialog#ReceiveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"data" :　返回的数据
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/windowRunner/windowRunner#onSend
+	@event
+	@description <b>[回调型事件]</b>向.w传递数据事件
+	@param {$UI/system/components/justep/windowDialog/windowDialog#SendEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"data" :　传递的数据
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/windowRunner/windowRunner#OpenEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 打开功能事件
+*/
+ 
+/**
+ @name $UI/system/components/justep/windowRunner/windowRunner#OpenEvent.innerModel
+ @property
+ @type {$UI/system/lib/base/modelBase}
+ @description 打开功能的model
+*/ 
+
+/**
+	@name $UI/system/components/justep/windowRunner/windowRunner#onOpen
+	@event
+	@description <b>[回调型事件]</b>打开事件
+	@param {$UI/system/components/justep/windowRunner/windowRunner#OpenEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"innerModel" : 打开功能的model
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/windowRunner/windowRunner#onClose
+	@event
+	@description <b>[回调型事件]</b>关闭事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template-config>
+	<catalog name="mobile" text="移动" icon="img/mobile.png" order="2">
+		<catalog name="simple" text="简单页面" order="5">
+			<template path="$UI/system/templates/simple/list1" text="列表" />
+			<template path="$UI/system/templates/simple/form1" text="表单" />
+			<template path="$UI/system/templates/simple/tree" text="树形视图" />
+		</catalog>
+		<catalog name="listDetail" text="列表/详细" order="4">
+			<template path="$UI/system/templates/listDetail/listForm1"
+				text="列表+表单" />
+			<template path="$UI/system/templates/listDetail/complexListForm"
+				text="主从表" />
+			<!-- <template path="$UI/system/templates/listDetail/listFormDlg" text="列表+表单(对话框)" 
+				/> <template path="$UI/system/templates/listDetail/treeForm1" text="树形+表单" 
+				/> -->
+		</catalog>
+		<catalog name="flow" text="流程" order="3">
+			<template path="$UI/system/templates/flow/singleProcess"
+				text="列表(标签页)" />
+			<template path="$UI/system/templates/flow/complexProcess"
+				text="主从表流程(标签页)" />
+			<template path="$UI/system/templates/flow/listFormProcess"
+				text="列表+详细(标签页)" />
+			<!-- <template path="$UI/system/templates/flow/listForm1" text="列表+详细(对话框)" 
+				/> -->
+		</catalog>
+		<catalog name="reportChart" text="报表/图表" order="2">
+			<template path="$UI/system/templates/report/grid" text="网格报表" />
+			<template path="$UI/system/templates/report/group" text="分组报表" />
+			<template path="$UI/system/templates/report/cross" text="交叉报表" />
+			<template path="$UI/system/templates/report/chart" text="图表" />
+		</catalog>
+	</catalog>
+	<catalog name="pc" text="桌面" icon="img/pc.png" order="1">
+		<catalog name="simple" text="简单页面" order="5">
+			<template path="$UI/system/templates/simplePC/list1" text="单表-列表" />
+			<!-- <template path="$UI/system/templates/simplePC/list2" text="列表2" /> -->
+<!-- 			<template path="$UI/system/templates/simplePC/form1" text="表单" /> -->
+			<!-- <template path="$UI/system/templates/simplePC/form2" text="表单2" /> -->
+			<template path="$UI/system/templates/simplePC/tree" text="树形视图" />
+		</catalog>
+		<catalog name="listDetailPC" text="列表/详细" order="4">
+			<template path="$UI/system/templates/listDetailPC/listForm1"
+				text="单表-列表+详细（标签页）" />
+			<template path="$UI/system/templates/listDetailPC/listFormExcelLayout"
+				text="单表-列表+详细(excel布局)" />
+			<template path="$UI/system/templates/listDetailPC/listDetailDialog"
+				text="单表-列表+详细(对话框)" />
+			<template path="$UI/system/templates/listDetailPC/listDetailDialogExcel"
+				text="单表-列表+详细(对话框excel布局)" />
+			<template path="$UI/system/templates/listDetailPC/complexListForm"
+				text="主从-列表" />
+			<template path="$UI/system/templates/listDetailPC/complexListForm2"
+				text="主从-表单列表" />
+			<template path="$UI/system/templates/listDetailPC/complexListForm2Excel"
+				text="主从-表单列表(excel布局)" />
+			<template path="$UI/system/templates/listDetailPC/listFormDetail"
+				text="主从-列表详细" />
+			<template path="$UI/system/templates/listDetailPC/listFormDetailExcel"
+				text="主从-列表详细(excel布局)" />
+			<template path="$UI/system/templates/listDetailPC/treeForm" text="树形+表单" />
+		</catalog>
+		<catalog name="flowPC" text="流程" order="3">
+			<template path="$UI/system/templates/flowPC/singleProcess"
+				text="单表流程" />
+			<template path="$UI/system/templates/flowPC/singleProcessExcel"
+				text="单表流程(excel布局)" />
+			<template path="$UI/system/templates/flowPC/queryProcess2"
+				text="单表流程查询" />
+			<template path="$UI/system/templates/flowPC/queryProcess2Excel"
+				text="单表流程查询(excel布局)" />
+			<template path="$UI/system/templates/flowPC/mainDetailProcess"
+				text="主从表流程" />
+			<template path="$UI/system/templates/flowPC/mainDetailProcessExcel"
+				text="主从表流程(excel布局)" />
+			<template path="$UI/system/templates/flowPC/complexProcess"
+				text="主从表流程(对话框)" />
+			<template path="$UI/system/templates/flowPC/complexProcessExcel"
+				text="主从表流程(对话框excel布局)" />
+			<template path="$UI/system/templates/flowPC/queryProcess"
+				text="主从表流程查询" />
+			<template path="$UI/system/templates/flowPC/queryProcessExcel"
+				text="主从表流程查询(excel布局)" />
+		</catalog>
+
+		<catalog name="dialog" text="对话框" order="2">
+			<template path="$UI/system/templates/dialogPC/emptyDialog"
+				text="空白对话框" />
+			<template path="$UI/system/templates/dialogPC/listSingleSelectDialog"
+				text="列表单选" />
+			<template path="$UI/system/templates/dialogPC/listMultiSelectDialog"
+				text="列表多选" />
+			<template path="$UI/system/templates/dialogPC/treeSingleSelectDialog"
+				text="树单选" />
+			<template path="$UI/system/templates/dialogPC/treeMultiSelectDialog"
+				text="树多选" />
+			<!-- <template path="UI/system/templates/dialog/treeListSingleSelectDialog" 
+				text="树导航列表单选" /> <template path="UI/system/templates/dialog/treeListMultiSelectDialog" 
+				text="树导航列表多选" /> -->
+		</catalog>
+		<catalog name="reportChartPC" text="报表/图表" order="1">
+			<template path="$UI/system/templates/reportPC/grid" text="网格报表" />
+			<template path="$UI/system/templates/reportPC/group" text="分组报表" />
+			<template path="$UI/system/templates/reportPC/cross" text="交叉报表" />
+			<template path="$UI/system/templates/reportPC/chart" text="图表" />
+		</catalog>
+	</catalog>
+</template-config>

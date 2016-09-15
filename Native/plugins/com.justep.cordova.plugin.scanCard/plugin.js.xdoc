@@ -1,0 +1,92 @@
+/**
+	@name com.justep.cordova.plugin.scanCard
+	@class 
+	@description 名片识别
+	@model Native
+	@category plugin
+	@declareVar navigator.scanCard
+*/
+
+/**
+	@name com.justep.cordova.plugin.scanCard.auth
+ 	@function
+ 	@param {String} name 合作伙伴客户标识
+ 	@param {Function} successCallback 执行成功回调函数
+ 	@param {Function} errorCallback 执行失败回调函数
+ 	@returns {String} uid 统用户标识
+ 	@description 授权
+*/
+
+/**
+	@name com.justep.cordova.plugin.scanCard.checkAuth
+ 	@function
+ 	@param {Function} successCallback 执行成功回调函数（已授权）
+ 	@param {Function} errorCallback 执行失败回调函数 （未授权）
+ 	@returns {void}
+ 	@description 检查授权
+*/ 
+
+/**
+	@name com.justep.cordova.plugin.scanCard.clearAuthentication
+ 	@function
+ 	@param {Function} successCallback 执行成功回调函数
+ 	@param {Function} errorCallback 执行失败回调函数 
+ 	@returns {void}
+ 	@description  清除授权信息
+*/
+
+/**
+	@name com.justep.cordova.plugin.scanCard.takePicture
+ 	@function
+ 	@param {Function} successCallback 执行成功回调函数
+ 	@param {Function} errorCallback 执行失败回调函数 
+ 	@returns {void}
+ 	@description  拍照并且上传图片
+*/
+
+/**
+	@name com.justep.cordova.plugin.scanCard.uploadPicture
+ 	@function
+ 	@param {String} uuid 图片标识，上次上传过程事件返回。
+ 	@param {Function} successCallback 执行成功回调函数
+ 	@param {Function} errorCallback 执行失败回调函数 
+ 	@returns {void}
+ 	@description  重新上传图片
+*/
+
+/**
+	@name com.justep.cordova.plugin.scanCard.getCardByTime
+ 	@function
+ 	@param {Int} second 为时间戳，当前时间距1970年秒数，如果是0表示全部数据。
+ 	@param {Function} successCallback 执行成功回调函数
+ 	@param {Function} errorCallback 执行失败回调函数 
+ 	@returns {Object} 格式：{“datas”：value} value为多个名片信息对象组成的数组，详情见官方文档
+ 	@description  根据时间获取数据
+*/
+/**
+	@name com.justep.cordova.plugin.scanCard.getCardByUuid
+ 	@function
+ 	@param {Array} uuids 多个uuid组成的数组
+ 	@param {Function} successCallback 执行成功回调函数
+ 	@param {Function} errorCallback 执行失败回调函数 
+ 	@returns {Object} 格式：{“datas”：value} value为多个名片信息对象组成的数组，详情见官方文档
+ 	@description  根据时间获取数据
+*/
+/**
+	@name com.justep.cordova.plugin.scanCard.getCardPicture
+ 	@function
+ 	@param {String} uuid 图片标识，上次上传过程事件返回。
+ 	@param {Object} args 相关参数设置
+ 	<br/><b>参数格式：</b>
+	<xmp>
+		{
+			"album":Boolean - 是否将图片保存到相册,默认为false,
+			"imgPath":String - 保存的文件路径,字符串类型，无默认值,可为空,空则不保存，若路径不存在文件夹则创建此目录
+ 	 		"description":String - 保存的图片名字，字符串类型，无默认值，可为空，空则不保存	
+		}
+	</xmp>	
+ 	@param {Function} successCallback 执行成功回调函数
+ 	@param {Function} errorCallback 执行失败回调函数 
+ 	@returns {void}
+ 	@description  获取名片原图
+*/

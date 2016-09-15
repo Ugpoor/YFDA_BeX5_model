@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root> 
+  <item display="solid" label="协同办公"> 
+    <item label="工作交办" device="m" process="/OA/personalOffice/process/tasksAssigned/tasksAssignedProcess"
+      activity="mainActivity" url="$UI/OA/personalOffice/process/tasksAssigned/mainActivity.m.w"
+      color="#2fa4e7" iconClass="icon-android-contacts"/>  
+    <item label="日程管理"  device="m"  process="/OA/personalOffice/process/schedule/scheduleProcess"
+      activity="mainActivity" url="$UI/OA/personalOffice/process/schedule/mainActivity.m.w"
+      color="#2fa4e7" iconClass="icon-clipboard"/>  
+    <item label="出差管理"  device="m"  process="/OA/personalOffice/process/evection/evectionProcess"
+      activity="mainActivity" url="$UI/OA/personalOffice/process/evection/mainActivity.m.w"
+      color="#2fa4e7" iconClass="icon-plane"/>  
+    <item label="请假管理"  device="m"  process="/OA/personalOffice/process/leaveApply/leaveApplyProcess"
+      activity="listActivity" url="$UI/OA/personalOffice/process/leaveApply/listActivity.a"
+      color="#2fa4e7" iconClass="icon-coffee"/>  
+    <item label="请假申请" display="hide"  device="m"  process="/OA/personalOffice/process/leaveApply/leaveApplyProcess"
+      activity="businessActivity1" url="$UI/OA/personalOffice/process/leaveApply/businessActivity1.w"/>  
+    <item label="部门审批" display="hide"  device="m"  process="/OA/personalOffice/process/leaveApply/leaveApplyProcess"
+      activity="businessActivity2" url="$UI/OA/personalOffice/process/leaveApply/businessActivity2.w"/>  
+    <item label="请假申请"  device="m"  process="/OA/personalOffice/process/leaveApply/leaveApplyProcess"
+      activity="mainActivity" url="$UI/OA/personalOffice/process/leaveApply/mainActivity.w"
+      display="hide"/>  
+    <item label="总经理审批" display="hide"  device="m"  process="/OA/personalOffice/process/leaveApply/leaveApplyProcess"
+      activity="businessActivity3" url="$UI/OA/personalOffice/process/leaveApply/businessActivity3.w"/>  
+    <item label="董事长审批" display="hide"  device="m"  process="/OA/personalOffice/process/leaveApply/leaveApplyProcess"
+      activity="businessActivity4" url="$UI/OA/personalOffice/process/leaveApply/businessActivity4.w"/>  
+    <item label="综合办公室审批" display="hide"  device="m"  process="/OA/personalOffice/process/leaveApply/leaveApplyProcess"
+      activity="businessActivity5" url="$UI/OA/personalOffice/process/leaveApply/businessActivity5.w"/>  
+    <item label="初始化演示数据"  device="m"  process="/OA/personalOffice/process/initOADB/initOADBProcess"
+      activity="mainActivity" url="$UI/OA/personalOffice/process/initOADB/mainActivity.m.w"
+      display="solid"/>
+  </item>  
+  <item display="solid" label="CRM">
+    <item label="客户信息"  device="m"  process="/OA/CRM/process/customer/customerProcess" activity="mainActivity"
+      url="$UI/OA/CRM/process/customer/mainActivity.w"/>
+    <item label="客户拜访"  device="m"  process="/OA/CRM/process/customerVisit/customerVisitProcess"
+      activity="mainActivity" url="$UI/OA/CRM/process/customerVisit/mainActivity.m.w"/>
+  </item>
+</root>

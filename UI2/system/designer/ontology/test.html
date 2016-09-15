@@ -1,0 +1,79 @@
+
+<html>
+<head>
+<title>Designer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../common/jquery.js"></script>
+<!-- 		 <script type="text/javascript" src="ontologyAll.js"></script> -->
+<style>
+* {
+	font-size: 10pt;
+}
+</style>
+
+</head>
+
+
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0"
+	scroll="no" onselectstart="return false"
+	_style="-moz-user-select:none;">
+	<svg width="4000" height="3000" version="1.1%" id="svg1" xmlns="http://www.w3.org/2000/svg">
+	
+   <defs><marker id="markerEndArrow" viewbox="0 0 30 30" refx="10" refy="12.5" markerunits="strokeWidth" markerwidth="9" markerheight="30" orient="auto"><path strokeWidth="1px" stroke="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" d="M0.3125 0.625 9.3125 12.625 0.3125 24.625 21.3125 12.625 Z"></path></marker></defs>
+			<!-- 
+		<defs> <marker id="markerEndArrow" viewbox="0 0 30 30"
+			refx="10" refy="12.5" markerunits="strokeWidth" markerwidth="9"
+			markerheight="30" orient="auto">
+		<path style="stroke-width:1;stroke:black;fill:black;opacity:1"
+			d="M0.3125 0.625 9.3125 12.625 0.3125 24.625 21.3125 12.625 Z"></path></marker></defs>
+			
+			 -->
+<!-- 		<line style="marker-end:url(#markerEndArrow);stroke-width:5;stroke:brown;fill:none;" x1="125" x2="160" y1="135" y2="200"></line> -->
+		
+<!-- 		<path marker-end="url(#markerEndArrow)" fill-opacity="0" stroke-width="undefined" stroke="blue" d="M 337,108 L 357,200"></path> -->
+		</svg>
+
+
+</body>
+<script>
+	var createRawNode = function(nodeName, parent, style) {
+		var rawNode = document.createElementNS("http://www.w3.org/2000/svg", nodeName);
+		//	this.rawNode.setAttribute("style", style);		
+		//不适用style,改用属性
+		var styles = style.split(";")
+		for ( var i = 0; i < styles.length; i++) {
+			var ss = styles[i];
+			if (ss.indexOf(":") != -1) {
+				ss = ss.split(":");
+				rawNode.setAttribute(ss[0], ss[1]);
+			}
+		}
+
+		parent.appendChild(rawNode);
+		return rawNode;
+	}
+	var svgContainer = document.getElementById("svg1");
+	function createaArrow() {
+		var defNode = createRawNode("defs", svgContainer, "");
+
+		var marker = createRawNode("marker", defNode, 'id:markerEndArrow;viewbox:0 0 30 30;refx:10;refy:12.5;markerunits:strokeWidth;markerwidth:9;markerheight:30;orient:auto');
+
+		var pathNode = createRawNode("path", marker, 'strokeWidth:1px;stroke:rgb(0, 0, 0);fill:rgb(0, 0, 0);d:M0.3125 0.625 9.3125 12.625 0.3125 24.625 21.3125 12.625 Z');
+// 		pathNode.style.cssText = "stroke-width:1;stroke:black;fill:black;opacity:1";
+	}
+
+// 	createaArrow();
+	
+	setTimeout(function(){
+	createRawNode("path", svgContainer, "marker-end:url(#markerEndArrow);fill-opacity:0;stroke:blue;d:M 337,108 L 357,200");		
+	},500)
+
+	//
+
+	//this.rawNode = document.createElementNS(SVG_NS,nodeName); 
+	//	this.rawNode.setAttribute("style", style);		
+	//不适用style,改用属性
+
+	$('<line style="marker-end:url(#markerEndArrow);stroke-width:5;stroke:brown;fill:none;" x1="325" x2="660" y1="535" y2="200"></line>').appendTo($("svg"));
+</script>
+</html>

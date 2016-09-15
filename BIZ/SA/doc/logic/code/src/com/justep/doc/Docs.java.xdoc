@@ -1,0 +1,154 @@
+/**
+	@name com.justep.doc.Docs
+	@model BIZ
+	@category java
+	@class
+	@description 文档容器类
+*/
+
+/**
+	@name com.justep.doc.Docs#Docs
+	@function
+	@description 创建文档容器
+	@returns {Docs} 
+*/
+
+
+/**
+	@name com.justep.doc.Docs#setIsEditInfo
+	@function
+	@description 
+	设置是否是仅仅修改了文档属性信息，没有修改文件内容
+	<br/>
+	一般来说对文档对象的修改通常是修改文档内容,然后传到文档服务器形成当前文档的新版本，或者形成新的文档，但是也有少数情况是对这个文件进行关键字，描述信心的维护，这些信息不会影响文档的内容，这个时候需要设置editInfo为true，默认editInfo为false
+	
+	@param {boolean} editInfo
+	@returns {void}
+*/
+
+/**
+	@name com.justep.doc.Docs#getIsEditInfo
+	@function
+	@description 
+	@see com.justep.doc.Docs#setIsEditInfo
+	@returns {boolean}
+*/
+
+/**
+	@name com.justep.doc.Docs#query
+	@function
+	@description 查询符合条件的文档,装载到当前docs容器中,docs中原有的数据会丢失
+	@param {String} docID 文档的id
+	@param {String} docPath 文档的路径
+	@param {String} columns 需要查询的字段
+	@param {String} orderBy 排序的字段
+	@param {String} custom 自定义查询条件，符合ksql语法的where子句，直接采用and方式拼接到查询的ksql语句上
+	@returns {Docs} 
+*/
+
+/**
+	@name com.justep.doc.Docs#queryByDocPath
+	@function
+	@description 查询符合条件的文档,装载到当前docs容器中,docs中原有的数据会丢失
+	@param {String} docPath 文档的路径
+	@returns {Docs} 
+*/
+
+/**
+	@name com.justep.doc.Docs#queryByFileID
+	@function
+	@description 查询符合条件的文档,装载到当前docs容器中,docs中原有的数据会丢失
+	@param {String} fileID 文档id
+	@returns {Docs} 
+*/
+
+/**
+	@name com.justep.doc.Docs#queryByDocID
+	@function
+	@description 查询符合条件的文档,装载到当前docs容器中,docs中原有的数据会丢失
+	@param {String} fileID 文档id
+	@returns {Docs} 
+*/
+
+/**
+	@name com.justep.doc.Docs#addDirs
+	@function
+	@description 创建目录,并且会把创建的doc对象和使用到的父对象装载到当前容器中，docs中原有的数据会丢失.
+	@param {String} parentIDorPath 已经在当前容器中存在的父目录
+	@param {String} subPath 子目录 支持模型函数(fn)
+	@returns {boolean} 
+*/
+
+/**
+	@name com.justep.doc.Docs#addDoc
+	@function
+	@description 添加一个文档到当前容器中(目录也是Doc)
+	@param {String} sID 文档的id
+	@param {String} sDocName 文档名称
+	@param {String} sKind 文档类型
+		目录的sKind是dir
+		其他文件的skind是这个文件的mimeType
+	@param {Doc} dirDoc 文档所在的文件夹对象
+	@returns {Doc}
+*/
+
+/**
+	@name com.justep.doc.Docs#save
+	@function
+	@description 保存对当前容器所做的修改，需要存储到数据库的会存储数据库，需要同步文档服务的会同步到文档服务。
+	@returns {int} 
+*/
+
+/**
+	@name com.justep.doc.Docs#remove
+	@function
+	@description 从容器中移除指定的文档
+	@param {String} sID 文档的id
+	@returns {Docs} 
+*/
+
+/**
+	@name com.justep.doc.Docs#remove
+	
+	@function
+	@description 从容器中移除指定的文档
+	@param {Doc} doc 文档对象
+	@returns {Docs} 
+*/
+
+/**
+	@name com.justep.doc.Docs#size
+	@function
+	@description 获取当前容器中的文档数量
+	@returns {int}
+*/
+
+/**
+	@name com.justep.doc.Docs#get
+	@function
+	@description 
+	获取文档对象(从当前容器中获取，如果当前容器中不存在，则返回null)
+	@param {String} sID 文档的id
+	@returns {Doc} 
+*/
+
+/**
+	@name com.justep.doc.Docs#getIterator
+	@function
+	@description 返回所有文档的迭代器。
+	@returns {Iterator<Doc>}
+*/
+
+/**
+	@name com.justep.doc.Docs#getIsLogicDelete
+	@function
+	@description 是否是逻辑删除文档（默认是逻辑删除）
+	@returns {Boolean}
+*/
+
+/**
+	@name com.justep.doc.Docs#setIsLogicDelete
+	@function
+	@description 设置是否是逻辑删除文档（默认是逻辑删除）
+	@returns {void}
+*/

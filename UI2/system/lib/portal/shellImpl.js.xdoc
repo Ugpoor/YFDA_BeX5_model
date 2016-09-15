@@ -1,0 +1,34 @@
+/**
+	@name $UI/system/lib/portal/shellImpl
+	@class
+	@category javascript
+	@model UI2
+	@param {Object} model
+	@param {JSON} params 类似:{contentsXid:'pages',wingXid:"wing"}
+	@description shellImpl 一个小的调度引擎，可以加载页面，关闭页面，切换页面，侧面滑动出wing，同时支持路由等能力。
+*/
+
+
+/**
+	@name $UI/system/lib/portal/shellImpl#loadPage
+	@function
+	@param {JSON} params
+	@description 加载页面
+	@returns {Promise}
+*/
+
+/**
+	@name $UI/system/lib/portal/shellImpl#showPage
+	@function
+	@param {JSON} params
+	@description 显示页面
+	@returns {Promise}
+*/
+
+/**
+	@name $UI/system/lib/portal/shellImpl#closePage
+	@function
+	@param {JSON} params
+	@description 关闭当前页面
+	@returns {void}
+*/

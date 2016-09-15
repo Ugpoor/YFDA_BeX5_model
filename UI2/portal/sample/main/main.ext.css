@@ -1,0 +1,6 @@
+.iosstatusbar .x-portal.x-panel >.x-panel-content{
+	top:0 !important;
+}
+.no-iosstatusbar .x-portal.x-panel >.x-panel-content{
+	top:-20px!important;
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.justep.cordova.plugin.security.mob">
+    <name>安全验证</name>
+    <description>集成了mobSDK，提供短信验证的功能</description>
+    
+    <!-- common -->
+    <platform name="common">
+        <param name="mobsms_appKey"  displayName="mob.com上申请的app id" />
+        <param name="mobsms_appSecret"  displayName="mob.com上申请的appsecret" />
+    </platform>
+</plugin>

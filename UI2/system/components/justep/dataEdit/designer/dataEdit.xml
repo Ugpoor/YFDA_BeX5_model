@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/dataEdit/dataEdit" tag-name="div" icon="dataEdit.gif" 
+		binding-component="$UI/system/components/justep/dataEdit/dataEdit" 
+        component-type="formControl" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" text="引用" editor-ref="dataRef" editor-parameter='{"hasLabel":"false"}'/>	
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-dataEdit"
+					},	 
+					"2base": {
+						label: "默认展现样式",
+						value: "form-control",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<!-- 
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" default-value="false" data-type="boolean"/>
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+			-->
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+			<event name="onInnerCompCreate" text="内部组件创建，可用于内部组件属性和事件设置"/>
+		    <!-- 
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		    -->
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/dataEdit/dataEdit" class="x-dataEdit form-control"/>
+		   ]]></template>
+		</templates>
+	</element>
+	
+</elements>

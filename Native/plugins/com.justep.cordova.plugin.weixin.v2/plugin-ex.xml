@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.justep.cordova.plugin.weixin.v2">
+	<name>微信v2</name>
+	<description>微信v2本地扩展插件，包括微信支付和微信分享。新开发的应用建议使用最新的v3版本</description>
+
+	<!-- common -->
+	<platform name="common">
+		<param name="weixinappid" displayName="微信应用ID" />
+		<param name="partner_id" displayName="微信商户ID" />
+		<param name="partner_key" displayName="微信商户_key" />
+		<param name="app_secret" displayName="微信app_secret" />
+		<param name="app_key" displayName="微信app_key" />
+	</platform>
+
+	<!-- ios -->
+	<platform name="ios">
+	</platform>
+
+	<!-- android -->
+	<platform name="android">
+	</platform>
+	
+</plugin>

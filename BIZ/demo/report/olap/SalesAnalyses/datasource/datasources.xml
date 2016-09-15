@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<DataSources>
+	<DataSource>
+        <UseSysConfig>true</UseSysConfig>
+        <Locale>zh_CN</Locale>
+        <DataSourceName>Provider=Mondrian;DataSource=MondrianSalesAnalyses;</DataSourceName>
+        <DataSourceDescription>Mondrian salesAnalyses</DataSourceDescription>
+        <URL/>
+        <DataSourceInfo>
+	        <![CDATA[
+	        	Provider=mondrian;
+	        	Locale=zh_CN;DynamicSchemaProcessor=com.justep.olap.i18n.JustepLocalizingDynamicSchemaProcessor;
+	        	DataSource=java:comp/env/report_oracle
+	        ]]>
+        </DataSourceInfo>
+        <ProviderName>Mondrian</ProviderName>
+        <ProviderType>MDP</ProviderType>
+        <AuthenticationMode>Unauthenticated</AuthenticationMode>
+        <Catalogs>
+            <Catalog name="SalesAnalyses">
+            	  <Definition>demo/report/olap/SalesAnalyses/schema/salesCube.xml</Definition>
+            </Catalog>
+        </Catalogs>
+    </DataSource>
+</DataSources>

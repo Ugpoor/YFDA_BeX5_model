@@ -1,0 +1,25 @@
+<root>
+	<config>
+		<depend config="comp.min.css.xml">comp.min.css</depend>
+		
+		<file>justep/excel/css/excel.css</file>
+		<file>justep/blob/css/blob.css</file>
+		<file>justep/social/focus/focus.css</file>
+		<file>justep/social/relativeOrg/relativeOrg.css</file>
+		<file>justep/attachment/css/attachment.css</file>
+		<file>justep/richTextarea/css/richTextarea.css</file>
+		
+		<component>justep/excel/exportExcel</component>
+		<component>justep/excel/importExcel</component>
+		<component>justep/blob/blob</component>
+		<component>justep/blob/blobImage</component>
+		<component>justep/social/focus/focus</component>
+		<component>justep/social/relativeOrg/relativeOrg</component>
+		<component>justep/social/relativeOrg/relativeOrgs</component>
+		<component>justep/attachment/attachment</component>
+		
+		<component>justep/richTextarea/richTextarea</component>
+
+		<output name="biz.min.css" skin="desktop,superhero,slate,united,yeti,flatly,compact"/>
+	</config>
+</root>

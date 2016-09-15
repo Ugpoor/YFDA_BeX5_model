@@ -1,0 +1,14 @@
+/*buttongroup组件选中后的样式*/
+.x-tuniu.btn-group{ background-color:#fff;}
+.x-tuniu.btn-group .btn{ border-top:0;}
+.x-tuniu.btn-group .btn span{ font-size:medium; font-weight:bolder;}
+.x-tuniu.btn-group .btn:hover,.x-card.btn-group .btn.active{ color:red; padding:0;border-top:0;}
+hr {
+    margin-top: 9px;
+    }
+ .x-col{
+ 	padding: 0px;
+ }
+ .btn{
+ 	margin-left: 10px;
+ }

@@ -1,0 +1,9 @@
+[
+	{"fID":"001","fName":"员工级别","fDescribe":"描述","fType":"类型1"},
+	{"fID":"002","fName":"性别","fDescribe":"描述","fType":"类型2"},
+	{"fID":"003","fName":"员工级别","fDescribe":"描述","fType":"类型2"},
+	{"fID":"004","fName":"性别","fDescribe":"描述","fType":"类型2"},
+	{"fID":"005","fName":"员工级别","fDescribe":"描述","fType":"类型2"},
+	{"fID":"006","fName":"性别","fDescribe":"描述","fType":"类型2"},
+	{"fID":"007","fName":"员工级别","fDescribe":"描述","fType":"类型2"}
+]

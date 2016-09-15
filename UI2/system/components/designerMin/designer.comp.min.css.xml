@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <config>
+  <depend config="../comp.min.css.xml">../comp.min.css</depend>
+   	<file>../designerCommon/css/common.css</file>
+    <file>../justep/common/designer/css/common.css</file>
+    
+     <file>../justep/window/designer/window.css</file>
+     <component>../justep/window/designer/window</component>
+      
+     <file>../justep/model/designer/css/model.css</file>
+	 <component>../justep/model/designer/model</component>
+	
+	<file>../justep/data/designer/css/data.css</file>
+	<component>../justep/data/designer/data</component>
+
+   <file>../justep/button/designer/css/button.css</file>
+   <component>../justep/button/designer/button</component>
+   
+      <file>../justep/tabs/designer/css/tabs.css</file>
+   <component>../justep/tabs/designer/tabs</component>
+   
+   <file>../justep/row/designer/row.css</file>
+   <component>../justep/row/designer/row</component>
+
+ 	<file>../justep/panel/designer/panel.css</file>
+  	<component>../justep/panel/designer/panel</component>
+
+ 	<file>../justep/scrollView/designer/scrollView.css</file>
+  	<component>../justep/scrollView/designer/scrollView</component>
+
+ 	<file>../justep/contents/designer/contents.css</file>
+  	<component>../justep/contents/designer/contents</component>
+  			
+  	<file>../justep/tabs/designer/css/tabs.css</file>
+  	<component>../justep/tabs/designer/tabs</component>
+  	
+	<file>../justep/cellLayout/designer/css/cellLayout.css</file>
+    <component>../justep/cellLayout/designer/cellLayout</component>
+    
+    <file>../justep/button/designer/css/button.css</file>
+    <component>../justep/button/button</component>
+
+    <file>../justep/windowContainer/designer/css/windowContainer.css</file>
+    <component>../justep/windowContainer/windowContainer</component>
+
+    <file>../justep/dialog/designer/css/dialog.css</file>
+    <component>../justep/dialog/dialog</component>
+
+    <file>../justep/labelEdit/designer/css/labelEdit.css</file>
+    <component>../justep/labelEdit/labelEdit</component>
+
+    <file>../justep/list/designer/css/list.css</file>
+    <component>../justep/list/list</component>
+
+    <file>../justep/tree/designer/css/tree.css</file>
+    <component>../justep/tree/tree</component>
+
+    <file>../justep/messageDialog/designer/css/messageDialog.css</file>
+    <component>../justep/messageDialog/messageDialog</component>
+
+    <file>../justep/windowDialog/designer/css/windowDialog.css</file>
+    <component>../justep/windowDialog/windowDialog</component>
+
+    <file>../justep/windowReceiver/designer/css/windowReceiver.css</file>
+    <component>../justep/windowReceiver/windowReceiver</component>
+
+    <file>../justep/windowRunner/designer/css/windowRunner.css</file>
+    <component>../justep/windowRunner/windowRunner</component>
+
+    <file>../justep/printHtml/designer/css/printHtml.css</file>
+    <component>../justep/printHtml/printHtml</component>
+
+
+    <output name="designer.comp.min.css"  skin="desktop,superhero,slate,united,yeti,flatly" />
+</config>
+</root>

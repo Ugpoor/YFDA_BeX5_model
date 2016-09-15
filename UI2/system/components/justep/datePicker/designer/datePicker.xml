@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/datePicker/datePicker" tag-name="div" icon="datePickericon.png" 
+	    binding-component="$UI/system/components/justep/datePicker/datePicker"
+	    parent-range="$UI/system/components/justep/window/window" resizable="false"
+		design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" />
+			<property name="opacity" text="透明率" required="false" data-type="float" default-value="0.5"/>  
+			<property name="type" text="类型" required="false" default-value="datetime" editor-ref="datePickerTypeList"/>  
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-popPicker"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<property-editor name="datePickerTypeList" type="list">
+			<static-data value="datetime,date,time" /> <!--直接定义的静态数据 -->
+		</property-editor>
+
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    <div component="$UI/system/components/justep/datePicker/datePicker" class="x-popPicker"> 
+		      <div class="x-popPicker-overlay"/>  
+		      <div class="x-popPicker-content"> 
+		        <div class="x-poppicker-header"> 
+		          <button class="btn btn-default x-btn-ok">确定 </button>
+		        </div>
+		      </div> 
+		    </div>
+		   ]]></template>
+		</templates>
+		<events>
+            <event name="onShow" text="显示"/>
+            <event name="onHide" text="隐藏"/>       
+            <event name="onOK" text="点击确定"/>       
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+        </events>
+		<toolbar>			
+		</toolbar>
+	</element>	
+			
+</elements>

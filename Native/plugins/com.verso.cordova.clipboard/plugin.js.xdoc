@@ -1,0 +1,34 @@
+/**
+	@name com.verso.cordova.clipboard
+	@class 
+	@description app复制粘贴插件
+	@model Native
+	@category plugin
+	@declareVar cordova.plugins.clipboard
+*/
+
+/**
+	@name com.verso.cordova.clipboard.copy
+	@function
+	@param {String} text 要复制到剪切板上的文本
+	@param {Function} onSuccess 复制成功的回调
+	@param {Function} onFail 复制失败的回调
+ 	@returns {void}
+ 	@description 复制到剪切板
+*/
+
+/**
+	@name com.verso.cordova.clipboard.paste
+	@function
+	@param {Function} onSuccess 复制成功的回调，回调给出参数text
+	@param {Function} onFail 复制失败的回调
+ 	@returns {void}
+ 	@description 粘贴文本
+*/
+
+/**
+	@name com.verso.cordova.clipboard#cordova.clipboard
+	@property 
+	@type com.verso.cordova.clipboard
+	@description 复制粘贴插件
+*/

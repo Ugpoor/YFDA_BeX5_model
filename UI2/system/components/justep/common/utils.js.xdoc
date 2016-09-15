@@ -1,0 +1,30 @@
+/**
+	@name Util
+	@url $UI/system/components/justep/common/utils
+	@class
+	@category javascript
+	@model UI2
+	@description 组件相关Util工具类
+*/
+
+/**
+	@name Util.loadContent
+	@function
+	@description 通过windowcontanier组件加载一个指定的url然后装入content组件
+	@param {String} contents contents的xid
+	@param {String} xid 生成content的xid
+	@param {String} url 加载的url
+	@param {Object} fn 加载后回调
+	@returns {Object} content对象
+*/
+
+
+/**
+	@name Util.attachDoubleClickExitApp
+	@function
+	@description 绑定android上双击返回推出app的逻辑.
+	@param {Object} conditionFn 符合双击返回退出的回调，返回true/false.
+	@param {Object} 双击退出的promise 可以在推出前注销当前登录用户登录等.
+*/
+
+

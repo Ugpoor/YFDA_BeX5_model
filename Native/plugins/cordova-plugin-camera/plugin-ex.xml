@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-camera">
+	<name>照相机</name>
+	<description>照相机本地插件，调用照相机获取图片</description>
+	
+</plugin>

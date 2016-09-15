@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules>
+	<!--  
+		默认都是非必须配置属性		
+	-->
+	<rule path="/div/chart/series-set/series/@chart-type">
+		<validate rule="regexp" level="error"
+			scope="^(pie|pie-3d|vertical-bar|vertical-bar-3d|stacked-vertical-bar|stacked-vertical-bar-3d|cylinder-vertical-bar|cylinder-vertical-bar-3d|horizontal-bar|horizontal-bar-3d|stacked-horizontal-bar|stacked-horizontal-bar-3d|cylinder-horizontal-bar|cylinder-horizontal-bar-3d|vertical-line|vertical-line-3d|horizontal-line|horizontal-line-3d|vertical-xy-line|horizontal-xy-line|vertical-area|vertical-area-3d|horizontal-area|horizontal-area-3d|time-series|simple-meter|dial-meter|arc-dial-meter|thermometer-meter|vertical-gantt|horizontal-gantt|radar){1}$"
+			error-info="属性值不合法,请选择正确的图表类型" />
+	</rule>
+	
+	<rule path="/div/@xid">
+		<validate level="error" rule="regexp" scope="^([\w\d])+$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	<rule path="/div/@component">
+		<validate level="error" rule="regexp" scope="\$UI/system/components/justep/chart/chart" error-info="属性值不合法,必须是$UI/system/components/justep/chart/chart" />
+	</rule>
+	<rule allow-empty="true" path="/div/@chartName"></rule>
+	<rule allow-empty="true" path="/div/@autoLoad">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	<rule allow-empty="true" path="/div/@dataList">
+		<validate level="error" rule="regexp" scope="^([\w\d],?)+[^,]$" error-info="属性值不合法,请输入数据集列表(逗号分隔)" />
+	</rule>
+	
+	<rule path="/div/chart"></rule>
+	<rule path="/div/chart/config"></rule>
+	
+	<!-- 标题 -->
+	<rule allow-empty="true" path="/div/chart/config/title"/>
+	<rule path="/div/chart/config/title/@visible">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	<rule path="/div/chart/config/title/@position">		
+		<validate level="error" rule="regexp" scope="^(TOP|LEFT|RIGHT|BOTTOM)*$" error-info="属性值不合法,必须是(TOP/LEFT/RIGHT/BOTTOM)之一" />
+	</rule>
+
+	<rule path="/div/chart/config/title-background-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/config/title-vertical-alignment">
+		<validate level="error" rule="regexp" scope="^(TOP|CENTER|BOTTOM)*$" error-info="属性值不合法,必须是(TOP/CENTER/BOTTOM)之一" />
+	</rule>
+	<rule path="/div/chart/config/title-horizontal-alignment">
+		<validate level="error" rule="regexp" scope="^(LEFT|CENTER|RIGHT)*$" error-info="属性值不合法,必须是(LEFT/CENTER/RIGHT)之一" />
+	</rule>
+
+	<rule path="/div/chart/config/title-border"></rule>
+	<rule path="/div/chart/config/title-border/@top">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/title-border/@left">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/title-border/@bottom">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/title-border/@right">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+
+	<rule path="/div/chart/config/title-margin"></rule>
+	<rule path="/div/chart/config/title-margin/@top">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/title-margin/@left">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/title-margin/@bottom">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/title-margin/@right">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+
+	<rule path="/div/chart/config/title-padding"></rule>
+	<rule path="/div/chart/config/title-padding/@top">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/title-padding/@left">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/title-padding/@bottom">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/title-padding/@right">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+
+	<rule path="/div/chart/config/title-font"></rule>
+	<rule path="/div/chart/config/title-font/@name"></rule>
+	<rule path="/div/chart/config/title-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/config/title-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+
+
+	<!-- 子标题 -->
+	<rule allow-empty="true" path="/div/chart/config/sub-title">
+		<validate level="warn" rule="regexp" scope="^[A-Za-z_\u4e00-\u9fa5]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	<rule path="/div/chart/config/sub-title/@visible">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	<rule path="/div/chart/config/sub-title/@position">
+		<validate level="error" rule="regexp" scope="^(TOP|LEFT|RIGHT|BOTTOM)*$" error-info="属性值不合法,必须是(TOP/LEFT/RIGHT/BOTTOM)之一" />
+	</rule>
+
+	<rule path="/div/chart/config/sub-title-background-color">
+		<validate level="error" rule="regexp" scope="^[#]{1}[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/config/sub-title-vertical-alignment">
+		<validate level="error" rule="regexp" scope="^(TOP|CENTER|BOTTOM)*$" error-info="属性值不合法,必须是(TOP/CENTER/BOTTOM)之一" />
+	</rule>
+	<rule path="/div/chart/config/sub-title-horizontal-alignment">
+		<validate level="error" rule="regexp" scope="^(LEFT|CENTER|RIGHT)*$" error-info="属性值不合法,必须是(LEFT/CENTER/RIGHT)之一" />
+	</rule>
+	
+	
+	<rule path="/div/chart/config/sub-title-border"></rule>
+	<rule path="/div/chart/config/sub-title-border/@top">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/sub-title-border/@left">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/sub-title-border/@bottom">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/sub-title-border/@right">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+
+	<rule path="/div/chart/config/sub-title-margin"></rule>
+	<rule path="/div/chart/config/sub-title-margin/@top">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/sub-title-margin/@left">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/sub-title-margin/@bottom">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/sub-title-margin/@right">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+
+	<rule path="/div/chart/config/sub-title-padding"></rule>
+	<rule path="/div/chart/config/sub-title-padding/@top">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/sub-title-padding/@left">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/sub-title-padding/@bottom">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/sub-title-padding/@right">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+
+	<rule path="/div/chart/config/sub-title-font"></rule>
+	<rule path="/div/chart/config/sub-title-font/@name"></rule>
+	<rule path="/div/chart/config/sub-title-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/config/sub-title-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+
+
+
+	<!-- 注释信息 -->
+	<rule allow-empty="true" path="/div/chart/config/comment">
+		<validate level="warn" rule="regexp" scope="^[A-Za-z_\u4e00-\u9fa5]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	<rule path="/div/chart/config/comment/@visible">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	<rule path="/div/chart/config/comment/@position">
+		<validate level="error" rule="regexp" scope="^(TOP|LEFT|RIGHT|BOTTOM)*$" error-info="属性值不合法,必须是(TOP/LEFT/RIGHT/BOTTOM)之一" />
+	</rule>
+
+	<rule path="/div/chart/config/comment-background-color">
+		<validate level="error" rule="regexp" scope="^[#]{1}[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/config/comment-vertical-alignment">
+		<validate level="error" rule="regexp" scope="^(TOP|CENTER|BOTTOM)*$" error-info="属性值不合法,必须是(TOP/CENTER/BOTTOM)之一" />
+	</rule>
+	<rule path="/div/chart/config/comment-horizontal-alignment">
+		<validate level="error" rule="regexp" scope="^(LEFT|CENTER|RIGHT)*$" error-info="属性值不合法,必须是(LEFT/CENTER/RIGHT)之一" />
+	</rule>
+	
+	
+	<rule path="/div/chart/config/comment-border"></rule>
+	<rule path="/div/chart/config/comment-border/@top">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/comment-border/@left">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/comment-border/@bottom">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/comment-border/@right">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+
+	<rule path="/div/chart/config/comment-margin"></rule>
+	<rule path="/div/chart/config/comment-margin/@top">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/comment-margin/@left">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/comment-margin/@bottom">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/comment-margin/@right">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+
+	<rule path="/div/chart/config/comment-padding"></rule>
+	<rule path="/div/chart/config/comment-padding/@top">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/comment-padding/@left">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/comment-padding/@bottom">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/comment-padding/@right">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+
+	<rule path="/div/chart/config/comment-font"></rule>
+	<rule path="/div/chart/config/comment-font/@name"></rule>
+	<rule path="/div/chart/config/comment-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/config/comment-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+
+
+	<!-- 图例信息 -->
+	<rule allow-empty="true" path="/div/chart/config/legend">
+		<validate level="warn" rule="regexp" scope="^[A-Za-z_\u4e00-\u9fa5]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	<rule path="/div/chart/config/legend/@visible">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	<rule path="/div/chart/config/legend/@position">
+		<validate level="error" rule="regexp" scope="^(TOP|LEFT|RIGHT|BOTTOM)*$" error-info="属性值不合法,必须是(TOP/LEFT/RIGHT/BOTTOM)之一" />
+	</rule>
+
+	<rule path="/div/chart/config/legend-background-color">
+		<validate level="error" rule="regexp" scope="^[#]{1}[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/config/legend-vertical-alignment">
+		<validate level="error" rule="regexp" scope="^(TOP|CENTER|BOTTOM)*$" error-info="属性值不合法,必须是(TOP/CENTER/BOTTOM)之一" />
+	</rule>
+	<rule path="/div/chart/config/legend-horizontal-alignment">
+		<validate level="error" rule="regexp" scope="^(LEFT|CENTER|RIGHT)*$" error-info="属性值不合法,必须是(LEFT/CENTER/RIGHT)之一" />
+	</rule>
+	
+	<rule path="/div/chart/config/legend-border"></rule>
+	<rule path="/div/chart/config/legend-border/@top">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/legend-border/@left">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/legend-border/@bottom">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/legend-border/@right">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+
+	<rule path="/div/chart/config/legend-margin"></rule>
+	<rule path="/div/chart/config/legend-margin/@top">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/legend-margin/@left">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/legend-margin/@bottom">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/legend-margin/@right">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+
+	<rule path="/div/chart/config/legend-padding"></rule>
+	<rule path="/div/chart/config/legend-padding/@top">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/legend-padding/@left">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/legend-padding/@bottom">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/config/legend-padding/@right">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.0D ~ 1.0D)" />
+	</rule>
+
+	<rule path="/div/chart/config/legend-font"></rule>
+	<rule path="/div/chart/config/legend-font/@name"></rule>
+	<rule path="/div/chart/config/legend-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/config/legend-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+
+	<!-- 图表背景色 -->
+	<rule path="/div/chart/config/chart-background-color">
+		<validate level="error" rule="regexp" scope="^[#]{1}[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+
+</rules>

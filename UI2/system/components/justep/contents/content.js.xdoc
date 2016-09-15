@@ -1,0 +1,92 @@
+/**
+	@name $UI/system/components/justep/contents/content
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@extendurl 
+	@description contents组件使用的content类, 在Contents内部使用, 不能独立使用
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/contents/content#ContentActiveEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description content被激活事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/contents/content#ContentActiveEvent.index
+ @property
+ @type {integer}
+ @description 激活的content的索引
+*/ 
+
+/**
+	@name $UI/system/components/justep/contents/content#onActive
+	@event
+	@description <b>[回调型事件]</b>当content被激活
+	@param {$UI/system/components/justep/contents/content#ContentActiveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : Contents组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"index": 激活的content的索引
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/contents/content#ContentInactiveEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description content被取消激活事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/contents/content#ContentInactiveEvent.index
+ @property
+ @type {integer}
+ @description 取消激活的content的索引
+*/ 
+
+/**
+	@name $UI/system/components/justep/contents/content#onInactive
+	@event
+	@description <b>[回调型事件]</b>当content被取消激活
+	@param {$UI/system/components/justep/contents/content#ContentInactiveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : Contents组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"index": 激活的content的索引
+	}
+	</xmp>
+*/
+
+/**
+ @name $UI/system/components/justep/contents/content#dispose
+ @function
+ @description 销毁content对象
+*/
+
+/**
+ @name $UI/system/components/justep/contents/content#active
+ @function
+ @description 激活content
+*/
+
+/**
+ @name $UI/system/components/justep/contents/content#isActive
+ @function
+ @returns boolean
+ @description content是否激活
+*/

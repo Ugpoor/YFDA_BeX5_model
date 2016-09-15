@@ -1,0 +1,26 @@
+/**
+	@name cordova-plugin-insomnia
+	@class 
+	@model Native
+	@category plugin
+	@description 禁止睡眠
+	@declareVar window.plugins.insomnia
+*/
+
+/**
+	@name cordova-plugin-insomnia.keepAwake
+	@function
+	@param {Function} successCallback 请求成功的回调 
+	@param {Function} errorCallback 请求失败的回调
+ 	@returns {void}
+ 	@description 设备保持激活状态
+*/
+
+/**
+	@name cordova-plugin-insomnia.allowSleepAgain
+	@function
+	@param {Function} successCallback 请求成功的回调 
+	@param {Function} errorCallback 请求失败的回调
+ 	@returns {void}
+ 	@description 设备进入睡眠模式
+*/

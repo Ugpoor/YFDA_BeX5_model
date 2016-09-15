@@ -1,0 +1,76 @@
+/**
+	@name $UI/system/components/justep/social/focus/focus
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description 关注组件
+*/
+
+/**
+	@name $UI/system/components/justep/social/focus/focus#component
+	@attribute
+	@required
+	@type String
+	@description 组件标识
+	@default "$UI/system/components/justep/social/focus/focus"
+*/
+
+/**
+	@name $UI/system/components/justep/social/focus/focus#xid
+	@attribute
+	@type String
+	@required
+	@description xid标识
+*/
+
+/**
+	@name $UI/system/components/justep/social/focus/focus#data
+	@attribute
+	@property
+	@required
+	@type String
+	@description 主数据
+*/
+
+/**
+	@name $UI/system/components/justep/social/focus/focus#bind-ref
+	@attribute
+	@required
+	@type String
+	@description 关注关联的字段
+*/
+
+/**
+	@name $UI/system/components/justep/social/focus/focus#bind-nameRef
+	@attribute
+	@type String
+	@required
+	@description 关注关联的名称字段
+*/
+
+/**
+	@name $UI/system/components/justep/social/focus/focus#process
+	@attribute
+	@property
+	@required
+	@type String
+	@description 流程
+*/
+
+/**
+	@name $UI/system/components/justep/social/focus/focus#activity
+	@attribute
+	@property
+	@type String
+	@required
+	@description 环节
+*/
+
+/**
+	@name $UI/system/components/justep/social/focus/focus#url
+	@attribute
+	@property
+	@type String
+	@required
+	@description 关注的url，默认使用当前环境中的activity对应的.a
+*/

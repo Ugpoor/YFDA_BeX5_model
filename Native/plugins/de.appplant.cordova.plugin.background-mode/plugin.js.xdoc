@@ -1,0 +1,99 @@
+/**
+	@name de.appplant.cordova.plugin.background-mode
+	@class 
+	@description app后台运行插件
+	@model Native
+	@category plugin
+	@declareVar cordova.plugins.backgroundMode
+*/
+
+/**
+	@name de.appplant.cordova.plugin.background-mode.enable
+	@function
+ 	@returns {void}
+ 	@description 设置app后台模式启用
+*/
+
+/**
+	@name de.appplant.cordova.plugin.background-mode.disable
+	@function
+ 	@returns {void}
+ 	@description 设置app后台模式禁用
+*/
+
+/**
+	@name de.appplant.cordova.plugin.background-mode.isEnabled
+	@function
+ 	@returns {Boolean}
+ 	@description 返回后台运行模式是否允许的信息
+*/
+
+/**
+	@name de.appplant.cordova.plugin.background-mode.isActive
+	@function
+ 	@returns {Boolean}
+ 	@description 返回后台模式是否激活的信息
+*/
+
+/**
+	@name de.appplant.cordova.plugin.background-mode.getDefaults
+	@function
+ 	@returns {Object}
+ 	@description 获取默认配置
+*/
+
+/**
+	@name de.appplant.cordova.plugin.background-mode.setDefaults
+	@function
+	@param {Object} options 配置参数
+	<br/><b>参数结构如下</b>
+	<xmp>
+		{
+		"title" : ...
+		"text" : ...
+		"ticker" : ...
+		"resume" : ...
+		"silent" : ...
+		}
+	</xmp>
+ 	@returns {void}
+ 	@description 设置默认配置
+*/
+
+/**
+	@name de.appplant.cordova.plugin.background-mode.configure
+	@function
+	@param {Object} options 配置参数
+ 	@returns {void}
+ 	@description 配置
+*/
+
+/**
+	@name de.appplant.cordova.plugin.background-mode.onactivate
+	@function
+ 	@returns {void}
+ 	@description app后台运行模式激活，调用该方法需重写该方法的实现
+*/
+
+/**
+	@name de.appplant.cordova.plugin.background-mode.ondeactivate
+	@function
+ 	@returns {void}
+ 	@description app后台运行模式禁用的时候激活，调用该方法需重写该方法的实现
+*/
+
+/**
+	@name de.appplant.cordova.plugin.background-mode.onfailure
+	@function
+	@param {Integer} errorCode 错误码
+ 	@returns {void}
+ 	@description app后台运行模式不能被激活时触发，调用该方法需重写该方法的实现
+*/
+
+
+/**
+	@name de.appplant.cordova.plugin.background-mode#cordova.backgroundMode
+	@property 
+	@type de.appplant.cordova.plugin.background-mode
+	@description app后台运行插件
+*/

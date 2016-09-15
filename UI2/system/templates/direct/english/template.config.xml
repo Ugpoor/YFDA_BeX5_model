@@ -1,0 +1,14 @@
+<template text="通用" desc="教育培训" custom="false">
+	<images>
+		<image src="template.png"/>
+		<image src="template1.png"/>
+		<image src="template2.png"/>
+		<image src="template3.png"/>
+	</images>
+
+	<items>
+		<item file="template/index.w"></item>
+		<item file="template/index.js"/>
+	</items>
+
+</template>

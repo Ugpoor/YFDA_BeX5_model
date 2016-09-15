@@ -1,0 +1,154 @@
+[
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\yp_player_ad_youku.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\yp_player_ad_youku.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\downloading_item.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\downloading_item.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\card_view_login_or_regist_activity.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\card_view_login_or_regist_activity.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_main.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\cache_activity.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\cache_activity.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\chooser_dialog_item.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\chooser_dialog_item.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\card_view_regist_layout.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\card_view_regist_layout.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_captureresult.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_captureresult.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\chooser_dialog_list.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\chooser_dialog_list.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\card_view_login_regist_layout.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\card_view_login_regist_layout.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\capture.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\capture.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\caching_activity.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\caching_activity.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\yp_detail_retry.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\yp_detail_retry.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\yp_detail_loading_info_page.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\yp_detail_loading_info_page.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\yp_player_container.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\yp_player_container.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\yp_player_view.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\yp_player_view.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\yp_detail_play_title.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\yp_detail_play_title.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_captureresult_tvlogin.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_captureresult_tvlogin.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\second.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\second.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\custom_title.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\custom_title.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\yp_youku_dialog_password_interact.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\yp_youku_dialog_password_interact.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\card_view_login_ui_layout.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\card_view_login_ui_layout.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\yp_detail_play_loading.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\yp_detail_play_loading.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_authorization_sns.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_authorization_sns.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\yp_tudou_encrypt_dialog.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\yp_tudou_encrypt_dialog.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\webview_custom_title.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\webview_custom_title.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_maintest.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_maintest.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\popup_menu.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\popup_menu.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\yp_detail_play_end_page.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\yp_detail_play_end_page.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_webview.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_webview.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\yp_playerview_plugin_detail_play_interact.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\yp_playerview_plugin_detail_play_interact.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\loading.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\loading.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\yp_plugin_detail_play_interact.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\yp_plugin_detail_play_interact.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\notify.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\notify.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\yp_detail_bottom_play_control.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\yp_detail_bottom_play_control.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\custom_dialog_view.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\custom_dialog_view.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\cached_item.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\cached_item.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\menu_list_item.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\layout\\menu_list_item.xml"
+    }
+]

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.wex5.netease" version="1.1.0">  
+  <name>仿网易新闻</name>  
+  <description>Justep WeX5 仿网易新闻</description>  
+  <author email="x5@justep.com" href="http://www.justep.com">北京起步科技有限公司</author>  
+  <content src="http://demo.wex5.com/netease/index.html"/>  
+  <access origin="*"/>  
+  <access origin="sms:*" launch-external="yes"/>  
+  <access origin="tel:*" launch-external="yes"/>
+  <preference name="AppendUserAgent" value=" x5app/@version@" />
+  <allow-navigation href="*" />  
+  <!-- 背景色 -->  
+  <preference name="BackgroundColor" value="0xffffffff"/>  
+  <!-- 屏幕方向 default, all, portrait, landscape -->  
+  <preference name="Orientation" value="default"/>  
+  <preference name="SplashScreen" value="screen"/>  
+  <preference name="SplashScreenDelay" value="10000"/> 
+</widget>

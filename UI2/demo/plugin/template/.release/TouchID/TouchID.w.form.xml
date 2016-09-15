@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" design="device:m;" xid="window" class="window ceEfMfu" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="ceEfMfu" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/buttonGroup,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style xmlns:xhtml="http://www.w3.org/1999/xhtml">.x-tuniu.btn-group.ceEfMfu{background-color: rgb(255, 255, 255)} .x-tuniu.btn-group.ceEfMfu .btn.ceEfMfu{border-top: 0} .x-tuniu.btn-group.ceEfMfu .btn.ceEfMfu span.ceEfMfu{font-size: 12px; font-weight: normal} .x-card.btn-group.ceEfMfu .btn.active.ceEfMfu{color: rgb(50, 189, 96); padding: 0; border-top: 0} .x-tuniu.panel.ceEfMfu{margin-bottom: 10px} .x-tuniu.panel.ceEfMfu &gt; .panel-heading.ceEfMfu .panel-title.ceEfMfu{color: rgb(51, 51, 51)} .x-tuniu.ceEfMfu .panel-heading.ceEfMfu, .x-tuniu.ceEfMfu ul.ceEfMfu{border-bottom: 0} .x-tuniu.ceEfMfu .list-group-item.ceEfMfu{border-radius: 0} .x-tuniu.ceEfMfu .list-group-item.ceEfMfu:last-child{border-bottom: 0} .x-tuniu.ceEfMfu .x-nobarder.ceEfMfu{border: 0} .x-card.btn-group.ceEfMfu .btn.active.ceEfMfu{color: rgb(50, 189, 96); padding: 0; border-top: 0}</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="ceEfMfu" class="ceEfMfu"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pb0f7f748533d4b019501bb403f336996-iosstatusbar ceEfMfu" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="ceEfMfu"> 
+    <div class="x-panel-top ceEfMfu" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="ceEfMfu"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar ceEfMfu" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;TouchID&quot;}" __cid="ceEfMfu"> 
+        <div class="x-titlebar-left ceEfMfu" __cid="ceEfMfu"></div>  
+        <div class="x-titlebar-title ceEfMfu" __cid="ceEfMfu">TouchID</div>  
+        <div class="x-titlebar-right  ceEfMfu" __cid="ceEfMfu">
+          <div class="empty ceEfMfu" __cid="ceEfMfu"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content ceEfMfu" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="ceEfMfu">
+      <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full ceEfMfu" xid="contents1" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0}" __cid="ceEfMfu"> 
+        <div class="x-contents-content active ceEfMfu" xid="infoContent" style="padding:10px;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="ceEfMfu">
+          <div xid="div1" style="height:10px;" __cid="ceEfMfu" class="ceEfMfu"/>  
+          <div xid="div2" style="height:50px;" __cid="ceEfMfu" class="ceEfMfu">
+            <h3 xid="h31" style="text-align:center;" __cid="ceEfMfu" class="ceEfMfu">插件概述</h3>
+          </div>  
+          <div xid="div3" __cid="ceEfMfu" class="ceEfMfu">
+            <h4 xid="h41" __cid="ceEfMfu" class="ceEfMfu">介绍：</h4>
+            <p style="width:100%;border-width:1px;" __cid="ceEfMfu" class="ceEfMfu">这是一个指纹识别的插件。只支持iOS平台，提供了iOS上指纹识别的功能。这是一个指纹识别的插件。只支持iOS平台，提供了iOS上指纹识别的功能。这是一个指纹识别的插件。只支持iOS平台，提供了iOS上指纹识别的功能。这是一个指纹识别的插件。只支持iOS平台，提供了iOS上指纹识别的功能。这是一个指纹识别的插件。只支持iOS平台，提供了iOS上指纹识别的功能。这是一个指纹识别的插件。只支持iOS平台，提供了iOS上指纹识别的功能。这是一个指纹识别的插件。只支持iOS平台，提供了iOS上指纹识别的功能。这是一个指纹识别的插件。只支持iOS平台，提供了iOS上指纹识别的功能。</p> 
+          </div>  
+          <div xid="div4" style="height:30px;" __cid="ceEfMfu" class="ceEfMfu"/>  
+          <h4 xid="h42" __cid="ceEfMfu" class="ceEfMfu">适用平台：</h4>  
+          <p __cid="ceEfMfu" class="ceEfMfu">iOS7.0及以后版本</p> 
+        </div>  
+        <div class="x-contents-content ceEfMfu" xid="demoContent" style="padding:10px;width:100%;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="ceEfMfu">
+          <div xid="div8" style="height:10px;" __cid="ceEfMfu" class="ceEfMfu"/>
+          <div xid="div5" __cid="ceEfMfu" class="ceEfMfu">
+            <p __cid="ceEfMfu" class="ceEfMfu">本插件只支持iOS7.0以上平台。首先检查当前设备是否支持指纹识别，如果支持则会提示OK！然后即可指纹识别，如果指纹匹配则会显示成功，有三次匹配机会，连续三次识别不通过则会终止识别。</p>
+          </div>  
+          <div xid="div6" style="height:50px;padding:40px" __cid="ceEfMfu" class="ceEfMfu">
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default ceEfMfu" xid="button1" style="width:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:button1Click" data-config="{&quot;label&quot;:&quot;检查是否支持TouchID&quot;}" __cid="ceEfMfu"> 
+              <i xid="i4" __cid="ceEfMfu" class="ceEfMfu"/>  
+              <span xid="span4" __cid="ceEfMfu" class="ceEfMfu">检查是否支持TouchID</span>
+            </a>
+          </div>  
+          <div xid="div7" style="height:50px;padding:40px" __cid="ceEfMfu" class="ceEfMfu">
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default ceEfMfu" xid="button2" style="width:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:button2Click" data-config="{&quot;label&quot;:&quot;开始指纹识别&quot;}" __cid="ceEfMfu"> 
+              <i xid="i5" __cid="ceEfMfu" class="ceEfMfu"/>  
+              <span xid="span5" __cid="ceEfMfu" class="ceEfMfu">开始指纹识别</span>
+            </a>
+          </div> 
+        </div>  
+        <div class="x-contents-content ceEfMfu" xid="codeContent" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="ceEfMfu"/>
+      </div>
+    </div>  
+    <div class="x-panel-bottom ceEfMfu" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="ceEfMfu">
+      <div component="$model/UI2/system/components/justep/button/buttonGroup" class="btn-group btn-group-justified x-card x-tuniu ceEfMfu" xid="buttonGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/button/buttonGroup'}" data-config="{&quot;tabbed&quot;:true}" __cid="ceEfMfu">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top ceEfMfu" xid="info" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;info&quot;,&quot;target&quot;:&quot;infoContent&quot;}" __cid="ceEfMfu"> 
+          <i xid="i1" __cid="ceEfMfu" class="ceEfMfu"/>  
+          <span xid="span1" __cid="ceEfMfu" class="ceEfMfu">info</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top ceEfMfu" xid="demo" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;demo&quot;,&quot;target&quot;:&quot;demoContent&quot;}" __cid="ceEfMfu"> 
+          <i xid="i2" __cid="ceEfMfu" class="ceEfMfu"/>  
+          <span xid="span2" __cid="ceEfMfu" class="ceEfMfu">demo</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top ceEfMfu" xid="code" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;code&quot;,&quot;target&quot;:&quot;codeContent&quot;}" __cid="ceEfMfu"> 
+          <i xid="i3" __cid="ceEfMfu" class="ceEfMfu"/>  
+          <span xid="span3" __cid="ceEfMfu" class="ceEfMfu">code</span>
+        </a>
+      </div>
+    </div>
+    <style __cid="ceEfMfu" class="ceEfMfu">.x-panel.pb0f7f748533d4b019501bb403f336996-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pb0f7f748533d4b019501bb403f336996-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pb0f7f748533d4b019501bb403f336996-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pb0f7f748533d4b019501bb403f336996-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pb0f7f748533d4b019501bb403f336996-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pb0f7f748533d4b019501bb403f336996-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pb0f7f748533d4b019501bb403f336996-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pb0f7f748533d4b019501bb403f336996-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pb0f7f748533d4b019501bb403f336996-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div> 
+</div>

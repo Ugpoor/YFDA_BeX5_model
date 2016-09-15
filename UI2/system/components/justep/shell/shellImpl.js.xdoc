@@ -1,0 +1,22 @@
+/**
+	@name $UI/system/components/justep/shell/shellImpl
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description shellImpl组件,负责创建shell实现
+*/
+
+/**
+	@name $UI/system/components/justep/shell/shellImpl#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/shell/shellImpl#addPageMappings
+	@function
+	@param {object} mapping
+	@description 增加shell的pageMapping
+*/
+

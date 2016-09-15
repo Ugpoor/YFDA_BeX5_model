@@ -1,0 +1,273 @@
+/**
+	@name $UI/system/components/justep/processChart/processChart
+	@component 
+	@model UI2
+	@extends $UI/system/lib/base/viewComponent
+	@description 流程图组件(包括轨迹图和波特图)
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#component
+	@attribute
+	@required
+	@description 组件标识
+	@default "$UI/system/components/justep/processChart/processChart"
+*/
+
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#xid
+	@attribute 
+	@description xid标识
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#ext
+	@property 
+	@attribute
+	@description 扩展属性
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#load
+	@function
+	@description 如果系统参数中有task, 使用task加载流程图; 否则使用当前process加载流程图
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#loadByTask
+	@function
+	@description 根据指定的task加载流程图
+	@param task <b>[required]</b>
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#loadByPI
+	@function
+	@description 根据指定的流程实例加载流程图
+	@param pi <b>[required]</b>
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#loadByData
+	@function
+	@description 根据流程标识和业务数据加载流程图
+	@param process <b>[required]</b>流程标识的全称 
+	@param data <b>[required]</b>业务数据, 可以为null 
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#toggleHelp
+	@function
+	@description 切换帮助状态
+	@returns {void}
+*/
+
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#showTrack
+	@operation
+	@description 显示流程轨迹图
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#showPert
+	@operation
+	@description 显示流程波特图
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#toggleHelp
+	@operation
+	@description 切换帮助状态
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"ext" : 扩展配置, 用来配置波特图中需要添加显示哪些任务属性, 
+			配置的格式是"属性标识,属性名称;属性标识,属性名称", 例如
+				"ext": "sTypeName,类型;sPrev,前序任务"
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："ext"
+	@return {Object} 
+*/
+
+
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#onPertItemClick
+	@event
+	@description <b>[回调型事件]</b>在波特图上某个元素点击时触发
+	@param {$UI/system/components/justep/processChart/processChart#PertItemClickEvent} event 它的结构如下:
+<xmp>	
+		{
+			self: processChartObj,
+			task: {id:"", sName:"", sStatusID:"", sStatusName:"",
+					sCreateTime:"",sActualFinishTime:"",
+					sCreatorFID:"", sCreatorFName:"",
+					sProcess:"",sProcessName:"", sActivity:"", 
+						sActivityName:"", sRefActivity:""}, 
+			executors: 
+				[{id:"", sName:"", sExecutorFID:"", sExecutorFName:"", 
+					sCURL:"",sEURL:"",sStatusID:"",sStatusName:"", 
+					sCreateTime:"",sActualFinishTime:"", ext:[]},
+				 {id:"", sName:"", sExecutorFID:"", sExecutorFName:"", 
+				 	sCURL:"",sEURL:"",sStatusID:"",sStatusName:"",
+				 	sCreateTime:"",sActualFinishTime:"", ext:[]}
+				],
+			curExecutor: {id:"", sName:"", sExecutorFID:"", sExecutorFName:"", 
+				sCURL:"",sEURL:"",sStatusID:"",sStatusName:"", 
+				sCreateTime:"",sActualFinishTime:"", ext:[]}
+		}
+</xmp>		
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#PertItemClickEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 波特图元素单击事件类
+	@see $UI/system/components/justep/processChart/processChart#onPertItemClick
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#PertItemClickEvent#source
+	@property 
+	@type $UI/system/components/justep/processChart/processChart
+	@description ProcessChart组件js对象
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#PertItemClickEvent#task
+	@property 
+	@description 当前Task对象
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#PertItemClickEvent#executors
+	@property 
+	@description 当前任务的执行者列表
+	@type Array
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#PertItemClickEvent#curExecutor
+	@property 
+	@description 当前任务的当前执行者
+	@type JSON
+*/
+
+
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#onTrackItemClick
+	@event
+	@description <b>[回调型事件]</b>在轨迹图上某个业务环节点击时触发
+	@param {$UI/system/components/justep/processChart/processChart#TrackItemClickEvent} event 它的结构如下:
+<xmp>	
+		{	
+			self: processChartObj,
+			process: "", 
+			processName:"", 
+			activity:"", 
+			activityName:"", 
+			bot: {
+				task: {id:"", sName:"", sStatusID:"", sStatusName:"",
+						sCreateTime:"",sActualFinishTime:"",
+						sCreatorFID:"", sCreatorFName:"",
+						sProcess:"",sProcessName:"", sActivity:"", 
+							sActivityName:"", sRefActivity:""}, 
+				executors: 
+					[{id:"", sName:"", sExecutorFID:"", sExecutorFName:"", 
+						sCURL:"",sEURL:"",sStatusID:"",sStatusName:"", 
+						sCreateTime:"",sActualFinishTime:"", ext:[]},
+					 {id:"", sName:"", sExecutorFID:"", sExecutorFName:"", 
+					 	sCURL:"",sEURL:"",sStatusID:"",sStatusName:"",
+					 	sCreateTime:"",sActualFinishTime:"", ext:[]}
+					],
+				curExecutor: {id:"", sName:"", sExecutorFID:"", sExecutorFName:"", 
+					sCURL:"",sEURL:"",sStatusID:"",sStatusName:"", 
+					sCreateTime:"",sActualFinishTime:"", ext:[]}
+			}
+
+		}
+</xmp>		
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#TrackItemClickEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 波特图元素单击事件类
+	@see $UI/system/components/justep/processChart/processChart#onTrackItemClick
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#TrackItemClickEvent#source
+	@property 
+	@type $UI/system/components/justep/processChart/processChart
+	@description ProcessChart组件js对象
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#TrackItemClickEvent#process
+	@property 
+	@description 流程标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#TrackItemClickEvent#processName
+	@property 
+	@description 流程名称
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#TrackItemClickEvent#activity
+	@property 
+	@description 环节标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#TrackItemClickEvent#activityName
+	@property 
+	@description 环节名称
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/processChart/processChart#TrackItemClickEvent#bot
+	@property 
+	@description 波特图信息
+	@type JSON
+*/
+
+
+
+

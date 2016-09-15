@@ -1,0 +1,13 @@
+select.form-control {
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+  padding: 5px 10px;
+  background: #ffffff;
+}
+select.input-sm {
+  padding: 4px 8px;
+}
+select.input-lg {
+  padding: 8px 12px;
+}

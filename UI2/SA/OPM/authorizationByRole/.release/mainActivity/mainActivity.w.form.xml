@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window x-full-screen container-fluid cueeUzu" component="$model/UI2/system/components/justep/window/window" design="device:pc" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cueeUzu" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/pagerBar/pagerBar,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/bootstrap/row/row,$model/UI2/system/components/justep/menu/menu,$model/UI2/system/components/bootstrap/pagination/pagination,$model/UI2/system/components/justep/smartFilter/smartFilter,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/toolBar/toolBar,$model/UI2/system/components/justep/org/orgDialogPC,$model/UI2/system/components/justep/dataTables/dataTables,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/bootstrap/dropdown/dropdown,$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect,$model/UI2/system/components/justep/select/select,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cueeUzu" class="cueeUzu"></div>  
+  <div component="$model/UI2/system/components/bootstrap/row/row" class="row cueeUzu" xid="row1" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cueeUzu"> 
+    <div class="col col-xs-3 cueeUzu" xid="col1" style="height:100%;overflow:auto;" __cid="cueeUzu"> 
+      <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter cueeUzu" xid="toolBar1" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cueeUzu"> 
+        <div component="$model/UI2/system/components/justep/smartFilter/smartFilter" xid="smartFilter2" data-bind="component:{name:'$model/UI2/system/components/justep/smartFilter/smartFilter'}" data-config="{&quot;filterCols&quot;:&quot;sName&quot;,&quot;filterData&quot;:&quot;roleData&quot;}" __cid="cueeUzu" class="cueeUzu"> 
+          <input type="text" class="form-control cueeUzu" placeholder="搜索" data-bind="valueUpdate: ['input', 'afterkeydown']" bind-value="$model.comp($element.parentElement).searchText" bind-change="$model.comp($element.parentElement).onInputChange.bind($model.comp($element.parentElement))" xid="input2" __cid="cueeUzu"/>
+        </div> 
+      </div>
+      <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" rowActiveClass="active" class="table table-hover x-dt-title-center cueeUzu" xid="roleTables" data="roleData" data-config="{&quot;columns&quot;:[{&quot;sName&quot;:&quot;sName&quot;,&quot;title&quot;:&quot;角色&quot;,&quot;xid&quot;:&quot;column1&quot;}],&quot;data&quot;:&quot;roleData&quot;,&quot;flexibleWidth&quot;:true,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" __cid="cueeUzu"/> 
+    </div>  
+    <div class="col col-xs-9 col-spliter-left cueeUzu" xid="col4" style="height:100%;" __cid="cueeUzu"> 
+      <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-panel-opm-pc pa3a5077b123c4b698d50f5b92fab9dbc-iosstatusbar cueeUzu" xid="panel1" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cueeUzu"> 
+        <div class="x-panel-top cueeUzu" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cueeUzu"> 
+          <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="form-inline x-toolbar x-toolbar-spliter cueeUzu" xid="toolBar2" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cueeUzu"> 
+            <div component="$model/UI2/system/components/justep/smartFilter/smartFilter" xid="smartFilter1" style="float: right;" data-bind="component:{name:'$model/UI2/system/components/justep/smartFilter/smartFilter'}" data-config="{&quot;filterCols&quot;:&quot;sOrgFName,roleName&quot;,&quot;filterData&quot;:&quot;authorizeData&quot;}" __cid="cueeUzu" class="cueeUzu"> 
+              <input type="text" class="form-control cueeUzu" placeholder="搜索" data-bind="valueUpdate: ['input', 'afterkeydown']" bind-value="$model.comp($element.parentElement).searchText" bind-change="$model.comp($element.parentElement).onInputChange.bind($model.comp($element.parentElement))" xid="input1" __cid="cueeUzu"/> 
+            </div>  
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cueeUzu" xid="addOrgBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:addOrgBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-add&quot;,&quot;label&quot;:&quot;分配组织&quot;}" __cid="cueeUzu"> 
+              <i xid="i7" class="icon-android-add cueeUzu" __cid="cueeUzu"/>  
+              <span xid="span7" __cid="cueeUzu" class="cueeUzu">分配组织</span> 
+            </a>  
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cueeUzu" xid="deleteOrgBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:deleteOrgBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-remove&quot;,&quot;label&quot;:&quot;删除组织&quot;}" __cid="cueeUzu"> 
+              <i xid="i13" class="icon-android-remove cueeUzu" __cid="cueeUzu"/>  
+              <span xid="span16" __cid="cueeUzu" class="cueeUzu">删除组织</span> 
+            </a>  
+            <div class="dropdown btn-group cueeUzu" component="$model/UI2/system/components/bootstrap/dropdown/dropdown" xid="dropdown1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/dropdown/dropdown'}" data-config="{&quot;autoHideMenu&quot;:false}" __cid="cueeUzu"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left dropdown-toggle cueeUzu" xid="button1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-android-more&quot;,&quot;label&quot;:&quot;选项&quot;}" __cid="cueeUzu"> 
+                <i class="icon-android-more cueeUzu" xid="i2" __cid="cueeUzu"/>  
+                <span xid="span2" __cid="cueeUzu" class="cueeUzu">选项</span> 
+              </a>  
+              <ul component="$model/UI2/system/components/justep/menu/menu" class="x-menu dropdown-menu cueeUzu" xid="menu1" data-bind="component:{name:'$model/UI2/system/components/justep/menu/menu'}" __cid="cueeUzu"> 
+                <li class="x-menu-item cueeUzu" xid="item1" __cid="cueeUzu"> 
+                  <a xid="a3" __cid="cueeUzu" class="cueeUzu"> 
+                    <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox cueeUzu" xid="checkbox1" label="显示从子角色继承的组织" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;显示从子角色继承的组织&quot;}" data-bind="component:{ref:tempData.ref('showInherited'),name:'$model/UI2/system/components/justep/button/checkbox'}" __cid="cueeUzu">
+                      <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox" __cid="cueeUzu" class="cueeUzu"/>
+                      <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="cueeUzu" class="cueeUzu">显示从子角色继承的组织</xhtml:label>
+                    </span> 
+                  </a> 
+                </li> 
+              </ul> 
+            </div> 
+          </div> 
+        </div>  
+        <div class="x-panel-content cueeUzu" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cueeUzu"> 
+          <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" rowActiveClass="active" class="table table-hover cueeUzu" xid="authorizeTables" data="authorizeData" multiSelect="true" data-config="{&quot;columns&quot;:[{&quot;orderable&quot;:false,&quot;sName&quot;:&quot;orgKindID&quot;,&quot;title&quot;:&quot;　&quot;,&quot;width&quot;:&quot;20px&quot;,&quot;xid&quot;:&quot;column4&quot;},{&quot;sName&quot;:&quot;sOrgFName&quot;,&quot;title&quot;:&quot;组织&quot;,&quot;xid&quot;:&quot;column2&quot;},{&quot;sName&quot;:&quot;roleName&quot;,&quot;title&quot;:&quot;所属角色&quot;,&quot;xid&quot;:&quot;column3&quot;}],&quot;data&quot;:&quot;authorizeData&quot;,&quot;flexibleWidth&quot;:true,&quot;multiSelect&quot;:true,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" data-events="onCellRender:authorizeTablesCellRender;onRowCheck:authorizeTablesRowCheck" __cid="cueeUzu"/> 
+        </div>  
+        <div class="x-panel-bottom cueeUzu" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cueeUzu"> 
+          <div component="$model/UI2/system/components/justep/pagerBar/pagerBar" class="x-pagerbar container-fluid cueeUzu" xid="pagerBar1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerBar/pagerBar'}" data-config="{&quot;data&quot;:&quot;authorizeData&quot;}" __cid="cueeUzu"> 
+            <div class="row cueeUzu" xid="div1" __cid="cueeUzu"> 
+              <div class="col-sm-3 cueeUzu" xid="div2" __cid="cueeUzu"> 
+                <div class="x-pagerbar-length cueeUzu" xid="div3" __cid="cueeUzu"> 
+                  <label component="$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect" class="x-pagerlimitselect cueeUzu" xid="pagerLimitSelect1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect'}" data-config="{&quot;data&quot;:&quot;authorizeData&quot;}" __cid="cueeUzu"> 
+                    <span xid="span1" __cid="cueeUzu" class="cueeUzu">显示</span>  
+                    <select component="$model/UI2/system/components/justep/select/select" class="form-control input-sm cueeUzu" xid="select1" data-bind="component:{name:'$model/UI2/system/components/justep/select/select'}" __cid="cueeUzu"> 
+                      <option value="10" xid="default3" __cid="cueeUzu" class="cueeUzu">10</option>  
+                      <option value="20" xid="default4" __cid="cueeUzu" class="cueeUzu">20</option>  
+                      <option value="50" xid="default3" __cid="cueeUzu" class="cueeUzu">50</option>  
+                      <option value="100" xid="default4" __cid="cueeUzu" class="cueeUzu">100</option> 
+                    </select>  
+                    <span xid="span3" __cid="cueeUzu" class="cueeUzu">条</span> 
+                  </label> 
+                </div> 
+              </div>  
+              <div class="col-sm-3 cueeUzu" xid="div4" __cid="cueeUzu"> 
+                <div class="x-pagerbar-info cueeUzu" xid="div5" __cid="cueeUzu">当前显示0条，共0条</div> 
+              </div>  
+              <div class="col-sm-6 cueeUzu" xid="div6" __cid="cueeUzu"> 
+                <div class="x-pagerbar-pagination cueeUzu" xid="div7" __cid="cueeUzu"> 
+                  <ul class="pagination cueeUzu" component="$model/UI2/system/components/bootstrap/pagination/pagination" xid="pagination1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/pagination/pagination'}" data-config="{&quot;data&quot;:&quot;authorizeData&quot;}" __cid="cueeUzu"> 
+                    <li class="prev cueeUzu" xid="li1" __cid="cueeUzu"> 
+                      <a href="#" xid="a1" __cid="cueeUzu" class="cueeUzu"> 
+                        <span aria-hidden="true" xid="span4" __cid="cueeUzu" class="cueeUzu">«</span>  
+                        <span class="sr-only cueeUzu" xid="span5" __cid="cueeUzu">Previous</span> 
+                      </a> 
+                    </li>  
+                    <li class="next cueeUzu" xid="li2" __cid="cueeUzu"> 
+                      <a href="#" xid="a2" __cid="cueeUzu" class="cueeUzu"> 
+                        <span aria-hidden="true" xid="span6" __cid="cueeUzu" class="cueeUzu">»</span>  
+                        <span class="sr-only cueeUzu" xid="span8" __cid="cueeUzu">Next</span> 
+                      </a> 
+                    </li> 
+                  </ul> 
+                </div> 
+              </div> 
+            </div> 
+          </div> 
+        </div>  
+        <style __cid="cueeUzu" class="cueeUzu">.x-panel.pa3a5077b123c4b698d50f5b92fab9dbc-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pa3a5077b123c4b698d50f5b92fab9dbc-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pa3a5077b123c4b698d50f5b92fab9dbc-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pa3a5077b123c4b698d50f5b92fab9dbc-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pa3a5077b123c4b698d50f5b92fab9dbc-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pa3a5077b123c4b698d50f5b92fab9dbc-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pa3a5077b123c4b698d50f5b92fab9dbc-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pa3a5077b123c4b698d50f5b92fab9dbc-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pa3a5077b123c4b698d50f5b92fab9dbc-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+      </div> 
+    </div> 
+  </div>  
+  <span component="$model/UI2/system/components/justep/org/orgDialogPC" xid="orgDialog" style="left:259px;top:221px;" data-bind="component:{name:'$model/UI2/system/components/justep/org/orgDialogPC'}" data-events="onReceive:orgDialogReceive" data-config="{&quot;multiSelection&quot;:true,&quot;showTitle&quot;:true,&quot;status&quot;:&quot;normal&quot;}" __cid="cueeUzu" class="cueeUzu">
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog-overlay cueeUzu" __cid="cueeUzu"/>
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog cueeUzu" showTitle="true" __cid="cueeUzu">
+      <xhtml:div class="x-dialog-title cueeUzu" __cid="cueeUzu">
+        <xhtml:button class="close cueeUzu" __cid="cueeUzu">
+          <xhtml:span __cid="cueeUzu" class="cueeUzu">×</xhtml:span>
+        </xhtml:button>
+        <xhtml:div class="x-dialog-title-text cueeUzu" __cid="cueeUzu"/>
+      </xhtml:div>
+      <xhtml:div class="x-dialog-body cueeUzu" __cid="cueeUzu"/>
+    </xhtml:div>
+  </span> 
+</div>

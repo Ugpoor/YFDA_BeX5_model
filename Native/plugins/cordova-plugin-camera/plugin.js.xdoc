@@ -1,0 +1,274 @@
+/**
+	@name cordova-plugin-camera
+	@class 
+	@description 摄像头插件
+	@model Native
+	@category plugin
+	@declareVar navigator.camera
+*/
+
+/**
+	@name cordova-plugin-camera.getPicture
+	@function
+	@see cordova-plugin-camera.DestinationType
+	@see cordova-plugin-camera.PictureSourceType
+	@see cordova-plugin-camera.EncodingType
+	@see cordova-plugin-camera.MediaType
+	@see cordova-plugin-camera.Direction
+	@see cordova-plugin-camera.CameraPopoverOptions
+ 	@param {Function} successCallback 执行成功回调函数
+ 	@param {Function} errorCallback 执行失败回调函数
+	@param {Object} options 可选 请求参数
+	<br/><b>参数格式：</b>
+	<xmp>
+		 {
+			"quality":String - 保存图片的质量 ,取值范围0-100，缺省为50,
+			"destinationType":Number - 返回类型,cordova-plugin-camera.DestinationType参数类型，缺省为cordova-plugin-camera.DestinationType.FILE_URI
+ 	 		"sourceType":Number - 获取图片资源类型，cordova-plugin-camera.PictureSourceType参数类型，缺省为cordova-plugin-camera.PictureSourceType.CAMERA,
+ 	 		"targetWidth":Number - 图片像素宽度,
+ 	 		"targetHeight":Number - 图片像素高度,
+ 	 		"encodingType":Number - 返回图片的编码，cordova-plugin-camera.EncodingType参数类型，缺省为cordova-plugin-camera.EncodingType.JPEG,
+ 	 		"mediaType":Number - 媒体类型，cordova-plugin-camera.MediaType 参数类型，缺省为cordova-plugin-camera.MediaType.PICTURE，仅在sourceType为PHOTOLIBRARY或SAVEDPHOTOALBUM时生效
+ 	 		"allowEdit":Boolean - 是否允许编辑,
+ 	 		"correctOrientation":Boolean - 旋转是否捕获图片,
+ 	 		"saveToPhotoAlbum":Boolean - 是否保存,
+ 	 		"popoverOptions":Object - 只有在IOS系统的ipad中指定遮罩层的选项,定义在cordova-plugin-camera.CameraPopoverOptions中
+ 	 		"cameraDirection":Number - 选择使用的摄像头，cordova-plugin-camera.Direction参数类型(需要本地支持前置后置拍照)，缺省为cordova-plugin-camera.Direction.BACK
+		}
+	</xmp>	
+ 	@returns {void}
+ 	@description 拍照或者调用本机图库的相片
+*/
+
+/**
+ 	@name cordova-plugin-camera.cleanup
+ 	@function
+ 	@param {Function} successCallback 执行成功回调函数
+ 	@param {Function} errorCallback 执行失败回调函数
+ 	@returns {void}
+ 	@description 从临时存储中删除相机拍摄的中间照片
+*/
+
+/**
+	@name cordova-plugin-camera.DestinationType
+	@class 
+	@description 资源返回格式
+	@model Native
+	@category EventClass
+	@declareVar Camera.DestinationType
+*/
+
+/**
+   @name cordova-plugin-camera.DestinationType.DATA_URL
+   @property
+   @type Number
+   @description 资源返回格式 = 0 图片的base64格式
+*/
+
+/**
+   @name cordova-plugin-camera.DestinationType.FILE_URI
+   @property
+   @type Number
+   @description 资源返回格式 = 1 图片资源的URI，如content://media/external/images/media/2 for Android
+*/
+
+/**
+   @name cordova-plugin-camera.DestinationType.NATIVE_URI
+   @property
+   @type Number
+   @description 资源返回格式 = 0 图片本地的URI 如library://... for iOS
+*/
+
+/**
+	@name cordova-plugin-camera.PictureSourceType
+	@class 
+	@description 获取图片资源类型
+	@model Native
+	@category EventClass
+	@declareVar Camera.PictureSourceType
+*/
+
+/**
+   @name cordova-plugin-camera.PictureSourceType.PHOTOLIBRARY
+   @property
+   @type Number
+   @description 获取图片资源类型 = 0 从图库中选择图像
+*/
+
+/**
+   @name cordova-plugin-camera.PictureSourceType.CAMERA
+   @property
+   @type Number
+   @description 获取图片资源类型 = 0 从相机拍照
+*/
+
+/**
+   @name cordova-plugin-camera.PictureSourceType.SAVEDPHOTOALBUM
+   @property
+   @type Number
+   @description 获取图片资源类型 = 0 从相册中选择图像
+*/
+
+/**
+	@name cordova-plugin-camera.EncodingType
+	@class 
+	@description 返回图片的编码
+	@model Native
+	@category EventClass
+	@declareVar Camera.EncodingType
+*/
+
+/**
+   @name cordova-plugin-camera.EncodingType.JPEG
+   @property
+   @type Number
+   @description 返回图片的编码 = 0 
+*/
+
+/**
+   @name cordova-plugin-camera.EncodingType.PNG
+   @property
+   @type Number
+   @description 返回图片的编码 = 1 
+*/
+
+/**
+	@name cordova-plugin-camera.MediaType
+	@class 
+	@description 媒体类型
+	@model Native
+	@category EventClass
+	@declareVar Camera.MediaType
+*/
+
+/**
+   @name cordova-plugin-camera.MediaType.PICTURE
+   @property
+   @type Number
+   @description 媒体类型 = 0，拍照 ，返回destinationType指定的格式
+*/
+
+/**
+   @name cordova-plugin-camera.MediaType.VIDEO
+   @property
+   @type Number
+   @description 媒体类型 = 1，录像，只返回cordova-plugin-camera.DestinationType.FILE_URI格式
+*/
+
+/**
+   @name cordova-plugin-camera.MediaType.ALLMEDIA
+   @property
+   @type Number
+   @description 媒体类型 = 2，允许拍照和录像
+*/
+
+/**
+	@name cordova-plugin-camera.PopoverArrowDirection
+	@class 
+	@description 摄像头类型
+	@model Native
+	@category EventClass
+	@declareVar Camera.PopoverArrowDirection
+*/
+
+/**
+   @name cordova-plugin-camera.PopoverArrowDirection.ARROW_UP
+   @property
+   @type Number
+   @description 1
+*/
+
+/**
+   @name cordova-plugin-camera.PopoverArrowDirection.ARROW_DOWN
+   @property
+   @type Number
+   @description 2
+*/
+
+/**
+   @name cordova-plugin-camera.PopoverArrowDirection.ARROW_LEFT
+   @property
+   @type Number
+   @description 4
+*/
+
+/**
+   @name cordova-plugin-camera.PopoverArrowDirection.ARROW_RIGHT
+   @property
+   @type Number
+   @description 8
+*/
+
+/**
+   @name cordova-plugin-camera.PopoverArrowDirection.ARROW_ANY
+   @property
+   @type Number
+   @description 15
+*/
+
+/**
+	@name cordova-plugin-camera.Direction
+	@class 
+	@description 摄像头类型
+	@model Native
+	@category EventClass
+	@declareVar Camera.Direction
+*/
+
+/**
+   @name cordova-plugin-camera.Direction.BACK
+   @property
+   @type Number
+   @description 摄像头类型 = 0 后置摄像头
+*/
+
+/**
+   @name cordova-plugin-camera.Direction.FRONT
+   @property
+   @type Number
+   @description 摄像头类型 = 1 前置摄像头
+*/
+
+/**
+	@name cordova-plugin-camera.CameraPopoverOptions
+	@class 
+	@description 摄像popover选项
+	@model Native
+	@category EventClass
+	@declareVar CameraPopoverOptions
+*/
+
+/**
+   @name cordova-plugin-camera.CameraPopoverOptions.x
+   @property
+   @type Number
+   @description popover的x轴
+*/
+
+/**
+   @name cordova-plugin-camera.CameraPopoverOptions.y
+   @property
+   @type Number
+   @description popover的y轴
+*/
+
+/**
+   @name cordova-plugin-camera.CameraPopoverOptions.width
+   @property
+   @type Number
+   @description popover的宽度
+*/
+
+/**
+   @name cordova-plugin-camera.CameraPopoverOptions.height
+   @property
+   @type Number
+   @description popover的高度
+*/
+
+/**
+   @name cordova-plugin-camera.CameraPopoverOptions.arrowDir
+   @property
+   @type Number
+   @description popover的箭头方向指向
+*/

@@ -1,0 +1,16 @@
+.o-nomargin{ margin:0;}
+.o-nopadding{ padding:0;}
+
+.o-listimg{ width:100%; height:95px;}
+
+.o-menuList{ padding-right:10px;}
+.o-menuList ul li{ color:#fff;}
+.o-menuList ul li:nth-child(1){ background-color:#0086cf; }
+.o-menuList ul li:nth-child(2){ background-color:#db532d;}
+.o-menuList ul li:nth-child(3){ background-color:#623dbe;}
+.o-menuList ul li:nth-child(4){ background-color:#00bef2;}
+.o-menuList ul li:nth-child(5){ background-color:#009a00;}
+.o-menuList ul li:nth-child(6){ background-color:#b41c43;}
+
+.o-imgList ul li img{ margin-top:5px;}
+

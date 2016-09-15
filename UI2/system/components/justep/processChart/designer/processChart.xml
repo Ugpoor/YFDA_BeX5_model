@@ -1,0 +1,40 @@
+<elements>
+	<element name="$UI/system/components/justep/processChart/processChart"
+		tag-name="div" icon="processChartMini.jpg" text="流程图"
+		binding-component="$UI/system/components/justep/processChart/processChart"
+		display-property="xid" component-type="formControl" design-view="web-designer">
+
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="contents" text="content" editor-ref="contentsList"/>
+			<property name="ext" text="扩展属性" required="false"
+				editor-ref="extDialog" />
+			<property name="class" text="class" />
+			<property name="style" text="样式" editor-ref="styleDialog">
+				<property name="width" text="宽度" is-style="true" />
+				<property name="height" text="高度" is-style="true" />
+			</property>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>	
+		</properties>
+		<property-editors>
+			<property-editor name="extDialog" type="dialog">
+				<dialog-page class-name="ExtDialogPage" />
+			</property-editor>
+			<property-editor name="contentsList" type="list">
+				<static-data value="track,pert,trackAndPert" /> <!--直接定义的静态数据 -->
+			</property-editor>
+			
+		</property-editors>
+
+		<templates>
+			<template name="default"><![CDATA[ 
+			<div component="$UI/system/components/justep/processChart/processChart" class="x-processChart"/>
+		   ]]></template>
+		</templates>
+		<events>
+			<event name="onTrackItemClick" text="" parameters="event" />
+			<event name="onPertItemClick" text="" parameters="event" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+	</element>
+</elements>

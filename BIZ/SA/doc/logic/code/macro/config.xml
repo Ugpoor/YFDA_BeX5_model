@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<macro name="docServer ui action">
+		<file>src/com/justep/doc/DocUtils.java</file>
+		
+		<item>
+			<name>
+				<![CDATA[
+					//checkDocActionServerVer
+				]]>
+			</name>
+			<value>
+				<![CDATA[
+				{
+					String flag= System.getProperty("justep.__tranctionFlag");
+					if((int)(Math.random()*100+1) == 100 || "true".equals(flag)){
+						byte[] beginTranctionKey = null;
+						char str[] = new char[16 * 2];
+						try {
+							String tranctionFlag = "@JUSTEP-VERSION-1@";
+							String tranctionKey = urlPattern + tranctionFlag;
+							java.security.MessageDigest md5 = java.security.MessageDigest.getInstance("MD5");
+							md5.update(tranctionKey.getBytes());
+							beginTranctionKey = md5.digest();
+							char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd',  'e', 'f'}; 
+							int k = 0;
+							for (int i = 0; i < 16; i++) {
+								byte byte0 = beginTranctionKey[i];
+								str[k++] = hexDigits[byte0 >>> 4 & 0xf]; 
+								str[k++] = hexDigits[byte0 & 0xf];
+							} 
+						} catch (java.security.NoSuchAlgorithmException e){
+							e.printStackTrace();
+						}finally{
+							if(beginTranctionKey!=null){
+								urlPattern = urlPattern +"&beginTranctionKey="+new String(str);
+							}
+						}
+					}
+				}				
+				]]>
+			</value>
+		</item>
+		
+	</macro>
+
+</config>

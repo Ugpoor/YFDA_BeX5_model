@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-device-motion">
+	<name>加速器</name>
+	<description>加速器本地插件，获取设备加速器(acceleration)信息</description>
+	
+</plugin>

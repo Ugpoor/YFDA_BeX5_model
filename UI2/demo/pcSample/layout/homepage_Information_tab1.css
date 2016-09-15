@@ -1,0 +1,32 @@
+.x-control-group{
+	padding: 0;
+	margin: 1%;
+	border: 1px solid #E8E8E8;
+}
+.icon-android-contact{
+	font-size: 150%;
+}
+.icon-android-mail{
+	font-size: 150%;
+}
+.icon-android-star{
+	font-size: 150%;
+}
+.icon-android-book{
+	font-size: 150%;
+}
+.icon-android-calendar{
+	font-size: 150%;
+}
+.icon-edit{
+	font-size: 150%;
+}
+
+.image{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.div9{
+	margin-top: 15px;
+	margin-left: 20px;
+}

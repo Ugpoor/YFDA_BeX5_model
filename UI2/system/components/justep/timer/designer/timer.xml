@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/timer/timer"  tag-name="span" icon="timer_icon.png"
+		binding-component="$UI/system/components/justep/timer/timer" resizable="false"
+		component-type="formControl" parent-range="$UI/system/components/justep/window/window"
+		design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="enabled" text="激活" editor-ref="booleanList" readonly="true" default-value="true"/>
+			<property name="interval" text="触发间隔，单位：毫秒" default-value="1000" data-type="integer"/>
+			<property name="times" text="触发次数" editor-ref="timesList" default-value="0" data-type="integer"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="timesList" type="list">
+				<static-data value="0:无限"></static-data>
+			</property-editor>
+		</property-editors>
+		
+		<events>
+			<event name="onTimer" />
+		</events>
+		<templates>
+			<template name="default"><![CDATA[ 
+				<span component="$UI/system/components/justep/timer/timer"/> 
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

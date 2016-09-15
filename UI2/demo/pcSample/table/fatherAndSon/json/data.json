@@ -1,0 +1,11 @@
+[
+	{"sId":"1", "sCourse":"语文", "sScore":"83", "sDescribe":"良好", "parent":"1"},
+	{"sId":"2", "sCourse":"数学", "sScore":"91", "sDescribe":"优秀", "parent":"1"},
+	{"sId":"3", "sCourse":"英语", "sScore":"77", "sDescribe":"中等", "parent":"1"},
+	{"sId":"4", "sCourse":"语文", "sScore":"120", "sDescribe":"很不错", "parent":"2"},
+	{"sId":"5", "sCourse":"数学", "sScore":"110", "sDescribe":"不错", "parent":"2"},
+	{"sId":"6", "sCourse":"英语", "sScore":"115", "sDescribe":"good", "parent":"2"},
+	{"sId":"7", "sCourse":"综合", "sScore":"200", "sDescribe":"好", "parent":"2"},
+	{"sId":"8", "sCourse":"语文", "sScore":"73", "sDescribe":"中等", "parent":"3"},
+	{"sId":"9", "sCourse":"数学", "sScore":"59", "sDescribe":"加油啊！", "parent":"3"}
+]

@@ -1,0 +1,115 @@
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description 智能过滤组件
+	@example
+	<xmp>
+		OrgFilter组件通过简单的属性设置就可以给数据增加组织过滤的能力，关键属性有：
+			filterData: 过滤数据
+			orgFIDCol: 包含组织路径数据的过滤字段
+			personIDCol: 包含人员标识数据的过滤字段（可选）
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter#xid
+	@attribute 
+	@type string
+	@description 组件标识
+*/
+
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter#filterData
+	@attribute 
+	@type string
+	@description 过滤数据，必须是bizData
+*/
+
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter#orgFIDCol
+	@attribute 
+	@type string
+	@description 包含组织路径数据的过滤字段，用于构造基于组织路径的过滤条件
+*/
+
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter#personIDCol
+	@attribute 
+	@type string
+	@description 包含人员标识数据的过滤字段（可选），如果设置了personIDCol，当选择人员节点时，支持基于personID的过滤，可以同时过滤出人员的多个岗位数据
+*/
+
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter#useMyself
+	@attribute 
+	@type string
+	@description 是否使用本人过滤，如果选择了“本人”，则在下拉列表中会出现“本人”选项。
+*/
+
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter#autoRefresh
+	@attribute 
+	@type boolean
+	@description 是否自动刷新 - 默认是true，用户输入后不仅设置数据的过滤条件，同时自动刷新数据。
+*/
+
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter#selectedValue
+	@property 
+	@type observable
+	@description 选中数据，可以通过set和get方法存取，获取到的数据是以逗号分隔的sFID。注意：如果有“本人”，则以.psn结尾的是"本人"，数据格式是currentPersonID + .psn。
+*/
+
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter#selectedLabel
+	@property 
+	@type observable
+	@description 选中数据的显示值，可以通过set和get方法存取。
+*/
+
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter#getFilterData
+	@function
+	@returns {$UI/system/components/justep/data/data}	 
+	@description 获取过滤数据集对象
+*/
+
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter#getFilterFlag
+	@function
+	@returns {string}	 
+	@description 获取过滤条件标识
+*/
+
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter#getFilterStr
+	@function
+	@returns {string}	 
+	@description 获取过滤条件字符串
+*/
+
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter#filter
+	@function
+	@description 设置数据的过滤条件，如果“自动刷新”则刷新数据；开发者可以通过onFilter事件接管。
+*/
+
+/**
+	@name $UI/system/components/justep/orgFilter/orgFilter#onFilter
+	@event
+	@description 过滤事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+
+
+

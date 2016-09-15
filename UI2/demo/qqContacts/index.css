@@ -1,0 +1,28 @@
+.x-titlebar{ background-color:#11b7f3;}
+.panel{ border-radius:0; margin-bottom:10px;}
+
+/*功能分类*/
+.o-types img{ width:30px; height:30px; margin-bottom:5px;}
+.o-types p{ font-size:1em; color:#000;}
+
+/*搜索区*/
+.o-seach{ padding:10px 15px;}
+.o-seach .btn{ background-color:#f3f3f3;}
+
+/*头像*/
+.o-headImg{ width:42px; height:42px;}
+.o-offline{ filter:alpha(opacity=30);opacity:0.3;}
+
+/*分组*/
+.o-group{ padding:0;}
+.o-group .o-groupTitle{ font-size:1.3em; color:#000; border-radius:0; margin-bottom:0; background-color:#fff; border-bottom:1px solid rgba(220,222,221,0.5); font-weight:normal;}
+.o-group .o-groupTitle i{ margin:0 10px 0 5px; font-size:1em; color:#b4b4b4;}
+/*在线人数*/
+.o-count{ font-size:0.7em;}
+
+/*联系人列表*/
+.o-contactList li{ padding:8px 10px; border-bottom:1px solid rgba(220,222,221,0.5);}
+.o-contactList li h4{ color:#000;}
+.o-contactList li i{ font-size:1em;}
+.o-contactList li .o-note{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+

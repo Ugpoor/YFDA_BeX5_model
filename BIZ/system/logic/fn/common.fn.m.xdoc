@@ -1,0 +1,742 @@
+/**
+	@name 通用函数
+	@fn
+	@model BIZ
+	@category fn
+	@description 通用函数
+	@example
+	通用函数定义，定义模块是“/system/logic/fn”，使用通用函数时，需要先引用（use或include）模块“/system/logic/fn”。
+*/
+
+/**
+	@name 通用函数.encryptPassword
+
+	@function
+	@description 密码加密
+	@param {String} password 明文密码
+	@returns {String}
+	@example 
+		encryptPassword('123456')
+	@see com.justep.system.util.CommonUtils.encryptPassword
+*/
+
+/**
+	@name 通用函数.list
+
+	@function
+	@description 将多个对象形成一个list
+	@param {Object} objs 变参
+	@returns {List}
+	@example 
+		list('value1', 'value2')
+	@see com.justep.system.util.CommonUtils.list
+*/
+
+/**
+	@name 通用函数.guid
+	
+	@function
+	@description 生成32位的唯一标识
+	@returns {String}
+	@example guid()
+	@see com.justep.system.util.CommonUtils.createGUID
+*/
+
+/**
+	@name 通用函数.shortGuid
+	
+	@function
+	@description 生成19位的唯一标识
+	@returns {String}
+	@example shortGuid()
+	@see com.justep.system.util.CommonUtils.createShortGUID
+*/
+
+
+/**
+	@name 通用函数.toString
+	
+	@function
+	@description 将指定的值转换成字符串
+	@param {Object} obj 指定的值 
+	@returns {String}
+	@see com.justep.system.util.CommonUtils.toString
+*/
+
+/**
+	@name 通用函数.toInteger
+	
+	@function
+	@description 将指定的值转换成整数
+	@param {Object} obj  指定的值
+	@returns {Integer}
+	@see com.justep.system.util.CommonUtils.toInteger
+*/
+
+
+/**
+	@name 通用函数.toFloat
+	
+	@function
+	@description 将指定的值转换成Float
+	@param {Object} obj  指定的值
+	@returns {Float}
+	@see com.justep.system.util.CommonUtils.toFloat
+*/
+
+/**
+	@name 通用函数.toDecimal
+	
+	@function
+	@description 将指定的值转换成BigDecimal
+	@param {Object} obj 指定的值
+	@returns {BigDecimal}
+	@see com.justep.system.util.CommonUtils.toDecimal
+*/
+
+/**
+	@name 通用函数.toDate
+	
+	@function
+	@description 将指定的值转换成Date
+	@param {Object} obj 指定的值
+	@returns {Date}
+	@see com.justep.system.util.CommonUtils.toDate
+*/
+
+/**
+	@name 通用函数.toDateTime
+	
+	@function
+	@description 将指定的值转换成DateTime
+	@param {Object} obj 指定的值
+	@returns {DateTime}
+	@see com.justep.system.util.CommonUtils.toDateTime
+*/
+
+/**
+	@name 通用函数.toTime
+	
+	@function
+	@description 将指定的值转换成Time
+	@param {Object} obj 指定的值
+	@returns {Time}
+	@see com.justep.system.util.CommonUtils.toTime
+*/
+
+/**
+	@name 通用函数.dateToMillisecond
+	
+	@function
+	@description 将日期时间转换成毫秒
+	@param {Date} d 日期时间
+	@returns {long} 毫秒
+	@see com.justep.system.util.CommonUtils.dateToMillisecond
+*/
+
+/**
+	@name 通用函数.dateDiff
+	
+	@function
+	@description 返回指定的 startdate 和 enddate 之间所跨的指定 datepart 边界的计数（带符号的整数）
+	@param {String} datePart  
+<xmp>
+	支持下面所列的值及缩写
+	year		yy, yyyy 
+	quarter 	qq, q 
+ 	month 		mm, m 
+	day 		dd, d 
+	week 		wk, ww 
+	hour 		hh 
+	minute 		mi, n 
+	second 		ss, s 
+	millisecond ms
+</xmp>		
+	@param {Date} startDate 开始日期时间
+	@param {Date} endDate 结束日期时间
+	@returns {long}
+	@see com.justep.system.util.CommonUtils.dateDiff
+*/
+
+/**
+	@name 通用函数.toChineseNumber
+	
+	@function
+	@description 将指定的数字转换成中文的数字
+	@param {Number} num 
+	@param {Boolean} isCapital 是否大写 ，目前只支持大写
+	@returns {String}
+	@see com.justep.system.util.CommonUtils.toChineseNumber
+*/
+
+/**
+	@name 通用函数.toChineseMoney
+	
+	@function
+	@description 将指定的数字转换成人民币数字
+	@param {Number} num 
+	@returns {String}
+	@see com.justep.system.util.CommonUtils.toChineseMoney
+*/
+
+/**
+	@name 通用函数.ceil
+	
+	@function
+	@description 计算大于指定数的最小整数
+	@param {Number} num 
+	@returns {Integer}
+	@see com.justep.system.util.CommonUtils.ceil
+*/
+
+/**
+	@name 通用函数.floor
+	
+	@function
+	@description 计算小于等于指定数的最大整数
+	@param {Number} num 
+	@returns {Integer}
+	@see com.justep.system.util.CommonUtils.floor
+*/
+
+/**
+	@name 通用函数.remainder
+	
+	@function
+	@description 求余
+	@param {Number} dividend 被除数
+	@param {Number} divisor 除数 
+	@returns {Integer}
+	@see com.justep.system.util.CommonUtils.remainder
+*/
+
+/**
+	@name 通用函数.round
+	
+	@function
+	@description 四舍五入取整
+	@param {Number} num 
+	@returns {Integer}
+	@see com.justep.system.util.CommonUtils.round
+*/
+
+/**
+	@name 通用函数.abs
+	
+	@function
+	@description 计算指定数值的绝对值
+	@param {Number} num 
+	@returns {Number}
+	@see com.justep.system.util.CommonUtils.abs
+*/
+
+/**
+	@name 通用函数.sqrt
+	
+	@function
+	@description 计算指定数值平方根
+	@param {Number} num 
+	@returns {Number}
+	@see com.justep.system.util.CommonUtils.sqrt
+*/
+
+/**
+	@name 通用函数.power
+	
+	@function
+	@description 计算指定数值的n次方
+	@param {Number} num 
+	@param {Number} n 
+	@returns {Number}
+	@see com.justep.system.util.CommonUtils.power
+*/
+
+/**
+	@name 通用函数.concat
+	
+	@function
+	@description 连接字符串
+	@param {String} strs 变参 
+	@returns {String}
+	@see com.justep.system.util.CommonUtils.concat
+*/
+/**
+	@name 通用函数.upper
+	
+	@function
+	@description 字符串转大写
+	@param {String} str 
+	@returns {String}
+	@see com.justep.system.util.CommonUtils.upper
+*/
+
+/**
+	@name 通用函数.lower
+	
+	@function
+	@description 字符串转小写
+	@param {String} str 
+	@returns {String}
+	@see com.justep.system.util.CommonUtils.lower
+*/
+
+/**
+	@name 通用函数.startsWith
+	
+	@function
+	@description 判断某个字符串是否以指定的字符串开始
+	@param {String} str  
+	@param {String} prefix  
+	@returns {Boolean}
+	@see com.justep.system.util.CommonUtils.startsWith
+*/
+
+/**
+	@name 通用函数.endsWith
+	
+	@function
+	@description 判断某个字符串是否以指定的字符串结束
+	@param {String} str  
+	@param {String} suffix  
+	@returns {Boolean}
+	@see com.justep.system.util.CommonUtils.endsWith
+*/
+	
+/**
+	@name 通用函数.trim
+	
+	@function
+	@description 去掉字符串两边的空白字符
+	@param {String} str 
+	@returns {String} 
+	@see com.justep.system.util.CommonUtils.trim
+*/
+
+/**
+	@name 通用函数.ltrim
+	
+	@function
+	@description 去掉字符串左边的空白字符
+	@param {String} str 
+	@returns {String}
+	@see com.justep.system.util.CommonUtils.ltrim
+*/
+
+/**
+	@name 通用函数.rtrim
+	
+	@function
+	@description 去掉字符串右边的空白字符
+	@param {String} str 
+	@returns {String}
+	@see com.justep.system.util.CommonUtils.rtrim
+*/
+	
+/**
+	@name 通用函数.stringLength
+	
+	@function
+	@description 获取字符串的长度
+	@param {String} str 
+	@returns {Integer}
+	@see com.justep.system.util.CommonUtils.stringLength
+*/	
+/**
+	@name 通用函数.replaceFirst
+	
+	@function
+	@description 替换字符串中第一个出现的子串
+	@param {String} srcString 要替换内容的字符串
+	@param {String} regex 查找的内容，支持正则表达式
+	@param {String} replacement 替换的内容
+	@returns {String} 替换后的内容
+	@example 
+		replaceFirst('abcdef', 'bcd', 'xxx') //结果 'axxxef'
+		replaceFirst('abcbcbcdef', 'bc', 'xxx') //结果 'axxxbcbcdef'
+		replaceFirst('abcbcbcdef', '.', 'xxx') //结果 'xxxbcbcbcdef' <-- 注意这里'.'是正则表达式
+	@see com.justep.system.util.CommonUtils.replaceFirst
+*/		
+
+/**
+	@name 通用函数.replaceAll
+	
+	@function
+	@description 替换字符串中出现的所有子串
+	@param {String} srcString 要替换内容的字符串
+	@param {String} regex 查找的内容，支持正则表达式
+	@param {String} replacement 替换的内容
+	@returns {String} 替换后的内容
+	@example 
+		replaceAll('abacadaeaf', 'a', '1') //结果 '1b1c1d1e1f'
+	@see com.justep.system.util.CommonUtils.replaceAll
+*/
+
+/**
+	@name 通用函数.stringPosition
+	
+	@function
+	@description 查找字符串中第一次出现子串的位置
+	@param {String} srcString 要查找内容的字符串
+	@param {String} dst 要查找的内容
+	@returns {Integer} 第一次出现的位置，如果没找到，返回-1
+	@see com.justep.system.util.CommonUtils.stringPosition
+*/
+
+/**
+	@name 通用函数.subString
+	
+	@function
+	@description 取指定位置的子串
+	@param {String} str  要截取的字符串
+	@param {Integer} start 子串的起始位置，从0开始
+	@param {Integer} end 子串的结束位置
+	@returns {String} 获得的子串
+	@see com.justep.system.util.CommonUtils.subString
+	@example 
+		subString('123456', 1, 2) //结果 '2'
+*/
+
+/**
+	@name 通用函数.format
+	
+	@function 
+	@description 根据给出的模板返回格式化后的字符串。
+	@param {String} pattern  格式字符串
+	@param {Object} objs  值列表，变参
+	@returns {String} 格式化后的字符串
+	@see com.justep.system.util.CommonUtils.format
+	@example
+	pattern: 格式一般为：%[argument_index$][flags][width][.precision]conversion
+	可选的 argument_index 是一个十进制整数，用于表明参数在参数列表中的位置。第一个参数由 '1$' 引用，
+第二个参数由 '2$' 引用，依此类推。
+	可选的 flags 是修改输出格式的字符集。有效标志的集合取决于转换类型，目前支持的flags包括：
+		'-' 左对齐，支持字符串和数值的类型转换
+		'0' 零补齐， 支持数值类型
+	可选 width 是一个非负十进制整数，表明要向输出中写入的最少字符数。
+	可选 precision 是一个非负十进制整数，表示浮点数类型中的小数个数
+	必需的 conversion 是一个表明应该如何格式化参数的字符。给定参数的有效转换集合取决于参数的数据类型。
+
+	目前转换类型conversion支持 字符串、数值、时间日期
+	字符串：STRING
+	用s表示，如：
+		format('%s', 'abc') //结果 'abc'
+		format('%5s', 'abc') //结果 '  abc'
+		format('%-5s', 'abc') //结果 'abc  '
+		format('%1$5s,%1$-5s', 'abc') //结果 '  abc,abc  '
+    
+	数值型：INTEGER FLOAT DECIMAL
+	数值用d表示整型 , f表示浮点型，注意精度截断是采用四舍五入的方式。
+		format('%d', 100) //结果 '100'
+		format('%5d', 100) //结果 '  100'
+		format('%-5d', 100) //结果 '100  '
+		format('%05d', 100) //结果 '00100'
+		format('%f', 1.255) //结果 '1.255'
+		format('%.2f', 1.255) //结果 '1.26'
+		format('%5.2f', 1.255) //结果 ' 1.26'
+		format('%-5.2f', 1.255) //结果 '1.26 '
+		format('%05.2f', 1.255) //结果 '01.26'
+    
+	日期时间型：DATE TIME DATE-TIME
+	日期时间型以t开始，后面跟转换字符，如下：
+		'H'      24 小时制的小时，被格式化为必要时带前导零的两位数，即 00 - 23。
+		'k'      24 小时制的小时，即 0 - 23。
+		'M'      小时中的分钟，被格式化为必要时带前导零的两位数，即 00 - 59。
+		'S'      分钟中的秒，被格式化为必要时带前导零的两位数，即 00 - 60 （'60' 是支持闰秒所需的一个特殊值）。
+		'Y'      年份，被格式化为必要时带前导零的四位数。
+		'y'      年份的最后两位数，被格式化为必要时带前导零的两位数，即 00 - 99。
+		'm'      月份，被格式化为必要时带前导零的两位数，
+		'd'      一个月中的天数，被格式化为必要时带前导零两位数，即 01 - 31
+		'e'      一个月中的天数，被格式化为两位数，即 1 - 31。
+	以下转换字符用于格式化常见的日期/时间组合。
+		'R'      24 小时制的时间，被格式化为 '%tH:%tM'
+		'T'      24 小时制的时间，被格式化为 '%tH:%tM:%tS'。
+		'F'     ISO 8601 格式的完整日期，被格式化为 '%tY-%tm-%td'。
+		
+		format('%tH', currentDatetime()) //结果 '16'         
+		format('%tM', currentDatetime()) //结果 '23'
+		format('%tF', currentDatetime()) //结果 '2009-09-25'
+	
+*/	
+	
+/**
+	@name 通用函数.decimalFormat
+	
+	@function
+	@description 根据给定的模板格式化高精度数值
+	@param {Decimal} value  要格式化的数值
+	@param {String} pattern 格式字符串
+	@returns {String} 格式化后的字符串
+	@see com.justep.system.util.CommonUtils.decimalFormat
+	@example 
+		decimalFormat(1.1, '####.##' ) //结果 '1.1'
+		decimalFormat(10000000.1, '#,###.##' ) //结果 '10,000,000.1'
+		decimalFormat(1.1, '####.00' ) //结果 '1.10'
+*/
+
+/**
+	@name 通用函数.dateFormat
+	
+	@function
+	@description 根据给定的模板格式化日期时间
+	@param {Object} value  要格式化的日期、时间或者日期时间型
+	@param {String} pattern 格式字符串
+	@returns {String} 格式化后的字符串
+	@see com.justep.system.util.CommonUtils.dateFormat
+	@example 
+		dateFormat(currentDate(), 'yyyyMMdd' ) //结果 '20101223'
+		dateFormat(currentDateTime(), 'yyyy-MM-dd HH:mm:ss' ) //结果 '2010-10-12 12:22:23'
+*/
+	
+/**
+	@name 通用函数.currentDateTime
+	
+	@function
+	@description 获取当前的日期时间
+	@returns {DateTime} 当前的日期时间
+	@see com.justep.system.util.CommonUtils.getCurrentDateTime
+*/	
+
+/**
+	@name 通用函数.currentDate
+	
+	@function
+	@description 获取当前的日期
+	@returns {Date} 当前的日期
+	@see com.justep.system.util.CommonUtils.getCurrentDate
+*/
+
+/**
+	@name 通用函数.currentTime
+	
+	@function
+	@description 获取当前的时间
+	@returns {Time} 当前的时间
+	@see com.justep.system.util.CommonUtils.getCurrentTime
+*/	
+
+/**
+	@name 通用函数.yearOf
+	
+	@function
+	@param {Date} date 日期时间或者日期
+	@description 获取给定日期的年份
+	@returns {Integer} 年份
+	@see com.justep.system.util.CommonUtils.getYear
+*/
+
+/**
+	@name 通用函数.monthOf
+	
+	@function
+	@param {Date} date 日期时间或者日期
+	@description 获取给定日期的月份
+	@returns {Integer} 月份
+	@see com.justep.system.util.CommonUtils.getMonth
+*/
+
+/**
+	@name 通用函数.dayOf
+	
+	@function
+	@param {Date} date 日期时间或者日期
+	@description 获取给定日期的天
+	@returns {Integer} 日期中的天
+	@see com.justep.system.util.CommonUtils.getDay
+*/
+
+/**
+	@name 通用函数.hourOf
+	
+	@function
+	@param {Date} date 日期时间或者时间
+	@description 获取给定时间的小时
+	@returns {Integer} 小时
+	@see com.justep.system.util.CommonUtils.getHour
+*/
+
+/**
+	@name 通用函数.minuteOf
+	
+	@function
+	@param {Date} date 日期时间或者时间
+	@description 获取给定时间的分钟
+	@returns {Integer} 分钟
+	@see com.justep.system.util.CommonUtils.getMinute
+*/
+
+/**
+	@name 通用函数.secondOf
+	
+	@function
+	@param {Date} date 日期时间或者时间
+	@description 获取给定时间的秒
+	@returns {Integer} 秒
+	@see com.justep.system.util.CommonUtils.getSecond
+*/
+
+/**
+	@name 通用函数.firstDateOfMonth
+	
+	@function
+	@param {Date} date 日期时间或者日期
+	@description 获取给定日期所在月的第一天
+	@returns {Date} 所在月的第一天
+	@see com.justep.system.util.CommonUtils.getFirstDateOfMonth
+*/
+
+/**
+	@name 通用函数.firstDateOfWeek
+	
+	@function
+	@param {Date} date 日期时间或者日期
+	@description 获取给定日期所在周的第一天
+	@returns {Date} 所在周的第一天
+	@see com.justep.system.util.CommonUtils.getFirstDateOfWeek
+*/
+
+/**
+	@name 通用函数.firstDateOfYear
+	
+	@function
+	@param {Date} date 日期时间或者日期
+	@description 获取给定日期所在年的第一天
+	@returns {Date} 所在年的第一天
+	@see com.justep.system.util.CommonUtils.getFirstDateOfYear
+*/
+
+
+/**
+	@name 通用函数.lastDateOfMonth
+	
+	@function
+	@param {Date} date 日期时间或者日期
+	@description 获取给定日期所在月的最后一天
+	@returns {Date} 所在月的最后一天
+	@see com.justep.system.util.CommonUtils.getLastDateOfMonth
+*/
+
+/**
+	@name 通用函数.lastDateOfWeek
+	
+	@function
+	@param {Date} date 日期时间或者日期
+	@description 获取给定日期所在周的最后一天
+	@returns {Date} 所在周的最后一天
+	@see com.justep.system.util.CommonUtils.getLastDateOfWeek
+*/
+
+/**
+	@name 通用函数.lastDateOfYear
+	
+	@function
+	@param {Date} date 日期时间或者日期
+	@description 获取给定日期所在年的最后一天
+	@returns {Date} 所在年的最后一天
+	@see com.justep.system.util.CommonUtils.getLastDateOfYear
+*/
+
+/**
+	@name 通用函数.dayOfWeek
+	
+	@function
+	@param {Date} date 日期时间或者日期
+	@description 获取给定日期所在周的第几天
+	@returns {Integer} 所在周的第几天
+	@see com.justep.system.util.CommonUtils.getDayOfWeek
+*/
+
+/**
+	@name 通用函数.addMonths
+	
+	@function
+	@param {Date} date 日期时间或者日期
+	@param {int} num 增加的月数
+	@description 给定的日期增加若干月
+	@returns {Date} 
+	@see com.justep.system.util.CommonUtils.addMonths
+*/
+
+/**
+	@name 通用函数.addDays
+	
+	@function
+	@param {Date} date 日期时间或者日期
+	@param {int} num 增加的天数
+	@description 给定的日期增加若干天
+	@returns {Date} 
+	@see com.justep.system.util.CommonUtils.addDays
+*/
+
+/**
+	@name 通用函数.addHours
+	
+	@function
+	@param {Date} date 日期时间或者日期
+	@param {int} num 增加的小时数
+	@description 给定的日期增加若干个小时
+	@returns {Date} 
+	@see com.justep.system.util.CommonUtils.addHours
+*/
+
+/**
+	@name 通用函数.extOfFile
+	
+	@function
+	@param {String} path 文件全路径格式的字符串
+	@description 获取文件扩展名
+	@returns {String} 
+	@example extOfFile('/justep.ogn/dev.dpt') //结果 'dpt'
+	@see com.justep.system.util.CommonUtils.getExtOfFile
+*/
+
+/**
+	@name 通用函数.pathOfFile
+	
+	@function
+	@param {String} path 文件全路径格式的字符串
+	@description 获取文件所在的目录
+	@returns {String} 
+	@example pathOfFile('/justep.ogn/dev.dpt') //结果 '/justep.ogn'
+	@see com.justep.system.util.CommonUtils.getPathOfFile
+*/
+
+/**
+	@name 通用函数.nameOfFile
+	
+	@function
+	@param {String} path 文件全路径格式的字符串
+	@description 获取带扩展名的文件名
+	@returns {String} 
+	@example nameOfFile('/justep.ogn/dev.dpt') //结果 'dev.dpt'
+	@see com.justep.system.util.CommonUtils.getNameOfFile
+*/
+
+/**
+	@name 通用函数.nameNoExtOfFile
+	
+	@function
+	@param {String} path 文件全路径格式的字符串
+	@description 获取不带扩展名的文件名
+	@returns {String} 
+	@example 
+		nameNoExtOfFile('/justep.ogn/dev.dpt') //结果 'dev'
+	@see com.justep.system.util.CommonUtils.getNameNoExtOfFile
+*/
+
+/**
+	@name 通用函数.iff
+	@function
+	@param {Boolean} condition 判断条件
+	@param {Object} trueResult 条件为真时返回
+	@param {Object} falseResult 条件为假时返回 
+	@description 条件表达式
+	@returns {Object} 
+*/
+
+/**
+	@name 通用函数.getInputStreamByFile
+	@function
+	@param {String} path 文件路径
+	@returns {Object} 
+	@see com.justep.system.util.CommonUtils.getInputStreamByFile
+*/

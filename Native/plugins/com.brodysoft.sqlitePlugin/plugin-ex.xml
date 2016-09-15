@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.brodysoft.sqlitePlugin">
+	<name>SQLite</name>
+	<description>SQLite插件，提供本地数据库的存储</description>
+
+</plugin>

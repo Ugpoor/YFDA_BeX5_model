@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reg-info>
+	<!-- 组件目录注册  -->
+	<component-dirs>
+		default,html,justep/operation,justep/model,justep/data,justep/window,justep/input,justep/output,justep/select,justep/textarea,justep/button,
+		justep/tabs,justep/panel, justep/popOver, justep/popMenu, justep/menu, justep/wing, justep/contents, justep/scrollView,justep/titleBar,justep/bar,justep/windowContainer,justep/process,justep/messageDialog,
+		justep/dialog,justep/windowDialog,justep/windowReceiver,justep/list,justep/labelEdit,justep/controlGroup,justep/org,justep/calendar,justep/blob,justep/reportData,justep/chart,justep/report,
+		justep/gridLayout,justep/row,justep/cordova,justep/processChart,justep/social/relativeOrg,justep/attachment,justep/attachmentPC,justep/attachmentImage,
+		justep/smartFilter,justep/social/focus,justep/bizFilter,justep/barcode,justep/gridFilter,justep/dateFilter,justep/orgFilter,justep/excel,justep/richTextarea,
+		justep/codeSelect,justep/quickLocate
+	</component-dirs>
+	
+	<!-- 组件工具箱配置 -->
+	<toolbox>
+		<catalog name="数据">
+			<item component-name="$UI/system/components/justep/data/bizData"/>
+		</catalog>
+
+		<catalog name="扩展" initial-state="open" design-view="excel">
+		</catalog>
+			
+		<catalog name="高级" design-view="excel">
+			<item component-name="$UI/system/components/justep/bolb/blob"/>
+			<item component-name="$UI/system/components/justep/bolb/blobImage"/>
+			<item component-name="$UI/system/components/justep/barcode/barcodeImage"/>
+			<item component-name="$UI/system/components/justep/richTextarea/richTextarea" device="pc"/>
+		</catalog>
+		
+		<catalog name="报表图表" design-view="excel" order="7">
+			<item component-name="$UI/system/components/justep/reportData/reportData"/>
+			<item component-name="$UI/system/components/justep/report/report"/>
+			<item component-name="$UI/system/components/justep/chart/chart"/>
+		</catalog>		
+
+		<catalog name="业务" design-view="excel" order="8">
+			<item component-name="$UI/system/components/justep/attachment/attachment"/>
+			<item component-name="$UI/system/components/justep/attachment/attachmentPC" device="pc"/>
+			<item component-name="$UI/system/components/justep/attachment/attachmentImage"/>
+			<item component-name="$UI/system/components/justep/process/process"/>	
+			<item component-name="$UI/system/components/justep/processChart/processChart"/>	
+			<item component-name="$UI/system/components/justep/org/orgTree" device="pc" />
+			<item component-name="$UI/system/components/justep/org/orgDialog"/>
+			<item component-name="$UI/system/components/justep/org/orgSelect"/>
+			<item component-name="$UI/system/components/justep/org/orgImage"/>
+			<item component-name="$UI/system/components/justep/org/orgTreePC" device="pc"/>
+			<item component-name="$UI/system/components/justep/org/orgDialogPC" device="pc"/>
+			<item component-name="$UI/system/components/justep/org/orgSelectPC" device="pc"/>
+			<item component-name="$UI/system/components/justep/social/relativeOrg/relativeOrg"/>
+			<item component-name="$UI/system/components/justep/social/relativeOrg/relativeOrgs"/>
+			<item component-name="$UI/system/components/justep/social/focus/focus"/>
+
+			<item component-name="$UI/system/components/justep/smartFilter/smartFilter"/>			
+			<item component-name="$UI/system/components/justep/bizFilter/bizFilter"/>			
+			<item component-name="$UI/system/components/justep/gridFilter/gridFilter"/>			
+			<item component-name="$UI/system/components/justep/dateFilter/dateFilter"/>			
+			<item component-name="$UI/system/components/justep/orgFilter/orgFilter"/>			
+			<item component-name="$UI/system/components/justep/quickLocate/treeLocate" device="pc" />
+
+			<item component-name="$UI/system/components/justep/excel/exportExcel" device="pc"/>			
+			<item component-name="$UI/system/components/justep/excel/importExcel" device="pc"/>			
+
+			<item component-name="$UI/system/components/justep/codeSelect/codeSelect" />
+			<item component-name="$UI/system/components/justep/codeSelect/codeSelectPC" device="pc" />
+		</catalog>
+	</toolbox>
+
+ <!-- 依赖的css文件 -->
+ <depend-css>
+<!--     <item>$UI/system/components/biz.min.css</item> -->
+ </depend-css>
+ 
+ <!-- 依赖的js文件 -->
+ <depend-js>
+<!--   <item>$UI/system/core.min.js</item> -->
+<!--   <item>$UI/system/common.min.js</item> -->
+  
+<!--   <item>$UI/system/biz.common.min.js</item> -->
+<!--   <item>$UI/system/components/biz.pc.addon.min.js</item> -->
+<!--   <item>$UI/system/components/biz.comp.min.js</item> -->
+<!--   <item>$UI/system/components/pc.addon.min.js</item> -->
+  
+<!--   <item>$UI/system/components/justep/report.min.js</item> -->
+<!--   <item>$UI/system/components/justep/processChart/processChart.min.js</item> -->
+<!--   <item>$UI/system/components/justep/cellLayout/designer/cellLayout.min.js</item> -->
+ </depend-js>
+ 	 
+</reg-info>

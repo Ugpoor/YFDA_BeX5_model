@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><model xmlns="http://www.justep.com/model">
+	<include>/demo/db/ontology</include>
+<use>/demo/misc/data</use><use>/demo/misc</use></model>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/chart/chart"
+		tag-name="div" icon="chart.gif" text="图表"
+		binding-component="$UI/system/components/justep/chart/chart"
+		display-property="xid" java-class="Chart" component-type="formControl">
+
+		<templates>
+			<template name="default">
+				<![CDATA[ 
+					<div component="$UI/system/components/justep/chart/chart" 
+						chart-name="chart" autoLoad="true" data-list="" >				
+						<chart>
+							<config/>
+							<series-set/>													
+						</chart>	
+					</div>				
+				]]>
+			</template>
+		</templates>
+		<properties>
+			<property name="xid" text="编号" required="true" editor-ref="" />
+			<property name="chartName" text="图表导出文件名称" />
+			<property name="autoLoad" text="自动加载" editor-ref="itemList" />
+			<property name="dialog" text="对话框连接模式下用于打开的对话框" editor-ref="contextComponent" editor-parameter="windowDialog"/>
+			<property name="dataList" text="数据源定义" editor-ref="dataListDialog" />
+			<property name="class" text="class" />
+			<property name="style" text="样式" editor-ref="styleDialog">
+				<property name="width" text="宽度" is-style="true" />
+				<property name="height" text="高度" is-style="true" />
+			</property>
+		</properties>
+		<property-editors>
+			<property-editor name="dataListDialog" type="dialog">
+				<dialog-page class-name="ChartDataListConfigDialog" />
+			</property-editor>
+			<property-editor name="itemList" type="list">
+				<static-data value="true,false" />
+			</property-editor>
+			<property-editor name="modelItemList" type="list">
+				<static-data value="window,dialog,replace" />
+			</property-editor>
+		</property-editors>
+		<toolbar>
+			<item text="添加子图表" method="appendChart">
+			</item>
+		</toolbar>
+	</element>
+
+	<element name="$UI/system/components/justep/chart/chart#chartSeries" tag-name="series" icon="chart.gif"
+		text="series" display-property="name" java-class="ChartSeries">
+		<properties>
+			<!-- <property name="name" text="名称" required="true" editor-ref=""/> -->
+			<property name="chart-type" text="类型" required="true"
+				editor-ref="chartTypeList" />
+			<!-- <property name="ref" text="数据源" editor-ref=""/> -->
+			<property name="data" text="数据设置" editor-ref="chartDataConfigPage"
+				is-virtual='true' fixed-value='[...]' />
+			<property name="config" text="属性设置" editor-ref="chartPropertyConfigPage"
+				is-virtual='true' fixed-value='[...]' />
+		</properties>
+		<property-editors>
+			<property-editor name="chartDataConfigPage" type="dialog">
+				<dialog-page class-name="com.justep.desinger.chart.page.ChartDataConfigPage" />
+			</property-editor>
+			<property-editor name="chartPropertyConfigPage" type="dialog">
+				<dialog-page
+					class-name="com.justep.desinger.chart.page.ChartPropertyConfigPage" />
+			</property-editor>
+
+			<property-editor name="chartTypeList" type="list">
+				<dynamic-data class-name="com.justep.desinger.chart.common.ChartTypeSelect"
+					method="getChartTypeList" />
+			</property-editor>
+
+
+		</property-editors>
+		<events>
+		</events>
+	</element>
+
+	<element name="$UI/system/components/justep/chart/chart#chart" tag-name="chart" text="chart">
+		<properties>
+		</properties>
+		<property-editors>
+		</property-editors>
+		<events>
+		</events>
+	</element>
+
+	<element name="$UI/system/components/justep/chart/chart#seriesData" tag-name="data" text="data"
+		discriminate-condition="parent()/tagName()=series">
+		<properties>
+		</properties>
+		<property-editors>
+		</property-editors>
+		<events>
+		</events>
+	</element>
+
+	<element name="$UI/system/components/justep/chart/chart#series-set" tag-name="series-set" text="series-set">
+		<properties>
+		</properties>
+		<property-editors>
+		</property-editors>
+		<events>
+		</events>
+	</element>
+</elements>

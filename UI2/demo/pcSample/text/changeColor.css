@@ -1,0 +1,22 @@
+/*字体变色的样式*/
+.red{
+	color:#FF0000;
+}
+.yellow{
+	color:#FFFF66;
+}
+.pink{
+	color:#FF3399;
+}
+.blue{
+	color:#00FFFF;
+}
+.orange{
+	color:#FF9900;
+}
+.green{
+	color:#00FF00;
+}
+.x-row{
+	padding: 0px;
+}

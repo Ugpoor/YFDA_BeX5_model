@@ -1,0 +1,37 @@
+/**
+	@name cordova-plugin-screen-orientation
+	@class 
+	@description 屏幕旋转插件
+	@model Native
+	@category cordova.plugins.screenorientation
+*/
+
+/**
+	@name cordova-plugin-screen-orientation.lockOrientation
+	@function
+	@param {String} orientation 屏幕锁定方向，参数取值范围：“portrait”、“landscape”
+ 	@returns {void}
+ 	@description 锁定屏幕方向
+*/
+
+/**
+	@name cordova-plugin-screen-orientation.unlockOrientation
+	@function
+ 	@returns {void}
+ 	@description 取消屏幕锁定方向，屏幕方向跟随系统
+*/
+
+/**
+	@name cordova-plugin-screen-orientation.orientation
+	@property
+ 	@returns {void}
+ 	@description 获取屏幕方向
+*/
+
+
+/**
+   @name cordova-plugin-screen-orientation#plugins.screen
+   @property
+   @type cordova-plugin-screen-orientation
+   @description 屏幕旋转插件
+*/

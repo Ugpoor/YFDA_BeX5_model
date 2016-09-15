@@ -1,0 +1,13 @@
+[
+{"id":"0","name":"张三","sex":"男","dept":"销售部","enducation":"本科"},
+{"id":"1","name":"张三1","sex":"女","dept":"行政部","enducation":"专科"},
+{"id":"2","name":"张三2","sex":"男","dept":"销售部","enducation":"本科"},
+{"id":"3","name":"张三3","sex":"男","dept":"销售部","enducation":"本科"},
+{"id":"4","name":"张三4","sex":"女","dept":"销售部","enducation":"博科"},
+{"id":"5","name":"张三5","sex":"男","dept":"人事部","enducation":"硕士"},
+{"id":"6","name":"张三6","sex":"女","dept":"销售部","enducation":"本科"},
+{"id":"7","name":"张三7","sex":"女","dept":"研发部","enducation":"本科"},
+{"id":"8","name":"张三8","sex":"女","dept":"销售部","enducation":"专科"},
+{"id":"9","name":"张三9","sex":"男","dept":"市场部","enducation":"本科"}
+			
+]

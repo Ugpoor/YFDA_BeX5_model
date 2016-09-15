@@ -1,0 +1,13 @@
+[
+	{"name":"张三","chinese":"77","math":"55","english":"88","sex":"男"},
+	{"name":"张三1","chinese":"77","math":"55","english":"99","sex":"女"},
+	{"name":"张三2","chinese":"33","math":"55","english":"88","sex":"男"},
+	{"name":"张三3","chinese":"55","math":"55","english":"64","sex":"女"},
+	{"name":"张三4","chinese":"77","math":"55","english":"88","sex":"女"},
+	{"name":"张三5","chinese":"77","math":"64","english":"88","sex":"男"},
+	{"name":"张三6","chinese":"77","math":"55","english":"11","sex":"女"},
+	{"name":"张三7","chinese":"32","math":"55","english":"88","sex":"男"},
+	{"name":"张三8","chinese":"77","math":"77","english":"44","sex":"男"},
+	{"name":"张三9","chinese":"77","math":"55","english":"88","sex":"男"}
+
+]

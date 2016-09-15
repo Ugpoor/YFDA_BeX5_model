@@ -1,0 +1,11 @@
+{"rows":[
+{"fID":{"value":"1"},"fName":{"value":"角色列表"},"fParentID":{},"fType":{"value":"role"},
+"rows":[
+{"fID":{"value":"2"},"fName":{"value":"公司总经理"},"fParentID":{"value":"1"},"fType":{"value":"role1"}},
+{"fID":{"value":"3"},"fName":{"value":"产品经理"},"fParentID":{"value":"1"},"fType":{"value":"role1"}},
+{"fID":{"value":"4"},"fName":{"value":"项目经理"},"fParentID":{"value":"1"},"fType":{"value":"role1"}},
+{"fID":{"value":"5"},"fName":{"value":"办公室主任"},"fParentID":{"value":"1"},"fType":{"value":"role1"}},
+{"fID":{"value":"6"},"fName":{"value":"测试人员"},"fParentID":{"value":"1"},"fType":{"value":"role1"}},
+{"fID":{"value":"7"},"fName":{"value":"程序开发人员"},"fParentID":{"value":"1"},"fType":{"value":"role1"}},
+{"fID":{"value":"8"},"fName":{"value":"界面设计师"},"fParentID":{"value":"1"},"fType":{"value":"role1"}},
+{"fID":{"value":"9"},"fName":{"value":"前台"},"fParentID":{"value":"1"},"fType":{"value":"role1"}}],"userdata":{"id":{"value":"1"}}}]}

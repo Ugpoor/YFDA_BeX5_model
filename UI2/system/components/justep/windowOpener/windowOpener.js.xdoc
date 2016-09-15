@@ -1,0 +1,195 @@
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description WindowOpener
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#src
+	@attribute
+	@property  
+	@type string
+	@description .w的url，需要使用require.toUrl(...)处理
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#modal
+	@attribute
+	@property  
+	@type boolean
+	@description 模态
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#width
+	@attribute
+	@property  
+	@type string
+	@description 宽
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#height
+	@attribute
+	@property  
+	@type string
+	@description 高
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#left
+	@attribute
+	@property  
+	@type string
+	@description 显示位置，左
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#top
+	@attribute
+	@property  
+	@type string
+	@description 显示位置，上
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#status
+	@attribute
+	@property  
+	@type string
+	@description 显示状态，取值范围：normal,maximize
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#resizable
+	@attribute
+	@property  
+	@type boolean
+	@description 是否允许修改大小
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#parameters
+	@attribute
+	@property  
+	@type string
+	@description open时传递的参数
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#process
+	@attribute
+	@property  
+	@type string
+	@description 打开.w使用的process，缺省使用当前环境的
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#activity
+	@attribute
+	@property  
+	@type string
+	@description 打开.w使用的activity，缺省使用当前环境的
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"status": {string} 对话框显示状态，取值范围：normal,maximize
+		"resizable" : {boolean} 是否允许改变大小
+		"width": {string} 对话框宽，支持css中所有的长度单位，如：200px、80%，缺省：80%		
+		"height": {string} 对话框高，支持css中所有的长度单位，如：200px、80%，缺省：80%		
+		"top": {string} 对话框上偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中		
+		"left": {string} 对话框左偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中	
+		"url" : {string} .w的url，需要使用require.toUrl(...)处理
+		"process" : {string} 打开.w使用的process，缺省使用当前环境的
+		"activity: {string}	打开.w使用的activity，缺省使用当前环境的
+		"parameters": {string} open时传递的参数		
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："url"、"process"、"activity"、"status"、"resizable"、 "width"、"height"、"top"、"left"、"parameters"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#open
+	@function
+	@param {object} option
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"url" :.w的url
+		"data" : 传入.w的数据部分
+	}
+	</xmp>	
+	@description 打开对话框
+*/
+
+/**
+	@name $UI/system/components/justep/windowOpener/windowOpener#onOpen
+	@event
+	@description <b>[回调型事件]</b>打开事件
+	@param {$UI/system/components/justep/windowOpener/windowOpener#OpenEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"window" : 打开的window
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/windowOpener/windowOpener#OpenEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 打开事件
+*/
+ 
+/**
+ @name $UI/system/components/justep/windowOpener/windowOpener#OpenEvent.window
+ @property
+ @type {object}
+ @description 打开的window
+*/ 
+
+/**
+ @name $UI/system/components/justep/windowOpener/windowOpener#open
+ @operation
+ @see $UI/system/components/justep/windowOpener/windowOpener#open
+ @param {object} option
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"src" :.w的url
+		"data" : 传入.w的数据部分
+	}
+	</xmp>	
+ @description 打开window对话框
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/windowOpener/windowOpener#close
+ @operation
+ @description 关闭window对话框
+ @returns {void}
+*/
+

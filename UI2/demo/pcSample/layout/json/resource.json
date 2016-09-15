@@ -1,0 +1,11 @@
+{"rows":[
+{"fID":{"value":"1"},"fName":{"value":"栏目1"},"fParentID":{},"fType":{"value":"menu1"},
+"rows":[
+{"fID":{"value":"3"},"fName":{"value":"资源1"},"fParentID":{"value":"1"},"fType":{"value":"menu2"}},
+{"fID":{"value":"4"},"fName":{"value":"资源2"},"fParentID":{"value":"1"},"fType":{"value":"menu2"}},
+{"fID":{"value":"5"},"fName":{"value":"资源3"},"fParentID":{"value":"1"},"fType":{"value":"menu2"}}],"userdata":{"id":{"value":"1"}}},
+{"fID":{"value":"2"},"fName":{"value":"栏目2"},"fParentID":{},"fType":{"value":"menu1"},
+"rows":[
+{"fID":{"value":"6"},"fName":{"value":"资源4"},"fParentID":{"value":"2"},"fType":{"value":"menu2"}},
+{"fID":{"value":"7"},"fName":{"value":"资源5"},"fParentID":{"value":"2"},"fType":{"value":"menu2"}},
+{"fID":{"value":"8"},"fName":{"value":"资源6"},"fParentID":{"value":"2"},"fType":{"value":"menu2"}}],"userdata":{"id":{"value":"2"}}}]}

@@ -1,0 +1,10 @@
+{
+	"userID" : "@userID@",
+	"mode" : "@mode@",
+	"sourceMode" : @sourceMode@,
+	"uiResDirs" : "@uiResDirs@",
+	"extBrowser" : @extBrowser@,
+	"autoSelectPlugins" : @autoSelectPlugins@,
+	"plugins" : "@plugins@",
+	"resEncryption" : @resEncryption@
+}

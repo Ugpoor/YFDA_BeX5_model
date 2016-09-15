@@ -1,0 +1,25 @@
+/**
+	@name cordova-open
+	@class 
+	@model Native
+	@category plugin
+	@description 文件打开插件
+	@declareVar cordova.plugins
+*/
+
+/**
+	@name cordova-open#cordova.disusered
+	@property
+	@type cordova-open#cordova.disusered
+*/
+
+/**
+	@name cordova-open#cordova.disusered.open
+	@function
+	@param {String} uri 文件的uri，如果为http://的服务地址，将下载文件
+	@param {Function} success
+	@param {Function} error
+	@param {Boolean} trustAllCertificates 信任证书，允许通过https连接
+	@returns {void}
+	@description 打开/下载文件
+*/

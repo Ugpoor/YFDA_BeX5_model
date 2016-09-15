@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window  container-fluid x-full-screen crMB3Uv" component="$model/UI2/system/components/justep/window/window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="crMB3Uv" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/pagerBar/pagerBar,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/bootstrap/row/row,$model/UI2/system/components/justep/menu/menu,$model/UI2/system/components/bootstrap/pagination/pagination,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/smartFilter/smartFilter,$model/UI2/system/components/justep/windowDialog/windowDialog,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/toolBar/toolBar,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/bootstrap/dropdown/dropdown,$model/UI2/system/components/justep/dataTables/dataTables,$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect,$model/UI2/system/components/justep/select/select,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onModelConstructDone:modelModelConstructDone" __cid="crMB3Uv" class="crMB3Uv"></div>  
+  <span component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="functionDialog" style="left:169px;top:287px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-events="onReceive:functionDialogReceive" data-config="{&quot;showTitle&quot;:true,&quot;src&quot;:&quot;$model/UI2/SA/OPM/dialogs/selectFunction/selectMultiFunctions.w&quot;,&quot;status&quot;:&quot;normal&quot;,&quot;title&quot;:&quot;选择功能&quot;,&quot;width&quot;:&quot;60%&quot;}" __cid="crMB3Uv" class="crMB3Uv">
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog-overlay crMB3Uv" __cid="crMB3Uv"/>
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog crMB3Uv" style="display:none;" showTitle="true" __cid="crMB3Uv">
+      <xhtml:div class="x-dialog-title crMB3Uv" __cid="crMB3Uv">
+        <xhtml:button class="close crMB3Uv" __cid="crMB3Uv">
+          <xhtml:span __cid="crMB3Uv" class="crMB3Uv">×</xhtml:span>
+        </xhtml:button>
+        <xhtml:div class="x-dialog-title-text crMB3Uv" __cid="crMB3Uv">选择功能</xhtml:div>
+      </xhtml:div>
+      <xhtml:div class="x-dialog-body crMB3Uv" __cid="crMB3Uv"/>
+    </xhtml:div>
+  </span>  
+  <span component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="roleDetailDialog" style="left:128px;top:288px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-events="onReceive:roleDetailDialogReceive" data-config="{&quot;showTitle&quot;:true,&quot;src&quot;:&quot;$model/UI2/SA/OPM/dialogs/showRole/roleDetail.w&quot;,&quot;status&quot;:&quot;normal&quot;,&quot;title&quot;:&quot;角色&quot;}" __cid="crMB3Uv" class="crMB3Uv">
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog-overlay crMB3Uv" __cid="crMB3Uv"/>
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog crMB3Uv" style="display:none;" showTitle="true" __cid="crMB3Uv">
+      <xhtml:div class="x-dialog-title crMB3Uv" __cid="crMB3Uv">
+        <xhtml:button class="close crMB3Uv" __cid="crMB3Uv">
+          <xhtml:span __cid="crMB3Uv" class="crMB3Uv">×</xhtml:span>
+        </xhtml:button>
+        <xhtml:div class="x-dialog-title-text crMB3Uv" __cid="crMB3Uv">角色</xhtml:div>
+      </xhtml:div>
+      <xhtml:div class="x-dialog-body crMB3Uv" __cid="crMB3Uv"/>
+    </xhtml:div>
+  </span>  
+  <div component="$model/UI2/system/components/bootstrap/row/row" class="row crMB3Uv" xid="row1" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="crMB3Uv"> 
+    <div class="col col-xs-5 crMB3Uv" xid="col1" style="height:100%;" __cid="crMB3Uv"> 
+      <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-panel-opm-pc pc8ab7a62a17342fbaab7e0ccd919548d-iosstatusbar crMB3Uv" xid="panel1" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="crMB3Uv"> 
+        <div class="x-panel-top crMB3Uv" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="crMB3Uv"> 
+          <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar x-toolbar-spliter crMB3Uv" xid="toolBar1" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="crMB3Uv"> 
+            <div class="dropdown btn-group crMB3Uv" component="$model/UI2/system/components/bootstrap/dropdown/dropdown" xid="dropdown1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/dropdown/dropdown'}" __cid="crMB3Uv"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left dropdown-toggle  crMB3Uv" xid="button3" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-plus&quot;,&quot;label&quot;:&quot;新建&quot;}" __cid="crMB3Uv"> 
+                <i class="icon-plus crMB3Uv" xid="i3" __cid="crMB3Uv"/>  
+                <span xid="span3" __cid="crMB3Uv" class="crMB3Uv">新建</span> 
+              </a>  
+              <ul component="$model/UI2/system/components/justep/menu/menu" class="x-menu dropdown-menu crMB3Uv" xid="menu2" data-bind="component:{name:'$model/UI2/system/components/justep/menu/menu'}" __cid="crMB3Uv"> 
+                <li class="x-menu-item crMB3Uv" xid="item1" __cid="crMB3Uv"> 
+                  <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left crMB3Uv" xid="newFunRoleBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:newFunRoleBtnClick" data-config="{&quot;icon&quot;:&quot;img:$model/UI2/SA/OPM/images/funRole.gif&quot;,&quot;label&quot;:&quot;新建功能角色&quot;}" __cid="crMB3Uv"> 
+                    <img src="$model/UI2/SA/OPM/images/funRole.gif" xid="image1" __cid="crMB3Uv" class="crMB3Uv"/>  
+                    <span xid="span4" __cid="crMB3Uv" class="crMB3Uv">新建功能角色</span> 
+                  </a> 
+                </li>  
+                <li class="x-menu-item crMB3Uv" xid="item2" __cid="crMB3Uv"> 
+                  <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left crMB3Uv" xid="newDataRoleBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:newDataRoleBtnClick" data-config="{&quot;icon&quot;:&quot;img:$model/UI2/SA/OPM/images/dataRole.gif&quot;,&quot;label&quot;:&quot;新建数据角色&quot;}" __cid="crMB3Uv"> 
+                    <img src="$model/UI2/SA/OPM/images/dataRole.gif" xid="image2" __cid="crMB3Uv" class="crMB3Uv"/>  
+                    <span xid="span5" __cid="crMB3Uv" class="crMB3Uv">新建数据角色</span> 
+                  </a> 
+                </li> 
+              </ul> 
+            </div>  
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left  crMB3Uv" xid="editRoleBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:editRoleBtnClick" data-config="{&quot;icon&quot;:&quot;icon-compose&quot;,&quot;label&quot;:&quot;编辑&quot;}" __cid="crMB3Uv"> 
+              <i xid="i2" class="icon-compose crMB3Uv" __cid="crMB3Uv"/>  
+              <span xid="span2" __cid="crMB3Uv" class="crMB3Uv">编辑</span> 
+            </a>  
+            <div class="dropdown btn-group crMB3Uv" component="$model/UI2/system/components/bootstrap/dropdown/dropdown" xid="dropdown5" data-bind="component:{name:'$model/UI2/system/components/bootstrap/dropdown/dropdown'}" data-config="{&quot;autoHideMenu&quot;:false}" __cid="crMB3Uv"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left dropdown-toggle crMB3Uv" xid="button2" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-android-more&quot;,&quot;label&quot;:&quot;选项&quot;}" __cid="crMB3Uv"> 
+                <i class="icon-android-more crMB3Uv" xid="i5" __cid="crMB3Uv"/>  
+                <span xid="span11" __cid="crMB3Uv" class="crMB3Uv">选项</span> 
+              </a>  
+              <ul component="$model/UI2/system/components/justep/menu/menu" class="x-menu dropdown-menu crMB3Uv" xid="menu5" data-bind="component:{name:'$model/UI2/system/components/justep/menu/menu'}" __cid="crMB3Uv"> 
+                <li class="x-menu-item crMB3Uv" xid="item6" __cid="crMB3Uv"> 
+                  <a xid="a3" __cid="crMB3Uv" class="crMB3Uv"> 
+                    <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox crMB3Uv" xid="checkbox1" label="显示已禁用的角色" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;显示已禁用的角色&quot;}" data-bind="component:{ref:tempData.ref('showDisabledRole'),name:'$model/UI2/system/components/justep/button/checkbox'}" __cid="crMB3Uv">
+                      <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox" __cid="crMB3Uv" class="crMB3Uv"/>
+                      <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="crMB3Uv" class="crMB3Uv">显示已禁用的角色</xhtml:label>
+                    </span> 
+                  </a> 
+                </li> 
+              </ul> 
+            </div>  
+            <div class="dropdown btn-group crMB3Uv" component="$model/UI2/system/components/bootstrap/dropdown/dropdown" xid="dropdown2" data-bind="component:{name:'$model/UI2/system/components/bootstrap/dropdown/dropdown'}" __cid="crMB3Uv"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left dropdown-toggle crMB3Uv" xid="button6" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-arrow-down-b&quot;,&quot;label&quot;:&quot;更多&quot;}" __cid="crMB3Uv"> 
+                <i class="icon-arrow-down-b crMB3Uv" xid="i6" __cid="crMB3Uv"/>  
+                <span xid="span6" __cid="crMB3Uv" class="crMB3Uv">更多</span> 
+              </a>  
+              <ul component="$model/UI2/system/components/justep/menu/menu" class="x-menu dropdown-menu crMB3Uv" xid="menu3" style="width:200px;" data-bind="component:{name:'$model/UI2/system/components/justep/menu/menu'}" __cid="crMB3Uv"> 
+                <li class="x-menu-item crMB3Uv" xid="item3" __cid="crMB3Uv"> 
+                  <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left crMB3Uv" xid="enableRoleBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:enableRoleBtnClick" data-config="{&quot;icon&quot;:&quot;icon-unlocked&quot;,&quot;label&quot;:&quot;启用&quot;}" __cid="crMB3Uv"> 
+                    <i xid="i7" class="icon-unlocked crMB3Uv" __cid="crMB3Uv"/>  
+                    <span xid="span7" __cid="crMB3Uv" class="crMB3Uv">启用</span> 
+                  </a> 
+                </li>  
+                <li class="x-menu-item crMB3Uv" xid="item4" __cid="crMB3Uv"> 
+                  <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left crMB3Uv" xid="disableRoleBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:disableRoleBtnClick" data-config="{&quot;icon&quot;:&quot;icon-locked&quot;,&quot;label&quot;:&quot;禁用&quot;}" __cid="crMB3Uv"> 
+                    <i xid="i8" class="icon-locked crMB3Uv" __cid="crMB3Uv"/>  
+                    <span xid="span8" __cid="crMB3Uv" class="crMB3Uv"/> 
+                  </a> 
+                </li>  
+                <li class="x-menu-divider divider crMB3Uv" xid="divider1" __cid="crMB3Uv"/>  
+                <li class="x-menu-item crMB3Uv" xid="item5" __cid="crMB3Uv"> 
+                  <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left crMB3Uv" xid="deleteRoleBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:deleteRoleBtnClick" data-config="{&quot;icon&quot;:&quot;icon-close&quot;,&quot;label&quot;:&quot;删除&quot;}" __cid="crMB3Uv"> 
+                    <i xid="i9" class="icon-close crMB3Uv" __cid="crMB3Uv"/>  
+                    <span xid="span9" __cid="crMB3Uv" class="crMB3Uv">button</span> 
+                  </a> 
+                </li> 
+              </ul> 
+            </div>  
+            <div class="input-group crMB3Uv" component="$model/UI2/system/components/justep/smartFilter/smartFilter" xid="smartFilter1" style="float: right;" data-bind="component:{name:'$model/UI2/system/components/justep/smartFilter/smartFilter'}" data-config="{&quot;filterCols&quot;:&quot;sName,sCode,sCatalog&quot;,&quot;filterData&quot;:&quot;roleData&quot;}" __cid="crMB3Uv"> 
+              <input type="text" class="form-control crMB3Uv" placeholder="搜索" data-bind="valueUpdate: ['input', 'afterkeydown']" bind-value="$model.comp($element.parentElement).searchText" bind-change="$model.comp($element.parentElement).onInputChange.bind($model.comp($element.parentElement))" xid="input1" __cid="crMB3Uv"/>
+            </div>
+          </div> 
+        </div>  
+        <div class="x-panel-content crMB3Uv" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="crMB3Uv"> 
+          <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" rowActiveClass="active" class="table table-hover crMB3Uv" xid="roleDataTables" data="roleData" data-config="{&quot;columns&quot;:[{&quot;className&quot;:&quot;x-dt-cell-center&quot;,&quot;orderable&quot;:false,&quot;sName&quot;:&quot;sRoleKind&quot;,&quot;title&quot;:&quot;　&quot;,&quot;width&quot;:&quot;20px&quot;,&quot;xid&quot;:&quot;column13&quot;},{&quot;sName&quot;:&quot;sName&quot;,&quot;title&quot;:&quot;角色&quot;,&quot;xid&quot;:&quot;column10&quot;},{&quot;sName&quot;:&quot;sCode&quot;,&quot;xid&quot;:&quot;column11&quot;},{&quot;sName&quot;:&quot;sCatalog&quot;,&quot;xid&quot;:&quot;column12&quot;}],&quot;data&quot;:&quot;roleData&quot;,&quot;flexibleWidth&quot;:true,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" data-events="onCellRender:roleDataTablesCellRender;onRowDblClick:editRoleBtnClick" __cid="crMB3Uv"/> 
+        </div>  
+        <style __cid="crMB3Uv" class="crMB3Uv">.x-panel.pc8ab7a62a17342fbaab7e0ccd919548d-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pc8ab7a62a17342fbaab7e0ccd919548d-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pc8ab7a62a17342fbaab7e0ccd919548d-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pc8ab7a62a17342fbaab7e0ccd919548d-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pc8ab7a62a17342fbaab7e0ccd919548d-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pc8ab7a62a17342fbaab7e0ccd919548d-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pc8ab7a62a17342fbaab7e0ccd919548d-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pc8ab7a62a17342fbaab7e0ccd919548d-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pc8ab7a62a17342fbaab7e0ccd919548d-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+      </div> 
+    </div>  
+    <div class="col col-xs-7 col-spliter-left crMB3Uv" xid="col2" style="height:100%;" __cid="crMB3Uv"> 
+      <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-panel-opm-pc pe7be6012637f4ccc87b4487ef5bdb080-iosstatusbar crMB3Uv" xid="panel2" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="crMB3Uv"> 
+        <div class="x-panel-top crMB3Uv" xid="top2" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="crMB3Uv"> 
+          <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar x-toolbar-spliter crMB3Uv" xid="toolBar2" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="crMB3Uv"> 
+            <div class="x-control crMB3Uv" component="$model/UI2/system/components/justep/smartFilter/smartFilter" xid="smartFilter2" style="float: right;" data-bind="component:{name:'$model/UI2/system/components/justep/smartFilter/smartFilter'}" data-config="{&quot;filterCols&quot;:&quot;sActivityFName,actionsLabel,roleName&quot;,&quot;filterData&quot;:&quot;permissionData&quot;}" __cid="crMB3Uv"> 
+              <input type="text" class="form-control crMB3Uv" placeholder="搜索" data-bind="valueUpdate: ['input', 'afterkeydown']" bind-value="$model.comp($element.parentElement).searchText" bind-change="$model.comp($element.parentElement).onInputChange.bind($model.comp($element.parentElement))" xid="input2" __cid="crMB3Uv"/> 
+            </div>  
+            <div class="dropdown btn-group crMB3Uv" component="$model/UI2/system/components/bootstrap/dropdown/dropdown" xid="dropdown4" data-bind="component:{name:'$model/UI2/system/components/bootstrap/dropdown/dropdown'}" __cid="crMB3Uv"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left dropdown-toggle  crMB3Uv" xid="button5" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-android-add&quot;,&quot;label&quot;:&quot;添加&quot;}" __cid="crMB3Uv"> 
+                <i class="icon-android-add crMB3Uv" xid="i14" __cid="crMB3Uv"/>  
+                <span xid="span16" __cid="crMB3Uv" class="crMB3Uv">添加</span> 
+              </a>  
+              <ul component="$model/UI2/system/components/justep/menu/menu" class="x-menu dropdown-menu crMB3Uv" xid="menu4" data-bind="component:{name:'$model/UI2/system/components/justep/menu/menu'}" __cid="crMB3Uv"> 
+                <li class="x-menu-item crMB3Uv" xid="item8" __cid="crMB3Uv"> 
+                  <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left crMB3Uv" xid="addFunPermissionBtn" bind-enable=" $model.roleData.val(&quot;sRoleKind&quot;) == 'fun'" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:addFunPermissionBtnClick" data-config="{&quot;icon&quot;:&quot;img:$model/UI2/SA/OPM/images/funPermission.gif&quot;,&quot;label&quot;:&quot;分配功能权限&quot;}" __cid="crMB3Uv"> 
+                    <img src="$model/UI2/SA/OPM/images/funPermission.gif" xid="image3" __cid="crMB3Uv" class="crMB3Uv"/>  
+                    <span xid="span17" __cid="crMB3Uv" class="crMB3Uv">分配功能权限</span> 
+                  </a> 
+                </li>  
+                <li class="x-menu-item crMB3Uv" xid="item9" __cid="crMB3Uv"> 
+                  <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left crMB3Uv" xid="addDataPermissionBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:addDataPermissionBtnClick" data-config="{&quot;icon&quot;:&quot;img:$model/UI2/SA/OPM/images/dataPermission.gif&quot;,&quot;label&quot;:&quot;分配数据权限&quot;}" __cid="crMB3Uv"> 
+                    <img src="$model/UI2/SA/OPM/images/dataPermission.gif" xid="image4" __cid="crMB3Uv" class="crMB3Uv"/>  
+                    <span xid="span18" __cid="crMB3Uv" class="crMB3Uv">分配数据权限</span> 
+                  </a> 
+                </li> 
+              </ul> 
+            </div>  
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left  crMB3Uv" xid="deletePermissionBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:deletePermissionBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-remove&quot;,&quot;label&quot;:&quot;删除&quot;}" __cid="crMB3Uv"> 
+              <i xid="i17" class="icon-android-remove crMB3Uv" __cid="crMB3Uv"/>  
+              <span xid="span19" __cid="crMB3Uv" class="crMB3Uv">删除</span> 
+            </a>  
+            <div class="dropdown btn-group crMB3Uv" component="$model/UI2/system/components/bootstrap/dropdown/dropdown" xid="dropdown3" data-bind="component:{name:'$model/UI2/system/components/bootstrap/dropdown/dropdown'}" data-config="{&quot;autoHideMenu&quot;:false}" __cid="crMB3Uv"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left dropdown-toggle crMB3Uv" xid="button7" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-android-more&quot;,&quot;label&quot;:&quot;选项&quot;}" __cid="crMB3Uv"> 
+                <i class="icon-android-more crMB3Uv" xid="i4" __cid="crMB3Uv"/>  
+                <span xid="span10" __cid="crMB3Uv" class="crMB3Uv">选项</span> 
+              </a>  
+              <ul component="$model/UI2/system/components/justep/menu/menu" class="x-menu dropdown-menu crMB3Uv" xid="menu1" data-bind="component:{name:'$model/UI2/system/components/justep/menu/menu'}" __cid="crMB3Uv"> 
+                <li class="x-menu-item crMB3Uv" xid="item7" __cid="crMB3Uv"> 
+                  <a xid="a4" __cid="crMB3Uv" class="crMB3Uv"> 
+                    <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox crMB3Uv" xid="checkbox2" label="显示从父角色继承的权限" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;显示从父角色继承的权限&quot;}" data-bind="component:{ref:tempData.ref('showInheritedPermission'),name:'$model/UI2/system/components/justep/button/checkbox'}" __cid="crMB3Uv">
+                      <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox" __cid="crMB3Uv" class="crMB3Uv"/>
+                      <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="crMB3Uv" class="crMB3Uv">显示从父角色继承的权限</xhtml:label>
+                    </span> 
+                  </a> 
+                </li> 
+              </ul> 
+            </div> 
+          </div> 
+        </div>  
+        <div class="x-panel-content crMB3Uv" xid="content2" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="crMB3Uv"> 
+          <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" rowActiveClass="active" class="table table-hover crMB3Uv" xid="permissionDataTables" data="permissionData" multiSelect="true" data-config="{&quot;columns&quot;:[{&quot;className&quot;:&quot;x-dt-cell-center&quot;,&quot;orderable&quot;:false,&quot;sName&quot;:&quot;sPermissionKind&quot;,&quot;title&quot;:&quot;　&quot;,&quot;width&quot;:&quot;20px&quot;,&quot;xid&quot;:&quot;column17&quot;},{&quot;sName&quot;:&quot;sActivityFName&quot;,&quot;title&quot;:&quot;功能权限&quot;,&quot;xid&quot;:&quot;column16&quot;},{&quot;sName&quot;:&quot;actionsLabel&quot;,&quot;title&quot;:&quot;动作权限/数据权限&quot;,&quot;xid&quot;:&quot;column18&quot;},{&quot;sName&quot;:&quot;roleName&quot;,&quot;title&quot;:&quot;所属角色&quot;,&quot;xid&quot;:&quot;column19&quot;}],&quot;data&quot;:&quot;permissionData&quot;,&quot;flexibleWidth&quot;:true,&quot;multiSelect&quot;:true,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" data-events="onCellRender:permissionDataTablesCellRender;onRowCheck:permissionDataTablesRowCheck;onRowClick:permissionDataTablesRowClick" __cid="crMB3Uv"/> 
+        </div>  
+        <div class="x-panel-bottom crMB3Uv" xid="bottom2" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="crMB3Uv"> 
+          <div component="$model/UI2/system/components/justep/pagerBar/pagerBar" class="x-pagerbar container-fluid crMB3Uv" xid="pagerBar1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerBar/pagerBar'}" data-config="{&quot;data&quot;:&quot;permissionData&quot;}" __cid="crMB3Uv"> 
+            <div class="row crMB3Uv" xid="div1" __cid="crMB3Uv"> 
+              <div class="col-sm-3 crMB3Uv" xid="div2" __cid="crMB3Uv"> 
+                <div class="x-pagerbar-length crMB3Uv" xid="div3" __cid="crMB3Uv"> 
+                  <label component="$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect" class="x-pagerlimitselect crMB3Uv" xid="pagerLimitSelect1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect'}" data-config="{&quot;data&quot;:&quot;permissionData&quot;}" __cid="crMB3Uv"> 
+                    <span xid="span1" __cid="crMB3Uv" class="crMB3Uv">显示</span>  
+                    <select component="$model/UI2/system/components/justep/select/select" class="form-control input-sm crMB3Uv" xid="select1" data-bind="component:{name:'$model/UI2/system/components/justep/select/select'}" __cid="crMB3Uv"> 
+                      <option value="10" xid="default3" __cid="crMB3Uv" class="crMB3Uv">10</option>  
+                      <option value="20" xid="default4" __cid="crMB3Uv" class="crMB3Uv">20</option>  
+                      <option value="50" xid="default9" __cid="crMB3Uv" class="crMB3Uv">50</option>  
+                      <option value="100" xid="default10" __cid="crMB3Uv" class="crMB3Uv">100</option> 
+                    </select>  
+                    <span xid="span12" __cid="crMB3Uv" class="crMB3Uv">条</span> 
+                  </label> 
+                </div> 
+              </div>  
+              <div class="col-sm-3 crMB3Uv" xid="div4" __cid="crMB3Uv"> 
+                <div class="x-pagerbar-info crMB3Uv" xid="div5" __cid="crMB3Uv">当前显示0条，共0条</div> 
+              </div>  
+              <div class="col-sm-6 crMB3Uv" xid="div6" __cid="crMB3Uv"> 
+                <div class="x-pagerbar-pagination crMB3Uv" xid="div7" __cid="crMB3Uv"> 
+                  <ul class="pagination crMB3Uv" component="$model/UI2/system/components/bootstrap/pagination/pagination" xid="pagination1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/pagination/pagination'}" data-config="{&quot;data&quot;:&quot;permissionData&quot;}" __cid="crMB3Uv"> 
+                    <li class="prev crMB3Uv" xid="li1" __cid="crMB3Uv"> 
+                      <a href="#" xid="a1" __cid="crMB3Uv" class="crMB3Uv"> 
+                        <span aria-hidden="true" xid="span13" __cid="crMB3Uv" class="crMB3Uv">«</span>  
+                        <span class="sr-only crMB3Uv" xid="span14" __cid="crMB3Uv">Previous</span> 
+                      </a> 
+                    </li>  
+                    <li class="next crMB3Uv" xid="li2" __cid="crMB3Uv"> 
+                      <a href="#" xid="a2" __cid="crMB3Uv" class="crMB3Uv"> 
+                        <span aria-hidden="true" xid="span15" __cid="crMB3Uv" class="crMB3Uv">»</span>  
+                        <span class="sr-only crMB3Uv" xid="span20" __cid="crMB3Uv">Next</span> 
+                      </a> 
+                    </li> 
+                  </ul> 
+                </div> 
+              </div> 
+            </div> 
+          </div> 
+        </div>  
+        <style __cid="crMB3Uv" class="crMB3Uv">.x-panel.pe7be6012637f4ccc87b4487ef5bdb080-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pe7be6012637f4ccc87b4487ef5bdb080-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pe7be6012637f4ccc87b4487ef5bdb080-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pe7be6012637f4ccc87b4487ef5bdb080-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pe7be6012637f4ccc87b4487ef5bdb080-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pe7be6012637f4ccc87b4487ef5bdb080-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pe7be6012637f4ccc87b4487ef5bdb080-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pe7be6012637f4ccc87b4487ef5bdb080-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pe7be6012637f4ccc87b4487ef5bdb080-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+      </div> 
+    </div> 
+  </div>  
+  <span component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="dataPermissionDialog" style="left:213px;top:287px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-events="onReceive:dataPermissionDialogReceive" data-config="{&quot;showTitle&quot;:true,&quot;src&quot;:&quot;$model/UI2/SA/OPM/dialogs/showDataPermission/dataPermissionDetail.w&quot;,&quot;status&quot;:&quot;normal&quot;,&quot;title&quot;:&quot;数据权限&quot;,&quot;width&quot;:&quot;90%&quot;}" __cid="crMB3Uv" class="crMB3Uv">
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog-overlay crMB3Uv" __cid="crMB3Uv"/>
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog crMB3Uv" style="display:none;" showTitle="true" __cid="crMB3Uv">
+      <xhtml:div class="x-dialog-title crMB3Uv" __cid="crMB3Uv">
+        <xhtml:button class="close crMB3Uv" __cid="crMB3Uv">
+          <xhtml:span __cid="crMB3Uv" class="crMB3Uv">×</xhtml:span>
+        </xhtml:button>
+        <xhtml:div class="x-dialog-title-text crMB3Uv" __cid="crMB3Uv">数据权限</xhtml:div>
+      </xhtml:div>
+      <xhtml:div class="x-dialog-body crMB3Uv" __cid="crMB3Uv"/>
+    </xhtml:div>
+  </span>  
+  <span component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="actionPermissionDialog" style="left:261px;top:286px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-events="onReceive:actionPermissionDialogReceive" data-config="{&quot;showTitle&quot;:true,&quot;src&quot;:&quot;$model/UI2/SA/OPM/dialogs/showActionPermission/actionPermissionDetail.w&quot;,&quot;status&quot;:&quot;normal&quot;,&quot;title&quot;:&quot;动作权限&quot;,&quot;width&quot;:&quot;50%&quot;}" __cid="crMB3Uv" class="crMB3Uv">
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog-overlay crMB3Uv" __cid="crMB3Uv"/>
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog crMB3Uv" style="display:none;" showTitle="true" __cid="crMB3Uv">
+      <xhtml:div class="x-dialog-title crMB3Uv" __cid="crMB3Uv">
+        <xhtml:button class="close crMB3Uv" __cid="crMB3Uv">
+          <xhtml:span __cid="crMB3Uv" class="crMB3Uv">×</xhtml:span>
+        </xhtml:button>
+        <xhtml:div class="x-dialog-title-text crMB3Uv" __cid="crMB3Uv">动作权限</xhtml:div>
+      </xhtml:div>
+      <xhtml:div class="x-dialog-body crMB3Uv" __cid="crMB3Uv"/>
+    </xhtml:div>
+  </span> 
+</div>

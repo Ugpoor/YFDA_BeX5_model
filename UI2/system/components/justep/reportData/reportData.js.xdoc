@@ -1,0 +1,129 @@
+							
+/**
+	@name $UI/system/components/justep/reportData/reportData
+	@component 
+	@extends $UI/system/lib/base/modelComponent
+	@description 报表数据组件
+	@model UI2
+*/
+
+/**
+	@name $UI/system/components/justep/reportData/reportData#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#setDataModel
+ @function
+ @param	dataModelStr  <b>[required]</b>数据模型字符串
+ @description 设置组件数据模型
+*/	
+
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#getDataModel
+ @function
+ @returns {string}	 
+ @description 返回组件数据模型
+*/
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#setFnModel
+ @function
+ @param	fnModelStr  <b>[required]</b>KSQL查询函数模型字符串
+ @description 设置KSQL查询模式函数模型字符串
+*/	
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#getFnModel
+ @function
+ @returns {string}	 
+ @description 返回KSQL查询模式函数模型字符串
+*/
+
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#clearVars
+ @function
+ @returns {string}	 
+ @description 清空查询模式中变量集合
+*/
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#isEmptyByKsqlVariables
+ @function
+ @returns {boolean}	 
+ @description 判断KSQL查询模式中变量集合是否为空
+*/
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#setStringVar
+ @function
+ @param	name  <b>[required]</b>查询模式中变量名称
+ @param	value  <b>[required]</b>查询模式中变量值
+ @description 设置查询模式中字符串变量
+*/
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#setIntegerVar
+ @function
+ @param	name  <b>[required]</b>查询模式中变量名称
+ @param	value  <b>[required]</b>查询模式中变量值
+ @description 设置查询模式中整型变量
+*/
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#setFloatVar
+ @function
+ @param	name  <b>[required]</b>查询模式中变量名称
+ @param	value  <b>[required]</b>查询模式中变量值
+ @description 设置查询模式中浮点型变量
+*/
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#setDateVar
+ @function
+ @param	name  <b>[required]</b>KSQL查询模式中变量名称
+ @param	value  <b>[required]</b>KSQL查询模式中变量值
+ @description 设置KSQL查询模式中日期类型变量(格式：yyyy-MM-dd)
+*/
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#setTimeVar
+ @function
+ @param	name  <b>[required]</b>查询模式中变量名称
+ @param	value  <b>[required]</b>查询模式中变量值
+ @description 设置查询模式中时间类型变量(格式：hh:mm:ss)
+*/
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#setDateTimeVar
+ @function
+ @param	name  <b>[required]</b>查询模式中变量名称
+ @param	value  <b>[required]</b>查询模式中变量值
+ @description 设置查询模式中日期时间类型变量(格式：yyyy-MM-ddThh:mm:ssZ)
+*/
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#getVar
+ @function
+ @param	name  <b>[required]</b>查询模式中变量名称
+ @returns {string}	 
+ @description 根据变量名称获取查询模式中变量集合中变量
+*/
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#onBeforeRefresh
+ @event
+ @param {$UI/system/components/justep/common/event#BeforeEvent} event 它的结构如下:<xmp>{"source":组件的js对象, "cancel":可修改，设置为true后中断当前刷新动作}</xmp>
+ @description <b>[回调型事件]</b>业务数据刷新前接管，完全接管刷新动作 ，此次修改ReportData相关参数 
+*/
+
+/**
+ @name $UI/system/components/justep/reportData/reportData#onAfterRefresh
+ @event
+ @param {$UI/system/components/justep/common/event#ViewEvent} event 它的结构如下:<xmp>{"source":组件的js对象}</xmp>
+ @description <b>[回调型事件]</b>业务数据刷新后接管，完全接管刷新动作
+*/

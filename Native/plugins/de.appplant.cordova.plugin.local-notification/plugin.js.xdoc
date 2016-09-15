@@ -1,0 +1,48 @@
+/**
+	@name de.appplant.cordova.plugin.local-notification
+	@class 
+	@description 应用内部的通知插件
+	@model Native
+	@category plugin
+	@declareVar plugin.notification.local
+*/
+/**
+	@name de.appplant.cordova.plugin.local-notification.schedule
+	@function
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@param {object}
+	<br/><b>参数格式：</b>
+	<xmp>
+		{
+			 id : int,           -  通知的id， 
+             title : String      -  通知的标题!,
+             text : String       -  通知的内容,
+             sound : String	     -  是否有声音 null为静音,
+             json : String       -  通知包含的数据是json格式的
+             badge : int,	     -  修改app的角标（iOS有效）
+             every : String,     -  每隔多久发一次通知 有效值：minute,hour,day,week,month,quarter,year 
+             autoClear : true,   -  是否自动清除   
+             at : date           -  指定之间发送通知
+		}	
+	</xmp>	
+	@returns {void} 
+ 	@description 发送通知
+*/
+
+/**
+	@name de.appplant.cordova.plugin.local-notification.getScheduledIds
+	@function
+ 	@param {Function} callback 回调函数
+ 	@param {object}   scope 执行范围
+	@returns {void} 
+ 	@description 获取通知的id
+*/
+/**
+	@name de.appplant.cordova.plugin.local-notification.cancelAll
+	@function
+ 	@param {Function} callback 回调函数
+ 	@param {object}   scope 执行范围
+	@returns {void} 
+ 	@description 清除所有的通知
+*/

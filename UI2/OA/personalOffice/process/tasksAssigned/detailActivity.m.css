@@ -1,0 +1,69 @@
+/* 截至日期相关样式 */
+.progrdss{
+	position:relative;
+	width:100%; 
+	padding:5px 0cm 5px 0cm;
+}
+
+.progrdss-background{
+	height: 30px;
+	/*border: 1px solid #B0B1B3;*/
+	border-radius: 5px;
+	background: #e5e5e5;
+}
+
+.progrdss-background-overtime {
+	height: 30px;
+	border-radius: 5px;
+	background: url(img/task_bg.png);
+}
+
+.progrdss-percent{
+	height: 29px;
+	background: url(img/task_zc.png);
+	position: absolute;
+	left: 0px;
+	top: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;	
+}
+
+.progrdss-percent-tomorrow {
+	height: 29px;
+	background: url(img/task_dq.png);
+	position: absolute;
+	left: 0px;
+	top: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.progrdss-percent-yestoday {
+	height: 29px;
+	background: url(img/task_bg.png);
+	position: absolute;
+	left: 0px;
+	top: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.progrdss-percent-full {
+	border-radius: 5px;
+}
+
+.progrdss-text{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	background: transparent;
+	position: absolute;
+	left: 0px;
+	top: 5px;
+	text-align: center;
+	font-size: 12px;
+}
+
+.progress-last{
+	padding-right: 6px;
+}

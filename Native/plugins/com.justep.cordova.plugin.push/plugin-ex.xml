@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.justep.cordova.plugin.push">
+	<name>消息推送</name>
+	<description>推送插件，推送消息</description>
+
+	<!-- android -->
+	<platform name="android">
+		<param name="mqtt_server" displayName="mqtt服务地址" />
+	</platform>
+</plugin>

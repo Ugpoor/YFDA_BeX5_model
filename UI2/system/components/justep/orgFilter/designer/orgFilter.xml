@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/orgFilter/orgFilter" tag-name="div" icon="orgFilter.png" 
+		binding-component="$UI/system/components/justep/orgFilter/orgFilter" is-complex-component="true" design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			<property name="filterData" text="过滤数据" is-id-ref="true" required="true" editor-ref="contextComponent" editor-parameter="data"/>        
+			<property name="orgFIDCol" text="包含组织路径数据的过滤字段" required="true" editor-ref="relationDlg" editor-parameter="filterData"/>
+			<property name="personIDCol" text="包含人员标识数据的过滤字段（可选）" required="false" editor-ref="relationDlg" editor-parameter="filterData"/>
+			<property name="useMyself" text="是否使用本人过滤" default-value="false" editor-ref="booleanList" data-type="boolean"/>
+			<property name="defaultValue" text="默认值" editor-ref="defaultValueList"/>
+			<property name="autoRefresh" text="是否自动刷新数据" default-value="true" editor-ref="booleanList" data-type="boolean"/>        
+			
+			<property name="class" text="class" editor-ref="classSelector"/>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+		</properties>
+		<property-editors>
+			<property-editor name="defaultValueList" type="list" >
+				<static-data value=",_myself_:本人" />				
+			</property-editor>
+		</property-editors>
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+			<event name="onFilter" text="过滤事件"/>
+		</events>
+
+		<inner-component-config>
+			<item name="$UI/system/components/justep/org/orgSelectPC" 
+				exclude-properties="bind-ref,bind-labelRef,bind-extRef,valueSeparator,labelSeparator,extSeparator,defaultLabel">
+			</item>	
+			<item name="$UI/system/components/justep/org/orgSelectPC#option" 
+				exclude-properties="value,label,ext">
+			</item>	
+		</inner-component-config>
+
+		<templates>
+		   <template name="default"><![CDATA[
+			  <div class="x-control" component="$UI/system/components/justep/orgFilter/orgFilter"> 
+			      <div class="x-gridSelect" component="$UI/system/components/justep/org/orgSelectPC">
+			      	<div component="$UI/system/components/justep/data/bizData" autoLoad="false">
+			    	</div>
+			      	<option>
+			            <columns> 
+			              <column name="sName"/>  
+			            </columns> 
+			      	</option> 
+			      </div> 
+			  </div>
+		   ]]></template>
+		</templates>
+	</element>
+ 	
+</elements>

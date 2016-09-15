@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="http://phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.justep.cordova.plugin.voiceManager"
+    version="1.0.0">
+  <engines>
+    <engine name="cordova" version=">=3.3.0" />
+  </engines>
+
+  <name>voiceMode</name>
+  <description>Switch audio playback mode</description>
+
+  <js-module src="www/voice.js" name="voiceManager">
+    <clobbers target="navigator.voiceManager" />
+  </js-module>
+
+  <platform name="android">
+	<config-file target="res/xml/config.xml" parent="/*">
+	<feature name="voiceManager">
+		<param name="android-package" value="com.justep.cordova.plugin.voiceManager.VoiceManager" />
+	</feature>
+	</config-file>
+	<config-file target="AndroidManifest.xml" parent="/manifest">
+		<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+	</config-file>	
+	<source-file src="src/android/VoiceManager.java"
+			target-dir="src/com/justep/cordova/plugin/voiceManager" />
+  </platform>
+
+  <platform name="ios">
+    <source-file src="src/ios/CDVVoiceManager.m" />
+    <header-file src="src/ios/CDVVoiceManager.h" />
+    
+
+    <config-file target="config.xml" parent="/widget">
+      <feature name="voiceManager">
+        <param name="ios-package" value="CDVVoiceManager"/>
+      </feature>
+    </config-file>
+  </platform>
+</plugin>
+

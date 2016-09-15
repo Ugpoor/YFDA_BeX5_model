@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/quickLocate/treeLocate" tag-name="div" icon="treeLocate.gif" text="树定位" 
+		binding-component="$UI/system/components/justep/quickLocate/treeLocate" display-property="xid" 
+        component-type="formControl" design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号" required="true"/>
+			<property name="data" text="过滤数据集" required="true"/>
+			<property name="tree" text="grid编号" required="true"/>		
+			<property name="relations" text="过滤关系，多个用逗号分隔" required="true"/>
+			<property name="pathRelation" text="路径关系" required="true"/>
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "input-group",
+						require: true
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			 <property name="style" text="样式" editor-ref="styleDialog" use-default="true"/> 
+		</properties>
+
+		<events>
+			<event name="onGetCondition" text="构造过滤条件"/>
+		</events>
+		
+		<property-editors>
+		</property-editors>
+		
+		<templates>
+		   	<template name="default">
+		   		<![CDATA[ 
+  <div class="input-group" component="$UI/system/components/justep/quickLocate/treeLocate"> 
+    <input type="text" class="form-control"/>  
+    <div class="input-group-btn"> 
+      <a class="btn btn-default btn-only-icon"> 
+        <i class="icon-android-search"/>  
+      </a> 
+    </div>
+  </div>
+		   		]]>
+		   	</template>
+		</templates>
+	</element>
+</elements>

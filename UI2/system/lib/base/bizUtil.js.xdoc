@@ -1,0 +1,35 @@
+/**
+	@name $UI/system/lib/base/bizUtil
+	@class
+	@category javascript
+	@model UI2
+	@description biz相关的工具类
+*/
+
+/**
+	@name $UI/system/lib/base/bizUtil.getSystemDatetime
+	@function
+	@description 获取服务器系统时间
+	@return {Date} 
+*/
+
+/**
+	@name $UI/system/lib/base/bizUtil.getBusinessServer
+	@function
+	@description 获取业务服务器地址
+	@return {String} 
+*/
+
+
+/**
+	@name $UI/system/lib/base/bizUtil.isDisabledAction
+	@function
+	@description 判断当前动作是不是禁用的（即没有权限的保护动作）
+	@param {$UI/system/lib/base/modelBase} model
+	@param {String} action
+	@returns {Boolean}
+	@example
+	<xmp> 
+		一般用于按钮等组件的bind-disable表达式，例如：biz.Util.isDisabledAction($model, 'xxxAction')
+	</xmp>
+*/

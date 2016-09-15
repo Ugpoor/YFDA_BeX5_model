@@ -1,0 +1,18 @@
+/* for ie */
+
+.tabelfixeStyle	{
+	table-layout: fixed;
+}
+/* for webkit */
+@media screen and (-webkit-min-device-pixel-ratio:0){
+	.tabelfixeStyle{
+	  table-layout: auto;
+	}
+}
+/* for moz */
+@-moz-document url-prefix() { 
+	.tabelfixeStyle{
+	  table-layout: auto;
+	} 
+} 
+

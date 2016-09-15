@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.justep.cordova.plugin.scanCard">
+	<name>名片识别插件</name>
+	<description>名片识别插件</description>
+	<!-- ios -->
+	<platform name="ios">
+		<param name="key"  displayName=""  />
+        <param name="sign"  displayName="" />
+	</platform>
+
+	<!-- android -->
+	<platform name="android">
+		<param name="key"  displayName=""  />
+        <param name="sign"  displayName="" />
+	</platform>
+</plugin>
+
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/excel/importExcel" tag-name="div" icon="iconImport.gif" text="data数据excel导入"
+		binding-component="$UI/system/components/justep/excel/importExcel"
+		display-property="xid" component-type="formControl" parent-range="$UI/system/components/justep/window/window" resizable="false">
+
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="data" text="导入data" required="true" is-id-ref="true" editor-ref="bizDatalist"/>
+			<property name="to" text="导入的数据去向方式" readonly="true" default-value="DB" editor-ref="toList" enum-values=""/>
+			<property name="mappings" text="数据导入映射文件" editor-ref="fileTreeDialog" editor-parameter=".xml#true#true#false"/>
+			<property name="useDefault" text="使用映射文件中定义的导入参数" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="action" text="指定导入excel的action" editor-ref="actionDlg" default-value="importExcel"/>
+		</properties>
+
+		<property-editors>
+			<property-editor name="bizDatalist" type="list">
+						<dynamic-data xpath="//*[@component='$UI/system/components/justep/data/bizData']/@xid"/>								
+			</property-editor>
+			
+			<property-editor name="toList" type="list" > 
+				<static-data value="UI,DB" /> 
+			</property-editor>		
+		</property-editors>		
+	
+		<events>  <!--组件事件-->			
+			<event name="onImportCreateParam"  text="创建导入参数"/>
+			<event name="onBeforeImport"  text="导入前"/>
+			<event name="onSuccess"  text="导入成功"/>
+			<event name="onError"  text="导入失败"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/excel/importExcel"/>
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

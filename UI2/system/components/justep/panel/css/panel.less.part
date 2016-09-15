@@ -1,0 +1,85 @@
+@import '../../../bootstrap/lib/css/mixins.less';
+@import '../../lib/css/flexbox.less.mixins';
+@import './panel.mixins.less.part';
+
+.x-panel {
+	overflow: hidden;
+	position: relative;
+	
+	.x-panel-top {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+		
+	.x-panel-bottom {
+		position: absolute;
+		top: auto;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+	}
+	
+	.x-panel-content {
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: auto;
+		width: auto;
+		overflow: auto;
+	}	
+}
+
+.x-panel {
+	.x-panel-top-bottom-height(@bar-height, @bar-bottom-height);
+}
+
+/* CARD */
+.x-card.panel {
+  border-radius: 0;
+  margin-bottom: 15px;
+  box-shadow: none; 
+  background-color: #fff;
+}
+
+.x-card.panel >.panel-heading {
+  color: #333;
+  background: transparent;
+  padding: 3px 15px;
+}
+
+.x-card.panel >.panel-body > *:last-child {
+  margin-bottom: 0; }
+
+.x-card.panel > .panel-footer {
+  padding: 10px 15px;
+  background: transparent;
+}
+
+.x-card.panel >.panel-heading .panel-title {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #33b5e5;
+  font-weight: bold;
+  margin: 0;
+  padding: 7px 0;
+  line-height: 20px; 
+}
+
+/*ios-fixed-panel*/
+.ios-fixed-panel.x-panel{
+	&>.x-panel-content {
+		  position: absolute !important;
+		  left: 0 !important;
+		  right: 0 !important;
+		  bottom: 0 !important;
+		  top: 0 !important;
+	}
+	&>.x-panel-bottom{
+		display: none !important;
+	}
+	&>.x-panel-top{
+		z-index: 0 !important;
+	}
+}

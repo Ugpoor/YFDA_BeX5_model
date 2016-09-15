@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-media">
+	<name>音频设备</name>
+	<description>本地声音设备插件，用于播放声音、控制音量等</description>
+	
+</plugin>

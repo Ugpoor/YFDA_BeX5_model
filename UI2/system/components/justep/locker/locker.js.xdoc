@@ -1,0 +1,258 @@
+/**
+	@name $UI/system/components/justep/locker/locker
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description 手势密码组件
+*/
+
+/**
+	@name $UI/system/components/justep/locker/locker#Modes
+	@class 
+	@extends $UI/system/lib/base/object
+	@category javascript
+	@description Locker组件模式常量
+	@model UI2
+ */ 
+
+/**
+	@name $UI/system/components/justep/locker/locker#Modes.check
+	@property
+	@type integer 
+	@description Locker组件密码校验模式,值为1
+ */ 
+
+/**
+	@name $UI/system/components/justep/locker/locker#Modes.setPassword
+	@property
+	@type integer 
+	@description Locker组件密码设置模式,值为2
+ */ 
+
+/**
+	@name $UI/system/components/justep/locker/locker#Modes.setPassword
+	@property
+	@type integer 
+	@description Locker组件通用模式,值为0
+ */ 
+
+/**
+	@name $UI/system/components/justep/locker/locker#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/locker/locker#mode
+	@attribute 
+	@property 
+	@type {$UI/system/components/justep/locker/locker#Modes}
+	@description 组件模式，包括：密码检验、密码设置、通用三种模式
+*/
+
+/**
+	@name $UI/system/components/justep/locker/locker#R
+	@attribute 
+	@property 
+	@type integer
+	@description 触摸园的半径，默认：26
+*/
+
+/**
+	@name $UI/system/components/justep/locker/locker#password
+	@attribute 
+	@property 
+	@type {list<integer>}
+	@description 
+*/
+
+/**
+	@name $UI/system/components/justep/locker/locker#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-locker(必须)
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/locker/locker#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"mode" : {$UI/system/components/justep/locker/locker#Modes} 模式，
+		"R" : {integer} 触摸园的半径，
+		"password" : {list<integer>} password
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/locker/locker#draw
+	@function
+	@description 重画
+	@param {list<integer>} points 选中的手势数组,0到9不重复的整数数组
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/locker/locker#clear
+	@function
+	@description 清除选中
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/locker/locker#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："mode"、"R"、"password"
+	@return {Object} 
+*/
+
+/**
+@name $UI/system/components/justep/locker/locker#LockerInputEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 手势输入事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/common/event#ChangeEvent.values
+ @property
+ @type {list<integer>}
+ @description 手势数组,0到9不重复的整数数组
+*/ 
+
+/**
+ @name $UI/system/components/justep/common/event#ChangeEvent.clear
+ @property
+ @type {boolean}
+ @description 是否清除手势
+*/ 
+
+/**
+	@name $UI/system/components/justep/locker/locker#onInput
+	@event
+	@description <b>[回调型事件]</b>普通模式下输入手势事件
+	@param {$UI/system/components/justep/locker/locker#LockerInputEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"values" : 手势数组,0到9不重复的整数数组,
+		"clear" : 是否清除手势,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/locker/locker#LockerEvent
+@extends $UI/system/components/justep/locker/locker#LockerInputEvent
+@category eventclass
+@class
+@model UI2
+@description 手势组件事件
+*/
+ 
+/**
+ @name $UI/system/components/justep/locker/locker#LockerEvent.preventDefault
+ @property
+ @type {boolean}
+ @description 是否阻止默认行为
+*/ 
+
+/**
+	@name $UI/system/components/justep/locker/locker#onCheckSuccess
+	@event
+	@description <b>[回调型事件]</b>密码校验模式下密码匹配成功事件
+	@param {$UI/system/components/justep/locker/locker#LockerEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"values" : 手势数组,0到9不重复的整数数组,
+		"clear" : 是否清除手势,
+		"preventDefault" : 是否阻止默认行为,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/locker/locker#onCheckError
+	@event
+	@description <b>[回调型事件]</b>密码校验模式下密码匹配失败事件
+	@param {$UI/system/components/justep/locker/locker#LockerEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"values" : 手势数组,0到9不重复的整数数组,
+		"clear" : 是否清除手势,
+		"preventDefault" : 是否阻止默认行为,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/locker/locker#onPasswordFirstSuccess
+	@event
+	@description <b>[回调型事件]</b>密码设置模式下密码首次输入事件
+	@param {$UI/system/components/justep/locker/locker#LockerEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"values" : 手势数组,0到9不重复的整数数组,
+		"clear" : 是否清除手势,
+		"preventDefault" : 是否阻止默认行为,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/locker/locker#onPasswordSuccess
+	@event
+	@description <b>[回调型事件]</b>密码设置模式下密码输入成功事件
+	@param {$UI/system/components/justep/locker/locker#LockerEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"values" : 手势数组,0到9不重复的整数数组,
+		"clear" : 是否清除手势,
+		"preventDefault" : 是否阻止默认行为,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/locker/locker#onPasswordError
+	@event
+	@description <b>[回调型事件]</b>密码设置模式下密码输入失败事件
+	@param {$UI/system/components/justep/locker/locker#LockerEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"values" : 手势数组,0到9不重复的整数数组,
+		"clear" : 是否清除手势,
+		"preventDefault" : 是否阻止默认行为,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/

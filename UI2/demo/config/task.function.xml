@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root> 
+  <item label="演示案例" iconClass="icon-flag"> 
+    <item label="工作任务" process="/SA/task/workTask/workTaskProcess" activity="mainActivity"
+      url="$UI/SA/task/workTask/mainActivity.a"/>  
+    <item label="工作任务处理" process="/SA/task/workTask/workTaskProcess" display="hide"
+      activity="useActivity" url="$UI/SA/task/workTask/useActivity.a"/>  
+  </item> 
+</root>

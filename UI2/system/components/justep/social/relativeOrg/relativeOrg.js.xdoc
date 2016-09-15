@@ -1,0 +1,193 @@
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description 相关人组件
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#component
+	@attribute
+	@required
+	@type String
+	@description 组件标识
+	@default "$UI/system/components/justep/social/relativeOrg/relativeOrg"
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#xid
+	@attribute
+	@required
+	@type String
+	@description xid标识
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#data
+	@attribute
+	@property
+	@required
+	@type String
+	@description 主数据
+*/
+
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#bind-nameRef
+	@attribute
+	@type String
+	@description 相关人关联的名称字段
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#groupName
+	@attribute
+	@property
+	@required
+	@type String
+	@description 分组名称
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#groupID
+	@attribute
+	@property
+	@required
+	@type String
+	@description 分组标识
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#filter
+	@attribute
+	@property
+	@type String
+	@description 过虑条件
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#multiSelection
+	@attribute
+	@property
+	@required
+	@type Boolean
+	@description 是否多选
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#multiValue
+	@attribute
+	@property
+	@required
+	@type Boolean
+	@description 是否多值, 当multiSelection为false时才起使用
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#statusEnabled
+	@attribute
+	@property
+	@required
+	@type Boolean
+	@description 是否显示状态信息
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#socialData
+	@attribute
+	@property
+	@description 社交信息Data
+	@type String
+*/
+
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#process
+	@attribute
+	@property
+	@description 流程
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#activity
+	@attribute
+	@property
+	@description 环节
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#url
+	@attribute
+	@property
+	@description 相关人的url，默认使用当前环境中的activity对应的.a
+	@type String
+*/
+
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#class
+	@attribute
+	@description 组件样式
+	@example
+<xmp>
+	基础样式: x-ro(必须),
+	显示边框：x-ro-border
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#getSocialDataComponent
+	@function
+	@description 获取社交信息Data对象
+	@returns {$UI/system/components/justep/data/data}
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#getRows
+	@function
+	@description 获取所有的相关人
+	@returns {List<Object>}
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#onChange
+	@event
+	@description 相关人值修改事件
+	@param {$UI/system/components/justep/social/relativeOrg/relativeOrg#ChangeEvent} event 它的结构如下:
+<xmp>
+	{
+		source : this, //组件自身
+		value : this.getRows() //最新的相关人
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#ChangeEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 相关人值修改事件
+	@see $UI/system/components/justep/social/relativeOrg/relativeOrg#onChange
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#ChangeEvent#source
+	@property 
+	@description relativeOrg组件js对象
+	@type $UI/system/components/justep/social/relativeOrg/relativeOrg
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrg/relativeOrg#ChangeEvent#value
+	@property 
+	@description 最新的相关人
+	@type $UI/system/components/justep/social/relativeOrg/relativeOrg
+*/
+
+
+
+

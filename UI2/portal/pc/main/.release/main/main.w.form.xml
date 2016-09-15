@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window portal-main cZNbi6f" component="$model/UI2/system/components/justep/window/window" sysParam="portal" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cZNbi6f" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/widgets/widgets,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/windowDialog/windowDialog,$model/UI2/system/components/justep/widgets/column,$model/UI2/system/components/justep/window/window,">
+  <xhtml:style xmlns:xhtml="http://www.w3.org/1999/xhtml">.portal-main.cZNbi6f [xid="configDialog"].cZNbi6f .x-dialog.cZNbi6f{opacity: 0.8} .portal-main.cZNbi6f .debug-mode.cZNbi6f{background: red; color: rgb(255, 255, 255); padding: 6px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font-weight: 700; font-size: 14px}</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cZNbi6f" class="cZNbi6f"/>  
+  <span component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="configDialog" style="left:47px;top:32px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-events="onReceive:configDialogReceive" data-config="{&quot;showTitle&quot;:true,&quot;src&quot;:&quot;$model/UI2/portal/pc/main/config/config.w&quot;,&quot;status&quot;:&quot;minimize&quot;,&quot;title&quot;:&quot;设置首页布局&quot;}" __cid="cZNbi6f" class="cZNbi6f">
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog-overlay cZNbi6f" __cid="cZNbi6f"/>
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog cZNbi6f" style="display:none;" showTitle="true" __cid="cZNbi6f">
+      <xhtml:div class="x-dialog-title cZNbi6f" __cid="cZNbi6f">
+        <xhtml:button class="close cZNbi6f" __cid="cZNbi6f">
+          <xhtml:span __cid="cZNbi6f" class="cZNbi6f">×</xhtml:span>
+        </xhtml:button>
+        <xhtml:div class="x-dialog-title-text cZNbi6f" __cid="cZNbi6f">设置首页布局</xhtml:div>
+      </xhtml:div>
+      <xhtml:div class="x-dialog-body cZNbi6f" __cid="cZNbi6f"/>
+    </xhtml:div>
+  </span>  
+  <div class="debug-mode hide cZNbi6f" __cid="cZNbi6f">警告：当前运行在调试模式下， 调试模式下系统运行速度会慢！</div>  
+  <div component="$model/UI2/system/components/justep/widgets/widgets" class="x-widgets row cZNbi6f" xid="widgets" data-bind="component:{name:'$model/UI2/system/components/justep/widgets/widgets'}" __cid="cZNbi6f"> 
+    <div class="x-column col-xs-12 cZNbi6f" xid="column1" component="$model/UI2/system/components/justep/widgets/column" data-bind="component:{name:'$model/UI2/system/components/justep/widgets/column'}" __cid="cZNbi6f"/>  
+    <div class="x-column col-xs-12 col-sm-12 col-md-6 col-lg-6 cZNbi6f" xid="column2" component="$model/UI2/system/components/justep/widgets/column" data-bind="component:{name:'$model/UI2/system/components/justep/widgets/column'}" __cid="cZNbi6f"/>  
+    <div class="x-column col-xs-12 col-sm-12 col-md-6 col-lg-6 cZNbi6f" xid="column3" component="$model/UI2/system/components/justep/widgets/column" data-bind="component:{name:'$model/UI2/system/components/justep/widgets/column'}" __cid="cZNbi6f"/>  
+    <div class="x-column hidden cZNbi6f" xid="column4" component="$model/UI2/system/components/justep/widgets/column" data-bind="component:{name:'$model/UI2/system/components/justep/widgets/column'}" __cid="cZNbi6f"/> 
+  </div>  
+  <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link cZNbi6f" xid="configBtn" style="float:right;color: #aaa;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:configBtnClick" data-config="{&quot;icon&quot;:&quot;icon-gear-a&quot;,&quot;label&quot;:&quot; 配置布局&quot;}" __cid="cZNbi6f"> 
+    <i xid="i1" class="icon-gear-a cZNbi6f" __cid="cZNbi6f"/>  
+    <span xid="span1" __cid="cZNbi6f" class="cZNbi6f">配置布局</span> 
+  </a> 
+</div>

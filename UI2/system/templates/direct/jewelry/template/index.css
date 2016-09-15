@@ -1,0 +1,13 @@
+ .x-panel-top{
+ 	border-bottom: thin solid red;
+ } 
+ .dropdown-menu{
+ 	min-width:0px;
+ 	opacity:0.9;
+ }
+ .x-row .btn-link{
+ 	border-radius: 32px;
+ }
+.customService{
+ 	background-color: #FF34B3; 
+ }

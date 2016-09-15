@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-x-socialsharing">
+	<name>社交分享</name>
+	<description>分享插件，可分享文本、图片等文件，并关联打开本地注册过的可分享类型(sharing widget)</description>
+
+</plugin>

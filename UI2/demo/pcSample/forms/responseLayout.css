@@ -1,0 +1,12 @@
+.x-col {
+	border: 1px #ccc solid;
+}
+.x-output{
+	margin-top: -5px;	
+}
+.x-control-group2 x-row{
+	border:0px #ccc solid;
+}
+.form-control{
+	width: 50%;
+}

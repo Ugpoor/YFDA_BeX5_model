@@ -1,0 +1,24 @@
+.x-col-fixed span{
+	padding-right: 60px;
+}
+.btn1{
+	border-radius: 0 90px 90px 0;
+	width: 150px;
+}
+.div1{
+	margin-left: 20px;
+	padding-top: 15px;
+	background: linear-gradient(#ECF4F2, white 90%);
+}
+.btn2 {
+	border: 1px solid #E2E7E7;
+	background-color: #ECF4F2;
+	margin: 2px 0;
+	color: black;
+}
+.x-contents{
+	border: 1px solid #E2E7E7;
+}
+.x-padding{
+	padding-left: 30px;
+}

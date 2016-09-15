@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/data/baasData" tag-name="div" icon="baasData.gif"    
+		binding-component="$UI/system/components/justep/data/baasData" display-property="xid" d_resiable="false" parent-range="$UI/system/components/justep/model/model" resizable="false"
+		component-type="data" validator="DataValidator"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" />        
+			<property name="idColumn" text="标示ID的列" required="true"/>        
+			<property name="tableName" text="表名" required="true" editor-ref="serviceSelector" editor-parameter="{type:'service'}"/>
+			<property name="url" text="请求Action的url" required="true" editor-ref="serviceSelector" editor-parameter="{type:'service'}"/>
+			<property name="queryAction" text="加载数据Action" required="true"  editor-ref="serviceSelector" editor-parameter="{type:'service'}"/>
+			<property name="saveAction" text="写数据Action"  editor-ref="serviceSelector" editor-parameter="{type:'saveAction'}"/>
+			<!-- 
+			<property name="createAction" text="新增数据Action"/>
+			 --> 
+			<property name="autoLoad" text="自动加载数据，和auto-new属性互斥" default-value="false"  editor-ref="booleanList" data-type="boolean"/>
+			<property name="autoNew" text="自动新增数据，和auto-load属性互斥" default-value="false"  editor-ref="booleanList" data-type="boolean"/>
+			<property name="limit" text="条数"  data-type="integer" default-value="20"/>
+			<property name="offset" text="初始偏移"  data-type="integer" default-value="0"/>
+			<property name="orderBy" text="关系:排序" editor-ref="orderByRelationDlg" allow-empty="true"/>
+			<property name="directDelete" text="直接删除" default-value="false" editor-ref="booleanList" data-type="boolean"/>
+			<property name="confirmDelete" text="删除提示" default-value="true" editor-ref="booleanList"/>  
+			<property name="confirmDeleteText" text="删除提示文本"  />        
+			<property name="confirmRefresh" text="刷新提示，数据修改后刷新数据进行提示" default-value="true" editor-ref="booleanList"/>
+			<property name="confirmRefreshText" text="刷新提示文本" />
+			<property name="isTree" text="是否树型数据" default-value="false" editor-ref="booleanList" data-type="boolean"/>
+			<group name="treeOption" text="树选项" enabled-condition="@isTree='true'" checkup-condition="@isTree='true'">
+				<property name="parentRelation" required="true" path="treeOption/@parentRelation" type="complex" text="父关系" editor-ref="dataRef" editor-parameter='{"isRelation":"true","data":"xid","hasLabel":"false"}'/>
+				<property name="nodeKindRelation"  required="false" path="treeOption/@nodeKindRelation" type="complex" text="节点类型关系" editor-ref="dataRef" editor-parameter='{"isRelation":"true","data":"xid","hasLabel":"false"}'/>
+				<property name="delayLoad" path="treeOption/@delayLoad" text="延迟数据加载" type="complex" default-value="true"  editor-ref="booleanList" data-type="boolean"/>
+				<property name="rootFilter"  enabled-condition="@isTree='true' and (not(*[local-name()='treeOption']/@delayLoad) or *[local-name()='treeOption']/@delayLoad!='false')" required="false" path="treeOption/@rootFilter" text="根条件" type="complex" editor-ref="" allow-empty="true"/>      
+			</group>
+			<group name="master" text="主从选项">
+				<property name="data" path="master/@data" text="主数据" is-id-ref="true" type="complex" editor-ref="contextComponent" editor-parameter="data"/>
+				<property name="column" path="master/@relation" text="关联关系" type="complex" editor-ref="dataRef" editor-parameter='{"isRelation":"true","data":"xid","hasLabel":"false"}'/>
+			</group>
+		</properties>
+ 
+		<property-editors><!--属性编辑器描述，可通过下拉列表或者弹出对话框来设置属性值，不这是默认问普通的文本输入框。-->
+			<property-editor name="booleanList" type="list" >
+				<static-data value="true,false" /> <!--直接定义的静态数据 -->				
+			</property-editor>
+			<property-editor name="serviceSelector" type="dialog" 
+				url="$UI/system/components/justep/data/designer/setService.w"
+				editor-parameter="{width:800,height:600}" >
+			</property-editor>
+			<property-editor name="orderByRelationDlg" type="dialog"
+				url="$UI/system/components/justep/data/designer/orderByDlg.w"
+				editor-parameter="{width:800,height:600}">
+			</property-editor>
+		</property-editors>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<div component="$UI/system/components/justep/data/baasData" autoLoad="true">
+			</div>
+		   ]]></template>
+		</templates>
+		<events>
+           <event name="onCreate" text="创建"/>
+           <event name="onDataChange" text="数据发生变化（包括新增、刷新、删除、修改引起的变化），感知从data的变化"/>
+           <event name="onLoadSlave" text="加载从数据"/>
+           <event name="onIndexChanging" text="索引改变中"/>
+           <event name="onIndexChanged" text="索引改变"/>
+           <event name="onValueChange" text="数据改变"/>
+           <event name="onValueChanged" text="数据改变后"/>
+           <event name="onBeforeNew" text="新增前"/>
+           <event name="onCustomNew" text="接管新增"/>
+           <event name="onAfterNew" text="新增后"/>
+           <event name="onDeleteError" text="删除失败"/>
+           <event name="onBeforeDelete" text="删除前"/>
+           <event name="onCustomDelete" text="接管删除"/>
+           <event name="onAfterDelete" text="删除后"/>
+           <event name="onRefreshError" text="刷新失败"/>
+           <event name="onRefreshCreateParam" text="创建刷新参数"/>
+           <event name="onBeforeRefresh" text="刷新前"/>
+           <event name="onCustomRefresh" text="接管刷新"/>
+           <event name="onAfterRefresh" text="刷新后"/>
+           <event name="onSaveError" text="保存失败"/>
+           <event name="onSaveCreateParam" text="创建保存参数"/>
+           <event name="onBeforeSave" text="保存前"/>
+           <event name="onCustomSave" text="接管保存"/>
+           <event name="onAfterSave" text="保存后"/>
+           <event name="onSaveCommit" text="保存事务提交"/>           
+        </events>
+		<toolbar>			
+			<item text="设置列" method="editColumn"/>	
+			<item text="增加过滤条件" method="newFilter"/>	
+			<item text="编辑规则" method="editRule"/>
+			<item text="设置扩展数据类型" method="editExtendType"/>				
+		</toolbar>
+	</element>
+
+	<element name="$UI/system/components/justep/data/baasData#filter" tag-name="filter" icon="filter.gif"  display-property="name"
+		validator="filterValidator" design-view="web-designer"
+		discriminate-condition="executeXpath(starts-with(../@component,'$UI/system/components/justep/data/baasData'))">
+		<properties>
+			<property name="name" text="名称" required="true" editor-ref=""/>
+			<property name="filter" text="内容" editor-ref="filterDialog" is-virtual = 'true' fixed-value='[...]'/>
+		</properties>
+		
+		<property-editors><!--属性编辑器描述，可通过下拉列表或者弹出对话框来设置属性值，不这是默认问普通的文本输入框。-->
+			<property-editor name="filterDialog" type="dialog">
+				<dialog-page class-name="EditFilterPage"/>				
+			</property-editor>
+		</property-editors>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<filter name=""></filter>
+		   ]]></template>
+		</templates>
+	</element>
+
+	
+</elements>

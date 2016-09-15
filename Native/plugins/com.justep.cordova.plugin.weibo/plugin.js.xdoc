@@ -1,0 +1,78 @@
+/**
+	@name com.justep.cordova.plugin.weibo
+	@class 
+	@description Weibo登录
+	@model Native
+	@category plugin
+	@declareVar navigator.Weibo
+*/
+
+/**
+	@name com.justep.cordova.plugin.weibo.ssoLogin
+ 	@function
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description Weibo登录
+*/
+
+/**
+	@name com.justep.cordova.plugin.weibo.getUserInfo
+ 	@function
+ 	@param {Object} token 令牌（可选）
+  	<br/><b>参数格式：</b>
+	<xmp>
+		{
+			"access_token":String - 访问令牌  ,
+			"userid":String - 应用用户id ,
+		}
+	</xmp>	
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description 取得用户信息，需要在ssoLogin登录完成之后。
+*/
+
+
+/**
+	@name com.justep.cordova.plugin.weibo.logout
+ 	@function
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description  Weibo注销
+*/ 
+
+/**
+	@name com.justep.cordova.plugin.weibo.shareToWeibo
+ 	@function
+ 	@param {Object} args 
+ 	<br/><b>参数格式：</b>
+	<xmp>
+		{
+			"url":String - 分享的url地址,
+ 	 		"defaultText":String - 默认的分享文本,
+ 	 		"media":Object - 要分享的多媒体对象，示例{type:"image",url:"xxx",description:"xxx",title:"xxx"},
+ 	 		
+		}
+	</xmp>	
+	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description  Weibo注销
+*/ 
+
+/**
+	@name com.justep.cordova.plugin.weibo.checkClientInstalled
+ 	@function
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description  检查Weibo是否在本机安装
+*/
+/**
+	@name com.justep.cordova.plugin.weibo.mediaType.Image
+	@property
+	@type String
+ 	@description  分享多媒体的类型
+*/

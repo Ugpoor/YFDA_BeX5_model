@@ -1,0 +1,16 @@
+/**
+	@name codeSelectPC
+	@component $UI/system/components/justep/codeSelect/codeSelectPC
+	@extends GridSelect
+	@extendurl $UI/system/components/justep/gridSelect/gridSelect
+	@model UI2
+	@description 编码下拉选择
+*/
+
+/**
+	@name codeSelectPC#codeType
+	@attribute 
+	@type string
+	@description 编码类型，对应SA_Code表中的sType字段值
+*/
+

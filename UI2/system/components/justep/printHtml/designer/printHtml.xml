@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/printHtml/printHtml" tag-name="span" icon="print.gif" text="打印"
+		binding-component="$UI/system/components/justep/printHtml/printHtml"
+		parent-range="$UI/system/components/justep/window/window" resizable="false" design-view="web-designer">
+
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="target" text="目标容器编号(XID)" required="true" is-id-ref="true" />
+		</properties>	
+
+		<property-editors>
+		</property-editors>
+
+		<events>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+				<span component="$UI/system/components/justep/printHtml/printHtml">
+				</span>
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

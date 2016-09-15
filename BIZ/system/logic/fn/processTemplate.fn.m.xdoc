@@ -1,0 +1,65 @@
+/**
+	@name 流程模板函数
+	@fn
+	@model BIZ
+	@category fn
+	@description 流程模板函数
+	@example
+	流程模板相关的函数定义，定义模块是“/system/logic/fn”，使用流程模板函数时，需要先引用（use或include）模块
+“/system/logic/fn”。
+	流程模板函数主要使用在流程的启动规则的“流程模板”设置中，例如：
+	findTemplateByPerson(currrentPersonID()) //根据当前用户，获取可见的当前流程的流程模板
+*/
+
+/**
+	@name 流程模板函数.findTemplateByPerson
+	@function
+	@description 根据指定的用户，获取可见的当前流程的流程模板
+	@param {String} personID 用户标识  
+	@returns {String}  
+	@see com.justep.system.process.TemplateHelper.findTemplateByPerson
+	@example 
+	如果指定的用户，获取可见的当前流程的流程模板有多个时，将随机返回其中的一个。
+	示例：
+		findTemplateByPerson(currrentPersonID())
+*/
+	
+/**
+	@name 流程模板函数.findTemplateByPersonMember
+	@function
+	@description 根据指定的人员成员，获取可见的当前流程的流程模板
+	@param {String} fid 人员成员的FID  
+	@returns {String}  
+	@see com.justep.system.process.TemplateHelper.findTemplateByPersonMember
+	@example 
+	如果指定的人员成员，获取可见的当前流程的流程模板有多个时，将随机返回其中的一个。
+	示例：
+		findTemplateByPersonMember(currentPersonMemberFID())
+*/
+
+
+/**
+	@name 流程模板函数.findTemplateByCurrentPerson
+	@function
+	@description 获取当前用户可见的当前流程的流程模板
+	@returns {String}  
+	@see com.justep.system.process.TemplateHelper.findTemplateByCurrentPerson
+	@example 
+	如果当前用户可见的当前流程的流程模板有多个时，将随机返回其中的一个。
+	示例：
+		findTemplateByCurrrentPerson()
+*/
+	
+/**
+	@name 流程模板函数.findTemplateByCurrentPersonMember
+	@function
+	@description 获取当前人员成员可见的当前流程的流程模板
+	@returns {String} 
+	@see com.justep.system.process.TemplateHelper.findTemplateByCurrentPersonMember
+	@example 
+	如果当前人员成员可见的当前流程的流程模板有多个时，将随机返回其中的一个。
+	示例：
+		findTemplateByCurrentPersonMember()
+*/
+
+		

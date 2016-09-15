@@ -1,0 +1,12 @@
+<template text="通用" desc="设置页" custom="false">
+	<images>
+		<image src="template.png"/>
+	</images>
+
+	<items>
+		<item file="template/setting.w"></item>
+		<item file="template/setting.js" />
+		<item file="template/setting.css" />
+	</items>
+
+</template>

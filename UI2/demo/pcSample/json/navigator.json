@@ -1,0 +1,14 @@
+[
+	{"name":"基本选项卡-流程","src":"./navigator/basic-2.w"},
+	{"name":"基本选项卡-样式2","src":"./navigator/basic-flow.w"},
+	{"name":"静态流程导航","src":"./navigator/basic-staticFlow.w"},
+	{"name":"基本选项卡","src":"./navigator/Basic.w"},
+	{"name":"数字分页控件","src":"./navigator/digitalPaging.w"},
+	{"name":"抽屉容器","src":"./navigator/drawer.w"},
+	{"name":"动态选项卡","src":"./navigator/dynamicTAB.w"},
+	{"name":"分隔条组件","src":"./navigator/gridLine.w"},
+	{"name":"图标工具箱","src":"./navigator/iconKit.w"},
+	{"name":"图标导航","src":"./navigator/iconNav.w"},
+	{"name":"弹出菜单","src":"./navigator/popupMenu.w"},
+	{"name":"图标工具栏","src":"./navigator/toolbar.w"}
+]

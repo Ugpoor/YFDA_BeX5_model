@@ -1,0 +1,96 @@
+#x-default-loadingbar {
+    position: fixed;
+    z-index: 2147483647;
+    top: 0;
+    left: -1%;
+    width: 1%;
+    height: 2px;
+    background: rgb(64, 120, 192);
+    /* background: red; */
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+}
+
+#x-default-loadingbar.waiting dd, #x-default-loadingbar.waiting dt {
+    -moz-animation: pulse 2s ease-out 0s infinite;
+    -ms-animation: pulse 2s ease-out 0s infinite;
+    -o-animation: pulse 2s ease-out 0s infinite;
+    -webkit-animation: pulse 2s ease-out 0s infinite;
+    animation: pulse 2s ease-out 0s infinite;
+}
+
+#x-default-loadingbar dt {
+    opacity: .6;
+    width: 180px;
+    right: -80px;
+    clip: rect(-6px,90px,14px,-6px);
+}
+
+#x-default-loadingbar dd {
+    opacity: .6;
+    width: 20px;
+    right: 0;
+    clip: rect(-6px,22px,14px,10px);
+}
+
+#x-default-loadingbar dd, #x-default-loadingbar dt {
+    position: absolute;
+    top: 0;
+    height: 2px;
+    -moz-box-shadow: #b91f1f 1px 0 6px 1px;
+    -ms-box-shadow: #b91f1f 1px 0 6px 1px;
+    -webkit-box-shadow: #B91F1F 1px 0 6px 1px;
+    box-shadow: #B91F1F 1px 0 6px 1px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+
+@keyframes pulse {
+    30% { opacity:0.6; }
+    60% { opacity:0; }
+    100% { opacity:0.6; }
+}
+
+@-moz-keyframes pulse
+{
+    30% { opacity:0.6; }
+    60% { opacity:0; }
+    100% { opacity:0.6; }
+}
+
+@-ms-keyframes pulse
+{
+    30% { opacity:0.6; }
+    60% { opacity:0; }
+    100% { opacity:0.6; }
+}
+
+@-webkit-keyframes pulse
+{
+    30% { opacity:0.6; }
+    60% { opacity:0; }
+    100% { opacity:0.6; }
+}
+#x-default-overlay.x-default-overlay-open{
+	display:block;
+	visibility: visible;
+    opacity: 1;
+}
+#x-default-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    visibility: hidden;
+    opacity: 0;
+    display:none;
+}

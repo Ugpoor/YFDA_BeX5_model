@@ -1,0 +1,3600 @@
+/**
+	@name $UI/system/components/justep/process/process
+	@component 
+	@model UI2
+	@extends $UI/system/lib/base/viewComponent
+	@description 流程组件
+	@see 流程动作
+	@example
+	流程组件主要包括以下内容：
+	1. 流程的一些配置选项
+	dialogWindow：流程对话框页面；
+	data：流程关联的数据组件；
+	autoClose：是否自动关闭功能页面；
+	autoStart：是否自动启动流程；
+	autoSave：是否自动保存业务数据；
+	autoFilter：是否自动过虑业务数据；
+	
+	2. 流程动作的js api
+	启动流程、终止查询、终止、流转查询、流转、回退、回退查询、暂停查询、暂停、转发查询、转发、定制查询、定制和回收任务都
+可以调用流程组件上的相应api来实现。
+	例如：
+<xmp>
+	var p = this.comp("process1"); //process1是流程组件的id
+	p.advanceQuery(); //流转查询
+</xmp>	
+
+	3. 流程动作的js事件
+	对于查询类的流程动作，流程组件公布了三个事件：执行前事件、执行后事件和执行失败事件，查询类的流程动作不启动事务；
+	对于非查询类的流程动作，流程组件公布了四个事件：执行前事件、执行后事件、动作提交事件和执行失败事件，其中，执行前事件和执行后
+事件与流程动作处于同一个事务中，动作提交事件和执行失败事件在事务之后。
+	
+	案例：
+	1. 在界面中，流转之前检查业务数据是否符合业务要求（比如金额必须大于100），否则弹出提示
+<xmp>
+	Model.prototype.flwBeforeAdvanceQuery = function(event){
+		var data = this.comp("mainData"); //mainData是业务数据关联的bizData的id
+		var fAmount = data.getValue("fAmount"); //fAmount是金额字段
+		if (fAmout < 100){
+			event.cancel = true; //取消后续的流程动作
+			alert("订单的金额必须大小100");
+		}
+	};
+</xmp>	
+
+			
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#component
+	@attribute
+	@required
+	@description 组件标识
+	@default "$UI/system/components/justep/process/process"
+	@type String
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#xid
+	@attribute 
+	@required
+	@description xid标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#data
+	@attribute
+	@property 
+	@description 关联的data
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#dialog
+	@attribute
+	@property 
+	@description 流程对话框页面
+	@type String
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#dialogWidth
+	@attribute
+	@property 
+	@description 流程对话框宽度
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#dialogHeight
+	@attribute
+	@property 
+	@description 流程对话框高度
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#autoClose
+	@attribute 
+	@property
+	@description 执行完流程相关操作(流转，回退，转发，中止，暂停，终止)后，是否自动关闭当前页面。
+	@default true
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#autoStart
+	@attribute
+	@property 
+	@description 是否在save(即insert)之后自动启动流程，启动流程时，默认sData1的值是data的rowid。
+	@default true
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#autoSave
+	@attribute
+	@property 
+	@description 执行流程相关操作(流转查询，回退查询，转发查询，中止查询，暂停查询，终止查询)之前，是否自动保存业务数据。
+	@default true
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#autoFilter
+	@attribute
+	@property 
+	@description 是否自动为data添加相关的过虑条件(data的rowid为sData1)。
+	@default true
+	@type Boolean
+*/
+
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBeforeStart
+	@event
+	@description 启动流程之前（流程启动事务内）
+	@param {$UI/system/components/justep/process/process#BeforeStartEvent} event 它的结构如下:
+<xmp>
+	{
+		"source":组件的js对象,
+		"process":流程,
+		"relations":{
+			"关系名称":"关系值"
+		},
+		"executor":首环节的执行者,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeStartEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 波特图元素单击事件类
+	@see $UI/system/components/justep/process/process#onBeforeStart
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeStartEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeStartEvent#process
+	@property 
+	@type String
+	@description 流程
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeStartEvent#relations
+	@property 
+	@type JSON
+	@description 任务信息
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeStartEvent#executor
+	@property 
+	@type String
+	@description 首环节执行者
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeStartEvent#cancel
+	@property 
+	@type Boolean
+	@description 是否取消后续操作
+	@default false
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onCloseDialog
+	@event
+	@description <b>[回调型事件]</b>打开流程对话框之前
+	@param {$UI/system/components/justep/process/process#CloseDialogEvent} event 它的结构如下:
+<xmp>
+	{
+		"source":组件的js对象,
+		"action":当前执行的操作,
+		"task":当前任务ID,
+		"isOK": 是否是"确定"
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#CloseDialogEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 打开流程对话框前事件类
+	@see $UI/system/components/justep/process/process#onCloseDialog
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#CloseDialogEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#CloseDialogEvent#action
+	@property 
+	@description 当前执行的操作
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#CloseDialogEvent#task
+	@property 
+	@description 当前任务ID
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#CloseDialogEvent#isOK
+	@property 
+	@description 是否是"确定"
+	@type Boolean
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBeforeOpenDialog
+	@event
+	@description <b>[回调型事件]</b>打开流程对话框之前
+	@param {$UI/system/components/justep/process/process#BeforeOpenDialogEvent} event 它的结构如下:
+<xmp>
+	{
+		"source":组件的js对象,
+		"action":当前执行的操作,
+		"task":当前任务ID,
+		"data":ProcessControl,
+		"options" : options,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeOpenDialogEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 打开流程对话框前事件类
+	@see $UI/system/components/justep/process/process#onBeforeOpenDialog
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeStartEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeOpenDialogEvent#cancel
+	@property 
+	@type Boolean
+	@description 是否取消后续操作
+	@default false
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeOpenDialogEvent#action
+	@property 
+	@type String
+	@description 当前执行的流程动作
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeOpenDialogEvent#task
+	@property 
+	@type String
+	@description 任务标识
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeOpenDialogEvent#data
+	@property 
+	@type $UI/system/components/justep/process/js/processControl
+	@description ProcessControl对象
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeOpenDialogEvent#options
+	@property 
+	@type JSON
+	@description 可选参数
+*/
+
+
+
+
+/**
+	@name $UI/system/components/justep/process/process#onAfterStart
+	@event
+	@description <b>[回调型事件]</b>启动流程之后（流程启动事务内）
+	@param {$UI/system/components/justep/process/process#AfterStartEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"process":流程,
+		"relations":{
+			关系名称:关系值
+		},
+		"executor":首环节的执行者,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterStartEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 启动流程之后（流程启动事务内）事件类
+	@see $UI/system/components/justep/process/process#onAfterStart
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterStartEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterStartEvent#cancel
+	@property 
+	@type Boolean
+	@description 是否取消后续操作
+	@default false
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterStartEvent#process
+	@property 
+	@type String
+	@description 流程
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterStartEvent#relations
+	@property 
+	@type JSON
+	@description 任务信息
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterStartEvent#executor
+	@property 
+	@type String
+	@description 首环节执行者
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onStartCommit
+	@event
+	@description <b>[回调型事件]</b>启动流程成功（流程启动事务外）
+	@param {$UI/system/components/justep/process/process#StartCommitEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"process":流程,
+		"relations":{
+			关系名称:关系值
+		},
+		"executor":首环节的执行者,
+		"cancel":false, 
+		"task":活动环节对应的任务标识
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCommitEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 启动流程成功（流程启动事务外）事件类
+	@see $UI/system/components/justep/process/process#onStartCommit
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCommitEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCommitEvent#cancel
+	@property 
+	@type Boolean
+	@description 是否取消后续操作
+	@default false
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCommitEvent#task
+	@property 
+	@type String
+	@description 任务标识
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCommitEvent#process
+	@property 
+	@type String
+	@description 流程标识
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCommitEvent#relations
+	@property 
+	@type JSON
+	@description 任务信息
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCommitEvent#executor
+	@property 
+	@type String
+	@description 首环节执行者
+*/
+
+
+
+
+/**
+	@name $UI/system/components/justep/process/process#onStartError
+	@event
+	@description <b>[回调型事件]</b>启动流程失败（流程启动事务外）
+	@param {$UI/system/components/justep/process/process#StartErrorEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"process":流程,
+		"relations":{
+			关系名称:关系值
+		},
+		"executor":首环节的执行者,
+		"cancel":false, 
+		"errorType": "client"或"server", 
+		"error": js异常对象, 
+		"errorNode": 服务端错误信息
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 启动流程失败（流程启动事务外）事件类
+	@see $UI/system/components/justep/process/process#onStartError
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartErrorEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartErrorEvent#cancel
+	@property 
+	@type Boolean
+	@description 是否取消后续操作
+	@default false
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartErrorEvent#process
+	@property 
+	@type String
+	@description 流程标识
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartErrorEvent#relations
+	@property 
+	@type JSON
+	@description 任务信息
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartErrorEvent#executor
+	@property 
+	@type String
+	@description 首环节执行者
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartErrorEvent#errorType
+	@property 
+	@type String
+	@description 错误类型, 取值范围"client"或"server"
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartErrorEvent#error
+	@property 
+	@type Error
+	@description 客户端js异常信息
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartErrorEvent#errorNode
+	@property 
+	@type XML
+	@description 服务端异常信息
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBeforeAdvance
+	@event
+	@description <b>[回调型事件]</b>流转之前（流转事务内）
+	@param {$UI/system/components/justep/process/process#BeforeAdvanceEvent} event 它的结构如下:
+<xmp>
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":流转信息,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAdvanceEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 流转之前（流转事务内）事件类
+	@see $UI/system/components/justep/process/process#onBeforeAdvance
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAdvanceEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAdvanceEvent#cancel
+	@property 
+	@type Boolean
+	@description 是否取消后续操作
+	@default false
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAdvanceEvent#task
+	@property 
+	@type String
+	@description 任务标识
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAdvanceEvent#processControl
+	@property 
+	@description 流转信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onAfterAdvance
+	@event
+	@description <b>[回调型事件]</b>流转之后（流转事务内）
+	@param {$UI/system/components/justep/process/process#AfterAdvanceEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":流转信息,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAdvanceEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 流转之后（流转事务内）事件类
+	@see $UI/system/components/justep/process/process#onAfterAdvance
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAdvanceEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAdvanceEvent#cancel
+	@property 
+	@type Boolean
+	@description 是否取消后续操作
+	@default false
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAdvanceEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAdvanceEvent#processControl
+	@property 
+	@description 流转信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onAdvanceCommit
+	@event
+	@description <b>[回调型事件]</b>流转成功（流转事务外）
+	@param {$UI/system/components/justep/process/process#AdvanceCommitEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":流转信息,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceCommitEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 流转成功（流转事务外）事件类
+	@see $UI/system/components/justep/process/process#onAdvanceCommit
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceCommitEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceCommitEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceCommitEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceCommitEvent#processControl
+	@property 
+	@description 流转信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onAdvanceError
+	@event
+	@description <b>[回调型事件]</b>流转失败（流转事务外）
+	@param {$UI/system/components/justep/process/process#AdvanceErrorEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":流转信息,
+		"cancel":false,
+		"errorType": "client"或"server", 
+		"error": js异常对象, 
+		"errorNode": 服务端错误信息
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 流转失败（流转事务外）事件类
+	@see $UI/system/components/justep/process/process#onAdvanceError
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceErrorEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceErrorEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceErrorEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceErrorEvent#processControl
+	@property 
+	@description 流转信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceErrorEvent#errorType
+	@property 
+	@description 错误类型, 取值范围"client"或"server"
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceErrorEvent#error
+	@property 
+	@description 客户端js异常信息
+	@type Error
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceErrorEvent#errorNode
+	@property 
+	@description 服务端异常信息
+	@type XML
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBeforeAdvanceQuery
+	@event
+	@description <b>[回调型事件]</b>流转查询之前
+	@param {$UI/system/components/justep/process/process#BeforeAdvanceQueryEvent} event 它的结构如下:
+<xmp>
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAdvanceQueryEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 流转查询之前事件类
+	@see $UI/system/components/justep/process/process#onBeforeAdvanceQuery
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAdvanceQueryEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAdvanceQueryEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAdvanceQueryEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onAfterAdvanceQuery
+	@event
+	@description <b>[回调型事件]</b>流转查询之后
+	@param {$UI/system/components/justep/process/process#AfterAdvanceQueryEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":流转信息,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAdvanceQueryEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 流转查询之后事件类
+	@see $UI/system/components/justep/process/process#onAfterAdvanceQuery
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAdvanceQueryEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAdvanceQueryEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAdvanceQueryEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAdvanceQueryEvent#processControl
+	@property 
+	@description 流转信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onAdvanceQueryError
+	@event
+	@description <b>[回调型事件]</b>流转查询失败
+	@param {$UI/system/components/justep/process/process#AdvanceQueryErrorEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"cancel":false,
+		"errorType": "client"或"server", 
+		"error": js异常对象, 
+		"errorNode": 服务端错误信息
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceQueryErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 流转查询失败事件类
+	@see $UI/system/components/justep/process/process#onAdvanceQueryError
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceQueryErrorEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceQueryErrorEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceQueryErrorEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceQueryErrorEvent#errorType
+	@property 
+	@description 错误类型, 取值范围"client"或"server"
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceQueryErrorEvent#error
+	@property 
+	@description 客户端js异常信息
+	@type Error
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AdvanceQueryErrorEvent#errorNode
+	@property 
+	@description 服务端异常信息
+	@type XML
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBeforeBack
+	@event
+	@description <b>[回调型事件]</b>回退之前（回退事务内）
+	@param {$UI/system/components/justep/process/process#BeforeBackEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":回退信息,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeBackEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 回退之前（回退事务内）事件类
+	@see $UI/system/components/justep/process/process#onBeforeBack
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeBackEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeBackEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeBackEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeBackEvent#processControl
+	@property 
+	@description 回退信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+
+
+/**
+	@name $UI/system/components/justep/process/process#onAfterBack
+	@event
+	@description <b>[回调型事件]</b>回退之后（回退事务内）
+	@param {$UI/system/components/justep/process/process#AfterBackEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":回退信息,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterBackEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 回退之后（回退事务内）事件类
+	@see $UI/system/components/justep/process/process#onAfterBack
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterBackEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterBackEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterBackEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterBackEvent#processControl
+	@property 
+	@description 回退信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBackCommit
+	@event
+	@description <b>[回调型事件]</b>回退成功（回退事务外）
+	@param {$UI/system/components/justep/process/process#BackCommitEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":流转信息,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackCommitEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 回退成功（回退事务外）事件类
+	@see $UI/system/components/justep/process/process#onAfterBack
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackCommitEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackCommitEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackCommitEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackCommitEvent#processControl
+	@property 
+	@description 回退信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBackError
+	@event
+	@description <b>[回调型事件]</b>回退失败（回退事务外）
+	@param {$UI/system/components/justep/process/process#BackErrorEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":回退信息,
+		"cancel":false,
+		"errorType": "client"或"server", 
+		"error": js异常对象, 
+		"errorNode": 服务端错误信息
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 回退失败（回退事务外）事件类
+	@see $UI/system/components/justep/process/process#onBackError
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackErrorEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackErrorEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackErrorEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackErrorEvent#processControl
+	@property 
+	@description 回退信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+/**
+	@name $UI/system/components/justep/process/process#BackErrorEvent#errorType
+	@property 
+	@description 错误类型, 取值范围"client"或"server"
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackErrorEvent#error
+	@property 
+	@description 客户端js异常信息
+	@type Error
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackErrorEvent#errorNode
+	@property 
+	@description 服务端异常信息
+	@type XML
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBeforeBackQuery
+	@event
+	@description <b>[回调型事件]</b>回退查询之前
+	@param {$UI/system/components/justep/process/process#BeforeBackQueryEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeBackQueryEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 回退查询之前事件类
+	@see $UI/system/components/justep/process/process#onBeforeBackQuery
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeBackQueryEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeBackQueryEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeBackQueryEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onAfterBackQuery
+	@event
+	@description <b>[回调型事件]</b>回退查询之后
+	@param {$UI/system/components/justep/process/process#AfterBackQueryEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":回退信息,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterBackQueryEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 回退查询之后事件类
+	@see $UI/system/components/justep/process/process#onAfterBackQuery
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterBackQueryEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterBackQueryEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterBackQueryEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterBackQueryEvent#processControl
+	@property 
+	@description 回退信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onBackQueryError
+	@event
+	@description <b>[回调型事件]</b>回退查询失败
+	@param {$UI/system/components/justep/process/process#BackQueryErrorEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"cancel":false,
+		"errorType": "client"或"server", 
+		"error": js异常对象, 
+		"errorNode": 服务端错误信息
+	}
+</xmp>	
+*/
+/**
+	@name $UI/system/components/justep/process/process#BackQueryErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 回退查询失败事件类
+	@see $UI/system/components/justep/process/process#onBackQueryError
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackQueryErrorEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackQueryErrorEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackQueryErrorEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackQueryErrorEvent#errorType
+	@property 
+	@description 错误类型, 取值范围"client"或"server"
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackQueryErrorEvent#error
+	@property 
+	@description 客户端js异常信息
+	@type Error
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BackQueryErrorEvent#errorNode
+	@property 
+	@description 服务端异常信息
+	@type XML
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBeforeAbort
+	@event
+	@description <b>[回调型事件]</b>终止之前（终止事务内）
+	@param {$UI/system/components/justep/process/process#BeforeAbortEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":终止信息,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAbortEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 终止之前（终止事务内）事件类
+	@see $UI/system/components/justep/process/process#onBeforeAbort
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAbortEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAbortEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAbortEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAbortEvent#processControl
+	@property 
+	@description 终止信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onAfterAbort
+	@event
+	@description <b>[回调型事件]</b>终止之后（终止事务内）
+	@param {$UI/system/components/justep/process/process#AfterAbortEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":终止信息,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAbortEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 终止之后（终止事务内）事件类
+	@see $UI/system/components/justep/process/process#onBeforeAbort
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAbortEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAbortEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAbortEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAbortEvent#processControl
+	@property 
+	@description 终止信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onAbortCommit
+	@event
+	@description <b>[回调型事件]</b>终止成功（终止事务外）
+	@param {$UI/system/components/justep/process/process#AbortCommitEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":终止信息,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortCommitEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 终止成功（终止事务外）事件类
+	@see $UI/system/components/justep/process/process#onAbortCommit
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortCommitEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortCommitEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortCommitEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortCommitEvent#processControl
+	@property 
+	@description 终止信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onAbortError
+	@event
+	@description <b>[回调型事件]</b>终止失败（终止事务外）
+	@param {$UI/system/components/justep/process/process#AbortErrorEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":终止信息,
+		"cancel":false,
+		"errorType": "client"或"server", 
+		"error": js异常对象, 
+		"errorNode": 服务端错误信息
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 终止失败（终止事务外）事件类
+	@see $UI/system/components/justep/process/process#onAbortError
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortErrorEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortErrorEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortErrorEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortErrorEvent#errorType
+	@property 
+	@description 错误类型, 取值范围"client"或"server"
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortErrorEvent#error
+	@property 
+	@description 客户端js异常信息
+	@type Error
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortErrorEvent#errorNode
+	@property 
+	@description 服务端异常信息
+	@type XML
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortErrorEvent#processControl
+	@property 
+	@description 回退信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBeforeAbortQuery
+	@event
+	@description <b>[回调型事件]</b>终止查询之前
+	@param {$UI/system/components/justep/process/process#BeforeAbortQueryEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAbortQueryEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 终止查询之前事件类
+	@see $UI/system/components/justep/process/process#onBeforeAbortQuery
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAbortQueryEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAbortQueryEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeAbortQueryEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onAfterAbortQuery
+	@event
+	@description <b>[回调型事件]</b>终止查询之后
+	@param {$UI/system/components/justep/process/process#AfterAbortQueryEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":终止信息,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAbortQueryEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 终止查询之后事件类
+	@see $UI/system/components/justep/process/process#onAfterAbortQuery
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAbortQueryEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAbortQueryEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAbortQueryEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterAbortQueryEvent#processControl
+	@property 
+	@description 终止信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onAbortQueryError
+	@event
+	@description <b>[回调型事件]</b>终止查询失败
+	@param {$UI/system/components/justep/process/process#AbortQueryErrorEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"cancel":false,
+		"errorType": "client"或"server", 
+		"error": js异常对象, 
+		"errorNode": 服务端错误信息
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortQueryErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 终止查询失败事件类
+	@see $UI/system/components/justep/process/process#onAbortQueryError
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortQueryErrorEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortQueryErrorEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortQueryErrorEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortQueryErrorEvent#errorType
+	@property 
+	@description 错误类型, 取值范围"client"或"server"
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortQueryErrorEvent#error
+	@property 
+	@description 客户端js异常信息
+	@type Error
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AbortQueryErrorEvent#errorNode
+	@property 
+	@description 服务端异常信息
+	@type XML
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBeforeSuspend
+	@event
+	@description <b>[回调型事件]</b>暂停之前（暂停事务内）
+	@param {$UI/system/components/justep/process/process#BeforeSuspendEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":暂停信息,
+		"cancel":false
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeSuspendEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 暂停之前（暂停事务内）事件类
+	@see $UI/system/components/justep/process/process#onBeforeSuspend
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeSuspendEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeSuspendEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeSuspendEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeSuspendEvent#processControl
+	@property 
+	@description 暂停信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onAfterSuspend
+	@event
+	@description <b>[回调型事件]</b>暂停之后（暂停事务内）
+	@param {$UI/system/components/justep/process/process#AfterSuspendEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":暂停信息,
+		"cancel":false
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterSuspendEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 暂停之后（暂停事务内）事件类
+	@see $UI/system/components/justep/process/process#onAfterSuspend
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterSuspendEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterSuspendEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterSuspendEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterSuspendEvent#processControl
+	@property 
+	@description 暂停信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onSuspendCommit
+	@event
+	@description <b>[回调型事件]</b>暂停成功（暂停事务外）
+	@param {$UI/system/components/justep/process/process#SuspendCommitEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":暂停信息,
+		"cancel":false
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendCommitEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 暂停成功（暂停事务外）事件类
+	@see $UI/system/components/justep/process/process#onSuspendCommit
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendCommitEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendCommitEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendCommitEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendCommitEvent#processControl
+	@property 
+	@description 暂停信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onSuspendError
+	@event
+	@description <b>[回调型事件]</b>暂停失败（暂停事务外）
+	@param {$UI/system/components/justep/process/process#SuspendErrorEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":暂停信息,
+		"cancel":false,
+		"errorType": "client"或"server", 
+		"error": js异常对象, 
+		"errorNode": 服务端错误信息
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 暂停失败（暂停事务外）事件类
+	@see $UI/system/components/justep/process/process#onSuspendError
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendErrorEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendErrorEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendErrorEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendErrorEvent#errorType
+	@property 
+	@description 错误类型, 取值范围"client"或"server"
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendErrorEvent#error
+	@property 
+	@description 客户端js异常信息
+	@type Error
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendErrorEvent#errorNode
+	@property 
+	@description 服务端异常信息
+	@type XML
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendErrorEvent#processControl
+	@property 
+	@description 暂停信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBeforeSuspendQuery
+	@event
+	@description <b>[回调型事件]</b>暂停查询之前
+	@param {$UI/system/components/justep/process/process#BeforeSuspendQueryEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"cancel":false
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeSuspendQueryEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 暂停查询之前事件类
+	@see $UI/system/components/justep/process/process#onBeforeSuspendQuery
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeSuspendQueryEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeSuspendQueryEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeSuspendQueryEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onAfterSuspendQuery
+	@event
+	@description <b>[回调型事件]</b>暂停查询之后
+	@param {$UI/system/components/justep/process/process#AfterSuspendQueryEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":暂停信息,
+		"cancel":false
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterSuspendQueryEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 暂停查询之后事件类
+	@see $UI/system/components/justep/process/process#onAfterSuspendQuery
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterSuspendQueryEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterSuspendQueryEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterSuspendQueryEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterSuspendQueryEvent#processControl
+	@property 
+	@description 暂停信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onSuspendQueryError
+	@event
+	@description <b>[回调型事件]</b>暂停查询失败
+	@param {$UI/system/components/justep/process/process#SuspendQueryErrorEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"cancel":false,
+		"errorType": "client"或"server", 
+		"error": js异常对象, 
+		"errorNode": 服务端错误信息
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendQueryErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 暂停查询失败事件类
+	@see $UI/system/components/justep/process/process#onSuspendQueryError
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendQueryErrorEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendQueryErrorEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendQueryErrorEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendQueryErrorEvent#errorType
+	@property 
+	@description 错误类型, 取值范围"client"或"server"
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendQueryErrorEvent#error
+	@property 
+	@description 客户端js异常信息
+	@type Error
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#SuspendQueryErrorEvent#errorNode
+	@property 
+	@description 服务端异常信息
+	@type XML
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBeforeTransfer
+	@event
+	@description <b>[回调型事件]</b>转发之前（转发事务内）
+	@param {$UI/system/components/justep/process/process#BeforeTransferEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":转发信息,
+		"cancel":false
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeTransferEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 转发之前（转发事务内）事件类
+	@see $UI/system/components/justep/process/process#onBeforeTransfer
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeTransferEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeTransferEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeTransferEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeTransferEvent#processControl
+	@property 
+	@description 转发信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onAfterTransfer
+	@event
+	@description <b>[回调型事件]</b>转发之后（转发事务内）
+	@param {$UI/system/components/justep/process/process#AfterTransferEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":转发信息,
+		"cancel":false
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterTransferEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 转发之后（转发事务内）事件类
+	@see $UI/system/components/justep/process/process#onAfterTransfer
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterTransferEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterTransferEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterTransferEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterTransferEvent#processControl
+	@property 
+	@description 转发信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onTransferCommit
+	@event
+	@description <b>[回调型事件]</b>转发成功（转发事务外）
+	@param {$UI/system/components/justep/process/process#TransferCommitEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":转发信息,
+		"cancel":false
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferCommitEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 转发成功（转发事务外）事件类
+	@see $UI/system/components/justep/process/process#onTransferCommit
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferCommitEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferCommitEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferCommitEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferCommitEvent#processControl
+	@property 
+	@description 转发信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onTransferError
+	@event
+	@description <b>[回调型事件]</b>转发失败（转发事务外）
+	@param {$UI/system/components/justep/process/process#TransferErrorEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":转发信息,
+		"cancel":false,
+		"errorType": "client"或"server", 
+		"error": js异常对象, 
+		"errorNode": 服务端错误信息
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 转发失败（转发事务外）事件类
+	@see $UI/system/components/justep/process/process#onTransferError
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferErrorEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferErrorEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferErrorEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferErrorEvent#errorType
+	@property 
+	@description 错误类型, 取值范围"client"或"server"
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferErrorEvent#error
+	@property 
+	@description 客户端js异常信息
+	@type Error
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferErrorEvent#errorNode
+	@property 
+	@description 服务端异常信息
+	@type XML
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferErrorEvent#processControl
+	@property 
+	@description 转发信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBeforeTransferQuery
+	@event
+	@description <b>[回调型事件]</b>转发查询之前
+	@param {$UI/system/components/justep/process/process#BeforeTransferQueryEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"cancel":false
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeTransferQueryEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 转发查询之前事件类
+	@see $UI/system/components/justep/process/process#onBeforeTransferQuery
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeTransferQueryEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeTransferQueryEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeTransferQueryEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onAfterTransferQuery
+	@event
+	@description <b>[回调型事件]</b>转发查询之后
+	@param {$UI/system/components/justep/process/process#AfterTransferQueryEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"processControl":转发信息,
+		"cancel":false
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterTransferQueryEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 转发查询之后事件类
+	@see $UI/system/components/justep/process/process#onAfterTransferQuery
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterTransferQueryEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterTransferQueryEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterTransferQueryEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterTransferQueryEvent#processControl
+	@property 
+	@description 转发信息
+	@type $UI/system/components/justep/process/js/processControl
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onTransferQueryError
+	@event
+	@description <b>[回调型事件]</b>转发查询失败
+	@param {$UI/system/components/justep/process/process#TransferQueryErrorEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"cancel":false,
+		"errorType": "client"或"server", 
+		"error": js异常对象, 
+		"errorNode": 服务端错误信息
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferQueryErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 转发查询失败事件类
+	@see $UI/system/components/justep/process/process#onTransferQueryError
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferQueryErrorEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferQueryErrorEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferQueryErrorEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferQueryErrorEvent#errorType
+	@property 
+	@description 错误类型, 取值范围"client"或"server"
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferQueryErrorEvent#error
+	@property 
+	@description 客户端js异常信息
+	@type Error
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#TransferQueryErrorEvent#errorNode
+	@property 
+	@description 服务端异常信息
+	@type XML
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#onBeforeStartCustomizedQuery
+	@event
+	@description <b>[回调型事件]</b>定制流程查询之前
+	@param {$UI/system/components/justep/process/process#BeforeStartCustomizedQueryEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"cancel":false
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeStartCustomizedQueryEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 定制流程查询之前事件类
+	@see $UI/system/components/justep/process/process#onBeforeStartCustomizedQuery
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeStartCustomizedQueryEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeStartCustomizedQueryEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#BeforeStartCustomizedQueryEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onAfterStartCustomizedQuery
+	@event
+	@description <b>[回调型事件]</b>定制流程查询之后
+	@param {$UI/system/components/justep/process/process#AfterStartCustomizedQueryEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"cancel":false
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterStartCustomizedQueryEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 定制流程查询之后事件类
+	@see $UI/system/components/justep/process/process#onAfterStartCustomizedQuery
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterStartCustomizedQueryEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterStartCustomizedQueryEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#AfterStartCustomizedQueryEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#onStartCustomizedQueryError
+	@event
+	@description <b>[回调型事件]</b>定制流程查询失败
+	@param {$UI/system/components/justep/process/process#StartCustomizedQueryErrorEvent} event 它的结构如下:
+<xmp>	
+	{
+		"source":组件的js对象,
+		"task":任务标识,
+		"cancel":false,
+		"errorType": "client"或"server", 
+		"error": js异常对象, 
+		"errorNode": 服务端错误信息
+	}
+</xmp>	
+	
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCustomizedQueryErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 定制流程查询失败事件类
+	@see $UI/system/components/justep/process/process#onStartCustomizedQueryError
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCustomizedQueryErrorEvent#source
+	@property 
+	@description Process组件js对象
+	@type $UI/system/components/justep/process/process
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCustomizedQueryErrorEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCustomizedQueryErrorEvent#task
+	@property 
+	@description 任务标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCustomizedQueryErrorEvent#errorType
+	@property 
+	@description 错误类型, 取值范围"client"或"server"
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCustomizedQueryErrorEvent#error
+	@property 
+	@description 客户端js异常信息
+	@type Error
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#StartCustomizedQueryErrorEvent#errorNode
+	@property 
+	@description 服务端异常信息
+	@type XML
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#setAutoStart
+	@function
+	@description 设置是否自动启动流程
+	@param v 
+	@returns {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#isAutoStart
+	@function
+	@description 是否自动启动流程
+	@returns {boolean} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#setAutoFilter
+	@function
+	@description 设置是否自动过虑业务数据
+	@param v 
+	@returns {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#isAutoFilter
+	@function
+	@description 是否自动过虑业务数据
+	@returns {boolean} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#setAutoSave
+	@function
+	@description 设置是否自动保存业务数据
+	@param v  
+	@returns {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#isAutoSave
+	@function
+	@description 是否自动保存业务数据
+	@returns {boolean} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#setAutoClose
+	@function
+	@description 设置是否自动关闭功能页面
+	@param v  
+	@returns {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#isAutoClose
+	@function
+	@description 是否自动关闭功能页面
+	@returns {boolean} 
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#start
+	@function
+	@description 启动流程
+	@param process <b>[required]</b>流程标识的全称, 值可以为null
+	@param name <b>[required]</b>流程实例名称, 值可以为null
+	@param data <b>[required]</b>流程关联的业务数据, 必须有值
+	@param options 可选参数
+<xmp>
+		是一个json格式, 有以下三个参数executor，onSuccess和onError,
+		executor: 表示首环节的执行者，可以不指定, 这时默认就是当前人员成员;
+		onSuccess: 表示启动流程成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示启动流程失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"executor": {String}, 
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+</xmp>
+	@returns {boolean}
+	@see 流程动作.externalStartProcessAction 
+	@examples
+<xmp>
+		this.comp("p").start("/demo/process/process/and/andProcess", "测试启动流程", "业务数据ID", 
+			{"onSuccess": function(event){alert("启动流程成功");}, "onError": function(event){alert("启动流程失败");}});
+</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#startByTemplate
+	@function
+	@description 根据模板启动流程
+	@param process <b>[required]</b>流程标识的全称, 值可以为null
+	@param templateID <b>[required]</b>流程模板标识，必须有值
+	@param name <b>[required]</b>流程实例名称, 值可以为null
+	@param data <b>[required]</b>流程关联的业务数据, 必须有值
+	@param options 可选参数
+<xmp>
+		是一个json格式, 有以下三个参数executor，onSuccess和onError,
+		executor: 表示首环节的执行者，可以不指定, 这时默认就是当前人员成员;
+		onSuccess: 表示启动流程成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示启动流程失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"executor": {String}, 
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		
+</xmp>
+	@returns {boolean} 
+	@see 流程动作.externalStartProcessAction 
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#startExt
+	@function 
+	@description 启动流程(扩展) 
+	@param process <b>[required]</b>流程标识的全称
+	@param relations <b>[required]</b>流程实例属性值对，是一个数组，数组的下标是属性名，相应的是属性值
+	@param options 可选参数
+<xmp>
+		 是一个json格式, 有以下三个参数executor，onSuccess和onError,
+		executor: 表示首环节的执行者，可以不指定, 这时默认就是当前人员成员;
+		onSuccess: 表示启动流程成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示启动流程失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"executor": {String}, 
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+</xmp>
+	@returns {boolean}
+	@see 流程动作.externalStartProcessAction 
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#advanceQuery
+	@function
+	@description 流转查询
+	@param options 可选参数
+<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示流转查询成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示流转查询失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+</xmp>
+	@returns {boolean}
+	@see 流程动作.externalAdvanceProcessQueryAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#advanceQueryExt
+	@function
+	@description 流转查询(扩展)
+	@param {String} task <b>[required]</b>基于指定的任务执行advanceQuery	
+	@param options 可选参数
+<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示流转查询成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示流转查询失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+</xmp>
+	@returns {boolean}
+	@see 流程动作.externalAdvanceProcessQueryAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#advance
+	@function
+	@description 流转
+	@param options 可选参数
+<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示流转成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示流转失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+</xmp>
+	@returns {boolean}
+	@see 流程动作.externalAdvanceProcessAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#advanceExt
+	@function
+	@description 流转(扩展)
+	@param {String} task <b>[required]</b>基于指定的任务执行advance
+	@param processControl <b>[required]</b>流转信息	
+	@param options 可选参数
+<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示流转成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示流转失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+</xmp>
+	@returns {boolean}
+	@see 流程动作.externalAdvanceProcessAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#backQuery
+	@function
+	@description 回退查询
+	@param options 可选参数
+<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示回退查询成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示回退查询失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+</xmp>
+	@returns {boolean}
+	@see 流程动作.externalBackProcessQueryAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#backQueryExt
+	@function
+	@description 回退查询(扩展)
+	@param {String} task <b>[required]</b>基于指定的任务执行backQuery	
+	@param options 可选参数
+<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示回退查询成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示回退查询失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+</xmp>
+	@returns {boolean}
+	@see 流程动作.externalBackProcessQueryAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#back
+	@function
+	@description 回退
+	@param options 可选参数
+<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示回退成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示回退失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+</xmp>
+	@returns {boolean}
+	@see 流程动作.externalBackProcessAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#backExt
+	@function
+	@description 回退(扩展)
+	@param {String} task <b>[required]</b>基于指定的任务执行back
+	@param processControl <b>[required]</b>流转信息	
+	@param options 可选参数
+<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示回退成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示回退失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+</xmp>
+	@returns {boolean}
+	@see 流程动作.externalBackProcessAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#suspendQuery
+	@function
+	@description 暂停查询
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示暂停查询成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示暂停查询失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalSuspendProcessQueryAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#suspendQueryExt
+	@function
+	@description 暂停查询(扩展)
+	@param {String} task <b>[required]</b>基于指定的任务执行suspendQuery	
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示暂停查询成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示暂停查询失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalSuspendProcessQueryAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#suspend
+	@function
+	@description 暂停
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示暂停成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示暂停失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalSuspendProcessAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#suspendExt
+	@function
+	@description 暂停(扩展)
+	@param {String} task <b>[required]</b>基于指定的任务执行suspend
+	@param processControl <b>[required]</b>流转信息	
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示暂停成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示暂停失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalSuspendProcessAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#abortQuery
+	@function
+	@description 终止查询
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示终止查询成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示终止查询失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalAbortProcessQueryAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#abortQueryExt
+	@function
+	@description 终止查询(扩展)
+	@param {String} task <b>[required]</b>基于指定的任务执行abortQuery	
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示终止查询成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示终止查询失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalAbortProcessQueryAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#abort
+	@function
+	@description 终止
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示终止成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示终止失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalAbortProcessAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#abortExt
+	@function
+	@description 终止(扩展)
+	@param {String} task <b>[required]</b>基于指定的任务执行abort
+	@param processControl <b>[required]</b>流转信息	
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示终止成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示终止失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalAbortProcessAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#specialQuery
+	@function
+	@description 特送查询
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示特送查询成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示特送查询失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalSpecialProcessQueryAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#specialQueryExt
+	@function
+	@description 特送查询(扩展)
+	@param {String} task <b>[required]</b>基于指定的任务执行特送查询
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示特送查询成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示特送查询失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalSpecialProcessQueryAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#special
+	@function
+	@description 特送
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示特送成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示特送失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalSpecialProcessAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#specialExt
+	@function
+	@description 特送(扩展)
+	@param {String} task <b>[required]</b>基于指定的任务执行特送
+	@param processControl <b>[required]</b> 流转信息	
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示特送成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示特送失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalSpecialProcessAction
+*/
+
+
+
+/**
+	@name $UI/system/components/justep/process/process#transferQuery
+	@function
+	@description 转发查询
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示转发查询成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示转发查询失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalTransferTaskQueryAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#transferQueryExt
+	@function
+	@description 转发查询(扩展)
+	@param {String} task <b>[required]</b>基于指定的任务执行transferQuery	
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示转发查询成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示转发查询失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalTransferTaskQueryAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#transfer
+	@function
+	@description 转发
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示转发成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示转发失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalTransferTaskAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#transferExt
+	@function
+	@description 转发(扩展)
+	@param {String} task <b>[required]</b>基于指定的任务执行transfer
+	@param processControl <b>[required]</b> 流转信息	
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示转发成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示转发失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalTransferTaskAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#startCustomizedQuery
+	@function
+	@description 定制流程查询
+	@param options 可选参数
+		<xmp>
+		是一个json格式, 有以下两个参数onSuccess和onError,
+		onSuccess: 表示定制流程查询成功后的回调函数, 回调函数的参数event结构如下：{"source":组件的js对象};
+		onError: 表示定制流程查询失败后的回调函数 回调函数的参数event结构如下：{"source":组件的js对象};
+		格式如下：
+			{
+				"onSuccess": {Function}, 
+				"onError": {Function}
+			}
+		</xmp>
+	@returns {boolean}
+	@see 流程动作.externalStartCustomizedProcessQueryAction
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#showChart
+	@function
+	@description 显示流程图
+	@param {String} process 业务流程(可选参数)
+	@param {String} sData 业务数据标识(可选参数)
+	@param {String} task 任务标识(可选参数)
+	@returns {void}
+	@example 如果process, sData, task(只需要给process, sData或者只给task)没有指定时, 默认使用当前上下文中的task和process
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#openProcessRecordDialog
+	@function
+	@description 显示流程记录对话框
+	@param {String} task 任务
+	@param {String} process 业务流程(可选参数)
+	@param {String} sData 业务数据标识(可选参数)
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#processRecord
+	@function
+	@description 显示流程记录对话框
+	@param {String} task 任务
+	@param {String} process 业务流程(可选参数)
+	@param {String} sData 业务数据标识(可选参数)
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#canModifyExecutor
+	@function
+	@description 是否允许修改任务的执行者
+	@returns {Boolean}
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#canModifyExecutorExt
+	@function
+	@description 是否允许修改任务的执行者
+	@param {String} task 任务
+	@returns {Boolean}
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#modifyExecutor
+	@function
+	@description 修改任务的执行者
+	@returns {void}
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#modifyExecutorExt
+	@function
+	@description 修改任务的执行者
+	@param {String} task 任务
+	@param check 是否需要检查任务是否是自己的
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#withdrawTask
+	@function
+	@description 回收任务
+	@returns {void}
+	@see 流程动作.externalWithdrawTaskAction
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#withdrawTaskExt
+	@function
+	@description 回收任务
+	@param {String} task 任务
+	@returns {void}
+	@see 流程动作.externalWithdrawTaskAction
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#transfer
+	@operation
+	@description 转发
+	@param {String} task 任务
+	@param {Function} onSuccess 操作执行成功后的回调
+	@returns {void}
+*/
+
+
+/**
+	@name $UI/system/components/justep/process/process#special
+	@operation
+	@description 特送
+	@param {String} task 任务
+	@param {Function} onSuccess 操作执行成功后的回调
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#back
+	@operation
+	@description 回退
+	@param {String} task 任务
+	@param {Function} onSuccess 操作执行成功后的回调
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#suspend
+	@operation
+	@description 暂停
+	@param {String} task 任务
+	@param {Function} onSuccess 操作执行成功后的回调
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#abort
+	@operation
+	@description 终止
+	@param {String} task 任务
+	@param {Function} onSuccess 操作执行成功后的回调
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#processRecord
+	@operation
+	@description 显示流程记录
+	@param {String} process 流程标识
+	@param {String} data 业务数据
+	@param {String} task 任务
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#advance
+	@operation
+	@description 流转
+	@param {String} task 任务
+	@param {Function} onSuccess 操作执行成功后的回调
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#showChart
+	@operation
+	@description 显示流程图
+	@param {String} process 流程标识
+	@param {String} data 业务数据
+	@param {String} task 任务
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#withdrawTask
+	@operation
+	@description 任务回收
+	@param {String} task 任务
+	@param {Function} onSuccess 操作执行成功后的回调
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#modifyExecutor
+	@operation
+	@description 修改执行者
+	@param {String} task 任务
+	@param {Function} onSuccess 操作执行成功后的回调
+	@returns {void}
+*/
+
+
+
+/**
+	@name $UI/system/components/justep/process/process#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"autoClose": 是否自动关闭功能,
+		"dialogWindow": 流程对话框页面,
+		"task": 任务标识
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/process/process#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："data"、"autoClose"、"autoStart"、"autoFilter"、"autoSave"、"dialogWindow"、"task"
+	@return {Object} 
+*/

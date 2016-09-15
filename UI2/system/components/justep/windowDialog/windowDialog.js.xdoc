@@ -1,0 +1,229 @@
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog
+	@component 
+	@extends $UI/system/components/justep/dialog/dialog
+	@model UI2
+	@description WindowDialog
+*/
+
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog#src
+	@attribute
+	@property  
+	@type string
+	@description .w的url，需要使用require.toUrl(...)处理
+*/
+
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog#process
+	@attribute
+	@property  
+	@type string
+	@description 打开.w使用的process，缺省使用当前环境的
+*/
+
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog#activity
+	@attribute
+	@property  
+	@type string
+	@description 打开.w使用的activity，缺省使用当前环境的
+*/
+
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog#forceRefreshOnOpen
+	@attribute
+	@property  
+	@type boolean
+	@description 打开.w时强制刷新
+*/
+
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog#routable
+	@attribute 
+	@type boolean
+	@description 是否开启路由
+*/
+
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"title" : {string} 对话框标题
+		"showTitle" : {boolean} 是否显示标题
+		"status": {string} 对话框显示状态，取值范围：normal,maximize
+		"resizable" : {boolean} 是否允许改变大小
+		"width": {string} 对话框宽，支持css中所有的长度单位，如：200px、80%，缺省：80%		
+		"height": {string} 对话框高，支持css中所有的长度单位，如：200px、80%，缺省：80%		
+		"top": {string} 对话框上偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中		
+		"left": {string} 对话框左偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中	
+		"src" : {string} .w的url，需要使用require.toUrl(...)处理
+		"process" : {string} 打开.w使用的process，缺省使用当前环境的
+		"activity: {string}	打开.w使用的activity，缺省使用当前环境的
+		"forceRefreshOnOpen": {boolean} 打开.w时强制刷新，缺省false		
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："src"、"process"、"activity"、"title"、"showTitle"、"status"、"resizable"、 "width"、"height"、"top"、"left"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog#open
+	@function
+	@param {object} option
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"src" :.w的url
+		"data" : 传入.w的数据部分
+	}
+	</xmp>	
+	@description 打开对话框
+*/
+
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog#onOpen
+	@event
+	@description <b>[回调型事件]</b>打开事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog#onLoad
+	@event
+	@description <b>[回调型事件]</b>.w加载完成后
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/windowDialog/windowDialog#SendEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 发送数据事件
+*/
+ 
+/**
+ @name $UI/system/components/justep/windowDialog/windowDialog#SendEvent.data
+ @property
+ @type {object}
+ @description 发送的数据
+*/ 
+
+/**
+@name $UI/system/components/justep/windowDialog/windowDialog#ReceiveEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 接收数据事件
+*/
+ 
+/**
+ @name $UI/system/components/justep/windowDialog/windowDialog#ReceiveEvent.data
+ @property
+ @type {object}
+ @description 返回的数据,由开发者决定
+*/ 
+
+
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog#onReceive
+	@event
+	@description <b>[回调型事件]</b>.w返回数据事件
+	@param {$UI/system/components/justep/windowDialog/windowDialog#ReceiveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"data" :　返回的数据,
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog#onSend
+	@event
+	@description <b>[回调型事件]</b>向.w传递数据事件
+	@param {$UI/system/components/justep/windowDialog/windowDialog#SendEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"data" :　传递的数据
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/windowDialog/windowDialog#onReceived
+	@event
+	@description <b>[回调型事件]</b>.w返回数据接收处理完成事件
+	@param {$UI/system/components/justep/windowDialog/windowDialog#ReceiveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"data" :　返回的数据
+	}
+	</xmp>	
+*/
+
+/**
+ @name $UI/system/components/justep/windowDialog/windowDialog#open
+ @operation
+ @see $UI/system/components/justep/windowDialog/windowDialog#open
+ @param {object} option
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"src" :.w的url
+		"data" : 传入.w的数据部分
+	}
+	</xmp>	
+ @description 打开window对话框
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/windowDialog/windowDialog#close
+ @operation
+ @description 关闭window对话框
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/windowDialog/windowDialog#getInnerModel
+	@function
+	@description 获取对话框内部的Model，一般用于onReceived事件时获取内部的model，注意：当对话框没有打开过时不能调用
+	@return {$UI/system/lib/base/modelBase} 
+*/

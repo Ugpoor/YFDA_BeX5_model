@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<elements>
+	<element name="$UI/system/components/justep/dataOperation/dataOperation"
+		tag-name="div" icon="operation.png" text="Data组件操作扩展"
+		binding-component="$UI/system/components/justep/dataOperation/dataOperation"
+		component-type="formControl" design-view="web-designer"
+		parent-range="$UI/system/components/justep/model/model" d_resiable="false" resizable="false">
+		<properties>
+			<property name="xid" text="编号" required="true" />
+		</properties>
+		<events>
+		</events>
+		<toolbar>			
+		</toolbar>
+		<property-editors><!--属性编辑器描述，可通过下拉列表或者弹出对话框来设置属性值，不这是默认问普通的文本输入框。 -->
+		</property-editors>
+		<templates>
+			<template name="default"><![CDATA[ 
+			<div component="$UI/system/components/justep/dataOperation/dataOperation">
+			</div>
+	  ]]></template>
+		</templates>
+	</element>
+</elements>

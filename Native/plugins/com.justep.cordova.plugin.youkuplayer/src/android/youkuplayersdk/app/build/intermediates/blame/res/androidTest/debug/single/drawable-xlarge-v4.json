@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xlarge-v4\\btn_saosao.png",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\drawable-xlarge-v4\\btn_saosao.png"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xlarge-v4\\channel_not_loaded_icon_play.png",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\drawable-xlarge-v4\\channel_not_loaded_icon_play.png"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xlarge-v4\\topbar_close_icon.png",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\drawable-xlarge-v4\\topbar_close_icon.png"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xlarge-v4\\btn_more.png",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\drawable-xlarge-v4\\btn_more.png"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xlarge-v4\\topbar_refresh_icon.png",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\drawable-xlarge-v4\\topbar_refresh_icon.png"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xlarge-v4\\detail_card_series_return.png",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\drawable-xlarge-v4\\detail_card_series_return.png"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xlarge-v4\\saosao_play.png",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\drawable-xlarge-v4\\saosao_play.png"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xlarge-v4\\topbar_share_icon.png",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\drawable-xlarge-v4\\topbar_share_icon.png"
+    }
+]

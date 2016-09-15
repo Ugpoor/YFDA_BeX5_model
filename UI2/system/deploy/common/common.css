@@ -1,0 +1,16 @@
+@import url("../../components/designerCommon/css/common.css");
+
+body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.x-label{	
+	/*margin: 0.625em 0em;*/
+	padding: 0.625em 0.625em 0 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font-weight: normal;
+}

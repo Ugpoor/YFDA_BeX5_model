@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" xid="window" design="device:pc;" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cb6zEfy" class="cb6zEfy" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/pagerBar/pagerBar,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/bootstrap/pagination/pagination,$model/UI2/system/components/justep/smartFilter/smartFilter,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/toolBar/toolBar,$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect,$model/UI2/system/components/justep/select/select,$model/UI2/system/components/justep/grid/grid,$model/UI2/system/components/justep/window/window,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cb6zEfy" class="cb6zEfy"/>  
+  <div xmlns="" xid="view" __cid="cb6zEfy" class="cb6zEfy"> 
+    <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar x-toolbar-spliter form-inline cb6zEfy" xid="bar" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cb6zEfy"> 
+      <div component="$model/UI2/system/components/justep/smartFilter/smartFilter" xid="smartFilter1" class="pull-right cb6zEfy" data-bind="component:{name:'$model/UI2/system/components/justep/smartFilter/smartFilter'}" data-config="{&quot;filterCols&quot;:&quot;sCode,sName&quot;,&quot;filterData&quot;:&quot;mainData&quot;}" __cid="cb6zEfy"> 
+        <input type="text" class="form-control cb6zEfy" placeholder="搜索" data-bind="valueUpdate: ['input', 'afterkeydown'],value:$model.comp($element.parentElement).searchText,event:{change:$model.comp($element.parentElement).onInputChange.bind($model.comp($element.parentElement))}" xid="input1" __cid="cb6zEfy"/> 
+      </div>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cb6zEfy" xid="newBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{&quot;operation&quot;:&quot;mainData.new&quot;, args:{index:'js:0'}}" data-config="{&quot;icon&quot;:&quot;icon-plus&quot;,&quot;label&quot;:&quot; 新建&quot;}" __cid="cb6zEfy"> 
+        <i class="icon-plus cb6zEfy" __cid="cb6zEfy"/>  
+        <span __cid="cb6zEfy" class="cb6zEfy">新建</span> 
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cb6zEfy" xid="saveBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{&quot;operation&quot;:&quot;mainData.save&quot;}" data-config="{&quot;label&quot;:&quot;保存&quot;}" __cid="cb6zEfy"> 
+        <i xid="i3" __cid="cb6zEfy" class="cb6zEfy"/>  
+        <span xid="label7" __cid="cb6zEfy" class="cb6zEfy">保存</span> 
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cb6zEfy" xid="deleteBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{&quot;operation&quot;:&quot;mainData.delete&quot;}" data-config="{&quot;label&quot;:&quot;删除&quot;}" __cid="cb6zEfy"> 
+        <i xid="i4" __cid="cb6zEfy" class="cb6zEfy"/>  
+        <span xid="span7" __cid="cb6zEfy" class="cb6zEfy">删除</span> 
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cb6zEfy" xid="refreshBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{&quot;operation&quot;:&quot;mainData.refresh&quot;}" data-config="{&quot;label&quot;:&quot;刷新&quot;}" __cid="cb6zEfy"> 
+        <i xid="i2" __cid="cb6zEfy" class="cb6zEfy"/>  
+        <span xid="span2" __cid="cb6zEfy" class="cb6zEfy">刷新</span> 
+      </a> 
+    </div>  
+    <table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" xid="mainGrid" data="mainData" hiddenCaptionbar="true" class="x-grid-no-bordered cb6zEfy" data-config="{&quot;colModel&quot;:[{&quot;editable&quot;:true,&quot;name&quot;:&quot;sCode&quot;},{&quot;editable&quot;:true,&quot;name&quot;:&quot;sName&quot;}],&quot;data&quot;:&quot;mainData&quot;,&quot;editors&quot;:&quot;0DC3C26B0B8D41A09EB700823D0ABC69&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;hiddenCaptionbar&quot;:true,&quot;width&quot;:&quot;100%&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cb6zEfy"></table>  
+    <div xmlns:xhtml="http://www.w3.org/1999/xhtml" xid="0DC3C26B0B8D41A09EB700823D0ABC69" class="x-grid-editors cb6zEfy" __cid="cb6zEfy" data-bind="with:comp('mainGrid').getCellEditorsBindingObject()">  
+      <div col="sCode" __cid="cb6zEfy" class="cb6zEfy"> 
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control cb6zEfy" data-bind="component:{ref:ref('sCode'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cb6zEfy"/> 
+      </div>  
+      <div col="sName" __cid="cb6zEfy" class="cb6zEfy"> 
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control cb6zEfy" data-bind="component:{ref:ref('sName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cb6zEfy"/> 
+      </div> 
+    </div> 
+  </div>  
+  <div xmlns="" component="$model/UI2/system/components/justep/pagerBar/pagerBar" class="x-pagerbar container-fluid cb6zEfy" xid="pagerBar" data-bind="component:{name:'$model/UI2/system/components/justep/pagerBar/pagerBar'}" data-config="{&quot;data&quot;:&quot;mainData&quot;}" __cid="cb6zEfy"> 
+    <div class="row cb6zEfy" xid="div1" __cid="cb6zEfy"> 
+      <div class="col-sm-3 cb6zEfy" xid="div2" __cid="cb6zEfy"> 
+        <div class="x-pagerbar-length cb6zEfy" xid="div3" __cid="cb6zEfy"> 
+          <label component="$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect" class="x-pagerlimitselect cb6zEfy" xid="pagerLimitSelect1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect'}" data-config="{&quot;data&quot;:&quot;mainData&quot;}" __cid="cb6zEfy"> 
+            <span xid="span1" __cid="cb6zEfy" class="cb6zEfy">显示</span>  
+            <select component="$model/UI2/system/components/justep/select/select" class="form-control input-sm cb6zEfy" xid="select1" data-bind="component:{name:'$model/UI2/system/components/justep/select/select'}" __cid="cb6zEfy"> 
+              <option value="10" xid="default2" __cid="cb6zEfy" class="cb6zEfy">10</option>  
+              <option value="20" xid="default3" __cid="cb6zEfy" class="cb6zEfy">20</option>  
+              <option value="50" xid="default4" __cid="cb6zEfy" class="cb6zEfy">50</option>  
+              <option value="100" xid="default5" __cid="cb6zEfy" class="cb6zEfy">100</option> 
+            </select>  
+            <span xid="span3" __cid="cb6zEfy" class="cb6zEfy">条</span> 
+          </label> 
+        </div> 
+      </div>  
+      <div class="col-sm-3 cb6zEfy" xid="div4" __cid="cb6zEfy"> 
+        <div class="x-pagerbar-info cb6zEfy" xid="div5" __cid="cb6zEfy">当前显示1-10条，共16条</div> 
+      </div>  
+      <div class="col-sm-6 cb6zEfy" xid="div6" __cid="cb6zEfy"> 
+        <div class="x-pagerbar-pagination cb6zEfy" xid="div7" __cid="cb6zEfy"> 
+          <ul class="pagination cb6zEfy" component="$model/UI2/system/components/bootstrap/pagination/pagination" xid="pagination1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/pagination/pagination'}" data-config="{&quot;data&quot;:&quot;mainData&quot;}" __cid="cb6zEfy"> 
+            <li class="prev cb6zEfy" xid="li1" __cid="cb6zEfy"> 
+              <a href="#" xid="a1" __cid="cb6zEfy" class="cb6zEfy"> 
+                <span aria-hidden="true" xid="span4" __cid="cb6zEfy" class="cb6zEfy">«</span>  
+                <span class="sr-only cb6zEfy" xid="span5" __cid="cb6zEfy">Previous</span> 
+              </a> 
+            </li>  
+            <li class="next cb6zEfy" xid="li2" __cid="cb6zEfy"> 
+              <a href="#" xid="a2" __cid="cb6zEfy" class="cb6zEfy"> 
+                <span aria-hidden="true" xid="span6" __cid="cb6zEfy" class="cb6zEfy">»</span>  
+                <span class="sr-only cb6zEfy" xid="span9" __cid="cb6zEfy">Next</span> 
+              </a> 
+            </li> 
+          </ul> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>

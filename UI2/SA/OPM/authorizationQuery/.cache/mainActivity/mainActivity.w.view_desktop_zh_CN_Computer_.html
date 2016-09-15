@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window x-full-screen cZZNnMz" component="$model/UI2/system/components/justep/window/window" design="device:pc" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cZZNnMz" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/pagerBar/pagerBar,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/org/orgTreePC,$model/UI2/system/components/bootstrap/row/row,$model/UI2/system/components/justep/smartContainer/smartContainer,$model/UI2/system/components/bootstrap/pagination/pagination,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/smartFilter/smartFilter,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/toolBar/toolBar,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/dataTables/dataTables,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect,$model/UI2/system/components/justep/select/select,$model/UI2/system/components/justep/grid/grid,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/bootstrap/navs/navs,$model/UI2/system/components/bootstrap/inputGroup/inputGroup,$model/UI2/system/components/justep/window/window,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cZZNnMz" class="cZZNnMz"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pf4827ad0cf304fd68f50b0122f759bda-iosstatusbar cZZNnMz" xid="panel2" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cZZNnMz"> 
+    <div class="x-panel-top cZZNnMz" xid="top2" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cZZNnMz"> 
+      <ul component="$model/UI2/system/components/bootstrap/navs/navs" class="nav nav-tabs cZZNnMz" xid="navs" data-bind="component:{name:'$model/UI2/system/components/bootstrap/navs/navs'}" data-events="onClick:navsClick" __cid="cZZNnMz"> 
+        <li role="presentation" class="active cZZNnMz" xid="tab1" __cid="cZZNnMz"> 
+          <a xid="a5" __cid="cZZNnMz" class="cZZNnMz">按组织查询权限</a> 
+        </li>  
+        <li xid="tab2" __cid="cZZNnMz" class="cZZNnMz"> 
+          <a xid="a6" __cid="cZZNnMz" class="cZZNnMz">按权限查询组织</a> 
+        </li> 
+      </ul> 
+    </div>  
+    <div class="x-panel-content cZZNnMz" xid="content3" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cZZNnMz"> 
+      <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cZZNnMz" xid="contents" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0}" __cid="cZZNnMz"> 
+        <div class="x-contents-content container-fluid active cZZNnMz" xid="content1" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cZZNnMz"> 
+          <div component="$model/UI2/system/components/bootstrap/row/row" class="row cZZNnMz" xid="row1" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cZZNnMz"> 
+            <div class="col col-xs-3 cZZNnMz" xid="col1" style="height:100%; overflow: auto;" __cid="cZZNnMz"> 
+              <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter cZZNnMz" xid="toolBar3" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cZZNnMz"> 
+                <div class="input-group cZZNnMz" component="$model/UI2/system/components/bootstrap/inputGroup/inputGroup" xid="inputGroup1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/inputGroup/inputGroup'}" __cid="cZZNnMz"> 
+                  <input type="text" class="form-control cZZNnMz" component="$model/UI2/system/components/justep/input/input" xid="filter" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'},event:{keypress:$model._callModelFn.bind($model, 'filterKeypress')}" data-events="onChange:filterChange" data-config="{&quot;valueUpdateMode&quot;:&quot;input&quot;}" __cid="cZZNnMz"/>  
+                  <div class="input-group-btn cZZNnMz" xid="div1" __cid="cZZNnMz"> 
+                    <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-only-icon cZZNnMz" xid="searchBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:searchBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-search&quot;}" __cid="cZZNnMz"> 
+                      <i xid="i5" class="icon-android-search cZZNnMz" __cid="cZZNnMz"/>  
+                      <span xid="span22" __cid="cZZNnMz" class="cZZNnMz"/> 
+                    </a> 
+                  </div> 
+                </div> 
+              </div>  
+              <div component="$model/UI2/system/components/justep/smartContainer/smartContainer" class="x-smartcontainer cZZNnMz" xid="smartContainer1" data-bind="component:{name:'$model/UI2/system/components/justep/smartContainer/smartContainer'}" __cid="cZZNnMz"> 
+                <div component="$model/UI2/system/components/justep/org/orgTreePC" xid="orgTreePC" data-bind="component:{name:'$model/UI2/system/components/justep/org/orgTreePC'},visible:!showFilterGird.get()" data-config="{&quot;data&quot;:&quot;orgTreeData&quot;,&quot;tree&quot;:&quot;grid2&quot;}" __cid="cZZNnMz" class="cZZNnMz"> 
+                  <table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" appearance="tree" expandColumn="sName" useVirtualRoot="false" virtualRootLabel="组织机构" xid="grid2" class="x-grid-no-bordered cZZNnMz" data="orgTreeData" data-config="{&quot;appearance&quot;:&quot;tree&quot;,&quot;colModel&quot;:[{&quot;name&quot;:&quot;sName&quot;,&quot;xid&quot;:&quot;column2&quot;}],&quot;data&quot;:&quot;orgTreeData&quot;,&quot;expandColumn&quot;:&quot;sName&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;useVirtualRoot&quot;:false,&quot;virtualRootLabel&quot;:&quot;组织机构&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cZZNnMz"></table> 
+                </div>  
+                <div xid="searchDiv" class="x-bordered cZZNnMz" style="display:none;height:0;" __cid="cZZNnMz" data-bind="visible:showFilterGird"> 
+                  <table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" responsive="true" rowActiveClass="active" class="table table-hover table-striped cZZNnMz" xid="searchGrid" data="orgSearchData" ordering="false" data-config="{&quot;columns&quot;:[{&quot;sName&quot;:&quot;sFName&quot;,&quot;xid&quot;:&quot;column15&quot;}],&quot;data&quot;:&quot;orgSearchData&quot;,&quot;flexibleWidth&quot;:true,&quot;ordering&quot;:false,&quot;responsive&quot;:true,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" __cid="cZZNnMz"></table> 
+                </div> 
+              </div> 
+            </div>  
+            <div class="col col-xs-9 col-spliter-left cZZNnMz" xid="col2" style="height:100%;" __cid="cZZNnMz"> 
+              <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-panel-opm-pc pd562966d07854082a051eb531785e904-iosstatusbar cZZNnMz" xid="panel1" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cZZNnMz"> 
+                <div class="x-panel-top cZZNnMz" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cZZNnMz"> 
+                  <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar x-toolbar-spliter form-inline cZZNnMz" xid="toolBar1" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cZZNnMz"> 
+                    <div class="input-group cZZNnMz" component="$model/UI2/system/components/justep/smartFilter/smartFilter" xid="smartFilter1" data-bind="component:{name:'$model/UI2/system/components/justep/smartFilter/smartFilter'}" data-config="{&quot;filterCols&quot;:&quot;sProcess,sActivityFName,sActivity,roleName&quot;,&quot;filterData&quot;:&quot;permissionByOrgData&quot;}" __cid="cZZNnMz"> 
+                      <input type="text" class="form-control cZZNnMz" placeholder="搜索" data-bind="valueUpdate: ['input', 'afterkeydown'],value:$model.comp($element.parentElement).searchText,event:{change:$model.comp($element.parentElement).onInputChange.bind($model.comp($element.parentElement))}" xid="input1" __cid="cZZNnMz"/> 
+                    </div> 
+                  </div> 
+                </div>  
+                <div class="x-panel-content cZZNnMz" xid="content4" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cZZNnMz"> 
+                  <table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" rowActiveClass="active" class="table table-striped table-hover text-nowrap cZZNnMz" xid="dataTables1" data="permissionByOrgData" responsive="false" data-config="{&quot;columns&quot;:[{&quot;sName&quot;:&quot;roleName&quot;,&quot;title&quot;:&quot;角色&quot;,&quot;xid&quot;:&quot;column7&quot;},{&quot;sName&quot;:&quot;sActivityFName&quot;,&quot;title&quot;:&quot;功能&quot;,&quot;xid&quot;:&quot;column4&quot;},{&quot;orderable&quot;:false,&quot;sName&quot;:&quot;actionsLabel&quot;,&quot;title&quot;:&quot;动作权限/数据权限&quot;,&quot;xid&quot;:&quot;column6&quot;},{&quot;sName&quot;:&quot;sProcess&quot;,&quot;title&quot;:&quot;process&quot;,&quot;xid&quot;:&quot;column3&quot;},{&quot;sName&quot;:&quot;sActivity&quot;,&quot;title&quot;:&quot;activity&quot;,&quot;xid&quot;:&quot;column5&quot;}],&quot;data&quot;:&quot;permissionByOrgData&quot;,&quot;flexibleWidth&quot;:true,&quot;responsive&quot;:false,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" __cid="cZZNnMz"></table> 
+                </div>  
+                <div class="x-panel-bottom cZZNnMz" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cZZNnMz"> 
+                  <div component="$model/UI2/system/components/justep/pagerBar/pagerBar" class="x-pagerbar container-fluid cZZNnMz" xid="pagerBar1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerBar/pagerBar'}" data-config="{&quot;data&quot;:&quot;permissionByOrgData&quot;}" __cid="cZZNnMz"> 
+                    <div class="row cZZNnMz" xid="div2" __cid="cZZNnMz"> 
+                      <div class="col-sm-3 cZZNnMz" xid="div3" __cid="cZZNnMz"> 
+                        <div class="x-pagerbar-length cZZNnMz" xid="div4" __cid="cZZNnMz"> 
+                          <label component="$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect" class="x-pagerlimitselect cZZNnMz" xid="pagerLimitSelect1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect'}" data-config="{&quot;data&quot;:&quot;permissionByOrgData&quot;}" __cid="cZZNnMz"> 
+                            <span xid="span3" __cid="cZZNnMz" class="cZZNnMz">显示</span>  
+                            <select component="$model/UI2/system/components/justep/select/select" class="form-control input-sm cZZNnMz" xid="select1" data-bind="component:{name:'$model/UI2/system/components/justep/select/select'}" __cid="cZZNnMz"> 
+                              <option value="10" xid="default2" __cid="cZZNnMz" class="cZZNnMz">10</option>  
+                              <option value="20" xid="default3" __cid="cZZNnMz" class="cZZNnMz">20</option>  
+                              <option value="50" xid="default4" __cid="cZZNnMz" class="cZZNnMz">50</option>  
+                              <option value="100" xid="default5" __cid="cZZNnMz" class="cZZNnMz">100</option> 
+                            </select>  
+                            <span xid="span4" __cid="cZZNnMz" class="cZZNnMz">条</span> 
+                          </label> 
+                        </div> 
+                      </div>  
+                      <div class="col-sm-3 cZZNnMz" xid="div5" __cid="cZZNnMz"> 
+                        <div class="x-pagerbar-info cZZNnMz" xid="div6" __cid="cZZNnMz">当前显示0条，共0条</div> 
+                      </div>  
+                      <div class="col-sm-6 cZZNnMz" xid="div7" __cid="cZZNnMz"> 
+                        <div class="x-pagerbar-pagination cZZNnMz" xid="div8" __cid="cZZNnMz"> 
+                          <ul class="pagination cZZNnMz" component="$model/UI2/system/components/bootstrap/pagination/pagination" xid="pagination1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/pagination/pagination'}" data-config="{&quot;data&quot;:&quot;permissionByOrgData&quot;}" __cid="cZZNnMz"> 
+                            <li class="prev cZZNnMz" xid="li1" __cid="cZZNnMz"> 
+                              <a href="#" xid="a1" __cid="cZZNnMz" class="cZZNnMz"> 
+                                <span aria-hidden="true" xid="span5" __cid="cZZNnMz" class="cZZNnMz">«</span>  
+                                <span class="sr-only cZZNnMz" xid="span6" __cid="cZZNnMz">Previous</span> 
+                              </a> 
+                            </li>  
+                            <li class="next cZZNnMz" xid="li2" __cid="cZZNnMz"> 
+                              <a href="#" xid="a2" __cid="cZZNnMz" class="cZZNnMz"> 
+                                <span aria-hidden="true" xid="span7" __cid="cZZNnMz" class="cZZNnMz">»</span>  
+                                <span class="sr-only cZZNnMz" xid="span8" __cid="cZZNnMz">Next</span> 
+                              </a> 
+                            </li> 
+                          </ul> 
+                        </div> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div>  
+                <style __cid="cZZNnMz" class="cZZNnMz">.x-panel.pd562966d07854082a051eb531785e904-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pd562966d07854082a051eb531785e904-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pd562966d07854082a051eb531785e904-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pd562966d07854082a051eb531785e904-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pd562966d07854082a051eb531785e904-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pd562966d07854082a051eb531785e904-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pd562966d07854082a051eb531785e904-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pd562966d07854082a051eb531785e904-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pd562966d07854082a051eb531785e904-iosstatusbar &gt;.x-panel-content {top: 48px;}</style> 
+              </div> 
+            </div> 
+          </div> 
+        </div>  
+        <div class="x-contents-content container-fluid cZZNnMz" xid="content2" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cZZNnMz"> 
+          <div component="$model/UI2/system/components/bootstrap/row/row" class="row cZZNnMz" xid="row2" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cZZNnMz"> 
+            <div class="col col-xs-3 cZZNnMz" xid="col3" style="height:100%; overflow: auto;" __cid="cZZNnMz"> 
+              <div component="$model/UI2/system/components/justep/smartContainer/smartContainer" class="x-smartcontainer cZZNnMz" xid="smartContainer2" data-bind="component:{name:'$model/UI2/system/components/justep/smartContainer/smartContainer'}" __cid="cZZNnMz"> 
+                <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter cZZNnMz" xid="toolBar5" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cZZNnMz"> 
+                  <div class="input-group cZZNnMz" component="$model/UI2/system/components/bootstrap/inputGroup/inputGroup" xid="inputGroup3" data-bind="component:{name:'$model/UI2/system/components/bootstrap/inputGroup/inputGroup'}" __cid="cZZNnMz"> 
+                    <input type="text" class="form-control cZZNnMz" component="$model/UI2/system/components/justep/input/input" xid="filter2" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'},event:{keypress:$model._callModelFn.bind($model, 'filterKeypress1')}" data-events="onChange:filterChange1" data-config="{&quot;valueUpdateMode&quot;:&quot;input&quot;}" __cid="cZZNnMz"/>  
+                    <div class="input-group-btn cZZNnMz" xid="div18" __cid="cZZNnMz"> 
+                      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-only-icon cZZNnMz" xid="search" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:searchClick" data-config="{&quot;icon&quot;:&quot;icon-android-search&quot;}" __cid="cZZNnMz"> 
+                        <i xid="i2" class="icon-android-search cZZNnMz" __cid="cZZNnMz"/>  
+                        <span xid="span2" __cid="cZZNnMz" class="cZZNnMz"/> 
+                      </a> 
+                    </div> 
+                  </div> 
+                </div>  
+                <div xid="div16" __cid="cZZNnMz" class="cZZNnMz" data-bind="visible:!showFilterGird2.get()"> 
+                  <table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" xid="funcTreeGrid" data="funcTreeData" hiddenCaptionbar="true" appearance="tree" expandColumn="label" multiselect="false" cascade="true" class="x-grid-no-bordered cZZNnMz" data-config="{&quot;appearance&quot;:&quot;tree&quot;,&quot;cascade&quot;:true,&quot;colModel&quot;:[{&quot;name&quot;:&quot;label&quot;,&quot;xid&quot;:&quot;column12&quot;}],&quot;data&quot;:&quot;funcTreeData&quot;,&quot;expandColumn&quot;:&quot;label&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;hiddenCaptionbar&quot;:true,&quot;multiselect&quot;:false,&quot;width&quot;:&quot;100%&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cZZNnMz"></table> 
+                </div>  
+                <div xid="searchDiv2" class="x-bordered cZZNnMz" style="display:none;height:0;" __cid="cZZNnMz" data-bind="visible:showFilterGird2"> 
+                  <table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" responsive="true" rowActiveClass="active" class="table table-hover table-striped cZZNnMz" xid="searchGrid2" data="funcListData" ordering="false" filter="$model.filter($row)" data-config="{&quot;columns&quot;:[{&quot;sName&quot;:&quot;label&quot;,&quot;xid&quot;:&quot;column38&quot;}],&quot;data&quot;:&quot;funcListData&quot;,&quot;filter&quot;:&quot;$model.filter($row)&quot;,&quot;flexibleWidth&quot;:true,&quot;ordering&quot;:false,&quot;responsive&quot;:true,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" __cid="cZZNnMz"></table> 
+                </div> 
+              </div> 
+            </div>  
+            <div class="col col-xs-9 col-spliter-left cZZNnMz" xid="col4" style="height:100%;" __cid="cZZNnMz"> 
+              <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-panel-opm-pc pdd61b0e2aace4895ba53dc85dd9c720d-iosstatusbar cZZNnMz" xid="panel3" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cZZNnMz"> 
+                <div class="x-panel-top cZZNnMz" xid="top3" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cZZNnMz"> 
+                  <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter cZZNnMz" xid="toolBar2" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cZZNnMz"> 
+                    <div class="input-group cZZNnMz" component="$model/UI2/system/components/justep/smartFilter/smartFilter" xid="smartFilter2" data-bind="component:{name:'$model/UI2/system/components/justep/smartFilter/smartFilter'}" data-config="{&quot;filterCols&quot;:&quot;orgFName,roleName&quot;,&quot;filterData&quot;:&quot;orgByPermissionData&quot;}" __cid="cZZNnMz"> 
+                      <input type="text" class="form-control cZZNnMz" placeholder="搜索" data-bind="valueUpdate: ['input', 'afterkeydown'],value:$model.comp($element.parentElement).searchText,event:{change:$model.comp($element.parentElement).onInputChange.bind($model.comp($element.parentElement))}" xid="input2" __cid="cZZNnMz"/> 
+                    </div> 
+                  </div> 
+                </div>  
+                <div class="x-panel-content cZZNnMz" xid="content5" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cZZNnMz"> 
+                  <table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" rowActiveClass="active" class="table table-striped table-hover text-nowrap cZZNnMz" xid="dataTables2" data="orgByPermissionData" data-config="{&quot;columns&quot;:[{&quot;sName&quot;:&quot;roleName&quot;,&quot;title&quot;:&quot;角色&quot;,&quot;xid&quot;:&quot;column14&quot;},{&quot;sName&quot;:&quot;orgFName&quot;,&quot;title&quot;:&quot;组织&quot;,&quot;xid&quot;:&quot;column13&quot;}],&quot;data&quot;:&quot;orgByPermissionData&quot;,&quot;flexibleWidth&quot;:true,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" __cid="cZZNnMz"></table> 
+                </div>  
+                <div class="x-panel-bottom cZZNnMz" xid="bottom2" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cZZNnMz"> 
+                  <div component="$model/UI2/system/components/justep/pagerBar/pagerBar" class="x-pagerbar container-fluid cZZNnMz" xid="pagerBar2" data-bind="component:{name:'$model/UI2/system/components/justep/pagerBar/pagerBar'}" data-config="{&quot;data&quot;:&quot;orgByPermissionData&quot;}" __cid="cZZNnMz"> 
+                    <div class="row cZZNnMz" xid="div9" __cid="cZZNnMz"> 
+                      <div class="col-sm-3 cZZNnMz" xid="div10" __cid="cZZNnMz"> 
+                        <div class="x-pagerbar-length cZZNnMz" xid="div11" __cid="cZZNnMz"> 
+                          <label component="$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect" class="x-pagerlimitselect cZZNnMz" xid="pagerLimitSelect2" data-bind="component:{name:'$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect'}" data-config="{&quot;data&quot;:&quot;orgByPermissionData&quot;}" __cid="cZZNnMz"> 
+                            <span xid="span9" __cid="cZZNnMz" class="cZZNnMz">显示</span>  
+                            <select component="$model/UI2/system/components/justep/select/select" class="form-control input-sm cZZNnMz" xid="select2" data-bind="component:{name:'$model/UI2/system/components/justep/select/select'}" __cid="cZZNnMz"> 
+                              <option value="10" xid="default13" __cid="cZZNnMz" class="cZZNnMz">10</option>  
+                              <option value="20" xid="default14" __cid="cZZNnMz" class="cZZNnMz">20</option>  
+                              <option value="50" xid="default15" __cid="cZZNnMz" class="cZZNnMz">50</option>  
+                              <option value="100" xid="default16" __cid="cZZNnMz" class="cZZNnMz">100</option> 
+                            </select>  
+                            <span xid="span10" __cid="cZZNnMz" class="cZZNnMz">条</span> 
+                          </label> 
+                        </div> 
+                      </div>  
+                      <div class="col-sm-3 cZZNnMz" xid="div12" __cid="cZZNnMz"> 
+                        <div class="x-pagerbar-info cZZNnMz" xid="div13" __cid="cZZNnMz">当前显示0条，共0条</div> 
+                      </div>  
+                      <div class="col-sm-6 cZZNnMz" xid="div14" __cid="cZZNnMz"> 
+                        <div class="x-pagerbar-pagination cZZNnMz" xid="div15" __cid="cZZNnMz"> 
+                          <ul class="pagination cZZNnMz" component="$model/UI2/system/components/bootstrap/pagination/pagination" xid="pagination2" data-bind="component:{name:'$model/UI2/system/components/bootstrap/pagination/pagination'}" data-config="{&quot;data&quot;:&quot;orgByPermissionData&quot;}" __cid="cZZNnMz"> 
+                            <li class="prev cZZNnMz" xid="li3" __cid="cZZNnMz"> 
+                              <a href="#" xid="a3" __cid="cZZNnMz" class="cZZNnMz"> 
+                                <span aria-hidden="true" xid="span11" __cid="cZZNnMz" class="cZZNnMz">«</span>  
+                                <span class="sr-only cZZNnMz" xid="span12" __cid="cZZNnMz">Previous</span> 
+                              </a> 
+                            </li>  
+                            <li class="next cZZNnMz" xid="li4" __cid="cZZNnMz"> 
+                              <a href="#" xid="a4" __cid="cZZNnMz" class="cZZNnMz"> 
+                                <span aria-hidden="true" xid="span13" __cid="cZZNnMz" class="cZZNnMz">»</span>  
+                                <span class="sr-only cZZNnMz" xid="span14" __cid="cZZNnMz">Next</span> 
+                              </a> 
+                            </li> 
+                          </ul> 
+                        </div> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div>  
+                <style __cid="cZZNnMz" class="cZZNnMz">.x-panel.pdd61b0e2aace4895ba53dc85dd9c720d-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pdd61b0e2aace4895ba53dc85dd9c720d-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pdd61b0e2aace4895ba53dc85dd9c720d-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pdd61b0e2aace4895ba53dc85dd9c720d-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pdd61b0e2aace4895ba53dc85dd9c720d-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pdd61b0e2aace4895ba53dc85dd9c720d-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pdd61b0e2aace4895ba53dc85dd9c720d-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pdd61b0e2aace4895ba53dc85dd9c720d-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pdd61b0e2aace4895ba53dc85dd9c720d-iosstatusbar &gt;.x-panel-content {top: 48px;}</style> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+    </div>  
+    <style __cid="cZZNnMz" class="cZZNnMz">.x-panel.pf4827ad0cf304fd68f50b0122f759bda-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pf4827ad0cf304fd68f50b0122f759bda-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pf4827ad0cf304fd68f50b0122f759bda-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pf4827ad0cf304fd68f50b0122f759bda-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pf4827ad0cf304fd68f50b0122f759bda-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pf4827ad0cf304fd68f50b0122f759bda-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pf4827ad0cf304fd68f50b0122f759bda-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pf4827ad0cf304fd68f50b0122f759bda-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pf4827ad0cf304fd68f50b0122f759bda-iosstatusbar &gt;.x-panel-content {top: 48px;}</style> 
+  </div> 
+</div>

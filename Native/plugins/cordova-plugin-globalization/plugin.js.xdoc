@@ -1,0 +1,283 @@
+/**
+	@name cordova-plugin-globalization
+	@class  
+	@description 国际化插件
+	@model Native
+	@category plugin
+	@declareVar navigator.globalization
+*/
+
+/**
+	@name cordova-plugin-globalization.getPreferredLanguage
+	@function
+	@param {Function} successCB 请求成功的回调
+    @param {Function} errorCB 请求失败的回调
+	@returns {string} 语言标识符
+	@description 获取用户本地语言
+*/
+
+/**
+	@name cordova-plugin-globalization.getLocaleName
+	@function
+	@param {Function} successCB 请求成功的回调
+    @param {Function} errorCB 请求失败的回调
+	@returns {void}
+	@description 获取用户当前设置
+*/
+
+/**
+	@name cordova-plugin-globalization.dateToString
+	@function
+	@param {Date} date 要处理的日期对象
+	@param {Function} successCB 转换成功的回调
+	@param {Function} errorCB 转换失败的回调
+	@param {Object} options 请求选项
+	<br/><b>参数格式</b></p>
+	<xmp>
+		{
+		  "formatLength":string - 格式化长度，取值范围：'short', 'medium', 'long', 'full'，缺省为short
+		  "selector" : string - 格式化类型，取值范围;'date', 'time',  'date and time'，缺省为date and time
+		}
+	</xmp>
+	@returns {void}
+	@description 基于options和用户当前设置格式化的日期的字符串值
+*/
+
+/**
+	@name cordova-plugin-globalization.stringToDate
+	@function
+	@param {String} dateString 要处理的日期字符串
+ 	@param {Function} successCB 转换成功的回调,
+	<br/><b>回调函数给出参数date结构如下</b>
+	<xmp>
+		{
+		 "year":,四位数的年份
+		 "month":月份（0-11）,
+		 "day":日期（1-31）,
+		 "hour":小时（0-23）,
+		 "minute":分钟（0-59）,
+		 "second":秒数（0-59）,
+		 "millisecond":毫秒（0-999）,
+		}
+	</xmp>
+	@param {Function} errorCB 转换失败的回调
+	@param {Object} options 选项
+	<b>参数格式</b>
+	<xmp>
+		{
+		  "formatLength":string - 格式化长度，取值范围：'short', 'medium', 'long', 'full'
+		  "selector":格式化类型，取值范围;'date', 'time',  'date and time'，缺省为date and time
+		}
+	</xmp>
+	@returns {void}
+	@description 把一个日期字符串解析成基于options和用户当前设置的日期字符串
+*/
+
+/**
+	@name cordova-plugin-globalization.getDatePattern
+	@function
+	@param {Function} successCB 请求成功的回调，回调函数给出参数date
+	<b>date结构如下</b>
+	<xmp>
+		{
+		 "pattern":,四位数的年份
+		 "timezone":当前时区,
+		 "utc_offset":通用时区与当前时区的差异,
+		 "dst_offset":当前时区白天和夜晚的时间差）,
+		}
+	</xmp>
+	@param {Function} errorCB 请求换失败的回调
+	@param {Object} options 选项
+	<b>参数格式</b>
+	<xmp>
+		{
+		  "formatLength":string - 格式化长度，取值范围：'short', 'medium', 'long', 'full'，缺省为'short'
+		  "selector":格式化类型，取值范围;'date', 'time',  'date and time'，缺省为'date and time'
+		}
+	</xmp>
+	@returns {void}
+	@description 基于options和用户当前设置的日期格式的Pattern对象
+*/
+
+/**
+	@name cordova-plugin-globalization.getDateNames
+	@function
+	@param {Function} successCB 请求成功的回调
+	@param {Function} errorCB 请求失败的回调
+	@param {Object} options 选项
+	<b>参数格式</b>
+	<xmp>
+		{
+		  "formatLength":string - 格式化长度，取值范围：'narrow', 'wide'，缺省为'wide'
+		  "selector":格式化类型，取值范围;'months', 'days'，缺省为'months'
+		}
+	</xmp>
+	@returns {void}
+	@description 返回周的月份或天数名字的数组，依赖于options和用户当前设置
+*/
+
+/**
+	@name cordova-plugin-globalization.isDayLightSavingsTime
+	@function
+	@param {Date} date 指定的时间对象
+	@param {Function} successCB 请求成功的回调，回调给出参数event
+	<b>event结构如下</b>
+	<xmp>
+		{
+		  "dst":是否有效
+		}
+	</xmp>
+	@param {Function} errorCB，请求失败的回调
+	@returns {void}
+	@description 白天可用时间是否有效的字符值
+*/
+
+/**
+	@name cordova-plugin-globalization.getFirstDayOfWeek
+	@function
+	@param {Function} successCB 请求成功的回调，回调给出参数event
+	<b>event结构如下</b>
+	<xmp>
+		{
+		  "value":返回周的第一天的数值
+		}
+	</xmp>
+	@param {Function} errorCB，请求失败的回调
+	@returns {void}
+	@description 基于用户当前设置的周的第一天的数值
+*/
+
+/**
+	@name cordova-plugin-globalization.numberToString
+	@function
+	@param {Number} number 格式化的数值
+	@param {Function} successCB 请求成功的回调
+	@param {Function} errorCB 请求失败的回调
+	@param {Object} options 选项
+	<b>参数格式</b>
+	<xmp>
+		{
+		  "type":{String} 格式化的类型，取值范围：'decimal', "percent", or 'currency'，缺省为'decimal'
+		}
+	</xmp>
+	@returns {void}
+	@description 基于options和用户当前设置格式化数值的字符值
+*/
+
+/**
+	@name cordova-plugin-globalization.stringToNumber
+	@function
+	@param {String} numberString 解析的数值字符串
+	@param {Function} successCB 解析成功的回调
+	@param {Function} errorCB 解析失败的回调
+	@param {Object} options 
+	<b>参数格式</b>
+	<xmp>
+		{
+		  "type":{String} 解析的格式类型，取值范围：'decimal', "percent", or 'currency'，缺省为'decimal'
+		}
+	</xmp>            
+	@returns {void}
+	@description 把一个数值字符串解析成基于options和用户当前设置的数值
+*/
+
+/**
+	@name cordova-plugin-globalization.getNumberPattern
+	@function
+	@param {Function} successCB 请求成功的回调，回调函数给出参数event
+	<b>event结构如下</b>
+	<xmp>
+		{
+		  "pattern":解析数值的格式,
+		  "symbol":格式化使用的符号，如百分号，货币符号,
+		  "fraction":在分析和格式化数据时使用的小数位数的数字,
+		  "rounding":格式化的时候四舍五入,
+		  "positive":格式化的时候使用正数标志,
+		  "negative":格式化的时候使用负数标志,
+		  "decimal":格式化的时候使用十进制,
+		  "grouping":格式化的时候使用分组符号,
+		}
+	</xmp>
+	@param {Function} errorCB 请求失败的回调 
+	@param {Object} options
+	<b>参数格式</b>
+	<xmp>
+		{
+		  "type":{String}: 'decimal', "percent", or 'currency',缺省为'decimal'
+		}
+	</xmp>
+	@returns {void}
+	@description 获取基于options和用户当前设置的数值的格式的模式字符串
+*/
+
+/**
+	@name cordova-plugin-globalization.getCurrencyPattern
+	@function
+	@param {String} currencyCode 格式化的货币值
+	@param {Function} successCB 格式化成功的回调，回调函数给出event参数
+	<b>event结构如下</b>
+	<xmp>
+		{
+		  "pattern":解析货币值的格式,
+		  "code":国际标准组织货币代码,
+		  "fraction":在分析和格式化货币值时使用的小数位数的数字,
+		  "rounding":格式化的时候四舍五入,
+		  "decimal":格式化的时候使用十进制,
+		  "grouping":格式化的时候使用分组符号,
+		}
+	</xmp>
+	@param {Function} errorCB 转换失败的回调
+	@returns {void}
+	@description 根据用户当前设置格式化货币值
+*/
+
+/**
+	@name cordova-plugin-globalization#GlobalizationError
+	@class  
+	@description 错误异常类
+	@model Native
+	@category EventClass
+	@declareVar window.GlobalizationError
+*/
+
+/**
+	@name cordova-plugin-globalization#GlobalizationError#code
+	@property
+	@type Number
+	@description 错误标识
+*/
+
+/**
+	@name cordova-plugin-globalization#GlobalizationError#message
+	@property
+	@type Number
+	@description 错误信息
+*/
+
+/**
+	@name cordova-plugin-globalization#GlobalizationError#UNKNOWN_ERROR
+	@constant
+	@type Number
+	@description 常量值 0
+*/
+
+/**
+	@name cordova-plugin-globalization#GlobalizationError#FORMATTING_ERROR
+	@constant
+	@type Number
+	@description 常量值 1
+*/
+
+/**
+	@name cordova-plugin-globalization#GlobalizationError#PARSING_ERROR
+	@constant
+	@type Number
+	@description 常量值 2
+*/
+
+/**
+	@name cordova-plugin-globalization#GlobalizationError#PATTERN_ERROR
+	@constant
+	@type Number
+	@description 常量值 3
+*/

@@ -1,0 +1,157 @@
+
+/**
+	@name phonegap-nfc
+	@class 
+	@description 近场通讯插件，仅支持Android
+	@model Native
+	@category plugin
+	@declareVar window.nfc
+*/
+
+/**
+	@name phonegap-nfc.addNdefListener
+	@function
+ 	@param {Function} callback 当NDEF标签读取的回调
+ 	@param {Function} win 可选参数  监听添加成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 注册ndef事件监听
+*/
+
+/**
+	@name phonegap-nfc.removeNdefListener
+	@function
+ 	@param {Function} callback 当NDEF标签读取的回调
+ 	@param {Function} win 可选参数  移除成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 移除addNdefListener注册的ndef事件监听
+*/
+
+/**
+	@name phonegap-nfc.addTagDiscoveredListener
+	@function
+ 	@param {Function} callback 在标签检测到的回调
+ 	@param {Function} win 可选参数  移除成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 注册一个事件监听，用于标记匹配任何标记类型
+*/
+
+/**
+	@name phonegap-nfc.removeTagDiscoveredListener
+	@function
+ 	@param {Function} callback 先前注册的回调
+ 	@param {Function} win 可选参数  移除成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 移除addTagDiscoveredListener注册的事件监听
+*/
+
+/**
+	@name phonegap-nfc.addMimeTypeListener
+	@function
+	@param {String} mimeType 过滤消息的MIME类型
+ 	@param {Function} callback NDEF标签匹配指定标签的回调
+ 	@param {Function} win 可选参数  添加成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 注册一个ndef标签匹配指定MIME类型的事件监听
+*/
+
+/**
+	@name phonegap-nfc.removeMimeTypeListener
+	@function
+	@param {String} mimeType 过滤消息的MIME类型
+ 	@param {Function} callback 先前注册的回调
+ 	@param {Function} win 可选参数  移除成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 移除addMimeTypeListener添加的事件监听
+*/
+
+/**
+	@name phonegap-nfc.addNdefFormatableListener
+	@function
+ 	@param {Function} callback 当格式化的NDEF标签读取的回调
+ 	@param {Function} win 可选参数  添加成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 注册一个格式化的ndef的事件监听
+*/
+
+/**
+	@name phonegap-nfc.write
+	@function
+ 	@param {String} ndefMessage ndef信息
+ 	@param {Function} win 可选参数  写入成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 在NFC标签中写入ndef信息
+*/
+
+/**
+	@name phonegap-nfc.makeReadOnly
+	@function
+ 	@param {Function} win 可选参数  移除添加成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 设置NFC的只读状态
+*/
+
+/**
+	@name phonegap-nfc.share
+	@function
+ 	@param {String} ndefMessage ndef信息
+ 	@param {Function} win 可选参数  分享成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 通过peer-to-peer分享NDEF信息
+*/
+
+/**
+	@name phonegap-nfc.unshare
+	@function
+ 	@param {Function} win 可选参数  移除添加成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 取消通过peer-to-peer的分享
+*/
+
+/**
+	@name phonegap-nfc.erase
+	@function
+ 	@param {Function} win 可选参数  移除成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 移除ndef标签
+*/
+
+/**
+	@name phonegap-nfc.handover
+	@function
+ 	@param {Array} uris 发送的文件路径，支持单个文件路径和文件路径的数组
+ 	@param {Function} win 可选参数  移除添加成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 通过NFC切换到另一个设备发送文件
+*/
+
+/**
+	@name phonegap-nfc.stopHandover
+	@function
+ 	@param {Function} callback 回调函数  当NDEF标签读取的回调
+ 	@param {Function} win 可选参数  取消成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 取消发送文件
+*/
+
+/**
+	@name phonegap-nfc.enabled
+	@function
+ 	@param {Function} win 可选参数  移除添加成功的回调
+ 	@param {Function} fail 可选参数  出错的回调
+ 	@returns {void}
+ 	@description 检查NFC在此设备上是否启用。
+*/

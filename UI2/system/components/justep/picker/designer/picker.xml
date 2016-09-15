@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/picker/picker" tag-name="div" icon="picker.gif" 
+	    binding-component="$UI/system/components/justep/picker/picker"
+		design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" />  
+			<property name="data" text="引用数据" required="true"  editor-ref="contextComponent" editor-parameter="data" is-id-ref="true"/>
+			<property name="filter" text="过滤条件" editor-ref="jSExpressionEditor"/>
+			<property name="bind-itemText" text="项显示" editor-ref="dataRef"/>
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-picker"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<templates>
+		   <template name="default"><![CDATA[ 
+		        <div component="$UI/system/components/justep/picker/picker" class="x-picker"> 
+		          <div class="x-picker-inner"> 
+		            <div class="x-pciker-rule x-pciker-rule-ft"/>  
+			        <ul class="x-list-template x-pciker-list"> 
+			          <li></li> 
+			        </ul>  
+		            <div class="x-pciker-rule x-pciker-rule-bg"/> 
+		          </div> 
+		        </div> 
+		   ]]></template>
+		</templates>
+		<events>
+            <event name="onAfterRender" text="渲染后"/>
+            <event name="onChange" text="值改变后"/>       
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+        </events>
+		<toolbar>			
+		</toolbar>
+	</element>
+	
+	<element name="$UI/system/components/justep/picker/popPicker" tag-name="div" icon="popPicker.gif" 
+	    binding-component="$UI/system/components/justep/picker/popPicker"
+	    parent-range="$UI/system/components/justep/window/window" resizable="false"
+		design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" />
+			<property name="opacity" text="透明率" required="false" data-type="float" default-value="0.5"/>  
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-popPicker"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    <div component="$UI/system/components/justep/picker/popPicker" class="x-popPicker"> 
+		      <div class="x-popPicker-overlay"/>  
+		      <div class="x-popPicker-content"> 
+		        <div class="x-poppicker-header"> 
+		          <button class="btn btn-default x-btn-ok">确定 </button>
+		        </div>  
+		        <div component="$UI/system/components/justep/picker/picker" class="x-picker"> 
+		          <div class="x-picker-inner"> 
+		            <div class="x-pciker-rule x-pciker-rule-ft"/>  
+		            <ul class="x-list-template x-pciker-list"> 
+		              <li/> 
+		            </ul>  
+		            <div class="x-pciker-rule x-pciker-rule-bg"/> 
+		          </div> 
+		        </div>
+		      </div> 
+		    </div>
+		   ]]></template>
+		</templates>
+		<events>
+            <event name="onShow" text="显示"/>
+            <event name="onHide" text="隐藏"/>       
+            <event name="onOK" text="点击确定"/>       
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+        </events>
+		<toolbar>			
+			<item text="增加picker" method="addPicker"/>
+		</toolbar>
+	</element>	
+</elements>

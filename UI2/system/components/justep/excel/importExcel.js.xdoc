@@ -1,0 +1,282 @@
+/**
+	@name $UI/system/components/justep/excel/importExcel
+	@component 
+	@description 导入excel组件
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#xid
+	@attribute
+	@required
+	@description xid标识
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#data
+	@attribute
+	@property 
+	@description 导入的Data xid，目前只支持bizData
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#to
+	@attribute
+	@property 
+	@description 导入的数据方式，取值范围:"UI"/"DB"
+	@default DB
+	@example 
+	UI：excel中的数据以新增方式导入UI；
+	DB：使用data关联的createAction、saveAction将数据导入数据库
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#action
+	@attribute
+	@property 
+	@description 指定导入excel的action
+	@default importExcel
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#useDefault
+	@attribute
+	@property 
+	@type {boolean}
+	@description 是否使用默认映射文件中导入参数配置
+	@default false
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#mappings
+	@attribute
+	@property 
+	@description 导入的映射配置文件URL，支持多个配置文件使用","分隔
+	@example 
+	<b>映射配置文件格式说明：</b>
+	<xmp>
+	<mapping>
+		<default-config>
+			<sheet all="false" start="1" end="1"/>
+			<row all="false" start="2" end="100"/>
+		</default-config>
+		<concept name="SA_OPPerson"> 
+		    <primary-key>
+		    	<key-value cell-number="1" check="true"/>
+		    </primary-key>
+			<relation name="sName" cell-number="2" check="true"/>
+			<relation name="sCode" cell-number="3"/>
+			<relation name="sSex" cell-number="4"/>
+			<relation name="sMobilePhone" cell-number="5"/>
+			<relation name="sMainOrgID" cell-number="6"/>
+			<relation name="sBirthday" cell-number="7"/>		
+		</concept>	
+	</mapping>
+	</xmp>
+
+	default-config: 导入默认参数
+		sheet：excel页
+			all：是否导入全部页
+			start：导入开始页
+			end：导入结束页
+		row：excel行
+			all：是否导入全部行
+			start：导入开始行
+			end：导入全部行
+	concept：数据映射
+	    check: excel中行数据是否有效判断，当check="true"时cell-number对应列值为空，认为此行数据无效将被忽略
+		name：概念名称 
+    	relation：关系
+        	name： 关系名称
+         	value-type：数据类型，需要转换成的数据类型，没有定义时取relation的类型。类型包括：string,integer,float,date,datetime,time,decimal,text
+         	cell-number：关系在excel中对应的列号，从1开始。
+         	date-pattern：数据转换格式，如excel中为文本类型，导入关系为日期类型时，可通过定义该属性设置转换规则，格式如："yyyy-MM-dd hh:mm:ss"
+	         
+   	注意：
+    	系统会读取excel单元格类型，当excel单元格的类型与所导入关系类型不一致时，需要通过定义 value-type或date-pattern属性进行格式转换。否则将造成导入失败的问题。
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#getData
+	@function 
+	@description 获取导入的data对象
+	@return {$UI/system/components/justep/data/data}
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#getProcess
+	@function 
+	@description 获取导入动作使用的Process
+	@return {string}
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#getActivity
+	@function 
+	@description 获取导入动作使用的Activity
+	@return {string}
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#importExcel
+	@function 
+	@description 导入excel
+	@example
+	this.comp("excelImport1").importExcel();
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"data" : {string} data xid，
+		"to: {string}	导入的数据方式，取值范围:"UI"/"DB"		
+		"action: {string} 指定导入excel的action
+		"mappings: {string} 导入的映射配置文件URL，支持多个配置文件使用","分隔
+		"useDefault: {boolean} 是否使用默认映射文件中导入参数配置
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："data"、"to"、"action"、"mappings"、"useDefault"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#onUploadStart
+	@event
+	@description <b>[回调型事件]</b>开始提交Excel文件前
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#onUploadSuccess
+	@event
+	@description <b>[回调型事件]</b>提交Excel文件成功
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#onBeforeImport
+	@event 
+	@description <b>[回调型事件]</b>导入前
+	@returns {boolean} 控制 导入动作是否继续
+	@param {$UI/system/components/justep/common/event#BeforeEvent} event
+	<br/><b>参数结构如下：</b>
+	<xmp>
+	{
+		"source" : 组件的js对象
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"cancel" : 取消导入
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/excel/importExcel#SuccessEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description Success事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/excel/importExcel#SuccessEvent.response
+ @property
+ @type {object}
+ @description 返回的结果
+*/ 
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#onSuccess
+	@event 
+	@description <b>[回调型事件]</b>导入成功
+	@param {$UI/system/components/justep/excel/importExcel#SuccessEvent} event
+	<br/><b>参数结构如下：</b>
+	<xmp>
+	{
+		"source" : 组件的js对象，
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"response" : 返回的结果
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#onError
+	@event 
+	@description <b>[回调型事件]</b>导入失败
+	@param {$UI/system/components/justep/excel/exportExcel#ErrorEvent} event 
+	<br/><b>参数结构如下：</b>
+	<xmp>
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"message" : 导出错误信息,
+		"result" : http请求返回
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/excel/importExcel#ImportCreateParam
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 创建导入参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/excel/importExcel#ImportCreateParam.param
+ @property
+ @type {Object}
+ @description 导入参数对象
+*/ 
+
+/**
+	@name $UI/system/components/justep/excel/importExcel#onImportCreateParam
+	@event 
+	@description <b>[回调型事件]</b>创建导入参数
+	@param {$UI/system/components/justep/excel/importExcel#ImportCreateParam} event
+	<br/><b>参数结构如下：</b>
+	<xmp>
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"param" : {Object} 创建导入参数对象，可以直接使用event.param['...']=...;方式扩展传递参数
+	}
+	</xmp>
+*/
+
+/**
+ @name $UI/system/components/justep/excel/importExcel#ImportExcel
+ @operation
+ @description 导入Excel
+ @returns {void}
+*/

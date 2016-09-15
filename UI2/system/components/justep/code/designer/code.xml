@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<elements>
+	<element name="$UI/system/components/justep/code/code"
+		tag-name="div" icon="code.png" text="代码"
+		binding-component="$UI/system/components/justep/code/code"
+		component-type="formControl" design-view="web-designer"
+		parent-range="$UI/system/components/justep/model/model" d_resiable="false" resizable="false">
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<!-- 
+			<property name="params" text="参数" editor-ref="codeParamEditor" readonly="true"/>
+			<property name="code" text="代码" editor-ref="codeEditor" is-virtual = 'true' fixed-value="[...]"/>
+			-->
+		</properties>
+		<events>
+			<!--组件事件 -->
+		</events>
+		<toolbar>			
+			<item text="编辑参数" method="codeParamEditor"/>				
+			<item text="编辑代码" method="codeEditor"/>				
+		</toolbar>
+		<property-editors><!--属性编辑器描述，可通过下拉列表或者弹出对话框来设置属性值，不这是默认问普通的文本输入框。 -->
+			<property-editor name="codeParamEditor" type="dialog"
+				url="$UI/system/components/justep/code/designer/codeParamEditor.w"
+				editor-parameter="{width:800,height:600}">
+			</property-editor>
+			<property-editor name="codeEditor" type="dialog"
+				url="$UI/system/components/justep/code/designer/codeEditor.w"
+				editor-parameter="{width:800,height:600}">
+			</property-editor>
+		</property-editors>
+		<templates>
+			<template name="default"><![CDATA[ 
+			<div component="$UI/system/components/justep/code/code">
+			</div>
+	  ]]></template>
+		</templates>
+	</element>
+</elements>

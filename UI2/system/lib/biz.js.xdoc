@@ -1,0 +1,27 @@
+/**
+	@name $UI/system/lib/biz
+	@class
+	@category javascript
+	@model UI2
+	@description biz工具类
+*/
+
+/**
+	@name $UI/system/lib/biz.Request
+	@property
+	@type $UI/system/lib/base/request
+	@description 业务请求工具类
+*/
+
+/**
+	@name $UI/system/lib/biz.Util
+	@property
+	@type $UI/system/lib/base/bizUtil
+*/
+
+/**
+	@name $UI/system/lib/biz.Push
+	@property
+	@type $UI/system/lib/base/push
+	@description 推送相关
+*/

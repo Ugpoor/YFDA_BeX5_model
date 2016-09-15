@@ -1,0 +1,25 @@
+.left{
+	margin-left: 5px;
+}
+.top{
+	padding-top: 5px;
+	
+}
+.button{
+	margin-left: 5px;
+	
+	height: 22px;
+	margin-top: 5px;
+}
+.button:HOVER{
+	color: red;
+}
+.width{
+	width: 70px;
+}
+.li{
+	width:45px;
+	text-overflow :ellipsis; 
+	white-space : nowrap;
+	overflow : hidden;
+	}

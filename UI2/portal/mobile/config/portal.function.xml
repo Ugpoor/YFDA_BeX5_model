@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root> 
+  <item display="solid" label="系统" iconClass="icon-gear-a"> 
+    <item display="solid" label="修改密码" process="/SA/OPM/system/systemProcess" activity="mainActivity"
+      url="$UI/portal/mobile/changePassword/changePassword.a"/> 
+    <item display="solid" label="设置" process="/SA/OPM/system/systemProcess" activity="mainActivity"
+      url="$UI/portal/mobile/config.a"/> 
+  </item> 
+</root>

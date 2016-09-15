@@ -1,0 +1,157 @@
+/**
+	@name $UI/system/components/justep/uploader/uploader
+	@class
+	@category javascript
+	@model UI2
+	@description 上传类
+	@param selector 可以用来点击上传的元素选择器
+	@param config 附件配置信息
+	<xmp>
+		var defaultConfig = {
+				name : 'userfile',
+				data : {},
+				autoUpload : true,
+				actionUrl : '',
+				requestHeader : {}
+			};
+		name:文档域的名称,
+		data:发送后台的数据
+		autoUpload:自动上传
+		actionUrl:上传地址
+		requestHeader:请求头参数	
+			
+	</xmp>
+	@return {$UI/system/components/justep/uploader/uploader} 上传实例
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#onFileSelect
+	@event
+	@description 选择文件前
+	@param {$UI/system/components/justep/uploader/uploader#FileSelectEvent} event
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#FileSelectEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 选择文件前事件
+	@see $UI/system/components/justep/uploader/uploader#onFileSelect
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#FileSelectEvent#source
+	@property 
+	@description uploader对象
+	@type $UI/system/components/justep/uploader/uploader
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#FileSelectEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#onFileSelected
+	@event
+	@description 选择文件后
+	@param {$UI/system/components/justep/uploader/uploader#FileSelectedEvent} event	
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#FileSelectedEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 选择文件后事件
+	@see $UI/system/components/justep/uploader/uploader#onFileSelected
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#FileSelectedEvent#file
+	@property 
+	@description 选择的文件
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#FileSelectedEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@type Boolean
+*/
+
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#onSuccess
+	@event
+	@description 上传成功
+	@param {$UI/system/components/justep/uploader/uploader#SuccessEvent} event
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#SuccessEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 上传成功事件
+	@see $UI/system/components/justep/uploader/uploader#onSuccess
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#SuccessEvent#response
+	@property 
+	@description 
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#SuccessEvent#data
+	@property 
+	@description 
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#SuccessEvent#originalevent
+	@property 
+	@description 
+*/
+
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#onError
+	@event
+	@description 上传失败
+	@param {$UI/system/components/justep/uploader/uploader#ErrorEvent} event
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#ErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 上传失败事件
+	@see $UI/system/components/justep/uploader/uploader#onError
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#ErrorEvent#status
+	@property 状态
+	@description 
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#ErrorEvent#data
+	@property 
+	@description 
+*/
+
+/**
+	@name $UI/system/components/justep/uploader/uploader#ErrorEvent#originalevent
+	@property 原始事件
+	@description 
+*/
+

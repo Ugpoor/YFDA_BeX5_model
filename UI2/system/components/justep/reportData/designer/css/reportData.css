@@ -1,0 +1,15 @@
+.x-report-data{
+	float:left;
+	height:20px;
+	line-height:20px;
+	margin-left:2px;
+}
+
+.x-report-data span{	 
+	font: normal 12px arial;
+}
+
+.x-report-data img{
+	background: transparent url(../img/reportData.gif);
+}
+

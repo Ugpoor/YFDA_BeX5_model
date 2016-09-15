@@ -1,0 +1,23 @@
+/**
+	@name $UI/system/api/native/base
+	@class
+	@category javascript
+	@model UI2
+	@description 本地能力基类,参数配置在UI2/system/config/config.json
+	@example 
+	<xmp> 
+	 var base = require('$UI/system/api/native/base');
+	 base.ready(function() {
+			alert('加载完毕！');
+		});
+	</xmp>
+*/
+
+
+/**
+	@name $UI/system/api/native/base.ready
+	@function
+	@param {function} callback 回调函数。
+	@return {void}
+	@description 所有子模块加载完成触发。
+*/

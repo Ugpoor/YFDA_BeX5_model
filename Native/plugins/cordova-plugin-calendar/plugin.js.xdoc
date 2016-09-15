@@ -1,0 +1,248 @@
+/**
+	@name cordova-plugin-calendar
+	@class 
+	@description 本地日历插件
+	@model Native
+	@category plugin
+	@declareVar calendar
+*/
+
+/**
+	@name cordova-plugin-calendar.createCalendar
+	@function
+	@param {String} calendarNameOrOptionsObject 参数，支持object结构
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 创建日历，支持环境： IOS
+	@example 
+	<xmp>
+		cal.createCalendar("my calendar", onSuccess, onError);//新建日历
+		options.calendarName = "my calendar";
+		options.calendarColor = "#FF0000"; 
+		cal.createCalendar(options, onSuccess, onError);//新建日历，object结构
+	</xmp>
+*/
+
+/**
+	@name cordova-plugin-calendar.deleteCalendar
+	@function
+	@param {String} calendarName 日历名
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 删除日历，支持环境： IOS
+*/
+
+/**
+	@name cordova-plugin-calendar.createEvent
+	@function
+	@param {String} title 活动标题
+	@param {String} location 活动地点
+	@param {String} notes 活动内容
+	@param {Date} startDate 开始时间
+	@param {Date} endDate 结束时间
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 新建活动，支持环境： IOS，android，android4以下会弹出对话框
+*/
+
+/**
+	@name cordova-plugin-calendar.getCalendarOptions
+	@function
+	@returns {Object} 返回日历选项对象参数结构如下:
+	<br/>
+	<xmp>
+		{
+			"firstReminderMinutes" : -Integer 缺省为60,
+    		"secondReminderMinutes" : -Integer,
+    		"recurrence" : -String 参数取值范围: 'daily', 'weekly', 'monthly', 'yearly',
+    		"recurrenceInterval" : -Integer 缺省为1, 
+    		"recurrenceEndDate" : -Date,
+    		"calendarName" : -String,
+    		"calendarId" : -String,
+    		"url" : -String
+		}	
+	</xmp>	
+	@description 获取日历选项，支持环境： IOS，android
+*/
+
+/**
+	@name cordova-plugin-calendar.createEventWithOptions
+	@function
+	@param {String} title 活动标题
+	@param {String} location 活动地点
+	@param {String} notes 活动内容
+	@param {Date} startDate 开始时间
+	@param {Date} endDate 结束时间
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 新建带自定义设置活动，支持环境： IOS，android，android4以下会弹出对话框
+*/
+
+/**
+	@name cordova-plugin-calendar.createEventInteractively
+	@function
+	@param {String} title 活动标题
+	@param {String} location 活动地点
+	@param {String} notes 活动内容
+	@param {Date} startDate 开始时间
+	@param {Date} endDate 结束时间
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 打开日历活动，新建活动，支持环境： IOS，android，
+*/
+
+/**
+	@name cordova-plugin-calendar.createEventInteractivelyWithOptions
+	@function
+	@param {String} title 活动标题
+	@param {String} location 活动地点
+	@param {String} notes 活动内容
+	@param {Date} startDate 开始时间
+	@param {Date} endDate 结束时间
+	@param {Object} options 选项，cordova-plugin-calendar.getCalendarOptions的参数
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 新建带选项的活动，支持环境： IOS，android，
+*/
+
+/**
+	@name cordova-plugin-calendar.findEvent
+	@function
+	@param {String} title 活动标题
+	@param {String} location 活动地点
+	@param {String} notes 活动内容
+	@param {Date} startDate 开始时间
+	@param {Date} endDate 结束时间
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 查找活动，支持环境： IOS，android，
+*/
+
+/**
+	@name cordova-plugin-calendar.findEventWithOptions
+	@function
+	@param {String} title 活动标题
+	@param {String} location 活动地点
+	@param {String} notes 活动内容
+	@param {Date} startDate 开始时间
+	@param {Date} endDate 结束时间
+	@param {Object} options 选项，cordova-plugin-calendar.getCalendarOptions的参数
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 按选项查找活动，支持环境： IOS，android，
+*/
+
+/**
+	@name cordova-plugin-calendar.listEventsInRange
+	@function
+	@param {Date} startDate 开始时间
+	@param {Date} endDate 结束时间
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 列出指定时间段的活动，支持环境： android，
+*/
+
+/**
+	@name cordova-plugin-calendar.listCalendars
+	@function
+	@param {Date} startDate 开始时间
+	@param {Date} endDate 结束时间
+	@param {Function} successCallback 执行成功的回调，回调给出参数evt
+	<br /><b>参数结构如下：</b>
+	<xmp>
+		{
+			[{"id":"1", "name":"first"}, ..]
+		}
+	</xmp>
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 列出所有日历名称，支持环境：IOS，android，
+*/
+
+/**
+	@name cordova-plugin-calendar.modifyEvent
+	@function
+	@param {String} title 活动标题
+	@param {String} location 活动地点
+	@param {String} notes 活动内容
+	@param {Date} startDate 开始时间
+	@param {Date} endDate 结束时间
+	@param {String} newTitle 活动标题
+	@param {String} newLocation 活动地点
+	@param {String} newNotes 活动内容
+	@param {Date} newStartDate 开始时间
+	@param {Date} newEndDate 结束时间
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 修改活动，支持环境：IOS，
+*/
+
+/**
+	@name cordova-plugin-calendar.modifyEventWithOptions
+	@function
+	@param {String} title 活动标题
+	@param {String} location 活动地点
+	@param {String} notes 活动内容
+	@param {Date} startDate 开始时间
+	@param {Date} endDate 结束时间
+	@param {String} newTitle 活动标题
+	@param {String} newLocation 活动地点
+	@param {String} newNotes 活动内容
+	@param {Date} newStartDate 开始时间
+	@param {Date} newEndDate 结束时间
+	@param {Object} options 选项，cordova-plugin-calendar.getCalendarOptions的参数
+	@param {Object} newOptions 选项，cordova-plugin-calendar.getCalendarOptions的参数
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 修改带选项的活动，支持环境：IOS，
+*/
+
+/**
+	@name cordova-plugin-calendar.deleteEvent
+	@function
+	@param {String} title 活动标题
+	@param {String} location 活动地点
+	@param {String} notes 活动内容
+	@param {Date} startDate 开始时间
+	@param {Date} endDate 结束时间
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 删除活动，支持环境：IOS，android
+*/
+
+/**
+	@name cordova-plugin-calendar.deleteEventFromNamedCalendar
+	@function
+	@param {String} title 活动标题
+	@param {String} location 活动地点
+	@param {String} notes 活动内容
+	@param {Date} startDate 开始时间
+	@param {Date} endDate 结束时间
+	@param {String} calendarName 日历名
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 删除活动，支持环境：IOS
+*/
+
+/**
+	@name cordova-plugin-calendar.openCalendar
+	@function
+	@param {Date} date 可选参数 日期
+	@param {Function} successCallback 执行成功的回调
+	@param {Function} errorCallback 执行失败的回调
+	@returns {void}
+	@description 打开日历，支持环境：IOS，android
+*/

@@ -1,0 +1,291 @@
+/**
+	@name cordova-plugin-media-capture
+	@class 
+	@description 媒体文件处理插件
+	@model Native
+	@category navigator.device.capture
+*/
+
+/**
+	@name cordova-plugin-media-capture.device
+	@class 
+	@description 媒体文件处理插件
+	@model Native
+	@category EventClass
+	@declareVar navigator.device
+*/
+
+/**
+	@name cordova-plugin-media-capture.device.capture
+	@property
+	@type cordova-plugin-media-capture
+	@description 媒体文件处理插件
+*/
+
+/**
+	@name cordova-plugin-media-capture.supportedAudioModes
+	@property
+	@type Array
+	@description 设备支持的音频录制格式
+*/
+
+/**
+	@name cordova-plugin-media-capture.supportedImageModes
+	@property
+	@type Array
+	@description 设备支持的图像大小和格式
+*/
+
+/**
+	@name cordova-plugin-media-capture.supportedVideoModes
+	@property
+	@type Array
+	@description 设备支持的录制视频分辨率和格式
+*/
+
+/**
+	@name cordova-plugin-media-capture.captureAudio
+	@function
+	@see cordova-plugin-media-capture.MediaFile
+	@see cordova-plugin-media-capture.CaptureError
+	@see cordova-plugin-media-capture.CaptureAudioOptions
+	@param {Function} successCB 请求成功的回调，返回cordova-plugin-media-capture.MediaFile对象的数组
+ 	@param {Function} errorCB 请求失败的回调，返回cordova-plugin-media-capture.CaptureError对象
+	@param {CaptureAudioOptions} 请求选项
+	@returns {void}
+	@description 录音
+*/
+
+/**
+	@name cordova-plugin-media-capture.captureImage
+	@function
+	@see cordova-plugin-media-capture.MediaFile
+	@see cordova-plugin-media-capture.CaptureError
+	@see cordova-plugin-media-capture.CaptureImageOptions
+	@param {Function} successCB 请求成功的回调，返回cordova-plugin-media-capture.MediaFile对象的数组
+ 	@param {Function} errorCB 请求失败的回调，返回cordova-plugin-media-capture.CaptureError对象
+	@param {CaptureImageOptions} 请求选项
+	@returns {void}
+	@description 拍照
+*/
+
+/**
+	@name cordova-plugin-media-capture.captureVideo
+	@function
+	@see cordova-plugin-media-capture.MediaFile
+	@see cordova-plugin-media-capture.CaptureError
+	@see cordova-plugin-media-capture.CaptureImageOptions
+	@param {Function} successCB 请求成功的回调，返回cordova-plugin-media-capture.MediaFile对象的数组
+ 	@param {Function} errorCB 请求失败的回调，返回cordova-plugin-media-capture.CaptureError对象
+	@param {CaptureVideoOptions} 请求选项
+	@returns {void}
+	@description 录像
+*/
+
+/**
+	@name cordova-plugin-media-capture.CaptureAudioOptions
+	@class
+	@model Native
+	@category EventClass
+	@description 录音参数
+	@declareVar window.CaptureAudioOptions
+*/
+
+/**
+	@name cordova-plugin-media-capture.CaptureAudioOptions.limit
+	@property
+	@type Number
+	@description 音频剪辑上限，该值必须大于或等于1，缺省为1
+*/
+
+/**
+	@name cordova-plugin-media-capture.CaptureAudioOptions.duration
+	@property
+	@type Number
+	@description 音频剪辑的持续时间，单位秒
+*/
+
+/**
+	@name cordova-plugin-media-capture.MediaFile
+	@class
+	@extend org.apache.cordova.file
+	@model Native
+	@category EventClass
+	@description 媒体文件类
+	@declareVar window.MediaFile
+*/
+
+/**
+	@name cordova-plugin-media-capture.MediaFile.name
+	@property
+	@type String
+	@description 文件名
+*/
+
+/**
+	@name cordova-plugin-media-capture.MediaFile.localURL
+	@property
+	@type String
+	@description 文件全路径，带文件名
+*/
+
+/**
+	@name cordova-plugin-media-capture.MediaFile.type
+	@property
+	@type String
+	@description 文件类型
+*/
+
+/**
+	@name cordova-plugin-media-capture.MediaFile.lastModifiedDate
+	@property
+	@type Date
+	@description 文件最后修改时间
+*/
+
+/**
+	@name cordova-plugin-media-capture.MediaFile.size
+	@property
+	@type Number
+	@description 文件大小，字节数
+*/
+
+/**
+	@name cordova-plugin-media-capture.MediaFile.getFormatData
+	@function
+	@see cordova-plugin-media-capture.MediaFileData
+	@param {Function} successCB 请求成功的回调，返回cordova-plugin-media-capture.MediaFileData对象
+ 	@param {Function} errorCB 请求失败的回调
+	@returns {void}
+	@description 获取文件信息
+*/
+
+/**
+	@name cordova-plugin-media-capture.CaptureError
+	@class
+	@model Native
+	@category EventClass
+	@description 媒体请求异常类
+	@declareVar window.CaptureError
+*/
+
+/**
+	@name cordova-plugin-media-capture.CaptureError.code
+	@property
+	@type String
+	@description 错误编码
+*/
+
+/**
+	@name cordova-plugin-media-capture.CaptureError.CAPTURE_INTERNAL_ERR
+	@constant
+	@type Number
+	@description 常量值 0
+*/
+
+/**
+	@name cordova-plugin-media-capture.CaptureError.CAPTURE_APPLICATION_BUSY
+	@constant
+	@type Number
+	@description 常量值 1 所请求应用被占用
+*/
+
+/**
+	@name cordova-plugin-media-capture.CaptureError.CAPTURE_INVALID_ARGUMENT
+	@constant
+	@type Number
+	@description 常量值 2 无效的api，比如limit parameter has value less than one
+*/
+
+/**
+	@name cordova-plugin-media-capture.CaptureError.CAPTURE_NO_MEDIA_FILES
+	@constant
+	@type Number
+	@description 常量值 3 用户退出应用捕获的异常
+*/
+
+/**
+	@name cordova-plugin-media-capture.CaptureError.CAPTURE_NOT_SUPPORTED
+	@constant
+	@type Number
+	@description 常量值 20 不支持本地操作
+*/
+
+/**
+	@name cordova-plugin-media-capture.MediaFileData
+	@class
+	@model Native
+	@category EventClass
+	@description 文件信息类
+	@declareVar window.MediaFileData
+*/
+
+/**
+	@name cordova-plugin-media-capture.MediaFileData.codecs
+	@property
+	@type String
+	@description 音频或视频的实际格式
+*/
+/**
+	@name cordova-plugin-media-capture.MediaFileData.bitrate
+	@property
+	@type Number
+	@description 音频或视频的比特率
+*/
+/**
+	@name cordova-plugin-media-capture.MediaFileData.height
+	@property
+	@type Number
+	@description 图片或视频的高度
+*/
+/**
+	@name cordova-plugin-media-capture.MediaFileData.width
+	@property
+	@type Number
+	@description 图片或视频的宽度
+*/
+/**
+	@name cordova-plugin-media-capture.MediaFileData.duration
+	@property
+	@type Number
+	@description 音频或视频的长度
+*/
+
+/**
+	@name cordova-plugin-media-capture.CaptureImageOptions
+	@class
+	@model Native
+	@category EventClass
+	@description 拍照参数
+	@declareVar window.CaptureImageOptions
+*/
+	
+/**
+	@name cordova-plugin-media-capture.CaptureImageOptions.limit
+	@property
+	@type Number
+	@description 拍照上限，该值必须大于等于1，缺省为1
+*/	
+	
+/**
+	@name cordova-plugin-media-capture.CaptureVideoOptions
+	@class
+	@model Native
+	@category EventClass
+	@description 录像参数
+	@declareVar CaptureVideoOptions
+*/
+
+/**
+	@name cordova-plugin-media-capture.CaptureVideoOptions.limit
+	@property
+	@type Number
+	@description 录像上线，该值必须大于等于1，缺省为1
+*/
+
+/**
+	@name cordova-plugin-media-capture.CaptureVideoOptions.duration
+	@property
+	@type Number
+	@description 录像的持续时间，单位秒
+*/

@@ -1,0 +1,14 @@
+{"rows":[
+{"fID":{"value":"1"},"fName":{"value":"中心1"},"fParentID":{},"fType":{"value":"menu1"},
+"rows":[
+{"fID":{"value":"2"},"fName":{"value":"部门1人员列表"},"fParentID":{"value":"1"},"fType":{"value":"menu2"}},
+{"fID":{"value":"3"},"fName":{"value":"部门2人员列表"},"fParentID":{"value":"1"},"fType":{"value":"menu2"}},
+{"fID":{"value":"5"},"fName":{"value":"部门3人员列表"},"fParentID":{"value":"1"},"fType":{"value":"menu2"}}],"menuData":{"id":{"value":"1"}}},
+{"fID":{"value":"4"},"fName":{"value":"中心2"},"fParentID":{},"fType":{"value":"menu1"},
+"rows":[
+{"fID":{"value":"6"},"fName":{"value":"部门4人员列表"},"fParentID":{"value":"4"},"fType":{"value":"menu2"}},
+{"fID":{"value":"7"},"fName":{"value":"部门5人员列表"},"fParentID":{"value":"4"},"fType":{"value":"menu2"}},
+{"fID":{"value":"8"},"fName":{"value":"部门6人员列表"},"fParentID":{"value":"4"},"fType":{"value":"menu2"}},
+{"fID":{"value":"9"},"fName":{"value":"部门7人员列表"},"fParentID":{"value":"4"},"fType":{"value":"menu2"}},
+{"fID":{"value":"10"},"fName":{"value":"部门8人员列表"},"fParentID":{"value":"4"},"fType":{"value":"menu2"}},
+{"fID":{"value":"11"},"fName":{"value":"部门9人员列表"},"fParentID":{"value":"4"},"fType":{"value":"menu2"}}],"menuData":{"id":{"value":"4"}}}]}

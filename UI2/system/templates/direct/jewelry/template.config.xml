@@ -1,0 +1,16 @@
+<template text="通用" desc="饰品电商" custom="false">
+	<images>
+		<image src="template.png"/>
+		<image src="template1.png"/>
+		<image src="template2.png"/>
+		<image src="template3.png"/>
+		<image src="template4.png"/>
+	</images>
+
+	<items>
+		<item file="template/index.w"></item>
+		<item file="template/index.js" />
+		<item file="template/index.css" />
+	</items>
+
+</template>

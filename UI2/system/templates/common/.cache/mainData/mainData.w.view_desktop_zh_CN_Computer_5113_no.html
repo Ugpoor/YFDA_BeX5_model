@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" class="window cYbmuUn" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cYbmuUn" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/output/output,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,">  
+  <style xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml">@import url(@justepContextPath@/v_5113_nol_zh_CNs_desktopd_pc/system/components/designerCommon/css/common.css); .form-horizontal.cYbmuUn .form-group.cYbmuUn{margin-left: 0px; margin-right: 0px} .template-output-control.cYbmuUn{text-overflow: ellipsis; width: 360px; overflow: hidden}</style>  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cYbmuUn" class="cYbmuUn"/>  
+  <div xmlns="" class="row cYbmuUn" style="padding-top:50px" __cid="cYbmuUn"> 
+    <div class="col-xs-9  cYbmuUn" style="" __cid="cYbmuUn"> 
+      <form class="form-horizontal data-form scroll cYbmuUn" style="margin-right:12px" role="form" __cid="cYbmuUn"> 
+        <div class="form-group cYbmuUn" __cid="cYbmuUn"> 
+          <label for="text1" class="control-label col-xs-3 cYbmuUn" __cid="cYbmuUn">概念(concept)</label>  
+          <div class="col-xs-9 cYbmuUn" __cid="cYbmuUn"> 
+            <div class="input-group input-append cYbmuUn" __cid="cYbmuUn"> 
+              <input component="$model/UI2/system/components/justep/input/input" class="form-control  template-output-control cYbmuUn" xid="concept" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'},value:mainData.ref('concept')" __cid="cYbmuUn"/>  
+              <span class="input-group-btn cYbmuUn" __cid="cYbmuUn"> 
+                <a class="btn btn-default cYbmuUn" component="$model/UI2/system/components/justep/button/button" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},event:{click:$model._callModelFn.bind($model, 'selectConceptBtnClick')}" __cid="cYbmuUn">选择</a> 
+              </span> 
+            </div> 
+          </div> 
+        </div>  
+        <div class="form-group cYbmuUn" __cid="cYbmuUn"> 
+          <label for="text1" class="control-label col-xs-3 cYbmuUn" __cid="cYbmuUn">读取动作(reader)</label>  
+          <div class="col-xs-9 cYbmuUn" __cid="cYbmuUn"> 
+            <div class="input-group input-append cYbmuUn" __cid="cYbmuUn"> 
+              <input component="$model/UI2/system/components/justep/input/input" class="form-control template-output-control cYbmuUn" xid="reader" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'},value:mainData.ref('reader')" __cid="cYbmuUn"/>  
+              <span class="input-group-btn cYbmuUn" __cid="cYbmuUn"> 
+                <a class="btn btn-default cYbmuUn" component="$model/UI2/system/components/justep/button/button" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},event:{click:$model._callModelFn.bind($model, 'selectReaderBtnClick')}" __cid="cYbmuUn">选择</a> 
+              </span> 
+            </div> 
+          </div> 
+        </div>  
+        <div class="form-group cYbmuUn" __cid="cYbmuUn"> 
+          <label for="text1" class="control-label col-xs-3 cYbmuUn" __cid="cYbmuUn">写入动作(writer)</label>  
+          <div class="col-xs-9 cYbmuUn" __cid="cYbmuUn"> 
+            <div class="input-group input-append cYbmuUn" __cid="cYbmuUn"> 
+              <input component="$model/UI2/system/components/justep/input/input" class="form-control template-output-control cYbmuUn" xid="writer" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'},value:mainData.ref('writer')" __cid="cYbmuUn"/>  
+              <span class="input-group-btn cYbmuUn" __cid="cYbmuUn"> 
+                <a class="btn btn-default cYbmuUn" component="$model/UI2/system/components/justep/button/button" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},event:{click:$model._callModelFn.bind($model, 'selectWriterBtnClick')}" __cid="cYbmuUn">选择</a> 
+              </span> 
+            </div> 
+          </div> 
+        </div>  
+        <div class="form-group cYbmuUn" __cid="cYbmuUn"> 
+          <label for="text1" class="control-label col-xs-3 cYbmuUn" __cid="cYbmuUn">新建动作(creator)</label>  
+          <div class="col-xs-9 cYbmuUn" __cid="cYbmuUn"> 
+            <div class="input-group input-append cYbmuUn" __cid="cYbmuUn"> 
+              <input component="$model/UI2/system/components/justep/input/input" class="form-control template-output-control cYbmuUn" xid="creator" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'},value:mainData.ref('creator')" __cid="cYbmuUn"/>  
+              <span class="input-group-btn cYbmuUn" __cid="cYbmuUn"> 
+                <a class="btn btn-default cYbmuUn" component="$model/UI2/system/components/justep/button/button" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},event:{click:$model._callModelFn.bind($model, 'selectCreatorBtnClick')}" __cid="cYbmuUn">选择</a> 
+              </span> 
+            </div> 
+          </div> 
+        </div>  
+        <div class="form-group cYbmuUn" __cid="cYbmuUn"> 
+          <label for="text1" class="control-label col-xs-3 cYbmuUn" __cid="cYbmuUn">关系(columns)</label>  
+          <div class="col-xs-9 cYbmuUn" __cid="cYbmuUn"> 
+            <div class="input-group input-append cYbmuUn" __cid="cYbmuUn"> 
+              <output component="$model/UI2/system/components/justep/output/output" class="form-control template-output-control cYbmuUn" xid="columns" data-bind="component:{name:'$model/UI2/system/components/justep/output/output'},value:mainData.ref('columns')" __cid="cYbmuUn"/>  
+              <span class="input-group-btn cYbmuUn" __cid="cYbmuUn"> 
+                <a class="btn btn-default cYbmuUn" component="$model/UI2/system/components/justep/button/button" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},event:{click:$model._callModelFn.bind($model, 'selectRelationsBtnClick')}" __cid="cYbmuUn">选择</a> 
+              </span> 
+            </div> 
+          </div> 
+        </div> 
+      </form> 
+    </div> 
+  </div> 
+</div>

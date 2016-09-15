@@ -1,0 +1,232 @@
+/**
+	@name $UI/system/components/justep/contents/contents
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@description contents组件, 多区域可切换布局组件
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/contents/contents#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+	@name $UI/system/components/justep/contents/contents#active
+	@attribute 
+	@type integer
+	@description 当前content的索引
+*/
+	
+/**
+	@name $UI/system/components/justep/contents/contents#slidable
+	@attribute
+	@property 
+	@type boolean
+	@description 是否采用滑动动画
+*/
+
+/**
+	@name $UI/system/components/justep/contents/contents#wrap
+	@attribute
+	@property 
+	@type boolean
+	@description 是否可循环切换
+*/
+
+/**
+	@name $UI/system/components/justep/contents/contents#swipe
+	@attribute
+	@property 
+	@type boolean
+	@description 是否支持手势,如果想同时支持内部横向滚动内容还能滚动需要在滚动区域加class(x-scroll-h)
+*/
+
+/**
+	@name $UI/system/components/justep/contents/contents#routable
+	@attribute 
+	@type boolean
+	@description 是否开启路由
+*/
+
+/**
+@name $UI/system/components/justep/contents/contents#ContentsActiveEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 当active改变事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/contents/contents#ContentsActiveEvent.to
+ @property
+ @type {integer}
+ @description 新的active值
+*/ 
+
+/**
+ @name $UI/system/components/justep/contents/contents#ContentsActiveEvent.from
+ @property
+ @type {integer}
+ @description 原来的active值
+*/ 
+
+/**
+ @name $UI/system/components/justep/contents/contents#ContentsActiveEvent.type
+ @property
+ @type {string}
+ @description "prev"是向前, "next"是向后
+*/ 
+
+/**
+	@name $UI/system/components/justep/contents/contents#onActiveChange
+	@event
+	@description <b>[回调型事件]</b>当active改变时触发
+	@param {$UI/system/components/justep/contents/contents#ContentsActiveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"to": 新的active值,
+		"from": 原来的active值,
+		"type": "prev"是向前, "next"是向后
+	}
+	</xmp>
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#get
+ @function
+ @param {String} name 属性名称，取值范围："slidable", "wrap", "swipe"
+ @returns 返回属性值
+ @description 获取contents的属性
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#set
+ @function
+ @param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"slidable" : {boolean} 是否采用滑动动画
+		"wrap" : {boolean} 是否可循环切换 
+		"swipe" : {boolean} 是否支持手势
+	}
+	</xmp>	
+ @description 设置contents的属性
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#getActiveIndex
+ @function
+ @returns integer
+ @description 获取当前active索引
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#getIndexByXid
+ @function
+ @param {string} xid content的xid
+ @returns integer
+ @description 通过content的xid获取索引
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#getActiveXid
+ @function
+ @returns string
+ @description 获取当前激活content的xid
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#to
+ @function
+ @param {integer|String} xidOrIdx panel的xid或者索引
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到指定的content
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#next
+ @function
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到下一个content
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#prev
+ @function
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到前一个content
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#slide
+ @function
+ @param {string} transDir 切换的方向, 'prev'或'next'
+ @param {integer} transIdx 目标的索引
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到指定content, 同时可以指定切换的方向
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#add
+ @function
+ @param {object} content配置
+ @returns {Content}
+ @description 添加一个content
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#remove
+ @function
+ @param {integer} index 删除的content索引
+ @param {integer} to 删除后切换到的content索引， 可选
+ @description 删除一个content
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#getLength
+ @function
+ @description 获得content个数
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#to
+ @operation
+ @see $UI/system/components/justep/contents/contents#to
+ @param {String} xid
+ @description 切换到指定的content
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#next
+ @operation
+ @see $UI/system/components/justep/contents/contents#next
+ @description 切换到下一个content
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#prev
+ @operation
+ @see $UI/system/components/justep/contents/contents#prev
+ @description 切换到前一个content
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/contents/contents#getContent
+ @function
+ @param {String} xid
+ @description 通过xid获取content
+ @returns {Content}
+*/

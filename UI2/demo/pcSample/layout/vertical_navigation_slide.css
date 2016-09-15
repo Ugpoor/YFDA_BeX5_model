@@ -1,0 +1,15 @@
+hr{
+	margin-top:5px;
+	background-color: red;
+}
+.btn1{
+	margin-top: 5px;
+	border: 1px solid  #E8EEEB;
+}
+.btn-group{
+	background: linear-gradient(#ECF4F2, white 90%);
+}
+.btn-group .btn.active{
+	background-color: #D0DFE8;
+	color: black;
+}

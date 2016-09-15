@@ -1,0 +1,22 @@
+/**
+	@name $UI/system/components/justep/org/orgTree
+	@component 
+	@extends $UI//system/components/justep/tree/tree
+	@model UI2
+	@description OrgTree
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgTree#multiSelection
+	@attribute 
+	@type boolean
+	@description 是否多选
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgTree#getSelected
+	@function
+	@returns {List<$UI/system/components/justep/data/data#Row>|$UI/system/components/justep/data/data#Row} 单选返回行，多选返回选中的行数组
+	@description 获取选中的数据
+*/
+

@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+excluded=//*.min.js\:OA//*\:SA//*\:demo//*\:portal//*\:portal/mobile/js//*\:system//*\:takeout-pre//*.js\:takeout//*.js\:third//*\://actor.js
+included=//*.js
+projectSpecificOptions=true

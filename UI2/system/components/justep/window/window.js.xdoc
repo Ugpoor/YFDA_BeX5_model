@@ -1,0 +1,45 @@
+/**
+	@name $UI/system/components/justep/window/window
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description Window组件
+*/
+
+/**
+	@name $UI/system/components/justep/window/window#component
+	@attribute
+	@required
+	@description 组件标识
+	@default "$UI/system/components/justep/window/window"
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/window/window#xid
+	@attribute
+	@description xid标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/window/window#extends
+	@attribute
+	@description 父window
+	@type String
+*/
+
+
+/**
+	@name $UI/system/components/justep/window/window#close
+	@function
+	@description 关闭Window
+	@returns void
+*/
+
+/**
+ @name $UI/system/components/justep/window/window#close
+ @operation
+ @description 关闭.W
+ @returns {void}
+*/

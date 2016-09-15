@@ -1,0 +1,25 @@
+/**
+	@name $UI/system/components/justep/select/checkboxGroupPC
+	@component 
+	@extends $UI/system/components/justep/select/checkboxGroup
+	@model UI2
+	@description checkboxGroupPC
+*/
+
+/**
+	@name $UI/system/components/justep/select/checkboxGroupPC#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/select/checkboxGroupPC#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		排列方式：form-inline
+	</xmp>
+*/

@@ -1,0 +1,8 @@
+.btn-group a{
+	font-size: 14px;
+	color:#fff;
+}
+.x-label-edit>input{
+	border:3px #ccc solid;
+	height: 50px;
+}

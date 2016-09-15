@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><model xmlns="http://www.justep.com/model">
+	<use>/system/logic/action</use>
+	<use>/SA/doc/server/data</use>
+<use>/SA/doc/logic/code</use><use>/SA/doc</use></model>

@@ -1,0 +1,285 @@
+/**
+	@name $UI/system/components/justep/blob/blob
+	@component
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description Blob
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-blob(必须)
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#limitSize
+	@attribute
+	@property 
+	@type string
+	@description 上传文件限制大小，支持格式：1024,25B,100KB,390M,34G，单位支持：B、KB、M、G，默认单位是B，不设置标示不限制大小
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#disabled
+	@attribute
+	@property 
+	@type boolean
+	@description 禁用
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#bind-ref
+	@attribute 
+	@type string
+	@description 绑定数据，可以指向blob关系，也可以指向引用blob数据的关系
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#blobDataModel
+	@attribute 
+	@type string
+	@description 执行获取blob数据action的数据模块
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#blobConcept
+	@attribute 
+	@type string
+	@description 当bind-ref指向引用时，需要指定blob存放的概念
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#blobRelation
+	@attribute 
+	@type string
+	@description 当bind-ref指向引用时，需要指定blob存放的关系
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#blobLastModifiedRelation
+	@attribute 
+	@type string
+	@description Blob数据最后修改时间关系，可以控制前段数据的缓存更新
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#refresh
+	@function
+	@description 刷新blob组件
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#deleteBlob
+	@function
+	@description 清除blob数据
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : 禁用，
+		"limitSize" : 上传文件限制大小，支持格式：1024,25B,100KB,390M,34G，单位支持：B、KB、M、G，默认单位是B，不设置标示不限制大小
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"、"limitSize"
+	@return {Object} 
+*/
+
+/**
+@name $UI/system/components/justep/blob/blob#BlobRefreshEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 刷新blob数据事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/blob/blob#BlobRefreshEvent.url
+ @property
+ @type {string}
+ @description 刷新数据的url
+*/ 
+
+/**
+	@name $UI/system/components/justep/blob/blob#onRefresh
+	@event
+	@description <b>[回调型事件]</b>刷新blob数据事件
+	@param {$UI/system/components/justep/blob/blob#BlobRefreshEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象，
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明，
+		"url" : 刷新数据的url
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#onUploadFileSelected
+	@event
+	@description <b>[回调型事件]</b>选择文件后，可以接管控制是否能选择文件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#onUploadStart
+	@event
+	@description <b>[回调型事件]</b>开始提交文件前
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#onUploadSuccess
+	@event
+	@description <b>[回调型事件]</b>提交文件成功
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/blob/blob#onDeleteSuccess
+	@event
+	@description <b>[回调型事件]</b>清除数据成功
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/blob/blob#BlobCreateURLEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 生成加载数据URL事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/blob/blob#BlobCreateURLEvent.process
+ @property
+ @type {string}
+ @description 执行取blob数据的process,默认使用当前上下文
+*/ 
+
+/**
+ @name $UI/system/components/justep/blob/blob#BlobCreateURLEvent.activity
+ @property
+ @type {string}
+ @description 执行取blob数据的activity,默认使用当前上下文
+*/ 
+
+/**
+ @name $UI/system/components/justep/blob/blob#BlobCreateURLEvent.action
+ @property
+ @type {string}
+ @description 执行取blob数据的action,默认使用blobDownloadAction
+*/ 
+
+/**
+ @name $UI/system/components/justep/blob/blob#BlobCreateURLEvent.blobDataModel
+ @property
+ @type {string}
+ @description 执行取blob数据action的数据模块
+*/ 
+
+/**
+ @name $UI/system/components/justep/blob/blob#BlobCreateURLEvent.blobRelation
+ @property
+ @type {string}
+ @description blob数据存放的关系
+*/ 
+
+/**
+ @name $UI/system/components/justep/blob/blob#BlobCreateURLEvent.blobLastModified
+ @property
+ @type {string}
+ @description blob数据最后修改标记,可以通过此域控制缓存刷新
+*/ 
+
+/**
+ @name $UI/system/components/justep/blob/blob#BlobCreateURLEvent.blobConcept
+ @property
+ @type {string}
+ @description blob数据存放的概念
+*/ 
+
+/**
+ @name $UI/system/components/justep/blob/blob#BlobCreateURLEvent.blobConceptValue
+ @property
+ @type {string}
+ @description blob数据存放的概念的值，用于定位数据
+*/ 
+
+/**
+	@name $UI/system/components/justep/blob/blob#onCreateURL
+	@event
+	@description <b>[回调型事件]</b>生成加载数据URL
+	@param {$UI/system/components/justep/blob/blob#BlobCreateURLEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"process" : 执行取blob数据的process,默认使用当前上下文
+		"activity" : 执行取blob数据的activity,默认使用当前上下文
+		"action" : 执行取blob数据的action,默认使用blobDownloadAction,
+		"blobDataModel" : 执行取blob数据action的数据模块,
+		"blobRelation" : blob数据存放的关系,
+		"blobLastModified" : blob数据最后修改标记,可以通过此域控制缓存刷新
+		"blobConcept" : blob数据存放的概念,
+		"blobConceptValue" : blob数据存放的概念的值，用于定位数据
+	}
+	</xmp>	
+*/

@@ -1,0 +1,66 @@
+/**
+	@name cordova-plugin-statusbar
+	@class 
+	@description 状态栏插件
+	@model Native
+	@category plugin
+	@declareVar window.StatusBar
+*/
+
+/**
+	@name cordova-plugin-statusbar.overlaysWebView
+	@function
+	@param {boolean} doOverlay 
+	@returns {void}
+	@description 设置状态栏是否重叠，在IOS7中，设为false，状态栏的风格接近于IOS6
+*/
+
+/**
+	@name cordova-plugin-statusbar.styleDefault
+	@function
+	@returns {void}
+	@description 使用默认的状态栏
+*/
+
+/**
+	@name cordova-plugin-statusbar.styleLightContent
+	@function
+	@returns {void}
+	@description 使用白色字样式状态栏
+*/
+
+/**
+	@name cordova-plugin-statusbar.styleBlackTranslucent
+	@function
+	@returns {void}
+	@description 使用黑色半透明状态栏
+*/
+
+/**
+	@name cordova-plugin-statusbar.styleBlackOpaque
+	@function
+	@returns {void}
+	@description 使用黑色不透明状态栏
+*/
+
+/**
+	@name cordova-plugin-statusbar.backgroundColorByName
+	@function
+	@param {string} colorname 设置的颜色，取值范围：black, darkGray, lightGray, white, gray, red, green, blue, cyan, yellow, magenta, orange, purple, brown 
+	@returns {void}
+	@description 在状态栏不重叠的情况下设置状态栏背景颜色
+*/
+
+/**
+	@name cordova-plugin-statusbar.hide
+	@function
+	@returns {void}
+	@description 隐藏状态栏
+*/
+
+/**
+	@name cordova-plugin-statusbar.show
+	@function
+	@returns {void}
+	@description 显示状态栏
+*/

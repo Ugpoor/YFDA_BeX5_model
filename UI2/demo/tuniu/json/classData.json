@@ -1,0 +1,15 @@
+[
+{"fID":"001","fTitle":"跟团游","fImg":"./img/class1.jpg","fNote":"国内 出镜 透明团放心游"},
+{"fID":"002","fTitle":"周边游","fImg":"./img/class2.jpg","fNote":"山水风光 一览无余"},
+{"fID":"003","fTitle":"自助游","fImg":"./img/class3.jpg","fNote":"机票+酒店 优惠省心游全球"},
+{"fID":"004","fTitle":"机+酒自由选","fImg":"./img/class4.jpg","fNote":"自在选择 任您搭配"},
+{"fID":"005","fTitle":"邮轮","fImg":"./img/class5.jpg","fNote":"全球航线 畅游海上 超乎想象"},
+{"fID":"006","fTitle":"景点门票","fImg":"./img/class6.jpg","fNote":"名山胜水 温泉 主题乐园门票"},
+{"fID":"007","fTitle":"自驾游","fImg":"./img/class7.jpg","fNote":"景点+酒店 超值度周末"},
+{"fID":"008","fTitle":"当地玩乐","fImg":"./img/class8.jpg","fNote":"乐游全球 深度自由"},
+{"fID":"009","fTitle":"签证","fImg":"./img/class9.jpg","fNote":"旅游 商务 探亲签证"}
+]
+
+
+
+

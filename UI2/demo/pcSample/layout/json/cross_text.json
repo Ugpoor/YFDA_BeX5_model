@@ -1,0 +1,8 @@
+[
+	{"fID":"001","fName":"张三","fSex":"男","fAddress":"地址","fRemark":"备注"},
+	{"fID":"002","fName":"张三","fSex":"男","fAddress":"地址","fRemark":"备注"},
+	{"fID":"003","fName":"张三","fSex":"男","fAddress":"地址","fRemark":"备注"},
+	{"fID":"004","fName":"张三","fSex":"男","fAddress":"地址","fRemark":"备注"},
+	{"fID":"005","fName":"李四","fSex":"女","fAddress":"地址","fRemark":"备注"},
+	{"fID":"006","fName":"张三","fSex":"男","fAddress":"地址","fRemark":"备注"}
+]

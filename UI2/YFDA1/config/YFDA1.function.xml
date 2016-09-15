@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root><item display="solid" label="玉溪市食药监系统"><item label="通用审批" process="/YFDA1/YFDA_lawEnforce/process/generalAudit/generalAuditProcess" activity="generalAudit" url="$UI/YFDA1/YFDA_lawEnforce/process/generalAudit/generalAudit.a"></item></item></root>

@@ -1,0 +1,207 @@
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC
+	@model UI2
+	@component
+	@extends $UI/system/lib/base/bindComponent
+	@description 附件组件
+	
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#xid
+	@property 
+	@description <b>[attribute]</b><b>[required]</b>xid标识
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#bind-ref
+	@property 
+	@description <b>[attribute]</b><b>[required]</b>数据引用
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#subPath
+	@property 
+	@description <b>[attribute]</b>上传文件到指定的知识中心目录下的动态子目录
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#keyID
+	@property 
+	@description <b>[attribute]</b>keyID 详见文档关联相关用法
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#access
+	@property 
+	@description <b>[attribute]</b>操作权限，7:下载,263:下载 上传,775:下载 上传 修改,1799:下载 上传 修改 删除
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#limit
+	@property 
+	@description <b>[attribute]</b>限制上传文件的个数
+*/
+
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#onBrowse
+	@event
+	@description <b>[回调型事件]</b>组件点击数据记录链接时
+	@param {$UI/system/components/justep/attachment/attachmentPC#BrowseEvent} event 它的结构如下:
+	<xmp>
+		{"source":组件的js对象,
+		 "data":包含docID,fileID相关信息}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#BrowseEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 文档浏览事件
+	@see $UI/system/components/justep/attachment/attachmentPC#onBrowse
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#BrowseEvent#source
+	@property 
+	@type $UI/system/components/justep/attachment/attachmentPC
+	@description 附件组件对象
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#BrowseEvent#data
+	@property
+	@type JSON
+	@description 浏览附件时候的相关参数
+*/
+
+/**
+	@name  $UI/system/components/justep/attachment/attachmentPC#onFileSelect
+	@event
+	@description <b>[回调型事件]</b>准备选择文件前
+	@param event 它的结构如下:
+	<xmp>{"source":组件的js对象}</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#FileSelectEvent#source
+	@property 
+	@type $UI/system/components/justep/attachment/attachmentPC
+	@description 附件组件对象
+*/
+
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#onProgress
+	@event
+	@description <b>[回调型事件]</b>文件上传进度
+	@param {$UI/system/components/justep/attachment/attachmentPC#ProgressEvent} event 它的结构如下:
+	<xmp>{"source":组件的js对象,"data":进度相关内容}</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#ProgressEvent#source
+	@property 
+	@type $UI/system/components/justep/attachment/attachmentPC
+	@description 附件组件对象
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#ProgressEvent#data
+	@property
+	@type JSON
+	@description 浏览上传进度相关数据
+*/
+
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#onSuccess
+	@event
+	@description <b>[回调型事件]</b>组件上传完成
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 它的结构如下:
+	<xmp>{"source":组件的js对象,"data" : 文件对应的data, "fileName" : 文件名称}</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#onError
+	@event
+	@description <b>[回调型事件]</b>组件上传失败
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 它的结构如下:
+	<xmp>{"source":组件的js对象,"data" : 文件对应的data}</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#onNewFromTemplate
+	@event
+	@description <b>[回调型事件]</b>从模版新建
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 它的结构如下:
+	<xmp>{"source":组件的js对象,"data" : 文件对应的data}</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#onOfficeLoaded
+	@event
+	@description <b>[回调型事件]</b>office文件打开后
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 它的结构如下:
+	<xmp>{"source":组件的js对象,"data" : 文件对应的data}</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#onDownload
+	@event
+	@description <b>[回调型事件]</b>文件下载
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 它的结构如下:
+	<xmp>{"source":组件的js对象,"data" : 文件对应的data}</xmp>
+*/
+
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#onBrowse
+	@event
+	@description <b>[回调型事件]</b>浏览文件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 它的结构如下:
+	<xmp>{"source":组件的js对象,"data" : 文件对应的data}</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#onDelete
+	@event
+	@description <b>[回调型事件]</b>删除文件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 它的结构如下:
+	<xmp>{"source":组件的js对象,"data" : 文件对应的data}</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#onEdit
+	@event
+	@description <b>[回调型事件]</b>编辑文件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 它的结构如下:
+	<xmp>{"source":组件的js对象,"data" : 文件对应的data}</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#onOpenOfficeEditor
+	@event
+	@description <b>[回调型事件]</b>打开文档编辑窗口前
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 它的结构如下:
+	<xmp>{"source":组件的js对象,"data" : 文件对应的data}</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#onCreateVersion
+	@event
+	@description <b>[回调型事件]</b>成文前
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 它的结构如下:
+	<xmp>{"source":组件的js对象,"data" : 文件对应的data}</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentPC#onShowHistory
+	@event
+	@description <b>[回调型事件]</b>显示历史
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 它的结构如下:
+	<xmp>{"source":组件的js对象,"data" : 文件对应的data}</xmp>
+*/

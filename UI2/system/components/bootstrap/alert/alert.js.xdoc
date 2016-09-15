@@ -1,0 +1,36 @@
+/**
+	@name $UI/system/components/bootstrap/alert/alert
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@description alert组件, bootstrap alert提示信息显示, 可以自动隐藏
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/	
+
+/**
+	@name $UI/system/components/bootstrap/alert/alert#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+	@name $UI/system/components/bootstrap/alert/alert#autoHide
+	@attribute 
+	@type int
+	@description 在给定时间后自动隐藏, 单位是毫秒
+*/
+
+/**
+	@name $UI/system/components/bootstrap/alert/alert#show
+	@function
+	@description 显示提示
+*/
+
+/**
+	@name $UI/system/components/bootstrap/alert/alert#hide
+	@function
+	@description 隐藏提示
+*/

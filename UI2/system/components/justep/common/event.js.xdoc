@@ -1,0 +1,91 @@
+/**
+@name $UI/system/components/justep/common/event#BindingContext
+@class
+@model UI2
+@category javascript
+@description 绑定上下文
+*/ 
+
+/**
+ @name $UI/system/components/justep/common/event#BindingContext.$model
+ @property
+ @type {$UI/system/lib/base/modelBase}
+ @description 绑定上下文
+*/ 
+
+/**
+ @name $UI/system/components/justep/common/event#BindingContext.$object
+ @property
+ @type {object}
+ @description 绑定对象
+*/ 
+ 
+/**
+ @name $UI/system/components/justep/common/event#BindingContext.$parent
+ @property
+ @type {object}
+ @description 绑定父对象
+*/ 
+
+/**
+ @name $UI/system/components/justep/common/event#BindingContext.$parents
+ @property
+ @type {list<object>}
+ @description 全部绑定父对象数组
+*/ 
+ 
+/**
+@name $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 展现组件事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/common/event#ViewEvent.bindingContext
+ @property
+ @type {$UI/system/components/justep/common/event#BindingContext}
+ @description 绑定上下文
+*/ 
+ 
+/**
+@name $UI/system/components/justep/common/event#ChangeEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 值变化事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/common/event#ChangeEvent.value
+ @property
+ @type {object}
+ @description 值
+*/ 
+
+/**
+@name $UI/system/components/justep/common/event#BeforeEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description Before事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/common/event#BeforeEvent.cancel
+ @property
+ @type {boolean}
+ @description 取消当前
+*/ 
+
+/**
+@name $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 展现组件事件参数
+*/ 
+ 

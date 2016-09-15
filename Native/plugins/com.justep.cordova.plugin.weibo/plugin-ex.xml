@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.justep.cordova.plugin.weibo">
+	<name>微博插件</name>
+	<description>集成了weibo.SDK，提供微博授权登录与微博分享的能力</description>
+		<!-- common -->
+	<platform name="common">
+		<param name="weibo_app_id"  displayName="weibo_app_id" />
+		<param name="redirecturi"  displayName="redirecturi" defaultValue="https://api.weibo.com/oauth2/default.html" />
+	</platform>
+</plugin>

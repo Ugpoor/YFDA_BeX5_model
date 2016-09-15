@@ -1,0 +1,109 @@
+/**
+	@name $UI/system/components/justep/bizFilter/bizFilter
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description 业务过滤组件
+	@example
+	<xmp>
+		BizFilter组件通过简单的属性设置就可以给数据增加综合过滤的能力，关键属性有：
+			filterData: 过滤数据
+			filterCols: 过滤关系
+		BizFilter可以为数据设置任意复杂的查询条件，还可以存储为可重用的查询模板
+		BizFilter的查询模板存储在SA_FilterPattern中，每个组件以sProcess、sActivity、sInstance(xid)做数据过滤，获取自身的模板列表
+	</xmp>*/
+
+/**
+	@name $UI/system/components/justep/bizFilter/bizFilter#xid
+	@attribute 
+	@type string
+	@description 组件标识
+*/
+
+/**
+	@name $UI/system/components/justep/bizFilter/bizFilter#filterData
+	@attribute 
+	@type string
+	@description 过滤数据，必须是bizData
+*/
+
+/**
+	@name $UI/system/components/justep/bizFilter/bizFilter#filterCols
+	@attribute 
+	@type string
+	@description 过滤列，多个用逗号分隔
+*/
+
+/**
+	@name $UI/system/components/justep/bizFilter/bizFilter#autoRefresh
+	@attribute 
+	@type boolean
+	@description 是否自动刷新 - 默认是true
+*/
+
+/**
+	@name $UI/system/components/justep/bizFilter/bizFilter#process
+	@attribute 
+	@type string
+	@description 默认使用当前环境中的process
+*/
+
+/**
+	@name $UI/system/components/justep/bizFilter/bizFilter#activity
+	@attribute 
+	@type string
+	@description 默认使用当前环境中的activity
+*/
+
+/**
+	@name $UI/system/components/justep/bizFilter/bizFilter#show
+	@function
+	@description 显示查询条件对话框
+*/
+
+/**
+	@name $UI/system/components/justep/bizFilter/bizFilter.loadPattern 
+	@function
+	@description 显示查询模板对话框
+*/
+
+/**
+	@name $UI/system/components/justep/bizFilter/bizFilter#onFilter
+	@event
+	@description 过滤事件
+	@param {$UI/system/components/justep/bizFilter/bizFilter#FilterEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"filter" : 过滤条件
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/bizFilter/bizFilter#FilterEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 过滤事件类
+	@see$UI/system/components/justep/bizFilter/bizFilter#onFilter
+*/
+
+/**
+	@name $UI/system/components/justep/bizFilter/bizFilter#FilterEvent#source
+	@property 
+	@description bizFilter组件js对象
+	@type $UI/system/components/justep/bizFilter/bizFilter
+*/
+
+/**
+	@name $UI/system/components/justep/bizFilter/bizFilter#FilterEvent#filter
+	@property 
+	@description 过滤条件
+	@type String
+*/
+
+
+
+

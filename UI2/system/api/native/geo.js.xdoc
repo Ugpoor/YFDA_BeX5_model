@@ -1,0 +1,62 @@
+/**
+	@name $UI/system/api/native/geo
+	@class
+	@category javascript
+	@model UI2
+	@description 地理信息接口。
+	@example 
+	<xmp> 
+	 var geo = require('$UI/system/api/native/geo');
+	 geo.openLocation({
+			latitude : 23.099994,
+			longitude : 113.324520,
+			name : 'TIT 创意园',
+			address : '广州市海珠区新港中路 397 号',
+			scale : 14,
+			infoUrl : 'http://weixin.qq.com'
+		});
+	 geo.getLocation({
+			success : function(res) {
+				alert(JSON.stringify(res));
+			},
+			cancel : function(res) {
+				alert('用户拒绝授权获取地理位置');
+			}
+		});
+	</xmp>
+*/
+
+/**
+	@name $UI/system/api/native/geo.getLocation
+	@function
+	@description 得到当前的地理位置。
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"success" : {function} success 回调函数
+		"cancel" : {function} cancel 回调函数
+	}
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/geo.openLocation
+	@function
+	@description 打开百度地图。
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"latitude" : {string} 纬度,
+		"longitude" : {string} 经度,
+		"name" : {string} 名称,
+		"address" : {string} 地址,
+		"scale" : {int} 地图缩放,
+		"infoUrl" : {string} 链接信息
+	}
+	</xmp>
+	@return {void}
+*/
+

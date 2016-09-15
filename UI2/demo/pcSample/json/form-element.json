@@ -1,0 +1,20 @@
+[
+	{"name":"基本按钮","src":"./form-element/button.w"},
+	{"name":"单选按钮","src":"./form-element/radio.w"},
+	{"name":"多选按钮","src":"./form-element/checkBox.w"},
+	{"name":"多选按钮","src":"./form-element/checkBox.w"},
+	{"name":"单选下拉框","src":"./form-element/select.w"},
+	{"name":"文件上传下载","src":"./form-element/fileUploadDown.w"},
+	{"name":"文件条件上传","src":"./form-element/fileUploadDown.w"},
+	{"name":"条件过滤器1","src":"./form-element/filterConditionOne.w"},
+	{"name":"条件过滤器2","src":"./form-element/filterConditionTwo.w"},
+	{"name":"条件过滤器3","src":"./form-element/filterConditionThree.w"},
+	{"name":"条件过滤器4","src":"./form-element/filterConditionFour.w"},
+	{"name":"条件过滤器5","src":"./form-element/filterConditionFive.w"},
+	{"name":"条件过滤器6","src":"./form-element/filterConditionsix.w"},
+	{"name":"条件过滤器7","src":"./form-element/filterConditionSeven.w"},
+	{"name":"条件过滤器8","src":"./form-element/filterConditionEight.w"},
+	{"name":"评星等级","src":"./form-element/starComment.w"},
+	{"name":"文本框","src":"./form-element/text-box.w"},
+	{"name":"文本域","src":"./form-element/textarea.w"}
+]

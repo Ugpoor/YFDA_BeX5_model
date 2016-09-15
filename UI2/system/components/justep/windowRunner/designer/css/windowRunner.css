@@ -1,0 +1,6 @@
+.x-window-runner{
+	z-index:1000;
+	width:24px;
+	height:24px;
+	background: transparent url(../img/runner_icon.png);
+}

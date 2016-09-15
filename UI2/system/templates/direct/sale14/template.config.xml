@@ -1,0 +1,12 @@
+<template text="通用" desc="商品分类" custom="false">
+	<images>
+		<image src="template.png"/>
+	</images>
+
+	<items>
+		<item file="template/class.w"></item>
+		<item file="template/class.js" />
+		<item file="template/class.css" />
+	</items>
+
+</template>

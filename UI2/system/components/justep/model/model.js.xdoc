@@ -1,0 +1,240 @@
+/**
+	@name $UI/system/components/justep/model/model
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description 页面上下文
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#component
+	@attribute
+	@required
+	@description 组件标识
+	@default "$UI/system/components/justep/model/model"
+	@type String
+*/
+
+
+/**
+	@name $UI/system/components/justep/model/model#xid
+	@attribute
+	@description xid标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#onModelConstruct
+	@event
+	@description 构造Model之前
+	@param {$UI/system/components/justep/model/model#ModelConstructEvent} event 它的结构如下:
+<xmp>
+	{
+		"source":Model组件对应的js实例
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#ModelConstructEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 构造Model之前事件
+	@see $UI/system/components/justep/model/model#onModelConstruct
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#ModelConstructEvent#source
+	@property 
+	@description Model组件js对象
+	@type $UI/system/components/justep/model/model
+*/
+
+
+
+/**
+	@name $UI/system/components/justep/model/model#onModelConstructed
+	@event
+	@description 构造Model之后
+	@param {$UI/system/components/justep/model/model#ModelConstructedEvent} event 它的结构如下:
+<xmp>
+	{
+		"source":Model组件对应的js实例
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#ModelConstructedEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 构造Model之后事件
+	@see $UI/system/components/justep/model/model#onModelConstructed
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#ModelConstructedEvent#source
+	@property 
+	@description Model组件js对象
+	@type $UI/system/components/justep/model/model
+*/
+
+
+
+/**
+	@name $UI/system/components/justep/model/model#onLoad
+	@event
+	@description 页面加载完成事件
+	@param {$UI/system/components/justep/model/model#LoadEvent} event 它的结构如下:
+<xmp>
+	{
+		"source":Model组件对应的js实例
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#LoadEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 页面加载完成事件
+	@see $UI/system/components/justep/model/model#onLoad
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#LoadEvent#source
+	@property 
+	@description Model组件js对象
+	@type $UI/system/components/justep/model/model
+*/
+
+
+/**
+	@name $UI/system/components/justep/model/model#onParamsReceive
+	@event
+	@description 接收参数事件
+	@param {$UI/system/components/justep/model/model#ParamsReceive} event 它的结构如下:
+<xmp>
+	{
+		"source":Model组件对应的js实例
+		"data": data 参数对象
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#ParamsReceive
+	@class
+	@category EventClass
+	@model UI2
+	@description 接收参数事件
+	@see $UI/system/components/justep/model/model#onParamsReceive
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#ParamsReceive#source
+	@property 
+	@description Model组件js对象
+	@type $UI/system/components/justep/model/model
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#ParamsReceive#data
+	@property 
+	@description 参数对象
+	@type Object
+*/
+
+
+
+/**
+	@name $UI/system/components/justep/model/model#onunLoad
+	@event
+	@description 页面关闭事件
+	@param {$UI/system/components/justep/model/model#UnLoadEvent} event 它的结构如下:
+<xmp>
+	{
+		"source":Model组件对应的js实例
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#UnLoadEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 页面关闭事件
+	@see $UI/system/components/justep/model/model#onunLoad
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#UnLoadEvent#source
+	@property 
+	@description Model组件js对象
+	@type $UI/system/components/justep/model/model
+*/
+
+
+
+/**
+	@name $UI/system/components/justep/model/model#onActive
+	@event
+	@description 页面激活事件
+	@param {$UI/system/components/justep/model/model#ActiveEvent} event 它的结构如下:
+<xmp>
+	{
+		"source":Model组件对应的js实例
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#ActiveEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 页面激活事件
+	@see $UI/system/components/justep/model/model#onActive
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#ActiveEvent#source
+	@property 
+	@description Model组件js对象
+	@type $UI/system/components/justep/model/model
+*/
+
+
+
+/**
+	@name $UI/system/components/justep/model/model#onInactive
+	@event
+	@description 页面离开事件
+	@param {$UI/system/components/justep/model/model#InactiveEvent} event 它的结构如下:
+<xmp>
+	{
+		"source":Model组件对应的js实例
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#InactiveEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 页面离开事件
+	@see $UI/system/components/justep/model/model#onInactive
+*/
+
+/**
+	@name $UI/system/components/justep/model/model#InactiveEvent#source
+	@property 
+	@description Model组件js对象
+	@type $UI/system/components/justep/model/model
+*/
+

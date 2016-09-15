@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" component="$model/UI2/system/components/justep/window/window" xid="window" extends="$UI/demo/plugin/template/demo.w" __id="id_1" design="device:m;" class="window window cuURb2y" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cuURb2y" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/buttonGroup,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style>null</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onModelConstructDone:modelModelConstructDone" __cid="cuURb2y" class="cuURb2y"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pd07b7bfe58364185a95b20955098ccc3-iosstatusbar cuURb2y" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cuURb2y"> 
+    <div class="x-panel-top cuURb2y" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cuURb2y"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cuURb2y" xid="titleBar" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;touchID&quot;}" __cid="cuURb2y"> 
+        <div class="x-titlebar-left cuURb2y" __cid="cuURb2y"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cuURb2y" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;}" __cid="cuURb2y"> 
+            <i xid="i6" class="icon-chevron-left cuURb2y" __cid="cuURb2y"/>  
+            <span xid="span6" __cid="cuURb2y" class="cuURb2y"/>
+          </a>
+        </div>  
+        <div class="x-titlebar-title cuURb2y" __cid="cuURb2y">插件的名字</div>  
+        <div class="x-titlebar-right  cuURb2y" __cid="cuURb2y">
+          <div class="empty cuURb2y" __cid="cuURb2y"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cuURb2y" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cuURb2y">
+      <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cuURb2y" xid="contents1" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0}" __cid="cuURb2y"> 
+        <div class="x-contents-content active cuURb2y" xid="infoContent" style="padding:10px;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cuURb2y">
+          <h3 xid="h31" style="text-align:center;" __cid="cuURb2y" class="cuURb2y">插件概述</h3>
+          <h4 xid="h41" __cid="cuURb2y" class="cuURb2y">介绍：</h4>
+          <p xid="p1" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cuURb2y" class="cuURb2y">ID：com.justep.cordova.plugin.touchid</p>
+          <p xid="introduceP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cuURb2y" class="cuURb2y">这是一个指纹识别的插件。只支持iOS平台，提供了iOS上指纹识别的功能。</p>
+          <div xid="div4" style="height:30px;" __cid="cuURb2y" class="cuURb2y"/>  
+          <h4 xid="h42" __cid="cuURb2y" class="cuURb2y">适用平台：</h4>  
+          <p xid="platformP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cuURb2y" class="cuURb2y">iOS7.0及以后版本</p> 
+        </div>  
+        <div class="x-contents-content cuURb2y" xid="demoContent" style="padding:10px;width:100%;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cuURb2y">
+          <div xid="div2" style="height:15px;" __cid="cuURb2y" class="cuURb2y"/>  
+          <div style="padding:20px" xid="div1_4" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cuURb2y" class="cuURb2y"> 
+            <p xid="p1_4" __cid="cuURb2y" class="cuURb2y">本插件只支持iOS7.0以上平台。首先检查当前设备是否支持指纹识别，如果支持则会提示OK！然后即可开始指纹识别，如果指纹匹配则会显示成功，有三次匹配机会，连续三次识别不通过则会终止识别。</p> 
+          </div>
+          <div style="height:50px;padding:0px 40px 40px 40px;" xid="div2_4" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cuURb2y" class="cuURb2y"> 
+            <a class="btn btn-default cuURb2y" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="check" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:checkClick" data-config="{&quot;label&quot;:&quot;检查是否支持指纹识别&quot;}" __cid="cuURb2y"> 
+              <i xid="i1_4" __cid="cuURb2y" class="cuURb2y"/>  
+              <span xid="span1_4" __cid="cuURb2y" class="cuURb2y">检查是否支持指纹识别</span> 
+            </a> 
+          </div>
+          <div style="height:50px;padding:40px" xid="div3_4" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cuURb2y" class="cuURb2y"> 
+            <a class="btn btn-default cuURb2y" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="authenticate" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:authenticateClick" data-config="{&quot;label&quot;:&quot;指纹识别&quot;}" __cid="cuURb2y"> 
+              <i xid="i2_4" __cid="cuURb2y" class="cuURb2y"/>  
+              <span xid="span2_4" __cid="cuURb2y" class="cuURb2y">指纹识别</span> 
+            </a> 
+          </div>
+          <div xid="div4_4" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cuURb2y" class="cuURb2y"/>
+          <div xid="div5_4" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cuURb2y" class="cuURb2y"/>
+        </div>  
+        <div class="x-contents-content cuURb2y" xid="codeContent" style="padding:10px" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cuURb2y">
+          <p xid="p1_23" xui:parent="codeContent" xui:update-mode="insert" __cid="cuURb2y" class="cuURb2y">检查是否支持指纹识别</p>
+          <div xid="checkClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cuURb2y" class="cuURb2y"/>
+          <p xid="p2_23" xui:parent="codeContent" xui:update-mode="insert" __cid="cuURb2y" class="cuURb2y">指纹识别</p>
+          <div xid="authenticateClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cuURb2y" class="cuURb2y"/>
+        </div>
+      </div>
+    </div>  
+    <div class="x-panel-bottom cuURb2y" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cuURb2y">
+      <div component="$model/UI2/system/components/justep/button/buttonGroup" class="btn-group btn-group-justified x-card  cuURb2y" xid="buttonGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/button/buttonGroup'}" data-config="{&quot;tabbed&quot;:true}" __cid="cuURb2y">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cuURb2y" xid="info" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;info&quot;,&quot;target&quot;:&quot;infoContent&quot;}" __cid="cuURb2y"> 
+          <i xid="i1" __cid="cuURb2y" class="cuURb2y"/>  
+          <span xid="span1" __cid="cuURb2y" class="cuURb2y">info</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cuURb2y" xid="demo" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;demo&quot;,&quot;target&quot;:&quot;demoContent&quot;}" __cid="cuURb2y"> 
+          <i xid="i2" __cid="cuURb2y" class="cuURb2y"/>  
+          <span xid="span2" __cid="cuURb2y" class="cuURb2y">demo</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cuURb2y" xid="code" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;code&quot;,&quot;target&quot;:&quot;codeContent&quot;}" __cid="cuURb2y"> 
+          <i xid="i3" __cid="cuURb2y" class="cuURb2y"/>  
+          <span xid="span3" __cid="cuURb2y" class="cuURb2y">code</span>
+        </a>
+      </div>
+    </div>
+    <style __cid="cuURb2y" class="cuURb2y">.x-panel.pd07b7bfe58364185a95b20955098ccc3-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pd07b7bfe58364185a95b20955098ccc3-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pd07b7bfe58364185a95b20955098ccc3-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pd07b7bfe58364185a95b20955098ccc3-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pd07b7bfe58364185a95b20955098ccc3-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pd07b7bfe58364185a95b20955098ccc3-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pd07b7bfe58364185a95b20955098ccc3-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pd07b7bfe58364185a95b20955098ccc3-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pd07b7bfe58364185a95b20955098ccc3-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div>  
+</div>

@@ -1,0 +1,83 @@
+/**
+  @name com.justep.doc.DocServerDefines
+  @model BIZ
+  @category java
+  @class
+  @description 文档服务定义容器类
+ */
+
+/**
+  @name com.justep.doc.DocServerDefines#refresh
+
+  @function
+  @description 重新加载所有的文档服务信息
+  @returns {String}
+ */
+
+/**
+  @name com.justep.doc.DocServerDefines#add
+  @function
+  @description 新增
+  @param {String} sID 文档服务id
+  @param {String} sDisplayName 文档服务名称
+  @param {String} sUrl 文档服务地址(一般为http://localhost:8080/DocServer 这种格式)
+  @param {String} sAccessMode 访问模式(1 采用ui转调 0采用直连模式,推荐采用ui转调，除非你确定的知道直连的细节否则不推荐采用直连)
+  @returns {DocServerDefine}
+ */
+
+/**
+  @name com.justep.doc.DocServerDefines#getDocServerByPath
+  @function
+  @description 通过文档路径获得是文档服器务信息
+  @param {String} docPath 文档路径
+  @returns {DocServerDefine}
+ */
+
+
+/**
+  @name com.justep.doc.DocServerDefines#save
+  @function
+  @description 保存
+  	(<b>注意</b>这里保存的时候，只会在文档配置中多一条记录，不会在文档中心中多一个文档的根目录,如果需要同时新增出文档中心的根目录需要调用 @see com.justep.doc.Doc  @see com.justep.doc.Docs 相关api新增出doc相关对象。
+	Doc对象约定
+	<ul>
+		<li>Doc对象的id必须和DocServerDefine对象的id相同</li>
+		<li>Doc对象的sNameSpace必须和DocServerDefine对象的id相同</li>
+		<li>Doc对象的sDocPath必须为"/"</li>
+		<li>Doc对象的sDocName推荐和DocServerDefine对象的sDisplayName相同</li>
+	</ul>	
+
+  @returns {int}
+ */
+
+/**
+  @name com.justep.doc.DocServerDefines#remove
+
+  @function
+  @description 从容器中移除指定的文档
+  @param {String} index  要删除文档服务的位置
+  @returns {DocServerDefine}
+ */
+
+/**
+  @name com.justep.doc.DocServerDefines#getIndex
+
+  @function
+  @description 获取容器中指定的文档
+  @param {String} index  文档服务的位置
+  @returns {DocServerDefine}
+ */
+
+/**
+  @name com.justep.doc.DocServerDefines#getIterator
+  @function
+  @description 返回所有文档服务的迭代器。
+  @returns {Iterator<DocServerDefine>}
+*/
+
+/**
+  @name com.justep.doc.DocServerDefines#toTable
+  @function
+  @description 转换成Table
+  @returns {Table}
+ */

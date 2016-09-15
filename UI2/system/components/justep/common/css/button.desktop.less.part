@@ -1,0 +1,85 @@
+/** button ----------------------------------**/
+// Common styles
+.btn-common() {
+  text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+  @shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
+  .box-shadow(@shadow);
+
+  // Reset the shadow
+  &:active,
+  &.active {
+    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+}
+
+// Mixin for generating new styles
+.btn-styles(@btn-color: #555) {
+  #gradient > .vertical(@start-color: @btn-color; @end-color: darken(@btn-color, 12%));
+  .reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners
+  background-repeat: repeat-x;
+  border-color: darken(@btn-color, 14%);
+
+  &:hover,
+  &:focus  {
+    background-color: darken(@btn-color, 12%);
+    background-position: 0 -15px;
+  }
+
+  &:active,
+  &.active {
+    background-color: darken(@btn-color, 12%);
+    border-color: darken(@btn-color, 14%);
+  }
+}
+
+// Apply the mixin to the buttons
+.btn-default { .btn-common();.btn-styles(@btn-default-bg); }
+.btn-primary { .btn-common();.btn-styles(@btn-primary-bg); }
+.btn-success { .btn-common();.btn-styles(@btn-success-bg); }
+.btn-info    { .btn-common();.btn-styles(@btn-info-bg); }
+.btn-warning { .btn-common();.btn-styles(@btn-warning-bg); }
+.btn-danger  { .btn-common();.btn-styles(@btn-danger-bg); }
+
+.btn{
+	&.x-black {
+	  .btn-common();
+	  .btn-styles(#474949);
+	}
+	
+	&.x-red {
+	  .btn-common();
+	  .btn-styles(#D9230F);
+	}
+	
+	&.x-green {
+	  .btn-common();
+	  .btn-styles(#469408);
+	}
+	
+	&.x-blue {
+	  .btn-common();
+	  .btn-styles(#029ACF);
+	}
+	
+	&.x-orange {
+	  .btn-common();
+	  .btn-styles(#DF691A);
+	}
+	
+	&.x-yellow {
+	  .btn-common();
+	  .btn-styles(#f0ad4e);
+	}
+	
+	&.x-purple {
+	  .btn-common();
+	  .btn-styles(#9B479F);
+	}
+
+	&.x-gray {
+	  .btn-common();
+	  .btn-styles(#e7e7e7);
+	}
+}
+
+

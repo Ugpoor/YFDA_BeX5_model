@@ -1,0 +1,22 @@
+.x-data,.x-biz-data,.x-baas-data{
+	height:20px;
+	line-height:20px;
+	margin-left:2px;
+}
+
+.x-data span, .x-biz-data span{	 
+	font: normal 12px arial;
+}
+
+.x-biz-data img{
+	background: transparent url(../img/bizData.gif);
+}
+
+.x-data img{
+	background: transparent url(../img/commonData.gif);
+}
+
+.x-baas-data img{
+	background: transparent url(../img/data.gif);
+}
+

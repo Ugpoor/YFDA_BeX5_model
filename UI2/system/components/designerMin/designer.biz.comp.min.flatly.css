@@ -1,0 +1,44 @@
+.x-ros-item {
+	float: left;
+	line-height: 64px;
+}
+.x-ro:hover, .x-ros:hover
+{
+	outline: blue dashed 1px;
+}
+.x-export-excel-designer,.x-import-excel-designer{
+	z-index:1000;
+	width:24px;
+	height:24px;
+	display: block;
+	position: absolute;
+}
+.x-export-excel-designer{
+	background: transparent url(../justep/excel/designer/img/export.gif);
+}
+.x-import-excel-designer{
+	background: transparent url(../justep/excel/designer/img/import.gif);
+}
+.x-org-dialog{
+	z-index:1000;
+	width:24px;
+	height:24px;
+	background: transparent url(../justep/org/designer/img/dialog_icon.png);
+}
+.x-data,.x-biz-data,.x-baas-data{
+	height:20px;
+	line-height:20px;
+	margin-left:2px;
+}
+.x-data span, .x-biz-data span{	 
+	font: normal 12px arial;
+}
+.x-biz-data img{
+	background: transparent url(../justep/data/designer/img/bizData.gif);
+}
+.x-data img{
+	background: transparent url(../justep/data/designer/img/commonData.gif);
+}
+.x-baas-data img{
+	background: transparent url(../justep/data/designer/img/data.gif);
+}

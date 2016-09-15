@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root> 
+  <item label="组件"> 
+    <item label="blobImage" process="/demo/components/process/org/orgProcess"
+      activity="mainActivity" url="$UI/system/components/justep/blob/demo/demo.a"/>
+    <item label="bizData" process="/demo/components/process/grid/gridProcess" activity="mainActivity"
+      url="$UI/system/components/justep/data/demo/data.a"/>  
+    <item label="calendar" process="/demo/components/process/ui2/ui2Process" activity="mainActivity"
+      url="$UI/system/components/justep/calendar/demo/demo.a" display="solid"/>  
+      
+    <item label="richTextarea" device="pc" process="/demo/components/process/grid/gridProcess"
+      activity="mainActivity" url="$UI/system/components/justep/richTextarea/demo/demo.a"/>  
+    <item label="attachment" device="m" process="/demo/components/process/grid/gridProcess"
+      activity="mainActivity" url="$UI/system/components/justep/attachment/demo/demo.a"/>  
+    <item label="orgTree" device="m"  process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="$UI/system/components/justep/org/demo/orgTree.a"/>
+    <item label="orgDialog" device="m"  process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="$UI/system/components/justep/org/demo/orgDialog.a"/>
+    <item label="orgSelect,orgImage" device="m"  process="/demo/components/process/ui2/ui2Process"
+      display="solid" activity="mainActivity" url="$UI/system/components/justep/org/demo/orgSelect.a"/>
+    <item label="dataTables" device="pc"  process="/demo/components/process/grid/gridProcess"
+      activity="mainActivity" url="$UI/system/components/justep/dataTables/demo/dataTables_bex5.a"/>  
+    <item label="orgTreePC" device="pc"  process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="$UI/system/components/justep/org/demo/orgTreePC.a"/>
+    <item label="orgDialogPC" device="pc"  process="/demo/components/process/ui2/ui2Process"
+      display="solid" activity="mainActivity" url="$UI/system/components/justep/org/demo/orgDialogPC.a"/>
+    <item label="orgSelectPC" device="pc"  process="/demo/components/process/ui2/ui2Process"
+      display="solid" activity="mainActivity" url="$UI/system/components/justep/org/demo/orgSelectPC.a"/>
+    <item label="widgets" device="pc"  process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="$UI/system/components/justep/widgets/demo/base.a"/> 
+
+    <item label="excel" device="pc"  process="/demo/components/process/grid/gridProcess"
+      activity="mainActivity" url="$UI/system/components/justep/excel/demo/excel.a"/>  
+
+    <item label="bizFilter" device="pc"  process="/demo/components/process/ui2/ui2Process" activity="mainActivity"
+      url="$UI/system/components/justep/bizFilter/demo/demo.a" display="solid"/>
+    <item label="smartFilter" device="pc"  process="/demo/components/process/ui2/ui2Process" activity="mainActivity"
+      url="$UI/system/components/justep/smartFilter/demo/demo.a" display="solid"/>
+    <item label="gridFilter" device="pc"  process="/demo/components/process/ui2/ui2Process" activity="mainActivity"
+      url="$UI/system/components/justep/gridFilter/demo/demo.a" display="solid"/>
+    <item label="dateFilter" device="pc"  process="/demo/components/process/ui2/ui2Process" activity="mainActivity"
+      url="$UI/system/components/justep/dateFilter/demo/demo.a" display="solid"/>
+    <item label="orgFilter" device="pc" process="/demo/components/process/ui2/ui2Process" activity="mainActivity"
+      url="$UI/system/components/justep/orgFilter/demo/demo.a" display="solid"/>
+    <item label="codeSelect" device="pc" process="/demo/components/process/ui2/ui2Process" activity="mainActivity"
+      url="$UI/system/components/justep/codeSelect/demo/demo.a" display="solid"/>
+    <item label="treeLocate" device="pc"  process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="$UI/system/components/justep/quickLocate/demo/orgTreeLocate.a"/>
+  </item>  
+  <item label="报表图表" iconClass="icon-pie-graph"> 
+    <item label="卡片报表" device="m"  process="/demo/report/process/simple/simpleProcess" activity="cardActivity"
+      url="$UI/system/components/justep/report/demo/cardReport.a"/>  
+    <item label="多源双向分片报表" device="m"  process="/demo/report/process/multidataset/multidatasetProcess"
+      activity="mutilDatasetHVActivity" url="$UI/system/components/justep/report/demo/multiDatasetHVReport.a"/>  
+    <item label="占比运算报表" device="m"  process="/demo/report/process/operation/operationProcess"
+      activity="proportionActivity" url="$UI/system/components/justep/report/demo/proportionReport.a"/>  
+    <item label="图表混合报表" device="m"  process="/demo/report/process/property/propertyProcess"
+      activity="chartActivity" url="$UI/system/components/justep/report/demo/chartReport.a"/>  
+    <item label="饼图" device="m"  process="/demo/report/process/chart/chartProcess" activity="pieActivity"
+      url="$UI/system/components/justep/chart/demo/pieChart.a"/>  
+    <item label="累积对比分析图表" device="m"  process="/demo/report/process/chart/chartProcess"
+      activity="accumulationActivity" url="$UI/system/components/justep/chart/demo/accumulationChart.a"/> 
+  </item> 
+</root>

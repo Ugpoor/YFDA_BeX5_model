@@ -1,0 +1,23 @@
+[
+	{"uId":"1", "uName":"张三", "uPassword":"123456", "uSex":"男", "uAge":"33", "uEducation":"研究生", "uHiredate":"2014-02-20", "uRemark":"张三是何许人也，竟无人知晓", "uOperate":""},
+	{"uId":"2", "uName":"李四", "uPassword":"123456", "uSex":"女", "uAge":"32", "uEducation":"本科", "uHiredate":"2014-02-20", "uRemark":"李四是何许人也，竟无人知晓", "uOperate":""},
+	{"uId":"3", "uName":"王五", "uPassword":"123456", "uSex":"男", "uAge":"29", "uEducation":"本科", "uHiredate":"2014-02-20", "uRemark":"王五是何许人也，竟无人知晓", "uOperate":""},
+	{"uId":"4", "uName":"小明", "uPassword":"123456", "uSex":"男", "uAge":"25", "uEducation":"本科", "uHiredate":"2014-08-20", "uRemark":"小明是何许人也，竟无人知晓", "uOperate":""},
+	{"uId":"5", "uName":"小红", "uPassword":"123456", "uSex":"女", "uAge":"23", "uEducation":"专科", "uHiredate":"2014-07-20", "uRemark":"小红是何许人也，竟无人知晓", "uOperate":""},
+	{"uId":"6", "uName":"小白", "uPassword":"123456", "uSex":"男", "uAge":"21", "uEducation":"本科", "uHiredate":"2014-05-20", "uRemark":"小白是何许人也，竟无人知晓", "uOperate":""},
+	{"uId":"7", "uName":"张小三", "uPassword":"123456", "uSex":"男", "uAge":"20", "uEducation":"本科", "uHiredate":"2015-03-15", "uRemark":"张小三是何许人也，竟无人知晓", "uOperate":""},
+	{"uId":"8", "uName":"李小四", "uPassword":"123456", "uSex":"女", "uAge":"21", "uEducation":"专科", "uHiredate":"2015-03-15", "uRemark":"李小四是何许人也，竟无人知晓", "uOperate":""},
+	{"uId":"9", "uName":"王小五", "uPassword":"123456", "uSex":"男", "uAge":"19", "uEducation":"本科", "uHiredate":"2015-03-15", "uRemark":"王小五是何许人也，竟无人知晓", "uOperate":""},
+	{"uId":"10", "uName":"王小二", "uPassword":"123456", "uSex":"男", "uAge":"22", "uEducation":"本科", "uHiredate":"2015-05-01", "uRemark":"王小二是何许人也，竟无人知晓", "uOperate":""},
+	{"uId":"11", "uName":"张三", "uPassword":"123456", "uSex":"男", "uAge":"33", "uEducation":"研究生", "uHiredate":"2014-02-20", "uRemark":"张三", "uOperate":""},
+	{"uId":"12", "uName":"李四", "uPassword":"123456", "uSex":"女", "uAge":"32", "uEducation":"本科", "uHiredate":"2014-02-20", "uRemark":"李四", "uOperate":""},
+	{"uId":"13", "uName":"王五", "uPassword":"123456", "uSex":"男", "uAge":"29", "uEducation":"本科", "uHiredate":"2014-02-20", "uRemark":"王五", "uOperate":""},
+	{"uId":"14", "uName":"小明", "uPassword":"123456", "uSex":"男", "uAge":"25", "uEducation":"本科", "uHiredate":"2014-08-20", "uRemark":"小明", "uOperate":""},
+	{"uId":"15", "uName":"张小三", "uPassword":"123456", "uSex":"男", "uAge":"23", "uEducation":"本科", "uHiredate":"2015-03-15", "uRemark":"张小三", "uOperate":""},
+	{"uId":"16", "uName":"李小四", "uPassword":"123456", "uSex":"女", "uAge":"21", "uEducation":"专科", "uHiredate":"2015-03-15", "uRemark":"李小四", "uOperate":""},
+	{"uId":"17", "uName":"王小五", "uPassword":"123456", "uSex":"男", "uAge":"22", "uEducation":"本科", "uHiredate":"2015-03-15", "uRemark":"王小五", "uOperate":""},
+	{"uId":"18", "uName":"小红", "uPassword":"123456", "uSex":"女", "uAge":"20", "uEducation":"专科", "uHiredate":"2014-07-20", "uRemark":"小红", "uOperate":""},
+	{"uId":"19", "uName":"小白", "uPassword":"123456", "uSex":"男", "uAge":"22", "uEducation":"本科", "uHiredate":"2014-05-20", "uRemark":"小白", "uOperate":""},
+	{"uId":"20", "uName":"王小二", "uPassword":"123456", "uSex":"男", "uAge":"24", "uEducation":"本科", "uHiredate":"2015-05-01", "uRemark":"王小二", "uOperate":""},
+	{"uId":"21", "uName":"某某某", "uPassword":"12345a", "uSex":"未知", "uAge":"21", "uEducation":"博士", "uHiredate":"2020-12-20", "uRemark":"猜猜我是谁", "uOperate":""}
+]

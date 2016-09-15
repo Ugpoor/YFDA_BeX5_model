@@ -1,0 +1,18 @@
+
+.x-contents-content .x-row{
+	border-top:1px solid #CFCFCF;
+	background-color:#F2F2F2;
+}
+span{
+	padding:15px;
+	margin-bottom:-20px;
+}
+.x-list-template li:first-child{
+	border-top:1px solid #eee;
+}
+.x-list{
+	margin-top:-19px;
+}
+.list-group-item{
+	background-color:#F2F2F2;
+}

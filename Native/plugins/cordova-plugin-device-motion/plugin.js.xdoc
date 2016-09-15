@@ -1,0 +1,74 @@
+/**
+	@name cordova-plugin-device-motion
+	@class
+	@description 设备传感器插件
+	@model Native
+	@category plugin
+	@declareVar Acceleration
+*/
+
+/**
+	@name cordova-plugin-device-motion.getCurrentAcceleration
+	@function
+	@see cordova-plugin-device-motion.Acceleration
+	@param {Function} successCallback 请求成功的回调，返回cordova-plugin-device-motion.Acceleration对象
+	@param {Function} errorCallback   可选参数  请求失败的回调
+	@param {AccelerationOptions} options 获取加速度数据的参数，例 timeout
+	@returns {void}
+	@description 异步获取当前的加速信息
+*/
+
+/**
+	@name cordova-plugin-device-motion.watchAcceleration
+	@function
+	@param {Function} successCallback    每次请求成功的回调，返回cordova-plugin-device-motion.Acceleration对象
+	@param {Function} errorCallback     可选参数  每次请求失败的回调
+	@param {Object} options 可选参数 获取加速度数据的参数，例 timeout
+	@returns {string}
+	@description 在给定的时间间隔内，异步获取加速度，返回区间id，用于停止监听
+*/
+
+/**
+	@name cordova-plugin-device-motion.clearWatch
+	@function
+	@param {String} id  watchAcceleration返回的区间id
+	@returns {void}
+	@description 停止监听
+*/
+
+/**
+	@name cordova-plugin-device-motion.Acceleration
+	@class
+	@description 传感器信息
+	@model Native
+	@category EventClass
+	@declareVar Acceleration
+*/
+
+/**
+	@name cordova-plugin-device-motion.Acceleration.x
+	@property
+	@type Number
+	@description x轴
+*/
+
+/**
+	@name cordova-plugin-device-motion.Acceleration.y
+	@property
+	@type Number
+	@description y轴
+*/
+
+/**
+	@name cordova-plugin-device-motion.Acceleration.z
+	@property
+	@type Number
+	@description z轴
+*/
+
+/**
+	@name cordova-plugin-device-motion.Acceleration.timestamp
+	@property
+	@type Date
+	@description 时间戳
+*/

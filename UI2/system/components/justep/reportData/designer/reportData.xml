@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/reportData/reportData" tag-name="div" icon="reportData.gif"
+		text="报表数据"  display-property="xid"
+		binding-component="$UI/system/components/justep/reportData/reportData" parent-range="$UI/system/components/justep/model/model" d_resiable="false"
+		java-class="ReportData" component-type="data" >
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="source" text="数据集定义" editor-ref="actionsDlg" is-virtual = 'true'  fixed-value='[...]'/>
+		</properties>
+		<property-editors>
+			<property-editor name="actionsDlg" type="dialog">
+				<dialog-page class-name="ReportDataDataSourceDialog" />
+			</property-editor>
+		</property-editors>
+		<templates>
+			<template name="default">
+			<![CDATA[ 
+				<div component="$UI/system/components/justep/reportData/reportData"> 
+					<source>
+					</source>
+				</div>
+		   	]]>
+		   </template><!-- 
+			<transpose>
+				<group-row></group-row>
+			    <group-column></group-column>
+			    <value 统计="sum,count,avg,max,min,value">
+			    	<filed></filed>
+			        <filed></filed>
+			    </value>
+			</transpose>
+		    -->
+		</templates>
+		<events>
+			<event name="onBeforeRefresh" text="刷新数据前"/>
+			<event name="onAfterRefresh" text="刷新数据后"/>
+		</events>
+		<toolbar>
+		</toolbar>
+	</element>
+</elements>

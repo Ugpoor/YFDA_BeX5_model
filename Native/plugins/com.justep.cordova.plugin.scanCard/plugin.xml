@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<plugin id="com.justep.cordova.plugin.scanCard" version="1.0.0"
+	xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>scanCard</name>
+	<description>Cordova plugin to support business card recognition
+	</description>
+	<author>QiangKun LiYin</author>
+	<license>MIT</license>
+	<engines>
+		<engine name="cordova" version=">=3.3.0" />
+	</engines>
+
+	<js-module src="www/scanCard.js" name="scanCard">
+		<clobbers target="navigator.scanCard" />
+	</js-module>
+
+	<platform name="android">
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<preference name="key" value="$key" />
+			<preference name="sign" value="$sign" />
+			<feature name="scanCard">
+				<param name="android-package" value="com.justep.cordova.plugin.maketion.Scan" />
+				<param name="onload" value="true" />
+			</feature>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-feature android:name="android.hardware.camera" />
+			<uses-feature android:name="android.hardware.camera.autofocus" />
+			<uses-permission android:name="android.permission.CAMERA" />
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		</config-file>
+		<source-file src="src/android/ScanCardSdk.jar" target-dir="libs" />
+		<source-file src="src/android/armeabi/libappmain.so"
+			target-dir="libs/armeabi" />
+		<source-file
+			src="src/android/com/justep/cordova/plugin/maketion/Scan.java"
+			target-dir="src/com/justep/cordova/plugin/maketion" />
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:name="cn.maketion.uploadSdk.MkxActivityCamera"/>
+		</config-file>
+	</platform>
+	
+	<platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="scanCard">
+                <param name="ios-package" value="CDVScanCard" />
+                <preference name="key" value="$key" />
+                <preference name="sign" value="$sign" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/libSDK/ScanCardSDK.h" />
+        <source-file src="src/ios/libSDK/libScanCardSDK.a" framework="true" />
+        <header-file src="src/ios/CDVScanCard.h" />
+        <source-file src="src/ios/CDVScanCard.m" />
+   
+        <framework src="CoreMedia.framework" />
+        <framework src="ImageIO.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="AVFoundation.framework" />
+        <framework src="libz.dylib" />
+        <framework src="CoreVideo.framework" />
+        <framework src="MobileCoreServices.framework" />
+        <framework src="CoreImage.framework" />
+        <framework src="CoreAudio.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="CoreMedia.framework" />
+        
+        <source-file src="src/ios/Resources/camera_button_ok_normal.png" />
+        <source-file src="src/ios/Resources/camera_button_ok_select.png" />
+        <source-file src="src/ios/Resources/camera_close_button_normal.png" />
+        <source-file src="src/ios/Resources/camera_close_button_selected.png" />
+        <source-file src="src/ios/Resources/camera_focus.png" />
+        <source-file src="src/ios/Resources/camera_mask_1136.png" />
+        <source-file src="src/ios/Resources/camera_mask_960.png" />
+        <source-file src="src/ios/Resources/camera_opendoor_left.png" />
+        <source-file src="src/ios/Resources/camera_opendoor_left_iPad.png" />
+        <source-file src="src/ios/Resources/camera_opendoor_right.png" />
+        <source-file src="src/ios/Resources/camera_opendoor_right_iPad.png" />
+        <source-file src="src/ios/Resources/camera_photograph_button_normal.png" />
+        <source-file src="src/ios/Resources/camera_photograph_button_select.png" />
+        <source-file src="src/ios/Resources/camera_retake_icon.png" />
+        <source-file src="src/ios/Resources/camera_retake_icon_select.png" />
+            
+    </platform>
+
+</plugin>

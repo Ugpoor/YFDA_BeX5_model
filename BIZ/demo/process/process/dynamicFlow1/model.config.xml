@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.justep.com/model">
+	<use>/demo/process/data</use>
+	<use>/demo/process/logic/action</use>
+	<use>/demo/process/logic/code</use>
+	<use>/system/logic/fn</use>
+	<use>/system/logic/action</use>
+	<use>/system/logic/code</use>
+<include>/demo/process/logic/dynamicFlowListener</include></model>

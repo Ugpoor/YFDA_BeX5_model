@@ -1,0 +1,12 @@
+<template text="通用" desc="商品列表" custom="false">
+	<images>
+		<image src="template.png"/>
+	</images>
+
+	<items>
+		<item file="template/list.w"></item>
+		<item file="template/list.js" />
+		<item file="template/list.css" />
+	</items>
+
+</template>

@@ -1,0 +1,98 @@
+/**
+	@name $UI/system/components/bootstrap/carousel/carousel
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@description Carousel组件, 循环展示
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/bootstrap/carousel/carousel#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+	@name $UI/system/components/bootstrap/carousel/carousel#auto
+	@attribute 
+	@type boolean
+	@description 自动播放
+*/
+
+/**
+	@name $UI/system/components/bootstrap/carousel/carousel#interval
+	@attribute 
+	@type integer
+	@description 自动播放的间隔,单位是秒
+*/
+
+/**
+ @name $UI/system/components/bootstrap/carousel/carousel#add
+ @function
+ @param {String} html 添加的html片断
+ @description 添加页
+*/
+
+/**
+ @name $UI/system/components/bootstrap/carousel/carousel#remove
+ @function
+ @param {integer} index 删除页的索引
+ @description 删除页
+*/
+
+/**
+ @name $UI/system/components/bootstrap/carousel/carousel#removeAll
+ @function
+ @description 删除所有页
+*/
+
+/**
+ @name $UI/system/components/bootstrap/carousel/carousel#to
+ @function
+ @param {integer|String} xidOrIdx panel的xid或者索引
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到指定的content
+*/
+
+/**
+ @name $UI/system/components/bootstrap/carousel/carousel#next
+ @function
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到下一个content
+*/
+
+/**
+ @name $UI/system/components/bootstrap/carousel/carousel#prev
+ @function
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到前一个content
+*/
+
+/**
+ @name $UI/system/components/bootstrap/carousel/carousel#to
+ @operation
+ @see $UI/system/components/bootstrap/carousel/carousel#to
+ @param {String} xid
+ @description 切换到指定的content
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/bootstrap/carousel/carousel#next
+ @operation
+ @see $UI/system/components/bootstrap/carousel/carousel#next
+ @description 切换到下一个content
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/bootstrap/carousel/carousel#prev
+ @operation
+ @see $UI/system/components/bootstrap/carousel/carousel#prev
+ @description 切换到前一个content
+ @returns {void}
+*/

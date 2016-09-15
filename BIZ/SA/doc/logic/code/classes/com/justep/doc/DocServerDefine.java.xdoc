@@ -1,0 +1,98 @@
+/**
+	@name com.justep.doc.DocServerDefine
+	@model BIZ
+	@category java
+	@class
+	@description 文档服务器对象
+		文档服务器对象，每个对象对应一个真实的文档服务器的配置信息
+*/
+
+/**
+	@name com.justep.doc.DocServerDefine#getsID
+	@function
+	@description 获取文档服务id
+	@returns {String}
+*/
+
+/**
+	@name com.justep.doc.DocServerDefine#setsID
+	@function
+	@description 设置文档服务id
+	@returns {void}
+*/
+
+/**
+	@name com.justep.doc.DocServerDefine#getsDisplayName
+	@function
+	@description 获取文档服务显示名
+	@returns {String}
+*/
+
+/**
+	@name com.justep.doc.DocServerDefine#setsDisplayName
+	@function
+	@description 设置文档服务显示名
+	@returns {void}
+*/
+
+/**
+	@name com.justep.doc.DocServerDefine#getsRootDocId
+	@function
+	@description 获取文档服务对应的知识中心根文件夹的id
+	@returns {String}
+*/
+
+/**
+	@name com.justep.doc.DocServerDefine#getsHost
+	@function
+	@description 获取文档服务地址
+	@returns {String}
+*/
+
+/**
+	@name com.justep.doc.DocServerDefine#setsHost
+	
+	@function
+	@description 设置文档服务地址
+	@returns {void}
+*/
+
+/**
+	@name com.justep.doc.DocServerDefine#getsPort
+	
+	@function
+	@description 获取文档服务端口
+	@returns {String}
+*/
+
+/**
+	@name com.justep.doc.DocServerDefine#setsPort
+	
+	@function
+	@description 设置文档服务端口
+	@returns {void}
+*/
+
+/**
+	@name com.justep.doc.DocServerDefine#getsAccessMode
+	
+	@function
+	@description 获取文档服务访问模式
+	@returns {String}
+*/
+
+/**
+	@name com.justep.doc.DocServerDefine#setsAccessMode
+	
+	@function
+	@description 设置文档服务访问模式
+	@returns {void}
+*/
+
+/**
+	@name com.justep.doc.DocServerDefine#getDefines
+	
+	@function
+	@description 获取文档服务容器类对象
+	@returns {DocServerDefines}
+*/

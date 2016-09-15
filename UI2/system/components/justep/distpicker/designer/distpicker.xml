@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/distpicker/provinceSelect" tag-name="select" icon="select.gif" text="省、直辖市选择" 
+		binding-component="$UI/system/components/justep/distpicker/provinceSelect" 
+		component-type="formControl"
+		design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" text="引用" editor-ref="dataRef" />	
+			<property name="optionsCaption" text="默认提示信息" default-value="—— 省 ——"/>
+			
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "form-control"
+					},	 
+					"2size": {
+						label: "尺寸样式",
+						value: "input-lg|input-sm",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		 
+		<toolbar>	
+		</toolbar>
+
+		<events>  <!--组件事件-->		
+			<event name="onChange"  text="值变化后"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+				<select component="$UI/system/components/justep/distpicker/provinceSelect" class="form-control"/> 
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/distpicker/citySelect" tag-name="select" icon="select.gif" text="市、区选择" 
+		binding-component="$UI/system/components/justep/distpicker/citySelect" 
+		component-type="formControl"
+		design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" text="引用" editor-ref="dataRef" />	
+			<property name="bind-provinceRef" text="省、直辖市引用" editor-ref="dataRef" />	
+			<property name="optionsCaption" text="默认提示信息"  default-value="—— 市 ——"/>
+			
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "form-control"
+					},	 
+					"2size": {
+						label: "尺寸样式",
+						value: "input-lg|input-sm",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		 
+		<toolbar>	
+		</toolbar>
+
+		<events>  <!--组件事件-->		
+			<event name="onChange"  text="值变化后"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+				<select component="$UI/system/components/justep/distpicker/citySelect" class="form-control"/> 
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/distpicker/districtSelect" tag-name="select" icon="select.gif" text="县、区选择" 
+		binding-component="$UI/system/components/justep/distpicker/districtSelect" 
+		component-type="formControl"
+		design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" text="引用" editor-ref="dataRef" />	
+			<property name="bind-cityRef" text="市、区引用" editor-ref="dataRef" />	
+			<property name="optionsCaption" text="默认提示信息" default-value="—— 县 ——"/>
+			
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "form-control"
+					},	 
+					"2size": {
+						label: "尺寸样式",
+						value: "input-lg|input-sm",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		 
+		<toolbar>	
+		</toolbar>
+
+		<events>  <!--组件事件-->		
+			<event name="onChange"  text="值变化后"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+				<select component="$UI/system/components/justep/distpicker/districtSelect" class="form-control"/> 
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/distpicker/distpicker" tag-name="select" icon="select.gif" text="省市县选择" 
+		binding-component="$UI/system/components/justep/distpicker/distpicker" 
+		component-type="formControl"
+		design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-provinceRef" text="省引用" editor-ref="dataRef" />	
+			<property name="bind-cityRef" text="市引用" editor-ref="dataRef" />	
+			<property name="bind-districtRef" text="县引用" editor-ref="dataRef" />	
+			
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "排列样式",
+						value: "form-inline",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		 
+		<toolbar>	
+		</toolbar>
+
+		<events>  <!--组件事件-->		
+			<event name="onChange"  text="值变化后"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/distpicker/distpicker" class="form-inline">
+			      <select class="form-control" component="$UI/system/components/justep/distpicker/provinceSelect"/> 
+			      <select class="form-control" component="$UI/system/components/justep/distpicker/citySelect"/>   
+			      <select class="form-control" component="$UI/system/components/justep/distpicker/districtSelect"/>   
+				</div> 
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/distpicker/distpicker2" tag-name="div" icon="popPicker.gif" 
+	    binding-component="$UI/system/components/justep/distpicker/distpicker2"
+	    parent-range="$UI/system/components/justep/window/window" resizable="false"
+		design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" />
+			<property name="opacity" text="透明率" required="false" data-type="float" default-value="0.5"/>  
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-popPicker"
+					},
+					"1base": {
+						label: "扩展样式",
+						value: "x-province-city|x-city-district|x-province-only|x-city-only|x-district-only",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    <div component="$UI/system/components/justep/distpicker/distpicker2" class="x-popPicker"> 
+		      <div class="x-popPicker-overlay"/>  
+		      <div class="x-popPicker-content"> 
+		        <div class="x-poppicker-header"> 
+		          <button class="btn btn-default x-btn-ok">确定 </button>
+		        </div>  
+		      </div> 
+		    </div>
+		   ]]></template>
+		</templates>
+		<events>
+            <event name="onShow" text="显示"/>
+            <event name="onHide" text="隐藏"/>       
+            <event name="onOK" text="点击确定"/>       
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+        </events>
+		<toolbar>			
+		</toolbar>
+	</element>	
+			
+</elements>

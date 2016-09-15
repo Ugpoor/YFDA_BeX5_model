@@ -1,0 +1,106 @@
+/**
+	@name $UI/system/components/justep/textarea/textarea
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description Textarea
+*/
+
+/**
+	@name $UI/system/components/justep/textarea/textarea#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/textarea/textarea#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: form-control(必须)
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/textarea/textarea#bind-ref
+	@attribute 
+	@type string
+	@description 数据感知的绑定表达式
+*/
+
+/**
+	@name $UI/system/components/justep/textarea/textarea#disabled
+	@attribute
+	@property 
+	@type boolean
+	@description 禁用
+*/
+
+/**
+	@name $UI/system/components/justep/textarea/textarea#placeHolder
+	@attribute
+	@property 
+	@type string
+	@description 提示信息，html5特性
+*/
+
+/**
+	@name $UI/system/components/justep/textarea/textarea#valueUpdateMode
+	@attribute
+	@property 
+	@type string
+	@description 数据更新模式，目前支持input/keyup/keypress，注意：此属性在组件创建后修改无效
+*/
+
+/**
+	@name $UI/system/components/justep/textarea/textarea#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : {boolean} 禁用，
+		"placeHolder: {string} 提示信息，html5特性
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/textarea/textarea#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"、"placeHolder"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/textarea/textarea#val
+	@function
+	@description 给Textarea赋值或者取值
+*/
+
+/**
+	@name $UI/system/components/justep/textarea/textarea#clear
+	@function
+	@description 清空Textarea数据
+*/
+
+/**
+	@name $UI/system/components/justep/textarea/textarea#onChange
+	@event
+	@description <b>[回调型事件]</b>数据修改触发事件
+	@param {$UI/system/components/justep/common/event#ChangeEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"value" : 值,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/

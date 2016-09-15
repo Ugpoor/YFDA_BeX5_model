@@ -1,0 +1,11 @@
+.x-shell > img{
+	width:24px;
+	height:24px;
+	background: transparent url(../img/shell.png);
+}
+
+.x-shellImpl > img{
+	width:24px;
+	height:24px;
+	background: transparent url(../img/shellimpl.png);
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" component="$model/UI2/system/components/justep/window/window" xid="window" extends="$UI/demo/plugin/template/demo.w" __id="id_1" design="device:m;" class="window window cymmm6v" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cymmm6v" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/buttonGroup,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style>null</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onModelConstructDone:modelModelConstructDone" __cid="cymmm6v" class="cymmm6v"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p33a851fdfa644151b9de4adafe92ea35-iosstatusbar cymmm6v" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cymmm6v"> 
+    <div class="x-panel-top cymmm6v" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cymmm6v"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cymmm6v" xid="titleBar" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;insomnia&quot;}" __cid="cymmm6v"> 
+        <div class="x-titlebar-left cymmm6v" __cid="cymmm6v"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cymmm6v" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;}" __cid="cymmm6v"> 
+            <i xid="i6" class="icon-chevron-left cymmm6v" __cid="cymmm6v"/>  
+            <span xid="span6" __cid="cymmm6v" class="cymmm6v"/>
+          </a>
+        </div>  
+        <div class="x-titlebar-title cymmm6v" __cid="cymmm6v">插件的名字</div>  
+        <div class="x-titlebar-right  cymmm6v" __cid="cymmm6v">
+          <div class="empty cymmm6v" __cid="cymmm6v"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cymmm6v" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cymmm6v">
+      <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cymmm6v" xid="contents1" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0}" __cid="cymmm6v"> 
+        <div class="x-contents-content active cymmm6v" xid="infoContent" style="padding:10px;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cymmm6v">
+          <h3 xid="h31" style="text-align:center;" __cid="cymmm6v" class="cymmm6v">插件概述</h3>
+          <h4 xid="h41" __cid="cymmm6v" class="cymmm6v">介绍：</h4>
+          <p xid="p1" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cymmm6v" class="cymmm6v">ID：cordova-plugin-insomnia</p>
+          <p xid="introduceP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cymmm6v" class="cymmm6v">息屏插件，控制屏幕常亮或者自动息屏。设置常亮仅在应用前台运行时生效，一旦应用进入后台或者被关掉则不再生效。</p>
+          <div xid="div4" style="height:30px;" __cid="cymmm6v" class="cymmm6v"/>  
+          <h4 xid="h42" __cid="cymmm6v" class="cymmm6v">适用平台：</h4>  
+          <p xid="platformP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cymmm6v" class="cymmm6v">iOS，Android</p> 
+        </div>  
+        <div class="x-contents-content cymmm6v" xid="demoContent" style="padding:10px;width:100%;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cymmm6v">
+          <div xid="div2" style="height:15px;" __cid="cymmm6v" class="cymmm6v"/>
+          <div xid="div3" __cid="cymmm6v" class="cymmm6v">
+            <p xid="accountP" style="text-align:center;" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cymmm6v" class="cymmm6v">保持屏幕常亮接口</p>
+          </div>  
+          <div style="padding:0px 40px 40px 40px;" xid="div1_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cymmm6v" class="cymmm6v"> 
+            <a class="btn btn-default cymmm6v" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button1_3" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:button1_3Click" data-config="{&quot;label&quot;:&quot;保持常亮&quot;}" __cid="cymmm6v"> 
+              <i xid="i1_3" __cid="cymmm6v" class="cymmm6v"/>  
+              <span xid="span1_3" __cid="cymmm6v" class="cymmm6v">保持常亮</span> 
+            </a> 
+          </div>
+          <div style="height:30px;" xid="div3_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cymmm6v" class="cymmm6v"/>
+          <div xid="div2_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cymmm6v" class="cymmm6v"> 
+            <p style="text-align:center;" xid="p1_4" __cid="cymmm6v" class="cymmm6v">允许自动息屏</p> 
+          </div>
+          <div style="padding:0px 40px 40px 40px;" xid="div4_4" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cymmm6v" class="cymmm6v"> 
+            <a class="btn btn-default cymmm6v" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button2_4" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:button2_4Click" data-config="{&quot;label&quot;:&quot;允许息屏&quot;}" __cid="cymmm6v"> 
+              <i xid="i2_4" __cid="cymmm6v" class="cymmm6v"/>  
+              <span xid="span2_4" __cid="cymmm6v" class="cymmm6v">允许息屏</span> 
+            </a> 
+          </div>
+        </div>  
+        <div class="x-contents-content cymmm6v" xid="codeContent" style="padding:10px" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cymmm6v">
+          <p xid="p2_4" xui:parent="codeContent" xui:update-mode="insert" __cid="cymmm6v" class="cymmm6v">保持常亮</p>
+          <div xid="button1_3Click" xui:parent="codeContent" xui:update-mode="insert" __cid="cymmm6v" class="cymmm6v"/>
+          <p xid="p3_4" xui:parent="codeContent" xui:update-mode="insert" __cid="cymmm6v" class="cymmm6v">允许息屏</p>
+          <div xid="button2_4Click" xui:parent="codeContent" xui:update-mode="insert" __cid="cymmm6v" class="cymmm6v"/>
+        </div>
+      </div>
+    </div>  
+    <div class="x-panel-bottom cymmm6v" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cymmm6v">
+      <div component="$model/UI2/system/components/justep/button/buttonGroup" class="btn-group btn-group-justified x-card  cymmm6v" xid="buttonGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/button/buttonGroup'}" data-config="{&quot;tabbed&quot;:true}" __cid="cymmm6v">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cymmm6v" xid="info" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;info&quot;,&quot;target&quot;:&quot;infoContent&quot;}" __cid="cymmm6v"> 
+          <i xid="i1" __cid="cymmm6v" class="cymmm6v"/>  
+          <span xid="span1" __cid="cymmm6v" class="cymmm6v">info</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cymmm6v" xid="demo" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;demo&quot;,&quot;target&quot;:&quot;demoContent&quot;}" __cid="cymmm6v"> 
+          <i xid="i2" __cid="cymmm6v" class="cymmm6v"/>  
+          <span xid="span2" __cid="cymmm6v" class="cymmm6v">demo</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cymmm6v" xid="code" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;code&quot;,&quot;target&quot;:&quot;codeContent&quot;}" __cid="cymmm6v"> 
+          <i xid="i3" __cid="cymmm6v" class="cymmm6v"/>  
+          <span xid="span3" __cid="cymmm6v" class="cymmm6v">code</span>
+        </a>
+      </div>
+    </div>
+    <style __cid="cymmm6v" class="cymmm6v">.x-panel.p33a851fdfa644151b9de4adafe92ea35-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.p33a851fdfa644151b9de4adafe92ea35-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.p33a851fdfa644151b9de4adafe92ea35-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p33a851fdfa644151b9de4adafe92ea35-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p33a851fdfa644151b9de4adafe92ea35-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.p33a851fdfa644151b9de4adafe92ea35-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p33a851fdfa644151b9de4adafe92ea35-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p33a851fdfa644151b9de4adafe92ea35-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p33a851fdfa644151b9de4adafe92ea35-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div>  
+</div>

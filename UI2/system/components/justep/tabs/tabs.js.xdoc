@@ -1,0 +1,95 @@
+/**
+	@name $UI/system/components/justep/tabs/tabs
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@extendurl 
+	@description 页签
+	@model UI2
+*/	
+
+/**
+	@name $UI/system/components/justep/tabs/tabs#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+@name $UI/system/components/justep/tabs/tabs#BeforeSelectEvent
+@extends $UI/system/components/justep/common/event#BeforeEvent
+@category eventclass
+@class
+@model UI2
+@description 当切换tab前触发
+*/
+ 
+/**
+ @name $UI/system/components/justep/tabs/tabs#BeforeSelectEvent.tab
+ @property
+ @type {object}
+ @description tab的jquery对象
+*/ 
+
+/**
+	@name $UI/system/components/justep/tabs/tabs#onBeforeSelect
+	@event
+	@description <b>[回调型事件]</b>当切换tab前触发
+	@param {$UI/system/components/justep/tabs/tabs#BeforeSelectEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"tab" : tab的jquery对象,
+		"cancel" : 取消切换， 默认为false
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/tabs/tabs#SelectEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 当切换tab前触发
+*/
+ 
+/**
+ @name $UI/system/components/justep/tabs/tabs#SelectEvent.tab
+ @property
+ @type {object}
+ @description tab的jquery对象
+*/ 
+
+/**
+	@name $UI/system/components/justep/tabs/tabs#onSelect
+	@event
+	@description <b>[回调型事件]</b>当切换tab完触发
+	@param {$UI/system/components/justep/tabs/tabs#SelectEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"tab" : tab的jquery对象
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/tabs/tabs#setActiveTab
+	@function
+	@description 激活页签
+	@param {Object} 目标页签的xid或者dom节点
+*/
+
+/**
+ @name $UI/system/components/justep/tabs/tabs#setActiveTab
+ @operation
+ @see Tabs#setActiveTab
+ @param {String} tab的xid
+ @description 切换到指定的tab
+ @returns {void}
+*/
+

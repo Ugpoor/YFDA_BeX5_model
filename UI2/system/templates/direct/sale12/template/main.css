@@ -1,0 +1,8 @@
+.o-navList ul li{ padding:10px; background-color: #25282d; color: #fff; border-right:#fff solid 1px; border-bottom:#fff solid 1px;}
+.o-navList ul li i{ font-size:22px;}
+.o-navList ul li h5{ color:#fff;}
+
+/*图片轮换*/
+.x-carousel .x-contents>.x-contents-content { overflow: hidden;}
+.x-carousel .x-contents>.x-contents-content>img { position: relative; margin-left: -160px; left: 50%; width: 320px;}
+

@@ -1,0 +1,310 @@
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description WindowContainer
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#component
+	@attribute
+	@required
+	@description 组织标识
+	@type String
+	@default $UI/system/components/justep/windowContainer/windowContainer
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#xid
+	@attribute
+	@description xid标识
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#params
+	@attribute
+	@description 参数
+	@type json
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#src
+	@property
+	@attribute
+	@description window文件路径
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#process
+	@property
+	@attribute
+	@description 打开window文件时的process
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#activity
+	@property
+	@attribute
+	@description 打开window文件时的activity
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#autoLoad
+	@property
+	@attribute
+	@description 是否自动加载
+	@type boolean
+*/
+
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#setSrc
+	@function
+	@description 设置window路径 
+	@param {String} v
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#setProcess
+	@function
+	@description 设置process 
+	@param {String} v
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#setActivity
+	@function
+	@description 设置activity
+	@param {String} v
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"src" : window路径,
+		"process" : 流程全路径,
+		"activity": 环节
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："src"、"process"、"activity"
+	@return {Object} 
+*/
+
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#refresh
+	@function
+	@description 强制重新加载window页面
+	@param {String} url
+	@param {Object} params
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#load
+	@function
+	@description 加载window页面, 如果url没有变化, 只触参数修改事件
+	@param {String} url
+	@param {Object} params
+	@returns {void}
+*/
+
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#setParams
+	@function
+	@description 设置参数
+	@param {Object} params
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#getInnerModel
+	@function
+	@description 获取子页面的VM, 即子页面对应的js文件定义的类的实例
+	@returns {ModelBase}
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#onBeforeLoad
+	@event
+	@description 子页面加载前事件
+	@param {$UI/system/components/justep/windowContainer/windowContainer#BeforeLoadEvent} event 它的结构如下:
+<xmp>
+	{
+		"source": this, //组件自身
+		"src": src, //页面url
+		"params": params, //页面参数
+		"cancel": false //是否取消后续操作
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#BeforeLoadEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 子页面加载前事件类
+	@see $UI/system/components/justep/windowContainer/windowContainer#onBeforeLoad
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#BeforeLoadEvent#source
+	@property 
+	@description WindowContainer组件js对象
+	@type $UI/system/components/justep/windowContainer/windowContainer
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#BeforeLoadEvent#src
+	@property 
+	@description 页面url
+	@type String
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#BeforeLoadEvent#data
+	@property 
+	@description 页面参数对象
+	@type Object
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#BeforeLoadEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#onLoad
+	@event
+	@description 子页面加载完成事件
+	@param {$UI/system/components/justep/windowContainer/windowContainer#LoadEvent} event 它的结构如下:
+<xmp>
+	{
+		"source": this //组件自身
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#LoadEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 子页面加载完成事件类
+	@see $UI/system/components/justep/windowContainer/windowContainer#onLoad
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#LoadEvent#source
+	@property 
+	@description WindowContainer组件js对象
+	@type $UI/system/components/justep/windowContainer/windowContainer
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#onReceive
+	@event
+	@description 接收子页面返回数据的事件
+	@param {$UI/system/components/justep/windowContainer/windowContainer#ReceiveEvent} event 它的结构如下:
+<xmp>
+	{
+		"source": this, //组件自身
+		"data": data
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#ReceiveEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 接收子页面返回数据的事件
+	@see $UI/system/components/justep/windowContainer/windowContainer#onReceive
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#ReceiveEvent#source
+	@property 
+	@description WindowContainer组件js对象
+	@type $UI/system/components/justep/windowContainer/windowContainer
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#ReceiveEvent#data
+	@property 
+	@description 返回的数据
+	@type Object
+*/
+
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#onLoadError
+	@event
+	@description 子页面加载出错事件
+	@param {$UI/system/components/justep/windowContainer/windowContainer#LoadErrorEvent} event 它的结构如下:
+<xmp>
+	{
+		"source": this, //组件自身
+		"err": err //错误对象
+		"cancel": false //是否取消后续处理
+	}
+</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#LoadErrorEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 子页面加载出错事件类
+	@see $UI/system/components/justep/windowContainer/windowContainer#onLoadError
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#LoadErrorEvent#source
+	@property 
+	@description WindowContainer组件js对象
+	@type $UI/system/components/justep/windowContainer/windowContainer
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#LoadErrorEvent#cancel
+	@property 
+	@description 是否取消后续操作
+	@default false
+	@type Boolean
+*/
+
+/**
+	@name $UI/system/components/justep/windowContainer/windowContainer#LoadErrorEvent#err
+	@property 
+	@description 错误对象
+	@type Error
+*/
+
+

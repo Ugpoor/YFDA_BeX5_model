@@ -1,0 +1,216 @@
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description MessageDialog
+*/
+
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#title
+	@attribute
+	@property 
+	@type string
+	@description 标题
+*/
+
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#message
+	@attribute
+	@property 
+	@type string
+	@description 提示信息,支持html格式
+*/
+
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#inputValue
+	@attribute
+	@property 
+	@type string
+	@description type==Prompt时input的值
+*/
+
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#type
+	@attribute
+	@property 
+	@type string
+	@description 类型，取值范围：OK,OKCancel,YesNo,YesNoCancel,Prompt
+*/
+
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#width
+	@attribute
+	@property 
+	@type string
+	@description 对话框宽度，高根据内容自动，默认值：270px
+*/
+
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#show
+	@function
+	@description 显示messageDialog
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+			type: {string} 类型，取值范围：OK,OKCancel,YesNo,YesNoCancel,Prompt
+			title: {string} 标题
+			message: {string} 提示信息
+			width: {string} 对话框宽度，高根据内容自动，默认值：270px
+			callback: {function} 关闭后的回调,可参考onClose事件,回调执行this为组件，参数param包含button: 触发关闭的按钮type，取值范围：'ok'、'cancel'、'yes'、'no'	；input: 当type=='Prompt'时返回输入的值 
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+			type: {string} 类型，取值范围：OK,OKCancel,YesNo,YesNoCancel,Prompt
+			title: {string} 标题
+			message: {string} 提示信息
+			inputValue: {string} type==Prompt时input的值
+			width: {string} 对话框宽度，高根据内容自动，默认值：270px
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："type"、"title"、"message"、"inputValue"
+	@return {Object} 
+*/
+
+/**
+@name $UI/system/components/justep/messageDialog/messageDialog#CloseEvent
+@extends $UI/system/components/justep/messageDialog/messageDialog#ButtonClickEvent
+@category eventclass
+@class
+@model UI2
+@description 关闭对话框事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/messageDialog/messageDialog#CloseEvent.input
+ @property
+ @type {string}
+ @description 当type=='Prompt'时返回输入的值
+*/ 
+
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#onClose
+	@event
+	@description <b>[回调型事件]</b>关闭对话框时触发事件
+	@param {$UI/system/components/justep/messageDialog/messageDialog#CloseEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象，
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明，
+		"button" : 触发关闭的按钮type，取值范围：'ok'、'cancel'、'yes'、'no'
+		"input" : 当type=='Prompt'时返回输入的值 
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/messageDialog/messageDialog#OKClickEvent
+@extends $UI/system/components/justep/messageDialog/messageDialog#CloseEvent
+@category eventclass
+@class
+@model UI2
+@description 点击OK按钮，关闭对话框时触发事件参数
+*/
+ 
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#onOK
+	@event
+	@description <b>[回调型事件]</b>点击OK按钮，关闭对话框时触发事件
+	@param {$UI/system/components/justep/messageDialog/messageDialog#OKClickEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象，
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明，
+		"button" : 触发关闭的按钮type=='ok'
+		"input" : 当type=='Prompt'时返回输入的值 
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/messageDialog/messageDialog#ButtonClickEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 值变化事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/messageDialog/messageDialog#ButtonClickEvent.button
+ @property
+ @type {string}
+ @description 触发关闭的按钮type，取值范围：'ok'、'cancel'、'yes'、'no'
+*/ 
+
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#onCancel
+	@event
+	@description <b>[回调型事件]</b>点击Cancel按钮，关闭对话框时触发事件
+	@param {$UI/system/components/justep/messageDialog/messageDialog#ButtonClickEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象，
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明，
+		"button" : 触发关闭的按钮type=='cancel'
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#onYes
+	@event
+	@description <b>[回调型事件]</b>点击Yes按钮，关闭对话框时触发事件
+	@param {$UI/system/components/justep/messageDialog/messageDialog#ButtonClickEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象，
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明，
+		"button" : 触发关闭的按钮type=='yes'
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/messageDialog/messageDialog#onNo
+	@event
+	@description <b>[回调型事件]</b>点击Yes按钮，关闭对话框时触发事件
+	@param {$UI/system/components/justep/messageDialog/messageDialog#ButtonClickEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象，
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明，
+		"button" : 触发关闭的按钮type=='no'
+	}
+	</xmp>	
+*/
+

@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Created>2006-09-13T11:21:51Z</Created>
+  <LastSaved>2015-10-19T03:28:26Z</LastSaved>
+  <Version>14.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+  <RemovePersonalInformation/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>5565</WindowHeight>
+  <WindowWidth>15300</WindowWidth>
+  <WindowTopX>0</WindowTopX>
+  <WindowTopY>0</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="宋体" x:CharSet="134" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+   <Alignment ss:Vertical="Top"/>
+   <Font ss:FontName="宋体" x:CharSet="134"/>
+  </Style>
+  <Style ss:ID="s64">
+   <Alignment ss:Vertical="Center"/>
+   <Font ss:FontName="宋体" x:CharSet="134"/>
+  </Style>
+  <Style ss:ID="s65">
+   <Alignment ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#7F7F7F"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#7F7F7F"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#7F7F7F"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#7F7F7F"/>
+   </Borders>
+   <Font ss:FontName="宋体" x:CharSet="134" ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s66">
+   <Alignment ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#7F7F7F"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#7F7F7F"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#7F7F7F"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#7F7F7F"/>
+   </Borders>
+   <Font ss:FontName="宋体" x:CharSet="134"/>
+  </Style>
+  <Style ss:ID="s67">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Font ss:FontName="宋体" x:CharSet="134"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="4" ss:ExpandedRowCount="39" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="54" ss:DefaultRowHeight="13.5">
+   <Column ss:AutoFitWidth="0" ss:Width="19.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="115.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="784.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="53.25"/>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:MergeAcross="1" ss:StyleID="s67"><Data ss:Type="String">数据组件提供了数据的新增、删除、保存、加载、修改等基本操作，同时也为这些操作提供了丰富的事件扩展接口。</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:MergeAcross="1" ss:StyleID="s67"><Data ss:Type="String">虽然bizData组件和data组件的事件有所差别，但因为开发中最多用到的是bizData的事件，所以这里的介绍以bizData组件的事件为主。</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s64"/>
+    <Cell ss:StyleID="s64"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">数据新增事件</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">数据新增相关事件是由newData方法在执行过程中派发的</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onBeforeNew</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">数据新增前事件，可以通过设置event.cancel=true中断当前新增操作</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onAfterNew</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">数据新增后事件</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onNewError</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">数据新增失败后事件，可以用于自定义错误信息的处理</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onNewCreateParam</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">构造createAction参数的回调事件，可以用于为createAction的自定义扩展参数赋值</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onCustomNew</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">自定义新增，用于完全接管data组件的新增操作</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"/>
+    <Cell ss:StyleID="s66"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">数据删除事件</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">数据删除相关事件是由deleteData方法在执行过程中派发的，数据删除操作分为立即删除和非立即删除两种模式（direct-delete）</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onBeforeDelete</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">数据删除前事件，可以通过设置event.cancel=true中断当前删除操作</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onAfterDelete</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">数据删除后事件</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onDeleteError</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">直接删除数据失败后事件，可以用于自定义错误信息的处理</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onCustomDelete</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">自定义删除，用于完全接管data组件的删除操作</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"/>
+    <Cell ss:StyleID="s66"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">数据保存事件</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">数据保存相关事件是由saveData方法在执行过程中派发的，由于数据组件之间存在级联关系，并且保存需要严格的事务保证，所以整个保存过程都被包在一个批请求中</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onBeforeSave</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">（批请求中）保存前事件，可以通过设置event.cancel=true中断当前保存操作</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onAfterSave</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">（批请求中）数据保存后事件</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onSaveCreateParam</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">（批请求中）构造saveAction参数的回调事件，可以用于为saveAction的自定义扩展参数赋值</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onCustomSave</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">（批请求中）自定义保存，用于完全接管data组件的保存操作</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onSaveCommit</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">（批请求已结束）数据提交后事件</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onSaveError</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">（批请求已结束）数据保存失败后事件，可以用于自定义错误信息的处理</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"/>
+    <Cell ss:StyleID="s66"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">数据加载事件</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">数据加载相关事件是由refreshData、refreshPageData、loadTreeData等方法在执行过程中派发的</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onBeforeRefresh</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">数据刷新前事件，可以通过设置event.cancel=true中断当前刷新操作</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onAfterRefresh</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">数据刷新后事件</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onCustomRefresh</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">自定义刷新，用于完全接管data组件的刷新操作</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onRefreshCreateParam</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">构造queryAction参数的回调事件，可以用于为queryAction的自定义扩展参数赋值</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onRefreshError</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">数据刷新失败后事件，可以用于自定义错误信息的处理</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onLoadSlave</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">子表数据加载后事件，可以用于子表数据加载后的再加工</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"/>
+    <Cell ss:StyleID="s66"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">数据改变事件</Data></Cell>
+    <Cell ss:StyleID="s66"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onIndexChanging</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">数据行改变中事件，在事件参数中可以获取到改变前后的event.rowID和event.originalRowID</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onIndexChanged</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">数据行改变后事件，在事件参数中只能获取到改变后的event.rowID</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onValueChanging</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">数据值改变中事件，在事件参数中可以获取到event.rowID、event.column和改变前后的event.value、eventOriginalValue，并且可以通过event.value加工改变后的值</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onValueChanged</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">数据值改变后事件，在事件参数中可以获取到event.rowID、event.column和event.value</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">onDataChanged</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">数据变化事件，包含新增、删除、刷新、修改引起的变化，可以用于在一个事件中统一感知数据的变化</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>200</HorizontalResolution>
+    <VerticalResolution>200</VerticalResolution>
+   </Print>
+   <Selected/>
+   <TopRowVisible>24</TopRowVisible>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>28</ActiveRow>
+     <ActiveCol>1</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet2">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="54" ss:DefaultRowHeight="13.5">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>200</HorizontalResolution>
+    <VerticalResolution>200</VerticalResolution>
+   </Print>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet3">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="54" ss:DefaultRowHeight="13.5">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>200</HorizontalResolution>
+    <VerticalResolution>200</VerticalResolution>
+   </Print>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

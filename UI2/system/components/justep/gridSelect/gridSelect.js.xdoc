@@ -1,0 +1,314 @@
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description GridSelect
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-gridSelect(必须),
+		尺寸样式: x-gridSelect-lg、x-gridSelect-sm
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#disabled
+	@attribute 
+	@type boolean
+	@description 禁用
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#bind-ref
+	@attribute 
+	@type string
+	@description 引用
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#bind-labelRef
+	@attribute 
+	@type string
+	@description 显示名引用
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#bind-extRef
+	@attribute 
+	@type string
+	@description 扩展引用
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#defaultLabel
+	@attribute 
+	@type string
+	@description 空值显示表达式，当空值时，用此表达式计算结果显示
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#valueSeparator
+	@attribute 
+	@type string
+	@description 多选值分隔符，缺省：,
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#labelSeparator
+	@attribute 
+	@type string
+	@description 多选label值分隔符，缺省：,
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#extSeparator
+	@attribute 
+	@type string
+	@description 多选ext值分隔符，缺省：,
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#multiselect
+	@attribute 
+	@type boolean
+	@description 多选
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#inputChangeable
+	@attribute 
+	@type boolean
+	@description 允许在直接在input框中输入改变值，和inputFilterable互斥
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#inputFilterable
+	@attribute 
+	@type boolean
+	@description 允许在直接在input框中输入值过滤选择数据，和inputChangeable互斥
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#clearButton
+	@attribute 
+	@type boolean
+	@description 增加清除数据的按钮
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#selectFilter
+	@attribute 
+	@type string
+	@description 选中过滤表达式,此属性需要在创建时给出，组件创建后修改无效
+	<xmp>
+	表达式执行的this是行，即$row
+	当前表达式中可使用变量: 
+		"$model" : 当前的model,
+		"$row" : {$UI/system/components/justep/data/data#Row} 当前过滤执行的行
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#optionHeight
+	@attribute 
+	@type integer
+	@description 下拉部分最大高度
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#autoOptionWidth
+	@attribute 
+	@type boolean
+	@description 下拉部分宽度根据内容自适应，否则使用组件宽度，缺省：false
+*/
+
+/**
+@name $UI/system/components/justep/gridSelect/gridSelect#options
+@extends $UI/system/components/justep/grid/grid
+@class
+@model UI2
+@category javascript
+@description gridSelect的options
+*/ 
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#options#value
+	@attribute 
+	@type string
+	@description 与bind-ref对应的列
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#options#label
+	@attribute 
+	@type string
+	@description 与bind-labelRef对应的列
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#options#ext
+	@attribute 
+	@type string
+	@description 与bind-extRef对应的列
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#options#autoLoad
+	@attribute 
+	@type boolean
+	@description 自动加载options数据
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#option
+	@attribute 
+	@type $UI/system/components/justep/gridSelect/gridSelect#options
+	@description 下拉部分定义，同Grid组件定义
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#data
+	@attribute 
+	@type string
+	@description 关联的data组件xid
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#showOption
+	@function
+	@description 显示下拉部分
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#hideOption
+	@function
+	@description 隐藏下拉部分
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : {boolean} 禁用，
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#onShowOption
+	@event
+	@description <b>[回调型事件]</b>值修改事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#onHideOption
+	@event
+	@description <b>[回调型事件]</b>值修改事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#onTreeIconRender
+	@event
+	@description <b>[回调型事件]</b>树形图标渲染
+	@param {$UI/system/components/justep/grid/grid#TreeIconRenderEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"rowID" : 行ID
+		"row" : 行
+		"html" : 输出显示的html，通过修改html影响展现
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#onUpdateValue
+	@event
+	@description <b>[回调型事件]</b>值修改事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/gridSelect/gridSelect#OptionFilterEvent
+@extends $UI/system/components/justep/dataTables/dataTables#FilterEvent
+@category eventclass
+@class
+@model UI2
+@description option过滤
+*/
+
+/**
+ @name $UI/system/components/justep/gridSelect/gridSelect#OptionFilterEvent.inputFilterValue
+ @property
+ @type {string}
+ @description input输入的过滤值
+*/ 
+
+/**
+	@name $UI/system/components/justep/gridSelect/gridSelect#onOptionFilter
+	@event
+	@description <b>[回调型事件]</b>下拉数据过滤，可以实现排序、过滤等逻辑
+	@param {$UI/system/components/justep/gridSelect/gridSelect#OptionFilterEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"datas": 数据行数组,
+		"inputFilterValue"： input输入的过滤值
+	}
+	</xmp>	
+*/
+

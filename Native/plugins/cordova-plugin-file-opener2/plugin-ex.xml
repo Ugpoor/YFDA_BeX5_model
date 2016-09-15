@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-file-opener2">
+	<name>文件打开插件</name>
+	<description>在app中使用默认打开方式打开本地文件</description>
+	
+</plugin>

@@ -1,0 +1,48 @@
+/*未确认日程里面的css*/
+.confirm-row{
+	padding-top:10px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.btn-link-pink {
+  color: pink;
+  border-color: pink;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.btn-link-blue {
+  color: skyblue;
+  border-color: skyblue;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+/*日程组件的样式*/
+.cal-day-today {
+	background-color: #2fa4e7;
+}
+
+.cal-month-day {
+  	height: 30px !important;
+}
+
+.cal-month-box [class*="cal-cell"] {
+  	min-height: 30px !important;
+}
+
+span[data-cal-date] {
+  	margin-top: 0px !important;
+}
+
+.cal-month-box .cal-day-today span[data-cal-date] {
+	font-size: 1.2em;
+}
+
+.event{
+	width:5px;
+	height:5px;
+}

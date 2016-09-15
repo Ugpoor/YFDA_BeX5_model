@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-actionsheet">
+	<name>选项列表</name>
+	<description>本地选项卡插件，用来展示一组本地选项列表</description>
+	
+</plugin>

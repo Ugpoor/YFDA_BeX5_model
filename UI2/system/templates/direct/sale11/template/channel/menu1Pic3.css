@@ -1,0 +1,7 @@
+.o-img{ width:100%; height:71px;}
+
+.x-list ul{padding:0 5px;}
+.x-list ul li{ margin-bottom:10px; padding:0;}
+.x-list ul li>div{ width:90%; margin:0 auto; background-color:#fff;}
+.x-list ul li>div span{ display:inline-block; height:28px; padding:5px; overflow:hidden;}
+

@@ -1,0 +1,14 @@
+.x-chart-frame {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  width: 1px;
+  height: 1px;
+}
+.x-chart {
+  width: 100%;
+  height: 375px;
+}
+.x-chart .x-chart-content * {
+  box-sizing: content-box;
+}

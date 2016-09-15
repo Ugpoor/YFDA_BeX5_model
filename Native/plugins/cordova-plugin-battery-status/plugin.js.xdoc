@@ -1,0 +1,50 @@
+/**
+	@name org.apache.cordova.battery-status
+	@class 
+ 	@description 电池(事件)插件
+ 	@model Native
+ 	@category plugin
+ 	@declareVar navigator.battery
+*/
+
+/**
+	@name org.apache.cordova.battery-status.batterystatus
+	@event
+	@description 电池状态的百分比变化大于1%触发
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"level" : 电池电量的百分比（0-100）,
+		"isPlugged" : 指示设备是否插入
+	}
+	</xmp>	
+*/
+
+/**
+	@name org.apache.cordova.battery-status.batterycritical
+	@event
+	@description 电池电量的百分比到达临界电量阈值，临界电量阈值因设备不同有所差异
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"level" : 电池电量的百分比（0-100）,
+		"isPlugged" : 指示设备是否插入
+	}
+	</xmp>	
+*/
+
+/**
+	@name org.apache.cordova.battery-status.batterylow
+	@event
+	@description 电池低电量状态时触发
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"level" : 电池电量的百分比（0-100）,
+		"isPlugged" : 指示设备是否插入
+	}
+	</xmp>	
+*/

@@ -1,0 +1,10 @@
+.x-grid tr.x-grid-designer-editors {
+	border-bottom: 1px solid #dddddd;
+}
+tr.x-grid-designer-editors td.x-grid-editing *{
+	box-sizing:border-box;
+}
+
+.x-grid tr.x-grid-designer-editors td.x-grid-editing textarea.form-control{
+	width:100%;
+}

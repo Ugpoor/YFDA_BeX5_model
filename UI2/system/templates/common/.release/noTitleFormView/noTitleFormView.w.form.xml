@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" __id="id_1" extends="$UI/system/templates/common/formView.w" component="$model/UI2/system/components/justep/window/window" class="window window window cnENn6b" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cnENn6b" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/designerCommon/grid/grid,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,">
+  <xhtml:style>@import url($model/UI2/system/components/designerCommon/css/common.css);</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cnENn6b" class="cnENn6b"></div>  
+  <div class="row form-navbar1 cnENn6b" style="margin-top:12px" __cid="cnENn6b"> 
+    <label for="text1" class="control-label col-xs-2 cnENn6b" style="padding-top:10px;margin-left:15px" xid="control" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cnENn6b">详细页配置：</label>  
+    <div class="col-xs-4 cnENn6b" xid="col1" style="display:none" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" __cid="cnENn6b"> 
+      <input component="$model/UI2/system/components/justep/input/input" class="form-control cnENn6b" xid="titleInput" placeholder="请输入标题" style="display:none" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-events="onChange:input1Change" __cid="cnENn6b"/> 
+    </div> 
+  </div>  
+  <div class="row form-navbar2 cnENn6b" __cid="cnENn6b"> 
+    <ul class="nav navbar-nav cnENn6b" style="margin-left:15px" __cid="cnENn6b"> 
+      <li __cid="cnENn6b" class="cnENn6b"> 
+        <a bind-click="addClick" href="#" role="button" __cid="cnENn6b" class="cnENn6b">
+          <i class="glyphicon glyphicon-plus cnENn6b" __cid="cnENn6b"/>添加关系
+        </a> 
+      </li>  
+      <li __cid="cnENn6b" class="cnENn6b"> 
+        <a bind-click="deleteClick" href="#" role="button" __cid="cnENn6b" class="cnENn6b">
+          <i class="glyphicon glyphicon-minus cnENn6b" __cid="cnENn6b"/>删除
+        </a> 
+      </li>  
+      <li __cid="cnENn6b" class="cnENn6b"> 
+        <a bind-click="upClick" href="#" role="button" __cid="cnENn6b" class="cnENn6b">
+          <i class="glyphicon glyphicon-arrow-up cnENn6b" __cid="cnENn6b"/>上移
+        </a> 
+      </li>  
+      <li __cid="cnENn6b" class="cnENn6b"> 
+        <a bind-click="downClick" href="#" role="button" __cid="cnENn6b" class="cnENn6b">
+          <i class="glyphicon glyphicon-arrow-down cnENn6b" __cid="cnENn6b"/>下移
+        </a> 
+      </li> 
+    </ul> 
+  </div>  
+  <div component="$model/UI2/system/components/designerCommon/grid/grid" xid="grid" data="formData" style="visibility:hidden;width:95%;" class="grid-height cnENn6b" editable="true" config="{&quot;altrows&quot;:true,&quot;columns&quot;:[{&quot;columntype&quot;:&quot;textbox&quot;,&quot;dataField&quot;:&quot;name&quot;,&quot;text&quot;:&quot;关系名称&quot;},{&quot;columntype&quot;:&quot;textbox&quot;,&quot;dataField&quot;:&quot;data-type&quot;,&quot;text&quot;:&quot;关系类型&quot;},{&quot;columntype&quot;:&quot;textbox&quot;,&quot;dataField&quot;:&quot;labelName&quot;,&quot;text&quot;:&quot;关系标签&quot;},{&quot;columntype&quot;:&quot;dropdownlist&quot;,&quot;dataField&quot;:&quot;colEditor&quot;,&quot;text&quot;:&quot;编辑器(*)&quot;}],&quot;dataXID&quot;:&quot;formData&quot;,&quot;editable&quot;:true,&quot;enabletooltips&quot;:true,&quot;selectionmode&quot;:&quot;singlerow&quot;}" data-bind="component:{name:'$model/UI2/system/components/designerCommon/grid/grid'}" data-events="onCreateEditor_colEditor:gridColEditor" __cid="cnENn6b"></div>  
+</div>

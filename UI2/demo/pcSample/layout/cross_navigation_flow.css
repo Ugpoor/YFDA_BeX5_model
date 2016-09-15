@@ -1,0 +1,34 @@
+.hr{
+	margin-top: 17px;
+	background-color: #DFDFDF;
+}
+.icon-ios7-circle-filled{
+	font-size: 200%;
+	padding-top: 0;
+}
+.btn-group{
+	overflow: hidden;
+}
+span{
+	color: black;
+}
+.select{
+	color: red;
+	
+}
+label.label1{
+	font-size: 150%
+}
+label{
+	margin-left: 20px;
+}
+.btn1{
+	margin-left: 3px;
+}
+/* .x-contents{
+	overflow-x: hidden;
+	overflow-y: scroll; 
+} */
+.btn-group .btn.active{
+	color: red;
+}

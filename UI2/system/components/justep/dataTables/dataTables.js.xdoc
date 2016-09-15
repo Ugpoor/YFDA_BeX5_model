@@ -1,0 +1,760 @@
+/**
+	@name $UI/system/components/justep/dataTables/dataTables
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@description dataTables组件
+	@model UI2
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		"常用": "table",
+		"紧凑型": "table-condensed",
+		"条纹状": "table-striped",
+		"边框": "table-bordered",
+		"鼠标悬停高亮": "table-hover",
+		"列头对齐方式": "x-dt-title-center,x-dt-title-left,x-dt-title-right,x-dt-title-justify"
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#data
+	@attribute 
+	@type string
+	@description 关联的data组件xid
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#filter
+	@attribute 
+	@type string
+	@description 数据过滤表达式，表达式中可以使用$model,$object,$parent,$row(执行过滤的数据行对象)变量
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#multiSelect
+	@attribute 
+	@type boolean
+	@description 使用checkBox多选，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#ordering
+	@attribute 
+	@type boolean
+	@description 使用排序，默认值：true
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#showRowNumber
+	@attribute 
+	@type boolean
+	@description 显示行号，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#stateSave
+	@attribute 
+	@type boolean
+	@description 保存状态，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#stateDuration
+	@attribute 
+	@type boolean
+	@description 保存状态时长
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#responsive
+	@attribute 
+	@type boolean
+	@description 响应式，flexibleWidth=false时生效，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#flexibleWidth
+	@attribute 
+	@type boolean
+	@description 表格宽自适应父容器，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#disablePullToRefresh
+	@attribute 
+	@type boolean
+	@description 禁止下拉刷新
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#disableInfiniteLoad
+	@attribute 
+	@type boolean
+	@description 禁止上划加载数据
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#scrollX
+	@attribute 
+	@type string
+	@description 水平滚动（非空有效），该属性可以是css设置，或者一个数字（作为像素量度来使用）
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#scrollY
+	@attribute 
+	@type string
+	@description 垂直滚动（非空有效），该属性可以是css设置，或者一个数字（作为像素量度来使用），充满父容器可以使用100%
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#scrollCollapse
+	@attribute 
+	@type boolean
+	@description 表格高自适应,配合scrollY使用，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#scrollCollapse
+	@attribute 
+	@type boolean
+	@description 表格高自适应,配合scrollY使用，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#rowActiveClass
+	@attribute 
+	@type string
+	@description 行选中的class
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#rowAttr
+	@attribute 
+	@type string
+	@description 
+	<xmp> 
+	增加在行上属性的表达式，表达式执行结果返回Object，可以包含style、class属性，也可以增加自定义属性
+	表达式中可以使用$model,$row(当前渲染的数据行对象)变量
+	如：
+	1、简单
+	{style:'height:80px;',class:'...'}
+	2、根据数据设置不同底色
+	$row.val('fString')=='北京'?{style:'background:red;'}:{style:'background:blue;'}
+	<b>注：</b>
+	修改值时不会刺激执行
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#useFooter
+	@attribute 
+	@type boolean
+	@description 使用footer，默认值：false，打开后可以通过api：setFooterData设置footer显示内容
+*/
+
+/**
+@name $UI/system/components/justep/dataTables/dataTables#BeforeInitEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 创建DataTables组件前事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#BeforeInitEvent.settings
+ @property
+ @type {$UI/system/lib/base/viewComponent}
+ @description 创建DataTables的参数
+*/ 
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#onBeforeInit
+	@event
+	@description <b>[回调型事件]</b>创建DataTables组件前事件
+	@param {$UI/system/components/justep/dataTables/dataTables#BeforeInitEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"settings" : 创建DataTables的参数
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#onInit
+	@event
+	@description <b>[回调型事件]</b>创建DataTables组件事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#onLoaded
+	@event
+	@description <b>[回调型事件]</b>DataTables组件记载事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/dataTables/dataTables#CellRenderEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 单元格显示渲染事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#CellRenderEvent.rowID
+ @property
+ @type {string}
+ @description 行ID
+*/ 
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#CellRenderEvent.row
+ @property
+ @type {$UI/system/components/justep/data/data#Row}
+ @description 行
+*/ 
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#CellRenderEvent.colName
+ @property
+ @type {string}
+ @description 列名
+*/ 
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#CellRenderEvent.colVal
+ @property
+ @type {object}
+ @description 列的值
+*/ 
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#CellRenderEvent.html
+ @property
+ @type {string}
+ @description 输出显示的html，通过修改html影响展现
+*/ 
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#onCellRender
+	@event
+	@description <b>[回调型事件]</b>单元格显示渲染
+	@param {$UI/system/components/justep/dataTables/dataTables#CellRenderEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"rowID" : 行ID
+		"row" : 行
+		"html" : 输出显示的html，通过修改html影响展现
+		"colVal" : 列的值 
+		"colName" : 列名
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/dataTables/dataTables#RenderEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 表头显示渲染事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#RenderEvent.thead
+ @property
+ @type {DOM}
+ @description thead dom对象
+*/ 
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#RenderEvent.data
+ @property
+ @type {$UI/system/components/justep/data/data}
+ @description 绑定的data对象
+*/ 
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#RenderEvent.start
+ @property
+ @type {integer}
+ @description start
+*/ 
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#RenderEvent.end
+ @property
+ @type {integer}
+ @description end
+*/ 
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#RenderEvent.display
+ @property
+ @type {string}
+ @description display
+*/ 
+
+/**
+@name $UI/system/components/justep/dataTables/dataTables#HeaderRenderEvent
+@extends $UI/system/components/justep/dataTables/dataTables#RenderEvent
+@category eventclass
+@class
+@model UI2
+@description 表头显示渲染事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#HeaderRenderEvent.thead
+ @property
+ @type {DOM}
+ @description thead dom对象
+*/ 
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#onHeaderRender
+	@event
+	@description <b>[回调型事件]</b>表头显示渲染
+	@param {$UI/system/components/justep/dataTables/dataTables#HeaderRenderEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"thead" : thead dom对象
+		"data": 绑定的data对象, 
+		"start": start, 
+		"end" : end, 
+		"display" : display
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/dataTables/dataTables#FooterRenderEvent
+@extends $UI/system/components/justep/dataTables/dataTables#RenderEvent
+@category eventclass
+@class
+@model UI2
+@description footer显示渲染事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#FooterRenderEvent.tfoot
+ @property
+ @type {DOM}
+ @description tfoot dom对象
+*/ 
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#onFooterRender
+	@event
+	@description <b>[回调型事件]</b>footer显示渲染
+	@param {$UI/system/components/justep/dataTables/dataTables#FooterRenderEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"tfoot" : tfoot dom对象
+		"data": 绑定的data对象, 
+		"start": start, 
+		"end" : end, 
+		"display" : display
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/dataTables/dataTables#RowClickEvent
+@extends $UI/system/components/justep/dataTables/dataTables#RowSelectEvent
+@category eventclass
+@class
+@model UI2
+@description 选中行事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#RowClickEvent.domEvent
+ @property
+ @type {DOMEvent}
+ @description 触发的dom event对象
+*/ 
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#onRowClick
+	@event
+	@description <b>[回调型事件]</b>单击行事件
+	@param {$UI/system/components/justep/dataTables/dataTables#RowClickEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"domEvent" : 触发的dom event对象
+		"rowID" : 对应的行ID
+		"row" : 对应的行
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#onRowDblClick
+	@event
+	@description <b>[回调型事件]</b>双击行事件
+	@param {$UI/system/components/justep/dataTables/dataTables#RowClickEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"domEvent" : 触发的dom event对象,可以使用event.domEvent.stopPropagation();阻止事件冒泡
+		"rowID" : 对应的行ID
+		"row" : 对应的行
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/dataTables/dataTables#RowSelectEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 选中行事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#RowSelectEvent.rowID
+ @property
+ @type {string}
+ @description 行ID
+*/ 
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#RowSelectEvent.row
+ @property
+ @type {$UI/system/components/justep/data/data#Row}
+ @description 行
+*/ 
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#onRowSelect
+	@event
+	@description <b>[回调型事件]</b>选中行
+	@param {$UI/system/components/justep/dataTables/dataTables#RowSelectEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"rowID" : 行ID
+		"row" : 行
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/dataTables/dataTables#RowCheckEvent
+@extends $UI/system/components/justep/dataTables/dataTables#RowCheckedEvent
+@category eventclass
+@class
+@model UI2
+@description 多选勾选时事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#RowCheckEvent.cancel
+ @property
+ @type {boolean}
+ @description 取消当前操作
+*/ 
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#onRowCheck
+	@event
+	@description <b>[回调型事件]</b>多选勾选时，可以使用cancel取消
+	@param {$UI/system/components/justep/dataTables/dataTables#RowCheckEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"domEvent" : 触发的dom event对象,可以使用event.domEvent.stopPropagation();阻止事件冒泡
+		"rowID" : 对应的行ID
+		"row" : 对应的行
+		"checked": 勾选状态
+		"cancel": 取消当前操作
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/dataTables/dataTables#RowCheckedEvent
+@extends $UI/system/components/justep/dataTables/dataTables#RowClickEvent
+@category eventclass
+@class
+@model UI2
+@description 多选勾选后事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#RowCheckedEvent.checked
+ @property
+ @type {boolean}
+ @description 勾选状态
+*/ 
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#onRowChecked
+	@event
+	@description <b>[回调型事件]</b>多选勾选后
+	@param {$UI/system/components/justep/dataTables/dataTables#RowCheckedEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"domEvent" : 触发的dom event对象,可以使用event.domEvent.stopPropagation();阻止事件冒泡
+		"rowID" : 对应的行ID
+		"row" : 对应的行
+		"checked": 勾选状态
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/dataTables/dataTables#RowCheckedAllEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 多选全选事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#RowCheckedAllEvent.checked
+ @property
+ @type {boolean}
+ @description 勾选状态
+*/ 
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#onRowCheckedAll
+	@event
+	@description <b>[回调型事件]</b>多选全选
+	@param {$UI/system/components/justep/dataTables/dataTables#RowCheckedAllEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"checked": 勾选状态
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/dataTables/dataTables#FilterEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 数据过滤事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#FilterEvent.datas
+ @property
+ @type {list<$UI/system/components/justep/data/data#Row>}
+ @description 数据行数组
+*/ 
+
+/**
+	@name $UI/system/components/justep/dataTables/dataTables#onFilter
+	@event
+	@description <b>[回调型事件]</b>数据过滤，在filter表达式执行后触发，可以实现排序、过滤等逻辑
+	@param {$UI/system/components/justep/dataTables/dataTables#FilterEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"datas": 数据行数组
+	}
+	</xmp>	
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#getFilter
+ @function
+ @returns {string}
+ @description 获取DataTables绑定的data filter表达式
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#setFilter
+ @function
+ @param	{string} filter filter表达式
+ @description 设置data filter表达式
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#getData
+ @function
+ @returns {$UI/system/components/justep/data/data}
+ @description 获取DataTables绑定的data对象
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#getSelection
+ @function
+ @returns {$UI/system/components/justep/data/data#Row} 选中行
+ @description 返回选中行
+*/
+		
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#setSelection
+ @function
+ @param	{$UI/system/components/justep/data/data#Row} row 行
+ @description 设置选中行
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#getCheckeds
+ @function
+ @returns {list<$UI/system/components/justep/data/data#Row>} rows 行数组
+ @description 返回多选选中的行
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#isChecked
+ @function
+ @param	{$UI/system/components/justep/data/data#Row} row 行
+ @returns {boolean} 是否选中
+ @description 多选是否选中行
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#setRowChecked
+ @function
+ @param	{$UI/system/components/justep/data/data#Row} row 行
+ @param	{boolean} checked 选中状态
+ @description 设置行多选状态
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#setAllRowChecked
+ @function
+ @param	{boolean} checked 选中状态
+ @description 设置所有行多选状态
+*/
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#addRow
+ @function
+ @param	{$UI/system/components/justep/data/data#Row} row data的行对象
+ @description 增加行
+*/		
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#removeRow
+ @function
+ @param	{$UI/system/components/justep/data/data#Row} row data的行对象
+ @description 删除行
+*/		
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#reload
+ @function
+ @description 重新加载DataTables组件
+*/		
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#clear
+ @function
+ @description 清除DataTables组件所有行
+*/		
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#getRow
+ @function
+ @param	{$UI/system/components/justep/data/data#Row} row 行
+ @returns {object} 返回DataTables行对象
+ @description 根据行ID获取DataTables行对象,不存在返回null
+*/		
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#getDataRow
+ @function
+ @param	{node} node html节点
+ @returns {$UI/system/components/justep/data/data#Row} 返回Data的行对象
+ @description 根据行html节点获取bind的Data行对象
+*/		
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#setRowCss
+ @function
+ @param	{$UI/system/components/justep/data/data#Row} row 行
+ @param	{object} css 样式，同jquery格式，如:{height:100,width:50,...}
+ @description 设置行的css
+*/		
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#setFooterData
+ @function
+ @param	{object} footerData footer数据，格式为：{列名:数据,...}，如：{sName:'合计：',sInt:500} 
+ @description 设置footer数据
+*/		
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#hideCol
+ @function
+ @param	{string} col 列名 
+ @description 隐藏列
+*/		
+
+/**
+ @name $UI/system/components/justep/dataTables/dataTables#showCol
+ @function
+ @param	{string} col 列名 
+ @description 显示列
+*/		
+

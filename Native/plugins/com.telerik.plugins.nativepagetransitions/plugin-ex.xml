@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.telerik.plugins.nativepagetransitions">
+	<name>本地转场动画</name>
+	<description>本地转场动画插件，提供页面间的本地转场动画效果</description>
+
+</plugin>

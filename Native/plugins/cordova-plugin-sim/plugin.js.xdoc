@@ -1,0 +1,42 @@
+/**
+	@name cordova-plugin-sim
+	@class 
+	@description sim卡插件
+	@model Native
+	@category plugin
+	@declareVar window.plugins.sim
+*/
+/**
+	@name cordova-plugin-sim.getSimInfo
+	@function
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {Object} simInfo sim卡信息
+	<br/><b>参数格式：</b>
+	<xmp>
+		iOS:{
+ 	 		"carrierName":String - 运营商的名字,
+ 	 		"countryCode":String - 国家编号,
+ 	 		"mcc":String - 移动国家代码 ,
+ 	 		"mnc":String - 移动网络代码 ,
+ 	 		"allowsVOIP":String - 是否允许voip(网络电话)
+		}
+		Android:{
+			"carrierName":String - 运营商的名字,
+			"countryCode":String - 国家编号,
+			"mcc":String - 移动国家代码,
+			"mnc":String - 移动网络代码,
+			"phoneNumber":String - 手机号,
+			"deviceId":String - IMEI号,
+			"simSerialNumber":String - sim卡序列号,
+			"subscriberId":String - 国际移动用户识别码,
+			"callState":String - 呼叫状态,
+			"dataActivity":String - 获取数据活动状态,
+			"networkType":String - 当前使用的网络类型,
+			"phoneType":String - 手机类型,
+			"simState":String - SIM的状态信息,
+			"isNetworkRoaming":String - 是否漫游
+		}
+	</xmp>	
+ 	@description 获取sim卡信息
+*/

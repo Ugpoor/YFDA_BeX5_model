@@ -1,0 +1,16 @@
+.x-pagerlimitselect {
+  font-weight: normal;
+}
+.x-pagerlimitselect select {
+  width: 55px;
+  width: 75px\0;
+  /*IE hack*/
+  display: inline-block;
+  margin: 0 2px;
+}
+.x-pagerlimitselect > span {
+  display: none;
+}
+.x-pagerlimitselect.hasLabel > span {
+  display: initial;
+}

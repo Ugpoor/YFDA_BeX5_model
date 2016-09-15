@@ -1,0 +1,3 @@
+接口修改：
+1. biz层的startProcess, advanceProcess, backProcess的返回值改为List<Map<String, String>>, 原来是Document;[存在兼容问题]
+ 

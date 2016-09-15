@@ -1,0 +1,10 @@
+.css1{margin-left: 20px;clear: both;}
+.css1>div{
+	float: left;
+	color:#999999;
+	margin-top: 10px;
+}
+.kemuCss{
+	border-bottom: 1px solid #ccc;
+	margin-top: 50px;
+}

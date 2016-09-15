@@ -1,0 +1,36 @@
+/**
+	@name plugin.http.request
+	@class 
+	@description Http请求插件，使用本地接口发送http请求，这将提供跨域的ajax调用
+	@model Native
+	@category plugin
+	@declareVar cordova.plugins.http-request
+*/
+
+/**
+	@name plugin.http.request#plugins.HttpRequest
+	@property
+	@type plugin.http.request
+*/
+
+
+/**
+	@name plugin.http.request#getJSON
+	@function
+	@param {String} url 请求地址
+	@param {Object} params 请求参数
+	@param {Function} callback 回调函数 
+	@returns {void}
+	@description 通过 HTTP GET 请求载入 JSON 数据。
+*/
+
+/**
+	@name plugin.http.request#postJSON
+	@function
+	@param {String} url 请求地址
+	@param {Object} params 请求参数
+	@param {Function} callback 回调函数 
+	@returns {void}
+	@description 通过 HTTP POST 请求载入 JSON 数据。
+*/
+

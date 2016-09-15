@@ -1,0 +1,151 @@
+/**
+	@name $UI/system/components/justep/button/radio
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description radio
+*/
+
+/**
+	@name $UI/system/components/justep/button/radio#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/button/radio#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-radio(必须),
+		尺寸样式: x-radio-lg、x-radio-sm、x-radio-xs
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/button/radio#disabled
+	@attribute
+	@property 
+	@type boolean
+	@description 禁用
+*/
+
+/**
+	@name $UI/system/components/justep/button/radio#name
+	@attribute
+	@property 
+	@type string
+	@description 组件name，等价于html中的name属性，相同name的Radio为一组，选中是互斥的
+*/
+
+/**
+	@name $UI/system/components/justep/button/radio#label
+	@attribute
+	@property 
+	@type string
+	@description 显示名
+*/
+
+/**
+	@name $UI/system/components/justep/button/radio#value
+	@attribute
+	@property 
+	@type string
+	@description 等价于html中的value属性
+*/
+
+/**
+	@name $UI/system/components/justep/button/radio#checkedValue
+	@attribute 
+	@type string
+	@description 选中后的value，当bind-ref的值为checkedValue时checked=true
+*/
+
+/**
+	@name $UI/system/components/justep/button/radio#checked
+	@attribute
+	@property 
+	@type boolean
+	@description 是否选中
+*/
+
+/**
+	@name $UI/system/components/justep/button/radio#bind-ref
+	@attribute 
+	@type string
+	@description 数据感知的绑定表达式
+*/
+
+/**
+	@name $UI/system/components/justep/button/radio#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : 禁用，
+		"label" : 显示名
+		"value" : 等价于html中的value属性
+		"checked" : 是否选中
+		"name" : 组件name，等价于html中的name属性，相同name的Radio为一组，选中是互斥的
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/button/radio#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"、"label"、"value"、"checked"、"name"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/button/radio#val
+	@function
+	@description 给组件赋值或者取值
+*/
+
+/**
+@name $UI/system/components/justep/button/radio#RadioChangeEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@class
+@category eventclass
+@model UI2
+@description 值变化事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/button/radio#RadioChangeEvent.checked
+ @property
+ @type {boolean}
+ @description 选中状态
+*/ 
+
+/**
+ @name $UI/system/components/justep/button/radio#RadioChangeEvent.value
+ @property
+ @type {object}
+ @description 新值
+*/ 
+
+/**
+	@name $UI/system/components/justep/button/radio#onChange
+	@event
+	@description <b>[回调型事件]</b>选中状态变化触发事件
+	@param {$UI/system/components/justep/button/radio#RadioChangeEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+        "checked" : 选中状态,
+        "value" : 对应的值
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/

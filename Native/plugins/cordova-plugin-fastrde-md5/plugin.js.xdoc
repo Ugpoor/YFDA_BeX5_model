@@ -1,0 +1,17 @@
+/**
+	@name cordova-plugin-fastrde-md5
+	@class 
+	@model Native
+	@category plugin
+	@declareVar md5chksum
+*/
+
+/**
+	@name cordova-plugin-fastrde-md5.md5chksum
+	@function
+	@param {cordova-plugin-file#FileEntry} fileEntry 文件系统上的文件接口
+	@param {Function} success 执行成功的回调
+	@param {Function} error 执行失败的回调
+	@returns {void}
+	@description md5校验
+*/

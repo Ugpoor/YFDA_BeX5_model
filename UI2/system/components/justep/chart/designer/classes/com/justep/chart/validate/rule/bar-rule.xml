@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules>
+
+	<rule path="/div/chart/series-set/series"></rule>
+	<rule path="/div/chart/series-set/series/@chart-type">
+		<validate level="error" rule="regexp" scope="^(vertical-bar|vertical-bar-3d|stacked-vertical-bar|stacked-vertical-bar-3d|cylinder-vertical-bar|cylinder-vertical-bar-3d|horizontal-bar|horizontal-bar-3d|stacked-horizontal-bar|stacked-horizontal-bar-3d|cylinder-horizontal-bar|cylinder-horizontal-bar-3d){1}$" error-info="属性值不合法,请选择正确的图表类型" />
+	</rule>
+	<rule path="/div/chart/series-set/series/@ref">
+		<validate level="error" rule="regexp" scope="^[A-Za-z_]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/data"></rule>
+	<rule path="/div/chart/series-set/series/data/@title">
+		<!-- 
+			^[\w\d\u4e00-\u9fa5]*$
+		 -->
+		<validate level="error" rule="regexp" scope="^[^\t\n\r\f]+$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	<rule path="/div/chart/series-set/series/data/@categoryAxis">
+		<validate level="error" rule="regexp" scope="^[A-Za-z_]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	<rule path="/div/chart/series-set/series/data/@numberAxis">
+		<validate level="error" rule="regexp" scope="^[A-Za-z_()]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	<rule path="/div/chart/series-set/series/data/@ref">
+		<validate level="error" rule="regexp" scope="^[A-Za-z_]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	<rule path="/div/chart/series-set/series/data/@color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/data/@autoData">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/data/href"></rule>
+	<rule path="/div/chart/series-set/series/data/href/@model">
+		<validate level="error" rule="regexp" scope="^(window|dialog|replace){1}$" error-info="属性值不合法,必须是(window/dialog/replace)之一" />
+	</rule>
+	<rule path="/div/chart/series-set/series/data/href/@title"></rule>
+	
+	<rule path="/div/chart/series-set/series/config"></rule>
+	<rule path="/div/chart/series-set/series/config/background-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/background-alpha">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}f?$" error-info="属性值不合法,取值范围(0.1f ~ 1.0f)" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/foreground-alpha">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}f?$" error-info="属性值不合法,取值范围(0.1f ~ 1.0f)" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/category-title"></rule>
+	<rule path="/div/chart/series-set/series/config/category-title-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/category-title-font"></rule>
+	<rule path="/div/chart/series-set/series/config/category-title-font/@name"></rule>
+	<rule path="/div/chart/series-set/series/config/category-title-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/category-title-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/category-margin">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}$" error-info="属性值不合法,取值范围(0.1 ~ 1.0)" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/category-upper-margin">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}$" error-info="属性值不合法,取值范围(0.1 ~ 1.0)" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/category-lower-margin">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}$" error-info="属性值不合法,取值范围(0.1 ~ 1.0)" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/category-label-max-width">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/category-item-margin">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}$" error-info="属性值不合法,取值范围(0.1 ~ 1.0)" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/category-item-max-width">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}$" error-info="属性值不合法,取值范围(0.1 ~ 1.0)" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/category-item-outline"></rule>
+	<rule path="/div/chart/series-set/series/config/category-item-outline/@color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/category-item-outline/@stroke">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}f?$" error-info="属性值不合法,取值范围(0.1f ~ 1.0f)" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/category-item-label-visible">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/category-item-label-font"></rule>
+	<rule path="/div/chart/series-set/series/config/category-item-label-font/@name"></rule>
+	<rule path="/div/chart/series-set/series/config/category-item-label-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/category-item-label-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>	
+	<rule path="/div/chart/series-set/series/config/category-item-label-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>	
+	<rule path="/div/chart/series-set/series/config/category-item-label-number-format">
+		<validate level="error" rule="regexp" scope="^[#0]+.?[#0]*$" error-info="属性值不合法,合法的数据格式占位符(#/0)" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/category-item-label-angle">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/category-tick-label-font"></rule>
+	<rule path="/div/chart/series-set/series/config/category-tick-label-font/@name"></rule>
+	<rule path="/div/chart/series-set/series/config/category-tick-label-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/category-tick-label-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/serie-title"></rule>
+	<rule path="/div/chart/series-set/series/config/serie-title-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/serie-title-font"></rule>
+	<rule path="/div/chart/series-set/series/config/serie-title-font/@name"></rule>
+	<rule path="/div/chart/series-set/series/config/serie-title-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/serie-title-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/serie"></rule>
+	<rule path="/div/chart/series-set/series/config/serie/@double-axis">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/serie/@one-axis-location">
+		<validate level="error" rule="regexp" scope="^(TOP_OR_LEFT|TOP_OR_RIGHT|BOTTOM_OR_LEFT|BOTTOM_OR_RIGHT)*$" error-info="属性值不合法,必须是(TOP_OR_LEFT/TOP_OR_RIGHT/BOTTOM_OR_LEFT/BOTTOM_OR_RIGHT)之一" />	
+	</rule>
+	<rule path="/div/chart/series-set/series/config/serie/@two-axis-location">
+		<validate level="error" rule="regexp" scope="^(TOP_OR_LEFT|TOP_OR_RIGHT|BOTTOM_OR_LEFT|BOTTOM_OR_RIGHT)*$" error-info="属性值不合法,必须是(TOP_OR_LEFT/TOP_OR_RIGHT/BOTTOM_OR_LEFT/BOTTOM_OR_RIGHT)之一" />	
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/serie-upper-margin">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}$" error-info="属性值不合法,取值范围(0.1 ~ 1.0)" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/serie-number"></rule>
+	<rule path="/div/chart/series-set/series/config/serie-number/@visible">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/serie-number/@auto">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/serie-number/@start">
+		<validate level="error" rule="regexp" scope="^[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/serie-number/@end">
+		<validate level="error" rule="regexp" scope="^[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/serie-number/@step">
+		<validate level="error" rule="regexp" scope="^[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/serie-number-format">
+		<validate level="error" rule="regexp" scope="^[#0]+.?[#0]*$" error-info="属性值不合法,合法的数据格式占位符(#/0)" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/serie-tick-label-font"></rule>
+	<rule path="/div/chart/series-set/series/config/serie-tick-label-font/@name"></rule>
+	<rule path="/div/chart/series-set/series/config/serie-tick-label-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/serie-tick-label-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/serie-tick-label-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/marker"></rule>
+	<rule path="/div/chart/series-set/series/config/marker/@visible">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/marker/@label"></rule>
+	<rule path="/div/chart/series-set/series/config/marker/@value">
+		<validate level="error" rule="regexp" scope="^[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/marker/@color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/marker-label-font"></rule>
+	<rule path="/div/chart/series-set/series/config/marker-label-font/@name"></rule>
+	<rule path="/div/chart/series-set/series/config/marker-label-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/marker-label-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/map-tool-tip-label-style"></rule>
+	<rule path="/div/chart/series-set/series/config/map-tool-tip-format">
+		<!--  
+		<validate level="error" rule="regexp" scope="^[#0]+.?[#0]*$" error-info="属性值不合法,合法的数据格式占位符(#/0)" />
+		-->
+	</rule>
+	<rule path="/div/chart/series-set/series/config/map-tool-tip-format/@type">
+		<validate level="error" rule="regexp" scope="^(number|date)*$" error-info="属性值不合法,必须是(number/date)之一" />
+	</rule>
+	
+</rules>

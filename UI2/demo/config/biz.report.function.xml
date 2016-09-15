@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root> 
+  <item display="solid" label="报表图表"> 
+    <item display="solid" label="简单报表"  device="pc" > 
+      <item label="网络报表" process="/demo/report/process/simple/simpleProcess"
+        activity="gridActivity" url="$UI/demo/report/process/simple/gridActivity.a"/>  
+      <item label="分组报表" process="/demo/report/process/simple/simpleProcess"
+        activity="groupActivity" url="$UI/demo/report/process/simple/groupActivity.a"/>  
+      <item label="交叉报表" process="/demo/report/process/simple/simpleProcess"
+        activity="crossActivity" url="$UI/demo/report/process/simple/crossActivity.a"/>  
+      <item label="卡片报表" process="/demo/report/process/simple/simpleProcess"
+        activity="cardActivity" url="$UI/demo/report/process/simple/cardActivity.a"/> 
+    </item>  
+    <item label="复杂报表" device="pc"> 
+      <item label="主从报表" process="/demo/report/process/multidataset/multidatasetProcess"
+        activity="masterDetailActivity" url="$UI/demo/report/process/multidataset/masterDetailReport.a"/>  
+      <item label="主从从报表(两级)" process="/demo/report/process/multidataset/multidatasetProcess"
+        activity="masterDDActivity" url="$UI/demo/report/process/multidataset/masterDDReport.w"/>  
+      <item label="主从从报表(多级)" process="/demo/report/process/multidataset/multidatasetProcess"
+        activity="masterDDDActivity" url="$UI/demo/report/process/multidataset/masterDDDReport.w"/>  
+      <item label="多源多层交叉报表" process="/demo/report/process/multidataset/multidatasetProcess"
+        activity="multiDatasetCrossActivity" url="$UI/demo/report/process/multidataset/multiDatasetCrossReport.w"/>  
+      <item label="多源纵向分片报表" process="/demo/report/process/multidataset/multidatasetProcess"   
+              activity="mutilDatasetVerticalActivity" url="$UI/demo/report/process/multidataset/mutilDatasetVerticalReport.w"/>    
+      <item label="多源横向分片报表" process="/demo/report/process/multidataset/multidatasetProcess"  
+            activity="mutilDatasetHorizontalActivity" url="$UI/demo/report/process/multidataset/mutilDatasetHorizontalReport.w"/>     
+      <item label="多源双向分片报表" process="/demo/report/process/multidataset/multidatasetProcess"
+        activity="mutilDatasetHVActivity" url="$UI/demo/report/process/multidataset/multiDatasetHVReport.w"/> 
+    </item>  
+    <item icon="demo.gif" label="报表特性" device="pc"> 
+      <item label="隐藏特性" process="/demo/report/process/property/propertyProcess"
+        activity="visibleActivity" url="$UI/demo/report/process/property/visibleReport.w"/>  
+      <item label="报表链接" process="/demo/report/process/links/linksProcess" activity="reportLinksActivity"
+        url="$UI/demo/report/process/links/report.w"/>  
+      <item label="报表格式" process="/demo/report/process/property/propertyProcess"
+        activity="basePropertyActivity" url="$UI/demo/report/process/property/basePropertyReport.w"/>  
+      <item label="报表参数查询" process="/demo/report/process/property/propertyProcess"
+        activity="parameterFilterActivity" url="$UI/demo/report/process/property/parameterFilterReport.w"/>  
+      <item label="KSQL报表参数查询" process="/demo/report/process/ksql/ksqlProcess"
+        activity="ksqlReportActivity" url="$UI/demo/report/process/ksql/ksqlReport.w"/>  
+      <item label="KSQL图表" process="/demo/report/process/ksql/ksqlProcess" activity="ksqlChartActivity"
+        url="$UI/demo/report/process/ksql/ksqlchart.w"/>  
+      <item label="占比运算" process="/demo/report/process/operation/operationProcess"
+        activity="proportionActivity" url="$UI/demo/report/process/operation/proportionReport.w"/>  
+      <item label="报表序列" process="/demo/report/process/operation/operationProcess"
+        activity="countActivity" url="$UI/demo/report/process/operation/countReport.w"/>  
+      <item label="图表混合报表" process="/demo/report/process/property/propertyProcess"
+        activity="chartActivity" url="$UI/demo/report/process/property/chartReport.w"/>  
+      <item label="条形码" process="/demo/report/process/property/propertyProcess"
+        activity="barcodeActivity" url="$UI/demo/report/process/property/barcodeReport.w"/>  
+      <item label="分表符" process="/demo/report/process/property/propertyProcess"
+        activity="multiReportActivity" url="$UI/demo/report/process/property/multiReport.w"/> 
+    </item>
+    <item icon="demo.gif" label="报表打印" device="pc"> 
+      <item label="分页打印展现" process="/demo/report/process/print/printProcess"
+        activity="pagingActivity" url="$UI/demo/report/process/print/pagingReport.w"/>  
+      <item label="末页打印展现" process="/demo/report/process/print/printProcess"
+        activity="lastpageActivity" url="$UI/demo/report/process/print/lastpageReport.w"/>  
+      <item label="分栏打印展现" process="/demo/report/process/print/printProcess"
+        activity="subColumnActivity" url="$UI/demo/report/process/print/subColumnReport.w"/> 
+    </item>  
+    <item icon="demo.gif" label="图表展现" device="pc"> 
+      <item label="饼图" process="/demo/report/process/chart/chartProcess" activity="pieActivity"
+        url="$UI/demo/report/process/chart/pieChart.w"/>  
+      <item label="垂直柱图" process="/demo/report/process/chart/chartProcess" activity="barVActivity"
+        url="$UI/demo/report/process/chart/barVChart.w"/>  
+      <item label="水平柱图" process="/demo/report/process/chart/chartProcess" activity="barHActivity"
+        url="$UI/demo/report/process/chart/barHChart.w"/>  
+      <item label="线图" process="/demo/report/process/chart/chartProcess" activity="lineActivity"
+        url="$UI/demo/report/process/chart/lineChart.w"/>  
+      <item label="面积图" process="/demo/report/process/chart/chartProcess" activity="areaActivity"
+        url="$UI/demo/report/process/chart/areaChart.w"/>  
+      <item label="时序图" process="/demo/report/process/chart/chartProcess" activity="timingActivity"
+        url="$UI/demo/report/process/chart/timingChart.w"/>  
+      <item label="仪表盘" process="/demo/report/process/chart/chartProcess" activity="dashboardActivity"
+        url="$UI/demo/report/process/chart/dashboardChart.w"/>  
+      <item label="甘特图" process="/demo/report/process/chart/chartProcess" activity="ganttActivity"
+        url="$UI/demo/report/process/chart/ganttChart.w"/>  
+      <item label="雷达图" process="/demo/report/process/chart/chartProcess" activity="radarActivity"
+        url="$UI/demo/report/process/chart/radarChart.w"/>  
+      <item label="累积对比分析" process="/demo/report/process/chart/chartProcess"
+        activity="accumulationActivity" url="$UI/demo/report/process/chart/accumulationChart.w"/>  
+<!--       <item label="图表链接replace" process="/demo/report/process/links/linksProcess" -->
+<!--         activity="chartReplaceActivity" url="$UI/demo/report/process/links/chartReplace.w"/>   -->
+      <item label="图表链接dialog" process="/demo/report/process/links/linksProcess"
+        activity="chartDialogActivity" url="$UI/demo/report/process/links/chartDialog.w"/>  
+      <item label="图表链接window" process="/demo/report/process/links/linksProcess"
+        activity="chartWindowActivity" url="$UI/demo/report/process/links/chartWindow.w"/> 
+    </item>  
+    <item icon="demo.gif" label="大数据测试" device="pc"> 
+      <item label="网格报表" process="/demo/report/process/testcase/testcaseProcess"
+        activity="testgridActivity" url="$UI/demo/report/process/testcase/testgrid.w"/>  
+      <item label="分组报表" process="/demo/report/process/testcase/testcaseProcess"
+        activity="testgroupActivity" url="$UI/demo/report/process/testcase/testgroup.w"/> 
+    </item>
+  </item> 
+</root>

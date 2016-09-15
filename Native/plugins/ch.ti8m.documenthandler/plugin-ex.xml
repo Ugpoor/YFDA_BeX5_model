@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="ch.ti8m.documenthandler">
+	<name>打开文档</name>
+	<description>打开文档插件，下载指定url的文档并使用系统注册过的应用打开</description>
+
+</plugin>

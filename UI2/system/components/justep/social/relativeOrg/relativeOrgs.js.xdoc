@@ -1,0 +1,95 @@
+/**
+	@name $UI/system/components/justep/social/relativeOrgs/relativeOrgs
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description 相关人组件
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrgs/relativeOrgs#component
+	@attribute
+	@required
+	@type String
+	@description 组件标识
+	@default "$UI/system/components/justep/social/relativeOrgs/relativeOrgs"
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrgs/relativeOrgs#xid
+	@attribute
+	@required
+	@type String
+	@description xid标识
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrgs/relativeOrgs#data
+	@attribute
+	@property
+	@type String
+	@required
+	@description 主数据
+*/
+
+
+/**
+	@name $UI/system/components/justep/social/relativeOrgs/relativeOrgs#bind-nameRef
+	@attribute
+	@type String
+	@description 相关人关联的名称字段
+*/
+
+
+/**
+	@name $UI/system/components/justep/social/relativeOrgs/relativeOrgs#socialData
+	@attribute
+	@property
+	@type String
+	@description 社交信息Data
+*/
+
+
+/**
+	@name $UI/system/components/justep/social/relativeOrgs/relativeOrgs#process
+	@attribute
+	@property
+	@type String
+	@description 流程
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrgs/relativeOrgs#activity
+	@attribute
+	@property
+	@type String
+	@description 环节
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrgs/relativeOrgs#url
+	@attribute
+	@property
+	@type String
+	@description 相关人的url，默认使用当前环境中的activity对应的.a
+*/
+
+/**
+	@name $UI/system/components/justep/social/relativeOrgs/relativeOrgs#class
+	@attribute
+	@type String
+	@description 组件样式
+	@example
+<xmp>
+	基础样式: x-ros(必须),
+	显示边框：x-ros-border
+</xmp>	
+*/
+
+
+/**
+	@name $UI/system/components/justep/social/relativeOrgs/relativeOrgs#getSocialDataComponent
+	@function
+	@description 获取社交信息Data对象
+	@returns {$UI/system/components/justep/data/data}
+*/

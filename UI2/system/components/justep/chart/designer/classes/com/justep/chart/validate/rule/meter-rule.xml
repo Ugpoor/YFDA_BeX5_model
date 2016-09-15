@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules>
+	<rule path="/div/chart/series-set/series"></rule>
+	<rule path="/div/chart/series-set/series/@chart-type">
+		<validate level="error" rule="regexp" scope="^(simple-meter|dial-meter|arc-dial-meter|thermometer-meter){1}$" error-info="属性值不合法,请选择正确的图表类型" />
+	</rule>
+	<rule path="/div/chart/series-set/series/@ref">
+		<validate level="error" rule="regexp" scope="^[A-Za-z_]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/data"></rule>
+	<rule path="/div/chart/series-set/series/data/@value">
+		<validate level="error" rule="regexp" scope="^[A-Za-z_]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	<rule path="/div/chart/series-set/series/data/@ref">
+		<validate level="error" rule="regexp" scope="^[A-Za-z_]+[0-9]*$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/data/href"></rule>
+	<rule path="/div/chart/series-set/series/data/href/@model">
+		<validate level="error" rule="regexp" scope="^(window|dialog|replace){1}$" error-info="属性值不合法,必须是(window/dialog/replace)之一" />
+	</rule>
+	<rule path="/div/chart/series-set/series/data/href/@title"></rule>
+	
+	<rule path="/div/chart/series-set/series/config"></rule>
+	<rule path="/div/chart/series-set/series/config/background-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/background-alpha">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}f?$" error-info="属性值不合法,取值范围(0.1f ~ 1.0f)" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/foreground-alpha">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}f?$" error-info="属性值不合法,取值范围(0.1f ~ 1.0f)" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/simple-range"></rule>
+	<rule path="/div/chart/series-set/series/config/simple-range/@lower">
+		<validate level="error" rule="regexp" scope="^-?[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/simple-range/@upper">
+		<validate level="error" rule="regexp" scope="^-?[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/simple-interval"></rule>
+	<rule path="/div/chart/series-set/series/config/simple-interval/@label"></rule>
+	<rule path="/div/chart/series-set/series/config/simple-interval/@lower">
+		<validate level="error" rule="regexp" scope="^-?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/simple-interval/@upper">
+		<validate level="error" rule="regexp" scope="^-?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/simple-interval/@outline-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/simple-interval/@outline-stroke"></rule>
+	<rule path="/div/chart/series-set/series/config/simple-interval/@background-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	
+	<rule path="/div/chart/series-set/series/config/simple-needle-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/simple-dial-background-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/simple-dial-outline-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/simple-meter-angle">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/simple-tick-label-visible">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/simple-tick-label-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/simple-tick-size"></rule>
+	<rule path="/div/chart/series-set/series/config/simple-tick-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/simple-value-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/simple-units">
+		<validate level="error" rule="regexp" scope="^[^\t\n\r\f]+$" error-info="属性值不合法,请输入合法字符串" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/simple-tick-label-font"></rule>
+	<rule path="/div/chart/series-set/series/config/simple-tick-label-font/@name"></rule>
+	<rule path="/div/chart/series-set/series/config/simple-tick-label-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/simple-tick-label-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>	
+	<rule path="/div/chart/series-set/series/config/simple-value-font"></rule>
+	<rule path="/div/chart/series-set/series/config/simple-value-font/@name"></rule>
+	<rule path="/div/chart/series-set/series/config/simple-value-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/simple-value-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>		
+	
+	
+	<rule path="/div/chart/series-set/series/config/dial-rangle"></rule>
+	<rule path="/div/chart/series-set/series/config/dial-rangle/@lower">
+		<validate level="error" rule="regexp" scope="^[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-rangle/@upper">
+		<validate level="error" rule="regexp" scope="^[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-rangle/@color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/dial-rangle-inner-radius">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.1D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-rangle-outer-radius">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.1D ~ 1.0D)" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/dial-dataset-index">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/dial-view"></rule>
+	<rule path="/div/chart/series-set/series/config/dial-view/@x">
+		<validate level="error" rule="regexp" scope="^[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-view/@y">
+		<validate level="error" rule="regexp" scope="^[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-view/@width">
+		<validate level="error" rule="regexp" scope="^[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-view/@height">
+		<validate level="error" rule="regexp" scope="^[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/dial-frame"></rule>
+	<rule path="/div/chart/series-set/series/config/dial-frame/@background-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-frame/@foreground-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/dial-background"></rule>
+	<rule path="/div/chart/series-set/series/config/dial-background/@x-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-background/@y-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/dial-annotation"></rule>
+	<rule path="/div/chart/series-set/series/config/dial-annotation-font"></rule>
+	<rule path="/div/chart/series-set/series/config/dial-annotation-font/@name"></rule>
+	<rule path="/div/chart/series-set/series/config/dial-annotation-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-annotation-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/dial-annotation-radius">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-annotation-angle">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-value-indicator-radius">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-value-indicator-angle">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/dial-value-indicator-font"></rule>
+	<rule path="/div/chart/series-set/series/config/dial-value-indicator-font/@name"></rule>
+	<rule path="/div/chart/series-set/series/config/dial-value-indicator-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-value-indicator-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-value-indicator-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-value-indicator-outline-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-value-indicator-background-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/dial-scale"></rule>
+	<rule path="/div/chart/series-set/series/config/dial-scale/@visible">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-scale/@lower-bound">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-scale/@upper-bound">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-scale/@start-angle">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-scale/@extent">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-scale/@major-tick-increment">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-scale/@minor-tick-count">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/dial-scale-tick-radius">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}$" error-info="属性值不合法,取值范围(0.1 ~ 1.0)" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-scale-tick-label-offset">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/dial-scale-major-tick-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-scale-minor-tick-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-scale-tick-label-font"></rule>
+	<rule path="/div/chart/series-set/series/config/dial-scale-tick-label-font/@name"></rule>
+	<rule path="/div/chart/series-set/series/config/dial-scale-tick-label-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-scale-tick-label-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/dial-pointer-radius">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-pointer-width-radius">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-pointer-fill-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-pointer-outline-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/dial-cap-radius">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	
+	
+	<rule path="/div/chart/series-set/series/config/arc-dial-rangle"></rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-rangle/@lower">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-rangle/@upper">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-rangle/@color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/arc-dial-rangle-inner-radius">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.1D ~ 1.0D)" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-rangle-outer-radius">
+		<validate level="error" rule="regexp" scope="^(0.[0-9]+|1.0){1}D?$" error-info="属性值不合法,取值范围(0.1D ~ 1.0D)" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/arc-dial-view"></rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-view/@x">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-view/@y">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-view/@width">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-view/@height">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/arc-dial-frame"></rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-frame/@start-angle">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-frame/@extent">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-frame-inner-radius">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-frame-outer-radius">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-frame-foreground-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/arc-dial-frame-stroke"></rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-background"></rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-background/@x-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-background/@y-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/arc-dial-dataset-index">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale"></rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale/@visible">
+		<validate level="error" rule="regexp" scope="^(true|false)*$" error-info="属性值不合法,必须是(true/false)之一" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale/@lower-bound">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale/@upper-bound">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale/@start-angle">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale/@extent">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale/@major-tick-increment">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale/@minor-tick-count">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale-tick-radius">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale-tick-label-offset">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale-major-tick-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale-minor-tick-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale-tick-label-font"></rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale-tick-label-font/@name"></rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale-tick-label-font/@style">
+		<validate level="error" rule="regexp" scope="^(0|1|2|3)*$" error-info="属性值不合法,必须是(0正常/1粗体/2斜体/3粗斜体)之一"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-scale-tick-label-font/@size">
+		<validate level="error" rule="regexp" scope="^[0-9]*$" error-info="属性值不合法,必须是整数"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-pointer-radius">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/arc-dial-pointer-color">
+		<validate level="error" rule="regexp" scope="^#[A-Za-z0-9]{6}$" error-info="属性值不合法,必须是合法颜色表示如#FFFFFF" />
+	</rule>
+	
+	<rule path="/div/chart/series-set/series/config/thermometer-range"></rule>
+	<rule path="/div/chart/series-set/series/config/thermometer-range/@lower">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/thermometer-range/@upper">
+		<validate level="error" rule="regexp" scope="^[-]?[0-9]+(.[0-9]+)?$" error-info="属性值不合法,必须是数字"/>
+	</rule>
+	<rule path="/div/chart/series-set/series/config/thermometer-units"></rule>
+		
+	
+</rules>

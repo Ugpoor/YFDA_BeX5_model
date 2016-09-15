@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\beep.ogg",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\raw\\beep.ogg"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\mediaplayer_configuration.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\raw\\mediaplayer_configuration.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\aes.lua",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\raw\\aes.lua"
+    }
+]

@@ -1,0 +1,116 @@
+/**
+	@name $UI/system/api/native/image
+	@class
+	@category javascript
+	@model UI2
+	@description 图片接口。
+	@example 
+	<xmp> 
+	 var image = require('$UI/system/api/native/image');
+	 image.chooseImage({
+			success : function(res) {
+				images.localId = res.localIds;
+				alert('已选择 ' + res.localIds.length + ' 张图片');
+			}
+		});
+	 function upload() {
+			image.uploadImage({
+				localId : images.localId[i],
+				success : function(res) {
+					i++;
+					alert('已上传：' + i + '/' + length);
+					images.serverId.push(res.serverId);
+					if (i < length) {
+						upload();
+					}
+				},
+				fail : function(res) {
+					alert(JSON.stringify(res));
+				}
+			});
+		}
+	 upload();
+	</xmp>
+*/
+
+/**
+	@name $UI/system/api/native/image.chooseImage
+	@function
+	@description 选择图片。
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"success" : {function} success 回调函数
+		"cancel" : {function} cancel 回调函数
+	}
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/image.previewImage
+	@function
+	@description 预览图片，微信可用。
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"current" : {string} 显示图相的url
+		"urls" : {array}  待显示的url列表
+	}
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/image.uploadImage
+	@function
+	@description 上传图片。
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"localId" : {string} 本地图片
+		"success" : {function} success 回调函数
+		"fail" : {function} fail 回调函数
+	}
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/image.downloadImage
+	@function
+	@description 下载服务器上的图片。
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		serverId :  {string} 远程图片
+		"success" : {function} success 回调函数
+		"fail" : {function} fail 回调函数
+	}
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/image.httpToAlbum
+	@function
+	@description 下载网络上的图片，并拷贝到相册。微信内不可用。
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		serverId :  {string} 远程图片
+		"success" : {function} success 回调函数
+		"fail" : {function} fail 回调函数
+	}
+	</xmp>
+	@return {void}
+*/
+
+
+
+

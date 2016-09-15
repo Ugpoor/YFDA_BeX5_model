@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.justep.cordova.plugin.youkuplayer"
+    version="1.0.0">
+
+    <engines>
+        <engine name="cordova" version=">=3.3.0" />
+    </engines>
+    
+    <name>youkuplayer</name>
+    <description>YoukuPlayer plugin support for playing youku video,user login,user logout and check user login status.</description>
+
+
+
+
+    <js-module src="www/youkuplayer.js" name="youkuplayer">
+        <clobbers target="navigator.youkuplayer" />
+    </js-module>
+
+
+    <!-- android -->
+    <platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="youkuplayer">
+				<param name="android-package" value="com.justep.cordova.plugin.youkuplayer.YoukuPlayer" />
+			</feature>
+		</config-file>
+ 		<source-file src="src/android/com.justep.cordova.plugin.youkuplayer.aar" target-dir="libs"/>
+        <source-file src="src/android/com/justep/cordova/plugin/youkuplayer/YoukuPlayer.java" target-dir="src/com/justep/cordova/plugin/youkuplayer" />
+	     <config-file target="AndroidManifest.xml" parent="/manifest/application">
+	        <!-- 播放界面demo -->
+	        <activity
+	            android:name="com.youku.play.activity.PlayerActivity"
+	            android:theme="@android:style/Theme.Black.NoTitleBar"
+	            android:configChanges="orientation|keyboardHidden|screenSize"
+	            android:launchMode="singleTask"
+	            android:exported="true">
+	            <intent-filter>
+	                <action android:name="com.justep.cordova.plugin.youkuplayer.PLAY" />
+	                <category android:name="android.intent.category.DEFAULT" />
+	            </intent-filter>
+	        </activity>
+	        <meta-data android:name="client_id" android:value="$client_id" />
+			<meta-data android:name="client_secret" android:value="$client_secret" />    
+	    </config-file>     
+    </platform>
+    <framework src="src/android/youkuplayer.gradle" custom="true" type="gradleReference"/>
+</plugin>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<elements>
+	<element name="$UI/system/components/justep/shell/shell"
+		tag-name="div" icon="shell.png" text="shell"
+		binding-component="$UI/system/components/justep/shell/shell"
+		component-type="formControl" design-view="web-designer"
+		parent-range="$UI/system/components/justep/model/model" d_resiable="false" resizable="false">
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="receiveMessageType" text="接收消息类型，缺省接收全部的sendMessage的消息，否则只接收匹配类型的消息" />
+		</properties>
+		<events>
+			<!--组件事件 -->
+			<event name="onMessage" />
+			<event name="onBeforePageLoad" />
+			<event name="onPageViewLoad" />
+			<event name="onAfterPageLoad" />
+			<event name="onPageActive" />
+			<event name="onPageInactive" />
+			<event name="onBeforePageClose" />
+			<event name="onAfterPageClose" />
+		</events>
+		<toolbar>			
+		</toolbar>
+		<property-editors><!--属性编辑器描述，可通过下拉列表或者弹出对话框来设置属性值，不这是默认问普通的文本输入框。 -->
+		</property-editors>
+		<templates>
+			<template name="default"><![CDATA[ 
+			<div component="$UI/system/components/justep/shell/shell">
+			</div>
+	  ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/shell/shellImpl"
+		tag-name="div" icon="shellImpl.png" text="shellImpl"
+		binding-component="$UI/system/components/justep/shell/shellImpl"
+		component-type="formControl" design-view="web-designer"
+		parent-range="$UI/system/components/justep/model/model" d_resiable="false" resizable="false">
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="contentsXid" text="contents" editor-ref="contextComponent" required="true"  editor-parameter="layout-container" is-id-ref="true"/>
+			<!-- 
+			<property name="pageMappings" text="页面映射" editor-ref="setPageMapping" default-value="..." readonly="true"/>
+			-->
+		</properties>
+		<events>
+			<!--组件事件 -->
+		</events>
+		<toolbar>			
+			<item text="编辑页面映射" method="setPageMapping"/>				
+		</toolbar>
+		<property-editors><!--属性编辑器描述，可通过下拉列表或者弹出对话框来设置属性值，不这是默认问普通的文本输入框。 -->
+			<property-editor name="setPageMapping" type="dialog"
+				url="$UI/system/components/justep/shell/designer/setPageMapping.w"
+				editor-parameter="{width:800,height:600}">
+			</property-editor>
+		</property-editors>
+		<templates>
+			<template name="default"><![CDATA[ 
+			<div component="$UI/system/components/justep/shell/shellImpl">
+			</div>
+	  ]]></template>
+		</templates>
+	</element>
+</elements>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-contacts">
+	<name>通讯录</name>
+	<description>联系人本地插件，获取设备联系人信息</description>
+	
+</plugin>

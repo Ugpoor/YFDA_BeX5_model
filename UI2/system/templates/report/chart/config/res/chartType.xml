@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items-config>
+	<items label="饼图">
+		<item label="饼图" value="piechart,pie"></item>
+		<item label="3D饼图" value="piechart,pie-3d"></item>
+	</items>
+	<items label="柱形图" >
+		<item label="垂直柱状图" value="verticalbarchart,vertical-bar"></item>
+		<item label="垂直3D柱状图" value="verticalbarchart,vertical-bar-3d"></item>
+		<item label="垂直堆叠柱状图" value="verticalbarchart,stacked-vertical-bar"></item>
+		<item label="垂直堆叠3D柱状图" value="verticalbarchart,stacked-vertical-bar-3d"></item>
+		<item label="垂直圆柱图" value="verticalbarchart,cylinder-vertical-bar"></item>
+		<item label="垂直3D圆柱图" value="verticalbarchart,cylinder-vertical-bar-3d"></item>
+		<item label="水平柱状图" value="verticalbarchart,horizontal-bar"></item>
+		<item label="水平3D柱状图" value="verticalbarchart,horizontal-bar-3d"></item>
+		<item label="水平堆叠柱状态图" value="verticalbarchart,stacked-horizontal-bar"></item>
+		<item label="水平堆叠3D柱状图" value="verticalbarchart,stacked-horizontal-bar-3d"></item>
+		<item label="水平圆柱图" value="verticalbarchart,cylinder-horizontal-bar"></item>
+		<item label="水平3D圆柱图" value="verticalbarchart,cylinder-horizon-bar-3d"></item>
+	</items>
+	<items label="折线图">
+		<item label="垂直线图" value="verticallinechart,vertical-line"></item>
+		<item label="垂直3D线图" value="verticallinechart,vertical-line-3d"></item>
+		<item label="水平线图" value="verticallinechart,horizontal-line"></item>
+		<item label="水平3D线图" value="verticallinechart,horizontal-line-3d"></item>
+	</items>
+	<items label="XY线图">
+		<item label="垂直XY线图" value="verticalxylinechart,vertical-xy-line"></item>
+		<item label="水平XY线图" value="verticalxylinechart,horizontal-xy-line"></item>
+	</items>
+	<items label="面积图">
+		<item label="垂直面积图" value="verticalareachart,vertical-area"></item>
+		<item label="水平面积图" value="verticalareachart,horizontal-area"></item>
+	</items>
+	<items label="时序图">
+		<item label="时序图" value="timeserieschart,time-series"></item>
+	</items>
+	<items label="仪表盘">
+		<item label="简单仪表盘" value="simplemeterchart,simple-meter"></item>
+		<item label="刻度盘" value="dialmeterchart,dial-meter"></item>
+		<item label="弧度刻度盘" value="arcdialmeterchart,arc-dial-meter"></item>
+		<item label="温度计" value="thermometermeterchart,thermometer-meter"></item>
+	</items>
+	<items label="甘特图">
+		<item label="垂直甘特图" value="horizontalganttchart,vertical-gantt"></item>
+		<item label="水平甘特图" value="horizontalganttchart,horizontal-gantt"></item>
+	</items>
+	<items label="雷达图">
+		<item label="雷达图" value="radarchart,radar"></item>
+	</items>
+</items-config>

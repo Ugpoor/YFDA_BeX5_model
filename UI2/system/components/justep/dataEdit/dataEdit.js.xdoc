@@ -1,0 +1,91 @@
+/**
+	@name $UI/system/components/justep/dataEdit/dataEdit
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description DataEdit
+*/
+
+/**
+	@name $UI/system/components/justep/dataEdit/dataEdit#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/dataEdit/dataEdit#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: form-control
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/dataEdit/dataEdit#bind-ref
+	@attribute 
+	@type string
+	@description dataEdit组件引用的数据，input组件感知绑定数据的数据类型，当为Date、Time、Datetime时提供时间选择器
+*/
+
+/**
+	@name $UI/system/components/justep/dataEdit/dataEdit#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/dataEdit/dataEdit#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/dataEdit/dataEdit#getInnerComp
+	@function
+	@description 获取内部组件
+	@return {$UI/system/lib/base/component} 
+*/
+
+/**
+@name $UI/system/components/justep/dataEdit/dataEdit#InnerCompCreateEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 生成加载数据URL事件参数
+*/
+
+/**
+ @name $UI/system/components/justep/dataEdit/dataEdit#InnerCompCreateEvent.innerComp
+ @property
+ @type {$UI/system/lib/base/viewComponent}
+ @description 内部组件
+*/ 
+
+/**
+	@name $UI/system/components/justep/dataEdit/dataEdit#onInnerCompCreate
+	@event
+	@description <b>[回调型事件]</b>内部组件创建，可用于内部组件属性和事件设置
+	@param {$UI/system/components/justep/dataEdit/dataEdit#InnerCompCreateEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"innerComp" : 内部组件
+	}
+	</xmp>	
+*/

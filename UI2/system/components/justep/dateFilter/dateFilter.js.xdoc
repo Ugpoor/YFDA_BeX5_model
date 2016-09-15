@@ -1,0 +1,164 @@
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@model UI2
+	@description 日期过滤组件
+	@example
+	<xmp>
+		DateFilter组件通过简单的属性设置就可以给数据增加日期过滤的能力，关键属性有：
+			filterData: 过滤数据
+			filterMode: 过滤模式 “单日期过滤” “日期范围过滤”
+			dateCol、beginDateCol、endDateCol: 过滤日期字段
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#xid
+	@attribute 
+	@type string
+	@description 组件标识
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#filterData
+	@attribute 
+	@type string
+	@description 过滤数据，必须是bizData
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#filterMode
+	@attribute 
+	@type string
+	@description 过滤模式，singleDate:单日期过滤，dateRange:日期范围过滤
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#dateCol
+	@attribute 
+	@type string
+	@description 单日期过滤模式下的日期字段
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#beginDateCol
+	@attribute 
+	@type string
+	@description 日期范围过滤模式下的开始日期字段
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#endDateCol
+	@attribute 
+	@type string
+	@description 日期范围过滤模式下的截止日期字段
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#autoRefresh
+	@attribute 
+	@type boolean
+	@description 是否自动刷新 - 默认是true，用户输入后不仅设置数据的过滤条件，同时自动刷新数据。
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#defaultValue
+	@attribute 
+	@type string
+	@description 默认选项，当选择数据为空时，用默认选项过滤。
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#options
+	@attribute 
+	@type string
+	@description 可选项，枚举可列出的日期过滤方式，以逗号分隔，例如：今天,明天,自定义。
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#selectedValue
+	@property 
+	@type observable
+	@description 选中数据，可以通过set和get方法存取。
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#selectedLabel
+	@property 
+	@type observable
+	@description 选中数据的显示值，可以通过set和get方法存取。
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#customBeginDate
+	@property 
+	@type date
+	@description 自定义开始日期
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#customEndDate
+	@property 
+	@type date
+	@description 自定义结束日期
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#getFilterStr
+	@function
+	@returns {string}	 
+	@description 获取过滤条件字符串
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#getFilterFlag
+	@function
+	@returns {string}	 
+	@description 获取过滤条件标识
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#getDateRange
+	@function
+	@returns {object}	 
+	@description 获取过滤日期范围
+	<br/><b>返回结构如下：</b>
+	<xmp> 
+	{
+		"begin" : 开始日期
+		"end" : 截止日期
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#filter
+	@function
+	@param {strign} dateType 过滤日期类型：all、today、yesterday、thisWeek、lastWeek、thisMonth、lastMonth、thisYear、lastYear、custom
+	@param {date} beginDate 自定义开始日期
+	@param {date} endDate 自定义结束日期
+	@description 设置数据的过滤条件，如果“自动刷新”则刷新数据；开发者可以通过onFilter事件接管。
+		可以通过dateType、beginDate和endDate三个参数，指定过滤范围：
+			上周 : this.comp("dateFilter1").filter("lastWeek")
+			2015-02-02 - 2015-03-18 : this.comp("dateFilter1").filter("custom", new Date(2015, 1, 2), new Date(2015, 2, 18))
+			（注意JS中month从0开始）
+*/
+
+/**
+	@name $UI/system/components/justep/dateFilter/dateFilter#onFilter
+	@event
+	@description 过滤事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+
+
+

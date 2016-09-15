@@ -1,0 +1,39 @@
+/**
+	@name $UI/system/components/justep/distpicker/distpicker2
+	@component 
+	@extends $UI/system/components/justep/picker/popPicker
+	@model UI2
+	@description distpicker2，省/市/县选择
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/distpicker2#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/distpicker2#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		排列样式: form-inline
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/distpicker2#getValue
+	@function
+	@description 获取当前选择地名
+	@return {object} 包含province: 省, city: 市, district: 县 
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/distpicker2#setValue
+	@function
+	@param {object} value 包含province: 省, city: 市, district: 县
+	@description 设置选择地名
+*/

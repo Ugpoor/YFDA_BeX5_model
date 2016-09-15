@@ -1,0 +1,8 @@
+/**
+	@name $UI/system/components/justep/input/Password
+	@component 
+	@extends $UI/system/components/justep/input/input
+	@model UI2
+	@description Password
+*/
+

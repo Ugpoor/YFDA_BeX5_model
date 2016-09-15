@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window cmqqUJz" component="$model/UI2/system/components/justep/window/window" design="device:pc;" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cmqqUJz" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/bootstrap/form/form,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/controlGroup/controlGroup,$model/UI2/system/components/justep/menu/menu,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/toolBar/toolBar,$model/UI2/system/components/justep/popMenu/popMenu,$model/UI2/system/components/justep/grid/grid,$model/UI2/system/components/justep/process/process,$model/UI2/system/components/justep/window/window,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cmqqUJz" class="cmqqUJz"></div>  
+  <div component="$model/UI2/system/components/justep/process/process" xid="process" style="width:24px;height:5px;left:184px;top:769px;" data-bind="component:{name:'$model/UI2/system/components/justep/process/process'}" data-config="{&quot;data&quot;:&quot;mainData&quot;}" __cid="cmqqUJz" class="cmqqUJz"/>  
+  <div component="$model/UI2/system/components/justep/popMenu/popMenu" class="x-popMenu cmqqUJz" xid="moreMenu" data-bind="component:{name:'$model/UI2/system/components/justep/popMenu/popMenu'}" data-config="{&quot;anchor&quot;:&quot;moreBtn&quot;,&quot;direction&quot;:&quot;left-bottom&quot;,&quot;opacity&quot;:0}" __cid="cmqqUJz"> 
+    <div class="x-popMenu-overlay cmqqUJz" xid="moreMenuOverlay" __cid="cmqqUJz"/>  
+    <ul component="$model/UI2/system/components/justep/menu/menu" class="x-menu dropdown-menu x-popMenu-content cmqqUJz" xid="moreContent" data-bind="component:{name:'$model/UI2/system/components/justep/menu/menu'}" __cid="cmqqUJz"> 
+      <li class="x-menu-item cmqqUJz" xid="backItem" __cid="cmqqUJz"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cmqqUJz" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process.back'}" __cid="cmqqUJz"> 
+          <i xid="i8" __cid="cmqqUJz" class="cmqqUJz"/>  
+          <span xid="span6" __cid="cmqqUJz" class="cmqqUJz"/> 
+        </a> 
+      </li>  
+      <li class="x-menu-item cmqqUJz" xid="suspendItem" __cid="cmqqUJz"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cmqqUJz" xid="suspendBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process.suspend'}" __cid="cmqqUJz"> 
+          <i xid="i3" __cid="cmqqUJz" class="cmqqUJz"/>  
+          <span xid="span3" __cid="cmqqUJz" class="cmqqUJz"/> 
+        </a> 
+      </li>  
+      <li class="x-menu-item cmqqUJz" xid="abortItem" __cid="cmqqUJz"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cmqqUJz" xid="abortBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process.abort'}" __cid="cmqqUJz"> 
+          <i xid="i4" __cid="cmqqUJz" class="cmqqUJz"/>  
+          <span xid="span4" __cid="cmqqUJz" class="cmqqUJz"/> 
+        </a> 
+      </li>  
+      <li class="x-menu-item cmqqUJz" xid="chartItem" __cid="cmqqUJz"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cmqqUJz" xid="chartBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process.showChart'}" __cid="cmqqUJz"> 
+          <i xid="i5" __cid="cmqqUJz" class="cmqqUJz"/>  
+          <span xid="span5" __cid="cmqqUJz" class="cmqqUJz"/> 
+        </a> 
+      </li>  
+      <li class="x-menu-item cmqqUJz" xid="recordItem" __cid="cmqqUJz"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cmqqUJz" xid="recordBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process.processRecord'}" __cid="cmqqUJz"> 
+          <i xid="i55" __cid="cmqqUJz" class="cmqqUJz"/>  
+          <span xid="span55" __cid="cmqqUJz" class="cmqqUJz"/> 
+        </a> 
+      </li> 
+    </ul> 
+  </div>  
+  <div xid="view" __cid="cmqqUJz" class="cmqqUJz"> 
+    <div xid="mainForm" class="form-horizontal container-fluid cmqqUJz" component="$model/UI2/system/components/bootstrap/form/form" data-bind="component:{name:'$model/UI2/system/components/bootstrap/form/form'}" __cid="cmqqUJz"> 
+      <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar x-toolbar-spliter form-inline cmqqUJz" xid="processBar" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cmqqUJz"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cmqqUJz" xid="advanceBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process.advance'}" __cid="cmqqUJz"> 
+          <i xid="i2" __cid="cmqqUJz" class="cmqqUJz"/>  
+          <span xid="span2" __cid="cmqqUJz" class="cmqqUJz">流转</span> 
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cmqqUJz" xid="saveBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'mainData.save'}" __cid="cmqqUJz"> 
+          <i xid="i1" __cid="cmqqUJz" class="cmqqUJz"/>  
+          <span xid="span1" __cid="cmqqUJz" class="cmqqUJz"/> 
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cmqqUJz" xid="moreBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'moreMenu.show'}" data-config="{&quot;label&quot;:&quot;更多&quot;}" __cid="cmqqUJz"> 
+          <i xid="i15" __cid="cmqqUJz" class="cmqqUJz"/>  
+          <span xid="span15" __cid="cmqqUJz" class="cmqqUJz">更多</span> 
+        </a> 
+      </div>  
+      <h1 xid="mainTitle" class="text-center cmqqUJz" __cid="cmqqUJz">标题</h1>  
+      <div xid="formGroup1" class="form-group cmqqUJz" __cid="cmqqUJz"> 
+        <div xid="col11" class="col-sm-2 cmqqUJz" __cid="cmqqUJz"> 
+          <label xid="fApplicationIdL" class="control-label cmqqUJz" bind-text="mainData.label('fApplicationId')" __cid="cmqqUJz"/> 
+        </div>  
+        <div xid="col12" class="col-sm-4 cmqqUJz" __cid="cmqqUJz"> 
+          <input xid="fApplicationId" class="form-control cmqqUJz" component="$model/UI2/system/components/justep/input/input" data-bind="component:{ref:mainData.ref('fApplicationId'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmqqUJz"/> 
+        </div>  
+        <div xid="col13" class="col-sm-2 cmqqUJz" __cid="cmqqUJz"> 
+          <label xid="fApplicationTypeL" class="control-label cmqqUJz" bind-text="mainData.label('fApplicationType')" __cid="cmqqUJz"/> 
+        </div>  
+        <div xid="col14" class="col-sm-4 cmqqUJz" __cid="cmqqUJz"> 
+          <input xid="fApplicationType" class="form-control cmqqUJz" component="$model/UI2/system/components/justep/input/input" data-bind="component:{ref:mainData.ref('fApplicationType'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmqqUJz"/> 
+        </div> 
+      </div>  
+      <div xid="formGroup2" class="form-group cmqqUJz" __cid="cmqqUJz"> 
+        <div xid="col21" class="col-sm-2 cmqqUJz" __cid="cmqqUJz"> 
+          <label xid="fUserL" class="control-label cmqqUJz" bind-text="mainData.label('fUser')" __cid="cmqqUJz"/> 
+        </div>  
+        <div xid="col22" class="col-sm-4 cmqqUJz" __cid="cmqqUJz"> 
+          <input xid="fUser" class="form-control cmqqUJz" component="$model/UI2/system/components/justep/input/input" data-bind="component:{ref:mainData.ref('fUser'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmqqUJz"/> 
+        </div>  
+        <div xid="col23" class="col-sm-2 cmqqUJz" __cid="cmqqUJz"> 
+          <label xid="fApplyTimeL" class="control-label cmqqUJz" bind-text="mainData.label('fApplyTime')" __cid="cmqqUJz"/> 
+        </div>  
+        <div xid="col24" class="col-sm-4 cmqqUJz" __cid="cmqqUJz"> 
+          <input xid="fApplyTime" class="form-control cmqqUJz" component="$model/UI2/system/components/justep/input/input" data-bind="component:{ref:mainData.ref('fApplyTime'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmqqUJz"/> 
+        </div> 
+      </div>  
+      <div xid="formGroup3" class="form-group cmqqUJz" __cid="cmqqUJz"> 
+        <div xid="col31" class="col-sm-2 cmqqUJz" __cid="cmqqUJz"> 
+          <label xid="fApplicationStatusL" class="control-label cmqqUJz" bind-text="mainData.label('fApplicationStatus')" __cid="cmqqUJz"/> 
+        </div>  
+        <div xid="col32" class="col-sm-4 cmqqUJz" __cid="cmqqUJz"> 
+          <input xid="fApplicationStatus" class="form-control cmqqUJz" component="$model/UI2/system/components/justep/input/input" data-bind="component:{ref:mainData.ref('fApplicationStatus'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmqqUJz"/> 
+        </div> 
+      </div> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/controlGroup/controlGroup" class="x-control-group cmqqUJz" xid="detailCG" data-bind="component:{name:'$model/UI2/system/components/justep/controlGroup/controlGroup'}" data-config="{&quot;collapsible&quot;:true,&quot;title&quot;:&quot;从列表&quot;}" __cid="cmqqUJz"> 
+      <div class="x-control-group-title cmqqUJz" __cid="cmqqUJz"> 
+        <span xid="span7" __cid="cmqqUJz" class="cmqqUJz">title</span> 
+      </div>  
+      <div __cid="cmqqUJz" class="cmqqUJz"> 
+        <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar x-toolbar-spliter form-inline cmqqUJz" xid="detailBar" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cmqqUJz"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cmqqUJz" xid="addBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'detailData.new'}" data-config="{&quot;icon&quot;:&quot;icon-plus&quot;}" __cid="cmqqUJz"> 
+            <i xid="i6" class="icon-plus cmqqUJz" __cid="cmqqUJz"/>  
+            <span xid="span10" __cid="cmqqUJz" class="cmqqUJz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cmqqUJz" xid="deleteBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'detailData.delete'}" __cid="cmqqUJz"> 
+            <i xid="i7" __cid="cmqqUJz" class="cmqqUJz"/>  
+            <span xid="span11" __cid="cmqqUJz" class="cmqqUJz"/> 
+          </a> 
+        </div>  
+        <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" hiddenCaptionbar="true" xid="detail" data="detailData" class="x-grid-no-bordered cmqqUJz" data-config="{&quot;colModel&quot;:[{&quot;editable&quot;:true,&quot;label&quot;:&quot;附件Id&quot;,&quot;name&quot;:&quot;fAcceId&quot;},{&quot;editable&quot;:true,&quot;label&quot;:&quot;附件名称&quot;,&quot;name&quot;:&quot;fAcceName&quot;},{&quot;editable&quot;:true,&quot;label&quot;:&quot;附件链接&quot;,&quot;name&quot;:&quot;fAcceLink&quot;},{&quot;editable&quot;:true,&quot;label&quot;:&quot;是否有效&quot;,&quot;name&quot;:&quot;fAcceValid&quot;}],&quot;data&quot;:&quot;detailData&quot;,&quot;editors&quot;:&quot;3E72E5AC6EF74A06960FFC5D62719D90&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;hiddenCaptionbar&quot;:true,&quot;width&quot;:&quot;100%&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cmqqUJz"/>  
+        <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" xid="3E72E5AC6EF74A06960FFC5D62719D90" class="x-grid-editors cmqqUJz" bind-with="comp('detail').getCellEditorsBindingObject()" __cid="cmqqUJz">
+          <xhtml:div xid="fAcceIdE" col="fAcceId" __cid="cmqqUJz" class="cmqqUJz"> 
+            <input xid="fAcceIdI" component="$model/UI2/system/components/justep/input/input" class="form-control cmqqUJz" data-bind="component:{ref:ref('fAcceId'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmqqUJz"/> 
+          </xhtml:div>
+          <xhtml:div xid="fAcceNameE" col="fAcceName" __cid="cmqqUJz" class="cmqqUJz"> 
+            <input xid="fAcceNameI" component="$model/UI2/system/components/justep/input/input" class="form-control cmqqUJz" data-bind="component:{ref:ref('fAcceName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmqqUJz"/> 
+          </xhtml:div>
+          <xhtml:div xid="fAcceLinkE" col="fAcceLink" __cid="cmqqUJz" class="cmqqUJz"> 
+            <input xid="fAcceLinkI" component="$model/UI2/system/components/justep/input/input" class="form-control cmqqUJz" data-bind="component:{ref:ref('fAcceLink'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmqqUJz"/> 
+          </xhtml:div>
+          <xhtml:div xid="fAcceValidE" col="fAcceValid" __cid="cmqqUJz" class="cmqqUJz"> 
+            <input xid="fAcceValidI" component="$model/UI2/system/components/justep/input/input" class="form-control cmqqUJz" data-bind="component:{ref:ref('fAcceValid'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmqqUJz"/> 
+          </xhtml:div>
+        </xhtml:div>
+      </div> 
+    </div> 
+  </div> 
+</div>

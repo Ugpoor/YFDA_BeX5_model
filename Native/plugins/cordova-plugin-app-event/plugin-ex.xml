@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-app-event" hide="true">
+	<name>AppEvent</name>
+	<description>为第三方提供各种活动，使其可供使用</description>
+
+</plugin>

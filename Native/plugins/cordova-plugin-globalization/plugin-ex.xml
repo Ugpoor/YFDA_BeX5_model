@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-globalization">
+	<name>国际化</name>
+	<description>国际化插件，提供语言、日期、货币等本地化信息</description>
+	
+</plugin>

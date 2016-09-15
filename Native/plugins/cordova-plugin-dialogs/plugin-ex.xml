@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-dialogs">
+	<name>本地对话框</name>
+	<description>本地对话框插件，提供提醒(alert)、询问(confirm, prompt)和蜂鸣音(beep)的本地调用</description>
+	
+</plugin>

@@ -1,0 +1,12 @@
+.x-focus-star {
+  background: url('../img/focus.gif') no-repeat center;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+.x-focus-unstar {
+  background: url('../img/unfocus.gif') no-repeat center;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}

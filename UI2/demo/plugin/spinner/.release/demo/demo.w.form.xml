@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" component="$model/UI2/system/components/justep/window/window" xid="window" extends="$UI/demo/plugin/template/demo.w" __id="id_1" design="device:m;" class="window window cVnIjQb" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cVnIjQb" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/buttonGroup,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style>null</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onModelConstructDone:modelModelConstructDone" __cid="cVnIjQb" class="cVnIjQb"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p3e3de5fafc514987958663b74db12144-iosstatusbar cVnIjQb" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cVnIjQb"> 
+    <div class="x-panel-top cVnIjQb" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cVnIjQb"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cVnIjQb" xid="titleBar" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;spinner&quot;}" __cid="cVnIjQb"> 
+        <div class="x-titlebar-left cVnIjQb" __cid="cVnIjQb"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cVnIjQb" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;}" __cid="cVnIjQb"> 
+            <i xid="i6" class="icon-chevron-left cVnIjQb" __cid="cVnIjQb"/>  
+            <span xid="span6" __cid="cVnIjQb" class="cVnIjQb"/>
+          </a>
+        </div>  
+        <div class="x-titlebar-title cVnIjQb" __cid="cVnIjQb">插件的名字</div>  
+        <div class="x-titlebar-right  cVnIjQb" __cid="cVnIjQb">
+          <div class="empty cVnIjQb" __cid="cVnIjQb"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cVnIjQb" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cVnIjQb">
+      <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cVnIjQb" xid="contents1" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0}" __cid="cVnIjQb"> 
+        <div class="x-contents-content active cVnIjQb" xid="infoContent" style="padding:10px;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cVnIjQb">
+          <h3 xid="h31" style="text-align:center;" __cid="cVnIjQb" class="cVnIjQb">插件概述</h3>
+          <h4 xid="h41" __cid="cVnIjQb" class="cVnIjQb">介绍：</h4>
+          <p xid="p1" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cVnIjQb" class="cVnIjQb">ID：cordova-plugin-spinner-dialog</p>
+          <p xid="p61_1" xmlns:xui="http://www.justep.com/xui" xui:before="div4" xui:parent="infoContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb">添加引用本插件，可以使应用增加显示spinner和隐藏spinner的能力。spinner一般用于程序加载、跳转等场景，美观得体的spinner会让你的应用有更好的用户体验。</p>
+          <div xid="div4" style="height:30px;" __cid="cVnIjQb" class="cVnIjQb"/>  
+          <h4 xid="h42" __cid="cVnIjQb" class="cVnIjQb">适用平台：</h4>  
+          <p xid="platformP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cVnIjQb" class="cVnIjQb">Android、IOS</p> 
+        </div>  
+        <div class="x-contents-content cVnIjQb" xid="demoContent" style="padding:10px;width:100%;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cVnIjQb">
+          <div xid="div2" style="height:15px;" __cid="cVnIjQb" class="cVnIjQb"/>
+          <div xid="div3" __cid="cVnIjQb" class="cVnIjQb">
+            <p xid="accountP" style="font-size:medium;font-weight:bolder;" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cVnIjQb" class="cVnIjQb">显示spinner</p>
+            <p xid="p11_1" xmlns:xui="http://www.justep.com/xui" xui:parent="div3" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb">点击屏幕(IOS)，或者回退键(Android)隐藏spinner。</p>
+          </div>  
+          <div style="padding:10px;" xid="div11_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb"> 
+            <a class="btn btn-default cVnIjQb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="spinneronly" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:spinneronlyClick" data-config="{&quot;label&quot;:&quot;只显示spinner&quot;}" __cid="cVnIjQb"> 
+              <i xid="i11_1" __cid="cVnIjQb" class="cVnIjQb"/>  
+              <span xid="span11_1" __cid="cVnIjQb" class="cVnIjQb">只显示spinner</span> 
+            </a> 
+          </div>
+          <div style="padding:10px;" xid="div41_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb"> 
+            <a class="btn btn-default cVnIjQb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="mspinner" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:mspinnerClick" data-config="{&quot;label&quot;:&quot;包含信息的spinner&quot;}" __cid="cVnIjQb"> 
+              <i xid="i41_1" __cid="cVnIjQb" class="cVnIjQb"/>  
+              <span xid="span41_1" __cid="cVnIjQb" class="cVnIjQb">包含信息的spinner</span> 
+            </a> 
+          </div>
+          <div xid="div51_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb"> 
+            <p style="font-size:medium;font-weight:bolder;" xid="p21_1" __cid="cVnIjQb" class="cVnIjQb">持续一段时间的spinner</p>  
+            <p xid="p31_1" __cid="cVnIjQb" class="cVnIjQb">无法通过点击屏幕(IOS),或者回退键(Android)隐藏这种spinner，本示例显示五秒后消失。</p> 
+          </div>
+          <div style="padding:10px;" xid="div61_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb"> 
+            <a class="btn btn-default cVnIjQb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="persispinner" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:persispinnerClick" data-config="{&quot;label&quot;:&quot;持续型spinner&quot;}" __cid="cVnIjQb"> 
+              <i xid="i51_1" __cid="cVnIjQb" class="cVnIjQb"/>  
+              <span xid="span51_1" __cid="cVnIjQb" class="cVnIjQb">持续型spinner</span> 
+            </a> 
+          </div>
+          <div xid="div71_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb"> 
+            <p style="font-size:medium;font-weight:bolder;" xid="p41_1" __cid="cVnIjQb" class="cVnIjQb">Android独有的形式</p>  
+            <p xid="p51_1" __cid="cVnIjQb" class="cVnIjQb">IOS只能显示一行文本信息。以下形式的spinner在IOS只能显示标题,而在Android则能显示标题和内容。</p> 
+          </div>
+          <div style="padding:10px;" xid="div81_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb"> 
+            <a class="btn btn-default cVnIjQb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="otspinner" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:otspinnerClick" data-config="{&quot;label&quot;:&quot;只有标题的spinner&quot;}" __cid="cVnIjQb"> 
+              <i xid="i61_1" __cid="cVnIjQb" class="cVnIjQb"/>  
+              <span xid="span61_1" __cid="cVnIjQb" class="cVnIjQb">只有标题的spinner</span> 
+            </a> 
+          </div>
+          <div style="padding:10px;" xid="div91_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb"> 
+            <a class="btn btn-default cVnIjQb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="tmspinner" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:tmspinnerClick" data-config="{&quot;label&quot;:&quot;同时包含标题和信息的spinner&quot;}" __cid="cVnIjQb"> 
+              <i xid="i71_1" __cid="cVnIjQb" class="cVnIjQb"/>  
+              <span xid="span71_1" __cid="cVnIjQb" class="cVnIjQb">同时包含标题和信息的spinner</span> 
+            </a> 
+          </div>
+        </div>  
+        <div class="x-contents-content cVnIjQb" xid="codeContent" style="padding:10px" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cVnIjQb">
+          <p xid="p111_2" xui:parent="codeContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb">只显示spinner</p>
+          <div xid="spinneronlyClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb"/>
+          <p xid="p12_1" xui:parent="codeContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb">包含信息的spinner</p>
+          <div xid="mspinnerClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb"/>
+          <p xid="p22_1" xui:parent="codeContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb">持续型spinner</p>
+          <div xid="persispinnerClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb"/>
+          <p xid="p32_1" xui:parent="codeContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb">只有标题的spinner</p>
+          <div xid="otspinnerClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb"/>
+          <p xid="p42_1" xui:parent="codeContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb">同时包含标题和信息的spinner</p>
+          <div xid="tmspinnerClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cVnIjQb" class="cVnIjQb"/>
+        </div>
+      </div>
+    </div>  
+    <div class="x-panel-bottom cVnIjQb" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cVnIjQb">
+      <div component="$model/UI2/system/components/justep/button/buttonGroup" class="btn-group btn-group-justified x-card  cVnIjQb" xid="buttonGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/button/buttonGroup'}" data-config="{&quot;tabbed&quot;:true}" __cid="cVnIjQb">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cVnIjQb" xid="info" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;info&quot;,&quot;target&quot;:&quot;infoContent&quot;}" __cid="cVnIjQb"> 
+          <i xid="i1" __cid="cVnIjQb" class="cVnIjQb"/>  
+          <span xid="span1" __cid="cVnIjQb" class="cVnIjQb">info</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cVnIjQb" xid="demo" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;demo&quot;,&quot;target&quot;:&quot;demoContent&quot;}" __cid="cVnIjQb"> 
+          <i xid="i2" __cid="cVnIjQb" class="cVnIjQb"/>  
+          <span xid="span2" __cid="cVnIjQb" class="cVnIjQb">demo</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cVnIjQb" xid="code" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;code&quot;,&quot;target&quot;:&quot;codeContent&quot;}" __cid="cVnIjQb"> 
+          <i xid="i3" __cid="cVnIjQb" class="cVnIjQb"/>  
+          <span xid="span3" __cid="cVnIjQb" class="cVnIjQb">code</span>
+        </a>
+      </div>
+    </div>
+    <style __cid="cVnIjQb" class="cVnIjQb">.x-panel.p3e3de5fafc514987958663b74db12144-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.p3e3de5fafc514987958663b74db12144-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.p3e3de5fafc514987958663b74db12144-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p3e3de5fafc514987958663b74db12144-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p3e3de5fafc514987958663b74db12144-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.p3e3de5fafc514987958663b74db12144-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p3e3de5fafc514987958663b74db12144-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p3e3de5fafc514987958663b74db12144-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p3e3de5fafc514987958663b74db12144-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div>  
+</div>

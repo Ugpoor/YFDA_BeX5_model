@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" __id="id_1" extends="$UI/portal/base/base.w" xid="window" class="window window body page-quick-sidebar-over-content page-sidebar-closed-hide-logo page-header-fixed page-sidebar-fixed page-footer-fixed cJrqyYz" component="$model/UI2/system/components/justep/window/window" design="device:pc" sysParam="false" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cJrqyYz" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/windowDialog/windowDialog,$model/UI2/system/components/justep/window/window,">
+  <xhtml:style>#x-default-loadingbar.cJrqyYz{background-color: rgb(28, 175, 154) !important} .x-portal-task-wait.cJrqyYz .badge.cJrqyYz{background-color: rgb(153, 153, 153)} .page-header.navbar.cJrqyYz .menu-toggler.sidebar-toggler.cJrqyYz{color: white; font-size: 24px} .page-header.navbar.cJrqyYz .page-logo.cJrqyYz .logo-default.cJrqyYz{margin: 10px 0 0 0} .page-content-close.cJrqyYz{float: right} .page-content-close.cJrqyYz a.cJrqyYz{margin: 15px} .page-content-close.cJrqyYz a.cJrqyYz i.cJrqyYz{font-size: 24px} #portal-opened.cJrqyYz .dropdown-menu.cJrqyYz li.cJrqyYz a.cJrqyYz i.cJrqyYz{display: none} #portal-opened.cJrqyYz .dropdown-menu.cJrqyYz li.cJrqyYz a.on.cJrqyYz i.cJrqyYz{display: inline-block} .nav.pull-right.cJrqyYz &gt; li.cJrqyYz &gt; .dropdown-menu.cJrqyYz, .nav.cJrqyYz &gt; li.cJrqyYz &gt; .dropdown-menu.pull-right.cJrqyYz{right: 0; left: auto} .page-header.navbar.cJrqyYz .top-menu.cJrqyYz .navbar-nav.cJrqyYz{font-size: 13px} .page-sidebar-menu.cJrqyYz a.cJrqyYz{cursor: pointer} .page-sidebar.cJrqyYz .page-sidebar-menu.cJrqyYz li.cJrqyYz &gt; a.cJrqyYz &gt; .arrow.cJrqyYz:before, .page-sidebar-closed.page-sidebar-fixed.cJrqyYz .page-sidebar.cJrqyYz:hover .page-sidebar-menu.cJrqyYz li.cJrqyYz &gt; a.cJrqyYz &gt; .arrow.cJrqyYz:before{font-family: Ionicons; content: ""} .page-sidebar.cJrqyYz .page-sidebar-menu.cJrqyYz li.cJrqyYz &gt; a.cJrqyYz &gt; .arrow.open.cJrqyYz:before, .page-sidebar-closed.page-sidebar-fixed.cJrqyYz .page-sidebar.cJrqyYz:hover .page-sidebar-menu.cJrqyYz li.cJrqyYz &gt; a.cJrqyYz &gt; .arrow.open.cJrqyYz:before{content: ""} .page-header.navbar.cJrqyYz .page-logo.cJrqyYz .logo-default.cJrqyYz{margin-top: 13px} [xid="login"].cJrqyYz .x-dialog-overlay.cJrqyYz{background: white} .portal-login-page.cJrqyYz .x-checkbox.cJrqyYz input[type="checkbox"].cJrqyYz:checked + label.cJrqyYz:before{background-color: white; color: black} #portal-opened.cJrqyYz .dropdown-menu.cJrqyYz li.cJrqyYz a.cJrqyYz{text-overflow: ellipsis; white-space: nowrap; overflow: hidden} .dropdown-menu.cJrqyYz &gt; .external.cJrqyYz{display: block; overflow: hidden; padding: 15px 15px; letter-spacing: 0.5px; border-bottom: 1px solid rgb(221, 221, 221)} #portal-opened.cJrqyYz .dropdown-menu.cJrqyYz .dropdown-menu-content.cJrqyYz{padding-right: 0 !important; padding-left: 0; list-style: none} #portal-opened.cJrqyYz .dropdown-menu.cJrqyYz .dropdown-menu-content.cJrqyYz &gt; li.cJrqyYz:first-child a.cJrqyYz{border-top: none} #portal-opened.cJrqyYz .dropdown-menu.cJrqyYz .dropdown-menu-content.cJrqyYz &gt; li.cJrqyYz &gt; a.cJrqyYz{border-bottom: 1px solid rgb(239, 242, 246) !important; color: rgb(136, 136, 136); display: block; clear: both; font-weight: 300; line-height: 20px; white-space: normal; font-size: 13px; padding: 8px 15px 8px; text-shadow: none; text-decoration: none} #portal-opened.cJrqyYz .dropdown-menu.cJrqyYz .dropdown-menu-content.cJrqyYz &gt; li.cJrqyYz &gt; a.cJrqyYz &gt; i.cJrqyYz{margin-top: 5px} .dropdown-menu.cJrqyYz &gt; .external.cJrqyYz &gt; h3.cJrqyYz{margin: 0; padding: 0; float: left; font-size: 13px; display: inline-block} .page-header.navbar.cJrqyYz .top-menu.cJrqyYz .navbar-nav.cJrqyYz &gt; li.dropdown-user.cJrqyYz .dropdown-menu.cJrqyYz &gt; .external.cJrqyYz .closeAll.cJrqyYz{color: rgb(91, 155, 209); display: inline-block; padding: 0; background: none; clear: inherit; font-size: 13px; font-weight: 300; position: absolute; right: 10px; border: 0; margin-top: -1px} .page-sidebar.cJrqyYz .page-sidebar-menu.cJrqyYz li.psm.cJrqyYz &gt; a.cJrqyYz &gt; .icon-person-stalker.cJrqyYz:before, .page-sidebar-closed.page-sidebar-fixed.cJrqyYz .page-sidebar.cJrqyYz:hover .page-sidebar-menu.cJrqyYz li.psm.cJrqyYz &gt; a.cJrqyYz &gt; .icon-person-stalker.cJrqyYz:before{float: right; width: 14px; text-align: center; margin-top: -1px; margin-right: 5px; margin-left: 5px; display: inline; font-size: 16px; height: auto; font-weight: 300; text-shadow: none} .page-sidebar.cJrqyYz .psm.cJrqyYz &gt; a.cJrqyYz &gt; span.cJrqyYz{display: inline; color: rgb(170, 170, 170)} .page-sidebar.cJrqyYz .psm.cJrqyYz .sub-menu.cJrqyYz a.cJrqyYz{text-overflow: ellipsis; overflow: hidden; white-space: nowrap} .page-title.cJrqyYz{height: 24px}</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onunLoad:modelUnLoad;onModelConstruct:modelModelConstruct;onLoad:modelLoad" __cid="cJrqyYz" class="cJrqyYz"/>  
+  <div class="page-root cJrqyYz" style="display: none;" xmlns:xui="http://www.justep.com/xui" xui:parent="window" xui:update-mode="insert" __cid="cJrqyYz"> 
+    <div class="page-header navbar navbar-fixed-top cJrqyYz" style="height:46px;" __cid="cJrqyYz"> 
+      <div class="page-header-inner cJrqyYz" __cid="cJrqyYz"> 
+        <div class="page-logo cJrqyYz" __cid="cJrqyYz"> 
+          <a __cid="cJrqyYz" class="cJrqyYz"> 
+            <img src="$model/UI2/portal/pc/assets/admin/layout/img/logo.png" alt="logo" class="logo-default cJrqyYz" __cid="cJrqyYz"/> 
+          </a>  
+          <div class="menu-toggler sidebar-toggler cJrqyYz" __cid="cJrqyYz"></div> 
+        </div>  
+        <a href="javascript:;" class="menu-toggler responsive-toggler cJrqyYz" data-toggle="collapse" data-target=".navbar-collapse" __cid="cJrqyYz"/>  
+        <div class="top-menu cJrqyYz" __cid="cJrqyYz"> 
+          <ul class="nav navbar-nav pull-right cJrqyYz" __cid="cJrqyYz"> 
+            <li id="portal-opened" class="dropdown dropdown-user cJrqyYz" style="display:none;" __cid="cJrqyYz"> 
+              <a href="#" class="dropdown-toggle cJrqyYz" data-toggle="dropdown" data-x5-hover="dropdown" data-close-others="true" __cid="cJrqyYz"> 
+                <i class="icon-ios7-browsers cJrqyYz" __cid="cJrqyYz"/>  
+                <span class="username username-hide-on-mobile cJrqyYz" __cid="cJrqyYz">已打开功能</span>  
+                <i class="fa fa-angle-down cJrqyYz" __cid="cJrqyYz"/> 
+              </a>  
+              <ul class="dropdown-menu dropdown-menu-default cJrqyYz" __cid="cJrqyYz"> 
+                <li class="external cJrqyYz" __cid="cJrqyYz"> 
+                  <h3 __cid="cJrqyYz" class="cJrqyYz"> 
+                    <span class="bold cJrqyYz" __cid="cJrqyYz">12</span> 个打开的功能
+                  </h3>  
+                  <a href="#" class="closeAll cJrqyYz" __cid="cJrqyYz">全部关闭</a> 
+                </li>  
+                <li __cid="cJrqyYz" class="cJrqyYz"> 
+                  <ul class="dropdown-menu-content scroller cJrqyYz" data-height="160px" __cid="cJrqyYz"/> 
+                </li> 
+              </ul> 
+            </li>  
+            <li id="portal-agent" class="dropdown dropdown-user x-portal-agent cJrqyYz" style="display:none;" __cid="cJrqyYz"> 
+              <a href="#" class="dropdown-toggle cJrqyYz" data-toggle="dropdown" data-x5-hover="dropdown" data-close-others="true" __cid="cJrqyYz"> 
+                <i class="icon-ios7-browsers cJrqyYz" __cid="cJrqyYz"/>  
+                <span class="username username-hide-on-mobile cJrqyYz" __cid="cJrqyYz">代理</span>  
+                <i class="fa fa-angle-down cJrqyYz" __cid="cJrqyYz"/> 
+              </a>  
+              <ul class="dropdown-menu dropdown-menu-default cJrqyYz" __cid="cJrqyYz"/> 
+            </li>  
+            <li class="dropdown dropdown-user cJrqyYz" __cid="cJrqyYz"> 
+              <a class="dropdown-toggle x-portal-task-wait cJrqyYz" __cid="cJrqyYz"> 
+                <span class="username username-hide-on-mobile cJrqyYz" __cid="cJrqyYz">待办任务
+                  <span class="badge cJrqyYz" bind-text="waitTaskCount" __cid="cJrqyYz"/>
+                </span> 
+              </a> 
+            </li>  
+            <li class="dropdown dropdown-user cJrqyYz" __cid="cJrqyYz"> 
+              <a id="portal-reload" class="dropdown-toggle x-portal-reload cJrqyYz" style="display:none;" __cid="cJrqyYz"> 
+                <i class="icon-refresh cJrqyYz" __cid="cJrqyYz"/>  
+                <span class="username username-hide-on-mobile cJrqyYz" __cid="cJrqyYz">刷新</span> 
+              </a> 
+            </li>  
+            <li class="dropdown dropdown-user cJrqyYz" __cid="cJrqyYz"> 
+              <a href="#" class="dropdown-toggle cJrqyYz" data-toggle="dropdown" data-x5-hover="dropdown" data-close-others="true" __cid="cJrqyYz"> 
+                <i class="icon-user cJrqyYz" __cid="cJrqyYz"/>  
+                <span id="username" class="username username-hide-on-mobile x-portal-username cJrqyYz" __cid="cJrqyYz"/>  
+                <i class="fa fa-angle-down cJrqyYz" __cid="cJrqyYz"/> 
+              </a>  
+              <ul class="dropdown-menu dropdown-menu-default cJrqyYz" __cid="cJrqyYz"> 
+                <li __cid="cJrqyYz" class="cJrqyYz"> 
+                  <a component="$model/UI2/system/components/justep/button/button" xid="configBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:configBtnClick" data-config="{&quot;label&quot;:&quot;配置&quot;}" __cid="cJrqyYz" class="cJrqyYz"> 
+                    <i class="icon-settings cJrqyYz" __cid="cJrqyYz"/> 配置
+                  </a> 
+                </li>  
+                <li __cid="cJrqyYz" class="cJrqyYz"> 
+                  <a component="$model/UI2/system/components/justep/button/button" class="x-portal-setPassWord cJrqyYz" href="#" xid="changPasswordBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-ios7-gear-outline&quot;,&quot;label&quot;:&quot;修改密码&quot;}" __cid="cJrqyYz"> 
+                    <i class="icon-ios7-gear-outline cJrqyYz" __cid="cJrqyYz"/> 修改密码
+                  </a> 
+                </li>  
+                <li class="divider user-divider cJrqyYz" __cid="cJrqyYz"/>  
+                <li __cid="cJrqyYz" class="cJrqyYz"> 
+                  <a component="$model/UI2/system/components/justep/button/button" class="x-portal-logout cJrqyYz" xid="logoutBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-power&quot;,&quot;label&quot;:&quot;注销&quot;}" __cid="cJrqyYz"> 
+                    <i xid="i1" class="icon-power cJrqyYz" __cid="cJrqyYz"/>  
+                    <span xid="span1" __cid="cJrqyYz" class="cJrqyYz">注销</span> 
+                  </a> 
+                </li> 
+              </ul> 
+            </li> 
+          </ul> 
+        </div> 
+      </div> 
+    </div>  
+    <div class="clearfix cJrqyYz" __cid="cJrqyYz"/>  
+    <div class="page-container cJrqyYz" __cid="cJrqyYz"> 
+      <div class="page-sidebar-wrapper cJrqyYz" __cid="cJrqyYz"> 
+        <div class="page-sidebar navbar-collapse collapse cJrqyYz" __cid="cJrqyYz"> 
+          <ul class="page-sidebar-menu cJrqyYz" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" __cid="cJrqyYz"> 
+            <li class="sidebar-search-wrapper cJrqyYz" style="display:none;" __cid="cJrqyYz"> 
+              <form class="sidebar-search sidebar-search-bordered sidebar-search-solid cJrqyYz" action="$model/UI2/portal/pc/extra_search.html" method="POST" __cid="cJrqyYz"> 
+                <a href="javascript:;" class="remove cJrqyYz" __cid="cJrqyYz"> 
+                  <i class="icon-close cJrqyYz" __cid="cJrqyYz"/> 
+                </a>  
+                <div class="input-group cJrqyYz" __cid="cJrqyYz"> 
+                  <input type="text" class="form-control cJrqyYz" placeholder="Search..." __cid="cJrqyYz"/>  
+                  <span class="input-group-btn cJrqyYz" __cid="cJrqyYz"> 
+                    <a href="javascript:;" class="btn submit cJrqyYz" __cid="cJrqyYz"> 
+                      <i class="icon-magnifier cJrqyYz" __cid="cJrqyYz"/> 
+                    </a> 
+                  </span> 
+                </div> 
+              </form> 
+            </li>  
+            <li class="start active open cJrqyYz" __cid="cJrqyYz"> 
+              <a class="ajaxify x-portal-showMain cJrqyYz" __cid="cJrqyYz"> 
+                <i class="icon-home cJrqyYz" __cid="cJrqyYz"/>  
+                <span class="title cJrqyYz" __cid="cJrqyYz">主页</span>  
+                <span class="selected cJrqyYz" __cid="cJrqyYz"/> 
+              </a> 
+            </li> 
+          </ul> 
+        </div> 
+      </div>  
+      <div class="page-content-wrapper cJrqyYz" __cid="cJrqyYz"> 
+        <div class="page-content cJrqyYz" __cid="cJrqyYz"> 
+          <div class="page-content-close cJrqyYz" __cid="cJrqyYz"> 
+            <a component="$model/UI2/system/components/justep/button/button" xid="closeFuncBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:closeFuncBtnClick" __cid="cJrqyYz" class="cJrqyYz"> 
+              <i class="icon-close-round cJrqyYz" __cid="cJrqyYz"/> 
+            </a> 
+          </div>  
+          <h3 class="page-title cJrqyYz" __cid="cJrqyYz">首页</h3>  
+          <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-portal-pages cJrqyYz" xid="pages" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0,&quot;routable&quot;:true,&quot;swipe&quot;:false,&quot;wrap&quot;:false}" __cid="cJrqyYz"/> 
+        </div> 
+      </div>  
+      <div class="page-quick-sidebar-wrapper cJrqyYz" __cid="cJrqyYz"> 
+        <div class="page-quick-sidebar cJrqyYz" __cid="cJrqyYz"> 
+          <div class="nav-justified cJrqyYz" __cid="cJrqyYz"/> 
+        </div> 
+      </div> 
+    </div>  
+    <div class="page-footer cJrqyYz" style="height: 33px;" __cid="cJrqyYz"> 
+      <div class="page-footer-inner cJrqyYz" __cid="cJrqyYz">2000-2016 © 北京起步科技有限公司</div>  
+      <div class="scroll-to-top cJrqyYz" __cid="cJrqyYz"> 
+        <i class="icon-arrow-up cJrqyYz" __cid="cJrqyYz"/> 
+      </div> 
+    </div> 
+  </div>
+  <div xmlns:xui="http://www.justep.com/xui" xui:parent="window" xui:update-mode="insert" __cid="cJrqyYz" class="cJrqyYz"> 
+    <span component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="configDialog" style="left:36px;top:60px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-config="{&quot;height&quot;:&quot;auto&quot;,&quot;src&quot;:&quot;$model/UI2/portal/pc/config/theme.w&quot;,&quot;status&quot;:&quot;normal&quot;,&quot;top&quot;:&quot;100px&quot;,&quot;width&quot;:&quot;420px&quot;}" __cid="cJrqyYz" class="cJrqyYz">
+      <xhtml:div class="x-dialog-overlay cJrqyYz" __cid="cJrqyYz"/>
+      <xhtml:div class="x-dialog cJrqyYz" style="display:none;" __cid="cJrqyYz">
+        <xhtml:div class="x-dialog-title cJrqyYz" __cid="cJrqyYz">
+          <xhtml:button class="close cJrqyYz" __cid="cJrqyYz">
+            <xhtml:span __cid="cJrqyYz" class="cJrqyYz">×</xhtml:span>
+          </xhtml:button>
+          <xhtml:div class="x-dialog-title-text cJrqyYz" __cid="cJrqyYz"/>
+        </xhtml:div>
+        <xhtml:div class="x-dialog-body cJrqyYz" __cid="cJrqyYz"/>
+      </xhtml:div>
+    </span> 
+  </div>
+</div>

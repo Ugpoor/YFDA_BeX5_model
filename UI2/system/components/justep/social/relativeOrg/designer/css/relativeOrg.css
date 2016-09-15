@@ -1,0 +1,9 @@
+.x-ros-item {
+	float: left;
+	line-height: 64px;
+}
+
+.x-ro:hover, .x-ros:hover
+{
+	outline: blue dashed 1px;
+}

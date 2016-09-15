@@ -1,0 +1,17 @@
+.text-black{ color:#333;}
+.text-success{ color:#32bd60;}
+.text-danger{ color:#ff7767;}
+
+.x-titlebar{ background-color:#fafafa;}
+.x-titlebar .x-titlebar-title{ padding:10px 0;}
+
+/*删除线*/
+.text-del{ text-decoration:line-through;}
+
+.btn-group{ border-top:1px solid rgba(90, 90, 90, 0.05); border-bottom:1px solid rgba(90, 90, 90, 0.05);}
+.btn-group>.btn-group{ border:0;}
+.btn-group .btn:last-child{ border-left:1px solid rgba(90, 90, 90, 0.05);}
+
+/*内容部分*/
+.media{ margin-top:0; padding:10px; border-bottom:1px solid rgba(90, 90, 90, 0.1);}
+.media .media-body .btn{ padding:0 5px;}

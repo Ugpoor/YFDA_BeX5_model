@@ -1,0 +1,108 @@
+/**
+	@name cordova-plugin-fastrde-downloader
+	@class 
+	@model Native
+	@category plugin
+	@declareVar downloader
+	@description 文件下载插件
+*/
+
+/**
+	@name cordova-plugin-fastrde-downloader.init
+	@function
+	@param {Object} options 初始化参数
+	<br/><b>参数格式：</b>
+	<xmp>
+		{
+			"folder" : {String} 文件下载到的文件夹,
+			"unzip" : zip文件下载后是否解压，缺省为false
+			"remove" : {Boolean} 解压zip文件是否删除，缺省为true,
+			"check" : {Boolean}文件下载后md5sum检查，缺省为false,
+			"wifiOnly" : {Boolean} 是否只在wifi环境下载文件，缺省为false,
+			"noMedia" : 是否允许在安卓上扫描文件，缺省为true,
+			"fileSystem" : {cordova-plugin-file#FileEntry#filesystem} 文件下载的文件系统，依赖cordova-plugin-file中的filesystem 
+		}
+	</xmp>
+	@returns {void}
+	@description 初始化插件
+*/
+
+/**
+	@name cordova-plugin-fastrde-downloader.get
+	@function
+	@param {String} url 文件下载路径
+	@param {String} md5 可选参数，md5校验值
+	@returns {void}
+	@description 下载文件
+*/
+
+/**
+	@name cordova-plugin-fastrde-downloader.get
+	@function
+	@param {String} url 文件下载路径
+	@param {String} md5 可选参数，md5校验值
+	@returns {String} 返回文件名
+	@description 下载文件
+*/
+
+/**
+	@name cordova-plugin-fastrde-downloader.getMultipleFiles
+	@function
+	@param {List} list 下载参数列表
+	<br/><b>参数格式：</b>
+	<xmp>
+		{
+			url : {String} 文件下载路径
+	 		md5  : {String} 可选参数，md5校验值
+		}
+	</xmp>
+	@returns {void}
+	@description 批量下载文件
+*/
+
+/**
+	@name cordova-plugin-fastrde-downloader.isInitialized
+	@function
+	@returns {void}
+	@description 检查插件是否初始化
+*/
+
+/**
+	@name cordova-plugin-fastrde-downloader.setWifiOnly
+	@function
+	@param {Boolean} wifionly 是否只在wifi环境下下载
+	@returns {void}
+	@description 设置只在wifi环境下下载文件
+*/
+
+/**
+	@name cordova-plugin-fastrde-downloader.setNoMedia
+	@function
+	@param {Boolean} noMedia 是否允许在安卓上扫描
+	@returns {void}
+	@description 是否允许在安卓上扫描文件
+*/
+
+/**
+	@name cordova-plugin-fastrde-downloader.setAutoUnzip
+	@function
+	@param {Boolean} unzip 是否自动解压文件
+	@returns {void}
+	@description 文件下载后是否自动解压文件
+*/
+
+/**
+	@name cordova-plugin-fastrde-downloader.setAutoCheck
+	@function
+	@param {Boolean} check 是否md5sum检查
+	@returns {void}
+	@description 文件下载后md5sum检查
+*/
+
+/**
+	@name cordova-plugin-fastrde-downloader.setRemoveAfterUnzip
+	@function
+	@param {Boolean} del 是否参数文件
+	@returns {void}
+	@description 文件解压后是否删除文件
+*/

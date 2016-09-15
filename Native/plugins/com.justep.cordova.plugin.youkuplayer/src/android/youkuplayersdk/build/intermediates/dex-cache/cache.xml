@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\justepprojects\TwoLibrary\app\libs\mvvtracker.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3d8672e5041d68136c5e8d531de662fd72d6bd5b">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\mvvtracker_2099e29d5cf2a8c19dc1a28ece86967d17ef8faa.jar" />
+    </item>
+    <item
+        jar="D:\justepprojects\TwoLibrary\app\libs\mAppTracker.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e254f3373ed0e65ecaac270681edc0c533c87364">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\mAppTracker_9a9044da47e92f814917685b1761cebe5c1712ae.jar" />
+    </item>
+    <item
+        jar="D:\justepprojects\TwoLibrary\app\libs\core.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="327bddfe22740db0419bd719a0f950b6ad2b3c3f">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\core_241669ad71fcf5d8a2006539df47275c8e516919.jar" />
+    </item>
+    <item
+        jar="D:\justepprojects\TwoLibrary\app\libs\tracking.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="21b4501ec2497d313fbf7be2ca32aac9f717d5f8">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\tracking_57675964cd46224495f1e176e7133157c2f8a945.jar" />
+    </item>
+    <item
+        jar="D:\justepprojects\TwoLibrary\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b97f28a7d111d3a455fb4b5b7a660e82871bf48f">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\instant-run_6719a78d4874ead9f3d8a4fd6496dad2916e94d2.jar" />
+    </item>
+    <item
+        jar="D:\justepprojects\TwoLibrary\app\build\intermediates\incremental-classes\debug\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="fee1c19668144509581efb8c3073ce305193eebd">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\classes_9560cc79febf8e83c7e9ee205489da725c1a72fc.jar" />
+    </item>
+    <item
+        jar="D:\justepprojects\TwoLibrary\app\libs\comscore.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="78d2ed8b67f5dacd92bfb43815efdad4fb1fbe21">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\comscore_e9f8113b05929769fd14c29f9d3364764e3a122a.jar" />
+    </item>
+    <item
+        jar="D:\justepprojects\TwoLibrary\app\libs\baseproject.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e4d675cdbc212865470e02b16a7f2687358f4b34">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\baseproject_7f7caec608f96ef90a15718b7e593b9e43e70402.jar" />
+    </item>
+    <item
+        jar="D:\Users\wei\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0_082ba1c79e837f1c9eb0011e714a5d183dd3d17f.jar" />
+    </item>
+    <item
+        jar="D:\justepprojects\TwoLibrary\app\libs\universal-image-loader-1.9.3.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a85588bec3e2c4584d593d3f15df1677321bca72">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.3_a48006670a4174b7d01798a23c500128fba00227.jar" />
+    </item>
+    <item
+        jar="D:\justepprojects\TwoLibrary\app\libs\fastjson-1.2.7.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a5c721e8ea1e18854272879d6ed2770d25feb342">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\fastjson-1.2.7_d232eb3fbd9f0e229fcdf74ff29f1b1fea53f252.jar" />
+    </item>
+    <item
+        jar="D:\justepprojects\TwoLibrary\app\libs\YoukuAnalytics.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="042e0b06aa76002efa7158bd92a01e8a0a25fcc8">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\YoukuAnalytics_270cff63cb9e1481e9080ab2a1ee4d3af4489d6a.jar" />
+    </item>
+    <item
+        jar="D:\justepprojects\TwoLibrary\app\libs\libammsdk.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d7c2f29c05b35e8c8713be2b81c41cf18f98b64a">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\libammsdk_96b079a289a59e85365aa13a77a74af3b126aad9.jar" />
+    </item>
+    <item
+        jar="D:\justepprojects\TwoLibrary\app\libs\playerBase.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="45f0319b6334c4140604974868f2f771f952b530">
+        <dex dex="D:\justepprojects\TwoLibrary\app\build\intermediates\pre-dexed\debug\playerBase_d966cd56aa501e2aaa994407c4c162560d9e12a8.jar" />
+    </item>
+
+</items>

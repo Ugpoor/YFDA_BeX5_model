@@ -1,0 +1,138 @@
+/**
+	@name com.justep.doc.DocLog
+	@model BIZ
+	@category java
+	@class
+	@description 文档日志类
+	<xmp>
+		每条日志记录了某个文档某次操作的，比如下载，修改，删除等
+	</xmp>	
+*/
+
+/**
+	@name com.justep.doc.DocLog#getsPersonName
+	@function
+	@description 获取操作者名称
+	@returns {String}
+*/
+
+/**
+	@name com.justep.doc.DocLog#setsPersonName
+	@function
+	@description 设置操作者名称
+	@param {String} sPersonName 操作者名称
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.DocLog#getsPersonFID
+	@function
+	@description 获取操作者FID(全路径ID)
+	@returns {String}
+*/
+
+/**
+	@name com.justep.doc.DocLog#setsPersonFID
+	@function
+	@description  设置操作者FID
+	@param {String} sPersonFID 操作者FID
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.DocLog#getsAccessType
+	@function
+	@description 获取操作类型	
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.DocLog#setsAccessType
+	@function
+	@description 设置操作类型
+	@param {String} sAccessType 操作类型
+	@returns {void}
+*/
+
+/**
+	@name com.justep.doc.DocLog#getsDocID
+	@function
+	@description 获取文档id	
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.DocLog#setsDocID
+	@function
+	@description  设置文档id
+	@param {String} sDocID 文档id
+	@returns {void}
+*/
+
+/**
+	@name com.justep.doc.DocLog#getsTime
+	
+	@function
+	@description 获取操作时间	
+	@returns {Timestamp} 
+*/
+
+/**
+	@name com.justep.doc.DocLog#setsTime
+	@function
+	@description  设置操作时间
+	@param {String} sTime 操作时间
+	@returns {void}
+*/
+
+/**
+	@name com.justep.doc.DocLog#getsDocName
+	@function
+	@description 获取文档名称
+	@returns {String}
+*/
+
+/**
+	@name com.justep.doc.DocLog#setsDocName
+	@function
+	@description  设置文档名称
+	@param {String} sDocName 文档名称
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.DocLog#getsDocVersionID
+	@function
+	@description 获取文档版本号	
+	@returns {Integer} 
+*/
+
+/**
+	@name com.justep.doc.DocLog#setsDocVersionID
+	@function
+	@description  设置文档版本号
+	@param {String} sDocVersionID 文档版本号
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.DocLog#getsSize
+	@function
+	@description 获取文档大小	
+	@returns {Float} 
+*/
+
+/**
+	@name com.justep.doc.DocLog#setsSize
+	@function
+	@description  设置文档 大小
+	@param {float} sSize 文档版本号
+	@returns {void}  
+*/
+
+/**
+	@name com.justep.doc.DocLog#getDocLogs
+	@function
+	@description 获取包含本日志的容器类对象	
+	@returns {DocLogs} 
+*/

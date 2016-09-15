@@ -1,0 +1,12 @@
+<template text="通用" desc="推广下载页">
+	<images>
+		<image src="template.png"/>
+	</images>
+	
+	<items>
+		<item file="template/downloadActivity.w"></item>
+		<item file="template/downloadActivity.js" />
+		<item file="template/downloadActivity.css" />
+	</items>
+
+</template>

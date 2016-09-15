@@ -1,0 +1,12 @@
+.x-control-group{
+	padding: 0;
+}
+thead{
+	background-color: #DFF4F7;
+}
+.x-state-default, .x-grid-widget-content .x-state-default, .x-grid-widget-header .x-state-default {
+    background-image: linear-gradient(to bottom, #2C90E6 0%, #ffffff 100%);
+}
+.x-col-fixed{
+	padding: 0;
+}

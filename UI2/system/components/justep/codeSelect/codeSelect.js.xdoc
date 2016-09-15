@@ -1,0 +1,16 @@
+/**
+	@name codeSelect
+	@component $UI/system/components/justep/codeSelect/codeSelect
+	@extends Select
+	@extendurl $UI/system/components/justep/select/select
+	@model UI2
+	@description 编码下拉选择
+*/
+
+/**
+	@name codeSelect#codeType
+	@attribute 
+	@type string
+	@description 编码类型，对应SA_Code表中的sType字段值
+*/
+

@@ -1,0 +1,16 @@
+.x-control-group{
+	padding: 0;
+	border: 1px solid #A9D7ED;
+}
+
+.div1{
+	padding: 1%;
+}
+.btn1{
+	margin:2% 10%;
+	border: 1px solid #A9D7ED;
+	background-color: #DEF2FA;
+}
+.cli{
+	background-color: #32ABF3;
+}

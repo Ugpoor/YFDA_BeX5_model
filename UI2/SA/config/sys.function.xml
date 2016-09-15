@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+	<item display="solid" label="协同办公" iconClass="icon-android-note">
+		<item display="solid" label="系统工具">
+			<item label="在线用户" process="/SA/online/onlineProcess" activity="mainActivity"
+				device="pc" url="$UI/SA/online/mainActivity.a" icon16="$UI/SA/online/img/icon16.png"
+				icon32="$UI/SA/online/img/icon32.png" icon64="$UI/SA/online/img/icon64.png" />
+			<item label="操作日志" device="pc" process="/SA/log/logProcess"
+				activity="mainActivity" url="/SA/log/mainActivity.a" />
+			<item label="license密钥更新" process="/SA/license/licenseProcess"
+				activity="mainActivity" url="$UI/SA/license/mainActivity.w" device="pc" />
+			<item label="通用编码管理" process="/SA/code/codeManager/codeManagerProcess"
+				activity="mainActivity" url="$UI/SA/code/codeManager/mainActivity.a"
+				device="pc" />
+		</item>
+		<item display="solid" label="任务管理">
+			<item label="待办任务" process="/SA/task/taskView/taskViewProcess"
+				activity="mainActivity" url="$UI/SA/task/taskView/waitActivity.a"
+				iconClass="icon-android-alarm" color="#bbbbbb" display="hide" />
+			<item label="提交任务" process="/SA/task/taskView/taskViewProcess"
+				activity="mainActivity" url="$UI/SA/task/taskView/submitActivity.a"
+				iconClass="icon-android-clock" color="#bbbbbb" display="hide" />
+			<item label="任务中心" device="pc"
+				process="/SA/task/taskCenter/taskCenterProcess" activity="mainActivity"
+				url="$UI/SA/task/taskCenter/mainActivity.a" />
+			<item label="流程监控" device="pc" process="/SA/process/monitor/monitorProcess"
+				activity="mainActivity" url="$UI/SA/process/monitor/mainActivity.a" />
+			<item label="流程模板管理" device="pc"
+				process="/SA/process/template/templateProcess" activity="mainActivity2"
+				url="$UI/SA/process/template/mainActivity2.a" />
+			<item display="solid" label="任务归档">
+				<item label="任务归档" device="pc"
+					process="/SA/task/taskArchive/taskArchiveProcess" activity="mainActivity"
+					url="$UI/SA/task/taskArchive/mainActivity.a" />
+				<item label="任务中心(归档)" device="pc"
+					process="/SA/task/taskCenter/taskCenterProcess" activity="mainActivity"
+					url="$UI/SA/task/taskCenter/mainActivity.a?shard=histroy" />
+				<item label="流程监控(归档)" device="pc"
+					process="/SA/process/monitor/monitorProcess" activity="mainActivity"
+					url="$UI/SA/process/monitor/mainActivity.a?shard=histroy" />
+			</item>
+		</item>
+		<item label="门户管理">
+			<item label="门户默认布局管理" url="$UI/SA/theme/themeDefine/mainActivity.w"
+				process="/SA/theme/themeDefine/themeDefineProcess" activity="mainActivity"
+				device="pc" />
+			<item label="门户默认布局分配" url="$UI/SA/theme/themeManager/mainActivity.w"
+				process="/SA/theme/themeManager/themeManagerProcess" activity="mainActivity"
+				device="pc" />
+		</item>
+		<item display="solid" label="应用工具">
+			<item label="创建应用开发商数字证书" process="/SA/tools/process/appLicense/appLicenseProcess"
+				activity="createCertActivity" url="$UI/SA/tools/process/appLicense/createCertActivity.w"></item>
+			<item label="加密模型" process="/SA/tools/process/appLicense/appLicenseProcess"
+				activity="encryptModelActivity" url="$UI/SA/tools/process/appLicense/encryptModelActivity.w"></item>
+			<item label="注册应用License" process="/SA/tools/process/appLicense/appLicenseProcess"
+				activity="regAppLicenseActivity" url="$UI/SA/tools/process/appLicense/regAppLicenseActivity.w"></item>
+			<item label="生成应用License" process="/SA/tools/process/appLicense/appLicenseProcess"
+				activity="makeAppLicenseActivity" url="$UI/SA/tools/process/appLicense/makeAppLicenseActivity.w"></item>
+		</item>
+	</item>
+</root>

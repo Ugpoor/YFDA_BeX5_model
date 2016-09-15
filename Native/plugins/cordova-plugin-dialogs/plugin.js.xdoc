@@ -1,0 +1,50 @@
+/**
+	@name cordova-plugin-dialogs
+	@class 
+	@description 对话框插件
+	@model Native
+	@category plugin
+	@declareVar navigator.notification
+*/
+
+/**
+	@name cordova-plugin-dialogs.alert
+	@function
+	@param {String} message 对话框信息
+	@param {Function} completeCallback 对话框关闭时的回调函数
+	@param {String} title 对话框标题
+	@param {String} buttonLabel 按钮名
+	@returns {void}
+	@description 显示对话框
+*/
+
+/**
+	@name cordova-plugin-dialogs.confirm
+	@function
+	@param {String} message 对话框信息
+	@param {Function} completeCallback 对话框关闭时的回调函数
+	@param {String} title 对话框标题
+	@param {String} buttonLabel 按钮名
+	@returns {void}
+	@description 显示确认框
+*/
+
+/**
+	@name cordova-plugin-dialogs.prompt
+	@function
+	@param {String} message 提示框显示信息，缺省为"Prompt message"
+	@param {Function} resultCallback 关闭后的回调
+	@param {String} title 提示框标题，缺省为"Prompt"
+	@param {Array} buttonLabels  按钮名称，缺省为["OK","Cancel"]
+	@param {String} defaultText  输入框内容，缺省为empty string
+	@returns {void}
+	@description 显示提示框
+*/
+
+/**
+	@name cordova-plugin-dialogs.beep
+	@function
+	@param {Number} count 播放时长
+	@returns {void}
+	@description 播放声音
+*/

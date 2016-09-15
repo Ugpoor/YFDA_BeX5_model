@@ -1,0 +1,24 @@
+.pass:HOVER {
+	color:red;
+}
+.css{
+	
+	margin-right: 30px;
+	margin-top: 10px;
+}
+.labe{
+	padding-top: 20px;
+}
+.color{
+	color:green;
+}
+.black{
+	color:black;
+}
+.padd{padding-right: 39px;}
+.li{
+	width:45px;
+	text-overflow :ellipsis; 
+	white-space : nowrap;
+	overflow : hidden;
+	 }

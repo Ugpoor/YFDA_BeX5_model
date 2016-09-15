@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/grid/grid" tag-name="div" icon="grid.gif" text="grid" 
+		binding-component="$UI/system/components/justep/grid/grid" 
+		component-type="foreach" validator="GridValidator" design-view="web-designer" >
+		
+		<properties>
+			<property name="xid" text="编号" required="true"/>
+			<property name="data" text="引用数据" required="true"  editor-ref="dataPropDlg" is-id-ref="true"/>
+			<property name="filter" text="数据行过滤表达式" editor-ref="jSExpressionEditor"/>
+			<property name="multiselect" text="多选" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<!-- 
+			<property name="multikey" text="多选辅助键" editor-ref="multikeyList" readonly="true"/>
+			 -->
+			<property name="moveColumn" text="拖动改变列位置"  editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="headerMenu" text="列头菜单"  editor-ref="gridHeaderMenu" readonly="true" enum-values="hideColumn,setColumn,groupColumn,saveLayout/m"/>
+			<property name="multiboxonly" text="仅使用checkBox多选" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="multiselectWidth" text="多选列宽" default-value="20"/>
+			<property name="checkedclass" text="多选选中class"/>
+			<property name="directEdit" text="直接编辑模式" editor-ref="booleanList" readonly="true" default-value="true" data-type="boolean"/>
+			<property name="serverSort"  text="服务端排序"  editor-ref="booleanList" readonly="true" default-value="true" data-type="boolean"/>
+			<property name="useFilterBar" text="使用过滤条" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="appearance"  text="显示样式"  editor-ref="appearanceTreeList" readonly="true" default-value="grid" />
+			<property name="dragable" text="允许拖动" editor-ref="booleanList" enabled-condition="@appearance='treeGrid' or @appearance='tree'" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="rowAttr" text="增加在行上的数据，此属性为表达式，如：{style:'height:80px;',class:'...'}" editor-ref="jSExpressionEditor"/>
+			<property name="expandColumn" text="树形的展开列" required="true" enabled-condition="@appearance='treeGrid' or @appearance='tree'" checkup-condition="@appearance='treeGrid' or @appearance='tree'"/>
+			<property name="useVirtualRoot" text="使用虚根" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean" enabled-condition="@appearance='treeGrid' or @appearance='tree'" checkup-condition="@appearance='treeGrid' or @appearance='tree'"/>
+			<property name="virtualRootLabel" text="虚根名称" enabled-condition="@appearance='treeGrid' or @appearance='tree'" checkup-condition="@appearance='treeGrid' or @appearance='tree'"/>
+			<property name="cascade" text="级联勾选"   editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="caption" text="标题"/> 
+			<property name="hiddenCaptionbar" text="隐藏标题栏"  editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="altRows" text="使用行交替样式"  editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="altclass" text="行交替class"/>
+			<property name="showRowNumber" text="显示行号" enabled-condition="not(@appearance='treeGrid' or @appearance='tree')" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="rowNumberWidth" text="行号列宽" />
+			<property name="frozenColumnCount" display-name="frozenColumnCount" text="冻结列数" data-type="integer"/>
+			<property name="useFooter" text="使用使用footer" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="grouping" visible="false" text="使用分组"  editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="useGroupbar" visible="false" text="使用分组栏"  editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<!-- 
+			<property name="grouping" editor-ref="gridGroupingDlg" text="分组" readonly="true" is-virtual = 'true' fixed-value="[...]"/>
+				<property name="grouping" text="使用分组"  editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+				<property name="useGroupbar" text="使用分组栏"  editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			 -->
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"1grid": {
+						label: "样式",
+						value: "x-grid-no-bordered",
+						require: false
+					},
+					"2titleAlign": {
+						label: "列头对齐方式",
+						value: "x-grid-title-center|x-grid-title-left|x-grid-title-right|x-grid-title-justify",
+						require: false
+					}					
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="width" editor-ref="widthList" text="宽度" />
+			<property name="height" editor-ref="heightList" text="高度" default-value="500"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="gridHeaderMenu" type="list" mutil-selection='true'>
+				<static-data value="hideColumn:隐藏列,setColumn:调整列,groupColumn:分组,saveLayout:保存布局"/> <!--直接定义的静态数据 -->				
+			</property-editor>
+			<property-editor name="appearanceTreeList" type="list">
+				<static-data value=":grid,treeGrid:treeGrid,tree:tree"></static-data>
+			</property-editor>
+			<property-editor name="multikeyList" type="list">
+				<static-data value=",shiftKey,altKey,ctrlKey"></static-data>
+			</property-editor>
+			<property-editor name="heightList" type="list">
+				<static-data value="auto,100%"></static-data>
+			</property-editor>
+			<property-editor name="widthList" type="list">
+				<static-data value="100%"></static-data>
+			</property-editor>
+		</property-editors>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+			<div component="$UI/system/components/justep/grid/grid" hiddenCaptionbar="true" altRows="true" class="x-grid-no-bordered">
+			<columns></columns>    
+			</div>
+			]]></template>
+		</templates>
+		<events>  <!--组件事件-->
+			<event name="onBeforeInit" text="组件初始化前，可以修改创建grid的settings"/>
+			<event name="onInit" text="组件初始化"/>
+			<event name="onReload"  text="grid重新加载"/>
+			<event name="onFilter"  text="数据行过滤，通过修改event.datas影响数据"/>
+			<event name="onBeforeRowSelect"  text="选中行前，通过cancel可控制选中"/>
+			<event name="onRowSelect"  text="选中行后"/>
+			<event name="onIndexChanged"  text="行索引变化"/>
+			<event name="onLastEditorPressEnter" text="directEdit=true时最后一行最后一个单元格回车后触发" enabled-condition="@directEdit='true'"/>
+			<group name="click">
+				<event name="onRowClick"   text="单击行"/>
+				<event name="onRowDblClick" text="双击行"/>
+				<!-- 
+				<event name="onRowRightClick" text="右键单击"/>     	
+				 -->      
+			</group>
+			<group name="checked">
+				<event name="onRowCheck"  text="多选勾选时，可以使用cancel取消"/>
+				<event name="onRowChecked"  text="多选勾选后"/>
+				<event name="onRowCheckedAll"   text="多选全选"/>
+			</group>
+			<group name="render">
+				<event name="onCellRender"  text="单元格显示渲染"/>
+				<event name="onGroupTextRender"  text="分组标题显示渲染"/>
+			</group>
+			<group name="tree">
+				<event name="onTreeIconRender"  text="树形图标渲染"/>
+				<event name="onCollapseRow"  text="树形行折叠"/>
+				<event name="onExpandRow"  text="树形行展开"/>
+			</group>
+		</events>
+
+		<toolbar>		
+			<item text="添加列" method="appendColumn">				
+			</item>			
+			<item text="设置分组" method="editGroup">				
+			</item>			
+			<item text="设置多列头" method="editGroupHeaders">				
+			</item>
+			<item text="设置列显示顺序" method="moveColumn">				
+			</item>	
+		</toolbar>
+	</element>
+
+	<element name="$UI/system/components/justep/grid/grid#column" tag-name="column" icon="column.gif" text="column" display-property="ref"
+		     discriminate-condition="parent()/parent()/@component='$UI/system/components/justep/grid/grid'" parent-range="$UI/system/components/justep/grid/grid#columns" d_resiable="false" resizable="false"
+		     owner="$UI/system/components/justep/grid/grid"
+		     component-class="Column" design-view="web-designer" >
+		<properties>
+			<property name="ref" path="@name" required="true" readonly="true"/>
+			<property name="label" text="列标签" allow-empty="true"/>
+			<property name="editable" text="是否可编辑" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="width" text="列宽度" />
+			<property name="align" text="单元格内容显示的位置" editor-ref="align" default-value="left" enum-values=""/>
+			<property name="hidden" text="列是否隐藏" editor-ref="booleanList" readonly="true" default-value="false" data-type="boolean"/>
+			<property name="resizable" text="是否可调整列宽" editor-ref="booleanList" readonly="true" default-value="true" data-type="boolean"/>
+			<property name="editor" text="编辑器" editor-ref="editorSelector" readonly="true"/>
+			<property name="multiRowEditor" visible="false" text="多行编辑，注意：直接显示编辑器模式需要列上使用的editor支持" default-value="false" editor-ref="booleanList"/>
+			<property name="footerData" text="footer显示数据表达式，如：$data.Count()" editor-ref="jSExpressionEditor"/>
+			<property name="formatter" text="格式化，默认文本显示" editor-ref="formatterList"/>
+			<group name="NumberFormatOptions" enabled-condition="@formatter='number' or @formatter='integer' or @formatter='currency'" text="数值类型格式化参数">
+				<property name="thousandsSeparator" path="formatoptions/@thousandsSeparator" text="千分位" editor-ref="thousandsSeparatorList" default-value="," />
+				<property name="decimalPlaces" path="formatoptions/@decimalPlaces" text="小数位数"/>
+				<property name="defaultValue" path="formatoptions/@defaultValue" text="为空时默认显示值" default-value="0.00"/>
+				<property name="prefix" enabled-condition="@formatter='currency'" path="formatoptions/@prefix" text="货币前缀" />
+				<property name="suffix" enabled-condition="@formatter='currency'" path="formatoptions/@suffix" text="货币后缀"/>
+			</group>
+			<group name="DateFormatOptions" enabled-condition="@formatter='date'" text="时间类型格式化参数">
+				<property name="dateFormat" path="formatoptions/@newformat" editor-ref="dateTimeFormatterList" text="时间格式，如：Y-m-d H:i"/>
+			</group>
+			<property name="sortable" text="是否可排序" editor-ref="booleanList" readonly="true" default-value="true" data-type="boolean"/>
+			<property name="sorttype" text="排序方式" editor-ref="sort" enum-values=""/>
+			<group name="group" text="分组参数">
+				<property path="group/@text" name="text" text="分组显示名称,{0}:分组值" />
+				<property path="group/@order" name="order" text="分组排序方式" editor-ref="groupOrderList" readonly="true" /> 
+				<property path="group/@columnShow" name="columnShow" text="分组后是否显示列" readonly="true" default-value="false" editor-ref="booleanList"/> 
+				<property path="group/@summary" name="summary" text="分组统计" readonly="true" default-value="false" editor-ref="booleanList"/>
+				<property name="summaryType" text="统计方式，定义分组后有效" editor-ref="summaryTypeList"/> 
+				<property name="summaryTpl" text="统计显示模板，{0}:分组统计值，{1}:分组值，如：&lt;b&gt;合计：{0}&lt;/b&gt;" />
+				<property path="group/@summaryPos" name="summaryPos" readonly="true" text="分组统计显示位置" editor-ref="summaryPosList" default-value="footer"/>
+			</group> 
+		</properties>
+
+		<property-editors>
+			<property-editor name="editorSelector" type="list">
+				<static-data value=":无,input:input,checkbox:checkbox,textarea:textarea,component:组件模式" />
+			</property-editor>
+			<property-editor name="thousandsSeparatorList" type="list" > 				
+				<static-data value="#none#:无" />
+			</property-editor>
+			<property-editor name="summaryTypeList" type="list" > 				
+				<static-data value="count,sum,avg,max,min" />
+			</property-editor>
+			<property-editor name="summaryPosList" type="list" > 				
+				<static-data value="footer:尾部,header:头部" />
+			</property-editor>
+			<property-editor name="groupOrderList" type="list" > 				
+				<static-data value="asc:升序,desc:降序" />
+			</property-editor>
+			<property-editor name="formatterList" type="list" > 				
+				<static-data value="integer,number,currency,date,email" />
+			</property-editor>
+			<property-editor name="dateTimeFormatterList" type="list" > 				
+				<static-data value="Y-m-d,Y-m-d H{semicolon}i,Y-m-d H{semicolon}i{semicolon}s,Y年m月d日,Y年m月d日 H时i分,Y年m月d日 H时i分s秒" />
+			</property-editor>
+			<property-editor name="type" type="list" > 				
+				<static-data value="text,textarea,select,checkbox,password" />
+			</property-editor>
+			<property-editor name="align" type="list" > 				
+				<static-data value="left,center,right" />
+			</property-editor>
+			<property-editor name="sort" type="list" > 				
+				<static-data value="text,int,float,date" />
+			</property-editor>
+		</property-editors>
+		
+		<toolbar>
+			<!-- 
+			<item text="设置编辑器" method="setEditor">				
+			</item>			
+			 -->
+		</toolbar>
+		
+		<events> 
+		</events>
+	</element>
+
+	<element name="$UI/system/components/justep/grid/grid#columns" tag-name="columns" icon="columns.gif" text="columns"
+		     discriminate-condition="parent()/@component='$UI/system/components/justep/grid/grid'" d_resiable="false" resizable="false"
+		     design-view="web-designer" >
+		<properties>
+			<property name="xid" required="true" editor-ref=""/>
+		</properties>
+
+		<property-editors>
+		</property-editors>
+		
+		<toolbar>
+		</toolbar>
+		
+		<events> 
+		</events>
+	</element>
+
+	<element name="$UI/system/components/justep/grid/grid#editor" tag-name="editor" icon="editor.gif" text="editor"
+		     d_resiable="false" resizable="false" design-view="web-designer" >
+		<properties>
+			<property name="xid" required="true" editor-ref=""/>
+		</properties>
+
+		<property-editors>
+		</property-editors>
+		
+		<toolbar>
+		</toolbar>
+		
+		<events> 
+		</events>
+	</element>
+	
+</elements>

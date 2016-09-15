@@ -1,0 +1,11 @@
+@widget-header-bg-start : @body-bg;
+@widget-header-bg-end : @body-bg;
+@widget-header-color : @text-color;
+@widget-content-bg : @body-bg;
+@widget-content-color : @text-color;
+@state-default-color : @text-color;
+@state-hover-color : @text-color;
+@state-hover-bg : @table-bg-hover;
+@grid-resize-mark-bg : @table-border-color;
+@priority-secondary-bg: @table-bg-accent;
+@grid-border-color: @table-border-color;

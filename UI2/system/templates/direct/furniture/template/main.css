@@ -1,0 +1,21 @@
+h4{
+	border-left:6px solid #1a93df;
+	position:relative;
+	padding-right:16px;
+	display: inline-block;
+}
+h4:after{
+	content: "";
+    position: absolute;
+    height: 100%;
+    left: 100%;
+    top:0;
+    width: 1000px;
+    background-color: #f7f7f7;
+}
+.window>.x-row{
+	margin-bottom:15px;
+}
+.x-row{
+	border-bottom:thin solid #eee;
+}

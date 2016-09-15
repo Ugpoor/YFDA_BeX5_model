@@ -1,0 +1,314 @@
+/**
+	@name $UI/system/components/justep/calendar/calendar
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@description 日程组件
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#view
+	@attribute
+	@property 
+	@type string
+	@description 初始显示的视图 
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#views
+	@attribute
+	@property 
+	@type string
+	@description 可以显示的视图,默认是全可以显示, 包括 year, month, week, day 
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#day
+	@attribute
+	@property 
+	@type string
+	@description 初始时间 
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#firstDay
+	@attribute
+	@property 
+	@type integer
+	@description 每周第一天是周几,默认是1
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#timeStart
+	@attribute
+	@property 
+	@type string
+	@description 日期视图时间轴的开始时间, 默认是6:00
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#timeEnd
+	@attribute
+	@property 
+	@type string
+	@description 日期视图时间轴的结束时间, 默认是22:00
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#timeSplit
+	@attribute
+	@property 
+	@type string
+	@description 日期视图时间轴的时间间隔, 默认是 30分钟
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#lunarDay
+	@attribute
+	@property 
+	@type string
+	@description 是否显示农历， 默认是false
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#onEventsLoad
+	@event
+	@description <b>[回调型事件]</b>日程事件加载方法
+	@param {$UI/system/components/justep/calendar/calendar#EventsLoadEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+		"begin": 需要加载事件时间要在begin和end之间发生的
+		"end": 需要加载事件时间要在begin和end之间发生的 
+		"timezone": 时区
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#EventsLoadEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 日程事件加载事件类
+	@see $UI/system/components/justep/calendar/calendar#onEventsLoad
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#EventsLoadEvent#source
+	@property 
+	@description 日程组件js对象
+	@type $UI/system/components/justep/calendar/calendar
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#EventsLoadEvent#begin
+	@property 
+	@description 需要加载事件时间要在begin和end之间发生的
+	@type Date
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#EventsLoadEvent#end
+	@property 
+	@description 需要加载事件时间要在begin和end之间发生的
+	@type Date
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#EventsLoadEvent#timezone
+	@property 
+	@description 时区
+	@type String
+*/
+
+
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#onEventsSelected
+	@event
+	@description <b>[回调型事件]</b>当日程事件被选择
+	@param {$UI/system/components/justep/calendar/calendar#EventsSelectedEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+		"begin": 选择的事件时间范围在begin和end之间
+		"end": 选择的事件时间范围在begin和end之间 
+		timezone: 时区
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#EventsSelectedEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 当日程事件被选择事件
+	@see $UI/system/components/justep/calendar/calendar#onEventsSelected
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#EventsSelectedEvent#source
+	@property 
+	@description 日程组件js对象
+	@type $UI/system/components/justep/calendar/calendar
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#EventsSelectedEvent#begin
+	@property 
+	@description 需要加载事件时间要在begin和end之间发生的
+	@type Date
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#EventsSelectedEvent#end
+	@property 
+	@description 需要加载事件时间要在begin和end之间发生的
+	@type Date
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#EventsSelectedEvent#timezone
+	@property 
+	@description 时区
+	@type String
+*/
+
+			 
+/**
+	@name $UI/system/components/justep/calendar/calendar#onAfterEventsLoad
+	@event
+	@description <b>[回调型事件]</b>日程项目加载事件完成
+	@param {$UI/system/components/justep/calendar/calendar#AfterEventsLoadEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+		"events" : 事件列表
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#AfterEventsLoadEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 日程项目加载事件完成事件
+	@see $UI/system/components/justep/calendar/calendar#onAfterEventsLoad
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#AfterEventsLoadEvent#source
+	@property 
+	@description 日程组件js对象
+	@type $UI/system/components/justep/calendar/calendar
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#AfterEventsLoadEvent#events
+	@property 
+	@description 事件列表
+	@type Array
+*/
+			
+/**
+	@name $UI/system/components/justep/calendar/calendar#onAfterViewLoad
+	@event
+	@description <b>[回调型事件]</b>日程视图加载完成事件
+	@param {$UI/system/components/justep/calendar/calendar#AfterViewLoadEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+		"view" : 加载的view名称
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#AfterViewLoadEvent
+	@class
+	@category EventClass
+	@model UI2
+	@description 日程视图加载完成事件
+	@see $UI/system/components/justep/calendar/calendar#onAfterViewLoad
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#AfterViewLoadEvent#source
+	@property 
+	@description 日程组件js对象
+	@type $UI/system/components/justep/calendar/calendar
+*/
+
+/**
+	@name $UI/system/components/justep/calendar/calendar#AfterViewLoadEvent#view
+	@property 
+	@description 加载的view名称
+	@type String
+*/
+
+/**
+ @name $UI/system/components/justep/calendar/calendar#setView
+ @function
+ @param {string} value 视图  year, month, week, day
+ @description 设置显示的视图
+*/
+
+/**
+ @name $UI/system/components/justep/calendar/calendar#navigate
+ @function
+ @param {string} value next下一时间段, prev前一时间段, today是今天
+ @description 定位到指定时间段
+*/
+
+/**
+ @name $UI/system/components/justep/calendar/calendar#refresh
+ @function
+ @description 刷新当前的视图
+*/
+
+/**
+ @name $UI/system/components/justep/calendar/calendar#get
+ @function
+ @param {String} name 属性名称，取值范围："view", "views", "day", "firstDay", "timeStart", "timeEnd", "timeSplit", "lunarDay"
+ @returns 返回属性值
+ @description 获取calendar的属性
+*/
+
+/**
+ @name $UI/system/components/justep/calendar/calendar#set
+ @function
+ @param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"view": {string} 视图
+		"views": {string} 可用视图范围
+		"day": {string} 设置当前日期 yyyy-MM-dd 
+		"firstDay": {integer} 每周第一天是周几 
+		"timeStart": {string} 日期视图时间轴的开始时间, 默认是'6:00' 
+		"timeEnd": {string} 日期视图时间轴的结束时间, 默认是'22:00'
+		"timeSplit": {string} 日期视图时间轴的时间间隔, 默认是 '30' 
+		"lunarDay": {boolean} 是否显示农历， 默认是false
+	}
+	</xmp>
+ @description 设置calendar的属性
+*/
+
+

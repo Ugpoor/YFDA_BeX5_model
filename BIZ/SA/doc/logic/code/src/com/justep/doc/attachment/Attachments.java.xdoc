@@ -1,0 +1,93 @@
+/**
+	@name com.justep.doc.attachment.Attachments
+	@model BIZ
+	@category java
+	@class
+	@description 附件容器类
+	<xmp>
+		主要用法说明可以参考Docs
+		主要是附加了读取和使用文档关联的能力
+		提现在在构造函数需要传递defineItem上
+		附件存储的位置，目录都可以通过文档关联获取
+	</xmp>
+*/
+
+
+
+/**
+	@name com.justep.doc.attachment.Attachments#Attachments
+	@param (String) process
+	@param {String} activity
+	@param {String} jsonStr
+	@param {DefineItems} defineItems
+	@returns {Attachments} 
+*/
+
+/**
+	@name com.justep.doc.attachment.Attachments#refresh
+	@function
+	@description 刷新
+	@returns {void} 
+*/
+
+/**
+	@name com.justep.doc.attachment.Attachments#addDoc
+	@function
+	@description 增加已存在的文档
+	@param {String} sID 文档的id
+	@param {String} sDocName 文档名称
+	@param {String} sKind 文档类型
+	@param {Doc} dirDoc 文档所在的文件夹对象
+	@returns {Attachment} 
+*/
+
+/**
+	@name com.justep.doc.attachment.Attachments#save
+	@function
+	@description 保存
+	@returns {int}
+*/
+
+/**
+	@name com.justep.doc.attachment.Attachments#getDefineItems
+	@function
+	@description 获取附件定义信息
+	@returns {DefineItems} 
+*/
+
+/**
+	@name com.justep.doc.attachment.Attachments#remove
+	@function
+	@description 从容器中移除指定的附件
+	@param {String} sID 附件的id
+	@returns {Attachments} 
+*/
+
+/**
+	@name com.justep.doc.attachment.Attachments#remove
+	@function
+	@description 从容器中移除指定的附件
+	@param {Attachment} att 附件对象
+	@returns {Attachments} 
+*/
+
+/**
+	@name com.justep.doc.attachment.Attachments#tojson
+	@function
+	@description 转换成json字符串
+	@returns {String} 
+*/
+
+/**
+	@name com.justep.doc.attachment.Attachments#toTable
+	
+	@function
+	@description 转换成Table
+	@returns {Table}
+*/
+/**
+	@name com.justep.doc.attachment.Attachments#save
+	@function
+	@description 当前容器中的所有附件保存
+	@returns {int}
+*/

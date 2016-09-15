@@ -1,0 +1,266 @@
+/**
+	@name $UI/system/lib/portal/shell
+	@class
+	@category javascript
+	@model UI2
+	@description shell API
+*/
+
+/**
+	@name $UI/system/lib/portal/shell.loadPage
+	@function
+	@description 加载页面
+	@param {JSON} params 类似  {url:"$UI/portal/index.w"}
+	@returns {Promise}
+*/
+
+/**
+	@name $UI/system/lib/portal/shell.showPage
+	@function
+	@description 显示页面
+	@param {JSON} url url 类似  {url:"$UI/portal/index.w"} 或者 "$UI/portal/index.w"
+	@param {JSON} data 传递到页面的参数
+	@param {JSON} options 可选参数 类似{owner:modelObject}
+	@returns {Promise}
+*/
+
+/**
+	@name $UI/system/lib/portal/shell.showLeft
+	@function
+	@description 显示左边栏
+	@returns {Promise}
+*/
+
+/**
+	@name $UI/system/lib/portal/shell.showRight
+	@function
+	@description 显示右边栏
+	@returns {Promise}
+*/
+
+/**
+	@name $UI/system/lib/portal/shell.closePage
+	@function
+	@description 关闭当前页面
+	@param {JSON} params params 类似  {url:"$UI/portal/index.w"}
+	@returns {Promise}
+*/
+
+/**
+	@name $UI/system/lib/portal/shell.closeAllOpendedPages
+	@function
+	@description 关闭所有已经打开的页面回到首页
+	@param
+	@returns {Promise}
+*/
+
+/**
+	@name $UI/system/lib/portal/shell.closeAll
+	@function
+	@description 关闭所有页面包括首页，会一片白哦，除非你明确知道就需要这个效果 否则用这个api一定要慎重.
+	@param
+	@returns {Promise}
+*/
+
+/**
+	@name $UI/system/lib/portal/shell.getOpenedPages
+	@function
+	@description 获取所有已经打开的功能列表，返回一个数组，每项是用来装载页面的content实例
+	@param
+	@returns {Array}
+*/
+
+
+
+/**
+	@name $UI/system/lib/portal/shell.setIsSinglePage
+	@function
+	@description 设置为单功能页模式
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/lib/portal/shell.addPageMappings
+	@function
+	@description 添加页面映射信息
+	@param {JSON} params params 类似  {"main":{url:"$UI/portal/index.w"}}
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/lib/portal/shell.showMainPage
+	@function
+	@description 显示首页
+	@returns {Promise}
+*/
+
+/**
+	@name $UI/system/lib/portal/shell.on
+	@function
+	@description 添加事件监听器
+	@param ename 事件名称
+	@param fn 事件处理器
+	@param scope 调用事件处理器的this
+	@param options 其它选项
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/lib/portal/shell.off
+	@function
+	@description 删除事件监听器
+	@param ename 事件名称
+	@param fn 事件处理器
+	@param scope 调用事件处理器的this
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/lib/portal/shell.fireEvent
+	@function
+	@description 派发事件
+	@param ename 事件名称
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/lib/portal/shell#onBeforePageLoad
+	@event
+	@description <b>[回调型事件]</b>功能打开前事件
+	@param {$UI/system/lib/portal/shell#BeforePageLoadEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"data" : 打开page的参数,
+		"cancel" : 是否取消
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/lib/portal/shell#onPageViewLoad
+	@event
+	@description <b>[回调型事件]</b>功能view部分加载后事件
+	@param {$UI/system/lib/portal/shell#PageViewLoadEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"data" : 打开page的参数
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/lib/portal/shell#onAfterPageLoad
+	@event
+	@description <b>[回调型事件]</b>功能加载后事件
+	@param {$UI/system/lib/portal/shell#AfterPageLoadEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"data" : 打开page的参数
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/lib/portal/shell#onPageActive
+	@event
+	@description <b>[回调型事件]</b>页面激活事件
+	@param {$UI/system/lib/portal/shell#PageActiveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"data":{
+					xid:xid,
+					params:eventParams,
+					container:compose,
+					isFirst:isFirst
+				}
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/lib/portal/shell#onPageInactive
+	@event
+	@description <b>[回调型事件]</b>页面非激活事件
+	@param {$UI/system/lib/portal/shell#PageInactiveEvent} event
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		data:{
+			xid:xid,
+			params:eventParams,
+			container:compose
+		}
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/lib/portal/shell#onBeforePageClose
+	@event
+	@description <b>[回调型事件]</b> 页面关闭前事件
+	@param {$UI/system/lib/portal/shell#BeforePageCloseEvent} event
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		data:{
+				closePageXid:removePageXid,
+				toPageXid:toPageXid,
+				closePageUrl:url
+			}
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/lib/portal/shell#onAfterPageClose
+	@event
+	@description <b>[回调型事件]</b> 页面关闭后事件
+	@param {$UI/system/lib/portal/shell#AfterPageCloseEvent} event
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		data:{
+			closePageXid:removePageXid,
+			toPageXid:toPageXid,
+			closePageUrl:url
+		}
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/lib/portal/shell#onBeforePageLoad
+	@event
+	@description <b>[回调型事件]</b> 页面加载前事件
+	@param {$UI/system/lib/portal/shell#BeforePageLoadEvent} event
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		data:加载参数,
+		cancel:false
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/lib/portal/shell#onAfterPageLoad
+	@event
+	@description <b>[回调型事件]</b> 页面加载后事件
+	@param {$UI/system/lib/portal/shell#AfterPageLoadEvent} event
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		data:加载参数
+	}
+	</xmp>
+*/
+
+
+
+
+
+

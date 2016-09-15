@@ -1,0 +1,43 @@
+/**
+	@name cordova-plugin-vibration
+	@class 
+	@description 设备震动
+	@model Native
+	@category plugin
+	@declareVar navigator.notification
+*/
+
+/**
+	@name cordova-plugin-vibration.vibrate
+	@function
+	@param {Number} param 震动时长，单位毫秒，支持数组格式
+	@returns {void}
+	@description 按照指定时间段震动设备
+	@example
+ 	<xmp>
+ 		//震动3s
+ 		navigator.vibration.vibrate(3000);
+ 		//震动3s,暂停1s，震动2s
+ 		navigator.vibration.vibrate([3000,1000,2000]);
+	</xmp>
+*/
+
+/**
+	@name cordova-plugin-vibration.vibrateWithPattern
+	@function
+	@param {Array} pattern 打开和关闭震动的时间序列，
+	@param {Number} repeat 可选参数 进入开始序列的索引，缺省为-1
+	@returns {void}
+	@description 根据条件震动设备
+	@example
+	<xmp>
+		navigator.vibration.vibrateWithPattern([0, 100, 100, 200, 100, 400, 100, 800]);
+	</xmp>
+*/
+
+/**
+	@name cordova-plugin-vibration.cancelVibration
+	@function
+	@returns {void}
+	@description 取消当前的震动
+*/

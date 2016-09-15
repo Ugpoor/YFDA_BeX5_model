@@ -1,0 +1,158 @@
+/**
+	@name $UI/system/api/native/voice
+	@class
+	@category javascript
+	@model UI2
+	@description 音频接口
+	@example 
+	<xmp> 
+	 	var voice = require('$UI/system/api/native/voice');
+	        voice.startRecord({
+			cancel : function() {
+				alert('用户拒绝授权录音');
+			},
+		});
+
+		voice.stopRecord({
+			success : function(res) {
+				voices.localId = res.localId;
+			},
+			fail : function(res) {
+				alert(JSON.stringify(res));
+			}
+		});
+	</xmp>
+*/
+
+/**
+	@name $UI/system/api/native/voice.startRecord
+	@function
+	@description 开始录音
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+	  "success" : {function} success 回调函数
+	  "cancel" : {function} cancel 回调函数
+	}
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/voice.stopRecord
+	@function
+	@description 结束录音
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+	  "success" : {function} success 回调函数
+	  "cancel" : {function} cancel 回调函数
+	  "fail" : {function} fail 回调函数
+	}
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/voice.onVoiceRecordEnd
+	@function
+	@description 录制自动停止监听
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		 "complete" : {function} complete 回调函数
+	}
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/voice.playVoice
+	@function
+	@description 播放录音
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"localId" : {string} 本地音频文件
+	}
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/voice.pauseVoice
+	@function
+	@description 暂停播放
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"localId" : {string} 本地音频文件
+	}
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/voice.stopVoice
+	@function
+	@description 停止播放音频
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"localId" : {string} 本地音频文件
+	}
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/voice.onVoicePlayEnd
+	@function
+	@description 播放结束监听
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		 "complete" : {function} complete 回调函数
+	}
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/voice.uploadVoice
+	@function
+	@description 上传音频到服务器（默认使用baas服务）
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"localId" : {string} 本地音频文件
+		"success" : {function} success 回调函数
+	        "fail" : {function} fail 回调函数
+	}
+	</xmp>
+	@return {void}
+*/
+
+/**
+	@name $UI/system/api/native/voice.downloadVoice
+	@function
+	@description 下载到本地
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+	    "serverId" : {string} 本地音频文件
+	    "success" : {function} success 回调函数
+	    "fail" : {function} fail 回调函数
+	}
+	</xmp>
+	@return {void}
+*/

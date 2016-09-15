@@ -1,0 +1,18 @@
+.text-success{ color:#32bd60;}
+.x-dialog[showTitle='true']{ padding-top:51px;}
+
+/*内容部分*****************************************************/
+
+/*窗口标题*/
+.x-dialog .x-dialog-title{ padding:14px; text-align:center;}
+.x-dialog-title-text{ font-size:16px; font-weight:bold;}
+
+h5{ padding:5px 15px; margin:0;}
+.panel{ margin-bottom:0; border-radius:0;}
+
+/*城市列表*/
+.x-list-template li:first-child{ border-top:1px solid rgba(90, 90, 90, 0.05);}
+.cityList ul li{ width:20%; margin-top:-1px; line-height:45px; border:1px solid rgba(90, 90, 90, 0.05); border-right:none; float:left; background-color:#fff;}
+.cityList ul li:nth-child(5n){ border-right:1px solid rgba(90, 90, 90, 0.05);}
+.cityList ul li:last-child{ border-right:1px solid rgba(90, 90, 90, 0.05);}
+.cityList ul li.current{ border:1px solid #32bd60;}

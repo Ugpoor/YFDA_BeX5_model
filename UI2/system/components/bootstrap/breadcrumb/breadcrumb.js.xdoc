@@ -1,0 +1,73 @@
+/**
+	@name $UI/system/components/bootstrap/breadcrumb/breadcrumb
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@description Breadcrumb组件, bootstrap Breadcrumb
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/	
+
+/**
+	@name $UI/system/components/bootstrap/breadcrumb/breadcrumb#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+	@name $UI/system/components/bootstrap/breadcrumb/breadcrumb#push
+	@function
+	@param {object} data 压入节点的数据
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"label" : 面包屑上显示的label，
+		...其他开发者自定义的数据
+	}
+	</xmp>	
+	@description 压入节点
+*/
+
+/**
+	@name $UI/system/components/bootstrap/breadcrumb/breadcrumb#pop
+	@function
+	@description 弹出到上一个节点
+*/
+
+/**
+	@name $UI/system/components/bootstrap/breadcrumb/breadcrumb#popTo
+	@function
+	@param {object} data 压入节点的数据
+	@description 弹出到data对应节点
+*/
+
+/**
+	@name $UI/system/components/bootstrap/breadcrumb/breadcrumb#getActiveData
+	@function
+	@description 获取激活节点的数据
+	@return {object} 压入节点的数据
+*/
+
+/**
+	@name $UI/system/components/bootstrap/breadcrumb/breadcrumb#clear
+	@function
+	@description 清除面包屑节点
+*/
+
+/**
+	@name $UI/system/components/bootstrap/breadcrumb/breadcrumb#getDatas
+	@function
+	@description 获取面包屑节点数据数组
+	@return {List<object>} 压入节点的数据数组
+*/
+
+/**
+	@name $UI/system/components/bootstrap/breadcrumb/breadcrumb#setLabel
+	@function
+	@param {integer} index 面包屑节点索引
+	@param {string} label 节点名
+	@description 修改面包屑节点名
+*/
+

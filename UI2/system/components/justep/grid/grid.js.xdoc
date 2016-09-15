@@ -1,0 +1,1059 @@
+/**
+	@name $UI/system/components/justep/grid/grid
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@description grid组件
+	@model UI2
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		扩展样式: x-grid-no-bordered
+		列头对齐方式: x-grid-title-center,x-grid-title-left,x-grid-title-right,x-grid-title-justify
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#data
+	@attribute 
+	@type string
+	@description 关联的data组件xid
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#filter
+	@attribute 
+	@type string
+	@description 数据过滤表达式，表达式中可以使用$model,$object,$parent,$row(执行过滤的数据行对象)变量
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#multiselect
+	@attribute 
+	@type boolean
+	@description 使用checkBox多选，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#multiboxonly
+	@attribute 
+	@type boolean
+	@description 仅使用checkBox多选，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#multiselectWidth
+	@attribute 
+	@type integer
+	@description 多选列宽，默认值：20
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#checkedclass
+	@attribute 
+	@type string
+	@description 多选checked的class
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#directEdit
+	@attribute 
+	@type boolean
+	@description 直接进入编辑，否则双击进入编辑，默认值：true
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#serverSort
+	@attribute 
+	@type boolean
+	@description 服务端排序，默认值：true
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#useFilterBar
+	@attribute 
+	@type boolean
+	@description 使用过滤条，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#appearance
+	@attribute 
+	@type string
+	@description 显示样式，取值范围：grid、treeGrid、tree，默认值：grid
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#expandColumn
+	@attribute 
+	@type string
+	@description 树形的展开列
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#rowAttr
+	@attribute 
+	@type string
+	@description 
+	<xmp> 
+	增加在行上属性的表达式，表达式执行结果返回Object，可以包含style、class属性，也可以增加自定义属性
+	表达式中可以使用$model,$row(当前渲染的数据行对象)变量
+	如：
+	1、简单
+	{style:'height:80px;',class:'...'}
+	2、根据数据设置不同底色
+	$row.val('fString')=='北京'?{style:'background:red;'}:{style:'background:blue;'}
+	<b>注：</b>
+	修改值时不会刺激执行
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#useVirtualRoot
+	@attribute 
+	@type boolean
+	@description 树形展现使用虚根，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#virtualRootLabel
+	@attribute 
+	@type string
+	@description 树形展现虚根名称
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#cascade
+	@attribute 
+	@type boolean
+	@description 树形多选级联选择，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#caption
+	@attribute 
+	@type string
+	@description 标题
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#hiddenCaptionbar
+	@attribute 
+	@type boolean
+	@description 隐藏标题栏，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#altRows
+	@attribute 
+	@type boolean
+	@description 使用交替行样式，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#altclass
+	@attribute 
+	@type string
+	@description 自定义交替行样式class
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#showRowNumber
+	@attribute 
+	@type boolean
+	@description 显示行号，默认值：false
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#useFooter
+	@attribute 
+	@type boolean
+	@description 使用footer，默认值：false，打开后可以通过api：setFooterData设置footer显示内容
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#rowNumberWidth
+	@attribute 
+	@type integer
+	@description 行号列宽，默认值：20
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#frozenColumnCount
+	@attribute 
+	@type integer
+	@description 冻结列数
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#width
+	@attribute 
+	@type integer
+	@description 宽度，当使用auto时自动根据内容进行展现，当使用100%时自动使用父容器宽度
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#height
+	@attribute 
+	@type integer
+	@description 高度，当使用auto时自动根据内容进行展现，当使用100%时自动使用父容器高度
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#onBeforeInit
+	@event
+	@description <b>[回调型事件]</b>创建grid组件前事件
+	@param {$UI/system/components/justep/dataTables/dataTables#BeforeInitEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"settings" : 创建grid的参数
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#onInit
+	@event
+	@description <b>[回调型事件]</b>创建grid组件事件
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/grid/grid#LastEditorPressEnterEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 最后一行最后一个单元格回车后触发事件
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#BeforeRowSelectEvent.cancel
+ @property
+ @type {boolean}
+ @description 取消当前操作
+*/ 
+
+/**
+	@name $UI/system/components/justep/grid/grid#onLastEditorPressEnter
+	@event
+	@description <b>[回调型事件]</b>directEdit=true时最后一行最后一个单元格回车后触发事件
+	@param {$UI/system/components/justep/grid/grid#LastEditorPressEnterEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"cell" : TD 回车的最后一行最后一个单元格
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#onRowClick
+	@event
+	@description <b>[回调型事件]</b>单击行事件
+	@param {$UI/system/components/justep/dataTables/dataTables#RowClickEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"domEvent" : 触发的dom event对象
+		"rowID" : 对应的行ID
+		"row" : 对应的行
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#onRowDblClick
+	@event
+	@description <b>[回调型事件]</b>双击行事件
+	@param {$UI/system/components/justep/dataTables/dataTables#RowClickEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"domEvent" : 触发的dom event对象
+		"rowID" : 对应的行ID
+		"row" : 对应的行
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#onRowCheck
+	@event
+	@description <b>[回调型事件]</b>多选勾选时，可以使用cancel取消
+	@param {$UI/system/components/justep/dataTables/dataTables#RowCheckEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"rowID" : 对应的行ID
+		"row" : 对应的行
+		"checked": 勾选状态
+		"cancel": 取消当前操作
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#onRowChecked
+	@event
+	@description <b>[回调型事件]</b>多选勾选后
+	@param {$UI/system/components/justep/dataTables/dataTables#RowCheckedEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"rowID" : 对应的行ID
+		"row" : 对应的行
+		"checked": 勾选状态
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#onRowCheckedAll
+	@event
+	@description <b>[回调型事件]</b>多选全选
+	@param {$UI/system/components/justep/dataTables/dataTables#RowCheckedAllEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"checked": 勾选状态
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/grid/grid#BeforeRowSelectEvent
+@extends $UI/system/components/justep/grid/grid#IndexChangedEvent
+@category eventclass
+@class
+@model UI2
+@description 选中行前
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#BeforeRowSelectEvent.cancel
+ @property
+ @type {boolean}
+ @description 取消当前操作
+*/ 
+
+/**
+	@name $UI/system/components/justep/grid/grid#onBeforeRowSelect
+	@event
+	@description <b>[回调型事件]</b>选中行前，通过cancel可控制选中
+	@param {$UI/system/components/justep/grid/grid#BeforeRowSelectEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"originalRowID" : 原行ID
+		"originalRow" : 原行
+		"rowID" : 行ID
+		"row" : 行
+		"cancel" : 取消当前操作
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#onRowSelect
+	@event
+	@description <b>[回调型事件]</b>选中行
+	@param {$UI/system/components/justep/dataTables/dataTables#RowSelectEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"rowID" : 行ID
+		"row" : 行
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/grid/grid#IndexChangedEvent
+@extends $UI/system/components/justep/dataTables/dataTables#RowSelectEvent
+@category eventclass
+@class
+@model UI2
+@description 行索引变化
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#IndexChangedEvent.originalRowID
+ @property
+ @type {string}
+ @description 原行ID
+*/ 
+
+/**
+ @name $UI/system/components/justep/grid/grid#IndexChangedEvent.originalRow
+ @property
+ @type {$UI/system/components/justep/data/data#Row}
+ @description 原行
+*/ 
+
+/**
+	@name $UI/system/components/justep/grid/grid#onIndexChanged
+	@event
+	@description <b>[回调型事件]</b>行索引变化
+	@param {$UI/system/components/justep/grid/grid#IndexChangedEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"originalRowID" : 原行ID
+		"originalRow" : 原行
+		"rowID" : 行ID
+		"row" : 行
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#onCellRender
+	@event
+	@description <b>[回调型事件]</b>单元格显示渲染
+	@param {$UI/system/components/justep/dataTables/dataTables#CellRenderEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"rowID" : 行ID
+		"row" : 行
+		"html" : 输出显示的html，通过修改html影响展现
+		"colVal" : 列的值 
+		"colName" : 列名
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/grid/grid#TreeIconRenderEvent
+@extends $UI/system/components/justep/dataTables/dataTables#RowSelectEvent
+@category eventclass
+@class
+@model UI2
+@description 树形图标渲染
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#TreeIconRenderEvent.html
+ @property
+ @type {string}
+ @description 输出显示的html，通过修改html影响展现
+*/ 
+
+/**
+	@name $UI/system/components/justep/grid/grid#onTreeIconRender
+	@event
+	@description <b>[回调型事件]</b>树形图标渲染
+	@param {$UI/system/components/justep/grid/grid#TreeIconRenderEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"rowID" : 行ID
+		"row" : 行
+		"html" : 输出显示的html，通过修改html影响展现
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/grid/grid#CollapseRowEvent
+@extends $UI/system/components/justep/dataTables/dataTables#RowSelectEvent
+@category eventclass
+@class
+@model UI2
+@description 树形行折叠
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#onCollapseRow
+	@event
+	@description <b>[回调型事件]</b>树形行折叠
+	@param {$UI/system/components/justep/grid/grid#CollapseRowEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"rowID" : 行ID
+		"row" : 行
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/grid/grid#ExpandRowEvent
+@extends $UI/system/components/justep/dataTables/dataTables#RowSelectEvent
+@category eventclass
+@class
+@model UI2
+@description 树形行展开
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#onExpandRow
+	@event
+	@description <b>[回调型事件]</b>树形行展开
+	@param {$UI/system/components/justep/grid/grid#ExpandRowEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"rowID" : 行ID
+		"row" : 行
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/grid/grid#onReload
+	@event
+	@description <b>[回调型事件]</b>grid重新加载
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/grid/grid#GroupTextRenderEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description grid分组标题显示渲染
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#GroupTextRenderEvent.groupValue
+ @property
+ @type {string}
+ @description 分组的值
+*/ 
+
+/**
+ @name $UI/system/components/justep/grid/grid#GroupTextRenderEvent.summary
+ @property
+ @type {string}
+ @description 分组统计定义
+*/ 
+
+/**
+ @name $UI/system/components/justep/grid/grid#GroupTextRenderEvent.groupText
+ @property
+ @type {string}
+ @description 分组显示标题
+*/ 
+
+/**
+ @name $UI/system/components/justep/grid/grid#GroupTextRenderEvent.count
+ @property
+ @type {integer}
+ @description 记录数
+*/ 
+
+/**
+ @name $UI/system/components/justep/grid/grid#GroupTextRenderEvent.groupIndex
+ @property
+ @type {integer}
+ @description 分组的索引
+*/ 
+
+/**
+	@name $UI/system/components/justep/grid/grid#onGroupTextRender
+	@event
+	@description <b>[回调型事件]</b>grid分组标题显示渲染
+	@param {$UI/system/components/justep/grid/grid#GroupTextRenderEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"groupValue" : 分组的值
+		"summary" : 分组统计定义
+		"groupText" : 分组显示标题
+		"count" : 记录数
+		"groupIndex" : 分组的索引
+	}
+	</xmp>	
+*/
+
+/**
+	@name grid#onFilter
+	@event
+	@description <b>[回调型事件]</b>数据过滤，在filter表达式执行后触发，可以实现排序、过滤等逻辑
+	@param {$UI/system/components/justep/dataTables/dataTables#FilterEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"datas": 数据行数组
+	}
+	</xmp>	
+*/
+
+
+/**
+ @name $UI/system/components/justep/grid/grid.isVirtualRoot
+ @function
+ @param	{string} rowID 行ID
+ @returns {boolean}
+ @description 判断是否虚根
+*/
+	
+/**
+ @name $UI/system/components/justep/grid/grid.virtualRootID
+ @constant
+ @type	{string}
+ @description 虚根行ID
+*/
+		
+/**
+ @name $UI/system/components/justep/grid/grid#getFilter
+ @function
+ @returns {string}
+ @description 获取DataTables绑定的data filter表达式
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#setFilter
+ @function
+ @param	{string} filter filter表达式
+ @description 设置data filter表达式
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#getData
+ @function
+ @returns {$UI/system/components/justep/data/data}
+ @description 获取grid绑定的data对象
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#editCell
+ @function
+ @param	{TD} cell 单元格
+ @description 单元格进入编辑状态,受列上定义的editable属性和data的readonly规则影响
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#getNextCell
+ @function
+ @param	{TD} cell 单元格
+ @description 获取下一个单元格，没有时返回null
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#nextEditCell
+ @function
+ @param	{TD} cell 单元格
+ @description 下一个可以编辑的单元格进入编辑状态
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#editStop
+ @function
+ @description 单元格结束编辑
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#isMultiSelect
+ @function
+ @returns {boolean}
+ @description 是否多选
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#getSelection
+ @function
+ @returns {string} 选中行ID
+ @description 返回选中行的ID
+*/
+		
+/**
+ @name $UI/system/components/justep/grid/grid#setSelection
+ @function
+ @param	{string} rowID 行ID
+ @description 设置选中行
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#getCheckeds
+ @function
+ @returns {list<string>} rowIDs 行ID数组
+ @description 返回多选选中的行ID
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#getCheckedRows
+ @function
+ @returns {list<$UI/system/components/justep/data/data#Row>} rows 行数组
+ @description 返回多选选中的行
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#isChecked
+ @function
+ @param	{string} rowID 行ID
+ @returns {boolean} 是否选中
+ @description 多选是否选中行
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#setRowChecked
+ @function
+ @param	{string} rowID 行ID
+ @param	{boolean} checked 选中状态
+ @description 设置行多选状态
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#selectVirtualRoot
+ @function
+ @description 选中虚根
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#refresh
+ @function
+ @description 重新刷新grid
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#isExpanded
+ @function
+ @param	{string} rowID 行ID
+ @returns {boolean} 是否展开
+ @description 判断行是否展开
+*/
+
+/**
+ @name $UI/system/components/justep/grid/grid#expandRow
+ @function
+ @param	{string} rowID 行ID
+ @description 行展开
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#expandLevel
+ @function
+ @param	{int} level 展开层数
+ @description 展开到第level层，注意：当数据较多时有可能引发性能问题，慎重使用
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#expandAll
+ @function
+ @description 所有行展开，注意：当数据较多时有可能引发性能问题，慎重使用
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#collapseRow
+ @function
+ @param	{string} rowID 行ID
+ @description 行折叠
+*/		
+		
+/**
+ @name $UI/system/components/justep/grid/grid#collapseAll
+ @function
+ @description 所有行折叠
+*/		
+		
+/**
+ @name $UI/system/components/justep/grid/grid#expandByIDPath
+ @function
+ @param	{string} path ID路径
+ @description 根据ID路径行展开
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#getRowByID
+ @function
+ @param	{string} rowID 行ID
+ @returns {TR} 返回TR
+ @description 根据行ID获取TR
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#getDataRow
+ @function
+ @param	{node} node html节点
+ @returns {$UI/system/components/justep/data/data#Row} 返回Data的行对象
+ @description 根据行html节点获取bind的Data行对象
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#setRowCss
+ @function
+ @param	{string} rowID 行ID
+ @param	{object} css 样式，同jquery格式，如:{height:100,width:50,...}
+ @description 设置行的css
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#getGridParam
+ @function
+ @param	{string} name 参数名称
+ @returns {object} 参数值
+ @description 获取参数值
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#setGridParam
+ @function
+ @param	{object} params 参数，json格式
+ @description 设置参数值
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#isTreeGrid
+ @function
+ @returns {boolean} 是否treeGrid
+ @description 是否treeGrid，当tree时也返回true
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#isTree
+ @function
+ @returns {boolean} 是否tree
+ @description 是否tree
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#isGrouping
+ @function
+ @returns {boolean} 是否使用分组
+ @description 是否使用分组
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#deleteRow
+ @function
+ @param	{string} rowID 行ID
+ @description 删除行
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#addRow
+ @function
+ @param	{Row} row data的行对象
+ @description 增加行
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#hideCol
+ @function
+ @param	{string} col 列名 
+ @description 隐藏grid列
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#showCol
+ @function
+ @param	{string} col 列名 
+ @description 显示grid列
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#groupBy
+ @function
+ @param	{string} col 列名 
+ @description 指定分组
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#groupByRemove
+ @function
+ @param	{string} col 列名 
+ @description 去除分组
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#setCaption
+ @function
+ @param	{string} caption 标题 
+ @description 设置标题
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#setCell
+ @function
+ @param	{string} rowID 行ID 
+ @param	{string} col 列 
+ @param	{object} css 样式 
+ @param	{object} attr 属性
+ @description 设置单元格样式或者属性
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#getCell
+ @function
+ @param	{string} rowID 行ID 
+ @param	{string} col 列
+ @returns	{td} 获取到的cell TD  
+ @description 获取cell
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#setColWidth
+ @function
+ @param	{string} col 列 
+ @param	{integer} width 列宽 
+ @description 设置单元格
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#getColWidth
+ @function
+ @param	{string} col 列 
+ @returns	{integer} 列宽 
+ @description 获取列宽
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#getHeaderHeight
+ @function
+ @returns	{integer} 头高 
+ @description 获取头高
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#getFooterHeight
+ @function
+ @returns	{integer} 脚高 
+ @description 获取脚高
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#setHeight
+ @function
+ @param	{integer} height 高 
+ @description 设置grid高
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#getHeight
+ @function
+ @returns	{integer} grid高 
+ @description 获取grid高
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#setWidth
+ @function
+ @param	{integer} width 宽 
+ @description 设置grid宽
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#getWidth
+ @function
+ @returns	{integer} grid宽 
+ @description 获取grid宽
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#getColName
+ @function
+ @param	{integer} colIndex 列索引 
+ @returns	{string} 列名 
+ @description 获取列名
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#getColDef
+ @function
+ @param	{integer} colIndex 列索引 
+ @returns	{object} 列定义 
+ @description 获取列定义
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#getCellIndex
+ @function
+ @param	{Dom} td td节点 
+ @returns	{integer} 列索引 
+ @description 获取列索引
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#getColIndex
+ @function
+ @param	{string} colName 列名 
+ @returns	{integer} 列索引 
+ @description 获取列索引
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#setLabel
+ @function
+ @param	{string} colName 列名 
+ @param	{string} label 显示名，支持html 
+ @param	{string|object} css 列头样式，当类型是string时按class处理，当object时按style处理（格式如：{color: 'red'}）
+ @param	{object} attr 列上增加的属性，如：增加属性_name，{_name:'...'} 
+ @description 设置列显示名，当多表头时此函数无效
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#setFooterData
+ @function
+ @param	{object} footerData footer数据，格式为：{列名:数据,...}，如：{sName:'合计：',sInt:500} 
+ @description 设置footer数据
+*/		
+
+/**
+ @name $UI/system/components/justep/grid/grid#setHeadCheckBox
+ @function
+ @param	{boolean} checked 选中状态
+ @description 多选时设置列头多选checkbox状态
+*/		

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<DataSources>
+	<DataSource>
+		<UseSysConfig>true</UseSysConfig>
+		<Locale>zh_CN</Locale>
+        <DataSourceName>Provider=Mondrian;DataSource=MondrianFoodMartAnalyses;</DataSourceName>
+        <DataSourceDescription>Mondrian FoodMartAnalyses</DataSourceDescription>
+        <URL/>
+        <DataSourceInfo>
+	        <![CDATA[
+	        	Provider=mondrian;
+	        	Locale=zh_CN;DynamicSchemaProcessor=com.justep.olap.i18n.JustepLocalizingDynamicSchemaProcessor;
+	        	DataSource=java:comp/env/northwind
+	        ]]>
+        </DataSourceInfo>
+        <ProviderName>Mondrian</ProviderName>
+        <ProviderType>MDP</ProviderType>
+        <AuthenticationMode>Unauthenticated</AuthenticationMode>
+        <Catalogs>
+            <Catalog name="FoodMartAnalyses">
+            	  <Definition>demo/report/olap/FoodMartAnalyses/schema/FoodMart.xml</Definition>
+            </Catalog>
+        </Catalogs>
+    </DataSource>
+</DataSources>

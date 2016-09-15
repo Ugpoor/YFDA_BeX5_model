@@ -1,0 +1,12 @@
+<template text="通用" desc="活动反馈" custom="false">
+	<images>
+		<image src="template.png"/>
+	</images>
+
+	<items>
+		<item file="template/index.w"></item>
+		<item file="template/index.js" />
+		<item file="template/index.css" />
+	</items>
+
+</template>

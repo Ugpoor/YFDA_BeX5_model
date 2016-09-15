@@ -1,0 +1,108 @@
+.datetime.form-control,.date.form-control,.time.form-control {
+	background: @input-bg url(./img/datePicker.png) no-repeat 100%;
+	padding-right: 22px;
+	cursor: pointer;
+
+	&[readonly]{
+		cursor: pointer;
+	}
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: @input-bg-disabled;
+    opacity: 1; // iOS fix for unreadable disabled content
+  }
+  
+  &.x-cell-control[readonly] {
+	background-color:transparent!important;
+	cursor: pointer!important;
+  }  
+
+  &.x-cell-control[disabled] {
+	cursor: @cursor-disabled!important;
+	background-color: @input-bg-disabled!important;
+	opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+  }  
+}
+
+.form-control{
+	.box-shadow(none);
+	.transition(none);
+	-webkit-appearance: none;
+}
+
+input, textarea{
+	-webkit-user-select: text;
+	-moz-user-select: -moz-text;
+	-moz-user-select: text;
+}
+
+textarea.form-control {
+	resize: none;
+}
+
+input.form-control[type='range']{
+	border:0;
+	-webkit-appearance: slider-horizontal;
+	-moz-appearance: slider-horizontal;
+	appearance: slider-horizontal;
+}
+
+input.form-control[type="number"]{
+	-moz-appearance: textfield;
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button{
+		-webkit-appearance: none !important;
+	}
+}
+
+.appearance select.form-control {
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	appearance: textfield;
+	padding: 0 @padding-base-horizontal;
+	padding-right: 16px;
+	text-indent: 0px;
+	background-image: url(./img/chevron.png);
+	background-repeat: no-repeat;
+	background-position: 100%;
+}
+
+.appearance select.input-sm {
+	padding: 0 @padding-small-horizontal;
+}
+
+.appearance select.input-lg {
+	padding: 0 @padding-large-horizontal;
+}
+
+.x-output {
+  display: block;
+  padding-top: (@padding-base-vertical + 1);
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @input-color;
+}
+
+//增加x-output对media-heading的感知
+.media-heading.x-output {
+	padding-top: 0;
+}
+
+.form-inline {
+
+  // Kick in the inline
+  @media (min-width: @screen-sm-min) {
+    // In navbar-form, allow folks to *not* use `.form-group`
+    .x-output {
+      display: inline-block;
+      width: auto; // Prevent labels from stacking above inputs in `.form-group`
+      vertical-align: middle;
+    }
+  }
+}

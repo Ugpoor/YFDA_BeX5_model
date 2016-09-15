@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$/UI2/system/components/justep/resource" 
+	tag-name="resource" icon="resource.gif" text="资源" 
+	display-property="xid" design-view="web-designer" java-class="Resource"
+	component-class="Resource">
+		<properties>
+			<property name="xid" text="编码" readonly="true"/>
+		</properties>
+		<toolbar>			
+			<item text="增加js引用" method="addJS"/>				
+			<item text="增加css引用" method="addCSS"/>
+			<item text="增加cordova插件引用" method="addCordovaPlugin"/>	
+			<item text="增加w文件引用" method="addWFileRef"/>
+			<item text="增加资源目录引用" method="addDir"/>		
+		</toolbar>
+	 <templates>
+		   <template name="default"><![CDATA[ 
+				<resource></resource>
+		   ]]></template>
+		</templates>
+	</element>
+	
+   <element name="$/UI2/system/components/justep/resource#require" 
+	tag-name="require" icon="require.png" text="资源引用" 
+	display-property="url,xid" design-view="web-designer"
+	component-class="Resource">
+		<properties>
+			<property name="xid" text="编码" readonly="true"/>
+			<property name="url" text="文件路径" />
+		</properties>
+	</element>
+</elements>

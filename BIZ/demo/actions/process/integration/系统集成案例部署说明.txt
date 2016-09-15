@@ -1,0 +1,23 @@
+1、案例文件说明
+	DEMO_JAVA.zip			java 应用，演示一个java应用如何通过biz-client.jar调用X5的Action
+	DEMO_WS_AXIS.zip		java web应用，集成axis 1.0，演示如何将X5的Action封装为WebService
+	DEMO_TIMER.zip			java web应用，演示如何通过web listener启动定时器，定时执行X5的action
+	DEMO_HTML.zip			html web应用，演示另一个web应用如何在界面层集成X5的功能
+	
+2、解压到X5的路径外面，例如：D:/X5Demo/
+	
+3、部署说明
+	在tomcat/conf/server.xml中的host节点下增加以下配置
+        <Context docBase="D:/X5Demo/DEMO_TIMER" path="/timer" reloadable="true"/>  
+        <Context docBase="D:/X5Demo/DEMO_WS_AXIS" path="/axis" reloadable="true"/>  
+        <Context docBase="D:/X5Demo/DEMO_HTML" path="/integration" reloadable="true"/>
+        
+4、在Eclipse的java视图里分别加载以上4个java工程
+
+5、参照《X5专题培训视频-系统集成》进行学习
+	http://www.justep.com/downloads.html
+	
+6、DEMO_HTML的跨域支持：在BeX5系统集成案例中，基于JSONP技术对页面层的跨域集成做了完整支持
+	请将DEMO_HTML部署到另外一个Web服务中，进行与X5之间的跨域集成访问测试
+	
+		

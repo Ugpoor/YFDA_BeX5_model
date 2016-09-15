@@ -1,0 +1,41 @@
+/*公共*********************************************************/
+.text-black{ color:#333;}
+.text-success{ color:#32bd60;}/*样式重写*/
+.text-danger{ color:#ff7767;}/*样式重写*/
+
+.x-titlebar{ background-color:#fafafa; color:#777;}
+.x-card.panel{ margin-bottom:10px;}
+.x-card.panel > .panel-heading{ padding:10px 15px;}
+.x-cards{ padding-top:0;}
+
+.panel-heading.x-noborder{ border-bottom:0;}
+
+/*删除线*/
+.text-del{ text-decoration:line-through;}
+
+/*底部********************************************************/
+.x-panel-bottom .row{ margin:0; padding:3px; width:100%; border-top:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1;}
+.x-panel-bottom .row .col{ margin:0; padding:0;}
+.x-panel-bottom .col:first-child .btn{ height:40px; color:#999; padding:0; padding-top:0px; border-right:1px solid rgba(90, 90, 90, 0.1);}
+.x-panel-bottom .col:last-child .btn-group{ width:100%; padding:0 5px 0 10px;}
+.x-panel-bottom .col:last-child .btn{ height:40px; margin:4px; padding:0; box-shadow:0; border:none; box-sizing:none; background:#ff7d6f; color:#fff;}
+
+/*内容部分*****************************************************/
+
+/*图片*/
+.dImg { position:relative; overflow:hidden;}
+.dImg img{ height:200px;}
+.dImg .btn-group{ position:absolute; left:5px; bottom:5px;}
+.dImg .btn-group .btn{ color:#fff;}
+.dImg h5{ position:absolute; right:10px; bottom:0; width:60px; height:60px; border-radius:65px; padding:14px 0 0 9px; background:rgba(50,189,96,0.8); color:#fff;}
+
+/*图标样式*/
+.btnImg{ width:25px; height:25px; padding:2px; border-radius:30px; background-color:#32bd60; color:#fff;}
+
+/*产品特色*/
+.features{ height:60px; overflow:hidden;}
+.features.trip{ height:105px;}
+
+/*隐藏显示按钮*/
+.btn.hiddenBtn{ padding:5px 0 0 0; color:#999;}
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" __id="id_1" component="$model/UI2/system/components/justep/window/window" extends="$UI/system/templates/common/listView.w" class="window window cIVjIFn" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cIVjIFn" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/designerCommon/grid/grid,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,">  
+  <style xmlns="">@import url(@justepContextPath@/v_5113_nol_zh_CNs_desktopd_pc/system/components/designerCommon/css/common.css);</style>  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cIVjIFn" class="cIVjIFn"/>  
+  <div xmlns="" class="row middle list-navbar1 cIVjIFn" style="margin-top:12px" xid="list-navbar1" __cid="cIVjIFn"> 
+    <label xmlns:xui="http://www.justep.com/xui" for="text1" class="control-label col-xs-2 cIVjIFn" style="padding-top:10px;margin-left:15px;" xid="control" xui:update-mode="merge-and-replace" __cid="cIVjIFn">列表项配置：</label>  
+    <div xmlns:xui="http://www.justep.com/xui" class="col-xs-4 cIVjIFn" xid="title" style="display:none" xui:update-mode="merge" __cid="cIVjIFn">  
+      <input component="$model/UI2/system/components/justep/input/input" class="form-control;display:none cIVjIFn" xid="titleInput" placeholder="请输入标题" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" __cid="cIVjIFn"/> 
+    </div> 
+  </div>  
+  <div xmlns="" class="row list-navbar2 cIVjIFn" __cid="cIVjIFn"> 
+    <ul class="nav navbar-nav cIVjIFn" style="margin-left:15px" __cid="cIVjIFn"> 
+      <li __cid="cIVjIFn" class="cIVjIFn"> 
+        <a href="#" role="button" __cid="cIVjIFn" class="cIVjIFn" data-bind="event:{click:$model._callModelFn.bind($model, 'addClick')}"> 
+          <i class="glyphicon glyphicon-plus cIVjIFn" __cid="cIVjIFn"/>新增
+        </a> 
+      </li>  
+      <li __cid="cIVjIFn" class="cIVjIFn"> 
+        <a href="#" role="button" __cid="cIVjIFn" class="cIVjIFn" data-bind="event:{click:$model._callModelFn.bind($model, 'deleteClick')}"> 
+          <i class="glyphicon glyphicon-minus cIVjIFn" __cid="cIVjIFn"/>删除
+        </a> 
+      </li>  
+      <li __cid="cIVjIFn" class="cIVjIFn"> 
+        <a href="#" role="button" __cid="cIVjIFn" class="cIVjIFn" data-bind="event:{click:$model._callModelFn.bind($model, 'upClick')}"> 
+          <i class="glyphicon glyphicon-arrow-up cIVjIFn" __cid="cIVjIFn"/>上移
+        </a> 
+      </li>  
+      <li __cid="cIVjIFn" class="cIVjIFn"> 
+        <a href="#" role="button" __cid="cIVjIFn" class="cIVjIFn" data-bind="event:{click:$model._callModelFn.bind($model, 'downClick')}"> 
+          <i class="glyphicon glyphicon-arrow-down cIVjIFn" __cid="cIVjIFn"/>下移
+        </a> 
+      </li> 
+    </ul> 
+  </div>  
+  <div xmlns="" component="$model/UI2/system/components/designerCommon/grid/grid" xid="grid" data="listData" style="width:95%;visibility:hidden;" class="grid-height cIVjIFn" editable="true" config="{&quot;altrows&quot;:true,&quot;columns&quot;:[{&quot;columntype&quot;:&quot;textbox&quot;,&quot;dataField&quot;:&quot;name&quot;,&quot;text&quot;:&quot;关系名&quot;},{&quot;columntype&quot;:&quot;textbox&quot;,&quot;dataField&quot;:&quot;data-type&quot;,&quot;text&quot;:&quot;关系类型&quot;},{&quot;columntype&quot;:&quot;textbox&quot;,&quot;dataField&quot;:&quot;labelName&quot;,&quot;text&quot;:&quot;列名&quot;}],&quot;dataXID&quot;:&quot;listData&quot;,&quot;editable&quot;:true,&quot;enabletooltips&quot;:true,&quot;selectionmode&quot;:&quot;singlerow&quot;}" data-bind="component:{name:'$model/UI2/system/components/designerCommon/grid/grid'}" __cid="cIVjIFn"/> 
+</div>

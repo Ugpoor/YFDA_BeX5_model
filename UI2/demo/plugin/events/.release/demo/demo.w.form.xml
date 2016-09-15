@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" component="$model/UI2/system/components/justep/window/window" xid="window" extends="$UI/demo/plugin/template/demo.w" __id="id_1" design="device:m;" class="window window cZnuYzm" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cZnuYzm" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/buttonGroup,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style>null</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onModelConstructDone:modelModelConstructDone" __cid="cZnuYzm" class="cZnuYzm"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p85c77ac38fcc41fb867798e1a095bb70-iosstatusbar cZnuYzm" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cZnuYzm"> 
+    <div class="x-panel-top cZnuYzm" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cZnuYzm"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cZnuYzm" xid="titleBar" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;Events&quot;}" __cid="cZnuYzm"> 
+        <div class="x-titlebar-left cZnuYzm" __cid="cZnuYzm"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cZnuYzm" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;}" __cid="cZnuYzm"> 
+            <i xid="i6" class="icon-chevron-left cZnuYzm" __cid="cZnuYzm"/>  
+            <span xid="span6" __cid="cZnuYzm" class="cZnuYzm"/>
+          </a>
+        </div>  
+        <div class="x-titlebar-title cZnuYzm" __cid="cZnuYzm">插件的名字</div>  
+        <div class="x-titlebar-right  cZnuYzm" __cid="cZnuYzm">
+          <div class="empty cZnuYzm" __cid="cZnuYzm"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cZnuYzm" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cZnuYzm">
+      <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cZnuYzm" xid="contents1" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0}" __cid="cZnuYzm"> 
+        <div class="x-contents-content active cZnuYzm" xid="infoContent" style="padding:10px;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cZnuYzm">
+          <h3 xid="h31" style="text-align:center;" __cid="cZnuYzm" class="cZnuYzm">插件概述</h3>
+          <h4 xid="h41" __cid="cZnuYzm" class="cZnuYzm">介绍：</h4>
+          <p xid="p1" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cZnuYzm" class="cZnuYzm">Cordova事件</p>
+          <p xid="introduceP" style="height:100%;width:100%;" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cZnuYzm" class="cZnuYzm">Cordova提供了一组事件，包括：deviceready，pause，resume，backbutton，menubutton，searchbutton，volumedownbutton，volumeupbutton。应用可以监听这些事件，在监听中完成对事件的响应。x5在此基础上，增加一个事件：handleOpenURL，通过URL打开应用时触发该事件，具体参见demo:customURL</p>
+          <div xid="div4" style="height:30px;" __cid="cZnuYzm" class="cZnuYzm"/>  
+          <h4 xid="h42" __cid="cZnuYzm" class="cZnuYzm">适用平台：</h4>  
+          <p xid="platformP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cZnuYzm" class="cZnuYzm">Android,IOS</p> 
+        </div>  
+        <div class="x-contents-content cZnuYzm" xid="demoContent" style="padding:10px;width:100%;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cZnuYzm">
+          <div xid="div2" style="height:15px;" __cid="cZnuYzm" class="cZnuYzm"/>
+          <div xid="div3" __cid="cZnuYzm" class="cZnuYzm">
+            <p xid="accountP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cZnuYzm" class="cZnuYzm">事件监听、响应demo。</p>
+          </div>  
+          <div xid="div2_2" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm"> 
+            <p xid="p1_2" __cid="cZnuYzm" class="cZnuYzm"> 
+              <b __cid="cZnuYzm" class="cZnuYzm">Android,IOS:</b> 
+            </p> 
+          </div>
+          <a class="btn btn-default cZnuYzm" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button1_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:onDeviceReadyClick" data-config="{&quot;label&quot;:&quot;deviceReady事件监听&quot;}" __cid="cZnuYzm"> 
+            <i xid="i1_3" __cid="cZnuYzm" class="cZnuYzm"/>  
+            <span xid="span1_3" __cid="cZnuYzm" class="cZnuYzm">deviceReady事件监听</span> 
+          </a>
+          <p xid="p21_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm"/>
+          <a class="btn btn-default cZnuYzm" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button11_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:onPauseClick" data-config="{&quot;label&quot;:&quot;pause事件监听&quot;}" __cid="cZnuYzm"> 
+            <i xid="i11_1" __cid="cZnuYzm" class="cZnuYzm"/>  
+            <span xid="span11_1" __cid="cZnuYzm" class="cZnuYzm">pause事件监听</span> 
+          </a>
+          <p xid="p31_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm"/>
+          <a class="btn btn-default cZnuYzm" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button21_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:onResumeClick" data-config="{&quot;label&quot;:&quot;resume事件监听&quot;}" __cid="cZnuYzm"> 
+            <i xid="i21_1" __cid="cZnuYzm" class="cZnuYzm"/>  
+            <span xid="span21_1" __cid="cZnuYzm" class="cZnuYzm">resume事件监听</span> 
+          </a>
+          <p xid="p1_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm"/>
+          <a class="btn btn-default cZnuYzm" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button11_4" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:stopEventListener" data-config="{&quot;label&quot;:&quot;停止事件监听&quot;}" __cid="cZnuYzm"> 
+            <i xid="i11_4" __cid="cZnuYzm" class="cZnuYzm"/>  
+            <span xid="span11_4" __cid="cZnuYzm" class="cZnuYzm">停止事件监听</span> 
+          </a>
+          <div xid="div1_2" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm"> 
+            <p __cid="cZnuYzm" class="cZnuYzm"/>  
+            <p __cid="cZnuYzm" class="cZnuYzm"/>  
+            <p xid="p1_1111" __cid="cZnuYzm" class="cZnuYzm"> 
+              <b __cid="cZnuYzm" class="cZnuYzm">Android:</b> 
+            </p>  
+            <a class="btn btn-default cZnuYzm" component="$model/UI2/system/components/justep/button/button" style="width:100%;height:100%;" xid="button11_4" xui:parent="demoContent" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:onBackKeyDownClick" data-config="{&quot;label&quot;:&quot;backbutton事件监听&quot;}" __cid="cZnuYzm"> 
+              <i xid="i11_4" __cid="cZnuYzm" class="cZnuYzm"/>  
+              <span xid="span11_4" __cid="cZnuYzm" class="cZnuYzm">backbutton事件监听</span> 
+            </a>  
+            <p __cid="cZnuYzm" class="cZnuYzm"/>  
+            <a class="btn btn-default cZnuYzm" component="$model/UI2/system/components/justep/button/button" style="width:100%;height:100%;" xid="button31_1" xui:parent="demoContent" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:onVolumeDownKeyDownClick" data-config="{&quot;label&quot;:&quot;volumeupbutton事件监听&quot;}" __cid="cZnuYzm"> 
+              <i xid="i31_1" __cid="cZnuYzm" class="cZnuYzm"/>  
+              <span xid="span31_1" __cid="cZnuYzm" class="cZnuYzm">volumeupbutton事件监听</span> 
+            </a>  
+            <p __cid="cZnuYzm" class="cZnuYzm"/>  
+            <a class="btn btn-default cZnuYzm" component="$model/UI2/system/components/justep/button/button" style="width:100%;height:100%;" xid="button41_1" xui:parent="demoContent" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:onVolumeUpKeyDownDownClick" data-config="{&quot;label&quot;:&quot;volumedownbutton事件监听&quot;}" __cid="cZnuYzm"> 
+              <i xid="i41_1" __cid="cZnuYzm" class="cZnuYzm"/>  
+              <span xid="span41_1" __cid="cZnuYzm" class="cZnuYzm">volumedownbutton事件监听</span> 
+            </a> 
+          </div>
+        </div>  
+        <div class="x-contents-content cZnuYzm" xid="codeContent" style="padding:10px" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cZnuYzm">
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm">创建监听函数</p>
+          <div xid="setListeners" xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm">监听deviceReady</p>
+          <div xid="onDeviceReadyClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm">监听resume</p>
+          <div xid="onResumeClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm">监听pauseClick</p>
+          <div xid="onPauseClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm">监听backbutton</p>
+          <div xid="onBackKeyDownClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm">监听volumedownbutton</p>
+          <div xid="onVolumeDownKeyDownClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm">监听volumeupbutton</p>
+          <div xid="onVolumeUpKeyDownDownClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm">移除所有监听</p>
+          <div xid="stopEventListener" xui:parent="codeContent" xui:update-mode="insert" __cid="cZnuYzm" class="cZnuYzm"/>
+        </div>
+      </div>
+    </div>  
+    <div class="x-panel-bottom cZnuYzm" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cZnuYzm">
+      <div component="$model/UI2/system/components/justep/button/buttonGroup" class="btn-group btn-group-justified x-card  cZnuYzm" xid="buttonGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/button/buttonGroup'}" data-config="{&quot;tabbed&quot;:true}" __cid="cZnuYzm">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cZnuYzm" xid="info" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;info&quot;,&quot;target&quot;:&quot;infoContent&quot;}" __cid="cZnuYzm"> 
+          <i xid="i1" __cid="cZnuYzm" class="cZnuYzm"/>  
+          <span xid="span1" __cid="cZnuYzm" class="cZnuYzm">info</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cZnuYzm" xid="demo" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;demo&quot;,&quot;target&quot;:&quot;demoContent&quot;}" __cid="cZnuYzm"> 
+          <i xid="i2" __cid="cZnuYzm" class="cZnuYzm"/>  
+          <span xid="span2" __cid="cZnuYzm" class="cZnuYzm">demo</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cZnuYzm" xid="code" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;code&quot;,&quot;target&quot;:&quot;codeContent&quot;}" __cid="cZnuYzm"> 
+          <i xid="i3" __cid="cZnuYzm" class="cZnuYzm"/>  
+          <span xid="span3" __cid="cZnuYzm" class="cZnuYzm">code</span>
+        </a>
+      </div>
+    </div>
+    <style __cid="cZnuYzm" class="cZnuYzm">.x-panel.p85c77ac38fcc41fb867798e1a095bb70-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.p85c77ac38fcc41fb867798e1a095bb70-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.p85c77ac38fcc41fb867798e1a095bb70-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p85c77ac38fcc41fb867798e1a095bb70-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p85c77ac38fcc41fb867798e1a095bb70-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.p85c77ac38fcc41fb867798e1a095bb70-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p85c77ac38fcc41fb867798e1a095bb70-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p85c77ac38fcc41fb867798e1a095bb70-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p85c77ac38fcc41fb867798e1a095bb70-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div>  
+</div>

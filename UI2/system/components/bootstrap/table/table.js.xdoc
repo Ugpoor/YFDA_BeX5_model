@@ -1,0 +1,23 @@
+/**
+	@name $UI/system/components/bootstrap/table/table
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@extendurl 
+	@description table
+	@model UI2
+*/	
+
+/**
+	@name $UI/system/components/bootstrap/table/table#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+	@name $UI/system/components/bootstrap/table/table#loadDataa
+	@function
+	@description 数据
+	@param {Object} json数组
+*/
+

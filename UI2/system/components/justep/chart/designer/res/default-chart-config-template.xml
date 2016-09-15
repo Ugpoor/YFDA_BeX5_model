@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<charts>
+	<public>
+		<config>		
+			<!-- 标题 -->	
+			<title visible="true" position="TOP">Justep图表</title>
+			<title-background-color>#FFFFFF</title-background-color>			
+			<title-vertical-alignment>CENTER</title-vertical-alignment>
+			<title-horizontal-alignment>CENTER</title-horizontal-alignment>
+			<title-border top="0.0D" left="0.0D" bottom="0.0D" right="0.0D" />
+			<title-margin top="0.1D" left="0.1D" bottom="0.1D" right="0.1D" />
+			<title-padding top="0.1D" left="0.1D" bottom="0.1D" right="0.1D" />
+			<title-font name="黑体" style="0" size="20"/>	
+			
+			<!-- 子标题  -->
+			<sub-title visible="false" position="TOP"/>
+			<sub-title-background-color>#FFFFFF</sub-title-background-color>			
+			<sub-title-vertical-alignment>CENTER</sub-title-vertical-alignment>
+			<sub-title-horizontal-alignment>CENTER</sub-title-horizontal-alignment>
+			<sub-title-border top="0.0D" left="0.0D" bottom="0.0D" right="0.0D" />
+			<sub-title-margin top="0.1D" left="0.1D" bottom="0.1D" right="0.1D" />
+			<sub-title-padding top="0.1D" left="0.1D" bottom="0.1D" right="0.1D" />
+			<sub-title-font name="黑体" style="0" size="14"/>
+			
+			<!-- 注释说明信息 -->
+			<comment visible="false" position="BOTTOM"/>
+			<comment-background-color>#FFFFFF</comment-background-color>			
+			<comment-vertical-alignment>CENTER</comment-vertical-alignment>
+			<comment-horizontal-alignment>CENTER</comment-horizontal-alignment>
+			<comment-border top="0.0D" left="0.0D" bottom="0.0D" right="0.0D" />
+			<comment-margin top="0.1D" left="0.1D" bottom="0.1D" right="0.1D" />
+			<comment-padding top="0.1D" left="0.1D" bottom="0.1D" right="0.1D" />
+			<comment-font name="黑体" style="0" size="14"/>
+						
+			<!-- 图例 -->					
+			<legend visible="true" position="BOTTOM"/>	
+			<legend-background-color>#FFFFFF</legend-background-color>			
+			<legend-vertical-alignment>CENTER</legend-vertical-alignment>
+			<legend-horizontal-alignment>CENTER</legend-horizontal-alignment>
+			<legend-border top="0.0D" left="0.0D" bottom="0.0D" right="0.0D" />
+			<legend-margin top="0.1D" left="0.1D" bottom="0.1D" right="0.1D" />
+			<legend-padding top="0.1D" left="0.1D" bottom="0.1D" right="0.1D" />
+			<legend-item-font name="黑体" style="0" size="14"/>	
+					
+			<!-- 链接与提示 -->		
+			<!-- <map/> -->			
+			<href model="" title="" />		
+			
+			<!-- 公共参数  -->
+			<!-- 
+			<x-size>500</x-size>
+			<y-size>375</y-size>						
+			-->
+			<chart-background-color>#FFFFFF</chart-background-color>	
+			
+		</config>
+	</public>
+	<private>
+		<chart type="|pie|pie-3d|">
+			<series-set>
+				<series chart-type="" ref="">
+					<data categoryAxis="" numberAxis="" ref="" />				
+					<config>
+						<is-circular>true</is-circular>
+						<no-data-message>无数据</no-data-message>						
+						<background-color>#FFFFFF</background-color>
+						<background-alpha>0.6f</background-alpha>
+						<foreground-alpha>0.9f</foreground-alpha>
+
+						<label-gap>0.05</label-gap>
+						<label-font name="黑体" 	style="0" size="12"/>					
+						<pie-label-style>{0} {2}</pie-label-style>						
+						<pie-label-number-format>######</pie-label-number-format>	
+						<pie-label-percent-format>##.00%</pie-label-percent-format>	
+						
+						
+						<!-- 着重弹出区域 -->
+						<explode-all-percent range="100" value="0.0D"/>
+						<explode-percent index="0" value="0.0D"/>
+						
+						<!-- 热点部分 -->
+						<href model="" title="" />
+						<map-tool-tip-label-style>{0}: ({1}, {2})</map-tool-tip-label-style>
+						<map-tool-tip-number-format>######</map-tool-tip-number-format>	
+						<map-tool-tip-percent-format>##.00%</map-tool-tip-percent-format>		
+													
+					</config>	
+				</series>
+			</series-set>
+		</chart>
+		<chart type="|vertical-bar|vertical-bar-3d|stacked-vertical-bar|stacked-vertical-bar-3d|cylinder-vertical-bar|cylinder-vertical-bar-3d|horizontal-bar|horizontal-bar-3d|stacked-horizontal-bar|stacked-horizontal-bar-3d|cylinder-horizontal-bar|cylinder-horizontal-bar-3d|">
+			<series-set>
+				<series chart-type="" ref="">
+					<data title="" categoryAxis="" numberAxis="" color="" ref="" autoData="false"/>  					
+					<config>
+						<background-color>#FFFFFF</background-color>
+						<background-alpha>0.6f</background-alpha>
+						<foreground-alpha>0.9f</foreground-alpha>
+						
+						<category-title>类别</category-title>
+						<category-title-color>#000000</category-title-color>
+						<category-title-font name="黑体" style="0" size="12"/>	
+						
+						<category-margin>0.2</category-margin>			
+						<category-upper-margin>0.1</category-upper-margin>
+						<category-lower-margin>0.1</category-lower-margin>
+						<category-label-max-width>10</category-label-max-width>
+						
+								
+						<category-item-label-visible>false</category-item-label-visible>
+						<category-item-label-font name="黑体" style="0" size="12"/>	
+						<category-item-label-color>#000000</category-item-label-color>
+						<category-item-label-number-format>######.00</category-item-label-number-format>
+						
+						<category-item-margin>0.2</category-item-margin>
+						<category-item-max-width>0.4</category-item-max-width>
+						<category-item-outline color="#BEBEBE" stroke="0.3f"/>
+						
+						
+						<!-- 字体偏移度  -->
+						<category-item-label-angle>0</category-item-label-angle>
+						
+						<category-tick-label-font name="黑体" style="0" size="12"/>		
+						<category-tick-label-color>#000000</category-tick-label-color>
+						
+						<serie-title>数据</serie-title>
+						<serie-title-color>#000000</serie-title-color>
+						<serie-title-font name="黑体" style="0" size="12"/>
+						
+						<serie double-axis="false" one-axis-location="TOP_OR_LEFT" two-axis-location="BOTTOM_OR_RIGHT" />
+						
+						<serie-upper-margin>0.1</serie-upper-margin>						
+						<serie-number visible="true"  auto="true" start="0" end="1000" step="100"/>		
+						<serie-number-format>####</serie-number-format>
+											
+						<serie-tick-label-font name="黑体" style="0" size="12"/>	
+						<serie-tick-label-color>#000000</serie-tick-label-color>	
+							
+						<marker visible="false" label="marker" value="100" color="#EE0000" />
+						<marker-label-font name="黑体" style="0" size="12"/>	
+												
+						<href model="" title="" />
+						
+						<!-- 提示信息 {0}组 {1}分类轴 {2}数据值 -->
+						<map-tool-tip-label-style>({0}, {1}) = {2}</map-tool-tip-label-style>	
+						<!-- type : [number/date] yyyy-MM-dd -->
+						<map-tool-tip-format type="number">######.00</map-tool-tip-format>	
+													  					
+					</config>			
+				</series>
+			</series-set>
+		</chart>
+		<chart type="|vertical-area|horizontal-area|">
+			<series-set>
+				<series chart-type="" ref="">
+					<data title="" categoryAxis="" numberAxis="" color="" ref="" autoData="false"/>  	 					
+					<config>
+						<background-color>#FFFFFF</background-color>
+						<background-alpha>0.6f</background-alpha>
+						<foreground-alpha>0.9f</foreground-alpha>
+						
+						<category-title>类别</category-title>
+						<category-title-color>#000000</category-title-color>
+						<category-title-font name="黑体" style="0" size="12"/>
+							
+						<category-margin>0.2</category-margin>			
+						<category-upper-margin>0.1</category-upper-margin>
+						<category-lower-margin>0.1</category-lower-margin>
+						<category-label-max-width>10</category-label-max-width>					
+						
+						<category-item-label-visible>false</category-item-label-visible>
+						<category-item-label-font name="黑体" style="0" size="12"/>	
+						<category-item-label-color>#000000</category-item-label-color>
+						<category-item-label-number-format>######.00</category-item-label-number-format>
+						
+						<!-- 字体偏移度  -->
+						<category-item-label-angle>0</category-item-label-angle>
+						
+						<category-tick-label-font name="黑体" style="0" size="12"/>		
+						<category-tick-label-color>#000000</category-tick-label-color>	
+												
+						<serie-title>数据</serie-title>
+						<serie-title-color>#000000</serie-title-color>
+						<serie-title-font name="黑体" style="0" size="12"/>	
+						
+						<serie double-axis="false" one-axis-location="TOP_OR_LEFT" two-axis-location="BOTTOM_OR_RIGHT" />	
+						
+						<serie-upper-margin>0.1</serie-upper-margin>
+						
+						<serie-number visible="true" auto="true" start="0" end="1000" step="100"/>	
+						<serie-number-format>####</serie-number-format>
+						
+						<serie-tick-label-font name="黑体" style="0" size="12"/>	
+						<serie-tick-label-color>#000000</serie-tick-label-color>
+						
+						
+						<marker visible="false" label="marker" value="100" color="#EE0000" />
+						<marker-label-font name="黑体" style="0" size="12"/>		
+										
+						<href model="" title="" />	
+						
+						<!-- 提示信息 {0}组 {1}分类轴 {2}数据值 -->
+						<map-tool-tip-label-style>({0}, {1}) = {2}</map-tool-tip-label-style>	
+						<!-- type : [number/date] yyyy-MM-dd -->
+						<map-tool-tip-format type="number">######.00</map-tool-tip-format>			
+														  
+					</config>	
+				</series>
+			</series-set>
+		</chart>
+		<chart type="|vertical-line|vertical-line-3d|horizontal-line|horizontal-line-3d|">
+			<series-set>
+				<series chart-type="" ref="">
+					<data title="" categoryAxis="" numberAxis="" color="" ref="" autoData="false"/>  	  					
+					<config>
+						<background-color>#FFFFFF</background-color>
+						<background-alpha>0.6f</background-alpha>
+						<foreground-alpha>0.9f</foreground-alpha>
+						
+						<category-title>类别</category-title>
+						<category-title-color>#000000</category-title-color>
+						<category-title-font name="黑体" style="0" size="12"/>	
+						
+						<category-margin>0.2</category-margin>			
+						<category-upper-margin>0.1</category-upper-margin>
+						<category-lower-margin>0.1</category-lower-margin>
+						<category-label-max-width>10</category-label-max-width>
+						
+						<category-item-margin>0.2</category-item-margin>
+						<category-item-label-visible>false</category-item-label-visible>
+						<category-item-label-font name="黑体" style="0" size="12"/>	
+						<category-item-label-color>#000000</category-item-label-color>
+						<category-item-label-number-format>######.00</category-item-label-number-format>
+						
+						<!-- 字体偏移度  -->
+						<category-item-label-angle>0</category-item-label-angle>
+						
+						<category-tick-label-font name="黑体" style="0" size="12"/>		
+						<category-tick-label-color>#000000</category-tick-label-color>
+									
+						<serie-title>数据</serie-title>
+						<serie-title-color>#000000</serie-title-color>
+						<serie-title-font name="黑体" style="0" size="12"/>	
+						
+						<serie double-axis="false" one-axis-location="TOP_OR_LEFT" two-axis-location="BOTTOM_OR_RIGHT" />	
+						
+						<serie-upper-margin>0.1</serie-upper-margin>						
+						<serie-number visible="true"  auto="true" start="0" end="1000" step="100"/>		
+						<serie-number-format>####</serie-number-format>
+						
+						<serie-tick-label-font name="黑体" style="0" size="12"/>	
+						<serie-tick-label-color>#000000</serie-tick-label-color>	
+											
+						<marker visible="false" label="marker" value="100" color="#EE0000" />
+						<marker-label-font name="黑体" style="0" size="12"/>	
+											
+						<href model="" title="" />
+						
+						<!-- 提示信息 {0}组 {1}分类轴 {2}数据值 -->
+						<map-tool-tip-label-style>({0}, {1}) = {2}</map-tool-tip-label-style>	
+						<!-- type : [number/date] yyyy-MM-dd -->
+						<map-tool-tip-format type="number">######.00</map-tool-tip-format>		
+						
+					</config>	
+				</series>
+			</series-set>
+		</chart>
+		<chart type="|vertical-xy-line|horizontal-xy-line|">
+			<series-set>
+				<series chart-type="" ref="">
+					<data title="" categoryAxis="" numberAxis="" color="" ref="" autoData="false"/>  						
+					<config>
+						<background-color>#FFFFFF</background-color>	
+						<background-alpha>0.6f</background-alpha>
+						<foreground-alpha>0.9f</foreground-alpha>
+						<xy-line-precision>10</xy-line-precision>
+						<xy-line-shapes-visible>true</xy-line-shapes-visible>
+										
+						<category-title>类别</category-title>	
+						<category-title-color>#000000</category-title-color>
+						<category-title-font name="黑体" style="0" size="12"/>	
+						
+						<category-upper-margin>0.1</category-upper-margin>
+						<category-lower-margin>0.1</category-lower-margin>		
+										
+						<category-item-label-visible>false</category-item-label-visible>												
+						<category-item-label-font name="黑体" style="0" size="12"/>	
+						<category-item-label-color>#000000</category-item-label-color>
+						
+						<category-item-label-number-format>######.00</category-item-label-number-format>
+						
+						<category-tick-label-font name="黑体" style="0" size="12"/>		
+						<category-tick-label-color>#000000</category-tick-label-color>
+						<category-number visible="true"  auto="true" start="0" end="1000" step="100"/>	
+						<category-number-format>####</category-number-format>
+						
+						<serie-title>数据</serie-title>
+						<serie-title-color>#000000</serie-title-color>
+						<serie-title-font name="黑体" style="0" size="12"/>
+						
+						<serie double-axis="false" one-axis-location="TOP_OR_LEFT" two-axis-location="BOTTOM_OR_RIGHT" />	
+						
+						<serie-upper-margin>0.1</serie-upper-margin>
+						<serie-number visible="true"  auto="true" start="0" end="1000" step="100"/>												
+						<serie-number-format>####</serie-number-format>
+						
+						<serie-tick-label-font name="黑体" style="0" size="12"/>	
+						<serie-tick-label-color>#000000</serie-tick-label-color>
+						
+						<marker visible="false" label="marker" value="100" color="#EE0000" />
+						<marker-label-font name="黑体" style="0" size="12"/>											
+						
+						<href model="" title="" />	
+						
+						<!-- 提示信息 {0}组 {1}分类轴 {2}数据值 -->
+						<map-tool-tip-label-style>{0}: ({1}, {2})</map-tool-tip-label-style>	
+						<!-- type : [number/date] yyyy-MM-dd -->
+						<map-tool-tip-category-format type="number">######.00</map-tool-tip-category-format>		
+						<map-tool-tip-serie-format type="number">######.00</map-tool-tip-serie-format>	
+						
+					</config>	
+				</series>
+			</series-set>
+		</chart>
+		<chart type="|time-series|">
+			<series-set>
+				<series chart-type="" ref="">
+					<data title="" categoryAxis="" numberAxis="" color="" ref="" autoData="false"/>  	 					
+					<config>
+						<background-color>#FFFFFF</background-color>	
+						<background-alpha>0.6f</background-alpha>
+						<foreground-alpha>0.9f</foreground-alpha>
+						
+						<category-title>类别</category-title>
+						<category-title-color>#000000</category-title-color>
+						<category-title-font name="黑体" style="0" size="12"/>	
+						
+						<category-item-label-visible>false</category-item-label-visible>
+						<category-item-label-font name="黑体" style="0" size="12"/>	
+						<category-item-label-color>#000000</category-item-label-color>
+						
+						<category-item-label-number-format>######.00</category-item-label-number-format>
+						
+						<category-tick-label-font name="黑体" style="0" size="12"/>		
+						<category-tick-label-color>#000000</category-tick-label-color>	
+						
+						<serie-title>数据</serie-title>
+						<serie-title-color>#000000</serie-title-color>
+						<serie-title-font name="黑体" style="0" size="12"/>
+						
+						<serie double-axis="false" one-axis-location="TOP_OR_LEFT" two-axis-location="BOTTOM_OR_RIGHT" />	
+						
+						<serie-tick-label-font name="黑体" style="0" size="12"/>	
+						<serie-tick-label-color>#000000</serie-tick-label-color>
+						
+						<serie-upper-margin>0.1</serie-upper-margin>						
+						<serie-number visible="true"  auto="true" start="0" end="1000" step="100"/>	
+						<serie-number-format>####.00</serie-number-format>
+						
+						<date-format time-period="day">yyyy-MM-dd</date-format>
+					
+						<marker visible="false" label="marker" value="100" color="#EE0000" />
+						<marker-label-font name="黑体" style="0" size="12"/>						
+						
+						<href model="" title=""/>	
+						
+						<!-- 提示信息 {0}组 {1}分类轴 {2}数据值 -->
+						<map-tool-tip-label-style>{0}: ({1}, {2})</map-tool-tip-label-style>	
+						<!-- type : [number/date] yyyy-MM-dd -->
+						<map-tool-tip-category-format type="date">yyyy-MM-dd</map-tool-tip-category-format>		
+						<map-tool-tip-serie-format type="number">######.00</map-tool-tip-serie-format>	
+											
+					</config>	
+				</series>
+			</series-set>
+		</chart>
+		<chart type="|simple-meter|dial-meter|arc-dial-meter|thermometer-meter|">
+			<series-set>
+				<series chart-type="" style="" ref="">
+					<data value="" ref=""/>  					
+					<config>	
+						<background-color>#FFFFFF</background-color>											
+						<background-alpha>0.6f</background-alpha>
+						<foreground-alpha>0.9f</foreground-alpha>
+						
+						<!-- 简单仪表盘 -->						
+						<simple-range lower="0" upper="100" />
+						<simple-interval label="" lower="0" upper="100" outline-color="#000000" outline-stroke="2.0f" background-color="#0000FF"/>
+						
+						<simple-needle-color>#0000FF</simple-needle-color>
+						<simple-dial-background-color>#FFFFFF</simple-dial-background-color>
+						<simple-dial-outline-color>#FFFFFF</simple-dial-outline-color>
+						<simple-meter-angle>260</simple-meter-angle>
+						
+						<simple-tick-label-visible>true</simple-tick-label-visible>		
+						<simple-tick-label-color>#000000</simple-tick-label-color>		
+						<simple-tick-size>5.0</simple-tick-size>
+						<simple-tick-color>#000000</simple-tick-color>	
+						<simple-value-color>#000000</simple-value-color>
+						<simple-units/>    
+						<simple-tick-label-font name="黑体" style="0" size="12"/>
+						<simple-value-font name="黑体" style="0" size="12"/>
+						
+						<!-- 刻度盘 -->
+						<dial-rangle lower="0" upper="0" color="#FFFFFF" />
+						<dial-rangle-inner-radius>0.80D</dial-rangle-inner-radius>
+						<dial-rangle-outer-radius>0.82D</dial-rangle-outer-radius>
+
+						<dial-dataset-index>0</dial-dataset-index>
+						
+						<dial-view x="0.0" y="0.0" width="1.0" height="1.0"/>						
+						<dial-frame background-color="#FFFFFF" foreground-color="#FFFFFF"/>
+						<dial-background x-color="#FFFFFF" y-color="#FFFFFF"/>
+						
+						<dial-annotation>描述</dial-annotation>
+						<dial-annotation-font name="黑体" style="0" size="12"/>
+						<dial-annotation-radius>0.70</dial-annotation-radius>
+						<dial-annotation-angle>-140</dial-annotation-angle>
+											
+						<dial-value-indicator-radius>0.50</dial-value-indicator-radius>
+						<dial-value-indicator-angle>-103.0</dial-value-indicator-angle>
+						<dial-value-indicator-font name="黑体" style="0" size="12"/>
+						<dial-value-indicator-color>#FFFFFF</dial-value-indicator-color>
+						<dial-value-indicator-outline-color>#FFFFFF</dial-value-indicator-outline-color>
+						<dial-value-indicator-background-color>#FFFFFF</dial-value-indicator-background-color>
+						
+						<dial-scale visible="true" lower-bound="0" upper-bound="100" start-angle="-120" extent="-300" major-tick-increment="10" minor-tick-count="4"/>
+						
+						<dial-scale-tick-radius>0.90</dial-scale-tick-radius>	
+						<dial-scale-tick-label-offset>0.15</dial-scale-tick-label-offset>
+						<dial-scale-major-tick-color>#000000</dial-scale-major-tick-color>
+						<dial-scale-minor-tick-color>#242424</dial-scale-minor-tick-color>
+						<dial-scale-tick-label-font name="黑体" style="0" size="12"/>
+						
+						<dial-pointer-radius>0.9</dial-pointer-radius>
+						<dial-pointer-width-radius>0.03</dial-pointer-width-radius>
+						<dial-pointer-fill-color>#0000FF</dial-pointer-fill-color>
+						<dial-pointer-outline-color>#0000FF</dial-pointer-outline-color>
+						
+						<dial-cap-radius>0.02D</dial-cap-radius>
+						
+						<!-- 弧度刻度盘 -->
+						<arc-dial-rangle lower="0" upper="0" color="#FFFFFF" />
+						<arc-dial-rangle-inner-radius>0.85D</arc-dial-rangle-inner-radius>
+						<arc-dial-rangle-outer-radius>0.86D</arc-dial-rangle-outer-radius>
+						
+						<arc-dial-view x="0.21" y="0.0" width="0.58" height="0.30"/>
+						<arc-dial-frame start-angle="60.0" extent="60.0"/>
+						
+						<arc-dial-frame-inner-radius>0.60</arc-dial-frame-inner-radius>
+						<arc-dial-frame-outer-radius>0.90</arc-dial-frame-outer-radius>
+						<arc-dial-frame-foreground-color>#FFFFFF</arc-dial-frame-foreground-color>
+	
+						<arc-dial-frame-stroke>3.0f</arc-dial-frame-stroke>
+						<arc-dial-background x-color="#FFFFFF" y-color="#FFFFFF"/>
+						
+						<arc-dial-dataset-index>0</arc-dial-dataset-index>
+						<arc-dial-scale visible="true" lower-bound="0" upper-bound="100" start-angle="115.0" extent="-50" major-tick-increment="10.0" minor-tick-count="4"/>
+						
+						<arc-dial-scale-tick-radius>0.88</arc-dial-scale-tick-radius>	
+						<arc-dial-scale-tick-label-offset>0.07</arc-dial-scale-tick-label-offset>
+						<arc-dial-scale-major-tick-color>#000000</arc-dial-scale-major-tick-color>
+						<arc-dial-scale-minor-tick-color>#242424</arc-dial-scale-minor-tick-color>
+						<arc-dial-scale-tick-label-font name="黑体" style="0" size="12"/>
+						
+						<arc-dial-pointer-radius>0.82</arc-dial-pointer-radius>
+						<arc-dial-pointer-color>#0000FF</arc-dial-pointer-color>
+						
+						<!--温度计-->
+						<thermometer-range lower="0" upper="100"/>
+						<thermometer-units></thermometer-units>
+						
+					</config>	
+				</series>
+			</series-set>
+		</chart>		
+		<chart type="|vertical-gantt|horizontal-gantt|">
+			<series-set>
+				<series chart-type="" ref="">
+					<data title="" categoryAxis="" startDate="" endDate="" color="" ref=""/>		
+					<config>
+						<background-color>#FFFFFF</background-color>	
+						<background-alpha>0.6f</background-alpha>
+						<foreground-alpha>0.9f</foreground-alpha>	
+						<date-format>yyyy-MM-dd</date-format>
+						
+						<category-title>时间</category-title>
+						<category-title-color>#000000</category-title-color>
+						<category-title-font name="黑体" style="0" size="12"/>	
+						
+						<category-tick-label-font name="黑体" style="0" size="12"/>		
+						<category-tick-label-color>#000000</category-tick-label-color>	
+						
+						<!-- 字体偏移度  -->
+						<category-item-label-angle>0</category-item-label-angle>
+		
+						<serie-title>任务</serie-title>							
+						<serie-title-color>#000000</serie-title-color>
+						<serie-title-font name="黑体" style="0" size="12"/>
+						
+						<serie double-axis="false" one-axis-location="TOP_OR_LEFT" two-axis-location="BOTTOM_OR_RIGHT" />	
+						
+						<serie-tick-label-font name="黑体" style="0" size="12"/>	
+						<serie-tick-label-color>#000000</serie-tick-label-color>
+						
+						<href model="" title="" />
+						
+						<map-tool-tip-label-format>{0}: ({1}, {2})</map-tool-tip-label-format>	
+						<map-tool-tip-date-format>yyyy-MM-dd</map-tool-tip-date-format>														     
+						
+					</config>	
+				</series>
+			</series-set>
+		</chart>	
+		<chart type="|radar|">
+			<series-set>
+				<series chart-type="" ref="">
+					<data title="" categoryAxis="" numberAxis="" color="" ref="" autoData="false"/>  			
+					<config>
+						<background-color>#FFFFFF</background-color>	
+						<background-alpha>0.6f</background-alpha>
+						<foreground-alpha>0.9f</foreground-alpha>
+						
+						<label-font name="黑体" style="0" size="12"/>		
+						<label-color>#000000</label-color>
+						
+						<!-- 刻度个数 -->
+						<ticks-count>5</ticks-count>	
+						
+						<!-- 刻度值 与线条的距离 -->
+						<gap>10</gap>  	
+						
+						<href model="" title="" />		
+						
+						<!-- 提示信息 {0}组 {1}分类轴 {2}数据值 -->
+						<map-tool-tip-label-style>({0}, {1}) = {2}</map-tool-tip-label-style>	
+						<!-- type : [number/date] yyyy-MM-dd -->
+						<map-tool-tip-format type="number">######.00</map-tool-tip-format>		
+							   
+					</config>	
+				</series>
+			</series-set>
+		</chart>			
+		<chart type="|default|">		
+		</chart>
+	</private>
+
+</charts>

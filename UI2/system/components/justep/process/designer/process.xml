@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/process/process" tag-name="div" icon="process-mini.jpg" text="流程组件" 
+		display-property="xid"
+			 parent-range="$UI/system/components/justep/window/window"
+			 binding-component="$UI/system/components/justep/process/process"
+			 component-type="formControl" design-view="web-designer" >
+			
+		<properties>
+			<property name="xid" text="编号" required="true"/>   
+			<property name="data" text="主数据" is-id-ref="true"  editor-ref="contextComponent" editor-parameter="data"/>        
+			<property name="autoClose" text="是否自动关闭页面" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="autoStart" text="是否自动启动流程" default-value="true" editor-ref="booleanList" data-type="boolean"/>        
+			<property name="autoSave" text="是否自动保存业务数据" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="autoFilter" text="是否自动过滤业务数据" default-value="true" editor-ref="booleanList" data-type="boolean"/>        
+			<property name="dialog" text="流程对话框" editor-ref="fileTreeDialog"
+				editor-parameter=".w#true#true" />
+			    
+			<property name="dialogWidth" text="流程对话框宽度"  data-type="string"/>        
+			<property name="dialogHeight" text="流程对话框高度"  data-type="string"/>        
+		</properties>
+	 	<toolbar>			
+	 		<!-- 
+			<item text="编辑操作"  method="editOperatoions"/>
+			 -->
+		</toolbar>
+		
+		<property-editors>
+			<property-editor name="dataTypeList" type="list" >
+				<static-data value="json,xml"/>
+			</property-editor>
+		</property-editors>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<div component="$UI/system/components/justep/process/process" />
+		   ]]></template>
+		</templates>
+		<events>
+			<group name="流程启动">
+	           <event name="onBeforeStart" text="启动流程之前" parameters="event"/>
+	           <event name="onAfterStart" text="启动流程之后" parameters="event"/>
+	           <event name="onStartCommit" text="启动流程成功" parameters="event"/>
+	           <event name="onStartError" text="启动流程失败" parameters="event"/>
+			</group>
+
+			<group name="流程流转">
+	           	<event name="onBeforeAdvance" text="流转之前" parameters="event"/>
+	           	<event name="onAfterAdvance" text="流转之后" parameters="event"/>
+	           	<event name="onAdvanceCommit" text="流转成功" parameters="event"/>
+	           	<event name="onAdvanceError" text="流转失败" parameters="event"/>
+	           	<event name="onBeforeAdvanceQuery" text="流转查询之前" parameters="event"/>
+	           	<event name="onAfterAdvanceQuery" text="流转查询之后" parameters="event"/>
+	           	<event name="onAdvanceQueryError" text="流转查询失败" parameters="event"/>
+			</group>
+           
+           
+			<group name="流程回退">
+	           	<event name="onBeforeBack" text="回退之前" parameters="event"/>
+	           	<event name="onAfterBack" text="回退之后" parameters="event"/>
+	           	<event name="onBackCommit" text="回退成功" parameters="event"/>
+	           	<event name="onBackError" text="回退失败" parameters="event"/>
+	           	<event name="onBeforeBackQuery" text="回退查询之前" parameters="event"/>
+	           	<event name="onAfterBackQuery" text="回退查询之后" parameters="event"/>
+	           	<event name="onBackQueryError" text="回退查询失败" parameters="event"/>
+           	</group>
+           
+			<group name="流程终止">
+	           <event name="onBeforeAbort" text="终止之前" parameters="event"/>
+	           <event name="onAfterAbort" text="终止之后" parameters="event"/>
+	           <event name="onAbortCommit" text="终止成功" parameters="event"/>
+	           <event name="onAbortError" text="终止失败" parameters="event"/>
+	           <event name="onBeforeAbortQuery" text="终止查询之前" parameters="event"/>
+	           <event name="onAfterAbortQuery" text="终止查询之后" parameters="event"/>
+	           <event name="onAbortQueryError" text="终止查询失败" parameters="event"/>
+			</group>
+			
+			<group name="流程暂停">
+           <event name="onBeforeSuspend" text="暂停之前" parameters="event"/>
+           <event name="onAfterSuspend" text="暂停之后" parameters="event"/>
+           <event name="onSuspendCommit" text="暂停成功" parameters="event"/>
+           <event name="onSuspendError" text="暂停失败" parameters="event"/>
+           <event name="onBeforeSuspendQuery" text="暂停查询之前" parameters="event"/>
+           <event name="onAfterSuspendQuery" text="暂停查询之后" parameters="event"/>
+           <event name="onSuspendQueryError" text="暂停查询失败" parameters="event"/>
+			</group>
+			
+			<group name="转发">
+           <event name="onBeforeTransfer" text="转发之前" parameters="event"/>
+           <event name="onAfterTransfer" text="转发之后" parameters="event"/>
+           <event name="onTransferCommit" text="转发成功" parameters="event"/>
+           <event name="onTransferError" text="转发失败" parameters="event"/>
+           <event name="onBeforeTransferQuery" text="转发查询之前" parameters="event"/>
+           <event name="onAfterTransferQuery" text="转发查询之后" parameters="event"/>
+           <event name="onTransferQueryError" text="转发查询失败" parameters="event"/>
+			</group>
+			
+			<group name="特送">
+           <event name="onBeforeSpecial" text="特送之前" parameters="event"/>
+           <event name="onAfterSpecial" text="特送之后" parameters="event"/>
+           <event name="onSpecialCommit" text="特送成功" parameters="event"/>
+           <event name="onSpecialError" text="特送失败" parameters="event"/>
+           <event name="onBeforeSpecialQuery" text="特送查询之前" parameters="event"/>
+           <event name="onAfterSpecialQuery" text="特送查询之后" parameters="event"/>
+           <event name="onSpecialQueryError" text="特送查询失败" parameters="event"/>
+			</group>
+			
+			<group name="定制流程">
+	           <event name="onBeforeStartCustomizedQuery" text="定制流程查询之前" parameters="event"/>
+	           <event name="onAfterStartCustomizedQuery" text="定制流程查询之后" parameters="event"/>
+	           <event name="onStartCustomizedQueryError" text="定制流程失败" parameters="event"/>
+			</group>
+			
+			<group name="流程对话框">
+	           <event name="onBeforeOpenDialog" text="打开流程对话框之前" parameters="event"/>
+	           <event name="onCloseDialog" text="关闭流程对话框" parameters="event"/>
+			</group>
+		</events>
+	</element>
+</elements>

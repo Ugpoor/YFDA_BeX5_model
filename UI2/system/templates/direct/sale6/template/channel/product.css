@@ -1,0 +1,11 @@
+.text-yellow{ color:#feb600;}
+.text-black{ color:#282c38;}
+
+.x-img2{ width:100%; height:200px;}
+
+.x-titlebar{ background-color:#282c38;}
+/*搜索*/
+.x-panel-top .form-group{ height:48px; padding:10px; background-color:#545562;}
+.form-control-feedback{ top:12px; right:12px;}
+
+.x-productList .col{ height:300px;}

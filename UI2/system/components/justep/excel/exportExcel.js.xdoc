@@ -1,0 +1,248 @@
+/**
+	@name $UI/system/components/justep/excel/exportExcel
+	@component 
+	@description 导出excel组件
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#xid
+	@attribute
+	@description xid标识
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#data
+	@attribute
+	@property 
+	@description 导出的Data xid，导出excel的数据来源，目前只支持bizData
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#from
+	@attribute
+	@property 
+	@description 导出的数据来源方式，取值范围:"UI"/"DB"，
+	@default DB
+	@example 
+	UI：取当前data加载的数据导出；
+	DB：使用data关联的queryAction查询数据导出，data的filter会施加到queryAction，但是不受limit、offset参数影响
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#relations
+	@attribute 
+	@description 导出列，格式(列:宽)
+	@example
+	为空时导出data的所有列
+	导出的列名受“运行时导出参数配置框”中标题列名和relation的label属性影响，默认使用relation的label
+	<b>格式：</b>
+	列:宽,列:宽,...
+	如：
+	sName:300,sLock:400
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#downloadFilename
+	@attribute
+	@property 
+	@description 导出的文件名
+	@default download.xls
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#action
+	@attribute
+	@property 
+	@description 指定导出excel的action
+	@default exportExcel
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#useConfigDlg
+	@attribute
+	@property 
+	@description 
+	@deafult true
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#exportKey
+	@attribute
+	@property 
+	@description 是否导出主键
+	@default false
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#exportCalculate
+	@attribute
+	@property 
+	@description 是否允许导出前端计算列，from='UI'时有效
+	@default false
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#getData
+	@function 
+	@description 获取导出的data对象
+	@return {$UI/system/components/justep/data/data}
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#getProcess
+	@function 
+	@description 获取导出动作使用的Process
+	@return {string}
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#getActivity
+	@function 
+	@description 获取导出动作使用的Activity
+	@return {string}
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#exportExcel
+	@function 
+	@description 导出excel
+	@example
+	this.comp("excelExport1").exportExcel();
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"data" : {string} data xid，
+		"from: {string}	导出的数据来源方式，取值范围:"UI"/"DB"		
+		"action: {string} 指定导出excel的action
+		"downloadFilename: {string} 导出的文件名
+		"exportKey: {boolean} 是否导出主键
+		"exportCalculate: {boolean} 是否允许导出前端计算列，from='UI'时有效
+		"useConfigDlg: {boolean} 是否导出主键
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："data"、"from"、"action"、"downloadFilename"、"exportKey"、"exportCalculate"、"useConfigDlg"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#onBeforeExport
+	@event 
+	@description <b>[回调型事件]</b>导出前
+	@returns {boolean} 控制 导出动作是否继续
+	@param {$UI/system/components/justep/common/event#BeforeEvent} event
+	<br/><b>参数结构如下：</b>
+	<xmp>
+	{
+		"source" : 组件的js对象
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"cancel" : 取消导出
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#onSuccess
+	@event 
+	@description <b>[回调型事件]</b>导出成功
+	@param {$UI/system/components/justep/common/event#ViewEvent} event
+	<br/><b>参数结构如下：</b>
+	<xmp>
+	{
+		"source" : 组件的js对象
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/excel/exportExcel#ErrorEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description Error事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/excel/exportExcel#ErrorEvent.message
+ @property
+ @type {string}
+ @description 错误信息
+*/ 
+
+/**
+ @name $UI/system/components/justep/excel/exportExcel#ErrorEvent.result
+ @property
+ @type {object}
+ @description http请求返回
+*/ 
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#onError
+	@event 
+	@description <b>[回调型事件]</b>导出失败
+	@param {$UI/system/components/justep/excel/exportExcel#ErrorEvent} event
+	<br/><b>参数结构如下：</b>
+	<xmp>
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"message" : 导出错误信息,
+		"result" : http请求返回
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/excel/exportExcel#ExportCreateParam
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description Error事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/excel/exportExcel#ExportCreateParam.param
+ @property
+ @type {Request.ActionParam}
+ @description 导出参数对象
+*/ 
+
+/**
+	@name $UI/system/components/justep/excel/exportExcel#onExportCreateParam
+	@event 
+	@description <b>[回调型事件]</b>创建导出参数
+	@param {$UI/system/components/justep/excel/exportExcel#ExportCreateParam} event
+	<br/><b>参数结构如下：</b>
+	<xmp>
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"param" : {Request.ActionParam} 导出参数对象
+	}
+	</xmp>
+*/
+
+/**
+ @name $UI/system/components/justep/excel/exportExcel#exportExcel
+ @operation
+ @description 导出Excel
+ @returns {void}
+*/

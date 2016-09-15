@@ -1,0 +1,182 @@
+/**
+	@name $UI/system/components/justep/org/orgSelect
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description OrgSelect
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#bind-ref
+	@attribute 
+	@type string
+	@description 引用
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#bind-labelRef
+	@attribute 
+	@type string
+	@description label引用
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#itemValue
+	@attribute
+	@property 
+	@type string
+	@description 对应bind-ref的org列，缺省：SA_OPOrg
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#itemLabel
+	@attribute
+	@property 
+	@type string
+	@description 对应bind-labelRef的org列，缺省：sName
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#title
+	@attribute
+	@property 
+	@type string
+	@description 标题，缺省：'选择组织机构'
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#multiSelection
+	@attribute
+	@property 
+	@type boolean
+	@description 多选
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#limit
+	@attribute
+	@property 
+	@type integer
+	@description 加载数据的list一页的记录数,>0的数，默认12
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#cascade
+	@attribute
+	@property 
+	@type boolean
+	@description 多选时是否级联选择
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#showFilter
+	@attribute
+	@property 
+	@type string
+	@description 组织显示节点过滤表达式
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#selectFilter
+	@attribute
+	@property 
+	@type string
+	@description 选中过滤表达式
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#includeOrgKind
+	@attribute
+	@property 
+	@type string
+	@description 显示的组织类型，组织扩展名使用","分隔的字符串类型，如：.psm,.dpt
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#process
+	@attribute
+	@property 
+	@type string
+	@description process
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#activity
+	@attribute
+	@property 
+	@type string
+	@description activity
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#orgDialog
+	@attribute 
+	@type string
+	@description 选择组织机构使用的对话框XID，缺省：内部自动创建
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#getOrgDlg
+	@function
+	@returns {OrgDialog} 组织机构选择框组件
+	@description 获取组织机构选择框
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#getInput
+	@function
+	@returns {Input} Input组件
+	@description 获取Input
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#getBtn
+	@function
+	@returns {Button} Button组件
+	@description 获取Button
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#val
+	@function
+	@description 取值或者赋值，同Input组件的val
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"title" : {string} 显示的标题
+		"limit" : {number} 加载数据的list一页的记录数,>0的数，默认12
+		"cascade": {boolean} 多选时是否级联选择
+		"showFilter": {string} 组织显示节点过滤表达式
+		"selectFilter": {string} 选中过滤表达式
+		"multiSelection": {boolean} 是否多选
+		"includeOrgKind": {string} 显示的组织类型，组织扩展名使用","分隔的字符串类型，如：.psm,.dpt
+		"itemValue": {string} 对应bind-ref的org列，缺省：SA_OPOrg
+		"itemLabel": {string} 对应bind-labelRef的org列，缺省：sName 
+		"process": {string}
+		"activity": {string}
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/org/orgSelect#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："title"、"limit"、"cascade"、"showFilter"、"selectFilter"、"multiSelection"、"includeOrgKind"、"itemValue"、"itemLabel"、"process"、"activity"
+	@return {Object} 
+*/

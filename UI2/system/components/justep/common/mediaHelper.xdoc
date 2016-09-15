@@ -1,0 +1,29 @@
+/**
+@name mediaHelper
+@url $UI/system/components/justep/common/mediaHelper
+@class
+@model UI2
+@category javascript
+@description 媒体相关辅助函数
+*/
+
+
+/**
+	@name mediaHelper.mountLocalMedia
+	@function
+	@description 通过启动一个本地httpserver来支持video/audio播放本地文件
+	@param {Object} video/audio 所在的节点
+	@returns {void}
+*/
+
+
+
+/**
+	@name mediaHelper.unmountLocalMedia
+	@function
+	@description 取消通过本地httpserver挂载的本地文件
+	@param {Object}
+	@returns {void}
+*/
+
+ 

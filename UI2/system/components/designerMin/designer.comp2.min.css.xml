@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <config>
+  	<depend config="../comp2.min.css.xml">../comp2.min.css</depend>
+  	
+    <file>../bootstrap/panel/designer/css/panel.css</file>
+    <component>../bootstrap/panel/designer/panel</component>
+
+    <file>../bootstrap/tabs/designer/css/tabs.css</file>
+    <component>../bootstrap/tabs/designer/tabs</component>
+
+    <file>../bootstrap/dialog/designer/css/dialog.css</file>
+    <component>../bootstrap/dialog/designer/dialog</component>
+    
+    <file>../bootstrap/form/designer/css/form.css</file>
+    <component>../bootstrap/form/designer/form</component>
+
+    <file>../bootstrap/row/designer/row.css</file>
+    <component>../bootstrap/row/designer/row</component>
+    
+    <output name="designer.comp2.min.css"  skin="desktop,superhero,slate,united,yeti,flatly" />
+</config>
+</root>

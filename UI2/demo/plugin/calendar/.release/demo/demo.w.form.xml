@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" component="$model/UI2/system/components/justep/window/window" xid="window" extends="$UI/demo/plugin/template/demo.w" __id="id_1" design="device:m;" class="window window cFVzaUb" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cFVzaUb" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/buttonGroup,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style>null</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onModelConstructDone:modelModelConstructDone" __cid="cFVzaUb" class="cFVzaUb"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p0f6d817710ab4f6e9ed3a1275d102017-iosstatusbar cFVzaUb" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cFVzaUb"> 
+    <div class="x-panel-top cFVzaUb" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cFVzaUb"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cFVzaUb" xid="titleBar" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;Calendar&quot;}" __cid="cFVzaUb"> 
+        <div class="x-titlebar-left cFVzaUb" __cid="cFVzaUb"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cFVzaUb" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;}" __cid="cFVzaUb"> 
+            <i xid="i6" class="icon-chevron-left cFVzaUb" __cid="cFVzaUb"/>  
+            <span xid="span6" __cid="cFVzaUb" class="cFVzaUb"/>
+          </a>
+        </div>  
+        <div class="x-titlebar-title cFVzaUb" __cid="cFVzaUb">插件的名字</div>  
+        <div class="x-titlebar-right  cFVzaUb" __cid="cFVzaUb">
+          <div class="empty cFVzaUb" __cid="cFVzaUb"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cFVzaUb" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cFVzaUb">
+      <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cFVzaUb" xid="contents1" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0}" __cid="cFVzaUb"> 
+        <div class="x-contents-content active cFVzaUb" xid="infoContent" style="padding:10px;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cFVzaUb">
+          <h3 xid="h31" style="text-align:center;" __cid="cFVzaUb" class="cFVzaUb">插件概述</h3>
+          <h4 xid="h41" __cid="cFVzaUb" class="cFVzaUb">介绍：</h4>
+          <p xid="p1" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cFVzaUb" class="cFVzaUb">ID：cordova-plugin-calendar</p>
+          <p xid="introduceP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cFVzaUb" class="cFVzaUb">日历插件允许用户创建活动、查询活动、删除活动。对活动的管理，可以在app内实现，也可在系统的“日历”里查看。</p>
+          <div xid="div4" style="height:30px;" __cid="cFVzaUb" class="cFVzaUb"/>  
+          <h4 xid="h42" __cid="cFVzaUb" class="cFVzaUb">适用平台：</h4>  
+          <p xid="platformP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cFVzaUb" class="cFVzaUb">Android,IOS</p> 
+        </div>  
+        <div class="x-contents-content cFVzaUb" xid="demoContent" style="padding:10px;width:100%;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cFVzaUb">
+          <div xid="div2" style="height:15px;" __cid="cFVzaUb" class="cFVzaUb"/>
+          <div xid="div3" __cid="cFVzaUb" class="cFVzaUb">
+            <p xid="accountP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cFVzaUb" class="cFVzaUb">活动创建的方式有交互式、参数式，并可创建活动通知。IOS支持自定义日历。</p>
+          </div>  
+          <div style="height:50px;padding:40px" xid="div11_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"> 
+            <p xid="IOSAndroid" __cid="cFVzaUb" class="cFVzaUb"> 
+              <b __cid="cFVzaUb" class="cFVzaUb">Android、IOS：</b> 
+            </p>  
+            <a class="btn btn-default cFVzaUb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button111_1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:openCalendarClick" data-config="{&quot;label&quot;:&quot;打开日历&quot;}" __cid="cFVzaUb"> 
+              <i xid="i111_1" __cid="cFVzaUb" class="cFVzaUb"/>  
+              <span xid="span111_1" __cid="cFVzaUb" class="cFVzaUb">打开日历</span> 
+            </a>  
+            <p __cid="cFVzaUb" class="cFVzaUb"/>  
+            <a class="btn btn-default cFVzaUb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button112_1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:createEventInteractivelyClick" data-config="{&quot;label&quot;:&quot;创建一个活动（交互方式）&quot;}" __cid="cFVzaUb"> 
+              <i xid="i112_1" __cid="cFVzaUb" class="cFVzaUb"/>  
+              <span xid="span112_1" __cid="cFVzaUb" class="cFVzaUb">创建一个活动（交互方式）</span> 
+            </a>  
+            <p __cid="cFVzaUb" class="cFVzaUb"/>  
+            <a class="btn btn-default cFVzaUb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button11_1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:createEventWithOptionsClick" data-config="{&quot;label&quot;:&quot;创建一个带通知活动（参数方式）&quot;}" __cid="cFVzaUb"> 
+              <i xid="i11_1" __cid="cFVzaUb" class="cFVzaUb"/>  
+              <span xid="span11_1" __cid="cFVzaUb" class="cFVzaUb">创建一个带通知活动（参数方式）</span> 
+            </a>  
+            <p __cid="cFVzaUb" class="cFVzaUb"/>  
+            <a class="btn btn-default cFVzaUb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button21_1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:createEventClick" data-config="{&quot;label&quot;:&quot;创建一个无通知活动（参数方式）&quot;}" __cid="cFVzaUb"> 
+              <i xid="i21_1" __cid="cFVzaUb" class="cFVzaUb"/>  
+              <span xid="span21_1" __cid="cFVzaUb" class="cFVzaUb">创建一个无通知活动（参数方式）</span> 
+            </a>  
+            <p __cid="cFVzaUb" class="cFVzaUb"/>  
+            <a class="btn btn-default cFVzaUb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button41_1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:findEventClick" data-config="{&quot;label&quot;:&quot;查询活动&quot;}" __cid="cFVzaUb"> 
+              <i xid="i41_1" __cid="cFVzaUb" class="cFVzaUb"/>  
+              <span xid="span41_1" __cid="cFVzaUb" class="cFVzaUb">查询活动</span> 
+            </a>  
+            <p __cid="cFVzaUb" class="cFVzaUb"/>  
+            <a class="btn btn-default cFVzaUb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button51_1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:deleteEventClick" data-config="{&quot;label&quot;:&quot;删除活动&quot;}" __cid="cFVzaUb"> 
+              <i xid="i51_1" __cid="cFVzaUb" class="cFVzaUb"/>  
+              <span xid="span51_1" __cid="cFVzaUb" class="cFVzaUb">删除活动</span> 
+            </a>  
+            <p __cid="cFVzaUb" class="cFVzaUb"/>  
+            <p __cid="cFVzaUb" class="cFVzaUb"/>  
+            <p xid="AndroidAny" __cid="cFVzaUb" class="cFVzaUb"> 
+              <b __cid="cFVzaUb" class="cFVzaUb">仅Android：</b> 
+            </p>  
+            <a class="btn btn-default cFVzaUb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button611_1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:listEventsInRange" data-config="{&quot;label&quot;:&quot;按日期范围查询&quot;}" __cid="cFVzaUb"> 
+              <i xid="i611_1" __cid="cFVzaUb" class="cFVzaUb"/>  
+              <span xid="span611_1" __cid="cFVzaUb" class="cFVzaUb">按日期范围查询</span> 
+            </a>  
+            <p __cid="cFVzaUb" class="cFVzaUb"/>  
+            <p __cid="cFVzaUb" class="cFVzaUb"/>  
+            <p xid="IOSAny" __cid="cFVzaUb" class="cFVzaUb"> 
+              <b __cid="cFVzaUb" class="cFVzaUb">仅IOS：</b> 
+            </p>  
+            <p xid="IOSAny1" __cid="cFVzaUb" class="cFVzaUb">如果创建自定义日历失败，需要先在IOS设置中，把 iCloud 日历开启。然后进行创建操作。</p>  
+            <a class="btn btn-default cFVzaUb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button61_1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:createCalendar" data-config="{&quot;label&quot;:&quot;创建“我的X5日历”&quot;}" __cid="cFVzaUb"> 
+              <i xid="i61_1" __cid="cFVzaUb" class="cFVzaUb"/>  
+              <span xid="span61_1" __cid="cFVzaUb" class="cFVzaUb">创建“我的X5日历”</span> 
+            </a>  
+            <p __cid="cFVzaUb" class="cFVzaUb"/>  
+            <a class="btn btn-default cFVzaUb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button62_1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:createEventInNamedCalendar" data-config="{&quot;label&quot;:&quot;创建X5活动&quot;}" __cid="cFVzaUb"> 
+              <i xid="i62_1" __cid="cFVzaUb" class="cFVzaUb"/>  
+              <span xid="span62_1" __cid="cFVzaUb" class="cFVzaUb">创建X5活动</span> 
+            </a>  
+            <p __cid="cFVzaUb" class="cFVzaUb"/>  
+            <a class="btn btn-default cFVzaUb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button71_1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:findAllEventsInNamedCalendar" data-config="{&quot;label&quot;:&quot;查询X5活动&quot;}" __cid="cFVzaUb"> 
+              <i xid="i71_1" __cid="cFVzaUb" class="cFVzaUb"/>  
+              <span xid="span71_1" __cid="cFVzaUb" class="cFVzaUb">查询X5活动</span> 
+            </a>  
+            <p __cid="cFVzaUb" class="cFVzaUb"/>  
+            <a class="btn btn-default cFVzaUb" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="button81_1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:deleteCalendar" data-config="{&quot;label&quot;:&quot;删除“我的X5日历”&quot;}" __cid="cFVzaUb"> 
+              <i xid="i81_1" __cid="cFVzaUb" class="cFVzaUb"/>  
+              <span xid="span81_1" __cid="cFVzaUb" class="cFVzaUb">删除“我的X5日历”</span> 
+            </a> 
+          </div>
+          <div style="height:50px;padding:40px" xid="div61_1" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"/>
+        </div>  
+        <div class="x-contents-content cFVzaUb" xid="codeContent" style="padding:10px" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cFVzaUb">
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb">设置好要使用的参数</p>
+          <div xid="setParameters" xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb">打开日历</p>
+          <div xid="openCalendarClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb">创建一个带通知活动（参数方式）</p>
+          <div xid="createEventWithOptionsClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb">创建一个活动（交互方式）</p>
+          <div xid="createEventInteractivelyClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb">创建一个无通知活动（参数方式）</p>
+          <div xid="createEventClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb">查询活动</p>
+          <div xid="findEventClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb">删除活动</p>
+          <div xid="deleteEventClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb">按日期范围查询</p>
+          <div xid="listEventsInRange" xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb">创建“我的X5日历”</p>
+          <div xid="createCalendar" xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb">创建X5活动</p>
+          <div xid="createEventInNamedCalendar" xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb">查询X5活动</p>
+          <div xid="findAllEventsInNamedCalendar" xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"/>
+          <p xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb">删除“我的X5日历”</p>
+          <div xid="deleteCalendar" xui:parent="codeContent" xui:update-mode="insert" __cid="cFVzaUb" class="cFVzaUb"/>
+        </div>
+      </div>
+    </div>  
+    <div class="x-panel-bottom cFVzaUb" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cFVzaUb">
+      <div component="$model/UI2/system/components/justep/button/buttonGroup" class="btn-group btn-group-justified x-card  cFVzaUb" xid="buttonGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/button/buttonGroup'}" data-config="{&quot;tabbed&quot;:true}" __cid="cFVzaUb">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cFVzaUb" xid="info" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;info&quot;,&quot;target&quot;:&quot;infoContent&quot;}" __cid="cFVzaUb"> 
+          <i xid="i1" __cid="cFVzaUb" class="cFVzaUb"/>  
+          <span xid="span1" __cid="cFVzaUb" class="cFVzaUb">info</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cFVzaUb" xid="demo" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;demo&quot;,&quot;target&quot;:&quot;demoContent&quot;}" __cid="cFVzaUb"> 
+          <i xid="i2" __cid="cFVzaUb" class="cFVzaUb"/>  
+          <span xid="span2" __cid="cFVzaUb" class="cFVzaUb">demo</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cFVzaUb" xid="code" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;code&quot;,&quot;target&quot;:&quot;codeContent&quot;}" __cid="cFVzaUb"> 
+          <i xid="i3" __cid="cFVzaUb" class="cFVzaUb"/>  
+          <span xid="span3" __cid="cFVzaUb" class="cFVzaUb">code</span>
+        </a>
+      </div>
+    </div>
+    <style __cid="cFVzaUb" class="cFVzaUb">.x-panel.p0f6d817710ab4f6e9ed3a1275d102017-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.p0f6d817710ab4f6e9ed3a1275d102017-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.p0f6d817710ab4f6e9ed3a1275d102017-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p0f6d817710ab4f6e9ed3a1275d102017-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p0f6d817710ab4f6e9ed3a1275d102017-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.p0f6d817710ab4f6e9ed3a1275d102017-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p0f6d817710ab4f6e9ed3a1275d102017-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p0f6d817710ab4f6e9ed3a1275d102017-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p0f6d817710ab4f6e9ed3a1275d102017-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div>  
+</div>

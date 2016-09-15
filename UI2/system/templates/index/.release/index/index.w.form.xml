@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" xid="window" class="window cn2ymAv" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cn2ymAv" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/window/window,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cn2ymAv" class="cn2ymAv"/>  
+  <nav class="navbar navbar-default navbar-fixed-top cn2ymAv" role="navigation" __cid="cn2ymAv"> 
+    <a class="navbar-brand cn2ymAv" bind-text="$model.title" __cid="cn2ymAv"/> 
+  </nav>  
+  <div xid="composeParent" __cid="cn2ymAv" class="cn2ymAv"></div>  
+  <nav class="navbar navbar-default navbar-fixed-bottom cn2ymAv" role="navigation" __cid="cn2ymAv"> 
+    <div class="navbar-buttons-container cn2ymAv" __cid="cn2ymAv"> 
+      <span style="display:inline-block;width:80px;" __cid="cn2ymAv" class="cn2ymAv">文件名：</span>  
+      <input component="$model/UI2/system/components/justep/input/input" class="form-control cn2ymAv" style="width:240px;display:inline" xid="fileName" value="mainActivity" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" __cid="cn2ymAv"/>  
+      <div xid="dropMenu" class="dropup cn2ymAv" style="display:inline" __cid="cn2ymAv"> 
+        <button class="btn btn-default dropdown-toggle cn2ymAv" style="display:inline" type="button" id="dropdownMenu" data-toggle="dropdown" aria-expanded="true" __cid="cn2ymAv"> 
+          <span class="caret cn2ymAv" __cid="cn2ymAv"/> 
+        </button> 
+      </div>  
+      <div class="btn-group-single pull-right cn2ymAv" style="display:inline-block" __cid="cn2ymAv"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-dialog-back cn2ymAv" bind-css="{hide: !$model.hasBackBtn.get()}" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:backBtnClick" data-config="{&quot;label&quot;:&quot;上一步&quot;}" __cid="cn2ymAv">
+          <i __cid="cn2ymAv" class="cn2ymAv"/>
+          <span __cid="cn2ymAv" class="cn2ymAv">上一步</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-primary btn-dialog-next cn2ymAv" bind-css="{hide: !$model.hasNextBtn.get()}" xid="nextBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:nextBtnClick" data-config="{&quot;label&quot;:&quot;下一步&quot;}" __cid="cn2ymAv">
+          <i __cid="cn2ymAv" class="cn2ymAv"/>
+          <span __cid="cn2ymAv" class="cn2ymAv">下一步</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-primary btn-dialog-finish cn2ymAv" bind-css="{hide: !$model.hasFinishBtn.get()}" xid="finishBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:finishBtnClick" data-config="{&quot;label&quot;:&quot;完成&quot;}" __cid="cn2ymAv">
+          <i __cid="cn2ymAv" class="cn2ymAv"/>
+          <span __cid="cn2ymAv" class="cn2ymAv">完成</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-dialog-cancel cn2ymAv" bind-css="{hide: !$model.hasCancelBtn.get()}" xid="cancelBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:cancelBtnClick" data-config="{&quot;label&quot;:&quot;取消&quot;}" __cid="cn2ymAv">
+          <i __cid="cn2ymAv" class="cn2ymAv"/>
+          <span __cid="cn2ymAv" class="cn2ymAv">取消</span>
+        </a> 
+      </div> 
+    </div> 
+  </nav>  
+  <link rel="stylesheet" href="$model/UI2/system/templates/common/common.css" __cid="cn2ymAv" class="cn2ymAv"/> 
+</div>

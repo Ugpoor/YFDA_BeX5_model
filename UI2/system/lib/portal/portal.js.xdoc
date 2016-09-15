@@ -1,0 +1,68 @@
+/**
+	@name $UI/system/lib/portal/portal
+	@class
+	@category javascript
+	@model UI2
+	@description 功能中可以调用的Portal API
+*/
+
+/**
+	@name $UI/system/lib/portal/portal.logout
+	@function
+	@description 系统注销
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/lib/portal/portal.sessionTimeout
+	@function
+	@description 通知门户session超时
+	@returns {void}
+*/
+
+/**
+	@name $UI/system/lib/portal/portal.openWindow
+	@function
+	@description  在门户中打开新页面
+	@param {String} url 
+	@param {Obejct} options 页面需要的系统参数和自定义参数, 如系统参数  executor等 
+	@returns {String} id 打开页面的标示, 可以用于关闭页面等
+*/
+
+/**
+	@name $UI/system/lib/portal/portal.closeWindow
+	@function
+	@description  关闭页面
+	@param {String} id 页面的id, 如果没有那么关闭当前页面
+	@returns {void}
+*/
+	
+/**
+	@name $UI/system/lib/portal/portal.hasWindow
+	@function
+	@description 判断页面是否存在
+	@param {String} id 页面的id
+	@returns {boolean}
+*/
+	
+/**
+	@name $UI/system/lib/portal/portal.getWindowId
+	@function
+	@description 返回当前页面的id
+	@returns {String}
+*/
+
+/**
+	@name $UI/system/lib/portal/portal.gotoWindow
+	@function
+	@description 切换到页面
+	@param {String} id 页面的id
+	@returns {void}
+*/
+	
+/**
+	@name $UI/system/lib/portal/portal.toggleMenu
+	@function
+	@description 切换菜单栏显示或隐藏
+	@returns {void}
+*/

@@ -1,0 +1,50 @@
+/**
+	@name $UI/system/components/justep/datePicker/datePicker
+	@component 
+	@extends $UI/system/components/justep/picker/popPicker
+	@model UI2
+	@description datePicker，日期时间选择
+*/
+
+/**
+	@name $UI/system/components/justep/datePicker/datePicker#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/datePicker/datePicker#type
+	@attribute
+	@property 
+	@type string
+	@description 组件类型，取值范围：datetime/date/time
+*/
+
+/**
+	@name $UI/system/components/justep/datePicker/datePicker#max
+	@property 
+	@type datetime
+	@description 最大选择时间
+*/
+
+/**
+	@name $UI/system/components/justep/datePicker/datePicker#min
+	@property 
+	@type datetime
+	@description 最小选择时间
+*/
+
+/**
+	@name $UI/system/components/justep/datePicker/datePicker#getValue
+	@function
+	@description 获取当前选择日期时间
+	@return {Date} 选择的日期时间 
+*/
+
+/**
+	@name $UI/system/components/justep/datePicker/datePicker#setValue
+	@function
+	@param {Date} datetime 日期时间
+	@description 设置日期时间
+*/

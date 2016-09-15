@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/smartFilter/smartFilter" tag-name="div" icon="smartFilter.gif" 
+		binding-component="$UI/system/components/justep/smartFilter/smartFilter" design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			<property name="filterData" text="过滤数据" is-id-ref="true" required="true" editor-ref="contextComponent" editor-parameter="data"/>        
+			<property name="filterCols" text="过滤列，多个用逗号分隔" required="" editor-ref="relationsDlg" editor-parameter="filterData" ref-type="Relation/m"/>
+			<property name="caseSensitive" text="是否大小写敏感" default-value="false" editor-ref="booleanList" data-type="boolean"/>        
+			<property name="autoRefresh" text="是否自动刷新数据" default-value="true" editor-ref="booleanList" data-type="boolean"/>        
+			<property name="autoRefreshMode" text="自动刷新模式" default-value="input" editor-ref="autoRefreshModeList" enabled-condition="not(@autoRefresh='false')"/>	
+			
+			<property name="class" text="class" editor-ref="classSelector"/>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+		</properties>
+		<property-editors>
+			<property-editor name="autoRefreshModeList" type="list" >
+				<static-data value="input:输入停顿500毫秒后刷新,change:焦点移出或回车确认后刷新"/>
+			</property-editor>
+		</property-editors>
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+			<event name="onFilter" text="过滤事件"/>
+		</events>
+
+		<templates>
+		   <template name="default"><![CDATA[
+			  <div class="input-group" component="$UI/system/components/justep/smartFilter/smartFilter"> 
+			    <span class="input-group-addon x-smartFilter-refresh" bind-click="$model.comp($element.parentElement).refresh.bind($model.comp($element.parentElement))"> 
+			      <i class="icon-android-search"/>
+			    </span>  
+			    <input type="text" class="form-control" placeholder="搜索"
+			    	data-bind="valueUpdate: ['input', 'afterkeydown']"
+			    	bind-value="$model.comp($element.parentElement).searchText"
+			    	bind-change="$model.comp($element.parentElement).onInputChange.bind($model.comp($element.parentElement))"/>  
+			    <span class="input-group-addon x-smartFilter-clear" 
+			    	bind-click="$model.comp($element.parentElement).clear.bind($model.comp($element.parentElement))" 
+			    	bind-visible="$model.comp($element.parentElement).searchText.get() != ''"> 
+			      <i class="icon-close-circled"/>
+			    </span> 
+			  </div>
+		   ]]></template>
+		</templates>
+	</element>
+ 	
+</elements>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-battery-status">
+	<name>电池状态</name>
+	<description>电池状态插件，监控设备电池状态</description>
+
+</plugin>

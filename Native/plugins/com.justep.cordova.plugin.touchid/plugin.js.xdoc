@@ -1,0 +1,28 @@
+/**
+	@name com.justep.cordova.plugin.touchid
+	@class 
+	@description 指纹识别插件
+	@model Native
+	@category plugin
+	@declareVar navigator.touchid
+*/
+
+/**
+	@name com.justep.cordova.plugin.touchid.authenticate
+	@function
+	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+	@param {String} text 指纹识别提示语 可为空
+	@returns {void}
+	@description 指纹识别
+*/
+/**
+	@name com.justep.cordova.plugin.touchid.checkSupport
+	@function
+	@param {Function} onSuccess 执行成功回调函数，支持指纹识别
+ 	@param {Function} onError 执行失败回调函数，不支持指纹识别
+	@returns {void}
+	@description 检查是否支持指纹识别
+*/
+
+

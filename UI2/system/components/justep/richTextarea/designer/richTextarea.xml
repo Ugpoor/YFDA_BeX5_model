@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/richTextarea/richTextarea" tag-name="div" icon="richTextarea.gif"
+		binding-component="$UI/system/components/justep/richTextarea/richTextarea" 
+        component-type="formControl" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" editor-ref="dataRef" editor-parameter='{"hasLabel":"false"}'/>
+			<!-- 
+			<property name="toolbar" text="工具条" default-value="系统默认"/>
+			<property name="fontfamily" text="字体" default-value="系统默认"/>
+			<property name="fontsize" text="字号" default-value="系统默认"/>
+			 -->
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-richTextarea"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+			<event name="onInit" text="初始化editor事件，可以通过event.option设置editor的初始参数"/>
+			<event name="onInited" text="初始化editor完成事件"/>
+			<event name="onChange" type="event" text="值改变事件"/>
+			<event name="onFocus" type="event" text="焦点进入事件"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/richTextarea/richTextarea" class="x-richTextarea"/>
+		   ]]></template>
+		</templates>
+	</element>
+	
+</elements>

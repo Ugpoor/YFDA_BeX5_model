@@ -1,0 +1,28 @@
+/**
+	@name $UI/system/components/justep/button/checkboxPC
+	@component 
+	@extends $UI/system/components/justep/button/radioPC
+	@model UI2
+	@description CheckboxPC
+*/
+
+/**
+	@name $UI/system/components/justep/button/checkboxPC#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: checkbox(必须),
+		排列样式: checkbox-inline
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/button/checkboxPC#name
+	@attribute
+	@property 
+	@type string
+	@description 组件name，等价于html中的name属性，相同name的Checkbox为一组
+*/
+

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Designer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="../common/jquery.js"></script>
+<!-- <script type="text/javascript" src="../common/json.js"></script> -->
+<script type="text/javascript" src="base.js"></script>
+
+<script type="text/javascript" src="baseShapeSVG.js"></script>
+<script type="text/javascript" src="graphics.js"></script>
+<script type="text/javascript" src="ontologyDesigner.js"></script>
+<!-- <script type="text/javascript" src="testData.jss"></script> -->
+<!--  <script type="text/javascript" src="ontologyAll.js"></script> -->
+<style>
+* {
+	font-size: 10pt;
+}
+</style>
+<script type="text/javascript">
+	var designer = null;
+	function initDesigner() {
+		designer = new justep.graphics.Canvas({
+			id : 'mydesigner'
+		});
+
+		if (designer != null) {
+			var params = {
+				eventType : "pageLoaded",
+				jsFunc : "initData"
+			};
+			designer.dispatchEvent(params);
+		}
+	}
+	/**初始化数据*/
+	function initData(data) {
+		designer.initData(data);
+	}
+	/**获取事件数据*/
+	function getEventData() {
+		return designer.getEventData();
+	}
+
+	/**获取图形样式*/
+	function getGraphicsStyle() {
+		return designer.getGraphicsStyle();
+	}
+
+	/**获取选择的图形*/
+	function getSelections() {
+		return designer.getSelections();
+	}
+
+	/**设置选择的图形*/
+	function setSelections(sels) {
+		designer.setSelections(sels);
+	}
+
+	/**添加图形*/
+	function addFigure(jsonStr) {
+		designer.addFigure(jsonStr);
+	}
+
+	/**删除图形*/
+	function deleteFigures(jsonStr) {
+		designer.deleteFigures(jsonStr);
+	}
+
+	/**更新本体图形*/
+	function repaintConcept(jsonStr) {
+		designer.repaintConcept(jsonStr);
+	}
+
+	/** 反转选择的连接关系**/
+	function inverseSelectedRelationConnection() {
+		designer.inverseSelectedRelationConnection();
+	}
+
+	function debugOut(str) {
+		var text = document.getElementById('debugger');
+		text.value = text.value + "\n" + str;
+	}
+
+	function getUrlParam(paramName) {
+		var url = decodeURI(window.location.href);
+		var idx = url.indexOf("?");
+		var params = url.substring(idx + 1);
+		if (params) {
+			params = params.split("&");
+			for ( var i = 0; i < params.length; i += 1) {
+				var param = params[i].split("=");
+				if (param[0] == paramName) {
+					return param[1];
+				}
+			}
+		}
+	}
+
+	var socketServerUrl = getUrlParam("serverUrl");
+	var socket;
+	var sockedOpened = false;
+
+	function createWebSocket(isReconnection) {
+		socket = new WebSocket(socketServerUrl);
+		// 打开Socket 
+		socket.onopen = function(event) {
+			sockedOpened = true;
+			// 监听消息
+			socket.onmessage = function(event) {
+
+				var data;
+				try {
+					data = eval("(" + event.data + ")");//typeof data=='string'?eval("(" + event.data + ")"):event.data;
+				} catch (e) {
+					// alert("出错啦："+event.data);
+				}
+				if (data && data.eventType == 'getInitData') {
+					//var initData = data.initData;
+
+					//            		  setTimeout(function(){
+					initData(data.initData);
+					//            		  },2000);
+				} else {
+					// alert(data);
+					//            		  setTimeout(function(){
+					if (data && typeof data != 'string') {
+						data = JSON.stringify(data);
+					}
+					socket.send(data || "{}");
+					//            		  },2000);
+
+				}
+			};
+
+			// 监听Socket的关闭
+			socket.onclose = function(event) {
+				socket = null;
+				sockedOpened = false;
+				console.log('Client notified socket has closed', event);
+				createWebSocket(true);
+			};
+
+			if (!isReconnection) {
+				socket.send(JSON.stringify({
+					eventType : 'getInitData',
+					filePath : getUrlParam("filePath")
+				}));
+			} else {
+				socket.send(JSON.stringify({
+					eventType : 'reConnection',
+					filePath : getUrlParam("filePath")
+				}));
+			}
+			// 关闭Socket.... 
+			//socket.close() 
+		};
+	}
+	// 创建一个Socket实例
+	//var socket = new WebSocket(socketServerUrl); 
+
+	createWebSocket();
+
+	function callJava(data) {
+		setTimeout(function() {
+			if (typeof data != 'string') {
+				data = JSON.stringify(data);
+			}
+			socket.send(data);
+		}, 100);
+	}
+</script>
+</head>
+
+
+<body onload="initDesigner()" topmargin="0" leftmargin="0"
+	marginwidth="0" marginheight="0" scroll="no"
+	onselectstart="return false" _style="-moz-user-select:none;">
+	<div id="mydesigner"
+		style="width: 100%; height: 100%; overflow: auto; position: relative;">
+		<svg width="4000" height="3000" version="1.1%" id="svg1"
+			xmlns="http://www.w3.org/2000/svg">
+ 
+<!-- 	<path marker-end="url(#markerEndArrow)" fill-opacity="0" stroke-width="undefined" stroke="blue" d="M 337,108 L 357,200"></path> -->
+	</svg>
+	</div>
+</body>
+
+<script>
+	//initData(testModelData);
+</script>
+</html>

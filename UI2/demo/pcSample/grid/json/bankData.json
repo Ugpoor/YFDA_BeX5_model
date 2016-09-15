@@ -1,0 +1,10 @@
+[
+	{"id":"1","bank":"平安银行","creditCard":"平安银行信用卡（8493）","billingDate":"10日","repaymentDate":"20日","cash":"10003"},
+	{"id":"2","bank":"","creditCard":"平安银行信用卡（8493）","billingDate":"10日","repaymentDate":"20日","cash":"10003"},
+	{"id":"3","bank":"平安银行","creditCard":"平安银行信用卡（3393）","billingDate":"11日","repaymentDate":"20日","cash":"12000"},
+	{"id":"4","bank":"","creditCard":"平安银行信用卡（3393）","billingDate":"11日","repaymentDate":"20日","cash":"12000"},
+	{"id":"5","bank":"招商银行","creditCard":"平安银行信用卡（8693）","billingDate":"12日","repaymentDate":"20日","cash":"10300"},
+	{"id":"6","bank":"","creditCard":"平安银行信用卡（8693）","billingDate":"12日","repaymentDate":"20日","cash":"10300"},
+	{"id":"7","bank":"招商银行","creditCard":"平安银行信用卡（8253）","billingDate":"13日","repaymentDate":"20日","cash":"21000"},
+	{"id":"8","bank":"","creditCard":"平安银行信用卡（8253）","billingDate":"13日","repaymentDate":"20日","cash":"21000"}
+]

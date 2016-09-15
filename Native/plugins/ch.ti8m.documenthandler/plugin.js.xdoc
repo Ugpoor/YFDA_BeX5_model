@@ -1,0 +1,18 @@
+/**
+	@name ch.ti8m.documenthandler
+	@class 
+	@description 打开文档插件，下载指定url的文档并使用系统注册过的应用打开
+	@model Native
+	@category plugin
+	@declareVar handleDocumentWithURL
+*/
+
+/**
+	@name ch.ti8m.documenthandler.handleDocumentWithURL
+	@function
+ 	@param {Function} successHandler 执行成功回调函数
+ 	@param {Function} failureHandler 执行失败回调函数
+	@param {String} url 文件的url
+ 	@returns {void}
+ 	@description 打开文档
+*/

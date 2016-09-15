@@ -1,0 +1,17 @@
+.text-yellow{ color:#feb600;}
+.text-black{ color:#282c38;}
+
+.x-titlebar{ background-color:#0177b5;}
+
+/*类型*/
+.o-class{ height:40px; background-color:#0177b5;}
+.o-class .btn{ color:#98bdd8; border-bottom:1px solid #005f91;}
+.o-class .btn.active{ color:#fff; font-weight:bold; border-bottom:2px solid #005f91;}
+
+
+/*产品列表*/
+.x-productList .col{ margin-bottom:10px;}
+.x-productList .col:nth-child(2n-1){ padding-left:10px; padding-right:5px;}
+.x-productList .col:nth-child(2n){ padding-left:5px; padding-right:10px;}
+.x-productList .col>div{ background-color:#fff;}
+.x-productList .col>div .h4{ height:36px; overflow:hidden;}

@@ -1,0 +1,33 @@
+/**
+	@name $UI/system/api/native/scan
+	@class
+	@category javascript
+	@model UI2
+	@description 二维码扫描。
+	@example 
+	<xmp> 
+	 	var scan = require('$UI/system/api/native/scan');
+	        scan.scanQRCode({
+			needResult : 1,
+			success : function(res) {
+				alert(JSON.stringify(res));
+			}
+		});
+	</xmp>
+*/
+
+/**
+	@name $UI/system/api/native/scan.scanQRCode
+	@function
+	@description 扫描二维码。（微信可在应用内处理： needResult=0）
+	@param {Object} options 选项 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"needResult": 是否返回扫描结果 1：需要；0：不需要 ,
+		"success" : {function} success 回调函数
+		"fail" : {function} fail 回调函数
+	}
+	</xmp>
+	@return {void}
+*/

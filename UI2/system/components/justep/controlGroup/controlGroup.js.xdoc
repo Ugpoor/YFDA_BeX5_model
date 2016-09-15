@@ -1,0 +1,103 @@
+/**
+	@name $UI/system/components/justep/controlGroup/controlGroup
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description 分组布局组件
+*/
+
+/**
+	@name $UI/system/components/justep/controlGroup/controlGroup#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/controlGroup/controlGroup#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-control-group(必须)
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/controlGroup/controlGroup#title
+	@attribute
+	@property 
+	@type string
+	@description 分组标题
+*/
+
+/**
+	@name $UI/system/components/justep/controlGroup/controlGroup#collapsible
+	@attribute
+	@property 
+	@type boolean
+	@description 允许点击标题折叠展开
+*/
+
+/**
+	@name $UI/system/components/justep/controlGroup/controlGroup#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"title" : 标题
+		"collapsible" : 允许点击标题折叠展开
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/controlGroup/controlGroup#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："title"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/controlGroup/controlGroup#collapse
+	@function
+	@description 折叠
+*/
+
+/**
+	@name $UI/system/components/justep/controlGroup/controlGroup#expand
+	@function
+	@description 展开
+*/
+
+/**
+	@name $UI/system/components/justep/controlGroup/controlGroup#controlGroupTitle
+	@class
+	@category component
+	@model UI2
+	@description 分组标题子组件
+*/
+
+/**
+	@name $UI/system/components/justep/controlGroup/controlGroup#controlGroupTitle#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-control-group-title(必须)
+		颜色样式: x-control-group-title-primary、x-control-group-title-success、x-control-group-title-info、x-control-group-title-warning、x-control-group-title-danger、x-blue、x-orange、x-green、x-red、x-yellow、x-gray
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/controlGroup/controlGroup#controlGroupTitle#text
+	@attribute 
+	@type string
+	@description 显示文本部分，可以通过设置ControlGroup的title属性修改
+*/

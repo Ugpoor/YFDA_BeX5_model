@@ -1,0 +1,111 @@
+/**
+	@name $UI/system/components/justep/data/js/filter
+	@class 
+	@category javascript
+	@model UI2
+	@description data过滤条件对象
+	@model UI2
+	@example 
+  <xmp>
+	主要用于BizData的filter处理，filter之间使用and连接
+	filter使用标准的KSQL语法，支持变参，内存函数，SQL函数，详细语法参考KSQL说明
+    var data = this.comp('mainData');
+    var filters = data.filters;
+    filters.setFilter('filter1',"SA_OPPerson.sName like '%李%'");
+    filters.setFilter('filter2',"SA_OPPerson.sCode = :operatorCode() or SA_OPPerson.sCode = :code");
+    //给变参code赋值
+    //不同的数据类型使用相对应的方法setStringVar、setIntegerVar、setFloatVar、setDateVar、setTimeVar、setDateTimeVar
+    filters.setStringVar("code","code_abc");
+    //最终qureyAction的KSQL中where部分将增加 and ((SA_OPPerson.sName like '%李%') and (SA_OPPerson.sCode = :operatorCode() or SA_OPPerson.sCode = 'code_abc'))
+  </xmp>  
+*/	
+
+/**
+ @name $UI/system/components/justep/data/js/filter#clear
+ @function
+ @description 清除所有filter
+*/
+
+/**
+ @name $UI/system/components/justep/data/js/filter#setFilter
+ @function
+ @param	{string} name <b>[required]</b> - 过滤名称
+ @param	{string} filter {string} <b>[required]</b> - 过滤表达式 
+ @description 设置过滤条件
+*/
+
+/**
+ @name $UI/system/components/justep/data/js/filter#setStringVar
+ @function
+ @param	{string} name <b>[required]</b> - 变参名
+ @param	{string} value <b>[required]</b> - 变参值 
+ @description 设置string变参
+*/
+
+/**
+ @name $UI/system/components/justep/data/js/filter#setIntegerVar
+ @function
+ @param	{string} name <b>[required]</b> - 变参名
+ @param	value <b>[required]</b> - 变参值 
+ @description 设置integer变参
+*/
+
+/**
+ @name $UI/system/components/justep/data/js/filter#setFloatVar
+ @function
+ @param	{string} name <b>[required]</b> - 变参名
+ @param	value <b>[required]</b> - 变参值 
+ @description 设置float变参
+*/
+
+/**
+ @name $UI/system/components/justep/data/js/filter#setDateVar
+ @function
+ @param	{string} name <b>[required]</b> - 变参名
+ @param	{string/date} value <b>[required]</b> - 变参值 
+ @description 设置Date变参
+*/
+
+/**
+ @name $UI/system/components/justep/data/js/filter#setTimeVar
+ @function
+ @param	{string} name <b>[required]</b> - 变参名
+ @param	{string/date} value <b>[required]</b> - 变参值 
+ @description 设置Time变参
+*/
+
+/**
+ @name $UI/system/components/justep/data/js/filter#setDateTimeVar
+ @function
+ @param	{string} name <b>[required]</b> - 变参名
+ @param	{string/date} value <b>[required]</b> - 变参值 
+ @description 设置DateTime变参
+*/
+
+/**
+ @name $UI/system/components/justep/data/js/filter#clearVars
+ @function
+ @description 清除变参列表
+*/
+
+/**
+ @name $UI/system/components/justep/data/js/filter#getFilter
+ @function
+ @param	{string} name <b>[required]</b> - 过滤名称
+ @returns {string}	 
+ @description 返回对应过滤名称的过滤表达式
+*/
+
+/**
+ @name $UI/system/components/justep/data/js/filter#deleteFilter
+ @function
+ @param	{string} name <b>[required]</b> - 过滤名称
+ @description 删除对应过滤名称的过滤表达式
+*/
+
+/**
+ @name $UI/system/components/justep/data/js/filter#toString
+ @function
+ @description 返回所有过滤组成的过滤条件
+*/
+

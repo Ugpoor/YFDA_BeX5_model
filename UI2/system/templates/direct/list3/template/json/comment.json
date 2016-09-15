@@ -1,0 +1,6 @@
+[
+	{"fId":1,"name":"起步科技","photo":"audio1.png","time":"9小时前    北京市","praise":12,"content":"说的不错,兄弟。","commentName":"杰伦","commentContent":"相当好听，不红乃未解之谜。","state":1},
+	{"fId":2,"name":"咿呀咿呀呦","photo":"audio2.png","time":"9小时前    广州市","praise":2,"content":"顶！顶！顶！","state":2},
+	{"fId":3,"name":"太阳出来喽嘿","photo":"audio3.png","time":"9小时前    新乡市","praise":22,"content":"好听好听。","state":2},
+	{"fId":4,"name":"月牙儿","photo":"audio4.png","time":"9小时前    石家庄市","praise":18,"content":"楼上说的好。","state":2}
+]

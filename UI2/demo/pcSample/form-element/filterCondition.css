@@ -1,0 +1,20 @@
+.outputcss{
+	background-image: url("$UI/demo/sample/form-element/img/5.png");
+	padding-left: 20px;
+}
+.outputcsss{
+	background-image: url("$UI/demo/sample/form-element/img/5.png");
+	padding-right: 20px;
+}
+
+.outputcs{
+		background-image: url("$UI/demo/sample/form-element/img/w.png");
+	padding-left: 10px;
+}
+
+.padd{
+	padding-top:44px;
+}
+.col-xs-10{
+	padding-left: 0px;	
+}

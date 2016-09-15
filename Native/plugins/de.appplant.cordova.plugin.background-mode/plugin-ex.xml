@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="de.appplant.cordova.plugin.background-mode">
+	<name>后台运行</name>
+	<description>app后台运行插件,防止app在后台进入睡眠状态</description>
+	
+</plugin>

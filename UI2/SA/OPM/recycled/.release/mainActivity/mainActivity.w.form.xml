@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window cuMvQBj" component="$model/UI2/system/components/justep/window/window" design="device:pc;" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cuMvQBj" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/pagerBar/pagerBar,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect,$model/UI2/system/components/justep/select/select,$model/UI2/system/components/bootstrap/pagination/pagination,$model/UI2/system/components/justep/smartFilter/smartFilter,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/toolBar/toolBar,$model/UI2/system/components/justep/dataTables/dataTables,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cuMvQBj" class="cuMvQBj"></div>  
+  <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar x-toolbar-spliter cuMvQBj" xid="toolBar1" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cuMvQBj"> 
+    <div class="x-control cuMvQBj" component="$model/UI2/system/components/justep/smartFilter/smartFilter" xid="smartFilter1" style="float: right;" data-bind="component:{name:'$model/UI2/system/components/justep/smartFilter/smartFilter'}" data-config="{&quot;filterCols&quot;:&quot;sFName&quot;,&quot;filterData&quot;:&quot;orgData&quot;}" __cid="cuMvQBj"> 
+      <input type="text" class="form-control cuMvQBj" placeholder="搜索" data-bind="valueUpdate: ['input', 'afterkeydown']" bind-value="$model.comp($element.parentElement).searchText" bind-change="$model.comp($element.parentElement).onInputChange.bind($model.comp($element.parentElement))" xid="input1" __cid="cuMvQBj"/> 
+    </div>  
+    <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cuMvQBj" xid="deleteOrgBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:deleteOrgBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-close&quot;,&quot;label&quot;:&quot;清除&quot;}" __cid="cuMvQBj"> 
+      <i xid="i3" class="icon-android-close cuMvQBj" __cid="cuMvQBj"/>  
+      <span xid="span3" __cid="cuMvQBj" class="cuMvQBj">清除</span> 
+    </a>  
+    <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cuMvQBj" xid="restoreOrgBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:restoreOrgBtnClick" data-config="{&quot;icon&quot;:&quot;icon-ios7-undo&quot;,&quot;label&quot;:&quot;还原&quot;}" __cid="cuMvQBj"> 
+      <i xid="i5" class="icon-ios7-undo cuMvQBj" __cid="cuMvQBj"/>  
+      <span xid="span4" __cid="cuMvQBj" class="cuMvQBj">还原</span> 
+    </a>  
+    <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cuMvQBj" xid="clearAllBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:clearAllBtnClick" data-config="{&quot;icon&quot;:&quot;icon-close-circled&quot;,&quot;label&quot;:&quot;清除全部&quot;}" __cid="cuMvQBj"> 
+      <i xid="i1" class="icon-close-circled cuMvQBj" __cid="cuMvQBj"/>  
+      <span xid="span1" __cid="cuMvQBj" class="cuMvQBj">清除全部</span> 
+    </a> 
+  </div>  
+  <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" rowActiveClass="active" class="table table-hover cuMvQBj" xid="orgDataTables" data="orgData" data-config="{&quot;columns&quot;:[{&quot;className&quot;:&quot;x-dt-cell-center&quot;,&quot;orderable&quot;:false,&quot;sName&quot;:&quot;sOrgKindID&quot;,&quot;title&quot;:&quot;　&quot;,&quot;width&quot;:&quot;20px&quot;,&quot;xid&quot;:&quot;column4&quot;},{&quot;sName&quot;:&quot;sFName&quot;,&quot;title&quot;:&quot;被删除的组织&quot;,&quot;xid&quot;:&quot;column3&quot;}],&quot;data&quot;:&quot;orgData&quot;,&quot;flexibleWidth&quot;:true,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" data-events="onCellRender:orgDataTablesCellRender" __cid="cuMvQBj"/>  
+  <div component="$model/UI2/system/components/justep/pagerBar/pagerBar" class="x-pagerbar container-fluid cuMvQBj" xid="pagerBar1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerBar/pagerBar'}" data-config="{&quot;data&quot;:&quot;orgData&quot;}" __cid="cuMvQBj"> 
+    <div class="row cuMvQBj" xid="div1" __cid="cuMvQBj"> 
+      <div class="col-sm-3 cuMvQBj" xid="div2" __cid="cuMvQBj"> 
+        <div class="x-pagerbar-length cuMvQBj" xid="div3" __cid="cuMvQBj"> 
+          <label component="$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect" class="x-pagerlimitselect cuMvQBj" xid="pagerLimitSelect1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect'}" data-config="{&quot;data&quot;:&quot;orgData&quot;}" __cid="cuMvQBj"> 
+            <span xid="span2" __cid="cuMvQBj" class="cuMvQBj">显示</span>  
+            <select component="$model/UI2/system/components/justep/select/select" class="form-control input-sm cuMvQBj" xid="select1" data-bind="component:{name:'$model/UI2/system/components/justep/select/select'}" __cid="cuMvQBj"> 
+              <option value="10" xid="default2" __cid="cuMvQBj" class="cuMvQBj">10</option>  
+              <option value="20" xid="default3" __cid="cuMvQBj" class="cuMvQBj">20</option>  
+              <option value="50" xid="default4" __cid="cuMvQBj" class="cuMvQBj">50</option>  
+              <option value="100" xid="default5" __cid="cuMvQBj" class="cuMvQBj">100</option> 
+            </select>  
+            <span xid="span5" __cid="cuMvQBj" class="cuMvQBj">条</span> 
+          </label> 
+        </div> 
+      </div>  
+      <div class="col-sm-3 cuMvQBj" xid="div4" __cid="cuMvQBj"> 
+        <div class="x-pagerbar-info cuMvQBj" xid="div5" __cid="cuMvQBj">当前显示0条，共0条</div> 
+      </div>  
+      <div class="col-sm-6 cuMvQBj" xid="div6" __cid="cuMvQBj"> 
+        <div class="x-pagerbar-pagination cuMvQBj" xid="div7" __cid="cuMvQBj"> 
+          <ul class="pagination cuMvQBj" component="$model/UI2/system/components/bootstrap/pagination/pagination" xid="pagination1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/pagination/pagination'}" data-config="{&quot;data&quot;:&quot;orgData&quot;}" __cid="cuMvQBj"> 
+            <li class="prev cuMvQBj" xid="li1" __cid="cuMvQBj"> 
+              <a href="#" xid="a1" __cid="cuMvQBj" class="cuMvQBj"> 
+                <span aria-hidden="true" xid="span6" __cid="cuMvQBj" class="cuMvQBj">«</span>  
+                <span class="sr-only cuMvQBj" xid="span7" __cid="cuMvQBj">Previous</span> 
+              </a> 
+            </li>  
+            <li class="next cuMvQBj" xid="li2" __cid="cuMvQBj"> 
+              <a href="#" xid="a2" __cid="cuMvQBj" class="cuMvQBj"> 
+                <span aria-hidden="true" xid="span8" __cid="cuMvQBj" class="cuMvQBj">»</span>  
+                <span class="sr-only cuMvQBj" xid="span9" __cid="cuMvQBj">Next</span> 
+              </a> 
+            </li> 
+          </ul> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>

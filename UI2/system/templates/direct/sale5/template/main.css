@@ -1,0 +1,35 @@
+
+.text-white{ color:#fff;}
+.bg-red{ background-color:#ed4846;}/*红*/
+
+.x-imgBanner{ width:100%; height:180px;}
+.x-img1{ width:100%; height:90px;}
+.x-img2{ width:100%; height:90px;}
+.x-img3{ width:26px; height:24px;}
+
+.btn i{ font-size:20px;}
+.btn span{ font-size:12px; font-weight:normal;}
+
+.x-titlebar{ background-color:#ed4846;}
+/*页脚*/
+.x-panel-bottom .btn-group .btn.active{ color:#ed4846; padding:0;}
+.x-panel-bottom .btn-group{ background-color:#fff;}
+
+.x-cards{ padding-top:0;}
+.row{ margin:10px 10px;}
+.row .col{ padding:0;}
+/*导航*/
+.x-menu.row .col:nth-child(2){ padding:0 3px;}
+.x-menu.row .col > div{ padding:8px 0 3px 0; }
+/*图片*/
+.x-pic.row .col{ padding:1px;}
+/*推荐*/
+.x-recommended .col{ position:relative; margin-bottom:10px;}
+.x-recommended .col>div{ width:100%;  position:absolute; bottom:0px; left:0; z-index:33; background-color:rgba(0,0,0,0.4);}
+.x-recommended .col>div span{ padding:5px;}
+.x-recommended .col>div span:nth-child(2){ height:13px; margin:7px 0; border-right:1px solid #fff;}
+
+
+
+
+

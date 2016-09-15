@@ -1,0 +1,33 @@
+.x-carousel .image-wall {
+  width: 100%;
+}
+.x-carousel > .x-contents > .x-contents-content {
+  overflow: hidden;
+}
+.x-carousel > .x-contents > .x-contents-content > img {
+  position: relative;
+}
+.x-carousel .x-contents-content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  -o-box-align: center;
+  box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+}

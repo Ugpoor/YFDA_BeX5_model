@@ -1,0 +1,10 @@
+/**
+	@name $UI/system/components/justep/widgets/widget
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@description widgets组件使用的内部类, 不能独立使用
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/

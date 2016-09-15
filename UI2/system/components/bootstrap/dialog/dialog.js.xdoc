@@ -1,0 +1,87 @@
+/**
+	@name $UI/system/components/bootstrap/dialog/dialog
+	@component 
+	@extends $UI/system/lib/base/viewComponent
+	@description Dialog组件 bootstrap风格的对话框
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/	
+
+/**
+	@name $UI/system/components/bootstrap/dialog/dialog#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+	@name $UI/system/components/bootstrap/dialog/dialog#onShow
+	@event
+	@description <b>[回调型事件]</b>当显示时候
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/bootstrap/dialog/dialog#onHide
+	@event
+	@description <b>[回调型事件]</b>当隐藏的时候
+	@param {$UI/system/components/justep/common/event#ViewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>
+*/
+
+/**
+ @name $UI/system/components/bootstrap/dialog/dialog#show
+ @function
+ @description 显示对话框
+*/
+
+/**
+ @name $UI/system/components/bootstrap/dialog/dialog#close
+ @function
+ @description 隐藏对话框
+*/
+
+/**
+ @name $UI/system/components/bootstrap/dialog/dialog#toggle
+ @function
+ @description 切换显示
+*/
+
+/**
+ @name $UI/system/components/bootstrap/dialog/dialog#show
+ @operation
+ @see $UI/system/components/bootstrap/dialog/dialog#show
+ @description 显示对话框
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/bootstrap/dialog/dialog#close
+ @operation
+ @see $UI/system/components/bootstrap/dialog/dialog#close
+ @description 关闭对话框
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/bootstrap/dialog/dialog#toggle
+ @operation
+ @see $UI/system/components/bootstrap/dialog/dialog#toggle
+ @description 切换对话框显示状态
+ @returns {void}
+*/

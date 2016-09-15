@@ -1,0 +1,38 @@
+span{
+	padding-right: 60px;
+}
+.btn1{
+	border-radius: 0 90px 90px 0;
+	width: 150px;
+}
+.div1{
+	margin-left: 20px;
+	padding-top: 15px;
+	background: linear-gradient(#ECF4F2, white 90%);
+}
+.btn2{
+	border: 1px solid #E2E7E7;
+	background-color: #ECF4F2;
+	margin: 2px 0;
+	color: black;
+}
+.x-contents{
+	border: 1px solid #E2E7E7;
+	overflow-x:hidden; 
+}
+thead{
+	background-color: #ECF4F2;
+}
+.x-control-group{
+	padding: 0;
+	margin: 20px;
+}
+.x-label{
+	margin-left: 20px;
+}
+.x-edit{
+	margin-right: 3px;
+}
+.span4{
+	padding-right: 8px;
+}

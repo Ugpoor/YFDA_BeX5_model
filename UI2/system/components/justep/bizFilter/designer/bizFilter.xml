@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/bizFilter/bizFilter" tag-name="span" icon="bizFilter.gif" 
+		binding-component="$UI/system/components/justep/bizFilter/bizFilter" 
+		component-type="formControl"  parent-range="$UI/system/components/justep/window/window" resizable="false"
+        design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			<property name="filterData" text="过滤数据" is-id-ref="true" required="true" editor-ref="contextComponent" editor-parameter="data"/>        
+			<property name="filterCols" text="过滤关系，多个用逗号分隔" editor-ref="relationsDlg" editor-parameter="filterData" ref-type="Relation/m"/>
+			<property name="autoRefresh" text="是否自动刷新数据" default-value="true" editor-ref="booleanList" data-type="boolean"/>        
+			<property name="process" text="默认使用当前环境中的process"/>
+			<property name="activity" text="默认使用当前环境中的activity"/>
+		</properties>
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+			<event name="onFilter" text="过滤事件"/>
+		</events>
+
+		<templates>
+		   <template name="default"><![CDATA[
+			  <span component="$UI/system/components/justep/bizFilter/bizFilter"></span>
+		   ]]></template>
+		</templates>
+	</element>
+ 	
+</elements>

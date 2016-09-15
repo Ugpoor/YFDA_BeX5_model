@@ -1,0 +1,59 @@
+/**
+	@name 数据CURD过程
+	@procedure
+	@model BIZ
+	@category procedure
+	@description 数据CURD过程
+*/
+
+/**
+	@name 数据CURD过程.bizQueryProcedure
+	@function
+	@description 查询WorkAdvic的action
+	@param {String}  concept   要查询的概念 
+	@param {String}  idColumn  作为id的列别名，用作ui中row-cell的主键
+	@param {String}  select  select子句        
+	@param {String}  from  from子句
+	@param {String}  aggregate    统计字段的定义，如： count(SA_OPPerson) as cnt, sum(SA_OPPerson.sAge) as allAge
+	@param {String}  condition   where中追加的条件      
+	@param {List}    range  权限参数
+	@param {String}  filter   过滤条件          
+	@param {Integer} limit     最大记录数  
+	@param {Integer} offset  从第几条记录开始取 
+	@param {Boolean} distinct  是否DISTINCT        
+	@param {String}  columns  要获取的列别名列表，必须是select中第一的列        
+	@param {String}  orderBy  排序        
+	@param {String}  aggregateColumns  要获取的统计列的列表，必须是aggregate中定义的列  
+	@param {Map}     variables   KSQL需要的命名参数        
+	@param {String}  fnModel   查找fn的模块       
+	@param {String}  dataModel  执行KSQL的数据模块       
+	@returns {Table}
+
+*/
+
+/**
+	@name 数据CURD过程.bizSaveProcedure
+	@function
+	@description 保存WorkAdvic的action
+	@param {String}  concept    要保存的概念
+	@param {List}    insertRange    insert权限
+	@param {List}    deleteRange    delete权限
+	@param {List}    updateRange    update权限
+	@param {String}  readOnly    只读的列，不去保存          
+	@param {Integer} notNull     非空的列，目前没实现  
+	@param {Table} table    要保存的数据 
+	@param {String} dataModel    数据模块
+	@param {String} fnModel    函数查找模块         
+	@returns {Integer}
+*/
+
+/**
+	@name 数据CURD过程.bizCreateProcedure
+	@function
+	@description 创建WorkAdvic的action
+	@param {String}  concept    要创建的概念
+	@param {Table} table    要添加默认值的数据 
+	@param {Map} defaultValues   默认值
+	@param {String} fnModel   查找函数的模块名        
+	@returns {Integer}
+*/

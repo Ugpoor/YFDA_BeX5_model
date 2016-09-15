@@ -1,0 +1,80 @@
+/**
+	@name $UI/system/components/justep/bmap/bmap
+	@class
+	@category javascript
+	@model UI2
+	@description 百度地图模块
+*/
+
+/**
+	@name $UI/system/components/justep/bmap/bmap.marker
+	@function
+	@description 地图标点
+	@param {String} location lat<纬度>,lng<经度> 必选
+	@param {String} title 标注点显示标题 必选
+	@param {String} content 标注点显示内容 必选
+	@param {String} coord_type 坐标类型，可选参数，默认为百度经纬度坐标。 可选 默认为bd09经纬度坐标。允许的值为bd09ll、gcj02、wgs84。bd09ll表示百度经纬度坐标， gcj02表示经过国测局坐标，wgs84表示gps获取的坐标。
+	@param {String} zoom 展现地图的级别，默认为视觉最优级别。 可选
+	@param {String} src 调用来源，规则：companyName|appName。 必选 此参数不传值，不保证服务。
+	@return {void}
+*/
+
+/**
+	@name $UI/system/components/justep/bmap/bmap.geocoder
+	@function
+	@description 地理编码
+	@param {String} address 地址名称 必选 或者 location lat<纬度>,lng<经度> 必选
+	@param {String} coord_type 坐标类型，配合location参数使用 可选参数，默认为bd09经纬度坐标。 可选 允许的值为bd09ll、gcj02、wgs84。bd09ll表示百度经纬度坐标， gcj02表示经过国测局加密的坐标，wgs84表示gps获取的坐标。
+	@param {String} zoom 展现地图的级别，默认为视觉最优级别。 可选 
+	@param {String} src 调用来源，规则：companyName|appName。 必选 此参数不传值，不保证服务。
+	@return {void}
+*/
+
+/**
+	@name $UI/system/components/justep/bmap/bmap.placeSearch
+	@function
+	@description 周边检索
+	@param {String} query 关键词 必选
+	@param {String} region 城市名戒县名 选择方式：地点搜索限定范围可以由region、bounds和location + radius方式进行，其中bounds优先级最高、region优先级最低（不web服务保持一致）。
+	@param {String} location 中心点经纬度，戒中心点经纬度和名称描述，注意，名称不参不检索，只负责显示。 同上   1、39.9761<纬度>,116.3282<经度> 2、39.9761<纬度>,116.3282<经度>| 中关村<名称> 
+	@param {String} radius 检索半径 
+	@param {String} bounds 视野范围 同上 lat,lng<左下觊>,lat,lng<右上觊> 
+	@param {String} coord_type 坐标类型，可选参数，默认为bd09经纬度坐标。 可选 允许的值为bd09ll、gcj02、wgs84。bd09ll表示百度经纬度坐标， gcj02表示经过国测局加密的坐标，wgs84表示gps获取的坐标。 
+	@param {String} zoom 展现地图的级别，默认为视觉最优级别。 可选
+	@param {String} src 调用来源，规则：companyName|appName。 必选 此参数不传值，不保证服务。
+	@return {void}
+*/
+
+/**
+	@name $UI/system/components/justep/bmap/bmap.placeDetail
+	@function
+	@description 地点详情
+	@param {String} uid POI的ID 必选 
+	@param {String} zoom 展现地图的级别，默认为视觉最优级别。 可选 
+	@param {String} src 调用来源，规则：companyName|appName。 必选 此参数不传值，不保证服务。
+	@return {void}
+*/
+
+/**
+	@name $UI/system/components/justep/bmap/bmap.line
+	@function
+	@description 线路查询
+	@param {String} region 城市名戒县名 必选  
+	@param {String} name 线路名称 必选
+	@param {String} zoom 展现地图的级别，默认为视觉最优级别。 可选   
+	@param {String} src 调用来源，规则：companyName|appName。 必选 此参数不传值，不保证服务。
+	@return {void}
+*/
+
+/**
+	@name $UI/system/components/justep/bmap/bmap.direction
+	@function
+	@description 导航
+	@param {String} origin 起点名称戒经纬度，戒者可同时提供名称和经纬度，此时经纬度优先级高，将作为导航依据，名称只负责展示。 必选 1、名称：天安门 2、经纬度：39.98871<纬度>,116.43234<经度>。 3、名称和经纬度：name:天安门|latlng:39.98871,116.43234   
+	@param {String} destination 终点名称戒经纬度，戒者可同时提供名称和经纬度，此时经纬度优先级高，将作为导航依据，名称只负责展示。 必选 同上 
+	@param {String} mode 导航模式，固定为transit、driving、walking，分别表示公交、驾车和步行 必选
+	@param {String} region 城市名戒县名 当给定region时，认为起点和终点都在同一城市，除非单独给定起点戒终点的城市。
+	@param {String} origin_region 起点所在城市戒县 同上     
+	@param {String} src 调用来源，规则：companyName|appName。 必选 此参数不传值，不保证服务。
+	@return {void}
+*/

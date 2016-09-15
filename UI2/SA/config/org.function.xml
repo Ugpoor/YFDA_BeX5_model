@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root> 
+  <item display="solid" label="组织权限" iconClass="icon-person-stalker"> 
+    <item display="solid" label="设置"> 
+      <item label="组织级别设置" process="/SA/OPM/organization/organizationProcess"
+        activity="orgLevelSetting" url="$UI/SA/OPM/organization/orgLevelSetting.a"
+        device="pc"/>  
+      <item label="业务管理类型设置" process="/SA/OPM/management/managementProcess"
+        activity="manageTypeSetting" url="$UI/SA/OPM/management/manageTypeSetting.a"
+        device="pc"/> 
+    </item>  
+    <item label="组织管理" process="/SA/OPM/organization/organizationProcess" activity="mainActivity"
+      url="$UI/SA/OPM/organization/mainActivity.a" device="pc"/>  
+    <item label="角色管理" process="/SA/OPM/role/roleProcess" activity="mainActivity"
+      url="$UI/SA/OPM/role/mainActivity.a" device="pc"/>  
+    <item label="按组织授权" process="/SA/OPM/authorization/authorizationProcess"
+      activity="mainActivity" url="$UI/SA/OPM/authorization/mainActivity.a" device="pc"/>  
+    <item label="按角色授权" process="/SA/OPM/authorizationByRole/authorizationByRoleProcess"
+      activity="mainActivity" url="$UI/SA/OPM/authorizationByRole/mainActivity.a"
+      device="pc"/>
+    <item label="权限查询" process="/SA/OPM/authorizationQuery/authorizationQueryProcess" activity="mainActivity" url="$UI/SA/OPM/authorizationQuery/mainActivity.a" device="pc" /><item label="业务管理权限" process="/SA/OPM/management/managementProcess" activity="mainActivity"
+      url="$UI/SA/OPM/management/mainActivity.a" device="pc"/>  
+    <item label="回收站" process="/SA/OPM/recycled/recycledProcess" activity="mainActivity"
+      url="$UI/SA/OPM/recycled/mainActivity.a" device="pc"/>  
+    <item label="分级管理" process="/SA/OPM/grade/gradeProcess" activity="mainActivity"
+      url="$UI/SA/OPM/grade/mainActivity.a" device="pc"/>  
+    <item label="个人委托代理" process="/SA/OPM/agent/agentProcess" activity="mainActivity"
+      url="$UI/SA/OPM/agent/mainActivity.a" device="pc"/>  
+    <item label="组织管理-分级" process="/SA/OPM/organization/organizationProcess"
+      activity="gradeActivity" url="$UI/SA/OPM/organization/gradeActivity.a" device="pc"/>  
+    <item label="按组织授权-分级" process="/SA/OPM/authorization/authorizationProcess"
+      activity="gradeActivity" url="$UI/SA/OPM/authorization/gradeActivity.a" device="pc"/>  
+    <item label="按角色授权-分级" process="/SA/OPM/authorizationByRole/authorizationByRoleProcess"
+      activity="gradeActivity" url="$UI/SA/OPM/authorizationByRole/gradeActivity.a"
+      device="pc"/>
+    <item label="权限查询-分级" process="/SA/OPM/authorizationQuery/authorizationQueryProcess" activity="gradeActivity" url="$UI/SA/OPM/authorizationQuery/gradeActivity.a" device="pc" /><item label="业务管理权限-分级" process="/SA/OPM/management/managementProcess" activity="gradeActivity"
+      url="$UI/SA/OPM/management/gradeActivity.a" device="pc"/>  
+    <item label="回收站-分级" process="/SA/OPM/recycled/recycledProcess" activity="gradeActivity"
+      url="$UI/SA/OPM/recycled/gradeActivity.a" device="pc"/>  
+    <item label="分级管理-分级" process="/SA/OPM/grade/gradeProcess" activity="gradeActivity"
+      url="$UI/SA/OPM/grade/gradeActivity.a" device="pc"/>  
+    
+    
+  </item> 
+</root>

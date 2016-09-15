@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/list/list" tag-name="div" icon="ul.gif" 
+	    discriminate-condition="executeXpath(@component='$UI/system/components/justep/list/list')"
+		design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" />  
+			<property name="data" text="引用数据" required="true"  editor-ref="dataPropDlg" is-id-ref="true"/>
+			<property name="dataItemAlias" text="行绑定数据别名,使用合法的JS变量名,嵌套列表,建议设置该属性"/>
+			<property name="limit" text="条数,-1时感知data数据"  data-type="integer" default-value="-1"/>
+			<property name="filter" text="过滤条件" editor-ref="jSExpressionEditor"/>
+			<property name="autoLoad" text="自动加载数据" default-value="true"  editor-ref="booleanList" data-type="boolean"/>
+			<property name="disablePullToRefresh" text="禁止下拉刷新" default-value="false"  editor-ref="booleanList" data-type="boolean"/>
+			<property name="disableInfiniteLoad" text="禁止上划加载数据" default-value="false"  editor-ref="booleanList" data-type="boolean"/>
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-list"
+					},
+					"1style": {
+						label: "风格",
+						value: "x-cards",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<templates>
+		   <template name="default"><![CDATA[ 
+		      <div component="$UI/system/components/justep/list/list" class="x-list">
+	      		<ul class="x-list-template">
+	      		 	<li/>
+	      		</ul>
+		      </div> 
+		   ]]></template>
+		</templates>
+		<events>
+            <event name="onAfterRender" text="渲染后"/>       
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+          <!--
+          <event name="onRenderMore" text="渲染更多操作按钮"/>
+          -->       
+        </events>
+		<toolbar>			
+			<item text="增加DIV模板" method="addDivTemplate"/>
+			<item text="增加为UL模板" method="addULTemplate"/>
+			<item text="增加为Table模板" method="addTableTemplate"/>
+		</toolbar>
+	</element>
+
+	<element name="$UI/system/components/justep/list/list(UL)" tag-name="ul" icon="ul.gif" 
+	    discriminate-condition="executeXpath(@component='$UI/system/components/justep/list/list')"
+		design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" />  
+			<property name="data" text="引用数据" required="true"  editor-ref="contextComponent" editor-parameter="data" is-id-ref="true"/>
+			<property name="limit" text="条数,-1时感知data数据"  data-type="integer" default-value="-1"/>
+			<property name="filter" text="过滤条件" editor-ref="jSExpressionEditor"/>
+			<property name="autoLoad" text="自动加载数据" default-value="true"  editor-ref="booleanList" data-type="boolean"/>
+			<property name="disablePullToRefresh" text="禁止下拉刷新" default-value="false"  editor-ref="booleanList" data-type="boolean"/>
+			<property name="disableInfiniteLoad" text="禁止上划加载数据" default-value="false"  editor-ref="booleanList" data-type="boolean"/>
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-list"
+					},
+					"1style": {
+						label: "风格",
+						value: "x-cards",
+						require: false
+					},
+					"2ext": {
+						label: "扩展样式",
+						value: "list-group,x-list-template",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<templates>
+		   <template name="default"><![CDATA[ 
+		      <ul component="$UI/system/components/justep/list/list" class="x-list x-list-template">
+	      		 	<li/>
+      		  </ul>
+		   ]]></template>
+		</templates>
+		<events>
+            <event name="onAfterRender" text="渲染后"/>       
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+          <!--
+          <event name="onRenderMore" text="渲染更多操作按钮"/>
+          -->       
+        </events>
+		<toolbar>			
+			<!-- 
+			<item text="选择模板" method="newLiTemplate"/>
+			 -->
+		</toolbar>
+	</element>
+
+	<element name="$UI/system/components/justep/list/list(Table)" tag-name="table" icon="ul.gif" 
+	    discriminate-condition="executeXpath(@component='$UI/system/components/justep/list/list')"
+		design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" />  
+			<property name="data" text="引用数据" required="true"  editor-ref="contextComponent" editor-parameter="data" is-id-ref="true"/>
+			<property name="limit" text="条数,-1时感知data数据"  data-type="integer" default-value="-1"/>
+			<property name="filter" text="过滤条件" editor-ref="jSExpressionEditor"/>
+			<property name="autoLoad" text="自动加载数据" default-value="true"  editor-ref="booleanList" data-type="boolean"/>
+			<property name="disablePullToRefresh" text="禁止下拉刷新" default-value="false"  editor-ref="booleanList" data-type="boolean"/>
+			<property name="disableInfiniteLoad" text="禁止上划加载数据" default-value="false"  editor-ref="booleanList" data-type="boolean"/>
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-list"
+					},
+					"1style": {
+						label: "风格",
+						value: "x-cards",
+						require: false
+					},
+					"2ext": {
+						label: "table样式",
+						value: "table",
+						require: false
+					},
+					"condensed": {
+						label: "紧凑型",
+						value: "table-condensed",
+						require: false
+					},
+					"striped": {
+						label: "条纹状",
+						value: "table-striped",
+						require: false
+					},
+					"bordered": {
+						label: "边框",
+						value: "table-bordered",
+						require: false
+					},
+					"hover": {
+						label: "鼠标悬停高亮",
+						value: "table-hover",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<templates>
+		   <template name="default"><![CDATA[ 
+		      <table component="$UI/system/components/justep/list/list" class="x-list">
+		      	<thead>
+	      		 	<tr><th/></tr>
+		      	</thead>
+		      	<tbody class="x-list-template">
+	      		 	<tr><td/></tr>
+      		  	</tbody>
+      		  </table>	
+		   ]]></template>
+		</templates>
+		<events>
+            <event name="onAfterRender" text="渲染后"/>       
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+          <!--
+          <event name="onRenderMore" text="渲染更多操作按钮"/>
+          -->       
+        </events>
+		<toolbar>			
+			<!-- 
+			<item text="选择模板" method="newLiTemplate"/>
+			 -->
+		</toolbar>
+	</element>
+
+	<element name="$UI/system/components/justep/list/list#listTemplateDiv" tag-name="div" icon="li.gif"  
+	    discriminate-condition="executeXpath(contains(@class,'x-list-template'))"
+		component-type="foreach" parent-range="$UI/system/components/justep/list/list"
+		design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" />  
+
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-list-template"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<templates>
+		   <template name="default">
+		   <![CDATA[
+		   <div class="x-list-template"></div>
+		   ]]>
+		   </template>
+		</templates>
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+        </events>
+		<toolbar>			
+		</toolbar>
+	</element>
+
+	<element name="$UI/system/components/justep/list/list#listTemplateUl" tag-name="ul" icon="li.gif"  
+	    discriminate-condition="executeXpath(contains(@class,'x-list-template'))"
+		component-type="foreach" parent-range="$UI/system/components/justep/list/list"
+		design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" />  
+
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-list-template"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<templates>
+		   <template name="default">
+		   <![CDATA[
+		        <ul class="x-list-template">
+	      		 	<li/>
+	      		</ul>
+	      		]]>
+		   </template>
+		</templates>
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+        </events>
+		<toolbar>			
+		</toolbar>
+	</element>
+
+	<element name="$UI/system/components/justep/list/list#listTemplateTable" tag-name="table" icon="li.gif"  
+	    discriminate-condition="executeXpath(contains(@class,'x-list-template'))"
+		component-type="foreach" parent-range="$UI/system/components/justep/list/list"
+		design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" />  
+
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-list-template"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<templates>
+		   <template name="default">
+		   <![CDATA[
+		   <table class="x-list-template"><tr><td></td></tr></table>
+		   ]]>
+		   </template>
+		</templates>
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+        </events>
+		<toolbar>			
+		</toolbar>
+	</element>
+	
+	<element name="$UI/system/components/justep/list/list#listTemplate" icon="li.gif"  
+	    discriminate-condition="executeXpath(contains(@class,'x-list-template'))"
+		component-type="foreach" parent-range="$UI/system/components/justep/list/list"
+		design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" />  
+
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-list-template"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<templates>
+		   <template name="default">
+		   </template>
+		</templates>
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+        </events>
+		<toolbar>			
+		</toolbar>
+	</element>
+</elements>

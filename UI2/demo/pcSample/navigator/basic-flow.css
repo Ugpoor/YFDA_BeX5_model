@@ -1,0 +1,22 @@
+/*导航栏button组件*/
+.x-tuniu.btn-group{ background-color:#fff;}
+.x-tuniu.btn-group .btn{ border-top:0;}
+.x-tuniu.btn-group .btn span{ font-weight:bolder;color: black;}
+.x-tuniu.btn-group,.x-card.btn-group .btn.active{ color:red;}
+hr {
+    margin-top: 9px;
+    }
+    .x-nav ul{overflow-x:scroll; background-color:#fafafa;}
+.x-nav .btn-group{width:530px; }
+.x-nav .btn-group .btn-link{ font-weight:normal; color:#999;}
+.x-nav .btn-group .btn{height:41px; border-top:0;}
+.x-nav .btn-group .btn.active{ border-bottom:2px solid #ea413c; color:#ea413c; }
+.navMoreBtn{ position:absolute; right:0; z-index:99; background-color:#e1e1e1;}
+/*button组件*/
+.x-na .btn.active{ background-color: #3C3CFF; color: white;}
+.x-card.btn-group .btn{
+	margin-left: 10px;
+}
+.x-col{
+	padding:0px;
+}

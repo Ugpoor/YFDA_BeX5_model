@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/report/report" tag-name="div" icon="report.gif" text="报表" 
+		binding-component="$UI/system/components/justep/report/report" display-property="xid" 
+		java-class="Report" 
+		component-type="formControl">
+		<templates>
+			<template name="default">
+			<![CDATA[ 
+				<div component="$UI/system/components/justep/report/report"
+					src="" reportName="report" autoLoad="true" dataList="" class="x-report x-scroll-h">
+				</div>				
+			]]>
+			</template>
+		</templates>
+		<properties>
+			<property name="xid" text="编号" required="true" editor-ref=""/>
+			<property name="reportName" text="报表导出文件名称" />
+			<!-- 
+			<property name="layout-type"  text="布局"  editor-ref="layoutType" default-value="excel" enum-values="excel,cell"/> 
+			<property name="layout-data" text="布局数据" path="layout-content/text()"/> 
+			 -->
+			<property name="src" text="Excel文件"  editor-ref="excelList,createExcelDialog" editor-parameter="xls"/>			
+			
+			<property name="dataList" text="数据源定义" editor-ref="dataListDialog"/>			
+			<property name="autoLoad" text="自动加载"  editor-ref="itemList"/>
+			<property name="dialog" text="对话框连接模式下用于打开的对话框" editor-ref="contextComponent" editor-parameter="windowDialog"/>
+			<property name="class" text="class"/>
+      		<property name="row-height" text="默认行高" display-name="默认行高" required="false" data-type="positive-integer" default-value="19" />
+      		<property name="column-width" text="默认列宽" display-name="默认列宽" required="false" data-type="positive-integer" default-value="80"/>
+			<property name="style" text="样式" editor-ref="styleDialog">
+				<property name="width" text="宽度" is-style="true" />
+				<property name="height" text="高度" is-style="true" />
+			</property>
+		</properties>
+		<property-editors>
+			<property-editor name="dataListDialog" type="dialog">
+				<dialog-page class-name="ReportDataListConfigDialog" />
+			</property-editor>
+			<property-editor name="itemList" type="list" >
+				<static-data value="true,false" />				
+			</property-editor>
+			 
+			<property-editor name="excelList" type="list">
+				<dynamic-data class-name="ExcelFileListDatasource" method="getDatasource"/>
+			</property-editor>	
+			<property-editor name="createExcelDialog" type="dialog" tip="新建" icon="data.gif">
+				<dialog-page class-name="com.justep.studio.ui.editors.propertypage.CreateExcelDialog"/>	
+			</property-editor>	
+		
+			<property-editor name="layoutType" type="list" > 
+				<static-data value="cell:cell布局,excel:excel布局" />
+			</property-editor>		
+		</property-editors>
+		<toolbar>			
+			<item text="切换到报表设计" method="gotoReportDesigner"> </item> 
+			<item text="退出报表设计" method="closeExcelLayout"> </item> 
+			<!-- 
+			<sperator/>  
+       		<item text="合并单元格" method="mergeCell"/>  
+       		<item text="取消单元格合并" method="cancelCellMerging"/>  
+       		<sperator/> 
+       		<item text="插入行" method="insertRow"/> 
+       		<item text="删除行" method="deleteRow"/> 
+			<sperator/>
+			<item text="插入列" method="insertCol"/> 
+			<item text="删除列" method="deleteCol"/>
+			<sperator/>
+       		<item text="行高列宽..." method="setCellProperties"/> 
+			<sperator/> 
+        	<item text="从Excel导入..." method="importFromExcel"/> 
+           	<sperator/> 
+       		<item text="显示/隐藏网格线" method="showHideCellBorder"/> 
+			-->
+		</toolbar>		
+	</element>	
+	
+	<element name="reportCellSelect" tag-name="reportCellSelect" icon="Report.JPG"   isVirtual="true"  visible="false">
+		<properties>
+			<property name="style" text="样式" editor-ref="styleDialog" use-default="false"/> 
+			<property name="select" text="数据集函数" editor-ref="reportFunDialogPage" is-virtual = 'true'  fixed-value='[...]'/>
+			<property name="colspan" text="列合并"  />
+			<property name="rowspan" text="行合并" />			
+			<property name="is-master-dataset" text="是主表"  editor-ref="booleanList" readonly="true" />
+			<property name="master-dataset" text="主表"  editor-ref="contextComponent" editor-parameter="data" is-id-ref="true"/>		
+			<property name="record-per-page" text="每页显示记录条数"  data-type="integer"/> 
+			<property name="auto-fill-row" text="如果最后一页行数不足，自动填充空白行"  editor-ref="booleanList" readonly="true"/>	
+			<property name="colcount" text="分栏 个数"  data-type="integer"/> 		
+			<group name="全局">
+				<property name="auto-width" text="列自动宽"  editor-ref="booleanList" readonly="true" />				
+				<property name="auto-height" text="行自动高"  editor-ref="booleanList" readonly="true" />	
+				<property name="override-print" text="套打" editor-ref="booleanList" readonly="true" />
+			</group>
+			<group name="行属性">
+				<property name="table-header" text="表头"  editor-ref="booleanList" readonly="true"/>		
+				<property name="table-footer" text="表尾"  editor-ref="booleanList" readonly="true"/>	
+				<property name="page-break" text="换页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="keep-together" text="和其他行显示在一页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="v-visible" text="显示当前行"  editor-ref="booleanList" readonly="true"/>	
+			</group>			
+			<group name="列属性">
+				<property name="h-visible" text="显示当前列" editor-ref="booleanList" readonly="true" />	
+			</group>
+			<group name="格属性">
+				<property name="display-type" text="显示类型"  readonly="true" editor-ref="cellDisplayList" />
+				<property name="format" text="数字、日期时间类型格式化" editor-ref="format-dialog" is-virtual = 'true' fixed-value='[...]' readonly = 'true' enabled-condition="@display-type='number' or @display-type='datetime'"/>
+				<property name="barcode-type" text="条形码类型"  readonly="true" editor-ref="barcode-type" enabled-condition="@display-type='barcode'"/>
+				<property name="barcode-config" text="条形码配置" editor-ref="barcode-config"  enabled-condition="@display-type='barcode' and @barcode-type !='' "/>
+				<property name="individual-table" text="自成表，该区域独立成一张表，除此以外的区域作为表头或表尾"  readonly="true" editor-ref="booleanList" />
+				<property name="alone" text="独立数据集，一般用于动态表头时，把表头作为独立于其他数据集处理"  readonly="true" editor-ref="booleanList" />
+				<property name="bg-color" text="根据条件改变背景色。列：if(RUNITPRICE=18) then 'red' else if(RUNITPRICE=10) then 'yellow' else ''"/>
+			</group>
+		</properties>
+		<property-editors>	
+			<property-editor name="reportFunDialogPage" type="dialog">
+				<dialog-page class-name="com.justep.studio.ui.editors.xui.report.ReportFunDialogPage" />
+			</property-editor>
+			<property-editor name="cellDisplayList" type="list">
+				<static-data value="normal,image,number,datetime,barcode,slant-line" />
+			</property-editor>
+			<property-editor name="format-dialog" type="dialog" class-name="ReportCellFormatPropertyDialog" >
+
+			</property-editor>
+			
+		</property-editors>
+	</element>
+	
+	<element name="reportCellSelecth" tag-name="reportCellSelecth" icon="Report.JPG"   isVirtual="true"  visible="false">
+		<properties>
+			<property name="style" text="样式" editor-ref="styleDialog" use-default="false"/> 
+			<property name="selecth" text="数据集函数" editor-ref="reportFunDialogPage" is-virtual = 'true'  fixed-value='[...]'/>
+			<property name="colspan" text="列合并" />
+			<property name="rowspan" text="行合并" />
+			
+			<property name="is-master-dataset" text="是主表"  editor-ref="booleanList" readonly="true" />
+			<property name="master-dataset" text="主表" editor-ref="contextComponent" editor-parameter="data" is-id-ref="true" />		
+			<property name="record-per-page" text="每页显示记录条数"  data-type="integer"/> 
+			<property name="auto-fill-row" text="如果最后一页行数不足，自动填充空白行"  editor-ref="booleanList" readonly="true"/>	
+			<property name="colcount" text="分栏 个数"  data-type="integer"/> 		
+			<group name="全局">
+				<property name="auto-width" text="列自动宽"  editor-ref="booleanList" readonly="true" />				
+				<property name="auto-height" text="行自动高"  editor-ref="booleanList" readonly="true" />	
+				<property name="override-print" text="套打" editor-ref="booleanList" readonly="true" />
+			</group>
+			<group name="行属性">
+				<property name="table-header" text="表头"  editor-ref="booleanList" readonly="true"/>		
+				<property name="table-footer" text="表尾"  editor-ref="booleanList" readonly="true"/>	
+				<property name="page-break" text="换页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="keep-together" text="和其他行显示在一页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="v-visible" text="显示当前行"  editor-ref="booleanList" readonly="true"/>	
+			</group>			
+			<group name="列属性">
+				<property name="h-visible" text="显示当前列" editor-ref="booleanList" readonly="true" />	
+			</group>
+			<group name="格属性">
+				<property name="display-type" text="显示类型"  readonly="true" editor-ref="cellDisplayList" />
+				<property name="format" text="数字、日期时间类型格式化" editor-ref="format-dialog" is-virtual = 'true' fixed-value='[...]' readonly = 'true' enabled-condition="@display-type='number' or @display-type='datetime'"/>
+				<property name="barcode-type" text="条形码类型"  readonly="true" editor-ref="barcode-type" enabled-condition="@display-type='barcode'"/>
+				<property name="barcode-config" text="条形码配置" editor-ref="barcode-config"  enabled-condition="@display-type='barcode' and @barcode-type !='' "/>
+				<property name="individual-table" text="自成表，该区域独立成一张表，除此以外的区域作为表头或表尾"  readonly="true" editor-ref="booleanList" />
+				<property name="alone" text="独立数据集，一般用于动态表头时，把表头作为独立于其他数据集处理"  readonly="true" editor-ref="booleanList" />
+				<property name="bg-color" text="根据条件改变背景色。列：if(RUNITPRICE=18) then 'red' else if(RUNITPRICE=10) then 'yellow' else ''"/>
+			</group>
+		</properties>
+		<property-editors>	
+			<property-editor name="reportFunDialogPage" type="dialog">
+				<dialog-page class-name="com.justep.studio.ui.editors.xui.report.ReportFunDialogPage" />
+			</property-editor>
+			<property-editor name="cellDisplayList" type="list">
+				<static-data value="normal,image,number,datetime,barcode,slant-line" />
+			</property-editor>
+			<property-editor name="format-dialog" type="dialog" class-name="ReportCellFormatPropertyDialog" >
+			</property-editor>
+		</property-editors>
+	</element>
+	
+	<element name="reportCellGroup" tag-name="reportCellGroup" icon="Report.JPG"   isVirtual="true"  visible="false">
+		<properties>
+			<property name="style" text="样式" editor-ref="styleDialog" use-default="false"/> 
+			<property name="group" text="分组函数" editor-ref="reportFunDialogPage" is-virtual = 'true'  fixed-value='[...]'/>
+			<property name="colspan" text="列合并" />
+			<property name="rowspan" text="行合并" />
+			<property name="group-break" text="按分组换页"  editor-ref="booleanList" readonly="true"/>	
+			<property name="record-per-page" text="每页显示记录条数"  data-type="integer"/> 
+			<property name="auto-fill-row" text="如果最后一页行数不足，自动填充空白行"  editor-ref="booleanList" readonly="true"/>	
+			<property name="colcount" text="分栏 个数"  data-type="integer"/> 
+			<group name="全局">
+				<property name="auto-width" text="列自动宽"  editor-ref="booleanList" readonly="true" />				
+				<property name="auto-height" text="行自动高"  editor-ref="booleanList" readonly="true" />	
+				<property name="override-print" text="套打" editor-ref="booleanList" readonly="true" />
+			</group>
+			<group name="行属性">
+				<property name="table-header" text="表头"  editor-ref="booleanList" readonly="true"/>		
+				<property name="table-footer" text="表尾"  editor-ref="booleanList" readonly="true"/>	
+				<property name="page-break" text="换页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="keep-together" text="和其他行显示在一页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="v-visible" text="显示当前行"  editor-ref="booleanList" readonly="true"/>	
+			</group>			
+			<group name="列属性">
+				<property name="h-visible" text="显示当前列" editor-ref="booleanList" readonly="true" />	
+			</group>
+			<group name="格属性">
+				<property name="display-type" text="显示类型"  readonly="true" editor-ref="cellDisplayList" />
+				<property name="format" text="数字、日期时间类型格式化" editor-ref="format-dialog" is-virtual = 'true' fixed-value='[...]' readonly = 'true' enabled-condition="@display-type='number' or @display-type='datetime'"/>		
+				<property name="barcode-type" text="条形码类型"  readonly="true" editor-ref="barcode-type" enabled-condition="@display-type='barcode'"/>
+				<property name="barcode-config" text="条形码配置" editor-ref="barcode-config"  enabled-condition="@display-type='barcode' and @barcode-type !='' "/>
+				<property name="individual-table" text="自成表，该区域独立成一张表，除此以外的区域作为表头或表尾"  readonly="true" editor-ref="booleanList" />
+				<property name="alone" text="独立数据集，一般用于动态表头时，把表头作为独立于其他数据集处理"  readonly="true" editor-ref="booleanList" />
+				<property name="bg-color" text="根据条件改变背景色。列：if(RUNITPRICE=18) then 'red' else if(RUNITPRICE=10) then 'yellow' else ''"/>
+			</group>
+		</properties>
+		<property-editors>	
+			<property-editor name="reportFunDialogPage" type="dialog">
+				<dialog-page class-name="com.justep.studio.ui.editors.xui.report.ReportFunDialogPage" />
+			</property-editor>
+			<property-editor name="cellDisplayList" type="list">
+				<static-data value="normal,image,number,datetime,barcode,slant-line" />
+			</property-editor>
+			<property-editor name="format-dialog" type="dialog" class-name="ReportCellFormatPropertyDialog" >
+			</property-editor>
+		</property-editors>
+	</element>
+	
+	<element name="reportCellGrouph" tag-name="reportCellGrouph" icon="Report.JPG"   isVirtual="true"  visible="false">
+		<properties>
+			<property name="style" text="样式" editor-ref="styleDialog" use-default="false"/> 	
+			<property name="grouph" text="分组函数" editor-ref="reportFunDialogPage" is-virtual = 'true'  fixed-value='[...]'/>
+			<property name="colspan" text="列合并" />
+			<property name="rowspan" text="行合并" />
+			
+			<property name="group-break" text="按分组换页"  editor-ref="booleanList" readonly="true"/>	
+			<property name="record-per-page" text="每页显示记录条数"  data-type="integer"/> 
+			<property name="auto-fill-row" text="如果最后一页行数不足，自动填充空白行"  editor-ref="booleanList" readonly="true"/>	
+			<property name="colcount" text="分栏 个数"  data-type="integer"/> 
+			<group name="全局">
+				<property name="auto-width" text="列自动宽"  editor-ref="booleanList" readonly="true" />				
+				<property name="auto-height" text="行自动高"  editor-ref="booleanList" readonly="true" />	
+				<property name="override-print" text="套打" editor-ref="booleanList" readonly="true" />
+			</group>
+			<group name="行属性">
+				<property name="table-header" text="表头"  editor-ref="booleanList" readonly="true"/>		
+				<property name="table-footer" text="表尾"  editor-ref="booleanList" readonly="true"/>	
+				<property name="page-break" text="换页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="keep-together" text="和其他行显示在一页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="v-visible" text="显示当前行"  editor-ref="booleanList" readonly="true"/>	
+			</group>			
+			<group name="列属性">
+				<property name="h-visible" text="显示当前列" editor-ref="booleanList" readonly="true" />	
+			</group>
+			<group name="格属性">
+				<property name="display-type" text="显示类型"  readonly="true" editor-ref="cellDisplayList" />
+				<property name="format" text="数字、日期时间类型格式化" editor-ref="format-dialog" is-virtual = 'true' fixed-value='[...]' readonly = 'true' enabled-condition="@display-type='number' or @display-type='datetime'"/>
+				<property name="barcode-type" text="条形码类型"  readonly="true" editor-ref="barcode-type" enabled-condition="@display-type='barcode'"/>
+				<property name="barcode-config" text="条形码配置" editor-ref="barcode-config"  enabled-condition="@display-type='barcode' and @barcode-type !='' "/>
+				<property name="individual-table" text="自成表，该区域独立成一张表，除此以外的区域作为表头或表尾"  readonly="true" editor-ref="booleanList" />
+				<property name="alone" text="独立数据集，一般用于动态表头时，把表头作为独立于其他数据集处理"  readonly="true" editor-ref="booleanList" />
+				<property name="bg-color" text="根据条件改变背景色。列：if(RUNITPRICE=18) then 'red' else if(RUNITPRICE=10) then 'yellow' else ''"/>
+			</group>
+		</properties>
+		<property-editors>	
+			<property-editor name="reportFunDialogPage" type="dialog">
+				<dialog-page class-name="com.justep.studio.ui.editors.xui.report.ReportFunDialogPage" />
+			</property-editor>
+			<property-editor name="cellDisplayList" type="list">
+				<static-data value="normal,image,number,datetime,barcode,slant-line" />
+			</property-editor>
+			<property-editor name="format-dialog" type="dialog" class-name="ReportCellFormatPropertyDialog" >
+			</property-editor>
+		</property-editors>
+	</element>
+	
+
+	<!-- 表达式单元格 =xxxxx -->
+	<element name="reportCellExp" tag-name="reportCellExp"    icon="Report.JPG"   isVirtual="true"  visible="false">
+		<properties>
+			<property name="style" text="样式" editor-ref="styleDialog" use-default="false"/> 
+			<property name="colspan" text="列合并"  />
+			<property name="rowspan" text="行合并" />
+			
+			<property name="h-group" text="水平方向计算范围"  />		
+			<property name="v-group" text="竖直方向计算范围"  />
+			<property name="default-value" text="默认值"/>
+			<group name="全局">
+				<property name="auto-width" text="列自动宽"  editor-ref="booleanList" readonly="true" />				
+				<property name="auto-height" text="行自动高"  editor-ref="booleanList" readonly="true" />	
+				<property name="override-print" text="套打" editor-ref="booleanList" readonly="true" />
+			</group>
+			<group name="行属性">
+				<property name="table-header" text="表头"  editor-ref="booleanList" readonly="true"/>		
+				<property name="table-footer" text="表尾"  editor-ref="booleanList" readonly="true"/>	
+				<property name="page-break" text="换页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="keep-together" text="和其他行显示在一页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="v-visible" text="显示当前行"  editor-ref="booleanList" readonly="true"/>	
+			</group>			
+			<group name="列属性">
+				<property name="h-visible" text="显示当前列" editor-ref="booleanList" readonly="true" />	
+			</group>
+			<group name="格属性">
+				<property name="display-type" text="显示类型"  readonly="true" editor-ref="cellDisplayList" />
+				<property name="format" text="数字、日期时间类型格式化" editor-ref="format-dialog" is-virtual = 'true' fixed-value='[...]' readonly = 'true' enabled-condition="@display-type='number' or @display-type='datetime'"/>
+				<property name="barcode-type" text="条形码类型"  readonly="true" editor-ref="barcode-type" enabled-condition="@display-type='barcode'"/>
+				<property name="barcode-config" text="条形码配置" editor-ref="barcode-config"  enabled-condition="@display-type='barcode' and @barcode-type !='' "/>
+				<property name="bg-color" text="根据条件改变背景色。列：if(RUNITPRICE=18) then 'red' else if(RUNITPRICE=10) then 'yellow' else ''"/>
+				<property name="h-acc" text="是否为横向递增序列（需配合count()运算函数使用）"  editor-ref="booleanList" readonly="true"/>
+				<property name="v-acc" text="是否为纵向递增序列（需配合count()运算函数使用）"  editor-ref="booleanList" readonly="true"/>
+			</group>
+		</properties>
+		<property-editors>	
+			<property-editor name="cellDisplayList" type="list">
+				<static-data value="normal,image,number,datetime,barcode,slant-line" />
+			</property-editor>
+			<property-editor name="format-dialog" type="dialog" class-name="ReportCellFormatPropertyDialog" >
+			</property-editor>
+		</property-editors>
+	</element>
+	
+	<!-- 数据集.字段 -->
+	<element name="reportCellField" tag-name="reportCellField" icon="Report.JPG"   isVirtual="true"  visible="false">
+		<properties>
+			<property name="style" text="样式" editor-ref="styleDialog" use-default="false"/> 			
+			<property name="colspan" text="列合并"  />
+			<property name="rowspan" text="行合并" />
+			<group name="全局">
+				<property name="auto-width" text="列自动宽"  editor-ref="booleanList" readonly="true" />				
+				<property name="auto-height" text="行自动高"  editor-ref="booleanList" readonly="true" />	
+				<property name="override-print" text="套打" editor-ref="booleanList" readonly="true" />
+			</group>
+			<group name="行属性">
+				<property name="table-header" text="表头"  editor-ref="booleanList" readonly="true"/>		
+				<property name="table-footer" text="表尾"  editor-ref="booleanList" readonly="true"/>	
+				<property name="page-break" text="换页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="keep-together" text="和其他行显示在一页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="v-visible" text="显示当前行"  editor-ref="booleanList" readonly="true"/>	
+			</group>			
+			<group name="列属性">
+				<property name="h-visible" text="显示当前列" editor-ref="booleanList" readonly="true" />	
+			</group>
+			<group name="格属性">
+				<property name="display-type" text="显示类型"  readonly="true" editor-ref="cellDisplayList" />
+				<property name="format" text="数字、日期时间类型格式化" editor-ref="format-dialog" is-virtual = 'true' fixed-value='[...]' readonly = 'true' enabled-condition="@display-type='number' or @display-type='datetime'"/>
+				<property name="barcode-type" text="条形码类型"  readonly="true" editor-ref="barcode-type" enabled-condition="@display-type='barcode'"/>
+				<property name="barcode-config" text="条形码配置" editor-ref="barcode-config"  enabled-condition="@display-type='barcode' and @barcode-type !='' "/>
+				<property name="bg-color" text="根据条件改变背景色。列：if(RUNITPRICE=18) then 'red' else if(RUNITPRICE=10) then 'yellow' else ''"/>
+			</group>
+		</properties>
+		<property-editors>	
+			<property-editor name="cellDisplayList" type="list">
+				<static-data value="normal,image,number,datetime,barcode,slant-line" />
+			</property-editor>
+			<property-editor name="format-dialog" type="dialog" class-name="ReportCellFormatPropertyDialog" >
+			</property-editor>
+		</property-editors>
+	</element>
+	
+	<!-- 标准单元格  xxxx -->
+	<element name="reportCellNormal" tag-name="reportCellNormal" icon="Report.JPG"   isVirtual="true"  visible="false">
+		<properties>
+			<property name="style" text="样式" editor-ref="styleDialog" use-default="false"/> 
+			<property name="colspan" text="列合并" />
+			<property name="rowspan" text="行合并" />
+			<group name="全局">
+				<property name="auto-width" text="列自动宽"  editor-ref="booleanList" readonly="true" />				
+				<property name="auto-height" text="行自动高"  editor-ref="booleanList" readonly="true" />	
+				<property name="override-print" text="套打" editor-ref="booleanList" readonly="true" />
+			</group>
+			<group name="行属性">
+				<property name="table-header" text="表头"  editor-ref="booleanList" readonly="true"/>		
+				<property name="table-footer" text="表尾"  editor-ref="booleanList" readonly="true"/>	
+				<property name="page-break" text="换页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="keep-together" text="和其他行显示在一页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="v-visible" text="显示当前行"  editor-ref="booleanList" readonly="true"/>	
+			</group>			
+			<group name="列属性">
+				<property name="h-visible" text="显示当前列" editor-ref="booleanList" readonly="true" />	
+			</group>
+			<group name="格属性">
+				<property name="display-type" text="显示类型"  readonly="true" editor-ref="cellDisplayList" />
+				<property name="format" text="数字、日期时间类型格式化" editor-ref="format-dialog" is-virtual = 'true' fixed-value='[...]' readonly = 'true' enabled-condition="@display-type='number' or @display-type='datetime'"/>
+				<property name="barcode-type" text="条形码类型"  readonly="true" editor-ref="barcode-type" enabled-condition="@display-type='barcode'"/>
+				<property name="barcode-config" text="条形码配置" editor-ref="barcode-config"  enabled-condition="@display-type='barcode' and @barcode-type !='' "/>
+				<property name="bg-color" text="根据条件改变背景色。列：if(RUNITPRICE=18) then 'red' else if(RUNITPRICE=10) then 'yellow' else ''"/>
+			</group>
+		</properties>
+		<property-editors>
+			<property-editor name="cellDisplayList" type="list">
+				<static-data value="normal,image,number,datetime,barcode,slant-line" />
+			</property-editor>
+			<property-editor name="format-dialog" type="dialog" class-name="ReportCellFormatPropertyDialog" >
+			</property-editor>
+		</property-editors>
+	</element>
+	
+		<!-- 图片 #image -->
+	<element name="reportCellImage" tag-name="reportCellImage" icon="Report.JPG"   isVirtual="true"  visible="false">
+		<properties>
+			<property name="style" text="样式" editor-ref="styleDialog" use-default="false"/> 
+
+			<property name="colspan" text="列合并"  />
+			<property name="rowspan" text="行合并" />
+			
+			<property name="image" text="图片"/>
+			<property name="image-size" text="图片大小" editor-ref="imageSizeList"/>
+			<property name="image-layout" text="图片布局" editor-ref="imageLayoutList"/>
+			
+			<group name="全局">
+				<property name="auto-width" text="列自动宽"  editor-ref="booleanList" readonly="true" />				
+				<property name="auto-height" text="行自动高"  editor-ref="booleanList" readonly="true" />	
+				<property name="override-print" text="套打" editor-ref="booleanList" readonly="true" />
+			</group>
+			<group name="行属性">
+				<property name="table-header" text="表头"  editor-ref="booleanList" readonly="true"/>		
+				<property name="table-footer" text="表尾"  editor-ref="booleanList" readonly="true"/>	
+				<property name="page-break" text="换页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="keep-together" text="和其他行显示在一页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="v-visible" text="显示当前行"  editor-ref="booleanList" readonly="true"/>	
+			</group>			
+			<group name="列属性">
+				<property name="h-visible" text="显示当前列" editor-ref="booleanList" readonly="true" />	
+			</group>
+			<group name="格属性">
+				<property name="bg-color" text="根据条件改变背景色。列：if(RUNITPRICE=18) then 'red' else if(RUNITPRICE=10) then 'yellow' else ''"/>
+			</group>
+		</properties>
+		<property-editors>
+			<property-editor name="imageSizeList" type="list" > 				
+				<static-data value="auto,normal" />
+			</property-editor>
+			<property-editor name="imageLayoutList" type="list" > 				
+				<static-data value="autosize,originalsize" />
+			</property-editor>
+			
+		</property-editors>
+	</element>
+	
+	<!-- 对象 #object -->
+	<element name="reportCellObject" tag-name="reportCellObject" icon="Report.JPG"   isVirtual="true"  visible="false">
+		<properties>
+			<property name="style" text="样式" editor-ref="styleDialog" use-default="false"/> 
+
+			<property name="colspan" text="列合并"   />
+			<property name="rowspan" text="行合并"  />			
+			
+			<!-- 目前仅支持嵌套图表  -->
+			<property name="object" text="对象"  readonly="true" editor-ref="objlist" />
+			<group name="全局">
+				<property name="auto-width" text="列自动宽"  editor-ref="booleanList" readonly="true" />				
+				<property name="auto-height" text="行自动高"  editor-ref="booleanList" readonly="true" />	
+				<property name="override-print" text="套打" editor-ref="booleanList" readonly="true" />
+			</group>
+			<group name="行属性">
+				<property name="table-header" text="表头"  editor-ref="booleanList" readonly="true"/>		
+				<property name="table-footer" text="表尾"  editor-ref="booleanList" readonly="true"/>	
+				<property name="page-break" text="换页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="keep-together" text="和其他行显示在一页"  editor-ref="booleanList" readonly="true"/>	
+				<property name="v-visible" text="显示当前行"  editor-ref="booleanList" readonly="true"/>	
+			</group>			
+			<group name="列属性">
+				<property name="h-visible" text="显示当前列" editor-ref="booleanList" readonly="true" />	
+			</group>
+			<group name="格属性">
+				<property name="bg-color" text="根据条件改变背景色。列：if(RUNITPRICE=18) then 'red' else if(RUNITPRICE=10) then 'yellow' else ''"/>
+			</group>
+		</properties>
+		<property-editors>
+			<property-editor name="objlist" type="list">
+				<dynamic-data search-start="window" xpath="//*[@component='/UI/system/components/chart.xbl.xml#chart' or @component='/UI/system/components/decisionGrid.xbl.xml#grid']/@id"/>								
+			</property-editor>
+		</property-editors>		
+	</element>
+	
+</elements>

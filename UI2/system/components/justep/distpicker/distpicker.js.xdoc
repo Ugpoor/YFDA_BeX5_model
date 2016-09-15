@@ -1,0 +1,68 @@
+/**
+	@name $UI/system/components/justep/distpicker/distpicker
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description distpicker，省/市/县选择
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/distpicker#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/distpicker#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		排列样式: form-inline
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/distpicker#bind-provinceRef
+	@attribute 
+	@type string
+	@description 省、直辖市引用
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/distpicker#bind-cityRef
+	@attribute 
+	@type string
+	@description 市、区引用
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/distpicker#bind-districtRef
+	@attribute 
+	@type string
+	@description 县引用
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/distpicker#getProvinceSelect
+	@function
+	@description 获取省选择组件
+	@return {$UI/system/components/justep/distpicker/provinceSelect} 
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/distpicker#getCitySelect
+	@function
+	@description 获取市选择组件
+	@return {$UI/system/components/justep/distpicker/citySelect} 
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/distpicker#getDistrictSelect
+	@function
+	@description 获取县选择组件
+	@return {$UI/system/components/justep/distpicker/districtSelect} 
+*/
+

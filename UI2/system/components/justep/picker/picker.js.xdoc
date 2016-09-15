@@ -1,0 +1,119 @@
+/**
+	@name $UI/system/components/justep/picker/picker
+	@component 
+	@extends $UI/system/components/justep/list/list
+	@model UI2
+	@description picker
+*/
+
+/**
+	@name $UI/system/components/justep/picker/picker#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/picker/picker#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-picker(必须)
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/picker/picker#bind-itemText
+	@attribute 
+	@type string
+	@description 显示项绑定表达式
+*/
+
+/**
+	@name $UI/system/components/justep/picker/picker#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"filter: {string}	过滤条件表达式，表达式中可以使用$model,$object,$parent,$row(执行过滤的数据行对象)变量		
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/picker/picker#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："filter"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/picker/picker#setSelectedIndex
+	@function
+	@description 通过index设置选中项
+	@param {integer} index 索引
+*/
+
+/**
+	@name $UI/system/components/justep/picker/picker#getSelectedIndex
+	@function
+	@description 获取选中项index
+	@return {integer} 选中项index
+*/
+
+/**
+	@name $UI/system/components/justep/picker/picker#setSelectedItem
+	@function
+	@description 设置选中项
+	@param {object} item 项
+*/
+
+/**
+	@name $UI/system/components/justep/picker/picker#getSelectedItem
+	@function
+	@description 获取选中项
+	@return {object} 选中项
+*/
+
+/**
+@name $UI/system/components/justep/picker/picker#valueChangeEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description picker值变化事件
+*/
+ 
+/**
+ @name $UI/system/components/justep/picker/picker#valueChangeEvent.index
+ @property
+ @type {integer}
+ @description 选中项index
+*/ 
+
+/**
+ @name $UI/system/components/justep/picker/picker#valueChangeEvent.item
+ @property
+ @type {object}
+ @description 选中项
+*/ 
+
+/**
+	@name $UI/system/components/justep/picker/picker#onChange
+	@event
+	@description <b>[回调型事件]</b>picker值变化事件
+	@param {$UI/system/components/justep/picker/picker#valueChangeEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+        "index" : 选中项index,
+        "item" : 选中项
+	}
+*/

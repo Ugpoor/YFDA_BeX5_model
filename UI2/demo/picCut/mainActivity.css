@@ -1,0 +1,7 @@
+.img-preview {
+  float: left;
+  margin: 2px;
+
+   background-color: #f7f7f7;
+  overflow: hidden;
+}

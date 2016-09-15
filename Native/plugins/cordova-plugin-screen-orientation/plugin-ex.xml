@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-screen-orientation">
+	<name>屏幕旋转</name>
+	<description>控制屏幕旋转方向</description>
+	
+</plugin>

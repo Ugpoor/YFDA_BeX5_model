@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\zjy\work\WeX5_4673\model\Baas.net\../wwwroot</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>01/21/2016 09:31:13</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>01/21/2016 09:31:13</publishTime>
+    </File>
+    <File Include="bin/Com.Justep.Baas.dll">
+      <publishTime>01/21/2016 11:37:08</publishTime>
+    </File>
+    <File Include="bin/Com.Justep.Sample.Takeout.dll">
+      <publishTime>01/11/2016 14:41:44</publishTime>
+    </File>
+    <File Include="bin/Com.Justep.Sample.WeiXin.dll">
+      <publishTime>01/21/2016 09:31:13</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>01/21/2016 09:31:14</publishTime>
+    </File>
+    <File Include="bin/jpush-api.dll">
+      <publishTime>01/21/2016 09:31:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>01/21/2016 09:31:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>01/21/2016 09:31:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>01/21/2016 09:31:17</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>01/21/2016 09:31:17</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>01/21/2016 09:31:17</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>01/21/2016 09:31:17</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>01/21/2016 09:31:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>01/21/2016 09:31:17</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>01/21/2016 09:31:14</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>01/21/2016 09:31:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>01/21/2016 09:31:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>01/21/2016 09:31:18</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>01/21/2016 09:31:18</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>01/21/2016 09:31:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>01/21/2016 09:31:18</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>01/21/2016 09:31:18</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>01/21/2016 09:31:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>01/21/2016 09:31:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>01/21/2016 09:31:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>01/21/2016 09:31:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>01/21/2016 09:31:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>01/21/2016 09:31:19</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.dll">
+      <publishTime>01/21/2016 09:31:20</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.MP.dll">
+      <publishTime>01/21/2016 09:31:21</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.Open.dll">
+      <publishTime>01/21/2016 09:31:21</publishTime>
+    </File>
+    <File Include="bin/upacp_sdk_net.dll">
+      <publishTime>01/21/2016 09:31:14</publishTime>
+    </File>
+    <File Include="bin/X5BaasService.dll">
+      <publishTime>01/21/2016 14:24:20</publishTime>
+    </File>
+    <File Include="config/db.config.xml">
+      <publishTime>01/20/2016 18:13:06</publishTime>
+    </File>
+    <File Include="Dll/ICSharpCode.SharpZipLib.dll">
+      <publishTime>01/11/2016 12:06:47</publishTime>
+    </File>
+    <File Include="Dll/jpush-api.dll">
+      <publishTime>01/11/2016 13:59:06</publishTime>
+    </File>
+    <File Include="Dll/MySql.Data.dll">
+      <publishTime>01/11/2016 12:38:40</publishTime>
+    </File>
+    <File Include="Dll/upacp_sdk_net.dll">
+      <publishTime>01/11/2016 12:06:47</publishTime>
+    </File>
+    <File Include="jpush/jpush.config.xml">
+      <publishTime>01/11/2016 10:51:34</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>01/21/2016 09:31:14</publishTime>
+    </File>
+    <File Include="unionpay/unionpay.config.xml">
+      <publishTime>01/11/2016 12:12:34</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/21/2016 11:37:17</publishTime>
+    </File>
+    <File Include="weixin/weixin.config.xml">
+      <publishTime>01/11/2016 12:13:20</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

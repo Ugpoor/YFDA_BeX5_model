@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/media/media(bootstrap)" tag-name="div" icon="media.png" text="媒体对象"  
+	    discriminate-condition="hasClass('media')" resizable="false"
+		component-type="layout-container"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+		 
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "media",
+						require: true
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		 <toolbar>
+			<item text="添加media-left" method="addMediaLeft"/>					
+			<item text="添加media-right" method="addMediaRight"/>					
+			<item text="添加media-body" method="addMediaBody"/>					
+		</toolbar>
+		
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div class="media">
+				  <div class="media-left">
+				    <a href="#">
+				      <img class="media-object" src="" alt=""/>
+				    </a>
+				  </div>
+				  <div class="media-body">
+				    <h4 class="media-heading">Media heading</h4>
+				  </div>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="$UI/system/components/bootstrap/media/media(bootstrap)#mediaLeft" tag-name="div" icon="media.png" text="媒体左"  
+	    discriminate-condition="hasClass('media-left')" resizable="false" parent-range="$UI/system/components/bootstrap/media/media(bootstrap)"
+		component-type="layout-container"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+		 
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "media-left",
+						require: true
+					},
+					"1middle":{
+						label: "居中",
+						value: "media-middle",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				  <div class="media-left">
+				    <a href="#">
+				      <img class="media-object" src="" alt=""/>
+				    </a>
+				  </div>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="$UI/system/components/bootstrap/media/media(bootstrap)#mediaRight" tag-name="div" icon="media.png" text="媒体右"  
+	    discriminate-condition="hasClass('media-right')" resizable="false" parent-range="$UI/system/components/bootstrap/media/media(bootstrap)"
+		component-type="layout-container"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+		 
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "media-right",
+						require: true
+					},
+					"1middle":{
+						label: "居中",
+						value: "media-middle",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				  <div class="media-right">
+				    <a href="#">
+				      <img class="media-object" src="" alt=""/>
+				    </a>
+				  </div>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/bootstrap/media/media(bootstrap)#mediaBody" tag-name="div" icon="media.png" text="媒体内容"  
+	    discriminate-condition="hasClass('media-body')" resizable="false" parent-range="$UI/system/components/bootstrap/media/media(bootstrap)"
+		component-type="layout-container"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+		 
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "media-body",
+						require: true
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				  <div class="media-body">
+				    <h4 class="media-heading">Media heading</h4>
+				  </div>
+		   ]]></template>
+		</templates>
+	</element>	
+</elements>

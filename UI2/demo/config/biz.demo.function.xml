@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root> 
+  <item label="演示案例"> 
+    <item label="消息推送" device="m" process="/demo/components/process/ui2/ui2Process" activity="mainActivity"
+      url="$UI/demo/misc/message/message.a" display="solid"/>   
+    <item display="solid" label="流程案例" device="pc"> 
+      <!-- 订单申请 -->  
+      <item label="订单申请" display="hide" process="/demo/misc/process/order/orderProcess"
+        activity="orderReportActivity" url="$UI/demo/misc/process/order/orderReportActivity.a"/>  
+      <item label="订单-部门经理审核" display="hide" process="/demo/misc/process/order/orderProcess"
+        activity="deptActivity" url="$UI/demo/misc/process/order/deptActivity.a"/>  
+      <item label="订单-公司总经理审批" display="hide" process="/demo/misc/process/order/orderProcess"
+        activity="managerActivity" url="$UI/demo/misc/process/order/managerActivity.a"/>  
+      <item label="订单-通报总公司领导" display="hide" process="/demo/misc/process/order/orderProcess"
+        activity="leadActivity" url="$UI/demo/misc/process/order/leadActivity.a"/>  
+      <item label="订单-通知销售员" display="hide" process="/demo/misc/process/order/orderProcess"
+        activity="salesPersonActivity" url="$UI/demo/misc/process/order/salesPersonActivity.a"/>  
+      <item label="订单申请" process="/demo/misc/process/order/orderProcess" activity="mainActivity"
+        url="$UI/demo/misc/process/order/mainActivity.a"/>  
+      <item device="pc" label="查询订单" process="/demo/misc/process/order/orderProcess"
+        activity="queryActivity" url="$UI/demo/misc/process/order/queryActivity.a"/>  
+      <!-- AND -->  
+      <item label="AND" process="/demo/process/process/and/andProcess" activity="mainActivity"
+        url="/demo/process/process/and/mainActivity.a"/>  
+      <item label="AND-活动环节1" display="hide" process="/demo/process/process/and/andProcess"
+        activity="bizActivity1" url="/demo/process/process/and/bizActivity1.a"/>  
+      <item label="AND-活动环节2" display="hide" process="/demo/process/process/and/andProcess"
+        activity="bizActivity2" url="/demo/process/process/and/bizActivity2.a"/>  
+      <item label="AND-活动环节3" display="hide" process="/demo/process/process/and/andProcess"
+        activity="bizActivity3" url="/demo/process/process/and/bizActivity3.a"/>  
+      <item label="AND-活动环节4" display="hide" process="/demo/process/process/and/andProcess"
+        activity="bizActivity4" url="/demo/process/process/and/bizActivity4.a"/>  
+      <!-- 条件分支  -->  
+      <item label="条件分支" process="/demo/process/process/if/ifProcess" activity="mainActivity"
+        url="/demo/process/process/if/mainActivity.a"/>  
+      <item label="条件分支-活动环节1" display="hide" process="/demo/process/process/if/ifProcess"
+        activity="bizActivity1" url="/demo/process/process/if/bizActivity1.a"/>  
+      <item label="条件分支-活动环节2" display="hide" process="/demo/process/process/if/ifProcess"
+        activity="bizActivity2" url="/demo/process/process/if/bizActivity2.a"/>  
+      <item label="条件分支-活动环节3" display="hide" process="/demo/process/process/if/ifProcess"
+        activity="bizActivity3" url="/demo/process/process/if/bizActivity3.a"/> 
+    </item> 
+  </item> 
+</root>

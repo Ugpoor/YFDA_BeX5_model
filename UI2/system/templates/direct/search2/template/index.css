@@ -1,0 +1,19 @@
+ul{
+	margin-bottom:0;
+}
+.x-panel-bottom{
+	border-top:thin solid #E3E3E3;
+}
+.voicePicture{
+	margin-top:20px;
+}
+.sayBtn{
+	border:0px;
+}
+.form-control-feedback{
+	top:12px;
+	left:0;
+}
+.has-feedback .form-control{
+	padding-left:47.5px;
+}

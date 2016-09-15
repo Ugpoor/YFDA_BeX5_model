@@ -1,0 +1,2319 @@
+/**
+	@name $UI/system/components/justep/data/data#Row
+	@class 
+	@extends $UI/system/lib/base/object
+	@category javascript
+	@description data的行数据对象
+	@model UI2
+**/
+
+/**
+	@name $UI/system/components/justep/data/data#Row#data
+	@property
+	@type $UI/system/components/justep/data/data 
+	@description <b>[filed][readonly]</b>行数据的data对象
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/data#Row#parent
+	@function
+	@returns {$UI/system/components/justep/data/data#Row} 
+	@description 行数据的parent对象，当是树形数据时有效
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/data#Row#children
+	@function
+	@returns {List} 
+	@description 获取行数据的子数据，但没有时返回undefined
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/data#Row#hasChildren
+	@function
+	@returns {Boolean} 
+	@description 行数据是否有子数据
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/data#Row#index
+	@function
+	@returns {int} 
+	@description 行数据索引
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/data#Row#assign
+	@function
+	@param	{$UI/system/components/justep/data/data#Row} row 行对象
+	@param	{List<string>} cols 需要赋值的列名数组,缺省全部列
+	@description 整行赋值
+ */ 
+
+/**
+ @name $UI/system/components/justep/data/data#Row#toJson
+ @function
+ @param {object} option 序列化参数
+ <br/><b>参数说明：</b>
+ <xmp>
+	excludeCalculateCol：{boolean} 排除data定义计算列，缺省：false
+	excludeCols：{array[string]} 排除列
+	format: {string} json格式，当设置为：'simple'时输出格式为rows结构为：[{fName:'张三',fAge:18,...},...],其他定义信息保留
+ </xmp>
+ @returns {object} row的json格式序列化对象
+ @description 获取row的json格式序列化对象
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#sort
+ @function
+ @param {function} callback 排序函数,和原生array的sort排序回调一致,回调给出两个row参数
+ <br/><b>参数说明：</b>
+ <xmp>
+	row1：{$UI/system/components/justep/data/data#Row} 比较的行1
+	row2：{$UI/system/components/justep/data/data#Row} 比较的行2
+ </xmp>
+ @description data的所有数据进行排序
+ @example
+  <xmp>
+    this.comp('mainData').sort(function(row1,row2){
+    	return row1.val('fage')>row2.val('fage')?1:-1;
+    });
+  </xmp>
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#Row#cancelUpdates
+ @function
+ @description 还原行修改数据
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#Row#ref
+ @function
+ @param	{String} col 列名
+ @description 返回对应列的观察对象，主要用于感知组件的bind
+ @example
+  <xmp>
+    var row = this.comp('mainData').getCurrentRow();
+    row.ref('fName').get();//获取fName列的值
+    row.ref('fName').set('wang');//给fName列赋值
+  </xmp>  
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#Row#val
+ @function
+ @param	{String} col 列名
+ @param	{String} value 值，可选参数，当没有这个参数时为取值
+ @returns {Object}
+ @description 对应列取值或者赋值
+ @example
+  <xmp>
+    var row = this.comp('mainData').getCurrentRow();
+    row.val('fName');//获取fName列的值
+    row.val('fName','wang');//给fName列赋值
+  </xmp>  
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#Row#oval
+ @function
+ @param	{String} col 列名
+ @returns {Object}
+ @description 保存前获取修改后列原值,保存后同val取得值
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#Row#label
+ @function
+ @param	{String} col 列名
+ @returns {String}
+ @description 对应列的显示名称，主要用于感知组件的bind
+ @example
+  <xmp>
+    var row = this.comp('mainData').getCurrentRow();
+    row.label('fName');//获取fName列的显示名称
+  </xmp>  
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#Row#getID
+ @function
+ @returns {String}
+ @description 获取当前行的ID
+*/
+
+/**
+	@name $UI/system/components/justep/data/data
+	@component 
+	@extends $UI/system/lib/base/modelComponent
+	@description data组件
+	@model UI2
+	@example
+	<xmp>
+	数据刷新说明：
+		原则：
+			1、limit为-1时表示不分页加载数据，一次全部加载，反之
+			2、部分刷新函数提供“增量模式”参数，当使用“增量模式”时原修改数据不会覆盖，只是增加新刷新的数据
+			3、getCount()函数获取的是前端已经加载的记录数，getTotal()函数获取的是全部的记录数，包括分页没有加载的数据。getTotal()函数在refreshData或者loadData后可以使用
+ 		主要函数：
+ 			1、refreshData刷新首页或者全部数据，受limit影响
+			2、loadPageData加载指定页数据，limit!=-1时可以使用
+			3、loadNextPageData根据当前offset加载下一页数据，limit!=-1时可以使用
+			4、loadAllPageData分页时加载所有数据，limit!=-1时可以使用
+	数据新增案例参考：Data#newData
+	数据保存案例参考：Data#saveData
+	遍历当前.W中的Data案例参考：Data.each、Data.eachAll
+	统计函数参考：Data.Count、Data.Sum、Data.Avg、Data.Min、Data.Max
+	过滤条件设置参考：Data#setFilter
+	数据查找参考：Data#find
+	</xmp>
+*/	
+
+/**
+	@name $UI/system/components/justep/data/data.Row
+	@property
+	@type $UI/system/components/justep/data/data#Row 
+	@description data行
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/data.STATE
+	@property
+	@type object 
+	@description data的状态常量
+	@example
+	  包括：Data.STATE.NEW、Data.STATE.DELETE、Data.STATE.EDIT、Data.STATE.NONE
+ */ 
+
+/**
+ @name $UI/system/components/justep/data/data#count
+ @function
+ @param	{function} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'data':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data的记录数，函数返回的是前端当前已经加载的数据的记录数，不包含分页还没有加载到前端的数据（如果从data，只计算和主关联的从数据）
+ @example
+  <xmp>
+    //统计mainData中记录数
+    var count = this.comp('mainData').count();
+    //统计mainData中fName姓“李”的记录数
+    var count = this.comp('mainData').count(function(ev){
+    	var v = ev.source.getValue('fName',ev.row);
+    	return v.indexOf('李')==0;
+    });
+  </xmp>  
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#countByAll
+ @function
+ @param	{function} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'data':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data的全部记录数（如果从data，按全部从数据计算）
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#sum
+ @function
+ @param	{string} column <b>[required]</b>进行统计的列
+ @param	{function} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'data':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data中指定列的合计，函数返回的是前端当前已经加载记录的合计，不包含分页还没有加载到前端的数据，注意：返回的数值精度受js的number精度影响（如果从data，只计算和主关联的从数据）
+ @example
+  <xmp>
+    //统计mainData中年龄fAge合计
+    var sum = this.comp('mainData').sum('fAge');
+    //统计mainData中fName姓“李”的年龄fAge合计
+    var sum = this.comp('mainData').sum('fAge',function(ev){
+    	var v = ev.source.getValue('fName',ev.row);
+    	return v.indexOf('李')==0;
+    });
+  </xmp>  
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#sumByAll
+ @function
+ @param	{string} column <b>[required]</b>进行统计的列
+ @param	{function|$UI/system/components/justep/data/data#Row} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'data':data对象，row：行}，缺省全部有效，当Data是从Data时可以直接给出主Data的Row对象，即计算和主data给定行相关的统计
+ @returns {number}
+ @description 获取data中指定列的合计（如果从data，按全部从数据计算），当Data是从Data时filterCallback可以直接为主Data的Row对象，即计算和主data给定行相关的统计
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#avg
+ @function
+ @param	{string} column <b>[required]</b>进行统计的列
+ @param	{function} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'data':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data中指定列的平均值，函数返回的是前端当前已经加载记录的平均值，不包含分页还没有加载到前端的数据，注意：返回的数值精度受js的number精度影响（如果从data，只计算和主关联的从数据）
+ @example
+  <xmp>
+    //统计mainData中年龄fAge平均值
+    var avg = this.comp('mainData').avg('fAge');
+    //统计mainData中fName姓“李”的年龄fAge平均值
+    var avg = this.comp('mainData').avg('fAge',function(ev){
+    	var v = ev.source.getValue('fName',ev.row);
+    	return v.indexOf('李')==0;
+    });
+  </xmp>  
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#avgByAll
+ @function
+ @param	{string} column <b>[required]</b>进行统计的列
+ @param	{function|$UI/system/components/justep/data/data#Row} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'data':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data中指定列的平均值，（如果从data，按全部从数据计算），当Data是从Data时filterCallback可以直接为主Data的Row对象，即计算和主data给定行相关的统计
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#min
+ @function
+ @param	{string} column <b>[required]</b>进行统计的列
+ @param	{function} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'data':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data中指定列的最小值，函数返回的是前端当前已经加载记录的最小值，不包含分页还没有加载到前端的数据，注意：返回的数值精度受js的number精度影响（如果从data，只计算和主关联的从数据）
+ @example
+  <xmp>
+    //统计mainData中年龄fAge最小值
+    var min = this.comp('mainData').min('fAge');
+    //统计mainData中fName姓“李”的年龄fAge最小值
+    var avg = this.comp('mainData').min('fAge',function(ev){
+    	var v = ev.source.getValue('fName',ev.row);
+    	return v.indexOf('李')==0;
+    });
+  </xmp>  
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#minByAll
+ @function
+ @param	{string} column <b>[required]</b>进行统计的列
+ @param	{function|$UI/system/components/justep/data/data#Row} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'data':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data中指定列的最小值，（如果从data，按全部从数据计算），当Data是从Data时filterCallback可以直接为主Data的Row对象，即计算和主data给定行相关的统计
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#max
+ @function
+ @param	{string} column <b>[required]</b>进行统计的列
+ @param	{function} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'data':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data中指定列的最大值，函数返回的是前端当前已经加载记录的最大值，不包含分页还没有加载到前端的数据，注意：返回的数值精度受js的number精度影响（如果从data，只计算和主关联的从数据）
+ @example
+  <xmp>
+    //统计mainData中年龄fAge最大值
+    var min = this.comp('mainData').max('fAge');
+    //统计mainData中fName姓“李”的年龄fAge最大值
+    var avg = this.comp('mainData').max('fAge',function(ev){
+    	var v = ev.source.getValue('fName',ev.row);
+    	return v.indexOf('李')==0;
+    });
+  </xmp>  
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#maxByAll
+ @function
+ @param	{string} column <b>[required]</b>进行统计的列
+ @param	{function|$UI/system/components/justep/data/data#Row} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'data':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data中指定列的最大值，（如果从data，按全部从数据计算），当Data是从Data时filterCallback可以直接为主Data的Row对象，即计算和主data给定行相关的统计
+*/
+
+/**
+	@name $UI/system/components/justep/data/data#autoLoad
+	@attribute 
+	@property
+	@type boolean
+	@default false
+	@description 自动加载数据，与auto-new属性互斥，默认：false
+*/
+
+/**
+	@name $UI/system/components/justep/data/data#autoNew
+	@attribute 
+	@property
+	@type boolean
+	@default false
+	@description 自动新增数据，与auto-load属性互斥，默认：false
+*/
+
+/**
+	@name $UI/system/components/justep/data/data#deleteDatas
+	@property
+	@type object
+	@description data删除还没有提交数据的可观察数组，可以data.deleteDatas.get()获取Row数组
+*/
+
+/**
+	@name $UI/system/components/justep/data/data#xid
+	@property
+	@type string 
+	@description <b>[readonly]</b>data的xid
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/data#slaveDatas                                                                                   
+	@property 
+	@description 从data的id数组
+*/
+
+/**
+	@name $UI/system/components/justep/data/data#directDeleteMode
+	@property
+	@type boolean 
+	@description 直接删除方式，删除时直接进行数据提交，当为false时删除记录将在saveData时统一提交
+ */ 
+ 
+/**
+	@name $UI/system/components/justep/data/data#confirmDelete
+	@property
+	@type boolean 
+	@description 删除确认提示
+	@see $UI/system/components/justep/data/data#confirmDeleteText
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/data#confirmDeleteText
+	@property
+	@type string 
+	@description 删除确认提示文本
+	@see $UI/system/components/justep/data/data#confirmDelete
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/data#confirmRefresh
+	@property
+	@type boolean 
+	@description 数据修改后未保存刷新时的确认提示
+	@see $UI/system/components/justep/data/data#confirmRefreshText
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/data#confirmRefreshText
+	@property
+	@type string 
+	@description 未保存数据刷新确认提示文本
+	@see $UI/system/components/justep/data/data#confirmRefresh
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/data#limit
+	@attribute
+	@property
+	@type integer 
+	@description 分页取数据的页记录数，等于-1时不执行分页一次取全部数据，运行时谨慎修改，会影响数据导航条分页取数据状态
+ */ 
+	
+/**
+	@name $UI/system/components/justep/data/data#defCols
+	@property
+	@type {object}
+	@description data的列定义，是运行时data组件js对象上所有列的定义
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/data#isTree
+	@attribute 
+	@type boolean
+	@description 是否树形数据
+*/
+
+/**
+	@name $UI/system/components/justep/data/data#master                                                                                   
+	@attribute 
+	@description 主从关系
+	@example
+	<b>包括属性：</b>
+		data 主Data对象
+		column 关联关系
+	<b>xml格式：</b>
+	<xmp>
+		<master data="" column=""/>
+	</xmp>
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#each
+ @function
+ @param	{function} callback 回调函数，执行回调函数的this缺省是row对象，或者可以通过caller指定
+ <br/><b>回调函数给出参数param格式：</b>
+<xmp>  
+ {
+	index: {integer} 行索引,
+	row: {$UI/system/components/justep/data/data#Row} 行对象,
+	cancel: {boolean} 是否忽略遍历,
+	parent: {$UI/system/components/justep/data/data#Row} 行的父对象，当树形数据时有效
+ }
+</xmp>
+ @param	caller {object} 执行callback的this，缺省为：遍历行对象
+ @param	parent {$UI/system/components/justep/data/data#Row} 树型数据遍历时指定开始遍历的父节点行，缺省从根开始
+ @description 遍历当前data的数据，如果是从Data，只遍历和主当前行相关的数据行
+ @example
+  <xmp>
+    var names = [];
+    this.comp('mainData').each(function(param){
+    	names.push(param.row.val('fName'));
+    });
+  </xmp>  
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#eachByPeek
+ @function
+ @param	{function} callback 回调函数，执行回调函数的this缺省是row对象，或者可以通过caller指定
+ <br/><b>回调函数给出参数param格式：</b>
+<xmp>  
+ {
+	index: {integer} 行索引,
+	row: {$UI/system/components/justep/data/data#Row} 行对象,
+	cancel: {boolean} 是否忽略遍历,
+	parent: {$UI/system/components/justep/data/data#Row} 行的父对象，当树形数据时有效
+ }
+</xmp>
+ @param	caller {object} 执行callback的this，缺省为：遍历行对象
+ @param	parent {$UI/system/components/justep/data/data#Row} 树型数据遍历时指定开始遍历的父节点行，缺省从根开始
+ @description 遍历当前data的数据，如果是从Data，只遍历和主当前行相关的数据行，和each的区别在于eachByPeek不会使data的数据行进入依赖链
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#eachAll
+ @function
+ @param	{function} callback 回调函数，执行回调函数的this缺省是row对象，或者可以通过caller指定
+ <br/><b>回调函数给出参数param格式：</b>
+<xmp>  
+ {
+	index: {integer} 行索引,
+	row: {$UI/system/components/justep/data/data#Row} 行对象,
+	cancel: {boolean} 是否忽略遍历,
+	parent: {$UI/system/components/justep/data/data#Row} 行的父对象，当树形数据时有效
+ }
+</xmp>
+ @param	caller {object} 执行callback的this，缺省为：遍历行对象
+ @param	parent {$UI/system/components/justep/data/data#Row} 树型数据遍历时指定开始遍历的父节点行，缺省从根开始
+ @description 遍历当前data的全部数据
+ @example
+  <xmp>
+    var names = [];
+    this.comp('mainData').eachAll(function(param){
+    	names.push(param.row.val('fName'));
+    });
+  </xmp>  
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#eachAllByPeek
+ @function
+ @param	{function} callback 回调函数，执行回调函数的this缺省是row对象，或者可以通过caller指定
+ <br/><b>回调函数给出参数param格式：</b>
+<xmp>  
+ {
+	index: {integer} 行索引,
+	row: {$UI/system/components/justep/data/data#Row} 行对象,
+	cancel: {boolean} 是否忽略遍历,
+	parent: {$UI/system/components/justep/data/data#Row} 行的父对象，当树形数据时有效
+ }
+</xmp>
+ @param	caller {object} 执行callback的this，缺省为：遍历行对象
+ @param	parent {$UI/system/components/justep/data/data#Row} 树型数据遍历时指定开始遍历的父节点行，缺省从根开始
+ @description 遍历当前data的全部数据，和eachAll的区别在于eachAllByPeek不会使data的数据行进入依赖链
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getTreeOption
+ @function
+ @returns {object} 
+	<b>包括属性：</b>
+		isDelayLoad 数据分级加载，进入叶子节点进行数据加载 
+		parentRelation 父关系，形成父子树的父关系
+		rootFilter 根过滤条件，当设置时树形数据将按节点加载数据
+		nodeKindRelation 节点类型关系，data操作时使用指定relation自动记录是否叶子节点信息
+ @description 获取树的定义信息
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#clear
+ @function
+ @description 清空data的所有数据，会触发data的onDataChanged事件
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#cancelUpdates
+ @function
+ @description 还原data的所有修改数据
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#buildFilter
+ @function
+ @returns {string}
+ @description 生成返回过滤字符串
+*/
+
+/**
+	@name $UI/system/components/justep/data/data#getReadonly
+	@function
+ 	@returns {boolean}
+	@description 返回data只读状态
+ */ 
+
+/**
+	@name $UI/system/components/justep/data/data#getColumnIDs
+	@function
+ 	@returns {string}
+	@description 返回使用','分隔的data所有列名
+ */ 
+
+/**
+ @name $UI/system/components/justep/data/data#getFilter
+ @function
+ @param {string} name <b>[required]</b>过滤名称
+ @returns {string}
+ @description 返回指定名称的过滤表达式
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#setFilter
+ @function
+ @param {string} name <b>[required]</b>过滤名称
+ @param {string} filter <b>[required]</b>过滤表达式，标准的KSQL语法，如：SA_OPPerson.sName like '%李%'
+ @description 设置指定名称的过滤表达式，所有的过滤将按and连接
+ @example
+  <xmp>
+    var data = this.comp('mainData');
+    data.setFilter('filter1',"SA_OPPerson.sName like '%李%'");
+    data.setFilter('filter2',"SA_OPPerson.sCode = :operatorCode() or SA_OPPerson.sCode = :code");
+    //给变参code赋值
+    data.filters.setStringVar("code","code_abc");
+    //最终qureyAction的KSQL中where部分将增加 and ((SA_OPPerson.sName like '%李%') and (SA_OPPerson.sCode = :operatorCode() or SA_OPPerson.sCode = 'code_abc'))
+  </xmp>  
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#open
+ @function
+ @description 当data.isLoaded()!=true时执行data的refreshData
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getCurrentRow
+ @function
+ @param {boolean} peek，不影响bind计算链，即想获取当前行但是又不感知当前行变化时可以使用getCurrentRow(true)获取当前行  
+ @description 获取data当前的行
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getCurrentRowID
+ @function
+ @description 获取data当前的行ID
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getFirstRow
+ @function
+ @returns {$UI/system/components/justep/data/data#Row} 行对象  
+ @description 获取data的第一行，没有数据时返回null
+ */
+
+/**
+ @name $UI/system/components/justep/data/data#getLastRow
+ @function
+ @returns {$UI/system/components/justep/data/data#Row} 行对象  
+ @description 获取data的最后一行，没有数据时返回null
+ */
+
+/**
+ @name $UI/system/components/justep/data/data#getRowID
+ @function
+ @param {$UI/system/components/justep/data/data#Row} row，行对象 
+ @returns {object} 
+ @description 获取data的行Id，默认获取当前行的id
+ */
+
+/**
+ @name $UI/system/components/justep/data/data#getRowIndex
+ @function
+ @param {$UI/system/components/justep/data/data#Row} row，行对象
+ @returns {integer}  
+ @description 获取data的行索引
+ */
+
+/**
+ @name $UI/system/components/justep/data/data#loadData
+ @function
+ @param {object} data <b>[required]</b>需要加载的Json数据，格式同biz层序列化格式
+ @param {boolean} append 数据增加模式 true/false
+ @param {$UI/system/components/justep/data/data#Row} parent 树形数据时增加数据的父，为null时数据加载到根下
+ @param {integer} index 加载数据的插入位置,缺省数据插入到末尾
+ @param {boolean} override 当出现id相同的行时，进行数据覆盖替换
+ @description 加载数据
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#toJson
+ @function
+ @param {object} option 序列化参数
+ <br/><b>参数说明：</b>
+ <xmp>
+	onlyChanged：{boolean} 只序列化data的变化行，缺省：false
+	excludeCalculateCol：{boolean} 排除data定义计算列，缺省：false
+	excludeCols：{array[string]} 排除列
+ 	format: {string} json格式，当设置为：'simple'时输出格式为{fName:'张三',fAge:18,...}
+ </xmp>
+ @returns {object} data的json格式序列化对象
+ @description 获取data的json格式序列化对象,注：兼容原版本的changed、excludeCalculateCol参数用法
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#exist
+ @function
+ @param {string} rowID
+ @returns {boolean}
+ @description 判断行是否存在，只判断当前已经加载的数据
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getUserData
+ @function
+ @param {string} name <b>[required]</b>名称
+ @param {$UI/system/components/justep/data/data#Row} row 行，在指定行上获取用户数据，当不给时获取全局用户扩展数据
+ @returns {object}
+ @description 获取用户扩展数据
+ @see $UI/system/components/justep/data/data#setUserData
+ @example
+  <xmp>
+    典型用法：
+    1、当queryAction或者createAction返回Table时通过table.getProperties().put("name", "beijing")设置值可以使用this.comp(dataID).getUserData('name')获取
+    2、和setUserData函数配合使用扩展data的状态或者行状态
+    注意：5.2.6及以后版本提供    
+
+    典型用法1案例：
+    //biz端java中createAction设置扩展属性key
+	public static Table create(Table table, String concept, Map<String, String> defaultValues, String fnModel) {
+		Table t = BizData.create(table, concept, defaultValues, fnModel);
+		t.getProperties().put("key", "password");
+		return t;
+	}
+	//前端js中通过data获取    
+    this.comp('mainData').getUserData('key');
+    典型用法2案例：
+    //给当前行增加key
+    var data = this.comp('mainData');
+    var row = data.getCurrentRow();
+    data.setUserData('key','abcdefg',row);
+    //读取行的key
+    data.getUserData('key', row);    
+  </xmp>        
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#setUserData
+ @function
+ @param {string} name <b>[required]</b>名称
+ @param {string} value <b>[required]</b>数据
+ @param {$UI/system/components/justep/data/data#Row} row 行，在指定行上设置扩展用户数据，当不给时设置全局用户扩展数据
+ @description 设置用户扩展数据
+ @see $UI/system/components/justep/data/data#getUserData
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getAggregateValue
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @returns {object}
+ @description 通过统计列名获取统计值，统计值来源于后端queryAction的aggregate参数定义，详细请参考queryAction
+ @example
+ <xmp>
+  注意：
+  1、返回都是字符串类型
+  2、统计值更新依赖refreshData，data设置数据分页加载取后续页数据时不会刺激统计计算更新
+  后端queryAction的aggregate参数定义：count(SA_OPPerson) as personCount
+ //前端js中获取
+ this.comp('mainData').getAggregateValue('personCount')
+ </xmp>
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getValue
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @param {$UI/system/components/justep/data/data#Row} row 行，默认：当前行
+ @returns {object}
+ @description 通过列名和行获取列的值
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getOriginalValue
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @param {$UI/system/components/justep/data/data#Row} row 行，默认：当前行
+ @returns {object}
+ @description 通过列名和行获取列的原值，保存前获取修改后列原值,保存后同getValue取的值
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#setValue
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @param {object} value <b>[required]</b>值
+ @param {$UI/system/components/justep/data/data#Row} row 行，默认：当前行
+ @description 通过列名和行设置列的值
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getValueByID
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @param {string} rowid 行ID，默认：当前行ID
+ @returns {object}
+ @description 通过列名和行ID获取列的值，函数会遍历所有数据，不要在循环中大量使用以免引发性能问题
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#setValueByID
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @param {object} value <b>[required]</b>值
+ @param {string} rowid 行ID，默认：当前行ID
+ @description 通过列名和行设置列的值，函数会遍历所有数据，不要在循环中大量使用以免引发性能问题
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getRowByID
+ @function
+ @param {string} rowid 行ID，默认：当前行ID
+ @returns {$UI/system/components/justep/data/data#Row}
+ @description 根据行ID获取Row，函数会遍历所有数据，不要在循环中大量使用以免引发性能问题
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#val
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @param {$UI/system/components/justep/data/data#Row} row 行，默认：当前行
+ @returns {object}
+ @description 通过列名和行获取值等同于getValue
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#label
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @returns {string}
+ @description 通过列名获取显示名称
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#ref
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @param {$UI/system/components/justep/data/data#Row} row 行，默认：当前行
+ @returns {object}
+ @description 通过列名获取列绑定对象
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#setOrderBy
+ @function
+ @param {string} relation <b>[required]</b>关系名
+ @param {integer} type OrderBy的类型0:DESC/1:ASC,为null时清空对应关系的排序
+ @description 设置查询排序
+*/
+	
+/**
+ @name $UI/system/components/justep/data/data#getOrderBy
+ @function
+ @param {string} relation <b>[required]</b>关系名
+ @returns {integer} OrderBy的类型0:DESC/1:ASC
+ @description 获取查询排序
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#clearOrderBy
+ @function
+ @description 清除data上的OrderBy定义
+*/
+		
+/**
+ @name $UI/system/components/justep/data/data#first
+ @function
+ @description 移动到第一条
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#last
+ @function
+ @description 移动到最后一条
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#next
+ @function
+ @description 移动到下一条
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#pre
+ @function
+ @description 移动到前一条
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#to
+ @function
+ @param {$UI/system/components/justep/data/data#Row|string} row 行或者行ID
+ @description 移动到指定行
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#find
+ @function
+ @param {List} fields <b>[required]</b>列列表
+ @param {List} values <b>[required]</b>值列表
+ @param {boolean} first 是否只是返回第一条
+ @param {boolean} caseInsensitive 忽略大小写
+ @param {boolean} partialKey 模糊查询
+ @param {boolean} all data所有数据查找，当是从Data时all==false只查找和主关联的行数据
+ @returns {List} 行对象数组
+ @description 数据查找
+ @example
+  根据列和值匹配进行数据查找，可以匹配多列
+ <xmp>
+ //查找fName中包含"李"的提一条数据
+ var rows = this.comp('mainData').find(['fName'],['李'],true,true,true);
+ if(rows.length==0) alert('没有符合条件数据');
+ //查找fName="李四"，fAge=18的数据
+ var rows = this.comp('mainData').find(['fName','fAge'],['李',18]);
+ if(rows.length==0) alert('没有符合条件数据');
+ </xmp>
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#add
+ @function
+ @param {object} defaultValue <b>[required]</b>行默认值
+ <br/><b>参数格式：</b>
+<xmp>
+	{
+		列名:值,
+		列名:值,
+ 	 	...
+	}
+</xmp>	
+ @param {$UI/system/components/justep/data/data#Row} parent 新增数据的父对象
+ @description 前端新增一行数据，状态需要开发者设定
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#remove
+ @function
+ @param {$UI/system/components/justep/data/data#Row} row <b>[required]</b>行
+ @description 移除一行数据，只在前端移除不影响数据库
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#newData
+ @function
+ @param {Object} options 新增参数，支持多行新增
+<br/><b>参数格式：</b>
+<xmp>
+	{
+		"parent" : $UI/system/components/justep/data/data#Row - 树形数据的父（非树形不需要）,
+		"index" : integer - 新增数据的位置，缺省新增到最后,
+		"defaultValues" : array - 新增行的默认值数组 ，数组的长度决定新增行数，数组中的对象是列的默认值
+            defaultValues格式：
+              	[
+              		{列名:默认值,...},
+              		{列名:默认值,...},
+              		...
+              	]
+		"onError" : function - 失败回调函数，function(event);
+         	event的格式：
+         		{
+         			"source" : {Data} - 组件的js对象,
+         			"errorType" : {string} - 'server',
+         			"errorNode" : {object} - 错误信息,
+         			"httpError" : {boolean} - 是否http请求失败,
+         			"httpState" : {string} - http请求返回码
+         		}
+		"onSuccess" : function - 成功回调函数，function(event);
+         	event的格式：
+         		{
+         			"source" : {Data} - 组件的js对象,
+         			"rows"    : {List} - 新增行的数组
+              	}
+	}
+</xmp>              
+ @returns {List} 返回新增行的rows
+ @description 业务数据新增方法，支持返回多行
+ @example 
+ <xmp>
+ 	//新增两行数据到最后，并且给出sName和sCode的默认值
+ 	var data = this.comp('mainData');
+ 	var options = {
+ 		defaultValues : [
+ 			{sName:'a1',sCode:'b1'},
+ 			{sName:'a2',sCode:'b2'}
+ 		]
+ 	};	
+ 	data.newData(options);
+ </xmp>
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#deleteData
+ @function
+ @param {List} rows 行数组，缺省当前行
+ @param {Object} options 删除参数
+<br/><b>参数格式：</b>
+ <xmp>
+	{
+		"async" : {boolean} - 异步执行，默认：false，
+		"confirm" : {boolean} - 删除确认提示，缺省使用属性confirmDelete
+		"onError" : {function} - 失败回调，function(event),
+			event的格式：
+				{
+					"source" : {Data} - 组件的js对象,
+					"errorType" : {string} - 'server',
+					"errorNode" : {object} - 错误信息,
+					"httpError" : {boolean} - 是否http请求失败,
+					"httpState" : {string} - http请求返回码
+				}
+		"onSuccess" : {function} - 成功回调，function(event),
+			event的格式：
+				{
+					"source" : {Data} - 组件的js对象
+				}
+	}
+ </xmp>	
+ @returns {boolean}
+ @see $UI/system/components/justep/data/data#directDeleteMode
+ @see $UI/system/components/justep/data/data#confirmDelete
+ @description 业务数据删除方法，当directDeleteMode=true时直接提交后台删除，当confirmDelete=true时会弹出删除确认框
+ @example 
+ <xmp>
+ //不提示直接提交后台删除当前行
+ var data = this.comp('mainData');
+ var confirmDelete = data.confirmDelete;
+ var directDeleteMode = data.directDeleteMode;
+ try{
+	 data.confirmDelete = false;
+	 data.directDeleteMode = true;
+	 data.deleteData(data.getCurrentRow());
+ }finally{
+ 	data.confirmDelete = confirmDelete;
+ 	data.directDeleteMode = directDeleteMode;
+ }
+ </xmp>
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#doDeleteAfter
+ @function
+ @param {boolean} success 删除是否成功，true/false
+ @param {Object} options 删除参数，同deleteData函数的options参数
+ @param {Object} params 开发者传递的参数，可在onAfterDelete、onDeleteError事件或者onSuccess、onError回调接收使用
+ @description 业务数据删除后函数，当实现onCustomDelete后需要开发者根据成功失败调用
+  @see $UI/system/components/justep/data/data#refreshData
+  @see $UI/system/components/justep/data/data#onCustomRefresh
+**/
+
+/**
+ @name $UI/system/components/justep/data/data#saveData
+ @function
+ @param {Object} options 新增参数
+<br/><b>参数格式：</b>
+ <xmp>
+	{
+		"onError" : {function} - 失败回调，function(event),
+			event的格式：
+	         		{
+	         			"source" : {Data} - 组件的js对象,
+	         			"errorType" : {string} - 'server',
+	         			"errorNode" : {object} - 错误信息,
+	         			"httpError" : {boolean} - 是否http请求失败,
+	         			"httpState" : {string} - http请求返回码
+	         		}
+		"onSuccess" : {function} - 成功回调，function(event),
+			event的格式：
+	         		{
+	         			"source" : {Data} - 组件的js对象
+	              	}
+		"ignoreInvalid" : {boolean} - 保存时忽略有效性校验，默认false
+		"onlySelf" : {boolean} - 只保存自己不保存从
+	}
+ </xmp>	
+ @returns {boolean} 
+ @description 业务数据保存方法，向后端提交修改的数据，包括从Data数据
+ @example 
+ <xmp>
+ 	//保存成功后刷新data
+ 	this.comp('mainData').saveData(
+	 {
+	 	"onSuccess" : function(event){
+	 		event.source.refreshData();
+	 	}
+ 	 });
+ </xmp>		
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#doSaveAfter
+ @function
+ @param {boolean} success 保存是否成功，true/false
+ @param {Object} options 保存参数，同saveData函数的options参数
+ @param {Object} params 开发者传递的参数，可在onAfterSave、onSaveError事件或者onSuccess、onError回调接收使用
+ @description 当实现异步数据保存时，通过函数来完成保存后的逻辑
+ @see $UI/system/components/justep/data/data#saveData
+ @see $UI/system/components/justep/data/data#onCustomSave
+**/
+
+/**
+ @name $UI/system/components/justep/data/data#deleteAllData
+ @function
+ @description 删除data所有数据，感知directDeleteMode和confirmDelete属性设置
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#applyUpdates
+ @function
+ @description 进行数据状态的更新，设置data的数据行状态，如：清除删除行，清除编辑状态，版本号维护；通常在数据提交服务端成功后调用
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#refreshData
+ @function
+ @param {Object} options 刷新参数
+<br/><b>参数格式：</b>
+ <xmp>
+	{
+		"async" : {boolean} - 异步执行，默认：false，
+		"append" : {boolean} - 增量刷新，不清除原有数据，默认：false，
+		"confirm" : {boolean} - 刷新提示，缺省使用属性confirmRefresh
+		"onError" : {function} - 失败回调，function(event),
+			event的格式：
+				{
+					"source" : {Data} - 组件的js对象,
+					"errorType" : {string} - 'server',
+					"errorNode" : {object} - 错误信息,
+					"httpError" : {boolean} - 是否http请求失败,
+					"httpState" : {string} - http请求返回码
+				}
+		"onSuccess" : {function} - 成功回调，function(event),
+			event的格式：
+				{
+					"source" : {Data} - 组件的js对象
+				}
+	}
+ </xmp>	
+ @returns {boolean}
+ @see $UI/system/components/justep/data/data#limit
+ @see $UI/system/components/justep/data/data#confirmRefresh
+ @see $UI/system/components/justep/data/data#loadPageData
+ @see $UI/system/components/justep/data/data#loadNextPageData
+ @see $UI/system/components/justep/data/data#loadAllPageData
+ @description 业务数据刷新，会刺激从data级联刷新，当limit!=-1时取第一页数据，当limit=-1时取全部数据，当confirmRefresh=true并且数据是编辑或者新增状态时刷新数据时显示刷新确认提示框
+ @example 
+ <xmp>
+ //强制刷新data
+ var data = this.comp('mainData');
+ var confirmRefresh = data.confirmRefresh;
+ try{
+	 data.confirmRefresh = false;
+	 data.refreshData();
+ }finally{
+ 	data.confirmRefresh = confirmRefresh;
+ }
+ </xmp>		
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#doRefreshAfter
+ @function
+ @param {boolean} success 刷新是否成功，true/false
+ @param {Object} options 刷新参数，同refreshData函数的options参数
+ @param {Object} params 开发者传递的参数，可在onAfterRefresh、onRefreshError事件或者onSuccess、onError回调接收使用
+ @description 业务数据刷新后函数，当实现onCustomDelete后需要开发者根据成功失败调用
+  @see $UI/system/components/justep/data/data#refreshData
+  @see $UI/system/components/justep/data/data#onCustomRefresh
+**/
+
+/**
+ @name $UI/system/components/justep/data/data#loadNextPageData
+ @function
+ @param {Object} options 刷新参数
+<br/><b>参数格式：</b>
+ <xmp>
+	{
+		"onError" : {function} - 失败回调，function(event),
+			event的格式：
+	         		{
+	         			"source" : {Data} - 组件的js对象,
+	         			"errorType" : {string} - 'server',
+	         			"errorNode" : {object} - 错误信息,
+	         			"httpError" : {boolean} - 是否http请求失败,
+	         			"httpState" : {string} - http请求返回码
+	         		}
+		"onSuccess" : {function} - 成功回调，function(event),
+			event的格式：
+	         		{
+	         			"source" : {Data} - 组件的js对象
+	              	}
+	}
+ </xmp>	
+ @returns {boolean}
+ @description 加载下一页的数据，受offset、limit影响
+ @see $UI/system/components/justep/data/data#getOffset
+ @see $UI/system/components/justep/data/data#setOffset
+ @see $UI/system/components/justep/data/data#limit
+ @see $UI/system/components/justep/data/data#refreshData
+ @see $UI/system/components/justep/data/data#loadPageData
+ @see $UI/system/components/justep/data/data#loadAllPageData
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#loadAllPageData
+ @function
+ @param {Object} options 刷新参数
+<br/><b>参数格式：</b>
+ <xmp>
+	{
+		"onError" : {function} - 失败回调，function(event),
+			event的格式：
+	         		{
+	         			"source" : {Data} - 组件的js对象,
+	         			"errorType" : {string} - 'server',
+	         			"errorNode" : {object} - 错误信息,
+	         			"httpError" : {boolean} - 是否http请求失败,
+	         			"httpState" : {string} - http请求返回码
+	         		}
+		"onSuccess" : {function} - 成功回调，function(event),
+	    	event的格式：
+	         		{
+	         			"source" : {Data} - 组件的js对象
+	              	}
+	}
+ </xmp>	
+ @returns {boolean}
+ @description 在分页状态加载所有数据
+ @see $UI/system/components/justep/data/data#getOffset
+ @see $UI/system/components/justep/data/data#setOffset
+ @see $UI/system/components/justep/data/data#limit
+ @see $UI/system/components/justep/data/data#refreshData
+ @see $UI/system/components/justep/data/data#loadPageData
+ @see $UI/system/components/justep/data/data#loadNextPageData
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#loadPageData
+ @function
+ @param {integer} pageIndex <b>[required]</b>页索引
+ @param {Object} options 刷新参数
+<br/><b>参数格式：</b>
+ <xmp>
+	{
+		"async" : {boolean} - 异步执行，默认：false，
+		"confirm" : {boolean} - 刷新提示，缺省使用属性confirmRefresh
+		"onError" : {function} - 失败回调，function(event),
+			event的格式：
+	         	{
+	         		"source" : {Data} - 组件的js对象,
+	         		"errorType" : {string} - 'server',
+	         		"errorNode" : {object} - 错误信息,
+	         		"httpError" : {boolean} - 是否http请求失败,
+	         		"httpState" : {string} - http请求返回码
+	         	}
+		"onSuccess" : {function} - 成功回调，function(event),
+	    	event的格式：
+	         	{
+	         		"source" : {Data} - 组件的js对象
+	            }
+	}
+ </xmp>	
+ @returns {boolean}
+ @description 分页模式下加载第N页数据
+ @see $UI/system/components/justep/data/data#getOffset
+ @see $UI/system/components/justep/data/data#setOffset
+ @see $UI/system/components/justep/data/data#limit
+ @see $UI/system/components/justep/data/data#refreshData
+ @see $UI/system/components/justep/data/data#loadNextPageData
+ @see $UI/system/components/justep/data/data#loadAllPageData
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getCount
+ @function
+ @param {$UI/system/components/justep/data/data#Row} parent 树形数据的父
+ @returns {integer}
+ @description 获取data记录数
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getTotal
+ @function
+ @param {$UI/system/components/justep/data/data#Row} parent 树形数据的父
+ @returns {integer}
+ @description 返回data的全部记录数,包括分页没有加载的记录数
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#setTotal
+ @function
+ @param {integer} count 全部记录数
+ @param {$UI/system/components/justep/data/data#Row} parent 树形数据的父
+ @description 设置全部记录数,包括分页没有加载的记录数
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getOffset
+ @function
+ @param {$UI/system/components/justep/data/data#Row} parent 树形数据的父
+ @returns {integer}
+ @description 返回data加载数据的偏移量
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#isSelfChanged
+ @function
+ @returns {boolean}
+ @description 判断data自身是否修改
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#isSlaveChanged
+ @function
+ @returns {boolean}
+ @description 判断从data是否修改
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#isChanged
+ @function
+ @returns {boolean}
+ @description 判断data是否修改,包括从data的修改状态
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getRowState
+ @function
+ @param {$UI/system/components/justep/data/data#Row} row <b>[required]</b>行
+ @returns {$UI/system/components/justep/data/data.STATE}
+ @description 获取对应行的状态
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#setRowState
+ @function
+ @param {$UI/system/components/justep/data/data#Row} row <b>[required]</b>行
+ @param {$UI/system/components/justep/data/data.STATE} state <b>[required]</b>状态 
+ @description 设置行的状态，特殊说明：不能设置delete状态，使用deleteData函数实现
+ @see $UI/system/components/justep/data/data#deleteData
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getChangedRows
+ @function
+ @param {$UI/system/components/justep/data/data.STATE} type <b>[required]</b>修改类型，取值范围：Data.STATE.DELETE/Data.STATE.NEW/Data.STATE.EDIT
+ @returns {list<$UI/system/components/justep/data/data#Row>}
+ @description 获取指定修改状态的行数组
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getChangedIDs
+ @function
+ @param {$UI/system/components/justep/data/data.STATE} type <b>[required]</b>修改类型,Data.STATE.DELETE/Data.STATE.NEW/Data.STATE.EDIT
+ @param {String} delim 行ID之间的分隔符，缺省：","
+ @returns {String}
+ @description 获取指定修改状态的行ID字符串
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#isValid
+ @function
+ @param {boolean} force 强制判断约束，忽略数据修改状态
+ @returns {boolean}
+ @description 判断data是否违反约束
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#exchangeRow
+ @function
+ @param {$UI/system/components/justep/data/data#Row} row1 <b>[required]</b>行1
+ @param {$UI/system/components/justep/data/data#Row} row2 <b>[required]</b>行2 
+ @description 数据行进行交换位置
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#getInvalidInfo
+ @function
+ @param {boolean} force 强制判断约束，忽略数据修改状态
+ @returns {string}
+ @description 获取data违反约束的信息
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#disableRecordChange
+ @function
+ @description 禁止data数据修改状态变化
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#enabledRecordChange
+ @function
+ @description 启用data数据修改状态变化
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#isCalculateCol
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @returns {boolean}
+ @description 判断列是否为计算列
+*/
+
+/**
+	@name $UI/system/components/justep/data/data#onCreate
+	@event
+	@description <b>[回调型事件]</b>组件创建时
+	@param {$UI/system/components/justep/common/event#ModelEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/data/data#DataChangeEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 数据发生变化事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#DataChangeEvent.changedSource
+ @property
+ @type {$UI/system/components/justep/data/data}
+ @description 触发变化的组件的js对象，当从data触发时返回从data对象
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#DataChangeEvent.selfChanged
+ @property
+ @type {boolean}
+ @description 是否自身变化，false：从data触发的变化
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#DataChangeEvent.type
+ @property
+ @type {string}
+ @description 触发变化的类型，包括：new、delete、refresh、valueChanged、clear、slaveDataChanged、exchangeRow，其他参数根据触发类型不同给出不同参数，参考onAfterNew等事件参数
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onDataChange
+	@event
+	@description <b>[回调型事件]</b>数据发生变化（包括新增、刷新、删除、修改引起的变化），感知从data的变化
+	@param {$UI/system/components/justep/data/data#DataChangeEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"changedSource" ：触发变化的组件的js对象，当从data触发时返回从data对象,
+		"selfChanged" : 是否自身变化，false：从data触发的变化,
+		"type" : 触发变化的类型，包括：new、delete、refresh、valueChanged、clear、slaveDataChanged、exchangeRow，其他参数根据触发类型不同给出不同参数，参考onAfterNew等事件参数
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/data/data#ValueChangeEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 值发生变化事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#ValueChangeEvent.row
+ @property
+ @type {$UI/system/components/justep/data/data#Row}
+ @description 行
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#ValueChangeEvent.col
+ @property
+ @type {string}
+ @description 列
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#ValueChangeEvent.newValue
+ @property
+ @type {object}
+ @description 新值
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#ValueChangeEvent.oldValue
+ @property
+ @type {object}
+ @description 旧值
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onValueChange
+	@event
+	@description <b>[回调型事件]</b>数据变化
+	@param {$UI/system/components/justep/data/data#ValueChangeEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"row" : 行,
+		"col" : 列,
+		"newValue" : 新值,
+		"oldValue" : 旧值
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/data/data#ValueChangedEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 值变化后事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#ValueChangedEvent.row
+ @property
+ @type {$UI/system/components/justep/data/data#Row}
+ @description 行
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#ValueChangedEvent.col
+ @property
+ @type {string}
+ @description 列
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#ValueChangedEvent.value
+ @property
+ @type {object}
+ @description 新值
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onValueChanged
+	@event
+	@description <b>[回调型事件]</b>数据变化后
+	@param {$UI/system/components/justep/data/data#ValueChangedEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"row" : 行,
+		"col" : 列,
+		"value" : 值
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/data/data#IndexChangedEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 行记录变化后事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#IndexChangedEvent.row
+ @property
+ @type {$UI/system/components/justep/data/data#Row}
+ @description 行
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#IndexChangedEvent.originalRow
+ @property
+ @type {string}
+ @description 原行
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onIndexChanged
+	@event
+	@description <b>[回调型事件]</b>行记录变化
+	@param {$UI/system/components/justep/data/data#IndexChangedEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"row" : 行,
+		"originalRow" : 原行
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/data/data#IndexChangingEvent
+@extends $UI/system/components/justep/data/data#IndexChangedEvent
+@category eventclass
+@class
+@model UI2
+@description 行记录变化中事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#IndexChangingEvent.cancel
+ @property
+ @type {boolean}
+ @description 取消切换index
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onIndexChanging
+	@event
+	@description <b>[回调型事件]</b>行记录变化中
+	@param {$UI/system/components/justep/data/data#IndexChangingEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"row" : 行,
+		"originalRow" : 原行,
+		"cancel" : 取消切换index
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/data/data#LoadSlaveEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description data加载从数据事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#LoadSlaveEvent.masterRow
+ @property
+ @type {$UI/system/components/justep/data/data#Row}
+ @description 主Data的当前行
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#LoadSlaveEvent.loaded
+ @property
+ @type {boolean}
+ @description 是否完成加载
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onLoadSlave
+	@event
+	@description <b>[回调型事件]</b>data加载从数据
+	@param {$UI/system/components/justep/data/data#LoadSlaveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+		"masterRow" : 主Data的当前行
+		"loaded" : 是否完成加载
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/data/data#BeforeNewEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 业务数据新增前事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#BeforeNewEvent.option
+ @property
+ @type {object}
+ @description 新增时传入的option参数，包括：parent,defaultValues
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#BeforeNewEvent.cancel
+ @property
+ @type {boolean}
+ @description 可修改，设置为true后中断当前new动作
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onBeforeNew
+	@event
+	@description <b>[回调型事件]</b>业务数据新增前
+	@param {$UI/system/components/justep/data/data#BeforeNewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"option" : 新增时传入的option参数，包括：parent,defaultValues
+		"cancel" : 可修改，设置为true后中断当前new动作
+	}
+	</xmp>
+*/
+
+/**
+@name $UI/system/components/justep/data/data#CustomNewEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 业务数据新增前事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#CustomNewEvent.option
+ @property
+ @type {object}
+ @description 新增时传入的option参数，包括：parent,defaultValues
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#CustomNewEvent.data
+ @property
+ @type {list<object>}
+ @description 行数据对象数组[{sName:'LiMing',sAge:18},...]，数组的length决定新增的行数
+ <br/><b>结构如下：</b>
+ <xmp> 
+				[
+					{
+						"列名" : 默认值,
+						"列名" : 默认值,
+						...
+					},
+					...
+				]
+ </xmp>	
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onCustomNew
+	@event
+	@description <b>[回调型事件]</b>业务数据新增接管，完全接管new动作，需要接管此事件完成data的newData逻辑
+	@see $UI/system/components/justep/data/data.STATE
+	@see $UI/system/components/justep/data/data#newData
+	@param {$UI/system/components/justep/data/data#CustomNewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"option" : 新增时传入的option参数，包括：parent,defaultValues
+		"data" : 行数据对象数组[{sName:'LiMing',sAge:18},...]，数组的length决定新增的行数
+			data格式：
+				[
+					{
+						"列名" : 默认值,
+						"列名" : 默认值,
+						...
+					},
+					...
+				]
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/data/data#AfterNewEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 业务数据新增前事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#AfterNewEvent.option
+ @property
+ @type {object}
+ @description 新增时传入的option参数，包括：parent,defaultValues
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#AfterNewEvent.rows
+ @property
+ @type {list<$UI/system/components/justep/data/data#Row>}
+ @description 新增的行数组
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onAfterNew
+	@event
+	@description <b>[回调型事件]</b>业务数据新增后
+	@param {$UI/system/components/justep/data/data#AfterNewEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"option" : 新增时传入的option参数，包括：parent,defaultValues
+		"rows" : {List} 新增的行数组
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/data/data#BeforeDeleteEvent
+@extends $UI/system/components/justep/data/data#AfterDeleteEvent
+@category eventclass
+@class
+@model UI2
+@description 业务数据删除前事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#BeforeDeleteEvent.cancel
+ @property
+ @type {boolean}
+ @description 可修改，设置为true后中断当前delete动作
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onBeforeDelete
+	@event
+	@description <b>[回调型事件]</b>业务数据删除前
+	@param {$UI/system/components/justep/data/data#BeforeDeleteEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"cancel" : 可修改，设置为true后中断当前delete动作,
+		"deleteRows" : 删除的行数组
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/data/data#onCustomDelete
+	@event
+	@description <b>[回调型事件]</b>业务数据删除接管，完全接管delete动作
+	@param {$UI/system/components/justep/data/data#BeforeDeleteEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"cancel" : 可修改，设置为true后中断当前delete动作,
+		"promise": 返回删除操作后的promise，根据返回promise自动完成doDeleteAfter
+		"option": 删除参数 
+		"deleteRows" : 删除的行数组,
+		"async": 兼容保留，通过返回promise代替
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/data/data#AfterDeleteEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 业务数据删除后事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#AfterDeleteEvent.deleteRows
+ @property
+ @type {list<$UI/system/components/justep/data/data#Row>}
+ @description 删除的行数组
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onAfterDelete
+	@event
+	@description <b>[回调型事件]</b>业务数据删除后
+	@param {$UI/system/components/justep/data/data#AfterDeleteEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"deleteRows" : 删除的行数组
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/data/data#BeforeRefreshEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 业务数据刷新前事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#BeforeRefreshEvent.options
+ @property
+ @type {object}
+ @description 刷新给入的参数
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#BeforeRefreshEvent.cancel
+ @property
+ @type {boolean}
+ @description 可修改，设置为true后中断当前刷新动作
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onBeforeRefresh
+	@event
+	@description <b>[回调型事件]</b>业务数据刷新前
+	@param {$UI/system/components/justep/data/data#BeforeRefreshEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"options" : 刷新给入的参数
+		"cancel" : 可修改，设置为true后中断当前刷新动作
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/data/data#AfterRefreshEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 业务数据刷新后事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#AfterRefreshEvent.options
+ @property
+ @type {object}
+ @description 刷新给入的参数
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#AfterRefreshEvent.limit
+ @property
+ @type {integer}
+ @description 页大小
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#AfterRefreshEvent.offset
+ @property
+ @type {integer}
+ @description 偏移
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#AfterRefreshEvent.success
+ @property
+ @type {boolean}
+ @description 是否成功刷新
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onAfterRefresh
+	@event
+	@description <b>[回调型事件]</b>业务数据刷新后
+	@param {$UI/system/components/justep/data/data#AfterRefreshEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+		"limit" : 页大小, 
+		"offset" : 偏移,
+		"options" : 刷新给入的参数
+		"success" : 是否成功刷新
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/data/data#CustomRefreshEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 业务数据刷新接管事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#CustomRefreshEvent.options
+ @property
+ @type {object}
+ @description 刷新给入的参数
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#CustomRefreshEvent.limit
+ @property
+ @type {integer}
+ @description 页大小
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#CustomRefreshEvent.offset
+ @property
+ @type {integer}
+ @description 偏移
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#CustomRefreshEvent.cancel
+ @property
+ @type {boolean}
+ @description 可修改，设置为true后中断当前刷新动作
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#CustomRefreshEvent.async
+ @property
+ @type {boolean}
+ @description 是不是异步刷新，如果是异步操作，修改async=true,同时在刷新加载数据后调用data.doRefreshAfter()
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onCustomRefresh
+	@event
+	@description <b>[回调型事件]</b>业务数据刷新接管，完全接管刷新动作
+	@param {$UI/system/components/justep/data/data#CustomRefreshEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象, 
+		"cancel" : 可修改，设置为true后中断当前刷新动作, 
+		"limit" : 页大小, 
+		"offset" : 偏移,
+		"promise": 返回刷新操作后的promise，根据返回promise自动完成doRefreshAfter
+		"async" : 兼容保留，通过返回promise代替，是不是异步刷新，如果是异步操作，修改async=true,同时在刷新加载数据后调用data.doRefreshAfter()
+		"options" : 刷新给入的参数
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/data/data#BeforeSaveEvent
+@extends $UI/system/components/justep/common/event#ModelEvent
+@category eventclass
+@class
+@model UI2
+@description 业务数据保存前事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#BeforeSaveEvent.options
+ @property
+ @type {object}
+ @description 保存时给入的参数
+*/ 
+
+/**
+ @name $UI/system/components/justep/data/data#BeforeSaveEvent.cancel
+ @property
+ @type {boolean}
+ @description 可修改，设置为true后中断当前保存动作
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onBeforeSave
+	@event
+	@description <b>[回调型事件]</b>业务数据保存前，事件在批事务启动后触发，写在这个事件里的biz action请求将在一个批操作完成
+	@param {$UI/system/components/justep/data/data#BeforeSaveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"cancel" : 可修改，设置为true后中断当前保存动作
+		"options" : 保存时给入的参数
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/data/data#onAfterSave
+	@event
+	@description <b>[回调型事件]</b>业务数据保存后，事件在批事务启动后触发，写在这个事件里的biz action请求将在一个批操作完成
+	@param {$UI/system/components/justep/data/data#BeforeSaveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source":组件的js对象,
+		"cancel" : 可修改，设置为true后中断当前保存动作
+		"options" : 保存时给入的参数
+	}
+	</xmp>	
+*/
+
+/**
+@name $UI/system/components/justep/data/data#CustomSaveEvent
+@extends $UI/system/components/justep/data/data#BeforeSaveEvent
+@category eventclass
+@class
+@model UI2
+@description 业务数据保存前事件参数
+*/
+ 
+/**
+ @name $UI/system/components/justep/data/data#CustomSaveEvent.async
+ @property
+ @type {boolean}
+ @description 是不是异步保存，如果是异步操作，修改async=true,同时在保存数据后调用data.doSaveAfter()
+*/ 
+
+/**
+	@name $UI/system/components/justep/data/data#onCustomSave
+	@event
+	@description <b>[回调型事件]</b>业务数据保存接管，完全接管保存动作
+	@param {$UI/system/components/justep/data/data#CustomSaveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象, 
+		"cancel" : 可修改，设置为true后中断当前保存动作
+		"promise": 返回保存操作后的promise，根据返回promise自动完成doSaveAfter
+		"async" : 兼容保留，通过返回promise代替，是不是异步保存，如果是异步操作，修改async=true,同时在保存数据后调用data.doSaveAfter()
+		"options" : 保存时给入的参数
+	}
+	</xmp>	
+*/
+
+/**
+	@name $UI/system/components/justep/data/data#onSaveCommit
+	@event
+	@description <b>[回调型事件]</b>业务数据保存事务提交后，数据提交成功
+	@param {$UI/system/components/justep/common/event#ModelEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+	}
+	</xmp>	
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#new
+ @operation
+ @see $UI/system/components/justep/data/data#newData
+ @description 新增数据
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#newChild
+ @operation
+ @see $UI/system/components/justep/data/data#newData
+ @description 新增子数据
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#newBrother
+ @operation
+ @see $UI/system/components/justep/data/data#newData
+ @description 新增同级数据
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#save
+ @operation
+ @see $UI/system/components/justep/data/data#saveData
+ @description 保存数据
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#delete
+ @operation
+ @see $UI/system/components/justep/data/data#deleteData
+ @param {List<$UI/system/components/justep/data/data#Row>|$UI/system/components/justep/data/data#Row} 删除的行或者行数组，缺省为当前行
+ @description 删除数据
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#refresh
+ @operation
+ @see $UI/system/components/justep/data/data#refreshData
+ @description 刷新数据
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#firstRow
+ @operation
+ @description 游标定位到第一条
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#nextRow
+ @operation
+ @description 游标定位到下一条
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#prevRow
+ @operation
+ @description 游标定位到上一条
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#lastRow
+ @operation
+ @description 游标定位到最后一条
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#loadPage
+ @operation
+ @param {integer} pageIndex <b>[required]</b>页索引
+ @description 加载页数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#firstPage
+ @operation
+ @description 加载第一页数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#nextPage
+ @operation
+ @description 加载下一页数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#prevPage
+ @operation
+ @description 加载前一页数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#lastPage
+ @operation
+ @description 加载最后一页数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#loadAllPage
+ @operation
+ @description 加载剩余所有数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#loadNextPage
+ @operation
+ @description 加载下页数据，当设置limit有效，增量加载
+ @returns {void}
+*/
+
+/**
+	@name $UI/system/components/justep/data/data#treeOption                                                                                   
+	@attribute 
+	@description 树参数
+	@see $UI/system/components/justep/data/data#getTreeOption
+	@example
+	<b>包括属性：</b>
+		parentRelation <b>[attribute]</b> 父关系，形成父子树的父关系
+		rootFilter <b>[attribute]</b> 根过滤条件，当设置时树形数据将按节点加载数据
+		delayLoad <b>[attribute]</b> 延迟数据加载，默认值为true
+		nodeKindRelation <b>[attribute]</b> 节点类型关系，data操作时使用指定relation自动记录是否叶子节点信息
+	<b>xml格式：</b>
+	<xmp>
+		<treeOption parentRelation="" delayLoad="" rootFilter=""
+			nodeKindRelation=""
+			nodeLevelRelation="" />
+	</xmp>
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#isTree
+ @function
+ @returns {boolean}
+ @description 判断当前data是不是tree数据 
+*/
+
+/**
+ @name $UI/system/components/justep/data/data#isLeaf
+ @function
+ @param {Row} row <b>[required]</b>行对象
+ @returns {boolean}
+ @description 判断给定行是不是叶子节点 
+*/
+
+/**
+	@name $UI/system/components/justep/data/data#rule                                                                                   
+	@attribute 
+	@type {XML}
+	@description 规则,可以定义列的只读规则(readonly)、计算规则(calculate)、必填规则(required)、约束规则(constraint)
+	@example
+	只读规则包含expr表达式部分，当表达式计算结果为True时只读，当只读定义在rule根下时为整个data的只读规则
+	计算规则包含expr表达式部分，对应列的值来自于表达式计算结果
+	必填规则包含expr表达式部分和message提示部分，当表达式计算结果为True时该列为必填，没有填写数据违反必填规则时提示message信息
+	约束规则包含expr表达式部分和message提示部分，当表达式计算结果为False时违反约束规则提示message信息
+	
+	<b>xml格式说明：</b>
+	<xmp>
+      <rule>
+        <!--data的只读规则定义-->
+        <readonly> 
+            <expr>js:true</expr> 
+        </readonly>  
+        <col name="fDecimal"> 
+          <!--fDecimal列的只读规则定义-->
+          <readonly> 
+            <expr>js:true</expr> 
+          </readonly>
+          <!--fDecimal列的计算规则定义-->  
+          <calculate> 
+            <expr>js:$model.slaveData?$model.slaveData.sum('fDecimal',$row):0</expr> 
+          </calculate> 
+        </col> 
+        <col name="fString"> 
+          <!--fString列的必填规则定义-->
+          <required> 
+            <expr>js:true</expr>
+            <message>fString不能为空</message> 
+          </required>
+          <!--fString列的计算规则定义-->  
+          <constraint> 
+            <expr>js:$val[0]=='A'</expr> 
+            <message>fString第一个字符必须为'A'</message> 
+          </constraint> 
+        </col> 
+      </rule>  
+	</xmp>
+*/
+

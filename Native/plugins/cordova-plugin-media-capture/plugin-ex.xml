@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-media-capture">
+	<name>多媒体录制</name>
+	<description>多媒体录制本地插件，用于捕获图片、录制声音和视频</description>
+	
+</plugin>

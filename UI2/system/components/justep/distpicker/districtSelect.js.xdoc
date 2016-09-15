@@ -1,0 +1,93 @@
+/**
+	@name $UI/system/components/justep/distpicker/districtSelect
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description districtSelect，县选择
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/districtSelect#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/districtSelect#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: form-control(必须),
+		尺寸样式: input-lg、input-sm
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/districtSelect#disabled
+	@attribute
+	@property  
+	@type boolean
+	@description 禁用
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/districtSelect#bind-ref
+	@attribute 
+	@type string
+	@description 引用
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/districtSelect#bind-cityRef
+	@attribute 
+	@type string
+	@description 市、区引用，用于控制下拉部分数据
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/districtSelect#optionsCaption
+	@attribute 
+	@type string
+	@description 无值时的提示信息
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/districtSelect#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : {boolean} 禁用，
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/districtSelect#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"
+	@return {Object} 
+*/
+
+/**
+	@name $UI/system/components/justep/distpicker/districtSelect#onChange
+	@event
+	@description <b>[回调型事件]</b>值修改事件
+	@param {$UI/system/components/justep/common/event#ChangeEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"value" : 值,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+

@@ -1,0 +1,17 @@
+/**
+	@name at.modalog.cordova.plugin.cache
+	@class 
+	@description app缓存清除插件
+	@model Native
+	@category plugin
+	@declareVar cache
+*/
+
+/**
+	@name at.modalog.cordova.plugin.cache.clear
+	@function
+	@param {Function} success 执行成功的回调
+	@param {Function} error 执行失败的回调
+ 	@returns {void}
+ 	@description 清除缓存
+*/

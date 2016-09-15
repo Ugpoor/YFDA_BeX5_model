@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" sysParam="portal" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cn2QfAv" class="cn2QfAv" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/row/row,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/output/output,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/bizData,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onActive:modelActive;onLoad:modelLoad" __cid="cn2QfAv" class="cn2QfAv"></div>  
+  <div __cid="cn2QfAv" class="cn2QfAv"/>  
+  <div class="x-list cn2QfAv" component="$model/UI2/system/components/justep/list/list" xid="list" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}" data-config="{&quot;autoLoad&quot;:false,&quot;data&quot;:&quot;taskData&quot;,&quot;limit&quot;:5}" __cid="cn2QfAv"> 
+    <div class="x-list-head cn2QfAv" __cid="cn2QfAv"/>  
+    <div class="x-list-content cn2QfAv" __cid="cn2QfAv"> 
+      <ul class="x-list-template hide cn2QfAv" bind-foreach="{data:$model.foreach_list($element),afterRender:$model.foreach_afterRender_list.bind($model,$element)}" __cid="cn2QfAv"> 
+        <li class="list-group-item cn2QfAv" bind-click="li2Click" __cid="cn2QfAv"> 
+          <div class="x-row x-row-center cn2QfAv" component="$model/UI2/system/components/justep/row/row" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="cn2QfAv"> 
+            <div class="x-col cn2QfAv" style="font-weight:bold" __cid="cn2QfAv"> 
+              <span component="$model/UI2/system/components/justep/output/output" data="taskData" data-bind="component:{ref:ref('sName'),name:'$model/UI2/system/components/justep/output/output'}" __cid="cn2QfAv" class="cn2QfAv"/> 
+            </div> 
+          </div>  
+          <div class="x-row x-row-center cn2QfAv" style="color:gray" component="$model/UI2/system/components/justep/row/row" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="cn2QfAv"> 
+            <div class="x-col cn2QfAv" __cid="cn2QfAv"> 
+              <span component="$model/UI2/system/components/justep/output/output" data="taskData" data-bind="component:{ref:ref('sExecutorFName'),name:'$model/UI2/system/components/justep/output/output'}" __cid="cn2QfAv" class="cn2QfAv"/> 
+            </div>  
+            <div class="x-col cn2QfAv" __cid="cn2QfAv"> 
+              <span component="$model/UI2/system/components/justep/output/output" data="taskData" data-bind="component:{ref:ref('sCreateTime'),name:'$model/UI2/system/components/justep/output/output'}" data-config="{&quot;format&quot;:&quot;yyyy-MM-dd&quot;}" __cid="cn2QfAv" class="cn2QfAv"/> 
+            </div> 
+          </div> 
+        </li> 
+      </ul> 
+    </div> 
+  </div> 
+</div>

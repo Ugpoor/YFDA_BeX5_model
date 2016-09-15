@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.justep.cordova.plugin.iFlytek">
+	<name>科大讯飞</name>
+	<description>集成了科大讯飞的SDK，提供语音听写和语音合成的功能</description>
+	
+	<!-- ios -->
+	<platform name="ios">
+		<param name="appid_ios" displayName="appid(由科大讯飞官网申请,与sdk相对应！默认为:569d9540,如果您自己申请appid，请将插件中的sdk替换为您自己的sdk！)" />
+	</platform>
+
+	<!-- android -->
+	<platform name="android">
+		<param name="appid_android" displayName="appid(由科大讯飞官网申请,与sdk相对应！默认为:56c414a3,如果您自己申请appid，请将插件中的sdk替换为您自己的sdk！)" />
+	</platform>
+</plugin>
+
+

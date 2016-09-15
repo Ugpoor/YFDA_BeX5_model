@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\home_lowversion.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\menu\\home_lowversion.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\home_mainpage.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\menu\\home_mainpage.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\detail_home_lowversion.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\menu\\detail_home_lowversion.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\home.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\menu\\home.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\detail_home_mainpage.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\menu\\detail_home_mainpage.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\myyouku_moremenu.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\menu\\myyouku_moremenu.xml"
+    },
+    {
+        "merged": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\login_moremenu.xml",
+        "source": "D:\\justepprojects\\TwoLibrary\\app\\build\\intermediates\\bundles\\debug\\res\\menu\\login_moremenu.xml"
+    }
+]

@@ -1,0 +1,36 @@
+define(function(require){
+require('$model/UI2/system/components/justep/model/model');
+require('$model/UI2/system/components/justep/pagerBar/pagerBar');
+require('$model/UI2/system/components/justep/loadingBar/loadingBar');
+require('$model/UI2/system/components/justep/button/button');
+require('$model/UI2/system/components/bootstrap/row/row');
+require('$model/UI2/system/components/justep/menu/menu');
+require('$model/UI2/system/components/bootstrap/pagination/pagination');
+require('$model/UI2/system/components/justep/panel/child');
+require('$model/UI2/system/components/justep/smartFilter/smartFilter');
+require('$model/UI2/system/components/justep/windowDialog/windowDialog');
+require('$model/UI2/system/components/justep/data/bizData');
+require('$model/UI2/system/components/justep/toolBar/toolBar');
+require('$model/UI2/system/components/justep/panel/panel');
+require('$model/UI2/system/components/bootstrap/dropdown/dropdown');
+require('$model/UI2/system/components/justep/dataTables/dataTables');
+require('$model/UI2/system/components/justep/button/checkbox');
+require('$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect');
+require('$model/UI2/system/components/justep/select/select');
+require('$model/UI2/system/components/justep/data/data');
+require('$model/UI2/system/components/justep/window/window');
+var __parent1=require('$model/UI2/system/lib/base/modelBase'); 
+var __parent0=require('$model/UI2/SA/OPM/role/mainActivity'); 
+var __result = __parent1._extend(__parent0).extend({
+	constructor:function(contextUrl){
+	this.__sysParam='true';
+	this.__contextUrl=contextUrl;
+	this.__id='';
+	this.__cid='crMB3Uv';
+	this._flag_='9d7bb580494ec133b53851e26dcba2f8';
+	this.callParent(contextUrl);
+ var __BizData__ = require("$UI/system/components/justep/data/bizData");new __BizData__(this,{"autoLoad":false,"autoNew":false,"confirmDelete":true,"confirmRefresh":true,"dataModel":"/system/data","defAggCols":{},"defCols":{"SA_OPRole":{"define":"SA_OPRole","name":"SA_OPRole","relation":"SA_OPRole","type":"String"},"sCatalog":{"define":"SA_OPRole.sCatalog","isBiz":true,"label":"分类","name":"sCatalog","relation":"SA_OPRole.sCatalog","type":"String"},"sCode":{"define":"SA_OPRole.sCode","isBiz":true,"label":"编码","name":"sCode","relation":"SA_OPRole.sCode","type":"String"},"sDescription":{"define":"SA_OPRole.sDescription","isBiz":true,"label":"描述","name":"sDescription","relation":"SA_OPRole.sDescription","type":"String"},"sName":{"define":"SA_OPRole.sName","isBiz":true,"label":"名称","name":"sName","relation":"SA_OPRole.sName","type":"String"},"sParentRolesNames":{"define":"SA_OPRole.sParentRolesNames","isBiz":true,"label":"父角色名称列表","name":"sParentRolesNames","relation":"SA_OPRole.sParentRolesNames","type":"String"},"sRoleKind":{"define":"SA_OPRole.sRoleKind","isBiz":true,"label":"角色类型","name":"sRoleKind","relation":"SA_OPRole.sRoleKind","type":"String"},"sSequence":{"define":"SA_OPRole.sSequence","isBiz":true,"label":"序号","name":"sSequence","relation":"SA_OPRole.sSequence","rules":{"integer":true},"type":"Integer"},"sValidState":{"define":"SA_OPRole.sValidState","isBiz":true,"label":"可用状态","name":"sValidState","relation":"SA_OPRole.sValidState","rules":{"integer":true},"type":"Integer"},"version":{"define":"SA_OPRole.version","isBiz":true,"label":"版本","name":"version","relation":"SA_OPRole.version","rules":{"integer":true},"type":"Integer"}},"directDelete":false,"events":{"onBeforeRefresh":"roleDataBeforeRefresh","onIndexChanged":"roleDataIndexChanged"},"idColumn":"SA_OPRole","limit":-1,"offset":0,"queryAction":"queryOPRoleAction","updateMode":"whereVersion","xid":"roleData"});
+ new __BizData__(this,{"autoLoad":false,"autoNew":false,"confirmDelete":true,"confirmRefresh":false,"dataModel":"/system/data","defAggCols":{},"defCols":{"SA_OPPermission":{"define":"SA_OPPermission","name":"SA_OPPermission","relation":"SA_OPPermission","type":"String"},"actionPolicyNames":{"define":"EXPRESS","isBiz":true,"name":"actionPolicyNames","relation":"EXPRESS","type":"String"},"actionsLabel":{"define":"EXPRESS","isBiz":true,"name":"actionsLabel","relation":"EXPRESS","type":"String"},"roleName":{"define":"SA_OPRole.sName","isBiz":true,"label":"名称","name":"roleName","relation":"SA_OPRole.sName","type":"String"},"sActions":{"define":"SA_OPPermission.sActions","isBiz":true,"label":"动作权限","name":"sActions","relation":"SA_OPPermission.sActions","type":"Text"},"sActionsNames":{"define":"SA_OPPermission.sActionsNames","isBiz":true,"label":"动作名称","name":"sActionsNames","relation":"SA_OPPermission.sActionsNames","type":"Text"},"sActivity":{"define":"SA_OPPermission.sActivity","isBiz":true,"label":"活动","name":"sActivity","relation":"SA_OPPermission.sActivity","type":"String"},"sActivityFName":{"define":"SA_OPPermission.sActivityFName","isBiz":true,"label":"活动全路径名","name":"sActivityFName","relation":"SA_OPPermission.sActivityFName","type":"String"},"sDescription":{"define":"SA_OPPermission.sDescription","isBiz":true,"label":"描述","name":"sDescription","relation":"SA_OPPermission.sDescription","type":"String"},"sPermissionKind":{"define":"SA_OPPermission.sPermissionKind","isBiz":true,"label":"权限类型","name":"sPermissionKind","relation":"SA_OPPermission.sPermissionKind","rules":{"integer":true},"type":"Integer"},"sPermissionRoleID":{"define":"SA_OPPermission.sPermissionRoleID","isBiz":true,"label":"所属角色","name":"sPermissionRoleID","relation":"SA_OPPermission.sPermissionRoleID","type":"String"},"sProcess":{"define":"SA_OPPermission.sProcess","isBiz":true,"label":"过程","name":"sProcess","relation":"SA_OPPermission.sProcess","type":"String"},"sSemanticDP":{"define":"SA_OPPermission.sSemanticDP","isBiz":true,"label":"语义数据权限","name":"sSemanticDP","relation":"SA_OPPermission.sSemanticDP","type":"String"},"sSequence":{"define":"SA_OPPermission.sSequence","isBiz":true,"label":"序号","name":"sSequence","relation":"SA_OPPermission.sSequence","rules":{"integer":true},"type":"Integer"},"sValidState":{"define":"SA_OPPermission.sValidState","isBiz":true,"label":"可用状态","name":"sValidState","relation":"SA_OPPermission.sValidState","rules":{"integer":true},"type":"Integer"},"version":{"define":"SA_OPPermission.version","isBiz":true,"label":"版本","name":"version","relation":"SA_OPPermission.version","rules":{"integer":true},"type":"Integer"}},"directDelete":false,"events":{"onRefreshCreateParam":"permissionDataRefreshCreateParam"},"idColumn":"SA_OPPermission","limit":20,"offset":0,"queryAction":"queryOPPermissionByRoleAction","updateMode":"whereVersion","xid":"permissionData"});
+ var __Data__ = require("$UI/system/components/justep/data/data");new __Data__(this,{"autoLoad":true,"confirmDelete":true,"confirmRefresh":true,"defCols":{"id":{"define":"id","label":"id","name":"id","relation":"id","type":"String"},"showDisabledRole":{"define":"showDisabledRole","label":"showDisabledRole","name":"showDisabledRole","relation":"showDisabledRole","type":"String"},"showInheritedPermission":{"define":"showInheritedPermission","label":"showInheritedPermission","name":"showInheritedPermission","relation":"showInheritedPermission","type":"String"}},"directDelete":false,"events":{"onValueChanged":"tempDataValueChanged"},"idColumn":"id","initData":"[{\"showInheritedPermission\":\"true\"}]","limit":20,"xid":"tempData"});
+}}); 
+return __result;});

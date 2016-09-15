@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root> 
+  <item label="演示案例"> 
+    <item label="动作案例"> 
+      <item label="引用动作-activity1" process="/demo/actions/process/hasAction/hasActionProcess"
+        activity="staticActivity1" url="$UI/demo/actions/process/hasAction/staticActivity1.a"
+        device="pc"/>
+      <item label="引用动作-activity2" process="/demo/actions/process/hasAction/hasActionProcess"
+        activity="staticActivity2" url="$UI/demo/actions/process/hasAction/staticActivity2.a"
+        device="pc"/>
+      <item label="调用动作" process="/demo/actions/process/invokeAction/invokeActionProcess"
+        activity="mainActivity" url="$UI/demo/actions/process/invokeAction/mainActivity.a" device="pc"/>
+      <item label="系统集成">
+        <item label="系统集成" process="/demo/actions/process/integration/integrationProcess"
+          activity="staticActivity1" url="$UI/demo/actions/process/integration/staticActivity1.a"
+          device="pc"/>
+        <item label="系统集成-跳转到第三方页面" process="/demo/actions/process/integration/integrationProcess"
+          activity="staticActivity2" url="$UI/demo/actions/process/integration/toOtherURL.j"
+          device="pc"/>
+        <item label="系统集成-第三方发起X5工作流" process="/demo/actions/process/integration/integrationProcess"
+          activity="mainActivity" url="$UI/demo/actions/process/integration/mainActivity.a"
+          device="pc"/>
+        <item label="系统集成-第三方发起X5工作流-借书申请" display="hide" process="/demo/actions/process/integration/integrationProcess"
+          activity="businessActivity1" url="$UI/demo/actions/process/integration/businessActivity1.a"
+          device="pc"/>
+        <item label="系统集成-第三方发起X5工作流-借书审核" display="hide" process="/demo/actions/process/integration/integrationProcess"
+          activity="businessActivity2" url="$UI/demo/actions/process/integration/businessActivity2.a"
+          device="pc"/>
+      </item>
+    </item>
+<item label="第三方集成案例"> 
+      <item label="Echarts集成" device="pc" process="/demo/components/process/ui2/ui2Process"
+        activity="mainActivity" url="$UI/demo/misc/echarts/demo.a" display="solid"/> 
+      <item label="地图集成" device="pc" process="/demo/components/process/ui2/ui2Process"
+        activity="mainActivity" url="$UI/demo/misc/map/map.a" display="solid"/>
+      <item label="甘特图集成" device="pc" process="/demo/components/process/ui2/ui2Process"
+        activity="mainActivity" url="$UI/demo/misc/twprojectGantt/taskGantt.a" display="solid"/>
+    </item> 	
+  </item> 
+</root>

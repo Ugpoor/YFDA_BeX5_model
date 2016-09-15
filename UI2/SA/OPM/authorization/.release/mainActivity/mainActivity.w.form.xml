@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window x-full-screen container-fluid crMRJve" component="$model/UI2/system/components/justep/window/window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="crMRJve" components="$model/UI2/system/components/justep/pagerBar/pagerBar,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/org/orgTreePC,$model/UI2/system/components/bootstrap/pagination/pagination,$model/UI2/system/components/justep/smartFilter/smartFilter,$model/UI2/system/components/justep/windowDialog/windowDialog,$model/UI2/system/components/justep/toolBar/toolBar,$model/UI2/system/components/justep/dataTables/dataTables,$model/UI2/system/components/justep/select/select,$model/UI2/system/components/justep/grid/grid,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/bootstrap/row/row,$model/UI2/system/components/justep/smartContainer/smartContainer,$model/UI2/system/components/justep/menu/menu,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/bootstrap/dropdown/dropdown,$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect,$model/UI2/system/components/bootstrap/inputGroup/inputGroup,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="crMRJve" class="crMRJve"></div>  
+  <span component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="selectRolesDialog" style="left:219px;top:418px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-events="onReceive:selectRolesDialogReceive" data-config="{&quot;showTitle&quot;:true,&quot;src&quot;:&quot;$model/UI2/SA/OPM/dialogs/selectRole/selectMultiRoles.w&quot;,&quot;status&quot;:&quot;normal&quot;,&quot;title&quot;:&quot;选择角色&quot;,&quot;width&quot;:&quot;50%&quot;}" __cid="crMRJve" class="crMRJve">
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog-overlay crMRJve" __cid="crMRJve"/>
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog crMRJve" style="display:none;" showTitle="true" __cid="crMRJve">
+      <xhtml:div class="x-dialog-title crMRJve" __cid="crMRJve">
+        <xhtml:button class="close crMRJve" __cid="crMRJve">
+          <xhtml:span __cid="crMRJve" class="crMRJve">×</xhtml:span>
+        </xhtml:button>
+        <xhtml:div class="x-dialog-title-text crMRJve" __cid="crMRJve">选择角色</xhtml:div>
+      </xhtml:div>
+      <xhtml:div class="x-dialog-body crMRJve" __cid="crMRJve"/>
+    </xhtml:div>
+  </span>  
+  <div component="$model/UI2/system/components/bootstrap/row/row" class="row crMRJve" xid="row1" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="crMRJve"> 
+    <div class="col col-xs-3 crMRJve" xid="col1" style="height:100%;overflow:auto;" __cid="crMRJve"> 
+      <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter crMRJve" xid="toolBar1" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="crMRJve"> 
+        <div class="input-group crMRJve" component="$model/UI2/system/components/bootstrap/inputGroup/inputGroup" xid="inputGroup1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/inputGroup/inputGroup'}" __cid="crMRJve"> 
+          <input type="text" class="form-control crMRJve" component="$model/UI2/system/components/justep/input/input" xid="filter" bind-keypress="filterKeypress" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-events="onChange:filterChange" data-config="{&quot;valueUpdateMode&quot;:&quot;input&quot;}" __cid="crMRJve"/>  
+          <div class="input-group-btn crMRJve" xid="div10" __cid="crMRJve"> 
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-only-icon crMRJve" xid="searchBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:searchBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-search&quot;}" __cid="crMRJve"> 
+              <i xid="i5" class="icon-android-search crMRJve" __cid="crMRJve"/>  
+              <span xid="span22" __cid="crMRJve" class="crMRJve"/>
+            </a> 
+          </div> 
+        </div> 
+      </div>
+      <div component="$model/UI2/system/components/justep/smartContainer/smartContainer" class="x-smartcontainer crMRJve" xid="smartContainer1" data-bind="component:{name:'$model/UI2/system/components/justep/smartContainer/smartContainer'}" __cid="crMRJve"> 
+        <div component="$model/UI2/system/components/justep/org/orgTreePC" xid="orgTreePC1" bind-visible="!showFilterGird.get()" data-bind="component:{name:'$model/UI2/system/components/justep/org/orgTreePC'}" data-config="{&quot;data&quot;:&quot;orgTreeData&quot;,&quot;tree&quot;:&quot;orgTreeGrid&quot;}" __cid="crMRJve" class="crMRJve"> 
+          <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" appearance="tree" expandColumn="sName" useVirtualRoot="false" virtualRootLabel="组织机构" xid="orgTreeGrid" class="x-grid-no-bordered x-grid-no-border crMRJve" data="orgTreeData" data-config="{&quot;appearance&quot;:&quot;tree&quot;,&quot;colModel&quot;:[{&quot;name&quot;:&quot;sName&quot;,&quot;xid&quot;:&quot;column1&quot;}],&quot;data&quot;:&quot;orgTreeData&quot;,&quot;expandColumn&quot;:&quot;sName&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;useVirtualRoot&quot;:false,&quot;virtualRootLabel&quot;:&quot;组织机构&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="crMRJve"/> 
+        </div>  
+        <div xid="searchDiv" class="x-bordered crMRJve" style="display:none;height:0;" bind-visible="showFilterGird" __cid="crMRJve"> 
+          <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" responsive="true" rowActiveClass="active" class="table table-hover table-striped crMRJve" xid="searchGrid" data="orgSearchData" ordering="false" data-config="{&quot;columns&quot;:[{&quot;sName&quot;:&quot;sFName&quot;,&quot;xid&quot;:&quot;column2&quot;}],&quot;data&quot;:&quot;orgSearchData&quot;,&quot;flexibleWidth&quot;:true,&quot;ordering&quot;:false,&quot;responsive&quot;:true,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" __cid="crMRJve"/> 
+        </div>
+      </div> 
+    </div>  
+    <div class="col col-xs-9 col-spliter-left crMRJve" xid="col2" style="height:100%;" __cid="crMRJve"> 
+      <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-panel-opm-pc pca8b59a50fea4ac7a25405a87cec45ee-iosstatusbar crMRJve" xid="panel1" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="crMRJve"> 
+        <div class="x-panel-top crMRJve" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="crMRJve"> 
+          <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="form-inline x-toolbar x-toolbar-spliter crMRJve" xid="toolBar2" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="crMRJve"> 
+            <div component="$model/UI2/system/components/justep/smartFilter/smartFilter" xid="smartFilter1" style="float: right;" data-bind="component:{name:'$model/UI2/system/components/justep/smartFilter/smartFilter'}" data-config="{&quot;filterCols&quot;:&quot;roleName&quot;,&quot;filterData&quot;:&quot;authorizeData&quot;}" __cid="crMRJve" class="crMRJve"> 
+              <input type="text" class="form-control crMRJve" placeholder="搜索" data-bind="valueUpdate: ['input', 'afterkeydown']" bind-value="$model.comp($element.parentElement).searchText" bind-change="$model.comp($element.parentElement).onInputChange.bind($model.comp($element.parentElement))" xid="input1" __cid="crMRJve"/> 
+            </div>  
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left crMRJve" xid="addRoleBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:addRoleBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-add&quot;,&quot;label&quot;:&quot;分配角色&quot;}" __cid="crMRJve"> 
+              <i xid="i7" class="icon-android-add crMRJve" __cid="crMRJve"/>  
+              <span xid="span7" __cid="crMRJve" class="crMRJve">分配角色</span> 
+            </a>  
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left crMRJve" xid="deleteRoleBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:deleteRoleBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-remove&quot;,&quot;label&quot;:&quot;删除角色&quot;}" __cid="crMRJve"> 
+              <i xid="i13" class="icon-android-remove crMRJve" __cid="crMRJve"/>  
+              <span xid="span16" __cid="crMRJve" class="crMRJve">删除角色</span> 
+            </a>  
+            <div class="dropdown btn-group crMRJve" component="$model/UI2/system/components/bootstrap/dropdown/dropdown" xid="dropdown1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/dropdown/dropdown'}" data-config="{&quot;autoHideMenu&quot;:false}" __cid="crMRJve"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left dropdown-toggle crMRJve" xid="button1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-android-more&quot;,&quot;label&quot;:&quot;选项&quot;}" __cid="crMRJve"> 
+                <i class="icon-android-more crMRJve" xid="i2" __cid="crMRJve"/>  
+                <span xid="span2" __cid="crMRJve" class="crMRJve">选项</span> 
+              </a>  
+              <ul component="$model/UI2/system/components/justep/menu/menu" class="x-menu dropdown-menu crMRJve" xid="menu1" data-bind="component:{name:'$model/UI2/system/components/justep/menu/menu'}" __cid="crMRJve"> 
+                <li class="x-menu-item crMRJve" xid="item1" __cid="crMRJve"> 
+                  <a xid="a3" __cid="crMRJve" class="crMRJve"> 
+                    <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox crMRJve" xid="checkbox1" label="显示从上级组织继承的角色" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;显示从上级组织继承的角色&quot;}" data-bind="component:{ref:tempData.ref('showInherited'),name:'$model/UI2/system/components/justep/button/checkbox'}" __cid="crMRJve">
+                      <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox" __cid="crMRJve" class="crMRJve"/>
+                      <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="crMRJve" class="crMRJve">显示从上级组织继承的角色</xhtml:label>
+                    </span> 
+                  </a> 
+                </li> 
+              </ul> 
+            </div> 
+          </div> 
+        </div>  
+        <div class="x-panel-content crMRJve" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="crMRJve"> 
+          <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" rowActiveClass="active" class="table table-hover crMRJve" xid="authorizeDataTables" data="authorizeData" multiSelect="true" data-config="{&quot;columns&quot;:[{&quot;className&quot;:&quot;x-dt-cell-center&quot;,&quot;orderable&quot;:false,&quot;sName&quot;:&quot;roleRoleKind&quot;,&quot;title&quot;:&quot;　&quot;,&quot;width&quot;:&quot;20px&quot;,&quot;xid&quot;:&quot;column12&quot;},{&quot;sName&quot;:&quot;roleName&quot;,&quot;title&quot;:&quot;角色&quot;,&quot;xid&quot;:&quot;column9&quot;},{&quot;sName&quot;:&quot;roleParentRolesNames&quot;,&quot;title&quot;:&quot;父角色&quot;,&quot;xid&quot;:&quot;column11&quot;},{&quot;sName&quot;:&quot;sOrgFName&quot;,&quot;title&quot;:&quot;所属组织&quot;,&quot;xid&quot;:&quot;column8&quot;},{&quot;sName&quot;:&quot;roleDescription&quot;,&quot;title&quot;:&quot;描述&quot;,&quot;xid&quot;:&quot;column10&quot;}],&quot;data&quot;:&quot;authorizeData&quot;,&quot;flexibleWidth&quot;:true,&quot;multiSelect&quot;:true,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" data-events="onCellRender:authorizeDataTablesCellRender;onRowCheck:authorizeDataTablesRowCheck" __cid="crMRJve"/> 
+        </div>  
+        <div class="x-panel-bottom crMRJve" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="crMRJve"> 
+          <div component="$model/UI2/system/components/justep/pagerBar/pagerBar" class="x-pagerbar container-fluid crMRJve" xid="pagerBar1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerBar/pagerBar'}" data-config="{&quot;data&quot;:&quot;authorizeData&quot;}" __cid="crMRJve"> 
+            <div class="row crMRJve" xid="div1" __cid="crMRJve"> 
+              <div class="col-sm-3 crMRJve" xid="div2" __cid="crMRJve"> 
+                <div class="x-pagerbar-length crMRJve" xid="div3" __cid="crMRJve"> 
+                  <label component="$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect" class="x-pagerlimitselect crMRJve" xid="pagerLimitSelect1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect'}" data-config="{&quot;data&quot;:&quot;authorizeData&quot;}" __cid="crMRJve"> 
+                    <span xid="span1" __cid="crMRJve" class="crMRJve">显示</span>  
+                    <select component="$model/UI2/system/components/justep/select/select" class="form-control input-sm crMRJve" xid="select1" data-bind="component:{name:'$model/UI2/system/components/justep/select/select'}" __cid="crMRJve"> 
+                      <option value="10" xid="default1" __cid="crMRJve" class="crMRJve">10</option>  
+                      <option value="20" xid="default2" __cid="crMRJve" class="crMRJve">20</option>  
+                      <option value="50" xid="default3" __cid="crMRJve" class="crMRJve">50</option>  
+                      <option value="100" xid="default4" __cid="crMRJve" class="crMRJve">100</option> 
+                    </select>  
+                    <span xid="span3" __cid="crMRJve" class="crMRJve">条</span> 
+                  </label> 
+                </div> 
+              </div>  
+              <div class="col-sm-3 crMRJve" xid="div4" __cid="crMRJve"> 
+                <div class="x-pagerbar-info crMRJve" xid="div5" __cid="crMRJve">当前显示0条，共0条</div> 
+              </div>  
+              <div class="col-sm-6 crMRJve" xid="div6" __cid="crMRJve"> 
+                <div class="x-pagerbar-pagination crMRJve" xid="div7" __cid="crMRJve"> 
+                  <ul class="pagination crMRJve" component="$model/UI2/system/components/bootstrap/pagination/pagination" xid="pagination1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/pagination/pagination'}" data-config="{&quot;data&quot;:&quot;authorizeData&quot;}" __cid="crMRJve"> 
+                    <li class="prev crMRJve" xid="li1" __cid="crMRJve"> 
+                      <a href="#" xid="a1" __cid="crMRJve" class="crMRJve"> 
+                        <span aria-hidden="true" xid="span4" __cid="crMRJve" class="crMRJve">«</span>  
+                        <span class="sr-only crMRJve" xid="span5" __cid="crMRJve">Previous</span> 
+                      </a> 
+                    </li>  
+                    <li class="next crMRJve" xid="li2" __cid="crMRJve"> 
+                      <a href="#" xid="a2" __cid="crMRJve" class="crMRJve"> 
+                        <span aria-hidden="true" xid="span6" __cid="crMRJve" class="crMRJve">»</span>  
+                        <span class="sr-only crMRJve" xid="span8" __cid="crMRJve">Next</span> 
+                      </a> 
+                    </li> 
+                  </ul> 
+                </div> 
+              </div> 
+            </div> 
+          </div> 
+        </div>  
+        <style __cid="crMRJve" class="crMRJve">.x-panel.pca8b59a50fea4ac7a25405a87cec45ee-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pca8b59a50fea4ac7a25405a87cec45ee-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pca8b59a50fea4ac7a25405a87cec45ee-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pca8b59a50fea4ac7a25405a87cec45ee-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pca8b59a50fea4ac7a25405a87cec45ee-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pca8b59a50fea4ac7a25405a87cec45ee-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pca8b59a50fea4ac7a25405a87cec45ee-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pca8b59a50fea4ac7a25405a87cec45ee-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pca8b59a50fea4ac7a25405a87cec45ee-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+      </div> 
+    </div> 
+  </div> 
+</div>

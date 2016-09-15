@@ -1,0 +1,28 @@
+/**
+	@name $UI/system/components/justep/button/checkbox
+	@component 
+	@extends $UI/system/components/justep/button/radio
+	@model UI2
+	@description Checkbox
+*/
+
+/**
+	@name $UI/system/components/justep/button/checkbox#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-checkbox(必须),
+		尺寸样式: x-checkbox-lg、x-checkbox-sm、x-checkbox-xs
+	</xmp>
+*/
+
+/**
+	@name $UI/system/components/justep/button/checkbox#name
+	@attribute
+	@property 
+	@type string
+	@description 组件name，等价于html中的name属性，相同name的Checkbox为一组
+*/
+

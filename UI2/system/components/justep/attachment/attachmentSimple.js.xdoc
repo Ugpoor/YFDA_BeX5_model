@@ -1,0 +1,22 @@
+/**
+	@name $UI/system/components/justep/attachment/attachmentSimple
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description Input
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentSimple#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/attachment/attachmentSimple#bind-ref
+	@attribute 
+	@type string
+	@description 数据引用
+*/
+

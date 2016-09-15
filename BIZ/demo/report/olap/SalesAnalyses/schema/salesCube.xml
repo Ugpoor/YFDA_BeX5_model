@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schema name="JustepMondrian" measuresCaption="%{justep.measures.caption}">
+	
+	<!-- 销售立方体 -->
+	<Cube name="SalesCube">
+		<Table name="DEMO_REPORTSALESFACT"/>
+		
+		<!-- 地区维度 -->
+		<Dimension name="Region" foreignKey="RRID" caption="%{justep.salescube.dimension.region.caption}">
+			<Hierarchy hasAll="true" primaryKey="RRID" allMemberCaption="%{justep.salescube.dimension.region.allmember.caption}" allLevelName="%{justep.salescube.dimension.region.alllevelname.caption}">
+				<Table name="DEMO_REPORTREGIONDIM"/>
+				<Level name="%{justep.salescube.dimension.region.conuntry.caption}" column="RCONUNTRY" uniqueMembers="true" />
+				<Level name="%{justep.salescube.dimension.region.region.caption}" column="RREGION" uniqueMembers="false" />
+				<Level name="%{justep.salescube.dimension.region.province.caption}" column="RPROVINCE" uniqueMembers="false"/>
+				<Level name="%{justep.salescube.dimension.region.city.caption}" column="RCITY" uniqueMembers="false" />				
+			</Hierarchy>
+		</Dimension>	
+		
+		<!-- 时间维度 年/季度/月 -->
+		<Dimension name="Time" foreignKey="RTID" caption="%{justep.salescube.dimension.time.caption}">
+			<Hierarchy hasAll="true" primaryKey="RTID" allMemberCaption="%{justep.salescube.dimension.time.allmember.caption}" allLevelName="%{justep.salescube.dimension.time.alllevelname.caption}">
+				<Table name="DEMO_REPORTTIMEDIM"/>
+				<Level name="%{justep.salescube.dimension.time.year.caption}" column="RYEAR" uniqueMembers="true" captionColumn="RYEAR" />
+				<Level name="%{justep.salescube.dimension.time.quarter.caption}" column="RQUARTER" uniqueMembers="false" captionColumn="RQUARTER" />
+				<Level name="%{justep.salescube.dimension.time.month.caption}" column="RMONTH" uniqueMembers="false" captionColumn="RMONTH"/>			
+			</Hierarchy>
+		</Dimension>
+		
+		<!-- 产品维度 -->
+		<Dimension name="Product" foreignKey="RPID" caption="%{justep.salescube.dimension.product.caption}">
+			<Hierarchy hasAll="true" primaryKey="RPID" allMemberCaption="%{justep.salescube.dimension.product.allmember.caption}" allLevelName="%{justep.salescube.dimension.product.alllevelname.caption}">
+				<Table name="DEMO_REPORTPRODUCTDIM"/>
+				<Level name="%{justep.salescube.dimension.product.majorcategory.caption}" column="RMAJORCATEGORY" uniqueMembers="true" />
+				<Level name="%{justep.salescube.dimension.product.minorcategory.caption}" column="RMINORCATEGORY" uniqueMembers="false" />
+				<Level name="%{justep.salescube.dimension.product.name.caption}" column="RNAME" uniqueMembers="false"/>
+			</Hierarchy>
+		</Dimension>
+		
+		<!-- 销售额 -->
+		<Measure name="storeSales" column="RSTORESALES" aggregator="sum" caption="%{justep.salescube.measure.storesales.caption}"/>
+		<!-- 销售成本 -->
+		<Measure name="storeCost" column="RSTORECOST" aggregator="sum" caption="%{justep.salescube.measure.storecost.caption}"/>
+		<!-- 利润(计算成员) 销售价格-销售成本 -->
+		<CalculatedMember name="profit" dimension="Measures" formula="[Measures].[storeSales] -[Measures].[storeCost]" caption="%{justep.salescube.measure.profit.caption}">
+			<CalculatedMemberProperty name="FORMAT_STRING" value="#,##0.00" />
+		</CalculatedMember>
+				
+	</Cube>
+
+</Schema>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" component="$model/UI2/system/components/justep/window/window" xid="window" extends="$UI/demo/plugin/template/demo.w" __id="id_1" design="device:m;" class="window window cQFF7by" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cQFF7by" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/buttonGroup,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style>null</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onModelConstructDone:modelModelConstructDone" __cid="cQFF7by" class="cQFF7by"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p49cdd8552c814729a98901a6b599bd25-iosstatusbar cQFF7by" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cQFF7by"> 
+    <div class="x-panel-top cQFF7by" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cQFF7by"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cQFF7by" xid="titleBar" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;screenOrientation&quot;}" __cid="cQFF7by"> 
+        <div class="x-titlebar-left cQFF7by" __cid="cQFF7by"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cQFF7by" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;}" __cid="cQFF7by"> 
+            <i xid="i6" class="icon-chevron-left cQFF7by" __cid="cQFF7by"/>  
+            <span xid="span6" __cid="cQFF7by" class="cQFF7by"/>
+          </a>
+        </div>  
+        <div class="x-titlebar-title cQFF7by" __cid="cQFF7by">插件的名字</div>  
+        <div class="x-titlebar-right  cQFF7by" __cid="cQFF7by">
+          <div class="empty cQFF7by" __cid="cQFF7by"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cQFF7by" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cQFF7by">
+      <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cQFF7by" xid="contents1" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0}" __cid="cQFF7by"> 
+        <div class="x-contents-content active cQFF7by" xid="infoContent" style="padding:10px;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cQFF7by">
+          <h3 xid="h31" style="text-align:center;" __cid="cQFF7by" class="cQFF7by">插件概述</h3>
+          <h4 xid="h41" __cid="cQFF7by" class="cQFF7by">介绍：</h4>
+          <p xid="p1" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cQFF7by" class="cQFF7by">ID：cordova-plugin-screen-orientation</p>
+          <p xid="introduceP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cQFF7by" class="cQFF7by">屏幕方向插件，该插件控制程序的显示方式为横屏/竖屏，要注意的是该插件只是控制当前应用显示的方式，并不改变设备的重力感应相关设置。</p>
+          <div xid="div4" style="height:30px;" __cid="cQFF7by" class="cQFF7by"/>  
+          <h4 xid="h42" __cid="cQFF7by" class="cQFF7by">适用平台：</h4>  
+          <p xid="platformP" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge-and-replace" __cid="cQFF7by" class="cQFF7by">iOS，Android</p> 
+        </div>  
+        <div class="x-contents-content cQFF7by" xid="demoContent" style="padding:10px;width:100%;" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cQFF7by">
+          <div xid="div2" style="height:15px;" __cid="cQFF7by" class="cQFF7by"/>  
+          <div xid="div6" style="padding:20px 40px 20px 40px;" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" __cid="cQFF7by" class="cQFF7by">
+            <a class="btn btn-default cQFF7by" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="portrait" xui:parent="div6" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:portraitClick" data-config="{&quot;label&quot;:&quot;强制竖屏&quot;}" __cid="cQFF7by"> 
+              <i xid="i1_2" __cid="cQFF7by" class="cQFF7by"/>  
+              <span xid="span1_2" __cid="cQFF7by" class="cQFF7by">强制竖屏</span> 
+            </a>
+          </div>  
+          <div xid="div7" style="padding:20px 40px 20px 40px;" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" __cid="cQFF7by" class="cQFF7by">
+            <a class="btn btn-default cQFF7by" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="landscape" xui:parent="div7" xui:update-mode="insert" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:landscapeClick" data-config="{&quot;label&quot;:&quot;强制横屏&quot;}" __cid="cQFF7by"> 
+              <i xid="i2_2" __cid="cQFF7by" class="cQFF7by"/>  
+              <span xid="span2_2" __cid="cQFF7by" class="cQFF7by">强制横屏</span> 
+            </a>
+          </div>  
+          <div style="padding:20px 40px 20px 40px;" xid="div1_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cQFF7by" class="cQFF7by"> 
+            <a class="btn btn-default cQFF7by" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="unlock" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:unlockClick" data-config="{&quot;label&quot;:&quot;跟随系统&quot;}" __cid="cQFF7by"> 
+              <i xid="i1_3" __cid="cQFF7by" class="cQFF7by"/>  
+              <span xid="span1_3" __cid="cQFF7by" class="cQFF7by">跟随系统</span> 
+            </a> 
+          </div>
+          <div style="padding:20px 40px 20px 40px;" xid="div2_3" xmlns:xui="http://www.justep.com/xui" xui:parent="demoContent" xui:update-mode="insert" __cid="cQFF7by" class="cQFF7by"> 
+            <a class="btn btn-default cQFF7by" component="$model/UI2/system/components/justep/button/button" style="width:100%;" xid="current" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:currentClick" data-config="{&quot;label&quot;:&quot;获取当前屏幕方向&quot;}" __cid="cQFF7by"> 
+              <i xid="i2_3" __cid="cQFF7by" class="cQFF7by"/>  
+              <span xid="span2_3" __cid="cQFF7by" class="cQFF7by">获取当前屏幕方向</span> 
+            </a> 
+          </div>
+        </div>  
+        <div class="x-contents-content cQFF7by" xid="codeContent" style="padding:10px" xmlns:xui="http://www.justep.com/xui" xui:update-mode="merge" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cQFF7by">
+          <p xid="p1_22" xui:parent="codeContent" xui:update-mode="insert" __cid="cQFF7by" class="cQFF7by">强制竖屏</p>
+          <div xid="portraitClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cQFF7by" class="cQFF7by"/>
+          <p xid="p2_22" xui:parent="codeContent" xui:update-mode="insert" __cid="cQFF7by" class="cQFF7by">强制横屏</p>
+          <div xid="landscapeClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cQFF7by" class="cQFF7by"/>
+          <p xid="p3_22" xui:parent="codeContent" xui:update-mode="insert" __cid="cQFF7by" class="cQFF7by">跟随系统</p>
+          <div xid="unlockClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cQFF7by" class="cQFF7by"/>
+          <p xid="p4_22" xui:parent="codeContent" xui:update-mode="insert" __cid="cQFF7by" class="cQFF7by">获取当前屏幕方向</p>
+          <div xid="currentClick" xui:parent="codeContent" xui:update-mode="insert" __cid="cQFF7by" class="cQFF7by"/>
+        </div>
+      </div>
+    </div>  
+    <div class="x-panel-bottom cQFF7by" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cQFF7by">
+      <div component="$model/UI2/system/components/justep/button/buttonGroup" class="btn-group btn-group-justified x-card  cQFF7by" xid="buttonGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/button/buttonGroup'}" data-config="{&quot;tabbed&quot;:true}" __cid="cQFF7by">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cQFF7by" xid="info" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;info&quot;,&quot;target&quot;:&quot;infoContent&quot;}" __cid="cQFF7by"> 
+          <i xid="i1" __cid="cQFF7by" class="cQFF7by"/>  
+          <span xid="span1" __cid="cQFF7by" class="cQFF7by">info</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cQFF7by" xid="demo" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;demo&quot;,&quot;target&quot;:&quot;demoContent&quot;}" __cid="cQFF7by"> 
+          <i xid="i2" __cid="cQFF7by" class="cQFF7by"/>  
+          <span xid="span2" __cid="cQFF7by" class="cQFF7by">demo</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cQFF7by" xid="code" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;code&quot;,&quot;target&quot;:&quot;codeContent&quot;}" __cid="cQFF7by"> 
+          <i xid="i3" __cid="cQFF7by" class="cQFF7by"/>  
+          <span xid="span3" __cid="cQFF7by" class="cQFF7by">code</span>
+        </a>
+      </div>
+    </div>
+    <style __cid="cQFF7by" class="cQFF7by">.x-panel.p49cdd8552c814729a98901a6b599bd25-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.p49cdd8552c814729a98901a6b599bd25-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.p49cdd8552c814729a98901a6b599bd25-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p49cdd8552c814729a98901a6b599bd25-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p49cdd8552c814729a98901a6b599bd25-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.p49cdd8552c814729a98901a6b599bd25-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p49cdd8552c814729a98901a6b599bd25-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p49cdd8552c814729a98901a6b599bd25-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p49cdd8552c814729a98901a6b599bd25-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div>  
+</div>

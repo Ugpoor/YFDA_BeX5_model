@@ -1,0 +1,13 @@
+
+ .x-list-template li{
+ 	 border-top: 1px solid #eee;
+ 	  padding:10px 15px;
+ }
+ .x-list{
+	margin-top:-10px;
+}
+.redHeart{
+	position: absolute;
+	top:88px;
+	left:20px;
+}

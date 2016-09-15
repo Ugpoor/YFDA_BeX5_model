@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" xid="window" sysParam="false" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cQVbIFn" class="cQVbIFn" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/org/orgTreePC,$model/UI2/system/components/bootstrap/row/row,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/dataTables/dataTables,$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/windowReceiver/windowReceiver,$model/UI2/system/components/justep/grid/grid,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/bootstrap/inputGroup/inputGroup,$model/UI2/system/components/justep/window/window,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onModelConstructDone:modelModelConstructDone" __cid="cQVbIFn" class="cQVbIFn"></div>  
+  <span component="$model/UI2/system/components/justep/windowReceiver/windowReceiver" xid="windowReceiver" style="top:2px;left:606px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowReceiver/windowReceiver'}" data-events="onReceive:windowReceiverReceive" __cid="cQVbIFn" class="cQVbIFn"/>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pc7aa48929a0b406493efa27f5825e223-iosstatusbar cQVbIFn" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cQVbIFn"> 
+    <div class="x-panel-top container-fluid cQVbIFn" xid="top2" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cQVbIFn"> 
+      <div component="$model/UI2/system/components/bootstrap/row/row" class="row cQVbIFn" xid="row2" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cQVbIFn"> 
+        <div class="col col-xs-6 col-sm-6 col-md-6 col-lg-6 cQVbIFn" xid="col4" style="height:100%;padding-left: 0;" __cid="cQVbIFn">
+          <div class="input-group cQVbIFn" component="$model/UI2/system/components/bootstrap/inputGroup/inputGroup" xid="inputGroup1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/inputGroup/inputGroup'}" __cid="cQVbIFn"> 
+            <input type="text" class="form-control cQVbIFn" component="$model/UI2/system/components/justep/input/input" xid="filter" bind-keypress="filterKeypress" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-events="onChange:filterChange" data-config="{&quot;valueUpdateMode&quot;:&quot;input&quot;}" __cid="cQVbIFn"/>  
+            <div class="input-group-btn cQVbIFn" xid="div1" __cid="cQVbIFn"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-only-icon cQVbIFn" xid="searchBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:searchBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-search&quot;}" __cid="cQVbIFn"> 
+                <i xid="i7" class="icon-android-search cQVbIFn" __cid="cQVbIFn"/>  
+                <span xid="span7" __cid="cQVbIFn" class="cQVbIFn"/>
+              </a> 
+            </div>
+          </div>
+        </div>  
+        <div class="col col-xs-1 col-sm-1 col-md-1 col-lg-1 cQVbIFn" xid="col6" style="height:100%;" __cid="cQVbIFn"/>  
+        <div class="col col-xs-5 col-sm-5 col-md-5 col-lg-5 cQVbIFn" xid="col3" style="height:100%;" __cid="cQVbIFn">
+          <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox cQVbIFn" xid="cbCascade" label="级联选择" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;级联选择&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}" __cid="cQVbIFn">
+            <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox" __cid="cQVbIFn" class="cQVbIFn"/>
+            <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="cQVbIFn" class="cQVbIFn">级联选择</xhtml:label>
+          </span>
+        </div>
+      </div> 
+    </div>  
+    <div class="x-panel-content container-fluid cQVbIFn" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cQVbIFn"> 
+      <div component="$model/UI2/system/components/bootstrap/row/row" class="row cQVbIFn" xid="row1" style="height:100%;overflow: hidden;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cQVbIFn"> 
+        <div class="col col-xs-6 col-sm-6 col-md-6 col-lg-6 cQVbIFn" xid="col1" style="height:100%;padding-left: 0;" __cid="cQVbIFn"> 
+          <div component="$model/UI2/system/components/justep/org/orgTreePC" xid="orgTree" style="height:100%;overflow-x: hidden;" bind-visible="!showFilterGird.get()" class="x-bordered cQVbIFn" data-bind="component:{name:'$model/UI2/system/components/justep/org/orgTreePC'}" data-config="{&quot;data&quot;:&quot;orgData&quot;,&quot;tree&quot;:&quot;orgGrid&quot;}" __cid="cQVbIFn"> 
+            <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" appearance="tree" expandColumn="sName" useVirtualRoot="true" virtualRootLabel="组织机构" xid="orgGrid" class="x-grid-no-bordered cQVbIFn" rowAttr="$model.canSelect($row)?{}:{class:&quot;x-disabled-select&quot;}" data="orgData" data-config="{&quot;appearance&quot;:&quot;tree&quot;,&quot;colModel&quot;:[{&quot;name&quot;:&quot;sName&quot;,&quot;xid&quot;:&quot;column2&quot;}],&quot;data&quot;:&quot;orgData&quot;,&quot;expandColumn&quot;:&quot;sName&quot;,&quot;height&quot;:&quot;100%&quot;,&quot;rowAttr&quot;:&quot;$model.canSelect($row)?{}:{class:\&quot;x-disabled-select\&quot;}&quot;,&quot;useVirtualRoot&quot;:true,&quot;virtualRootLabel&quot;:&quot;组织机构&quot;,&quot;width&quot;:&quot;100%&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" data-events="onRowDblClick:orgGridRowDblClick" __cid="cQVbIFn"/> 
+          </div>  
+          <div style="display:none;height:0;" bind-visible="showFilterGird" xid="searchDiv" class="x-bordered cQVbIFn" __cid="cQVbIFn"> 
+            <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" data="orgSearchData" rowActiveClass="active" class="table table-striped cQVbIFn" xid="searchGrid" scrollCollapse="false" ordering="false" lengthMenu="20" data-config="{&quot;columns&quot;:[{&quot;sName&quot;:&quot;sFName&quot;,&quot;xid&quot;:&quot;column3&quot;}],&quot;data&quot;:&quot;orgSearchData&quot;,&quot;flexibleWidth&quot;:true,&quot;lengthMenu&quot;:&quot;20&quot;,&quot;ordering&quot;:false,&quot;rowActiveClass&quot;:&quot;active&quot;,&quot;scrollCollapse&quot;:false}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" data-events="onRowDblClick:searchGridRowDblClick" __cid="cQVbIFn"/>
+          </div> 
+        </div>  
+        <div class="col col-xs-1 col-sm-1 col-md-1 col-lg-1 cQVbIFn" xid="col2" style="height:100%;padding:5% 0 0 0;" __cid="cQVbIFn"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left btn-block cQVbIFn" xid="addAllBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:addAllBtnClick" data-config="{&quot;icon&quot;:&quot;icon-chevron-right&quot;,&quot;label&quot;:&quot;全选&quot;}" __cid="cQVbIFn"> 
+            <i xid="i3" class="icon-chevron-right cQVbIFn" __cid="cQVbIFn"/>  
+            <span xid="span3" __cid="cQVbIFn" class="cQVbIFn">全选</span> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left btn-block cQVbIFn" xid="addBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:addBtnClick" data-config="{&quot;icon&quot;:&quot;icon-chevron-right&quot;,&quot;label&quot;:&quot;选择&quot;}" __cid="cQVbIFn"> 
+            <i xid="i4" class="icon-chevron-right cQVbIFn" __cid="cQVbIFn"/>  
+            <span xid="span4" __cid="cQVbIFn" class="cQVbIFn">选择</span> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left btn-block cQVbIFn" xid="removeBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:removeBtnClick" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;,&quot;label&quot;:&quot;移除&quot;}" __cid="cQVbIFn"> 
+            <i xid="i5" class="icon-chevron-left cQVbIFn" __cid="cQVbIFn"/>  
+            <span xid="span5" __cid="cQVbIFn" class="cQVbIFn">移除</span> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left btn-block cQVbIFn" xid="removeAllBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:removeAllBtnClick" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;,&quot;label&quot;:&quot;清空&quot;}" __cid="cQVbIFn"> 
+            <i xid="i6" class="icon-chevron-left cQVbIFn" __cid="cQVbIFn"/>  
+            <span xid="span6" __cid="cQVbIFn" class="cQVbIFn">清空</span> 
+          </a> 
+        </div>  
+        <div class="col col-xs-5 col-sm-5 col-md-5 col-lg-5 cQVbIFn" xid="col7" style="height:100%;padding-right: 0;" __cid="cQVbIFn"> 
+          <div style="height:100%;" class="x-bordered cQVbIFn" __cid="cQVbIFn"> 
+            <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" data="selectData" rowActiveClass="active" class="table table-striped cQVbIFn" xid="selectGrid" scrollCollapse="false" ordering="false" data-config="{&quot;columns&quot;:[{&quot;sName&quot;:&quot;sName&quot;,&quot;xid&quot;:&quot;column1&quot;}],&quot;data&quot;:&quot;selectData&quot;,&quot;flexibleWidth&quot;:true,&quot;ordering&quot;:false,&quot;rowActiveClass&quot;:&quot;active&quot;,&quot;scrollCollapse&quot;:false}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" data-events="onRowDblClick:selectGridRowDblClick" __cid="cQVbIFn"/>
+          </div> 
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-bottom cQVbIFn" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" data-config="{&quot;height&quot;:42}" __cid="cQVbIFn"> 
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label x-dialog-button cQVbIFn" xid="button2" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{&quot;operation&quot;:&quot;windowReceiver.windowCancel&quot;}" data-config="{&quot;label&quot;:&quot;取消&quot;}" __cid="cQVbIFn"> 
+        <i xid="i2" __cid="cQVbIFn" class="cQVbIFn"/>  
+        <span xid="span2" __cid="cQVbIFn" class="cQVbIFn">取消</span> 
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-primary x-dialog-button cQVbIFn" xid="OKBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:OKBtnClick" data-config="{&quot;label&quot;:&quot;确定&quot;}" __cid="cQVbIFn"> 
+        <i xid="i1" __cid="cQVbIFn" class="cQVbIFn"/>  
+        <span xid="span1" __cid="cQVbIFn" class="cQVbIFn">确定</span> 
+      </a> 
+    </div>  
+    <style __cid="cQVbIFn" class="cQVbIFn">.x-panel.pc7aa48929a0b406493efa27f5825e223-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pc7aa48929a0b406493efa27f5825e223-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: 42px;}.x-panel.pc7aa48929a0b406493efa27f5825e223-iosstatusbar &gt;.x-panel-bottom {height: 42px;}.iosstatusbar .x-panel.pc7aa48929a0b406493efa27f5825e223-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pc7aa48929a0b406493efa27f5825e223-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pc7aa48929a0b406493efa27f5825e223-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pc7aa48929a0b406493efa27f5825e223-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pc7aa48929a0b406493efa27f5825e223-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pc7aa48929a0b406493efa27f5825e223-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div> 
+</div>

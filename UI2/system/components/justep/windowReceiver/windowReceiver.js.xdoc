@@ -1,0 +1,106 @@
+/**
+	@name $UI/system/components/justep/windowReceiver/windowReceiver
+	@component 
+	@extends $UI/system/lib/base/bindComponent
+	@model UI2
+	@description WindowReceiver
+*/
+
+/**
+	@name $UI/system/components/justep/windowReceiver/windowReceiver#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name $UI/system/components/justep/windowReceiver/windowReceiver#sendData
+	@function
+	@param {object} data 传送的数据
+	@description 向调用者传送数据
+*/
+
+/**
+	@name $UI/system/components/justep/windowReceiver/windowReceiver#getReceiveData
+	@function
+	@return {object} 调用者传入的数据
+	@description 获取调用者传入的数据
+*/
+
+/**
+	@name $UI/system/components/justep/windowReceiver/windowReceiver#windowEnsure
+	@function
+	@param {object} data 传送的数据
+	@description 向调用者传送数据并且关闭
+*/
+
+/**
+	@name $UI/system/components/justep/windowReceiver/windowReceiver#windowCancel
+	@function
+	@description 取消关闭
+*/
+
+/**
+@name $UI/system/components/justep/windowReceiver/windowReceiver#ReceiveEvent
+@extends $UI/system/components/justep/common/event#ViewEvent
+@category eventclass
+@class
+@model UI2
+@description 接收数据事件
+*/
+ 
+/**
+ @name $UI/system/components/justep/windowReceiver/windowReceiver#ReceiveEvent.data
+ @property
+ @type {object}
+ @description 返回的数据,由开发者决定
+*/ 
+
+/**
+ @name $UI/system/components/justep/windowReceiver/windowReceiver#ReceiveEvent.sender
+ @property
+ @type {$UI/system/lib/base/viewComponent}
+ @description 发送数据的组件js对象,这里一般WindowDialog组件
+*/ 
+
+/**
+	@name $UI/system/components/justep/windowReceiver/windowReceiver#onReceive
+	@event
+	@description <b>[回调型事件]</b>接收数据事件
+	@param {$UI/system/components/justep/windowReceiver/windowReceiver#ReceiveEvent} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"data" : 接收到的数据,
+		"sender" : 发送数据的组件js对象，如：WindowDialog
+	}
+	</xmp>	
+*/
+
+/**
+ @name $UI/system/components/justep/windowReceiver/windowReceiver#windowCancel
+ @operation
+ @see $UI/system/components/justep/windowReceiver/windowReceiver#windowCancel
+ @description 取消关闭
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/windowReceiver/windowReceiver#windowEnsure
+ @operation
+ @see $UI/system/components/justep/windowReceiver/windowReceiver#windowEnsure
+ @param {object} data 传送的数据
+ @description 向调用者传送数据并且关闭
+ @returns {void}
+*/
+
+/**
+ @name $UI/system/components/justep/windowReceiver/windowReceiver#sendData
+ @operation
+ @see $UI/system/components/justep/windowReceiver/windowReceiver#sendData
+ @param {object} data 传送的数据
+ @description 向调用者传送数据
+ @returns {void}
+*/

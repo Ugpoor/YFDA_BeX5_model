@@ -1,0 +1,27 @@
+.x-titlebar{ background-color:#393a3e;}
+
+.o-img{ width:100%;}
+.o-nopadding{ padding:0;}
+.x-titlebar-right{ padding-right:15px;}
+
+/*页脚按钮组*/
+.o-tools{ height:48px; padding-top:3px; margin-bottom:15px; background-color: #f9f9f9; border-top: 1px solid rgba(214, 214, 214, 0.6); border-top: 1px solid rgba(214, 214, 214, 0.6);}
+.o-tools .btn i{ font-size:24px; color:#393a3e;}
+
+/*图片信息*/
+.o-information{ display:none; background-color:#fff; color:#212121;}
+.o-information>div{ margin-bottom:10px;}
+.o-information .o-edit{ color:#2fa4e7; margin-left:10px;}
+
+/*图片信息编辑*/
+.o-editDescription { display:none; height:40px; padding-top:3px; background-color: #fefefe;}
+.o-editDescription .o-input { height:32px; padding-left:0; background: none; border: none; box-shadow: none; border-radius: 0; border-bottom: 1px solid #dfdfdf; }
+.o-editDescription .o-input:focus { border-bottom: 1px solid #4bb922;}
+.o-editDescription .o-saveBtn { padding:6px; margin-top:3px; color:#fff; font-size:12px; background-color:#45c018; border-radius:3px;}
+
+/*删除提示框*/
+.x-bar{ padding-left:12px; border-bottom:0;}
+.x-popOver-overlay{ background-color:#000;}
+.o-delContent{ width:270px; height:100px; background-color:#fff; position:relative;}
+.o-delContent .btn[xid=delBtn]{ position:absolute; bottom:10px; right:80px;}
+.o-delContent .btn[xid=cancelBtn]{ position:absolute; bottom:10px; right:10px;}

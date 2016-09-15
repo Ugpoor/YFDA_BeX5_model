@@ -1,0 +1,7 @@
+.x-toolbar {
+  padding: 10px 0;
+  margin: 0 0 10px 0;
+}
+.x-toolbar.x-toolbar-spliter {
+  border-bottom: 2px solid #ecf0f1;
+}

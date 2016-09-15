@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<elements> 
+  <element name="$UI/system/components/justep/codeSelect/codeSelect" tag-name="select"
+    icon="select.gif" text="下拉选择" binding-component="$UI/system/components/justep/codeSelect/codeSelect"
+    component-type="formControl" is-complex-component="true" design-view="web-designer"> 
+    <inner-component-config> 
+      <item name="$UI/system/components/justep/data/bizData" exclude-properties="writer,creator,columns,updateMode,directDelete,confirmDelete,relation,data,column,confirmDeleteText,confirmRefresh,confirmRefreshText,autoNew,nodeLevelRelation,isTree,parentRelation,nodeKindRelation,rootFilter,delayLoad"> 
+        <properties> 
+          <property name="reader" readonly="true" editor-ref="" default-value="/system/logic/action/querySA_CodeAction"/>  
+          <property name="concept" readonly="true" editor-ref="" default-value="SA_Code"/>  
+          <property name="offset" readonly="true" editor-ref="" default-value="0"/>  
+          <property name="limit" readonly="false" editor-ref="" default-value="-1"/>  
+        </properties> 
+      </item> 
+    </inner-component-config>  
+    <properties> 
+      <property name="xid" text="编号" required="true"/>  
+      <property name="bind-ref" text="引用" editor-ref="dataRef"/>  
+      <property name="bind-labelRef" text="label引用" editor-ref="dataRef"/>  
+      <property name="codeType" required="true" text="编码类型"/>  
+      <group name="options"> 
+        <property name="bind-optionsCaption" path="@bind-optionsCaption"/>  
+        <property name="bind-optionsValue" path="@bind-optionsValue" default-value="sCode"/>  
+        <property name="bind-optionsLabel" path="@bind-optionsLabel" default-value="sName"/> 
+      </group>  
+      <property name="class" text="class"> 
+        <editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "form-control"
+					},	 
+					"2size": {
+						label: "尺寸样式",
+						value: "input-lg|input-sm",
+						require: false
+					}
+				}
+				]]></editor-parameter> 
+      </property>  
+      <property name="style" text="样式" editor-ref="styleDialog"/>  
+      <property name="tabindex" text="Tab键顺序" data-type="integer"/>  
+      <property name="accesskey" text="快捷键"/>  
+      <property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false"
+        data-type="boolean"/>  
+      <include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/> 
+    </properties>  
+    <toolbar></toolbar>  
+    <events> 
+      <!--组件事件-->  
+      <event name="onChange" text="值变化后"/>  
+      <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/> 
+    </events>  
+    <templates> 
+      <template name="default"><![CDATA[ 
+			<select component="$UI/system/components/justep/codeSelect/codeSelect" class="form-control">
+				<div component="$UI/system/components/justep/data/bizData" autoLoad="false">
+			    </div>
+			</select>
+	  ]]></template> 
+    </templates> 
+  </element> 
+</elements>

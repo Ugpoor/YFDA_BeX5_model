@@ -1,0 +1,61 @@
+/*
+代码依赖 
+x-item-upload 找上传按钮
+x-doc-process-bar 找进度条
+ */
+
+.x-attachment-list {
+	overflow: auto;
+}
+
+.x-attachment-list.table td {
+	vertical-align: middle;
+}
+
+.x-attachment-list .glyphicon-remove {
+	color: red;
+}
+
+.x-attachment-list .glyphicon {
+	cursor: pointer;
+}
+
+.x-attachment-list>.x-attachment-toolbar {
+	display: table;
+	width:100%;
+	height: 42px;
+}
+
+.x-attachment-list>.x-attachment-toolbar>div {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.x-attachment-title {
+	padding-left: 8px;
+	width: 100%;
+}
+
+.x-attachment-upload {
+	border-left: #eaeaea solid 1px;
+	width: 55px;
+	white-space: nowrap;
+	padding: 0 8px 0 0;
+}
+
+.x-attachment-upload-btn {
+	text-align: center;
+	width: 55px;
+	border-left: #eaeaea solid 1px;
+	cursor: pointer;
+	color: #3b95d3;
+	background-size: 0;
+}
+
+.x-attachment-list table {
+	margin-bottom: 0;
+}
+
+.x-attachment-processbar{
+	height:1px;
+}

@@ -1,0 +1,41 @@
+.panel:hover,
+.panel-heading:hover,
+.panel-body:hover,
+.panel-footer:hover
+{
+	outline: blue dashed 1px;
+}
+.tab-pane {
+	min-height: 50px;
+}
+.bsTabs:hover,
+.bsTabs>.nav>li:hover,
+.bsTabs>.tab-content>.tab-pane:hover
+{
+	outline: blue dashed 1px;
+}
+.nav-pills{
+	border-bottom:1px solid #428bca;
+}
+.nav-pills > li > a {
+	border-radius:0;
+	border-top-right-radius: 4px;
+}
+.x-dialog-designer{
+	z-index:1000;
+	width:24px;
+	height:24px;
+	background: transparent url(../bootstrap/dialog/designer/img/dialog_icon.png);
+}
+.form-group,.form-horizontal {
+	min-height:30px;
+	outline:1px dotted #E0E0E0;
+}
+.form-group>div{
+	min-height:30px;
+	outline:1px dotted #E0E0E0;
+}
+.col {
+   outline:1px #E0E0E0 dotted ;
+   min-height: 20px;
+}
