@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" class="window cUVJv6v" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cUVJv6v" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/designerCommon/grid/grid,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,">  
+  <style xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml">@import url(@justepContextPath@/v_5113_nol_zh_CNs_desktopd_pc/system/components/designerCommon/css/common.css);</style>  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cUVJv6v" class="cUVJv6v"/>  
+  <div xmlns="" class="row form-navbar1 cUVJv6v" style="margin-top:12px" __cid="cUVJv6v"> 
+    <label for="text1" class="control-label col-xs-2 cUVJv6v" style="padding-top:10px;margin-left:15px" __cid="cUVJv6v" data-bind="event:{click:$model._callModelFn.bind($model, 'finish')}">从表页标题：</label>  
+    <div class="col-xs-4 cUVJv6v" __cid="cUVJv6v"> 
+      <input component="$model/UI2/system/components/justep/input/input" class="form-control cUVJv6v" xid="titleInput" placeholder="请输入标题" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-events="onChange:input1Change" __cid="cUVJv6v"/> 
+    </div> 
+  </div>  
+  <div xmlns="" class="row form-navbar2 cUVJv6v" __cid="cUVJv6v"> 
+    <ul class="nav navbar-nav cUVJv6v" style="margin-left:15px" __cid="cUVJv6v"> 
+      <li __cid="cUVJv6v" class="cUVJv6v"> 
+        <a href="#" role="button" __cid="cUVJv6v" class="cUVJv6v" data-bind="event:{click:$model._callModelFn.bind($model, 'addClick')}"> 
+          <i class="glyphicon glyphicon-plus cUVJv6v" __cid="cUVJv6v"/>添加关系
+        </a> 
+      </li>  
+      <li __cid="cUVJv6v" class="cUVJv6v"> 
+        <a href="#" role="button" __cid="cUVJv6v" class="cUVJv6v" data-bind="event:{click:$model._callModelFn.bind($model, 'deleteClick')}"> 
+          <i class="glyphicon glyphicon-minus cUVJv6v" __cid="cUVJv6v"/>删除
+        </a> 
+      </li>  
+      <li __cid="cUVJv6v" class="cUVJv6v"> 
+        <a href="#" role="button" __cid="cUVJv6v" class="cUVJv6v" data-bind="event:{click:$model._callModelFn.bind($model, 'upClick')}"> 
+          <i class="glyphicon glyphicon-arrow-up cUVJv6v" __cid="cUVJv6v"/>上移
+        </a> 
+      </li>  
+      <li __cid="cUVJv6v" class="cUVJv6v"> 
+        <a href="#" role="button" __cid="cUVJv6v" class="cUVJv6v" data-bind="event:{click:$model._callModelFn.bind($model, 'downClick')}"> 
+          <i class="glyphicon glyphicon-arrow-down cUVJv6v" __cid="cUVJv6v"/>下移
+        </a> 
+      </li> 
+    </ul> 
+  </div>  
+  <div xmlns="" component="$model/UI2/system/components/designerCommon/grid/grid" xid="grid" data="detailData" style="visibility:hidden;width:95%;" class="grid-height cUVJv6v" editable="true" config="{&quot;altrows&quot;:true,&quot;columns&quot;:[{&quot;columntype&quot;:&quot;textbox&quot;,&quot;dataField&quot;:&quot;name&quot;,&quot;text&quot;:&quot;关系名称&quot;},{&quot;columntype&quot;:&quot;textbox&quot;,&quot;dataField&quot;:&quot;data-type&quot;,&quot;text&quot;:&quot;关系类型&quot;},{&quot;columntype&quot;:&quot;textbox&quot;,&quot;dataField&quot;:&quot;labelName&quot;,&quot;text&quot;:&quot;关系标签&quot;},{&quot;columntype&quot;:&quot;dropdownlist&quot;,&quot;dataField&quot;:&quot;colEditor&quot;,&quot;text&quot;:&quot;编辑器(*)&quot;}],&quot;dataXID&quot;:&quot;detailData&quot;,&quot;editable&quot;:true,&quot;enabletooltips&quot;:true,&quot;selectionmode&quot;:&quot;singlerow&quot;}" data-bind="component:{name:'$model/UI2/system/components/designerCommon/grid/grid'}" data-events="onCreateEditor_colEditor:gridColEditor" __cid="cUVJv6v"/> 
+</div>

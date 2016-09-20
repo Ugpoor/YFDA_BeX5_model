@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window cruQb6b" component="$model/UI2/system/components/justep/window/window" design="device:pc" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cruQb6b" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/bootstrap/form/form,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/windowReceiver/windowReceiver,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/bizData,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cruQb6b" class="cruQb6b"/>  
+  <div xmlns="" class="form-horizontal container-fluid cruQb6b" component="$model/UI2/system/components/bootstrap/form/form" xid="form" data-bind="component:{name:'$model/UI2/system/components/bootstrap/form/form'}" __cid="cruQb6b"> 
+    <div class="form-group cruQb6b" __cid="cruQb6b"> 
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fApplicationId')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fApplicationId'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div>  
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fApplicationType')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fApplicationType'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div> 
+    </div>  
+    <div class="form-group cruQb6b" __cid="cruQb6b"> 
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fApplyTime')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fApplyTime'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div>  
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fApplicationStatus')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fApplicationStatus'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div> 
+    </div>  
+    <div class="form-group cruQb6b" __cid="cruQb6b"> 
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fUser')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fUser'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div>  
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fIdCode')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fIdCode'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div> 
+    </div>  
+    <div class="form-group cruQb6b" __cid="cruQb6b"> 
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fAppCom')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fAppCom'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div>  
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fAppComRep')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fAppComRep'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div> 
+    </div>  
+    <div class="form-group cruQb6b" __cid="cruQb6b"> 
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fCompanyType')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fCompanyType'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div>  
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fComDistrict')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fComDistrict'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div> 
+    </div>  
+    <div class="form-group cruQb6b" __cid="cruQb6b"> 
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fComAve')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fComAve'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div>  
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fComTel')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fComTel'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div> 
+    </div>  
+    <div class="form-group cruQb6b" __cid="cruQb6b"> 
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fComZip')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fComZip'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div>  
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fComRegAddr')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fComRegAddr'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div> 
+    </div>  
+    <div class="form-group cruQb6b" __cid="cruQb6b"> 
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fComContactMan')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fComContactMan'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div>  
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fComContactManTel')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fComContactManTel'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div> 
+    </div>  
+    <div class="form-group cruQb6b" __cid="cruQb6b"> 
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fComContactManAddr')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fComContactManAddr'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div>  
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fProcessId')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fProcessId'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div> 
+    </div>  
+    <div class="form-group cruQb6b" __cid="cruQb6b"> 
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fTime')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fTime'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div>  
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fProcessMemo')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fProcessMemo'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div> 
+    </div>  
+    <div class="form-group cruQb6b" __cid="cruQb6b"> 
+      <div class="col-sm-2 cruQb6b" __cid="cruQb6b"> 
+        <label class="control-label cruQb6b" __cid="cruQb6b" data-bind="text:dialogData.label('fperInChargeId')"/> 
+      </div>  
+      <div class="col-sm-4 cruQb6b" __cid="cruQb6b"> 
+        <input class="form-control cruQb6b" component="$model/UI2/system/components/justep/input/input" data="dialogData" data-bind="component:{ref:dialogData.ref('fperInChargeId'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cruQb6b"/> 
+      </div> 
+    </div>  
+    <div class="x-panel-bottom cruQb6b" xid="bottom1" height="42" __cid="cruQb6b"> 
+      <a class="btn btn-link btn-only-label x-dialog-button cruQb6b" component="$model/UI2/system/components/justep/button/button" style="margin-left:30px;width:80px;" xid="cancelBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:cancelBtnClick" data-config="{&quot;label&quot;:&quot;取    消&quot;}" __cid="cruQb6b"> 
+        <i xid="i4_1" __cid="cruQb6b" class="cruQb6b"/>  
+        <span xid="span4_1" __cid="cruQb6b" class="cruQb6b">取 消</span> 
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-primary x-dialog-button cruQb6b" xid="OKBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:okBtnClick" data-config="{&quot;label&quot;:&quot;确定&quot;}" __cid="cruQb6b"> 
+        <i xid="i1" __cid="cruQb6b" class="cruQb6b"/>  
+        <span xid="span1" __cid="cruQb6b" class="cruQb6b">确定</span> 
+      </a> 
+    </div> 
+  </div>  
+  <span xmlns="" component="$model/UI2/system/components/justep/windowReceiver/windowReceiver" xid="windowReceiver" data-bind="component:{name:'$model/UI2/system/components/justep/windowReceiver/windowReceiver'}" data-events="onReceive:windowReceiverReceive" __cid="cruQb6b" class="cruQb6b"/> 
+</div>

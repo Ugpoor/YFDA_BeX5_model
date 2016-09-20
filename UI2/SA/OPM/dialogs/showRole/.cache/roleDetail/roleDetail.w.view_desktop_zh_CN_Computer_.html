@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window justep-opm-roledetail czm2AFn" component="$model/UI2/system/components/justep/window/window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="czm2AFn" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/bootstrap/form/form,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/windowReceiver/windowReceiver,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/windowDialog/windowDialog,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/dataTables/dataTables,">  
+  <style xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml">.justep-opm-roledetail.czm2AFn .x-label-edit.czm2AFn .x-label.czm2AFn{width: 80px}</style>  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="czm2AFn" class="czm2AFn"/>  
+  <span xmlns="" component="$model/UI2/system/components/justep/windowReceiver/windowReceiver" xid="windowReceiver" style="left:215px;top:343px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowReceiver/windowReceiver'}" data-events="onReceive:windowReceiverReceive" __cid="czm2AFn" class="czm2AFn"/>  
+  <span xmlns="" component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="selectRolesDialog" style="left:281px;top:344px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-events="onReceive:selectRolesDialogReceive" data-config="{&quot;showTitle&quot;:true,&quot;src&quot;:&quot;$model/UI2/SA/OPM/dialogs/selectRole/selectMultiRoles.w&quot;,&quot;status&quot;:&quot;normal&quot;,&quot;title&quot;:&quot;选择父角色&quot;,&quot;width&quot;:&quot;50%&quot;}" __cid="czm2AFn" class="czm2AFn"> 
+    <div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog-overlay czm2AFn" __cid="czm2AFn"></div>  
+    <div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog czm2AFn" style="display:none;" showTitle="true" __cid="czm2AFn">  
+      <div class="x-dialog-title czm2AFn" __cid="czm2AFn"> 
+        <button class="close czm2AFn" __cid="czm2AFn"> 
+          <span __cid="czm2AFn" class="czm2AFn">×</span> 
+        </button>  
+        <div class="x-dialog-title-text czm2AFn" __cid="czm2AFn">选择父角色</div> 
+      </div>  
+      <div class="x-dialog-body czm2AFn" __cid="czm2AFn"/> 
+    </div> 
+  </span>  
+  <div xmlns="" component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p995ef5dec98f46b9a48e800f993751b4-iosstatusbar czm2AFn" xid="panel2" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="czm2AFn"> 
+    <div class="x-panel-top container-fluid czm2AFn" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" data-config="{&quot;height&quot;:155}" __cid="czm2AFn"> 
+      <div class="form-horizontal container-fluid czm2AFn" component="$model/UI2/system/components/bootstrap/form/form" xid="form1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/form/form'}" __cid="czm2AFn"> 
+        <div class="form-group czm2AFn" xid="formGroup1" __cid="czm2AFn"> 
+          <div class="col-xs-2 czm2AFn" xid="col1" __cid="czm2AFn"> 
+            <label class="control-label czm2AFn" xid="controlLabel1" __cid="czm2AFn">名称</label> 
+          </div>  
+          <div class="col-xs-4 czm2AFn" xid="col2" __cid="czm2AFn"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit czm2AFn" xid="input2" data-bind="component:{ref:roleData.ref('sName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="czm2AFn"/> 
+          </div>  
+          <div class="col-xs-2 czm2AFn" xid="col3" __cid="czm2AFn"> 
+            <label class="control-label czm2AFn" xid="controlLabel2" __cid="czm2AFn">编码</label> 
+          </div>  
+          <div class="col-xs-4 czm2AFn" xid="col6" __cid="czm2AFn"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit czm2AFn" xid="input1" data-bind="component:{ref:roleData.ref('sCode'),name:'$model/UI2/system/components/justep/input/input'}" __cid="czm2AFn"/> 
+          </div> 
+        </div>  
+        <div class="form-group czm2AFn" xid="formGroup2" __cid="czm2AFn"> 
+          <div class="col-xs-2 czm2AFn" xid="col11" __cid="czm2AFn"> 
+            <label class="control-label czm2AFn" xid="controlLabel4" __cid="czm2AFn">类型</label> 
+          </div>  
+          <div class="col-xs-4 czm2AFn" xid="col13" __cid="czm2AFn"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit czm2AFn" xid="input3" data-bind="component:{ref:roleData.ref('roleKindLabel'),name:'$model/UI2/system/components/justep/input/input'}" __cid="czm2AFn"/> 
+          </div>  
+          <div class="col-xs-2 czm2AFn" xid="col12" __cid="czm2AFn"> 
+            <label class="control-label czm2AFn" xid="controlLabel3" __cid="czm2AFn">分类</label> 
+          </div>  
+          <div class="col-xs-4 czm2AFn" xid="col9" __cid="czm2AFn"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit czm2AFn" xid="input4" data-bind="component:{ref:roleData.ref('sCatalog'),name:'$model/UI2/system/components/justep/input/input'}" __cid="czm2AFn"/> 
+          </div> 
+        </div>  
+        <div class="form-group czm2AFn" xid="formGroup3" __cid="czm2AFn"> 
+          <div class="col-xs-2 czm2AFn" xid="col15" __cid="czm2AFn"> 
+            <label class="control-label czm2AFn" xid="controlLabel5" __cid="czm2AFn">描述</label> 
+          </div>  
+          <div class="col-xs-10 czm2AFn" xid="col17" __cid="czm2AFn"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit czm2AFn" xid="input5" data-bind="component:{ref:roleData.ref('sDescription'),name:'$model/UI2/system/components/justep/input/input'}" __cid="czm2AFn"/> 
+          </div> 
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content x-bordered czm2AFn" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="czm2AFn"> 
+      <table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" rowActiveClass="active" class="table table-hover czm2AFn" xid="roleParentsDataTables" data="roleParentsData" multiSelect="true" data-config="{&quot;columns&quot;:[{&quot;className&quot;:&quot;x-dt-title-center&quot;,&quot;sName&quot;:&quot;parentName&quot;,&quot;title&quot;:&quot;继承于父角色&quot;,&quot;xid&quot;:&quot;column2&quot;}],&quot;data&quot;:&quot;roleParentsData&quot;,&quot;flexibleWidth&quot;:true,&quot;multiSelect&quot;:true,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}" __cid="czm2AFn"></table> 
+    </div>  
+    <div class="x-panel-bottom czm2AFn" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="czm2AFn"> 
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left x-dialog-button czm2AFn" xid="addParentsBtn" style="float: left;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},disable:$model.openMode.get() == 'view'" data-events="onClick:addParentsBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-add&quot;,&quot;label&quot;:&quot;添加父角色&quot;}" __cid="czm2AFn"> 
+        <i xid="i3" class="icon-android-add czm2AFn" __cid="czm2AFn"/>  
+        <span xid="span3" __cid="czm2AFn" class="czm2AFn">添加父角色</span> 
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left x-dialog-button czm2AFn" xid="deleteParentBtn" style="float: left;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},disable:$model.openMode.get() == 'view'" data-events="onClick:deleteParentBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-close&quot;,&quot;label&quot;:&quot;删除父角色&quot;}" __cid="czm2AFn"> 
+        <i xid="i4" class="icon-android-close czm2AFn" __cid="czm2AFn"/>  
+        <span xid="span4" __cid="czm2AFn" class="czm2AFn">删除父角色</span> 
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label x-dialog-button czm2AFn" xid="cancelBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{&quot;operation&quot;:&quot;windowReceiver.windowCancel&quot;}" data-config="{&quot;label&quot;:&quot;取消&quot;}" __cid="czm2AFn"> 
+        <i xid="i1" __cid="czm2AFn" class="czm2AFn"/>  
+        <span xid="span1" __cid="czm2AFn" class="czm2AFn">取消</span> 
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-primary btn-only-label x-dialog-button czm2AFn" xid="okBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},disable:$model.openMode.get() == 'view'" data-events="onClick:okBtnClick" data-config="{&quot;label&quot;:&quot;确定&quot;}" __cid="czm2AFn"> 
+        <i xid="i2" __cid="czm2AFn" class="czm2AFn"/>  
+        <span xid="span2" __cid="czm2AFn" class="czm2AFn">确定</span> 
+      </a> 
+    </div>  
+    <style __cid="czm2AFn" class="czm2AFn">.x-panel.p995ef5dec98f46b9a48e800f993751b4-iosstatusbar &gt;.x-panel-top {height: 155px;}.x-panel.p995ef5dec98f46b9a48e800f993751b4-iosstatusbar &gt;.x-panel-content { top: 155px;bottom: nullpx;}.x-panel.p995ef5dec98f46b9a48e800f993751b4-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p995ef5dec98f46b9a48e800f993751b4-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p995ef5dec98f46b9a48e800f993751b4-iosstatusbar &gt;.x-panel-top {height: 175px;}.iosstatusbar .x-panel.p995ef5dec98f46b9a48e800f993751b4-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p995ef5dec98f46b9a48e800f993751b4-iosstatusbar &gt;.x-panel-content { top: 175px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p995ef5dec98f46b9a48e800f993751b4-iosstatusbar &gt;.x-panel-top {height: 155px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p995ef5dec98f46b9a48e800f993751b4-iosstatusbar &gt;.x-panel-content {top: 155px;}</style> 
+  </div> 
+</div>

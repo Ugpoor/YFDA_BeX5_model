@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window justep-opm-orgdetail cmeUZNf" component="$model/UI2/system/components/justep/window/window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cmeUZNf" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/bootstrap/form/form,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/windowReceiver/windowReceiver,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/gridSelect/gridSelect,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/panel/panel,">  
+  <style xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml">.justep-opm-orgdetail.cmeUZNf .x-label-edit.cmeUZNf .x-label.cmeUZNf{width: 80px}</style>  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cmeUZNf" class="cmeUZNf"/>  
+  <span xmlns="" component="$model/UI2/system/components/justep/windowReceiver/windowReceiver" xid="windowReceiver" style="left:126px;top:430px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowReceiver/windowReceiver'}" data-events="onReceive:windowReceiverReceive" __cid="cmeUZNf" class="cmeUZNf"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p3214426be33142c38d46caccdd89b975-iosstatusbar cmeUZNf" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cmeUZNf"> 
+    <div class="x-panel-content container-fluid cmeUZNf" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cmeUZNf"> 
+      <div class="form-horizontal container-fluid cmeUZNf" component="$model/UI2/system/components/bootstrap/form/form" xid="form1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/form/form'}" __cid="cmeUZNf"> 
+        <div class="form-group cmeUZNf" xid="formGroup2" __cid="cmeUZNf"> 
+          <div class="col-xs-2 cmeUZNf" xid="col15" __cid="cmeUZNf"> 
+            <label class="control-label cmeUZNf" xid="controlLabel1" __cid="cmeUZNf">上级组织</label> 
+          </div>  
+          <div class="col-xs-10 cmeUZNf" xid="col16" __cid="cmeUZNf"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit cmeUZNf" xid="input1" data-bind="component:{ref:parentData.ref('sFName'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;readonly&quot;:true}" __cid="cmeUZNf"/> 
+          </div> 
+        </div>  
+        <div class="form-group cmeUZNf" xid="formGroup4" __cid="cmeUZNf"> 
+          <div class="col-xs-2 cmeUZNf" xid="col21" __cid="cmeUZNf"> 
+            <label class="control-label cmeUZNf" xid="controlLabel2" __cid="cmeUZNf">名称</label> 
+          </div>  
+          <div class="col-xs-4 cmeUZNf" xid="col22" __cid="cmeUZNf"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit cmeUZNf" xid="input2" data-bind="component:{ref:orgData.ref('sName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmeUZNf"/> 
+          </div>  
+          <div class="col-xs-2 cmeUZNf" xid="col23" __cid="cmeUZNf"> 
+            <label class="control-label cmeUZNf" xid="controlLabel3" __cid="cmeUZNf">编码</label> 
+          </div>  
+          <div class="col-xs-4 cmeUZNf" xid="col24" __cid="cmeUZNf"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit cmeUZNf" xid="input3" data-bind="component:{ref:orgData.ref('sCode'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmeUZNf"/> 
+          </div> 
+        </div>  
+        <div class="form-group cmeUZNf" xid="formGroup5" __cid="cmeUZNf"> 
+          <div class="col-xs-2 cmeUZNf" xid="col28" __cid="cmeUZNf"> 
+            <label class="control-label cmeUZNf" xid="controlLabel4" __cid="cmeUZNf">类型</label> 
+          </div>  
+          <div class="col-xs-4 cmeUZNf" xid="col26" __cid="cmeUZNf"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit cmeUZNf" xid="input6" data-bind="component:{ref:orgData.ref('orgKindLabel'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;readonly&quot;:true}" __cid="cmeUZNf"/> 
+          </div>  
+          <div class="col-xs-2 cmeUZNf" xid="col25" __cid="cmeUZNf"> 
+            <label class="control-label cmeUZNf" xid="controlLabel5" __cid="cmeUZNf">级别</label> 
+          </div>  
+          <div class="col-xs-4 cmeUZNf" xid="col27" __cid="cmeUZNf"> 
+            <div class="x-gridSelect cmeUZNf" component="$model/UI2/system/components/justep/gridSelect/gridSelect" xid="gridSelect1" data-config="{&quot;autoOptionWidth&quot;:false,&quot;disabled&quot;:false,&quot;inputChangeable&quot;:false,&quot;inputFilterable&quot;:false,&quot;optionCfg&quot;:{&quot;colModel&quot;:[{&quot;name&quot;:&quot;sName&quot;}],&quot;data&quot;:&quot;orgLevelData&quot;,&quot;label&quot;:&quot;sName&quot;,&quot;value&quot;:&quot;sCode&quot;,&quot;xid&quot;:&quot;option1&quot;},&quot;optionHeight&quot;:300}" data-bind="component:{ref:orgData.ref('sLevel'),name:'$model/UI2/system/components/justep/gridSelect/gridSelect',labelRef:orgData.ref('levelName')}" __cid="cmeUZNf"> 
+              <div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-gridSelect-option cmeUZNf" __cid="cmeUZNf"></div>  
+              <input xmlns:xhtml="http://www.w3.org/1999/xhtml" class="form-control x-gridSelect-input cmeUZNf" __cid="cmeUZNf"></input>  
+              <span xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-gridSelect-clear icon-close-circled hide cmeUZNf" __cid="cmeUZNf"></span> 
+            </div> 
+          </div> 
+        </div>  
+        <div class="form-group cmeUZNf" xid="formGroup6" __cid="cmeUZNf"> 
+          <div class="col-xs-2 cmeUZNf" xid="col32" __cid="cmeUZNf"> 
+            <label class="control-label cmeUZNf" xid="controlLabel6" __cid="cmeUZNf">电话</label> 
+          </div>  
+          <div class="col-xs-4 cmeUZNf" xid="col30" __cid="cmeUZNf"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit cmeUZNf" xid="input4" data-bind="component:{ref:orgData.ref('sPhone'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmeUZNf"/> 
+          </div>  
+          <div class="col-xs-2 cmeUZNf" xid="col29" __cid="cmeUZNf"> 
+            <label class="control-label cmeUZNf" xid="controlLabel7" __cid="cmeUZNf">传真</label> 
+          </div>  
+          <div class="col-xs-4 cmeUZNf" xid="col31" __cid="cmeUZNf"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit cmeUZNf" xid="input7" data-bind="component:{ref:orgData.ref('sFax'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmeUZNf"/> 
+          </div> 
+        </div>  
+        <div class="form-group cmeUZNf" xid="formGroup7" __cid="cmeUZNf"> 
+          <div class="col-xs-2 cmeUZNf" xid="col36" __cid="cmeUZNf"> 
+            <label class="control-label cmeUZNf" xid="controlLabel8" __cid="cmeUZNf">全称</label> 
+          </div>  
+          <div class="col-xs-4 cmeUZNf" xid="col34" __cid="cmeUZNf"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit cmeUZNf" xid="input8" data-bind="component:{ref:orgData.ref('sLongName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmeUZNf"/> 
+          </div>  
+          <div class="col-xs-2 cmeUZNf" xid="col33" __cid="cmeUZNf"> 
+            <label class="control-label cmeUZNf" xid="controlLabel9" __cid="cmeUZNf">邮编</label> 
+          </div>  
+          <div class="col-xs-4 cmeUZNf" xid="col35" __cid="cmeUZNf"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit cmeUZNf" xid="input9" data-bind="component:{ref:orgData.ref('sZip'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmeUZNf"/> 
+          </div> 
+        </div>  
+        <div class="form-group cmeUZNf" xid="formGroup8" __cid="cmeUZNf"> 
+          <div class="col-xs-2 cmeUZNf" xid="col40" __cid="cmeUZNf"> 
+            <label class="control-label cmeUZNf" xid="controlLabel10" __cid="cmeUZNf">地址</label> 
+          </div>  
+          <div class="col-xs-10 cmeUZNf" xid="col38" __cid="cmeUZNf"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control input-sm x-edit cmeUZNf" xid="input5" data-bind="component:{ref:orgData.ref('sAddress'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cmeUZNf"/> 
+          </div> 
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-bottom cmeUZNf" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cmeUZNf"> 
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label x-dialog-button cmeUZNf" xid="cancelBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{&quot;operation&quot;:&quot;windowReceiver.windowCancel&quot;}" data-config="{&quot;label&quot;:&quot;取消&quot;}" __cid="cmeUZNf"> 
+        <i xid="i1" __cid="cmeUZNf" class="cmeUZNf"/>  
+        <span xid="span1" __cid="cmeUZNf" class="cmeUZNf">取消</span> 
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-primary btn-only-label x-dialog-button cmeUZNf" xid="okBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},disable:$model.openMode.get() == 'view'" data-events="onClick:okBtnClick" data-config="{&quot;label&quot;:&quot;确定&quot;}" __cid="cmeUZNf"> 
+        <i xid="i2" __cid="cmeUZNf" class="cmeUZNf"/>  
+        <span xid="span2" __cid="cmeUZNf" class="cmeUZNf">确定</span> 
+      </a> 
+    </div>  
+    <style __cid="cmeUZNf" class="cmeUZNf">.x-panel.p3214426be33142c38d46caccdd89b975-iosstatusbar &gt;.x-panel-top {height: 0px;}.x-panel.p3214426be33142c38d46caccdd89b975-iosstatusbar &gt;.x-panel-content { top: 0px;bottom: nullpx;}.x-panel.p3214426be33142c38d46caccdd89b975-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p3214426be33142c38d46caccdd89b975-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p3214426be33142c38d46caccdd89b975-iosstatusbar &gt;.x-panel-top {height: 0px;}.iosstatusbar .x-panel.p3214426be33142c38d46caccdd89b975-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p3214426be33142c38d46caccdd89b975-iosstatusbar &gt;.x-panel-content { top: 0px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p3214426be33142c38d46caccdd89b975-iosstatusbar &gt;.x-panel-top {height: 0px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p3214426be33142c38d46caccdd89b975-iosstatusbar &gt;.x-panel-content {top: 0px;}</style> 
+  </div> 
+</div>

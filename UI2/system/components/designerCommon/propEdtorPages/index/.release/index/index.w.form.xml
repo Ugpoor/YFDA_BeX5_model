@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" xid="window" class="window cIFNVV3" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cIFNVV3" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/window/window,">
+  <xhtml:style xmlns:xhtml="http://www.w3.org/1999/xhtml">@import url($model/UI2/system/components/designerCommon/css/common.css); body.cIFNVV3{padding-top: 10px; padding-bottom: 65px}</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cIFNVV3" class="cIFNVV3"/>  
+  <div class="frameFix1 cIFNVV3" xid="composeParent" __cid="cIFNVV3"></div>  
+  <nav class="navbar navbar-default navbar-fixed-bottom cIFNVV3" role="navigation" __cid="cIFNVV3"> 
+    <div class="navbar-buttons-container cIFNVV3" __cid="cIFNVV3"> 
+      <div class="btn-group-single pull-right cIFNVV3" __cid="cIFNVV3"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-primary btn-dialog-finish cIFNVV3" xid="okBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:okBtnClick" data-config="{&quot;label&quot;:&quot;完成&quot;}" __cid="cIFNVV3">
+          <i __cid="cIFNVV3" class="cIFNVV3"/>
+          <span __cid="cIFNVV3" class="cIFNVV3">完成</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-dialog-cancel cIFNVV3" xid="cancelBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:cancelBtnClick" data-config="{&quot;label&quot;:&quot;取消&quot;}" __cid="cIFNVV3">
+          <i __cid="cIFNVV3" class="cIFNVV3"/>
+          <span __cid="cIFNVV3" class="cIFNVV3">取消</span>
+        </a> 
+      </div> 
+    </div> 
+  </nav> 
+</div>

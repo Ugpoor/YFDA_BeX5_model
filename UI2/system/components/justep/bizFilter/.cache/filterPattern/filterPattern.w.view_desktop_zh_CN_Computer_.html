@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" __id="id_1" component="$model/UI2/system/components/justep/window/window" extends="$UI/system/components/justep/bizFilter/filterPattern.m.w" xid="window" class="window window window window cVB7Rbq" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cVB7Rbq" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/scrollView/scrollView,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/windowDialog/windowDialog,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/popOver/popOver,$model/UI2/system/components/justep/windowReceiver/windowReceiver,$model/UI2/system/components/justep/output/output,$model/UI2/system/components/justep/window/window,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cVB7Rbq" class="cVB7Rbq"/>  
+  <span xmlns="" component="$model/UI2/system/components/justep/windowReceiver/windowReceiver" xid="receiver" style="left:98px;top:235px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowReceiver/windowReceiver'}" data-events="onReceive:receiverReceive" __cid="cVB7Rbq" class="cVB7Rbq"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p9f747c2c3033466db264f0a781353163-iosstatusbar cVB7Rbq" xid="panel" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cVB7Rbq"> 
+    <div class="x-panel-top cVB7Rbq" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cVB7Rbq"> 
+      <div xmlns:xui="http://www.justep.com/xui" style="padding: 5px 0;" xid="div1_2" xui:parent="top1" xui:update-mode="insert" __cid="cVB7Rbq" class="cVB7Rbq">  
+        <a class="btn btn-link btn-icon-left cVB7Rbq" component="$model/UI2/system/components/justep/button/button" xid="button211_2" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},disable:,event:{click:$model._callModelFn.bind($model, 'newBtnClick')}" data-config="{&quot;icon&quot;:&quot;icon-android-add&quot;,&quot;label&quot;:&quot;新建模板&quot;}" __cid="cVB7Rbq"> 
+          <i class="icon-android-add cVB7Rbq" xid="i111_2" __cid="cVB7Rbq"/>  
+          <span xid="span111_2" __cid="cVB7Rbq" class="cVB7Rbq">新建模板</span> 
+        </a>  
+        <a class="btn btn-link btn-icon-left cVB7Rbq" component="$model/UI2/system/components/justep/button/button" xid="btnNewPublicPattern" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},disable:,visible:$model.isManager.get(),event:{click:$model._callModelFn.bind($model, 'btnNewPublicPatternClick')}" data-config="{&quot;icon&quot;:&quot;icon-android-add&quot;,&quot;label&quot;:&quot;新建公共模板&quot;}" __cid="cVB7Rbq"> 
+          <i class="icon-android-add cVB7Rbq" xid="i11_11" __cid="cVB7Rbq"/>  
+          <span xid="span11_11" __cid="cVB7Rbq" class="cVB7Rbq">新建公共模板</span> 
+        </a> 
+      </div> 
+    </div>  
+    <div class="x-panel-content xui-hignlight-selected x-scroll-view cVB7Rbq" xid="content1" style="bottom: 0px;" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cVB7Rbq"> 
+      <div class="x-scroll cVB7Rbq" component="$model/UI2/system/components/justep/scrollView/scrollView" xid="scrollView1" data-bind="component:{name:'$model/UI2/system/components/justep/scrollView/scrollView'}" __cid="cVB7Rbq"> 
+        <div class="x-scroll-content cVB7Rbq" xid="div6" __cid="cVB7Rbq"> 
+          <div component="$model/UI2/system/components/justep/list/list" class="x-list cVB7Rbq" xid="patternList" style="margin: 5px;" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}" data-config="{&quot;autoLoad&quot;:false,&quot;data&quot;:&quot;patternData&quot;}" __cid="cVB7Rbq"> 
+            <ul class="x-list-template hide cVB7Rbq" xid="listTemplateUl1" __cid="cVB7Rbq" data-bind="foreach:{data:$model.foreach_patternList($element),afterRender:$model.foreach_afterRender_patternList.bind($model,$element)}"> 
+              <li xmlns:xui="http://www.justep.com/xui" xid="listItem" style="padding: 10px;" xui:update-mode="merge" __cid="cVB7Rbq" class="cVB7Rbq" data-bind="css:{'bg-info': $model.patternData.getCurrentRow() == $object}">  
+                <table style="width: 100%;" __cid="cVB7Rbq" class="cVB7Rbq"> 
+                  <tr __cid="cVB7Rbq" class="cVB7Rbq"> 
+                    <td __cid="cVB7Rbq" class="cVB7Rbq"> 
+                      <div component="$model/UI2/system/components/justep/output/output" class="x-output cVB7Rbq" xid="output1" style="cursor:pointer; word-break: break-all;" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/output/output'},text:val('sName') + (val('isPublic') ? '(公共)' : ''),event:{dblclick:$model._callModelFn.bind($model, 'okBtnClick')}" __cid="cVB7Rbq"/> 
+                    </td>  
+                    <td style="width:25px;" __cid="cVB7Rbq" class="cVB7Rbq"> 
+                      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-xs btn-only-icon cVB7Rbq" xid="editPatternBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},disable:val('isPublic') &amp;&amp; !$model.isManager.get()" data-events="onClick:editPatternBtnClick" data-config="{&quot;icon&quot;:&quot;icon-edit&quot;,&quot;label&quot;:&quot;编辑模板&quot;}" __cid="cVB7Rbq"> 
+                        <i xid="i3" class="icon-edit cVB7Rbq" __cid="cVB7Rbq"/>  
+                        <span xid="span3" __cid="cVB7Rbq" class="cVB7Rbq">编辑模板</span> 
+                      </a> 
+                    </td>  
+                    <td style="width:25px;" __cid="cVB7Rbq" class="cVB7Rbq"> 
+                      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-xs btn-only-icon cVB7Rbq" xid="delPatternBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},disable:val('isPublic') &amp;&amp; !$model.isManager.get()" data-events="onClick:delPatternBtnClick" data-config="{&quot;icon&quot;:&quot;icon-close&quot;,&quot;label&quot;:&quot;删除模板&quot;}" __cid="cVB7Rbq"> 
+                        <i xid="i2" class="icon-close cVB7Rbq" __cid="cVB7Rbq"/>  
+                        <span xid="span2" __cid="cVB7Rbq" class="cVB7Rbq">删除模板</span> 
+                      </a> 
+                    </td> 
+                  </tr> 
+                </table> 
+              </li> 
+            </ul> 
+          </div> 
+        </div>  
+        <div class="x-content-center x-pull-up cVB7Rbq" xid="div7" __cid="cVB7Rbq"> 
+          <span class="x-pull-up-label cVB7Rbq" xid="span4" __cid="cVB7Rbq">加载更多...</span> 
+        </div> 
+      </div> 
+    </div>  
+    <div xmlns:xui="http://www.justep.com/xui" class="x-panel-bottom cVB7Rbq" xid="bottom1_1" xui:parent="panel" xui:update-mode="insert" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cVB7Rbq">  
+      <a class="btn btn-link btn-only-label x-dialog-button cVB7Rbq" component="$model/UI2/system/components/justep/button/button" xid="button111_3" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{&quot;operation&quot;:&quot;receiver.windowCancel&quot;}" data-config="{&quot;label&quot;:&quot;取消&quot;}" __cid="cVB7Rbq"> 
+        <i xid="i13" __cid="cVB7Rbq" class="cVB7Rbq"/>  
+        <span xid="span13" __cid="cVB7Rbq" class="cVB7Rbq">取消</span> 
+      </a>  
+      <a class="btn btn-primary btn-only-label x-dialog-button cVB7Rbq" component="$model/UI2/system/components/justep/button/button" xid="okBtn" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:okBtnClick" data-config="{&quot;label&quot;:&quot;确定&quot;}" __cid="cVB7Rbq"> 
+        <i xid="i12" __cid="cVB7Rbq" class="cVB7Rbq"/>  
+        <span xid="span12" __cid="cVB7Rbq" class="cVB7Rbq">确定</span> 
+      </a> 
+    </div>  
+    <style __cid="cVB7Rbq" class="cVB7Rbq">.x-panel.p9f747c2c3033466db264f0a781353163-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.p9f747c2c3033466db264f0a781353163-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.p9f747c2c3033466db264f0a781353163-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p9f747c2c3033466db264f0a781353163-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p9f747c2c3033466db264f0a781353163-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.p9f747c2c3033466db264f0a781353163-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p9f747c2c3033466db264f0a781353163-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p9f747c2c3033466db264f0a781353163-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p9f747c2c3033466db264f0a781353163-iosstatusbar &gt;.x-panel-content {top: 48px;}</style> 
+  </div>  
+  <div xmlns="" component="$model/UI2/system/components/justep/popOver/popOver" class="x-popOver cVB7Rbq" xid="popOver1" data-bind="component:{name:'$model/UI2/system/components/justep/popOver/popOver'}" __cid="cVB7Rbq"> 
+    <div class="x-popOver-overlay cVB7Rbq" xid="div4" __cid="cVB7Rbq"/>  
+    <div class="x-popOver-content cVB7Rbq" xid="div5" __cid="cVB7Rbq"/> 
+  </div>  
+  <span xmlns="" xmlns:xui="http://www.justep.com/xui" component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="filterDialog" style="left:97px;top:159px;" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-events="onReceive:filterDialogReceive" data-config="{&quot;showTitle&quot;:true,&quot;src&quot;:&quot;$model/UI2/system/components/justep/bizFilter/filterEditor.w&quot;,&quot;status&quot;:&quot;normal&quot;,&quot;title&quot;:&quot;过滤条件&quot;}" __cid="cVB7Rbq" class="cVB7Rbq">  
+    <div class="x-dialog-overlay cVB7Rbq" __cid="cVB7Rbq"/>  
+    <div class="x-dialog cVB7Rbq" style="display:none;" showTitle="true" __cid="cVB7Rbq"> 
+      <div class="x-dialog-title cVB7Rbq" __cid="cVB7Rbq"> 
+        <button class="close cVB7Rbq" __cid="cVB7Rbq"> 
+          <span __cid="cVB7Rbq" class="cVB7Rbq">×</span> 
+        </button>  
+        <div class="x-dialog-title-text cVB7Rbq" __cid="cVB7Rbq">过滤条件</div> 
+      </div>  
+      <div class="x-dialog-body cVB7Rbq" __cid="cVB7Rbq"/> 
+    </div> 
+  </span> 
+</div>

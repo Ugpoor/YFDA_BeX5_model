@@ -1,38 +1,38 @@
 define(function(require) {
 	var $ = require("jquery");
-	var justep = require("$UI/system/lib/justep");
+	//var justep = require("$UI/system/lib/justep");
 
 	var Model = function() {
 		this.callParent();
 	};
 
-	Model.prototype.windowDialogReceive = function(event) {
+	Model.prototype.chartBtnClick = function(event) {
+		this.showChart();
 	};
 
-	Model.prototype.editBtnClick = function(event) {
-		var mainData = this.comp("mainData");
-		var row = mainData.getCurrentRow();
-		if (row) {
-			this.comp("windowDialog").open({
-				data : row
-			});
+	Model.prototype.chart2BtnClick = function(event) {
+		this.chartBtnClick();
+	};
+
+	Model.prototype.showChart = function() {
+		var process = this.comp("process");
+		process.showChart("/YFDA1/YFDA_lawEnforce/process/generalAudit/generalAuditProcess", this.comp("mainData").getCurrentRowID(), null);
+	};
+
+	Model.prototype.listTablesRowDblClick = function(event) {
+		var tabs = this.comp("tabs");
+		if (this.comp("mainData").getCurrentRow()) {
+			tabs.setActiveTab("detailLi");
 		}
 	};
 
-	Model.prototype.dataSaveCommit = function(event) {
-		justep.Util.hint("保存成功！", {
-			type : 'success',
-			parent : this.getRootNode()
-		});
+//?? 需要写入代码跳转到审核页面，并且载入当前申请ID
+	Model.prototype.buttonClick = function(event){
+		justep.xbl('windowDialog3').open();
 	};
 
-	Model.prototype.addBtn = function(event) {
-		var options = {
-			action : "new",
-		};
-		this.comp("windowDialog").open({
-			data : options
-		});
+	Model.prototype.h = function(event){
+
 	};
 
 	return Model;

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window cRrm2A3" component="$model/UI2/system/components/justep/window/window" design="device:pc;" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cRrm2A3" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/bootstrap/form/form,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/controlGroup/controlGroup,$model/UI2/system/components/bootstrap/row/row,$model/UI2/system/components/justep/menu/menu,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/toolBar/toolBar,$model/UI2/system/components/justep/textarea/textarea,$model/UI2/system/components/justep/popMenu/popMenu,$model/UI2/system/components/justep/grid/grid,$model/UI2/system/components/justep/process/process,$model/UI2/system/components/justep/window/window,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cRrm2A3" class="cRrm2A3"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/process/process" xid="process" style="width:24px;height:5px;left:184px;top:769px;" data-bind="component:{name:'$model/UI2/system/components/justep/process/process'}" data-config="{&quot;data&quot;:&quot;mainData&quot;}" __cid="cRrm2A3" class="cRrm2A3"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/popMenu/popMenu" class="x-popMenu cRrm2A3" xid="moreMenu" data-bind="component:{name:'$model/UI2/system/components/justep/popMenu/popMenu'}" data-config="{&quot;anchor&quot;:&quot;moreBtn&quot;,&quot;direction&quot;:&quot;left-bottom&quot;,&quot;opacity&quot;:0}" __cid="cRrm2A3"> 
+    <div class="x-popMenu-overlay cRrm2A3" xid="moreMenuOverlay" __cid="cRrm2A3"/>  
+    <ul component="$model/UI2/system/components/justep/menu/menu" class="x-menu dropdown-menu x-popMenu-content cRrm2A3" xid="moreContent" data-bind="component:{name:'$model/UI2/system/components/justep/menu/menu'}" __cid="cRrm2A3"> 
+      <li class="x-menu-item cRrm2A3" xid="backItem" __cid="cRrm2A3"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cRrm2A3" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process.back'}" __cid="cRrm2A3"> 
+          <i xid="i8" __cid="cRrm2A3" class="cRrm2A3"/>  
+          <span xid="span6" __cid="cRrm2A3" class="cRrm2A3"/> 
+        </a> 
+      </li>  
+      <li class="x-menu-item cRrm2A3" xid="suspendItem" __cid="cRrm2A3"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cRrm2A3" xid="suspendBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process.suspend'}" __cid="cRrm2A3"> 
+          <i xid="i3" __cid="cRrm2A3" class="cRrm2A3"/>  
+          <span xid="span3" __cid="cRrm2A3" class="cRrm2A3"/> 
+        </a> 
+      </li>  
+      <li class="x-menu-item cRrm2A3" xid="abortItem" __cid="cRrm2A3"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cRrm2A3" xid="abortBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process.abort'}" __cid="cRrm2A3"> 
+          <i xid="i4" __cid="cRrm2A3" class="cRrm2A3"/>  
+          <span xid="span4" __cid="cRrm2A3" class="cRrm2A3"/> 
+        </a> 
+      </li>  
+      <li class="x-menu-item cRrm2A3" xid="chartItem" __cid="cRrm2A3"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cRrm2A3" xid="chartBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process.showChart'}" __cid="cRrm2A3"> 
+          <i xid="i5" __cid="cRrm2A3" class="cRrm2A3"/>  
+          <span xid="span5" __cid="cRrm2A3" class="cRrm2A3"/> 
+        </a> 
+      </li>  
+      <li class="x-menu-item cRrm2A3" xid="recordItem" __cid="cRrm2A3"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cRrm2A3" xid="recordBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process.processRecord'}" __cid="cRrm2A3"> 
+          <i xid="i55" __cid="cRrm2A3" class="cRrm2A3"/>  
+          <span xid="span55" __cid="cRrm2A3" class="cRrm2A3"/> 
+        </a> 
+      </li> 
+    </ul> 
+  </div>  
+  <div xmlns="" xid="view" __cid="cRrm2A3" class="cRrm2A3"> 
+    <div xid="mainForm" class="form-horizontal container-fluid cRrm2A3" component="$model/UI2/system/components/bootstrap/form/form" data-bind="component:{name:'$model/UI2/system/components/bootstrap/form/form'}" __cid="cRrm2A3"> 
+      <div component="$model/UI2/system/components/bootstrap/row/row" class="row cRrm2A3" xid="row3" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cRrm2A3"> 
+        <div xid="col14" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fApplicationType" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fApplicationType'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar x-toolbar-spliter form-inline cRrm2A3" xid="processBar" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cRrm2A3"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cRrm2A3" xid="advanceBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process.advance'}" __cid="cRrm2A3"> 
+          <i xid="i2" __cid="cRrm2A3" class="cRrm2A3"/>  
+          <span xid="span2" __cid="cRrm2A3" class="cRrm2A3">流转</span> 
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cRrm2A3" xid="saveBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'mainData.save'}" __cid="cRrm2A3"> 
+          <i xid="i1" __cid="cRrm2A3" class="cRrm2A3"/>  
+          <span xid="span1" __cid="cRrm2A3" class="cRrm2A3"/> 
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cRrm2A3" xid="moreBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'moreMenu.show'}" data-config="{&quot;label&quot;:&quot;更多&quot;}" __cid="cRrm2A3"> 
+          <i xid="i15" __cid="cRrm2A3" class="cRrm2A3"/>  
+          <span xid="span15" __cid="cRrm2A3" class="cRrm2A3">更多</span> 
+        </a> 
+      </div>  
+      <div xid="formGroup1" class="form-group cRrm2A3" __cid="cRrm2A3"> 
+        <div xid="col11" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fApplicationIdL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fApplicationId')"/> 
+        </div>  
+        <div xid="col12" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fApplicationId" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fApplicationId'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div> 
+      </div>  
+      <div xid="formGroup2" class="form-group cRrm2A3" __cid="cRrm2A3"> 
+        <div xid="col21" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fApplyTimeL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fApplyTime')"/> 
+        </div>  
+        <div xid="col22" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fApplyTime" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fApplyTime'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div>  
+        <div xid="col23" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fApplicationStatusL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fApplicationStatus')"/> 
+        </div>  
+        <div xid="col24" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fApplicationStatus" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fApplicationStatus'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div> 
+      </div>  
+      <div xid="formGroup3" class="form-group cRrm2A3" __cid="cRrm2A3"> 
+        <div xid="col31" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fUserL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fUser')"/> 
+        </div>  
+        <div xid="col32" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fUser" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fUser'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div>  
+        <div xid="col33" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fIdCodeL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fIdCode')"/> 
+        </div>  
+        <div xid="col34" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fIdCode" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fIdCode'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div> 
+      </div>  
+      <div xid="formGroup4" class="form-group cRrm2A3" __cid="cRrm2A3"> 
+        <div xid="col41" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fAppComL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fAppCom')"/> 
+        </div>  
+        <div xid="col42" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fAppCom" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fAppCom'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div>  
+        <div xid="col43" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fAppComRepL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fAppComRep')"/> 
+        </div>  
+        <div xid="col44" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fAppComRep" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fAppComRep'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div> 
+      </div>  
+      <div xid="formGroup5" class="form-group cRrm2A3" __cid="cRrm2A3"> 
+        <div xid="col51" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fCompanyTypeL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fCompanyType')"/> 
+        </div>  
+        <div xid="col52" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fCompanyType" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fCompanyType'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div>  
+        <div xid="col53" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fComDistrictL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fComDistrict')"/> 
+        </div>  
+        <div xid="col54" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fComDistrict" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fComDistrict'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div> 
+      </div>  
+      <div xid="formGroup6" class="form-group cRrm2A3" __cid="cRrm2A3"> 
+        <div xid="col61" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fComAveL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fComAve')"/> 
+        </div>  
+        <div xid="col62" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fComAve" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fComAve'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div>  
+        <div xid="col63" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fComTelL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fComTel')"/> 
+        </div>  
+        <div xid="col64" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fComTel" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fComTel'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div> 
+      </div>  
+      <div xid="formGroup7" class="form-group cRrm2A3" __cid="cRrm2A3"> 
+        <div xid="col71" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fComZipL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fComZip')"/> 
+        </div>  
+        <div xid="col72" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fComZip" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fComZip'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div>  
+        <div xid="col73" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fComRegAddrL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fComRegAddr')"/> 
+        </div>  
+        <div xid="col74" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fComRegAddr" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fComRegAddr'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div> 
+      </div>  
+      <div xid="formGroup8" class="form-group cRrm2A3" __cid="cRrm2A3"> 
+        <div xid="col81" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fComContactManL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fComContactMan')"/> 
+        </div>  
+        <div xid="col82" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fComContactMan" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fComContactMan'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div>  
+        <div xid="col83" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fComContactManTelL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fComContactManTel')"/> 
+        </div>  
+        <div xid="col84" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fComContactManTel" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fComContactManTel'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div> 
+      </div>  
+      <div xid="formGroup9" class="form-group cRrm2A3" __cid="cRrm2A3"> 
+        <div xid="col91" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fComContactManAddrL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fComContactManAddr')"/> 
+        </div>  
+        <div xid="col92" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fComContactManAddr" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fComContactManAddr'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div>  
+        <div xid="col93" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fProcessIdL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fProcessId')"/> 
+        </div>  
+        <div xid="col94" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fProcessId" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fProcessId'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div> 
+      </div>  
+      <div xid="formGroup10" class="form-group cRrm2A3" __cid="cRrm2A3"> 
+        <div xid="col101" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fTimeL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fTime')"/> 
+        </div>  
+        <div xid="col102" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fTime" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fTime'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div>  
+        <div xid="col103" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fProcessMemoL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fProcessMemo')"/> 
+        </div>  
+        <div xid="col104" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <input xid="fProcessMemo" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/input/input" data-bind="component:{ref:mainData.ref('fProcessMemo'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRrm2A3"/> 
+        </div> 
+      </div>  
+      <div xid="formGroup11" class="form-group cRrm2A3" __cid="cRrm2A3"> 
+        <div xid="col111" class="col-sm-2 cRrm2A3" __cid="cRrm2A3"> 
+          <label xid="fperInChargeIdL" class="control-label cRrm2A3" __cid="cRrm2A3" data-bind="text:mainData.label('fperInChargeId')"/> 
+        </div>  
+        <div xid="col112" class="col-sm-4 cRrm2A3" __cid="cRrm2A3"> 
+          <textarea xid="fperInChargeId" class="form-control cRrm2A3" component="$model/UI2/system/components/justep/textarea/textarea" data-bind="component:{ref:mainData.ref('fperInChargeId'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cRrm2A3"/> 
+        </div> 
+      </div> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/controlGroup/controlGroup" class="x-control-group cRrm2A3" xid="detailCG" data-bind="component:{name:'$model/UI2/system/components/justep/controlGroup/controlGroup'}" data-config="{&quot;collapsible&quot;:true,&quot;title&quot;:&quot;从列表&quot;}" __cid="cRrm2A3"> 
+      <div class="x-control-group-title cRrm2A3" __cid="cRrm2A3"> 
+        <span xid="span7" __cid="cRrm2A3" class="cRrm2A3">title</span> 
+      </div>  
+      <div __cid="cRrm2A3" class="cRrm2A3"> 
+        <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar x-toolbar-spliter form-inline cRrm2A3" xid="detailBar" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cRrm2A3"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cRrm2A3" xid="addBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'detailData.new'}" data-config="{&quot;icon&quot;:&quot;icon-plus&quot;}" __cid="cRrm2A3"> 
+            <i xid="i6" class="icon-plus cRrm2A3" __cid="cRrm2A3"/>  
+            <span xid="span10" __cid="cRrm2A3" class="cRrm2A3"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cRrm2A3" xid="deleteBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'detailData.delete'}" __cid="cRrm2A3"> 
+            <i xid="i7" __cid="cRrm2A3" class="cRrm2A3"/>  
+            <span xid="span11" __cid="cRrm2A3" class="cRrm2A3"/> 
+          </a> 
+        </div>  
+        <table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" hiddenCaptionbar="true" xid="detail" data="detailData" class="x-grid-no-bordered cRrm2A3" data-config="{&quot;colModel&quot;:[{&quot;editable&quot;:true,&quot;label&quot;:&quot;附件Id&quot;,&quot;name&quot;:&quot;fAcceId&quot;},{&quot;editable&quot;:true,&quot;label&quot;:&quot;附件名称&quot;,&quot;name&quot;:&quot;fAcceName&quot;},{&quot;editable&quot;:true,&quot;label&quot;:&quot;附件链接&quot;,&quot;name&quot;:&quot;fAcceLink&quot;},{&quot;editable&quot;:true,&quot;label&quot;:&quot;是否有效&quot;,&quot;name&quot;:&quot;fAcceValid&quot;}],&quot;data&quot;:&quot;detailData&quot;,&quot;editors&quot;:&quot;4CD77F1C7DAB4FFB9180B9D5BE72CD83&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;hiddenCaptionbar&quot;:true,&quot;width&quot;:&quot;100%&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cRrm2A3"></table>  
+        <div xmlns:xhtml="http://www.w3.org/1999/xhtml" xid="4CD77F1C7DAB4FFB9180B9D5BE72CD83" class="x-grid-editors cRrm2A3" __cid="cRrm2A3" data-bind="with:comp('detail').getCellEditorsBindingObject()">  
+          <div xid="fAcceIdE" col="fAcceId" __cid="cRrm2A3" class="cRrm2A3"> 
+            <input xid="fAcceIdI" component="$model/UI2/system/components/justep/input/input" class="form-control cRrm2A3" data-bind="component:{ref:ref('fAcceId'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRrm2A3"/> 
+          </div>  
+          <div xid="fAcceNameE" col="fAcceName" __cid="cRrm2A3" class="cRrm2A3"> 
+            <input xid="fAcceNameI" component="$model/UI2/system/components/justep/input/input" class="form-control cRrm2A3" data-bind="component:{ref:ref('fAcceName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRrm2A3"/> 
+          </div>  
+          <div xid="fAcceLinkE" col="fAcceLink" __cid="cRrm2A3" class="cRrm2A3"> 
+            <input xid="fAcceLinkI" component="$model/UI2/system/components/justep/input/input" class="form-control cRrm2A3" data-bind="component:{ref:ref('fAcceLink'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRrm2A3"/> 
+          </div>  
+          <div xid="fAcceValidE" col="fAcceValid" __cid="cRrm2A3" class="cRrm2A3"> 
+            <input xid="fAcceValidI" component="$model/UI2/system/components/justep/input/input" class="form-control cRrm2A3" data-bind="component:{ref:ref('fAcceValid'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRrm2A3"/> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>

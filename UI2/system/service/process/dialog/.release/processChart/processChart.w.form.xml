@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xu="http://www.xmldb.org/xupdate" xmlns:xui="http://www.justep.com/xui" sysParam="portal" component="$model/UI2/system/components/justep/window/window" xid="window" class="window cRfaQ3m" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cRfaQ3m" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/windowReceiver/windowReceiver,$model/UI2/system/components/justep/processChart/processChart,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/bootstrap/navs/navs,$model/UI2/system/components/justep/window/window,">
+  <xhtml:style xmlns:xhtml="http://www.w3.org/1999/xhtml">.x-processChart.cRfaQ3m .x-contents.cRfaQ3m &gt; .x-contents-content.cRfaQ3m{overflow: auto; top: 0px}</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cRfaQ3m" class="cRfaQ3m"/>  
+  <span xid="windowReceive" component="$model/UI2/system/components/justep/windowReceiver/windowReceiver" style="left:332px;top:107px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowReceiver/windowReceiver'}" data-events="onReceive:windowReceiveReceive" __cid="cRfaQ3m" class="cRfaQ3m"/>  
+  <div class="x-processChart cRfaQ3m" xid="processChart" component="$model/UI2/system/components/justep/processChart/processChart" data-bind="component:{name:'$model/UI2/system/components/justep/processChart/processChart'}" data-events="onPertItemClick:pertItemClick;onTrackItemClick:trackItemClick" __cid="cRfaQ3m">
+    <ul xmlns="" component="$model/UI2/system/components/bootstrap/navs/navs" class="nav nav-tabs cRfaQ3m" data-bind="component:{name:'$model/UI2/system/components/bootstrap/navs/navs'}" __cid="cRfaQ3m"> 
+      <li class="active cRfaQ3m" __cid="cRfaQ3m"> 
+        <a bind-click="$model.comp(&quot;processChart&quot;).showTrack.bind($model.comp(&quot;processChart&quot;))" __cid="cRfaQ3m" class="cRfaQ3m">轨迹图</a> 
+      </li>  
+      <li __cid="cRfaQ3m" class="cRfaQ3m"> 
+        <a bind-click="$model.comp(&quot;processChart&quot;).showPert.bind($model.comp(&quot;processChart&quot;))" __cid="cRfaQ3m" class="cRfaQ3m">波特图</a> 
+      </li>
+    </ul>
+    <div component="$model/UI2/system/components/justep/contents/contents" xid="processChart_contents" class="x-contents x-full cRfaQ3m" style="top:40px" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0,&quot;slidable&quot;:false,&quot;swipe&quot;:false}" __cid="cRfaQ3m">
+      <div xid="processChart_trackContent" class="x-contents-content active  x-scroll-h active cRfaQ3m" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cRfaQ3m">
+        <div class="x-track-container cRfaQ3m" xid="processChart_trackContainer" __cid="cRfaQ3m"/>
+        <div __cid="cRfaQ3m" class="cRfaQ3m">
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cRfaQ3m" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation: 'processChart.toggleHelp'}" data-config="{&quot;icon&quot;:&quot;glyphicon glyphicon-question-sign&quot;,&quot;label&quot;:&quot;图例&quot;}" __cid="cRfaQ3m">
+            <i class="glyphicon glyphicon-question-sign cRfaQ3m" __cid="cRfaQ3m"/>
+            <span __cid="cRfaQ3m" class="cRfaQ3m">图例</span>
+          </a>
+        </div>
+        <div class="x-track-help container-fluid cRfaQ3m" __cid="cRfaQ3m">
+          <div class="row cRfaQ3m" __cid="cRfaQ3m">
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <div class="x-track-line x-track-finished-line cRfaQ3m" __cid="cRfaQ3m"/>
+            </div>
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <label __cid="cRfaQ3m" class="cRfaQ3m">已经过</label>
+            </div>
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <div class="x-track-line x-track-no-execute-line cRfaQ3m" __cid="cRfaQ3m"/>
+            </div>
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <label __cid="cRfaQ3m" class="cRfaQ3m">未经过</label>
+            </div>
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <div class="x-track-line x-track-back-line cRfaQ3m" __cid="cRfaQ3m"/>
+            </div>
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <label __cid="cRfaQ3m" class="cRfaQ3m">回退</label>
+            </div>
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <div class="x-track-activity x-track-active-activity cRfaQ3m" __cid="cRfaQ3m"/>
+            </div>
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <label __cid="cRfaQ3m" class="cRfaQ3m">当前</label>
+            </div>
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <div class="x-track-activity x-track-finished-activity cRfaQ3m" __cid="cRfaQ3m"/>
+            </div>
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <label __cid="cRfaQ3m" class="cRfaQ3m">完成</label>
+            </div>
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <div class="x-track-activity x-track-abort-activity cRfaQ3m" __cid="cRfaQ3m"/>
+            </div>
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <label __cid="cRfaQ3m" class="cRfaQ3m">终止</label>
+            </div>
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <div class="x-track-activity x-track-suspend-activity cRfaQ3m" __cid="cRfaQ3m"/>
+            </div>
+            <div class="col-xs-3 col-md-1 cRfaQ3m" __cid="cRfaQ3m">
+              <label __cid="cRfaQ3m" class="cRfaQ3m">暂停</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div xid="processChart_pertContent" class="x-contents-content  x-scroll-h cRfaQ3m" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cRfaQ3m">
+        <div __cid="cRfaQ3m" class="cRfaQ3m">
+          <div class="x-pert cRfaQ3m" xid="processChart_pert" __cid="cRfaQ3m"/>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>

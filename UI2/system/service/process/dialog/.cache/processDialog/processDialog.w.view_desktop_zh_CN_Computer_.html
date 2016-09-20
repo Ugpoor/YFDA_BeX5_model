@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" component="$model/UI2/system/components/justep/window/window" extends="$UI/system/service/process/dialog/processDialog.m.w" sysParam="false" xid="window" class="window cVVJVFf" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cVVJVFf" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/textarea/textarea,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/windowReceiver/windowReceiver,$model/UI2/system/components/justep/org/orgImage,$model/UI2/system/components/justep/output/output,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,">  
+  <style xmlns="">.font-bold.cVVJVFf{font-weight: bold} .underline.cVVJVFf{text-decoration: underline} .clear-top-bottom-padding.cVVJVFf{padding-top: 0px; padding-bottom: 0px}</style>  
+  <div xmlns="" xmlns:xui="http://www.justep.com/xui" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" xui:update-mode="merge" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cVVJVFf" class="cVVJVFf"></div>  
+  <span xmlns="" xid="windowReceive" component="$model/UI2/system/components/justep/windowReceiver/windowReceiver" style="top:12px;left:92px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowReceiver/windowReceiver'}" data-events="onReceive:windowReceiveReceive" __cid="cVVJVFf" class="cVVJVFf"/>  
+  <div xmlns="" xid="dialogs" __cid="cVVJVFf" class="cVVJVFf"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pbf65b0aa03c04bdbb0b581dc5810d3b8-iosstatusbar cVVJVFf" xid="panel" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cVVJVFf"> 
+    <div class="x-panel-content cVVJVFf" xid="panelContent" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cVVJVFf"> 
+      <label xid="message" class="text-center cVVJVFf" style="width:100%;font-weight: bold;margin-bottom:8px" __cid="cVVJVFf" data-bind="visible:$model.activityData.getCount() == 0,text:$model.controlData.ref('message')"/>  
+      <div class="panel-group cVVJVFf" __cid="cVVJVFf"> 
+        <div class="panel panel-default x-list cVVJVFf" component="$model/UI2/system/components/justep/list/list" xid="657B423BAE184E689B09ACC91CCDE3B2" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'},visible:$model.activityData.getCount() &gt; 0" data-config="{&quot;data&quot;:&quot;activityData&quot;}" __cid="cVVJVFf"> 
+          <div class="panel-heading cVVJVFf" __cid="cVVJVFf">环节列表</div>  
+          <ul class="list-group x-list-template  hide cVVJVFf" __cid="cVVJVFf" data-bind="foreach:{data:$model.foreach_657B423BAE184E689B09ACC91CCDE3B2($element),afterRender:$model.foreach_afterRender_657B423BAE184E689B09ACC91CCDE3B2.bind($model,$element)}"> 
+            <div class="list-group-item cVVJVFf" __cid="cVVJVFf"> 
+              <div class="row cVVJVFf" __cid="cVVJVFf"> 
+                <div class="col-xs-12 cVVJVFf" __cid="cVVJVFf"> 
+                  <div class="input-group cVVJVFf" __cid="cVVJVFf"> 
+                    <span class="input-group-addon cVVJVFf" __cid="cVVJVFf"> 
+                      <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox cVVJVFf" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false}" data-bind="component:{ref:ref('selected'),name:'$model/UI2/system/components/justep/button/checkbox'}" data-events="onChange:checkbox2Change" __cid="cVVJVFf"> 
+                        <input type="checkbox" __cid="cVVJVFf" class="cVVJVFf"/>  
+                        <label __cid="cVVJVFf" class="cVVJVFf"/> 
+                      </span> 
+                    </span>  
+                    <div class="form-control font-bold x-output cVVJVFf" component="$model/UI2/system/components/justep/output/output" data="noticeData" data-bind="component:{name:'$model/UI2/system/components/justep/output/output'},text:ref('label')" __cid="cVVJVFf"/>  
+                    <span class="input-group-addon cVVJVFf" __cid="cVVJVFf" data-bind="visible:!val('isEnd')"> 
+                      <a component="$model/UI2/system/components/justep/button/button" class="pull-right btn btn-link cVVJVFf" style="padding:0px;border:0px" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:advanceBtnClick" data-config="{&quot;label&quot;:&quot;高级&quot;}" __cid="cVVJVFf"> 
+                        <i __cid="cVVJVFf" class="cVVJVFf"/>  
+                        <span __cid="cVVJVFf" class="cVVJVFf">高级</span> 
+                      </a> 
+                    </span> 
+                  </div> 
+                </div> 
+              </div>  
+              <div class="row cVVJVFf" __cid="cVVJVFf" data-bind="visible:!val('isEnd')"> 
+                <div class="col-xs-12 cVVJVFf" __cid="cVVJVFf"> 
+                  <div class="x-list x-img-list cVVJVFf" component="$model/UI2/system/components/justep/list/list" xid="A21AC7C5E07E49EDB668051E472EC730" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'},event:{click:$model._callModelFn.bind($model, 'imgListClick')}" data-config="{&quot;data&quot;:&quot;executorData&quot;,&quot;filter&quot;:&quot;js:val('rowid') == $row.val('owner')&quot;}" __cid="cVVJVFf"> 
+                    <div class="x-list-template hide cVVJVFf" __cid="cVVJVFf" data-bind="foreach:{data:$model.foreach_A21AC7C5E07E49EDB668051E472EC730($element),afterRender:$model.foreach_afterRender_A21AC7C5E07E49EDB668051E472EC730.bind($model,$element)}"> 
+                      <div class="x-img-item cVVJVFf" __cid="cVVJVFf"> 
+                        <div class="x-img-content cVVJVFf" __cid="cVVJVFf"> 
+                          <a __cid="cVVJVFf" class="cVVJVFf"> 
+                            <div class="x-blob x-blob-radius x-img cVVJVFf" component="$model/UI2/system/components/justep/org/orgImage" data-bind="component:{ref:ref(&quot;sFID&quot;),name:'$model/UI2/system/components/justep/org/orgImage'}" data-events="onRefresh:orgImgRefresh" __cid="cVVJVFf"> 
+                              <div class="x-blob-bar cVVJVFf" __cid="cVVJVFf"> 
+                                <i class="x-blob-edit icon-compose cVVJVFf" __cid="cVVJVFf"/>  
+                                <i class="x-blob-del icon-close-round cVVJVFf" __cid="cVVJVFf"/> 
+                              </div>  
+                              <img class="x-blob-img x-autofill cVVJVFf" __cid="cVVJVFf"/> 
+                            </div> 
+                          </a>  
+                          <a class="x-img-top-right x-img-list-remove-item cVVJVFf" __cid="cVVJVFf" data-bind="visible:$parent.val(&quot;btnStatus&quot;) === &quot;removeAll&quot;,event:{click:$model._callModelFn.bind($model, 'imgListRemoveItemClick')}"/>  
+                          <div class="x-img-status cVVJVFf" __cid="cVVJVFf" data-bind="visible:val('responsible') === 1"/> 
+                        </div>  
+                        <span class="x-img-name cVVJVFf" __cid="cVVJVFf" data-bind="text:val(&quot;sName&quot;)"/> 
+                      </div> 
+                    </div>  
+                    <div __cid="cVVJVFf" class="cVVJVFf" data-bind="visible:!$model.flowToExecutorReadonly"> 
+                      <div class="x-img-item x-img-list-add cVVJVFf" style="height:65px" __cid="cVVJVFf" data-bind="visible:!val(&quot;btnStatus&quot;),event:{click:$model._callModelFn.bind($model, 'flowToAddClick')}"> 
+                        <div class="x-img-content cVVJVFf" __cid="cVVJVFf"> 
+                          <a __cid="cVVJVFf" class="cVVJVFf"> 
+                            <img src="@justepContextPath@/v_f2a61c9b664d4d8980442cd70790cc03l_zh_CNs_desktopd_pc/system/components/justep/social/relativeOrg/img/add.png" class="x-img x-img-border cVVJVFf" __cid="cVVJVFf"/> 
+                          </a> 
+                        </div> 
+                      </div>  
+                      <div class="x-img-item x-img-list-remove cVVJVFf" style="height:65px" __cid="cVVJVFf" data-bind="visible:!val(&quot;btnStatus&quot;) &amp;&amp; ($model.comp($element.parentElement.parentElement).getForeachData().length &gt; 0),event:{click:$model._callModelFn.bind($model, 'imgListRemoveClick')}"> 
+                        <div class="x-img-content cVVJVFf" __cid="cVVJVFf"> 
+                          <a __cid="cVVJVFf" class="cVVJVFf"> 
+                            <img src="@justepContextPath@/v_ce814e0b1f594554be4b2e91f02c220bl_zh_CNs_desktopd_pc/system/components/justep/social/relativeOrg/img/remove.png" class="x-img x-img-border cVVJVFf" __cid="cVVJVFf"/> 
+                          </a> 
+                        </div> 
+                      </div> 
+                    </div>  
+                    <div class="x-img-item x-img-list-remove-all cVVJVFf" __cid="cVVJVFf" data-bind="visible:val('btnStatus') === 'removeAll',event:{click:$model._callModelFn.bind($model, 'imgListRemoveAllClick')}"> 
+                      <a style="color:#f57e7b;" __cid="cVVJVFf" class="cVVJVFf">清空所有</a> 
+                    </div>  
+                    <div style="clear:both" __cid="cVVJVFf" class="cVVJVFf"/> 
+                  </div> 
+                </div> 
+              </div> 
+            </div> 
+          </ul> 
+        </div>  
+        <div class="panel panel-default x-list cVVJVFf" component="$model/UI2/system/components/justep/list/list" xid="11EC36FFA0D54B82B6A9F98CACCA405F" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'},visible:$model.noticeData.getCount() &gt; 0" data-config="{&quot;data&quot;:&quot;noticeData&quot;}" __cid="cVVJVFf"> 
+          <div class="panel-heading cVVJVFf" __cid="cVVJVFf">通知</div>  
+          <ul class="list-group x-list-template  hide cVVJVFf" __cid="cVVJVFf" data-bind="foreach:{data:$model.foreach_11EC36FFA0D54B82B6A9F98CACCA405F($element),afterRender:$model.foreach_afterRender_11EC36FFA0D54B82B6A9F98CACCA405F.bind($model,$element)}"> 
+            <div class="list-group-item cVVJVFf" __cid="cVVJVFf"> 
+              <div class="row cVVJVFf" __cid="cVVJVFf"> 
+                <div class="col-xs-12 cVVJVFf" __cid="cVVJVFf"> 
+                  <div class="input-group cVVJVFf" __cid="cVVJVFf"> 
+                    <span class="input-group-addon cVVJVFf" __cid="cVVJVFf"> 
+                      <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox cVVJVFf" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false}" data-bind="component:{ref:ref('selected'),name:'$model/UI2/system/components/justep/button/checkbox'}" __cid="cVVJVFf"> 
+                        <input type="checkbox" __cid="cVVJVFf" class="cVVJVFf"/>  
+                        <label __cid="cVVJVFf" class="cVVJVFf"/> 
+                      </span> 
+                    </span>  
+                    <input class="form-control cVVJVFf" component="$model/UI2/system/components/justep/input/input" data="noticeData" data-bind="component:{ref:ref('sName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cVVJVFf"/> 
+                  </div> 
+                </div> 
+              </div>  
+              <div class="row cVVJVFf" __cid="cVVJVFf"> 
+                <div class="col-xs-12 cVVJVFf" __cid="cVVJVFf"> 
+                  <div component="$model/UI2/system/components/justep/list/list" class="x-img-list  cVVJVFf" xid="0B037BD50FF344C0B77AC4C3B6138E19" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'},event:{click:$model._callModelFn.bind($model, 'imgListClick')}" data-config="{&quot;data&quot;:&quot;executorData&quot;,&quot;filter&quot;:&quot;js:val('rowid') == $row.val('owner')&quot;}" __cid="cVVJVFf"> 
+                    <div class="x-list-template hide cVVJVFf" __cid="cVVJVFf" data-bind="foreach:{data:$model.foreach_0B037BD50FF344C0B77AC4C3B6138E19($element),afterRender:$model.foreach_afterRender_0B037BD50FF344C0B77AC4C3B6138E19.bind($model,$element)}"> 
+                      <div class="x-img-item cVVJVFf" __cid="cVVJVFf"> 
+                        <div class="x-img-content cVVJVFf" __cid="cVVJVFf"> 
+                          <a __cid="cVVJVFf" class="cVVJVFf"> 
+                            <div class="x-blob x-blob-radius x-img cVVJVFf" component="$model/UI2/system/components/justep/org/orgImage" data-bind="component:{ref:ref(&quot;sFID&quot;),name:'$model/UI2/system/components/justep/org/orgImage'}" data-events="onRefresh:orgImgRefresh" __cid="cVVJVFf"> 
+                              <div class="x-blob-bar cVVJVFf" __cid="cVVJVFf"> 
+                                <i class="x-blob-edit icon-compose cVVJVFf" __cid="cVVJVFf"/>  
+                                <i class="x-blob-del icon-close-round cVVJVFf" __cid="cVVJVFf"/> 
+                              </div>  
+                              <img class="x-blob-img x-autofill cVVJVFf" __cid="cVVJVFf"/> 
+                            </div> 
+                          </a>  
+                          <a class="x-img-top-right x-img-list-remove-item cVVJVFf" __cid="cVVJVFf" data-bind="visible:$parent.val(&quot;btnStatus&quot;) === &quot;removeAll&quot;,event:{click:$model._callModelFn.bind($model, 'imgListRemoveItemClick')}"/>  
+                          <div class="x-img-status cVVJVFf" __cid="cVVJVFf" data-bind="visible:val('responsible') === 1"/> 
+                        </div>  
+                        <span class="x-img-name cVVJVFf" __cid="cVVJVFf" data-bind="text:val(&quot;sName&quot;)"/> 
+                      </div> 
+                    </div>  
+                    <div class="x-img-item x-img-list-add cVVJVFf" style="height:65px" __cid="cVVJVFf" data-bind="visible:!val(&quot;btnStatus&quot;),event:{click:$model._callModelFn.bind($model, 'noticeAddClick')}"> 
+                      <div class="x-img-content cVVJVFf" __cid="cVVJVFf"> 
+                        <a __cid="cVVJVFf" class="cVVJVFf"> 
+                          <img src="@justepContextPath@/v_8ae5339699a44d32b6b51f2365acf8f1l_zh_CNs_desktopd_pc/system/components/justep/social/relativeOrg/img/add.png" class="x-img x-img-border cVVJVFf" __cid="cVVJVFf"/> 
+                        </a> 
+                      </div> 
+                    </div>  
+                    <div class="x-img-item x-img-list-remove cVVJVFf" style="height:65px" __cid="cVVJVFf" data-bind="visible:!val(&quot;btnStatus&quot;) &amp;&amp; ($model.comp($element.parentElement).getForeachData().length &gt; 0),event:{click:$model._callModelFn.bind($model, 'imgListRemoveClick')}"> 
+                      <div class="x-img-content cVVJVFf" __cid="cVVJVFf"> 
+                        <a __cid="cVVJVFf" class="cVVJVFf"> 
+                          <img src="@justepContextPath@/v_1a78fdf074b54049a35bd04b85aa95f8l_zh_CNs_desktopd_pc/system/components/justep/social/relativeOrg/img/remove.png" class="x-img x-img-border cVVJVFf" __cid="cVVJVFf"/> 
+                        </a> 
+                      </div> 
+                    </div>  
+                    <div class="x-img-item x-img-list-remove-all cVVJVFf" __cid="cVVJVFf" data-bind="visible:val('btnStatus') === 'removeAll',event:{click:$model._callModelFn.bind($model, 'imgListRemoveAllClick')}"> 
+                      <a style="color:#f57e7b;" __cid="cVVJVFf" class="cVVJVFf">清空所有</a> 
+                    </div>  
+                    <div style="clear:both" __cid="cVVJVFf" class="cVVJVFf"/> 
+                  </div> 
+                </div> 
+              </div> 
+            </div> 
+          </ul> 
+        </div>  
+        <div class="panel panel-default cVVJVFf" __cid="cVVJVFf"> 
+          <div class="panel-heading cVVJVFf" __cid="cVVJVFf">附言</div>  
+          <textarea class="form-control cVVJVFf" component="$model/UI2/system/components/justep/textarea/textarea" data="controlData" rows="3" style="border-top-right-radius: 0px;border-top-left-radius: 0px;" data-bind="component:{ref:$model.controlData.ref('postscript'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cVVJVFf"/> 
+        </div> 
+      </div> 
+    </div>  
+    <div xmlns:xui="http://www.justep.com/xui" class="x-panel-bottom cVVJVFf" xid="panelPanel" xui:parent="panel" xui:update-mode="insert" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cVVJVFf">  
+      <a class="btn btn-link btn-only-label x-dialog-button cVVJVFf" component="$model/UI2/system/components/justep/button/button" xid="cancelBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:cancelBtnClick" data-config="{&quot;label&quot;:&quot;取消&quot;}" __cid="cVVJVFf"> 
+        <i xid="i4_1" __cid="cVVJVFf" class="cVVJVFf"/>  
+        <span xid="span4_1" __cid="cVVJVFf" class="cVVJVFf">取消</span> 
+      </a>  
+      <a class="btn btn-primary btn-only-label x-dialog-button cVVJVFf" component="$model/UI2/system/components/justep/button/button" xid="okBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:okBtnClick" data-config="{&quot;label&quot;:&quot;确定&quot;}" __cid="cVVJVFf"> 
+        <i xid="i3_1" __cid="cVVJVFf" class="cVVJVFf"/>  
+        <span xid="span3_1" __cid="cVVJVFf" class="cVVJVFf">确定</span> 
+      </a> 
+    </div>  
+    <style __cid="cVVJVFf" class="cVVJVFf">.x-panel.pbf65b0aa03c04bdbb0b581dc5810d3b8-iosstatusbar &gt;.x-panel-top {height: 0px;}.x-panel.pbf65b0aa03c04bdbb0b581dc5810d3b8-iosstatusbar &gt;.x-panel-content { top: 0px;bottom: nullpx;}.x-panel.pbf65b0aa03c04bdbb0b581dc5810d3b8-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pbf65b0aa03c04bdbb0b581dc5810d3b8-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pbf65b0aa03c04bdbb0b581dc5810d3b8-iosstatusbar &gt;.x-panel-top {height: 0px;}.iosstatusbar .x-panel.pbf65b0aa03c04bdbb0b581dc5810d3b8-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pbf65b0aa03c04bdbb0b581dc5810d3b8-iosstatusbar &gt;.x-panel-content { top: 0px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pbf65b0aa03c04bdbb0b581dc5810d3b8-iosstatusbar &gt;.x-panel-top {height: 0px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pbf65b0aa03c04bdbb0b581dc5810d3b8-iosstatusbar &gt;.x-panel-content {top: 0px;}</style> 
+  </div> 
+</div>

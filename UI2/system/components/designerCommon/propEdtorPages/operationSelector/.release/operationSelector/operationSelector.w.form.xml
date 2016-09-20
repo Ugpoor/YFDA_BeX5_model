@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cjMjEZv" class="cjMjEZv" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/windowDialog/windowDialog,$model/UI2/system/components/justep/window/window,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cjMjEZv" class="cjMjEZv"/>  
+  <div xid="operations" __cid="cjMjEZv" class="cjMjEZv"/>  
+  <span component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="OPParamDlg" style="top:5px;left:190px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-events="onReceive:OPParamDlgReceive" data-config="{&quot;showTitle&quot;:true,&quot;src&quot;:&quot;$model/UI2/system/components/designerCommon/propEdtorPages/operationSelector/setOPParam.w&quot;,&quot;status&quot;:&quot;normal&quot;,&quot;title&quot;:&quot;设置操作参数&quot;}" __cid="cjMjEZv" class="cjMjEZv">
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog-overlay cjMjEZv" __cid="cjMjEZv"/>
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog cjMjEZv" style="display:none;" showTitle="true" __cid="cjMjEZv">
+      <xhtml:div class="x-dialog-title cjMjEZv" __cid="cjMjEZv">
+        <xhtml:button class="close cjMjEZv" __cid="cjMjEZv">
+          <xhtml:span __cid="cjMjEZv" class="cjMjEZv">×</xhtml:span>
+        </xhtml:button>
+        <xhtml:div class="x-dialog-title-text cjMjEZv" __cid="cjMjEZv">设置操作参数</xhtml:div>
+      </xhtml:div>
+      <xhtml:div class="x-dialog-body cjMjEZv" __cid="cjMjEZv"/>
+    </xhtml:div>
+  </span>
+</div>
